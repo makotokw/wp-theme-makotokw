@@ -1,0 +1,17 @@
+.powered_by_pukiwiki {
+  display:block;
+  padding:4px;
+  text-align:right;
+  font-size: 10px;
+  font-size: 0.714285714rem;
+  margin-top:1em;
+}
+
+.pukiwiki_content  {
+  div.jumpmenu {
+    display:none;
+  }
+  a.anchor_super {
+    visibility: collapse;
+  }
+}

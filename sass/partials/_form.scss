@@ -1,0 +1,31 @@
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  padding: 7px 0 7px 6px;
+  border: 2px solid $clouds;
+  text-indent: 1px;
+  @include border-radius(6px);
+  @include box-shadow(none);
+  @include placeholder($clouds);
+
+  &:focus {
+    border-color: $blue;
+    outline: 0;
+    outline: thin dotted \9; /* IE6-9 */
+    @include box-shadow(none);
+
+  }
+}

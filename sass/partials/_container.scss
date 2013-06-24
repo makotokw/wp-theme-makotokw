@@ -1,0 +1,26 @@
+/* =Container
+----------------------------------------------- */
+
+.site {
+  @include box-sizing(content-box);
+  margin: 0 auto;
+  max-width: $siteMaxWidth;
+  width: 100%;
+}
+
+.site-main {
+  position: relative;
+
+  .sidebar-container {
+    height: 0;
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .sidebar-inner {
+    margin: 0 auto;
+    max-width: $siteMainMaxWidth;
+  }
+}

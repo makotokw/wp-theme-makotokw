@@ -1,0 +1,234 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-04-28 18:45+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: 404.php:14
+msgid "Not found"
+msgstr ""
+
+#: 404.php:19 no-results.php:17
+msgid "This is somewhat embarrassing, isn&rsquo;t it?"
+msgstr ""
+
+#: 404.php:20
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr ""
+
+#: archive.php:21
+#, php-format
+msgid "Category Archives: %s"
+msgstr ""
+
+#: archive.php:24
+#, php-format
+msgid "Tag Archives: %s"
+msgstr ""
+
+#: archive.php:31
+#, php-format
+msgid "Author Archives: %s"
+msgstr ""
+
+#: archive.php:39
+#, php-format
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: archive.php:42
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: archive.php:45
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: archive.php:48
+msgid "Asides"
+msgstr ""
+
+#: archive.php:51
+msgid "Images"
+msgstr ""
+
+#: archive.php:54
+msgid "Videos"
+msgstr ""
+
+#: archive.php:57
+msgid "Quotes"
+msgstr ""
+
+#: archive.php:60
+msgid "Links"
+msgstr ""
+
+#: archive.php:63
+msgid "Archives"
+msgstr ""
+
+#: comments.php:48 comments.php:75
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:51 comments.php:78
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:52 comments.php:79
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:90
+msgid "Comments are closed."
+msgstr ""
+
+#: content-page.php:18 content-single.php:17 content.php:25
+msgid "Pages:"
+msgstr ""
+
+#: content-page.php:23 content-single.php:56 content.php:59
+#: inc/template-tags.php:97 inc/template-tags.php:118
+msgid "Edit"
+msgstr ""
+
+#: content-single.php:26 content-single.php:29 content.php:36 content.php:46
+msgid ", "
+msgstr ""
+
+#: content-single.php:34
+#, php-format
+msgid "<i class=\"icon-tag\"></i> %2$s"
+msgstr ""
+
+#: content-single.php:42
+#, php-format
+msgid ""
+"<i class=\"icon-folder-close\"></i> %1$s <i class=\"icon-tag\"></i> %2$s"
+msgstr ""
+
+#: content-single.php:44 content.php:40
+#, php-format
+msgid "<i class=\"icon-folder-close\"></i> %1$s"
+msgstr ""
+
+#: content.php:13
+#, php-format
+msgid "Permalink to %s"
+msgstr ""
+
+#: content.php:22
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: content.php:50
+#, php-format
+msgid "<i class=\"icon-tag\"></i> %1$s"
+msgstr ""
+
+#: content.php:56
+msgid "Leave a comment"
+msgstr ""
+
+#: content.php:56
+msgid "1 Comment"
+msgstr ""
+
+#: content.php:56
+msgid "% Comments"
+msgstr ""
+
+#: footer.php:30
+#, php-format
+msgid "Powered by %s"
+msgstr ""
+
+#: functions.php:63
+msgid "Site Info Menu"
+msgstr ""
+
+#: functions.php:64
+msgid "Portfolio Menu"
+msgstr ""
+
+#: functions.php:76
+msgid "Sidebar"
+msgstr ""
+
+#: header_ogp.php:57
+msgid "Uncategorized"
+msgstr ""
+
+#: no-results.php:13
+msgid "Nothing Found"
+msgstr ""
+
+#: no-results.php:19
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: no-results.php:21
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: no-results.php:24
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: search.php:16
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: inc/extras.php:66
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: inc/template-tags.php:34
+msgid "Post navigation"
+msgstr ""
+
+#: inc/template-tags.php:48
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#: inc/template-tags.php:52
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: inc/template-tags.php:115
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: inc/template-tags.php:121 inc/template-tags.php:125
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: inc/template-tags.php:154
+#, php-format
+msgid "<time class=\"entry-date\" datetime=\"%1$s\">%2$s</time></a>"
+msgstr ""

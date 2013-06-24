@@ -1,0 +1,647 @@
+
+<style type="text/css">
+	/*
+	zenback default style
+	----------------------------------------------------------------------*/
+#fb-root div {
+	top: -99999px !important;
+	left: -99999px !important;
+}
+
+
+#zenback-widget {
+	margin: 1.62em 0;
+	text-align: left;
+}
+#zenback-widget div,
+#zenback-widget img,
+#zenback-widget ul,
+#zenback-widget li,
+#zenback-widget iframe,
+#zenback-widget span,
+#zenback-widget a {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	line-height: normal;
+	background: none;
+	font-size: 100%;
+}
+#zenback-widget div {
+	display: block;
+}
+#zenback-widget li {
+	list-style: none;
+}
+#zenback-widget img {
+	-ms-interpolation-mode: bicubic;
+}
+#zenback-widget div:after,
+#zenback-widget ul:after,
+#zenback-widget li:after {
+	display: none;
+}
+#zenback-widget .zenback-module-item {
+	list-style: none;
+	background: none;
+}
+#zenback-widget .zenback-module {
+	margin-bottom: 1.62em;
+	text-align: left;
+}
+#zenback-widget .zenback-module-content {
+	clear: both;
+}
+#zenback-widget #zenback-social-button .zenback-module-content,
+#zenback-widget #zenback-related-keywords .zenback-module-content {
+	border: 0;
+}
+#zenback-widget .zenback-module-list,
+#zenback-widget #zenback-facebook-face,
+#zenback-widget #zenback-facebook-comments {
+	margin: 0.62em 0;
+	padding: 0;
+}
+#zenback-widget .zenback-module-item {
+	margin: 0 0.62em 0.62em;
+	float: none;
+}
+#zenback-widget li.zenback-module-item {
+	list-style-type: none;
+	display: list-item;
+}
+#zenback-widget #zenback-social-button .zenback-module-item {
+	float: left;
+	min-height: 30px;
+	margin: 0;
+	padding: 0 10px 0 0;
+	line-height: 18px;
+	vertical-align: middle;
+}
+#zenback-widget #zenback-social-button .item-twitter-follow {
+	clear: both;
+	float: none;
+}
+#zenback-widget #zenback-related-keywords .zenback-module-item {
+	float: left;
+	margin-right: 0;
+}
+#zenback-widget #zenback-related-keywords .zenback-module-item a {
+	display: block;
+	padding: 0.3em 0.62em;
+	border: 1px solid #999999;
+	line-height: 1em;
+	background-color: #ebebeb;
+	border-radius: 5px;
+	text-decoration: none;
+	color: #2b2b2b;
+}
+#zenback-widget .zenback-module-item-image {
+	float: left;
+	margin: 0 10px 0 0;
+	padding: 0;
+}
+#zenback-widget #zenback-twitter .zenback-module-item-image,
+#zenback-widget #zenback-hatena-bookmark .zenback-module-item-image {
+	margin-bottom: 0.62em;
+}
+#zenback-widget .zenback-module-item-content,
+#zenback-widget .zenback-module-item-footer {
+	margin: 0.2em 0 0 26px;
+}
+#zenback-widget .zenback-module-item-footer {
+	font-size: 90%;
+}
+#zenback-widget #zenback-twitter .zenback-module-item-content,
+#zenback-widget #zenback-ad-hasimage .zenback-module-item-content,
+#zenback-widget #zenback-ad-hasimage .zenback-module-item-footer {
+	margin-left: 58px;
+}
+#zenback-widget #zenback-ad-noicon .zenback-module-item-content,
+#zenback-widget #zenback-ad-noicon .zenback-module-item-footer {
+	margin-left: 0;
+}
+#zenback-widget #zenback-twitter .zenback-module-item-content,
+#zenback-widget #zenback-hatena-bookmark .zenback-module-item-content {
+	margin-bottom: 0.62em;
+}
+#zenback-widget .zenback-module-item-socialcount {
+	display: inline-block;
+	padding: 0.3em 0.3em 0.2em;
+	background-color: #999999;
+	color: #ffffff;
+	font-size: 80%;
+	line-height: 1.2;
+}
+#zenback-widget .zenback-module-item-socialcount,
+#zenback-widget .zenback-module-item-time,
+#zenback-widget .zenback-module-item-tags {
+	margin-left: 0.62em;
+}
+#zenback-widget .zenback-module-message,
+#zenback-widget .zenback-module-more-link a {
+	display: block;
+	text-align: center;
+	padding: 0.3em 0.62em;
+}
+#zenback-widget .zenback-module-item-type {
+	float: right;
+}
+#zenback-widget #zenback-news-hasimage .zenback-module-item-text a,
+#zenback-widget #zenback-ad-hasimage .zenback-module-item-text a,
+#zenback-widget .zenback-ad .zenback-module-item-text a,
+#zenback-widget .zenback-module-item-type a {
+	text-decoration: none;
+}
+#zenback-widget .zenback-module-item-type a {
+	color: #999999;
+}
+#zenback-widget #zenback-twitter .zenback-module-item-tools img {
+	vertical-align: middle;
+}
+#zenback-widget #zenback-related-article .zenback-module-item.hasthumb,
+#zenback-widget #zenback-related-article .zenback-module-item.hasthumb .zenback-module-item-thumbnail,
+#zenback-widget #zenback-related-article .zenback-module-item.hasthumb .zenback-module-item-title {
+	width: 110px;
+}
+#zenback-widget #zenback-related-article .zenback-module-item.hasthumb {
+	float: left;
+	height: 185px;
+	margin: 0 0 1.62em;
+	padding: 0 9px 9px;
+	font-size: 12px;
+}
+#zenback-widget #zenback-related-article .zenback-module-item.hasthumb .zenback-module-item-thumbnail {
+	position: relative;
+	height: 110px;
+	overflow: hidden;
+	background-color: #eeeeee;
+	text-align: center;
+}
+#zenback-widget #zenback-related-article .zenback-module-item.hasthumb .zenback-module-item-thumbnail a {
+	text-decoration: none;
+}
+#zenback-widget #zenback-related-article .zenback-module-item.hasthumb .zenback-module-item-image {
+	float: none;
+	width: auto;
+	height: 110px;
+	margin: 0;
+}
+#zenback-widget #zenback-news-hasimage .zenback-module-item.hasthumb .zenback-module-item-image,
+#zenback-widget #zenback-ad-hasimage .zenback-module-item.hasthumb .zenback-module-item-image {
+	float: left;
+	margin: 0 0 12px;
+	padding: 0 9px 0 0;
+}
+#zenback-widget #zenback-news-hasimage .zenback-module-item-content, #zenback-widget #zenback-ad-hasimage .zenback-module-item-content{
+	margin: 0.2em 0 0 0px;
+}
+#zenback-widget #zenback-loglylift-hasimage li{
+	float: left;
+	width: 46%;
+	height: auto;
+	margin: 0 0 12px;
+	padding: 0 9px 9px;
+}
+#zenback-widget #zenback-related-article .zenback-module-item.hasthumb .zenback-module-item-title {
+	margin-top: 5px;
+}
+#zenback-widget #zenback-related-article .zenback-module-item.hasthumb .zenback-module-item-socialcount {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100px;
+	margin: 0;
+	padding: 3px 5px;
+	text-align: left;
+	font-size: 12px;
+}
+#zenback-widget #zenback-social-button .item-twitter,
+#zenback-widget #zenback-social-button .item-pocket {
+	width: 101px;
+	height: 30px;
+}
+#zenback-widget #zenback-social-button .item-google-plus {
+	width: 71px;
+}
+#zenback-widget .zenback-module-powered,
+#zenback-widget #zenback-powered {
+	clear: both;
+	display: block ! important;
+	margin-top: 1.62em;
+	text-align: right;
+}
+#zenback-widget #zenback-social-button .zenback-module-content,
+#zenback-widget #zenback-related-article .zenback-module-content,
+#zenback-widget #zenback-related-keywords .zenback-module-content,
+#zenback-widget #zenback-twitter .zenback-module-item,
+#zenback-widget #zenback-hatena-bookmark .zenback-module-item,
+#zenback-widget .zenback-ad .zenback-module-item,
+#zenback-widget .zenback-module-item-footer {
+	zoom: 1;
+}
+#zenback-widget #zenback-social-button .zenback-module-content:before,
+#zenback-widget #zenback-related-article .zenback-module-content:before,
+#zenback-widget #zenback-related-keywords .zenback-module-content:before,
+#zenback-widget #zenback-twitter .zenback-module-item:before,
+#zenback-widget #zenback-hatena-bookmark .zenback-module-item:before,
+#zenback-widget .zenback-ad .zenback-module-item:before,
+#zenback-widget .zenback-module-item-footer:before,
+#zenback-widget #zenback-social-button .zenback-module-content:after,
+#zenback-widget #zenback-related-article .zenback-module-content:after,
+#zenback-widget #zenback-related-keywords .zenback-module-content:after,
+#zenback-widget #zenback-twitter .zenback-module-item:after,
+#zenback-widget #zenback-hatena-bookmark .zenback-module-item:after,
+#zenback-widget .zenback-ad .zenback-module-item:after,
+#zenback-widget .zenback-module-item-footer:after {
+	display: block;
+	height: 0;
+	visibility: hidden;
+	content: "\0020";
+}
+#zenback-widget #zenback-social-button .zenback-module-content:after,
+#zenback-widget #zenback-related-article .zenback-module-content:after,
+#zenback-widget #zenback-related-keywords .zenback-module-content:after,
+#zenback-widget #zenback-twitter .zenback-module-item:after,
+#zenback-widget #zenback-hatena-bookmark .zenback-module-item:after,
+#zenback-widget .zenback-ad .zenback-module-item:after,
+#zenback-widget .zenback-module-item-footer:after {
+	clear: both;
+}
+#zenback-widget #zenback-ad-hasimage .zenback-module-item-footer,
+#zenback-widget #zenback-loglylift-hasimage .zenback-module-list,
+#zenback-widget #zenback-loglylift-hasimage .zenback-module-item-footer {
+	clear: both;
+}
+
+
+#zenback-widget {
+}
+#zenback-widget .zenback-module-label {
+	float: left;
+	background-color: #000000;
+	background-position: 5px center;
+	background-repeat: no-repeat;
+	font-size: 90%;
+}
+#zenback-widget .zenback-module-label a,
+#zenback-widget .zenback-module-label span {
+	display: block;
+	margin-top: 3px;
+	padding: 0 0.62em 0 26px;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: bold;
+}
+#zenback-widget .zenback-module-content {
+	border-top: 1px solid;
+}
+#zenback-widget #zenback-related-links .zenback-module-label {
+	background-image: url(http://widget.zenback.jp/_p/images/icon-relatedlink.png?v=1a4c6);
+	background-color: #b0c906;
+}
+#zenback-widget #zenback-related-links .zenback-module-content {
+	border-color: #b0c906;
+}
+#zenback-widget #zenback-related-article .zenback-module-label {
+	background-image: url(http://widget.zenback.jp/_p/images/icon-relatedentry.png?v=67d53);
+	background-color: #7fc527;
+}
+#zenback-widget #zenback-related-article .zenback-module-content {
+	border-color: #7fc527;
+}
+#zenback-widget #zenback-twitter .zenback-module-label {
+	background-image: url(http://widget.zenback.jp/_p/images/icon-twitterbird.png?v=76335);
+	background-color: #44c2e4;
+}
+#zenback-widget #zenback-twitter .zenback-module-content {
+	border-color: #44c2e4;
+}
+#zenback-widget #zenback-hatena-bookmark .zenback-module-label {
+	background-image: url(http://widget.zenback.jp/_p/images/icon-hatebu.png?v=33759);
+	background-color: #5279e7;
+}
+#zenback-widget #zenback-hatena-bookmark .zenback-module-content {
+	border-color: #5279e7;
+}
+#zenback-widget #zenback-facebook-comment .zenback-module-label {
+	background-image: url(http://widget.zenback.jp/_p/images/icon-facebook.png?v=f82ea);
+	background-color: #3b5998;
+}
+#zenback-widget #zenback-facebook-comment .zenback-module-content {
+	border-color: #3b5998;
+}
+#zenback-widget #zenback-news-hasimage .zenback-module-label {
+	background-image: url(http://widget.zenback.jp/_p/images/icon-oshirase.png?v=ea6fc);
+	background-color: #F2900F;
+}
+#zenback-widget #zenback-news-hasimage .zenback-module-content {
+	border-color: #F2900F;
+}
+#zenback-widget #zenback-ad-hasimage .zenback-module-content,
+#zenback-widget #zenback-ad-noicon .zenback-module-content,
+#zenback-widget #zenback-loglylift-hasimage .zenback-module-content {
+	border: none;
+}
+#zenback-widget #zenback-ad .zenback-module-item-text a {
+	color: #000000;
+	text-decoration: none;
+}
+#zenback-widget .zenback-module-message {
+	background-color: #eeeeee;
+	color: #555555;
+	font-size: 90%;
+}
+#zenback-widget .zenback-module-item-socialcount {
+	border-radius: 2px;
+}
+#zenback-widget .zenback-module-item.hasthumb .zenback-module-item-socialcount {
+	border-radius: 0;
+}
+#zenback-widget .zenback-module-more-link {
+	border: 1px solid #999999;
+}
+#zenback-widget #zenback-hatena-bookmark .zenback-module-item,
+#zenback-widget #zenback-twitter .zenback-module-item {
+	border-bottom: 1px solid #eeeeee;
+}
+#zenback-widget .zenback-module-item-time,
+#zenback-widget .zenback-module-item-time a,
+#zenback-widget .zenback-module-item-tags a {
+	color: #999999;
+}
+#zenback-widget #zenback-powered {
+	border-top: 1px solid #7fc527;
+}
+#zenback-widget #zenback-powered img {
+	padding: 0.2em 0.5em;
+	background-color: #7fc527;
+}
+</style>
+
+<div id="zenback-widget">
+
+<div id="zenback-social-button" class="zenback-module zbid-1372051080-19132">
+	<div class="zenback-module-content">
+		<div class="zenback-module-item item-twitter">
+			<iframe allowtransparency="true" frameborder="0" scrolling="no"
+					src="http://platform.twitter.com/widgets/tweet_button.1371247185.html#_=1372051081688&amp;count=horizontal&amp;hashtags=Zenback&amp;id=twitter-widget-0&amp;lang=ja&amp;original_referer=http%3A%2F%2Fblog.makotokw.com%2F2013%2F06%2F18%2Fjekyll%25e3%2581%25ab%25e5%25a4%25a2%25e4%25b8%25ad%2F&amp;related=zenback&amp;size=m&amp;text=Jekyll%E3%81%AB%E5%A4%A2%E4%B8%AD%20%7C%20kwLog&amp;url=http%3A%2F%2Fblog.makotokw.com%2F2013%2F06%2F18%2Fjekyll%25e3%2581%25ab%25e5%25a4%25a2%25e4%25b8%25ad%2F&amp;via=makoto_kw"
+					class="twitter-share-button twitter-count-horizontal" style="width: 130px; height: 20px;"
+					title="Twitter Tweet Button" data-twttr-rendered="true"></iframe>
+		</div>
+
+		<div class="zenback-module-item item-hatena-bookmark">
+			<iframe class="hatena-bookmark-button-frame" title="このエントリーをはてなブックマークに追加" frameborder="0" scrolling="no"
+					width="130" height="20" src="javascript:false" style="width: 106px; height: 20px;"></iframe>
+		</div>
+
+
+		<div class="zenback-module-item item-evernote-clip">
+			<a href="#"
+			   onclick="Evernote.doClip({title:document.title, content:document.body, code:'SixA6070'}); return false;"><img
+					src="http://static.evernote.com/article-clipper-jp.png" alt="Clip to Evernote"></a>
+		</div>
+
+		<div class="zenback-module-item item-pocket">
+			<div class="pocket-btn">
+				<iframe width="135" height="22" id="pocket-button-0" frameborder="0" allowtransparency="true"
+						scrolling="NO"
+						src="https://widgets.getpocket.com/v1/button?label=pocket&amp;count=horizontal&amp;v=1&amp;url=http%3A%2F%2Fblog.makotokw.com%2F2013%2F06%2F18%2Fjekyll%25e3%2581%25ab%25e5%25a4%25a2%25e4%25b8%25ad%2F&amp;title=Jekyll%E3%81%AB%E5%A4%A2%E4%B8%AD%20%7C%20kwLog&amp;src=http%3A%2F%2Fblog.makotokw.com%2F2013%2F06%2F18%2Fjekyll%25e3%2581%25ab%25e5%25a4%25a2%25e4%25b8%25ad%2F&amp;r=0.9619009557645768"></iframe>
+			</div>
+		</div>
+
+		<div class="zenback-module-item item-google-plus">
+			<div id="zenback-google-plusone"
+				 style="text-indent: 0px; margin: 0px; padding: 0px; background-color: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px; background-position: initial initial; background-repeat: initial initial;">
+				<iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no"
+						style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;"
+						tabindex="0" vspace="0" width="100%" id="I0_1372051081766" name="I0_1372051081766"
+						src="https://apis.google.com/_/+1/fastbutton?bsv&amp;size=medium&amp;count=true&amp;hl=ja&amp;origin=http%3A%2F%2Fblog.makotokw.com&amp;url=http%3A%2F%2Fblog.makotokw.com%2F2013%2F06%2F18%2Fjekyll%25e3%2581%25ab%25e5%25a4%25a2%25e4%25b8%25ad%2F&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.ja.jVif07-80iI.O%2Fm%3D__features__%2Fam%3DEQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAItRSTMP3k2faFW84wuEvlhHy80R7FJz4A#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled&amp;id=I0_1372051081766&amp;parent=http%3A%2F%2Fblog.makotokw.com&amp;rpctoken=12992850"
+						allowtransparency="true" data-gapiattached="true" title="+1"></iframe>
+			</div>
+		</div>
+
+		<div class="zenback-module-item item-facebook-like">
+			<iframe src="http://www.facebook.com/plugins/like.php?href=http://blog.makotokw.com/2013/06/18/jekyll%e3%81%ab%e5%a4%a2%e4%b8%ad/&amp;layout=button_count&amp;show_faces=false&amp;width=130&amp;action=like&amp;colorscheme=light&amp;height=20"
+					scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:130px; height:20px;"
+					allowtransparency="true"></iframe>
+		</div>
+
+
+	</div>
+</div>
+
+
+<div id="zenback-news-hasimage" class="zenback-module zbid-1372051080-19132">
+	<div class="zenback-module-label"><a target="_blank"
+										 href="http://blog.zenback.jp/zenback-oshirase.html?utm_source=zenback&amp;utm_medium=http%3A//blog.makotokw.com/2013/06/18/jekyll%25e3%2581%25ab%25e5%25a4%25a2%25e4%25b8%25ad/&amp;utm_campaign=zb_oshiraselabel">おしらせ</a>
+	</div>
+	<div class="zenback-module-content">
+		<ul class="zenback-module-list">
+		</ul>
+	</div>
+</div>
+<div id="zenback-ad-hasimage" class="zenback-module zbid-1372051080-19132" style="">
+	<div class="zenback-module-content">
+		<ul class="zenback-module-list">
+			<li class="zenback-module-item hasthumb" style="">
+				<div class="zenback-module-item-header">
+					<a href="http://web-jp.ad-v.jp/adam/em/click/864695/cat=53179/uhook=80020A5B8060/criterias=103_21_116_999_283_0_/url="
+					   target="_blank">
+						<img width="110" height="110" class="zenback-module-item-image"
+							 src="http://i.ad-v.jp/data/864699/LA_logo.jpg">
+						<span class="zenback-module-item-title">【PR】「吉元由美のLIFE ARTIST」受講生募集中！</span>
+					</a>
+				</div>
+				<div class="zenback-module-item-content">
+            <span class="zenback-module-item-text">
+              <a href="http://web-jp.ad-v.jp/adam/em/click/864695/cat=53179/uhook=80020A5B8060/criterias=103_21_116_999_283_0_/url="
+				 target="_blank">平原綾香の『Jupiter』の作詞家として有名な吉元由美。その吉元由美が自分らしさ・夢・運命・結婚など、様々なテーマについてお話いたします。ドキュメンタリームービーhttp://yylifeartist.jp/</a>
+            </span>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="zenback-module-item-footer">
+      <span class="zenback-module-item-type">
+        <a href="http://www.sixapart.jp/zenback/ads/" target="_blank">Zenback ADS</a>
+      </span>
+	</div>
+</div>
+<div id="zenback-ad-noicon" class="zenback-module zenback-ad zbid-1372051080-19132" style="display:none;">
+	<div class="zenback-module-content">
+		<div class="zenback-module-item" style="display:none;">
+			<div class="zenback-module-item-header">
+				<a href="#" target="_blank">
+					<span class="zenback-module-item-title"></span>
+				</a>
+			</div>
+			<div class="zenback-module-item-content">
+          <span class="zenback-module-item-text">
+            <a href="#" target="_blank"></a>
+          </span>
+			</div>
+		</div>
+		<div class="zenback-module-item-footer">
+        <span class="zenback-module-item-type">
+          <a href="http://promotionalads.yahoo.co.jp/guide/" target="_blank">Ads by Yahoo! JAPAN</a>
+        </span>
+		</div>
+	</div>
+</div>
+
+
+<div id="zenback-related-links" class="zenback-module zbid-1372051080-19132">
+	<div class="zenback-module-label"><span>関連するみんなの記事</span></div>
+	<div class="zenback-module-content">
+		<ul class="zenback-module-list">
+			<li class="zenback-module-item">
+				<div class="zenback-module-item-header">
+					<img src="http://widget.zenback.jp/_p/images/article-no-image16x16_out.png?v=0bf6c" width="16"
+						 height="16" class="zenback-module-item-image">
+				</div>
+				<div class="zenback-module-item-content">
+					<a href="http://blog.yuyat.jp/archives/1915?utm_source=zenback&amp;utm_medium=http%3A//blog.makotokw.com/2013/06/18/jekyll%25e3%2581%25ab%25e5%25a4%25a2%25e4%25b8%25ad/&amp;utm_campaign=zb_related_links"
+					   target="_blank" class="zenback-module-item-title">Jekyll に Markdown Rendering API を組み込んでみる </a>
+				</div>
+			</li>
+			<li class="zenback-module-item">
+				<div class="zenback-module-item-header">
+					<img src="http://widget.zenback.jp/_p/images/article-no-image16x16_out.png?v=0bf6c" width="16"
+						 height="16" class="zenback-module-item-image">
+				</div>
+				<div class="zenback-module-item-content">
+					<a href="http://inoccu.net/blog/2013/04/10/193015.html?utm_source=zenback&amp;utm_medium=http%3A//blog.makotokw.com/2013/06/18/jekyll%25e3%2581%25ab%25e5%25a4%25a2%25e4%25b8%25ad/&amp;utm_campaign=zb_related_links"
+					   target="_blank" class="zenback-module-item-title">JekyllとWordPressの違いを用途の面からまとめてみる </a>
+				</div>
+			</li>
+			<li class="zenback-module-item">
+				<div class="zenback-module-item-header">
+					<img src="http://widget.zenback.jp/_p/images/article-no-image16x16_out.png?v=0bf6c" width="16"
+						 height="16" class="zenback-module-item-image">
+				</div>
+				<div class="zenback-module-item-content">
+					<a href="http://techmemoin.blogspot.jp/2013/05/jekyll.html?utm_source=zenback&amp;utm_medium=http%3A//blog.makotokw.com/2013/06/18/jekyll%25e3%2581%25ab%25e5%25a4%25a2%25e4%25b8%25ad/&amp;utm_campaign=zb_related_links"
+					   target="_blank" class="zenback-module-item-title">Jekyllでサイトを作成した時に困った部分 </a>
+				</div>
+			</li>
+			<li class="zenback-module-item">
+				<div class="zenback-module-item-header">
+					<img src="http://widget.zenback.jp/_p/images/article-no-image16x16_out.png?v=0bf6c" width="16"
+						 height="16" class="zenback-module-item-image">
+				</div>
+				<div class="zenback-module-item-content">
+					<a href="http://techmemoin.blogspot.jp/2013/05/jekyll3.html?utm_source=zenback&amp;utm_medium=http%3A//blog.makotokw.com/2013/06/18/jekyll%25e3%2581%25ab%25e5%25a4%25a2%25e4%25b8%25ad/&amp;utm_campaign=zb_related_links"
+					   target="_blank" class="zenback-module-item-title">Jekyll設定色々(3) </a>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+<div id="zenback-related-keywords" class="zenback-module zbid-1372051080-19132">
+	<div class="zenback-module-content" style="border:0;">
+		<ul class="zenback-module-list">
+			<li class="zenback-module-item">
+				<a href="http://zenback.itmedia.co.jp/keywords/html/?utm_source=zenback&amp;utm_medium=http%3A//blog.makotokw.com/2013/06/18/jekyll%25e3%2581%25ab%25e5%25a4%25a2%25e4%25b8%25ad/&amp;utm_campaign=zb_keywords"
+				   target="_blank" class="zenback-module-item-title">html</a>
+			</li>
+			<li class="zenback-module-item">
+				<a href="http://zenback.itmedia.co.jp/keywords/GitHub/?utm_source=zenback&amp;utm_medium=http%3A//blog.makotokw.com/2013/06/18/jekyll%25e3%2581%25ab%25e5%25a4%25a2%25e4%25b8%25ad/&amp;utm_campaign=zb_keywords"
+				   target="_blank" class="zenback-module-item-title">GitHub</a>
+			</li>
+			<li class="zenback-module-item">
+				<a href="http://zenback.itmedia.co.jp/keywords/site/?utm_source=zenback&amp;utm_medium=http%3A//blog.makotokw.com/2013/06/18/jekyll%25e3%2581%25ab%25e5%25a4%25a2%25e4%25b8%25ad/&amp;utm_campaign=zb_keywords"
+				   target="_blank" class="zenback-module-item-title">site</a>
+			</li>
+			<li class="zenback-module-item">
+				<a href="http://zenback.itmedia.co.jp/keywords/ブログ/?utm_source=zenback&amp;utm_medium=http%3A//blog.makotokw.com/2013/06/18/jekyll%25e3%2581%25ab%25e5%25a4%25a2%25e4%25b8%25ad/&amp;utm_campaign=zb_keywords"
+				   target="_blank" class="zenback-module-item-title">ブログ</a>
+			</li>
+			<li class="zenback-module-item">
+				<a href="http://zenback.itmedia.co.jp/keywords/ファイル/?utm_source=zenback&amp;utm_medium=http%3A//blog.makotokw.com/2013/06/18/jekyll%25e3%2581%25ab%25e5%25a4%25a2%25e4%25b8%25ad/&amp;utm_campaign=zb_keywords"
+				   target="_blank" class="zenback-module-item-title">ファイル</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+
+<div id="zenback-twitter" class="zenback-module zbid-1372051080-19132">
+	<div class="zenback-module-label"><a href="javascript:void(0);">Twitter(最新 1)</a></div>
+	<div class="zenback-module-content">
+		<ul class="zenback-module-list">
+			<li class="zenback-module-item">
+				<div class="zenback-item-header">
+					<a href="http://twitter.com/makoto_kw" target="_blank">
+						<img src="http://a0.twimg.com/profile_images/27364142/kwcolor2-48x48_normal.png" width="48"
+							 height="48" class="zenback-module-item-image">
+						<span class="zenback-module-item-username">makoto_kw</span>
+					</a>
+				</div>
+				<div class="zenback-module-item-content">
+					<span class="zenback-module-item-text">Jekyllに夢中 <a href="http://t.co/nfzh4dAbrn" rel="nofollow">http://t.co/nfzh4dAbrn</a></span>
+            <span class="zenback-module-item-time">
+                          <a href="http://twitter.com/makoto_kw/status/346785102455533568" target="_blank">
+							  2013/06/18 18:23
+						  </a>
+            </span>
+            <span class="zenback-module-item-tools">
+              <a href="http://twitter.com/intent/tweet?in_reply_to=346785102455533568&amp;url=http%3A//blog.makotokw.com/2013/06/18/jekyll%25e3%2581%25ab%25e5%25a4%25a2%25e4%25b8%25ad/&amp;lang=ja"><img
+					  alt="Reply" src="http://si0.twimg.com/images/dev/cms/intents/icons/reply.png"></a>
+              <a href="http://twitter.com/intent/retweet?tweet_id=346785102455533568&amp;lang=ja"><img alt="Retweet"
+																									   src="http://si0.twimg.com/images/dev/cms/intents/icons/retweet.png"></a>
+              <a href="http://twitter.com/intent/favorite?tweet_id=346785102455533568&amp;lang=ja"><img alt="Favorite"
+																										src="http://si0.twimg.com/images/dev/cms/intents/icons/favorite.png"></a>
+            </span>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="zenback-module-footer">
+		<div class="zenback-module-powered">
+			<a href="http://topsy.com/">
+				<img src="http://widget.zenback.jp/_p/images/poweredbytopsy.png?v=20d78">
+			</a>
+		</div>
+	</div>
+</div>
+
+
+<div id="zenback-hatena-bookmark" class="zenback-module zbid-1372051080-19132">
+	<div class="zenback-module-label">
+		<a href="http://b.hatena.ne.jp/entry/http%3A//blog.makotokw.com/2013/06/18/jekyll%25e3%2581%25ab%25e5%25a4%25a2%25e4%25b8%25ad/"
+		   target="_blank">はてなブックマーク(総数 0)</a>
+	</div>
+	<div class="zenback-module-content">
+		<ul class="zenback-module-list">
+			<li class="zenback-module-item" style="display:none;">
+				<div class="zenback-module-item-header">
+					<a href="#">
+						<img width="16" height="16" class="zenback-module-item-image">
+						<span class="zenback-module-item-username">NAME</span>
+					</a>
+            <span class="zenback-module-item-tags">
+            </span>
+            <span class="zenback-module-item-time">
+            </span>
+				</div>
+				<div class="zenback-module-item-content">
+				</div>
+			</li>
+		</ul>
+		<div class="zenback-module-more-link" style="display:none;">
+			<a href="javascript:void(0);"
+			   onclick="zb_jq('#zenback-hatena-bookmark li.zenback-hidden').each(function(){zb_jq(this).show();});zb_jq(this).remove();">もっとみる</a>
+		</div>
+	</div>
+</div>
+
+
+<div id="zenback-powered">
+	<a href="https://zenback.jp/?utm_source=zenback&amp;utm_medium=http%3A//blog.makotokw.com/2013/06/18/jekyll%25e3%2581%25ab%25e5%25a4%25a2%25e4%25b8%25ad/&amp;utm_campaign=zb_footerlogo"
+	   target="_blank">
+		<img src="http://widget.zenback.jp/_p/images/poweredby.png?v=4fc4b" alt="Powered by zenback">
+	</a>
+</div>
+
+</div>

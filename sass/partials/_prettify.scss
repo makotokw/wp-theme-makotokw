@@ -1,0 +1,96 @@
+@media screen {
+
+  .prettyprint {
+    .str {
+      color: #080
+    }
+    .kwd {
+      color: #008
+    }
+    .com {
+      color: #800
+    }
+    .typ {
+      color: #606
+    }
+    .lit {
+      color: #066
+    }
+    .pun, .opn, .clo {
+      color: #660
+    }
+    .tag {
+      color: #008
+    }
+    .atn {
+      color: #606
+    }
+    .atv {
+      color: #080
+    }
+    .dec, .var {
+      color: #606
+    }
+    .fun {
+      color: red
+    }
+  }
+}
+
+@media print, projection {
+
+  .prettyprint {
+    .str {
+      color: #060
+    }
+    .kwd {
+      color: #006;
+      font-weight: bold
+    }
+    .com {
+      color: #600;
+      font-style: italic
+    }
+    .typ {
+      color: #404;
+      font-weight: bold
+    }
+    .lit {
+      color: #044
+    }
+    .pun, .opn, .clo {
+      color: #440
+    }
+    .tag {
+      color: #006;
+      font-weight: bold
+    }
+    .atn {
+      color: #404
+    }
+    .atv {
+      color: #060
+    }
+  }
+}
+
+.prettyprint {
+
+  .pln {
+    color: #000
+  }
+
+  .linenums {
+    margin-top: 0;
+    margin-bottom: 0
+  }
+
+  .L0, .L1, .L2, .L3, .L5, .L6, .L7, .L8 {
+    list-style-type: none
+  }
+
+  .L1, .L3, .L5, .L7, .L9 {
+    background: #eee
+  }
+}
+

@@ -1,0 +1,71 @@
+/* = Note styling
+-------------------------------------------------------------- */
+
+.note {
+  @extend .block-content;
+  display: block;
+  margin: 24px 0;
+  min-height: 80px;
+
+  .syntaxhighlighter {
+    width: auto;
+  }
+
+  &:before {
+    @include block-awesome-icon(2em);
+    color: $silver;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.note-link {
+  @extend .note;
+  &:before {
+    @extend .icon-bookmark:before;
+  }
+}
+
+.note-comment {
+  @extend .note;
+  &:before {
+    @extend .icon-comment:before;
+  }
+}
+
+.note-ins {
+  @extend .note;
+  color: $grayDark;
+  border-color: darken(#fff9c0,0%);
+  background-color: #fff9c0;
+  &:before {
+    @extend .icon-comment:before;
+  }
+}
+
+.enclosure {
+  @extend .note;
+  &:before {
+    @extend .icon-file-alt:before;
+  }
+}
+.enclosure-evernote {
+  @extend .enclosure;
+  &:before {
+    @extend .icon-file-alt:before;
+  }
+}
+.enclosure-qiita {
+  @extend .enclosure;
+  &:before {
+    @extend .icon-search:before;
+  }
+}
+.enclosure-github {
+  @extend .enclosure;
+  &:before {
+    @extend .icon-github-alt:before;
+  }
+}
+

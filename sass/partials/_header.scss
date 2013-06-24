@@ -1,0 +1,64 @@
+
+.site-header {
+  margin: 0 auto;
+  max-width: $siteMainMaxWidth;
+  width: 100%;
+
+  .hgroup {
+    position: relative;
+    padding: 20px 0;
+  }
+
+  a {
+    color: $siteForegroundColor;
+    text-decoration: none;
+    &:hover {
+      color: $siteLinkOverColor;
+    }
+  }
+
+  .site-title,
+  .site-description,
+  .searchform {
+    margin: 0;
+  }
+
+  .searchform {
+    position: absolute;
+    top: 30px;
+    right: 0px;
+
+    input[type="search"] {
+      background: url(images/search.png) no-repeat 5px 9px;
+      padding: 8px 2px 8px 31px;
+      width: 150px;
+      border: $siteBorderWidth solid $clouds;
+      @include border-radius($blockBorderRadius);
+      @include transition(width 400ms ease, background 400ms ease);
+
+      &:focus {
+        width: 230px;
+        cursor: text;
+        outline: 0;
+        border-color: $silver;
+      }
+    }
+  }
+
+  .site-title {
+    letter-spacing: -2px;
+    font-size: 40px;
+    font-weight: bold;
+
+    &:hover {
+      color: $siteLinkColor;
+    }
+  }
+
+  .site-description {
+    color: $silver;
+    font-size: 12px;
+    font-style: italic;
+  }
+}
+

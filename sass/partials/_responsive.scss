@@ -1,0 +1,210 @@
+
+@media (max-width: 1069px) {
+
+  .error404 {
+    .page-header {
+      margin-left: auto;
+      max-width: 604px;
+      width: 100%;
+    }
+    .page-title {
+      font-size: 24px;
+      padding: 180px;
+      &:before {
+        font-size: 554px;
+        left: 7px;
+        top: 28px;
+      }
+    }
+  }
+}
+
+@media (max-width: $desktopMaxWidth) {
+
+  .site-header {
+    .hgroup {
+      padding-left: 20px;
+    }
+    .searchform {
+      right: 20px;
+    }
+  }
+
+  .page-header {
+    padding: 10px 20px;
+  }
+
+  .hentry {
+    padding: 20px 0;
+  }
+  .hentry,
+  .page-content,
+  .nav-links,
+  .zenback-widget-area,
+  .comments-area,
+  .pingbacks-area {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .page-title {
+    font-size: 22px;
+  }
+  .entry-title {
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  code,
+  kbd,
+  pre,
+  tt,
+  var,
+  samp {
+    font-size: 14px;
+  }
+}
+
+/* Collapse oversized image and pulled images after iPad breakpoint. */
+@media (max-width: $ipadMaxWidth) {
+  .entry-content img.alignleft,
+  .entry-content .wp-caption.alignleft {
+    margin-left: 0;
+  }
+  .entry-content img.alignright,
+  .entry-content .wp-caption.alignright {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: $tabletMaxWidth) {
+
+  .site-header {
+    .site-title {
+      font-size: 30px;
+    }
+  }
+
+  blockquote {
+    margin: 16px 0;
+  }
+
+  .comment-body {
+    .comment-content {
+      width: 100%;
+    }
+
+  }
+
+  .error404 {
+    .page-title {
+      padding: 20px;
+      &:before {
+        content: normal;
+      }
+    }
+  }
+}
+
+/* Mobile devices */
+@media (max-width: $mobileMaxWidth) {
+
+  .site-header {
+    .hgroup {
+      padding: 10px 20px;
+    }
+    .searchform {
+      position: static;
+      margin-top: 10px;
+
+      input[type="search"] {
+        width: 98%;
+        &:focus {
+          width: 98%;
+        }
+      }
+    }
+  }
+
+  .entry-content {
+    .align-right {
+      float: none;
+    }
+  }
+
+  .site-footer {
+    .site-info {
+      .credit {
+        display: block;
+      }
+    }
+  }
+}
+
+/* Retina-specific styles. */
+//@media print,
+//(-o-min-device-pixel-ratio: 5/4),
+//(-webkit-min-device-pixel-ratio: 1.25),
+//(min-resolution: 120dpi) {
+//}
+
+@media print {
+  body {
+    background: none !important;
+    color: #000;
+    font-size: 10pt;
+  }
+
+  .site-title {
+    font-size: 21pt;
+  }
+  .site-description {
+    font-size: 10pt;
+  }
+
+  .searchform,
+  .author-avatar,
+  .site-footer,
+  .edit-link,
+  .widget-area,
+  .comment-edit-link,
+  .comments-area .reply,
+  .comments-link,
+  .zenback-widget-area,
+  #respond,
+  .navigation-post,
+  .navigation-paging,
+  .navigation-comment,
+  .comment-author,
+  .comment-awaiting-moderation {
+    display: none;
+  }
+
+  .page-title,
+  .entry-title {
+    font-size: 21pt;
+  }
+
+  .entry-meta,
+  .entry-meta a {
+    color: #444;
+    font-size: 10pt;
+  }
+
+  .entry-content img.alignleft,
+  .entry-content .wp-caption.alignleft {
+    margin-left: 0;
+  }
+
+  .entry-content img.alignright,
+  .entry-content .wp-caption.alignright {
+    margin-right: 0;
+  }
+
+  .comment-body .comment-metadata,
+  .comment-body .comment-awaiting-moderation,
+  .comment-body .comment-content {
+    width: 100%;
+    float: none;
+  }
+}

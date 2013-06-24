@@ -1,0 +1,145 @@
+
+/* =Content
+----------------------------------------------- */
+
+.hentry {
+  margin: 0 auto;
+  max-width: $siteContentMaxWidth;
+  width: 100%;
+  padding: 40px 0;
+  word-wrap: break-word;
+}
+
+.site-content {
+
+  .page-header {
+    margin: 0 auto;
+    max-width: $siteContentMaxWidth;
+
+    .page-title {
+      margin-bottom: 10px;
+      color: $entryTitleColor;
+
+    }
+  }
+  .hentry:first-of-type {
+    padding-top: 20px;
+  }
+}
+
+.single {
+  .hentry {
+    padding-bottom: 10px;
+  }
+}
+
+.entry-header {
+  margin-bottom: 1.5em;
+}
+
+.entry-header {
+  position: relative;
+  padding-top: 2em;
+
+  .entry-title {
+    color: $entryTitleColor;
+    margin: 0;
+    a {
+      color: $entryTitleColor;
+      &:hover {
+        color: $siteLinkOverColor;
+      }
+    }
+  }
+
+  .published {
+    text-transform: uppercase;
+    color: $entryDateColor;
+    position: absolute;
+    top: 0;
+  }
+}
+
+.entry-meta {
+  margin: 10px 0 0 0;
+  i {
+    margin-left: .5em;
+    color: $siteLinkColor;
+  }
+  .portfolio-posts-area {
+    .entry-date {
+      margin: 0 4px;
+    }
+  }
+  .author,
+  .date {
+    display: none;
+  }
+}
+
+.entry-content {
+  line-height: 2;
+}
+
+.entry-content,
+.entry-meta {
+  @include clearfix;
+}
+
+.page {
+  .entry-header {
+    max-width: $siteMainMaxWidth;
+    margin: 0 auto;
+    padding: 10px 0;
+    width: 100%;
+  }
+
+  .entry-content,
+  .entry-meta {
+    margin: 0 auto;
+    max-width: $siteContentMaxWidth;
+    width: 100%;
+  }
+
+  .entry-title {
+    margin: 5px 0;
+  }
+
+}
+
+
+/* =Media
+----------------------------------------------- */
+
+.entry-content img,
+.entry-summary img,
+.comment-content img,
+.widget img,
+.wp-caption {
+  @include border-radius($blockBorderRadius);
+  max-width: 100%;
+}
+
+.entry-content img,
+.entry-summary img,
+.comment-content img[height],
+img[class*="align"],
+img[class*="wp-image-"],
+img[class*="attachment-"] {
+  padding: 4px;
+  background-color: $white;
+  border: $blockBorderWidth solid $blockBorderColor;
+}
+
+img.size-full,
+img.size-large,
+img.wp-post-image {
+  height: auto;
+  max-width: 100%;
+}
+
+embed,
+iframe,
+object {
+  max-width: 100%;
+}

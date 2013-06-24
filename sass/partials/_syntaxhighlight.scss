@@ -1,0 +1,51 @@
+
+
+
+.entry-content,
+.page-content,
+.comment-content {
+
+  // Inline code
+  code {
+    margin: 2px 4px;
+    padding: 2px 4px;
+    color: $blueDark;
+    background-color: $white;
+    border: $siteBorderWidth solid $siteBorderColor;
+    white-space: nowrap;
+  }
+
+  .code > pre /* CodeRay by GFM plubins */
+  {
+    color: #000;
+  }
+
+  .syntaxhighlighter,
+  .prettyprint {
+    @extend .block-content;
+  }
+
+  .syntaxhighlighter {
+    background-color: transparent;
+    width: auto !important;
+
+    .gutter {
+      .line {
+        border-right: 3px solid $blue !important;
+        padding-left: 12px;
+        color: #BEBEC5;
+        line-height: 18px;
+        text-shadow: 0 1px 0 white;
+      }
+
+      .line.highlighted {
+          background-color: $blue !important;
+          color: white !important;
+      }
+    }
+  }
+
+  .ie.syntaxhighlighter {
+    padding: 24px !important;
+  }
+}

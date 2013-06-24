@@ -1,0 +1,53 @@
+@import "variables";
+@import "mixins";
+
+.amazonjs_item {
+  @include block-white($blockBorderRadius);
+  border-color: lighten($amazonOrange, 30%);
+
+  .amazonjs_indicator,
+  a {
+    color: $amazonOrange;
+  }
+
+  .amazonjs_image {
+    img {
+      @include box-shadow(none);
+      border: none;
+    }
+  }
+
+  .amazonjs_info {
+    h4 {
+      font-size: 1.2em;
+      font-weight: normal;
+      text-shadow: none;
+    }
+
+    ul {
+      li {
+        font-size: 1em;
+      }
+    }
+  }
+
+  .amazonjs_review {
+    font-size: .9em;
+  }
+}
+
+@media (max-width: $mobileMaxWidth) {
+
+  .amazonjs_item {
+    padding: 6px 6px 24px 6px;
+
+    .amazonjs_info {
+      padding-left: 0;
+      margin-left: 0 !important;
+    }
+
+  }
+
+
+
+}

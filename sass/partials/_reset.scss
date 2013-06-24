@@ -1,0 +1,438 @@
+
+* {
+  @include box-sizing(border-box);
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden] {
+  display: none;
+}
+
+html {
+  font-size: 100%;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  color: $siteForegroundColor;
+  font-family: $sansFontFamily;;
+  font-size: $baseFontSize;
+  line-height: $baseLineHeight;
+}
+
+body {
+  @include hyphens(auto);
+  margin: 0;
+  background-color: $siteBackgroundColor;
+}
+
+a {
+  color: $siteLinkColor;
+  text-decoration: none;
+}
+
+a:visited {
+  color: $siteLinkColor;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+a:active,
+a:hover {
+  color: $siteLinkOverColor;
+  outline: 0;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  clear: both;
+  line-height: 1.3;
+}
+
+h1 {
+font-size: 30px;
+  margin: 33px 0;
+}
+
+h2 {
+  font-size: 24px;
+  margin: 25px 0;
+}
+
+h3 {
+  font-size: 22px;
+  margin: 22px 0;
+}
+
+h4 {
+  font-size: 20px;
+  margin: 25px 0;
+}
+
+h5 {
+  font-size: 18px;
+  margin: 30px 0;
+}
+
+h6 {
+  font-size: 16px;
+  margin: 36px 0;
+}
+
+address {
+  font-style: italic;
+  margin: 0 0 24px;
+}
+
+abbr, acronym {
+  border-bottom: $siteBorderWidth dotted #666;
+  cursor: help;
+}
+
+abbr[title] {
+  border-bottom: $siteBorderWidth dotted;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+dfn,
+cite,
+em,
+i {
+  font-style: italic;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+p {
+  margin: 0 0 24px;
+}
+
+code,
+kbd,
+pre,
+tt,
+var,
+samp {
+  font-family: $monoFontFamily;
+  font-size: 14px;
+  font-weight: 300;
+  @include hyphens(none);
+}
+
+pre {
+  @include block-white($blockBorderRadius);
+  margin: 20px 0;
+  overflow: auto;
+  padding: 20px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.quote-caption {
+  font-size: 14px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+blockquote,
+q {
+  @include hyphens(none);
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+blockquote {
+  padding: $blockPadding;
+  background-color: lighten($clouds, 4.5%);
+
+  @include border-radius($blockBorderRadius);
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 300;
+  min-height: 100px;
+
+  cite,
+  small {
+    @extend .quote-caption;
+  }
+  blockquote {
+    margin-right: 0;
+  }
+
+  > p:last-of-type{
+    margin-bottom: 0;
+  }
+
+  &:before {
+    @include block-awesome-icon(3em);
+    @extend .icon-quote-left:before;
+    color: #bac1c8;
+  }
+
+}
+
+small {
+  font-size: 75%;
+}
+
+big {
+  font-size: 125%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+dl {
+  margin: 0 20px;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  //margin: 0 0 20px;
+  margin: 0 1.5em 1.5em;
+}
+
+menu,
+ol,
+ul {
+  margin: 16px 0;
+  padding: 0 0 0 40px;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style: decimal;
+}
+
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none;
+}
+
+li > ul,
+li > ol {
+  margin: 0;
+}
+
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+
+  height: auto; /* Make sure images are scaled correctly. */
+  max-width: 100%; /* Adhere to container width. */
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+figure {
+  margin: 0;
+}
+
+form {
+  margin: 0;
+}
+
+/* Placeholder text color -- selectors need to be in separate to work. */
+:-webkit-input-placeholder {
+  color: $formPlaceHolderColor;
+  font-style: normal;
+}
+:-moz-placeholder {
+  color: $formPlaceHolderColor;
+}
+::-moz-placeholder {
+  color: $formPlaceHolderColor;
+}
+:-ms-input-placeholder {
+  color: $formPlaceHolderColor;
+}
+
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+  border: 0;
+  padding: 0;
+  white-space: normal;
+}
+
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  max-width: 100%;
+  vertical-align: baseline;
+  *vertical-align: middle; /* Improves appearance and consistency in all browsers */
+}
+
+button,
+input {
+  line-height: normal;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  padding: 0;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  padding-right: 2px; /* Don't cut off the webkit search cancel button */
+  width: 270px;
+}
+
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+table {
+  border-bottom: $siteBorderWidth solid $siteBorderColor;
+  border-collapse: collapse;
+  border-spacing: 0;
+  line-height: 2;
+  margin: 0 0 20px;
+  width: 100%;
+}
+
+caption,
+th,
+td {
+  font-weight: normal;
+  text-align: left;
+}
+
+caption {
+  font-size: 16px;
+  margin: 20px 0;
+}
+
+th {
+  font-weight: bold;
+}
+
+td {
+  border-top: $siteBorderWidth solid $siteBorderColor;
+  padding: 6px 10px 6px 0;
+}
+
+del {
+  color: #333;
+}
+
+ins {
+  background: #fff9c0;
+  text-decoration: none;
+}
+
+hr {
+  background-color: $siteBorderColor;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em;
+}
