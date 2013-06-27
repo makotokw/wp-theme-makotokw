@@ -15,7 +15,7 @@
 
     border: $blockBorderWidth solid $clouds;
     @include border-radius($blockBorderRadius);
-    color: lighten($siteForegroundColor, 30%);
+    color: lighten(desaturate($siteForegroundColor, 20%), 40%);
 
     .icon-chevron-right {
       padding-right: 10px;
@@ -24,7 +24,7 @@
     }
 
     a {
-      color: lighten($blueDark, 30%);
+      color: lighten(desaturate($blueDark, 10%), 20%);
       &:hover {
         color: $siteLinkOverColor;
       }

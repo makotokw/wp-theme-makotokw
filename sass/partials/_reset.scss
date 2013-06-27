@@ -197,7 +197,7 @@ q:after {
 
 blockquote {
   padding: $blockPadding;
-  background-color: lighten($clouds, 4.5%);
+  background-color: lighten(desaturate($clouds, 2%), 4%);
 
   @include border-radius($blockBorderRadius);
   font-size: 16px;

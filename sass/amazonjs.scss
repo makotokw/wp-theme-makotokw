@@ -3,7 +3,7 @@
 
 .amazonjs_item {
   @include block-white($blockBorderRadius);
-  border-color: lighten($amazonOrange, 30%);
+  border-color: lighten(desaturate($amazonOrange, 20%), 40%);
 
   .amazonjs_indicator,
   a {

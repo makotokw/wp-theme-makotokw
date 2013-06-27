@@ -31,7 +31,7 @@
   background-color: #fff;
 
   th {
-    background-color: lighten($siteBorderColor, 10%);
+    background-color: lighten(desaturate($siteBorderColor, 10%), 20%);
     background-color: rgba($siteBorderColor, .3);
   }
 

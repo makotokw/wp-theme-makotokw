@@ -6,7 +6,7 @@
   }
 
   .page-wrapper {
-    background-color: lighten($clouds, 4%);
+    background-color: lighten(desaturate($clouds, 2%), 4%);
   }
 
   .page-title {
