@@ -263,7 +263,7 @@ function makotokw_posted_on() {
 		esc_html( get_post_time( 'M jS, Y') )
 	);
 
-	printf( __( '<time class="updated" datetime="%1$s">%2$s</time>', 'makotokw' ),
+	printf( __( '<time class="updated" datetime="%1$s"></time>', 'makotokw' ),
 		esc_attr( get_the_modified_date( 'c' ) )
 	);
 }
