@@ -22,7 +22,7 @@ WordPress theme for [kwLog](http://blog.makotokw.com).
 
 ## Limitation
 
-* Tested on PHP 5.4 **ONLY** by makoto\_kw for kwLog
+* Tested on PHP 5.4 **ONLY** by makotokw for kwLog
  * Some styles are **depend on** posts on kwLog
  * **No** sidebar, **No** widgets
  * **Unsuppoted** post formats
@@ -31,7 +31,7 @@ WordPress theme for [kwLog](http://blog.makotokw.com).
 Unfortunately, I did **NOT** design for purpose that others use.
 So, please use a reference of one implemention for WordPress theme.
 
-## Instration
+## Installation
 
 ```
 cd /path/to/wordpress/wp-content/themes
