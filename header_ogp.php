@@ -26,6 +26,14 @@ define('WP_OGP_LOCALE', WP_THEME_OGP_LOCALE);
 define('WP_OGP_FB_APPID', WP_THEME_OGP_FB_APPID);
 define('WP_OGP_FB_ADMINS', WP_THEME_OGP_FB_ADMINS);
 
+// Twitter Usernames
+//define('WP_OGP_TWITTER_SITE_USERNAME', '@site_username');
+//define('WP_OGP_TWITTER_CREATOR_USERNAME', '@creator_username');
+//define('WP_OGP_TWITTER_DOMAIN', 'YourDomain.com');
+define('WP_OGP_TWITTER_SITE_USERNAME', '@makoto_kw');
+define('WP_OGP_TWITTER_CREATOR_USERNAME', '@makoto_kw');
+define('WP_OGP_TWITTER_DOMAIN', 'blog.makotokw.com');
+
 function ogp_post_description() {
 	global $post;
 	$description = null;
@@ -56,7 +64,7 @@ function ogp_post_section() {
 	if (count($categories)>0) {
 		if ($categories[0]->name !=  __('Uncategorized')) {
 			return $categories[0]->name;
-		} 
+		}
 	}
 	return false;
 }
@@ -74,46 +82,65 @@ function ogp_post_tag() {
 ?>
 <?php if( is_single() || is_page()): ?>
 <?php while(have_posts()): the_post(); ?>
-<meta property="og:title" content="<?php the_title();?>">
-<meta property="og:type" content="article" />
+<meta name="og:title" content="<?php the_title();?>" />
+<meta name="og:type" content="article" />
 <?php if ($og_image = ogp_post_image()):?>
-<meta property="og:image" content="<?php echo $og_image ?>" />
+<meta name="og:image" content="<?php echo $og_image ?>" />
 <?php else:?>
-<meta property="og:image" content="<?php echo WP_OGP_DEFAULT_IMG ?>" />
+<meta name="og:image" content="<?php echo WP_OGP_DEFAULT_IMG ?>" />
 <?php endif ?>
-<meta property="og:url" content="<?php echo esc_url(get_permalink()); ?>" />
+<meta name="og:url" content="<?php echo esc_url(get_permalink()); ?>" />
 <?php if ($og_description = ogp_post_description()):?>
-<meta property="og:description" content="<?php echo esc_attr($og_description) ?>" />
+<meta name="og:description" content="<?php echo esc_attr($og_description) ?>" />
 <?php else:?>
-<meta property="og:description" content="<?php bloginfo('description'); ?>" />
+<meta name="og:description" content="<?php bloginfo('description'); ?>" />
 <?php endif ?>
-<!-- <meta property="article:author" content="<?php echo get_the_author(); ?>" /> -->
-<meta property="article:published_time" content="<?php echo get_post_time('c') ?>" />
-<meta property="article:modified_time" content="<?php echo get_the_modified_time('c') ?>" />
+<!-- <meta name="article:author" content="<?php echo get_the_author(); ?>" /> -->
+<meta name="article:published_time" content="<?php echo get_post_time('c') ?>" />
+<meta name="article:modified_time" content="<?php echo get_the_modified_time('c') ?>" />
 <?php if ($og_section = ogp_post_section()):?>
-<meta property="article:section" content="<?php echo esc_attr($og_section) ?>" />
+<meta name="article:section" content="<?php echo esc_attr($og_section) ?>" />
 <?php endif ?>
 <?php if ($og_tag = ogp_post_tag()):?>
-<meta property="article:tag" content="<?php echo esc_attr($og_tag) ?>" />
+<meta name="article:tag" content="<?php echo esc_attr($og_tag) ?>" />
+<?php endif ?>
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="<?php echo mb_strimwidth(get_the_title(), 0, 70, '...'); ?>" />
+<?php if ($og_description):?>
+<meta name="twitter:description" content="<?php echo mb_strimwidth(esc_attr($og_description), 0, 200); ?>" />
+<?php endif; ?>
+<?php if ($og_image):?>
+<meta name="twitter:image:src" content="<?php echo $og_image ?>" />
+<?php else: ?>
+<meta name="twitter:image:src" content="<?php echo WP_OGP_DEFAULT_IMG ?>" />
+<?php endif; ?>
+<?php if (defined('WP_OGP_TWITTER_SITE_USERNAME')): ?>
+<meta name="twitter:site" content="<?php echo WP_OGP_TWITTER_SITE_USERNAME; ?>" />
+<?php endif ?>
+<?php if (defined('WP_OGP_TWITTER_CREATOR_USERNAME')): ?>
+<meta name="twitter:creator" content="<?php echo WP_OGP_TWITTER_CREATOR_USERNAME; ?>" />
+<?php endif ?>
+<?php if (defined('WP_OGP_TWITTER_DOMAIN')): ?>
+<meta name="twitter:domain" content="<?php echo WP_OGP_TWITTER_DOMAIN; ?>" />
 <?php endif ?>
 <?php endwhile; ?>
 <?php else: ?>
-<meta property="og:title" content="<?php wp_title('|', true, 'right'); ?>" />
+<meta name="og:title" content="<?php wp_title('|', true, 'right'); ?>" />
 <?php if (is_front_page() || is_404()): ?>
-<meta property="og:type" content="blog" />
-<meta property="og:url" content="<?php echo get_bloginfo('url')?>" />
+<meta name="og:type" content="blog" />
+<meta name="og:url" content="<?php echo get_bloginfo('url')?>" />
 <?php else: ?>
-<meta property="og:type" content="article" />
-<meta property="og:url" content="<?php echo get_pagenum_link()?>" />
+<meta name="og:type" content="article" />
+<meta name="og:url" content="<?php echo get_pagenum_link()?>" />
 <?php endif ?>
-<meta property="og:image" content="<?php echo WP_OGP_DEFAULT_IMG?>" />
-<meta property="og:description" content="<?php bloginfo('description'); ?>" />
+<meta name="og:image" content="<?php echo WP_OGP_DEFAULT_IMG?>" />
+<meta name="og:description" content="<?php bloginfo('description'); ?>" />
 <?php endif ?>
-<meta property="og:locale" content="<?php echo WP_OGP_LOCALE?>" />
-<meta property="og:site_name" content="<?php bloginfo('name'); ?>" />
+<meta name="og:locale" content="<?php echo WP_OGP_LOCALE?>" />
+<meta name="og:site_name" content="<?php bloginfo('name'); ?>" />
 <?php if (defined('WP_OGP_FB_APPID')): ?>
-<meta property="fb:app_id" content="<?php echo WP_OGP_FB_APPID; ?>">
+<meta name="fb:app_id" content="<?php echo WP_OGP_FB_APPID; ?>" />
 <?php endif ?>
 <?php if (defined('WP_OGP_FB_ADMINS')): ?>
-<meta property="fb:admins" content="<?php echo WP_OGP_FB_ADMINS; ?>">
+<meta name="fb:admins" content="<?php echo WP_OGP_FB_ADMINS; ?>" />
 <?php endif ?>
