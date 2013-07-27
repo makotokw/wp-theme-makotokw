@@ -1,13 +1,10 @@
 
 .site-header {
   margin: 0 auto;
+  padding: 20px 10px 10px 10px;
   max-width: $siteMainMaxWidth;
   width: 100%;
-
-  .hgroup {
-    position: relative;
-    padding: 20px 0;
-  }
+  @include clearfix;
 
   a {
     color: $siteForegroundColor;
@@ -17,48 +14,68 @@
     }
   }
 
-  .site-title,
-  .site-description,
-  .searchform {
-    margin: 0;
-  }
+  .site-info {
+    float: left;
+    width: auto;
 
-  .searchform {
-    position: absolute;
-    top: 30px;
-    right: 0px;
-
-    input[type="search"] {
-      background: url(images/search.png) no-repeat 5px 9px;
-      padding: 8px 2px 8px 31px;
-      width: 150px;
-      border: $siteBorderWidth solid $clouds;
-      @include border-radius($blockBorderRadius);
-      @include transition(width 400ms ease, background 400ms ease);
-
-      &:focus {
-        width: 230px;
-        cursor: text;
-        outline: 0;
-        border-color: $silver;
+    .site-title {
+      font-family: 'Slackey';
+      margin: 0;
+      //letter-spacing: -2px;
+      font-size: 40px;
+      //font-size: 52px;
+      //font-weight: bold;
+      &:hover {
+        color: $siteLinkColor;
       }
     }
-  }
-
-  .site-title {
-    letter-spacing: -2px;
-    font-size: 40px;
-    font-weight: bold;
-
-    &:hover {
-      color: $siteLinkColor;
+    .site-description {
+      margin: 0;
+      color: $silver;
+      font-size: 12px;
+      font-style: italic;
     }
   }
 
-  .site-description {
-    color: $silver;
-    font-size: 12px;
-    font-style: italic;
+  .sub-nav {
+    float: right;
+    padding-top: 10px;
+
+    .socials {
+      float: left;
+      margin-right: 15px;
+      line-height: 40px;
+
+      a {
+        color: $silver;
+        &:hover {
+          color: $siteLinkOverColor;
+        }
+      }
+    }
+
+    .searchform {
+      float: left;
+      input[type="search"] {
+        background: url(images/search.png) no-repeat 5px 9px;
+        padding: 8px 2px 8px 31px;
+        width: 150px;
+        border: $siteBorderWidth solid $clouds;
+        @include border-radius($blockBorderRadius);
+        @include transition(width 400ms ease, background 400ms ease);
+        &:focus {
+          cursor: text;
+          outline: 0;
+          border-color: $silver;
+        }
+      }
+    }
+
   }
+
+
+
+
+
 }
 

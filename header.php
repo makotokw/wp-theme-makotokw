@@ -39,9 +39,34 @@
 <div id="page" class="hfeed site">
 	<?php do_action('before'); ?>
 	<header id="masthead" class="site-header" role="banner">
-		<div class="hgroup">
+		<div class="site-info">
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+		</div>
+
+		<div class="sub-nav">
+			<div class="socials">
+				<a href="http://twitter.com/<?php echo WP_THEME_AUTHOR_TWITTER?>" title="Twitter">
+					<span class="icon-stack">
+						<i class="icon-circle icon-stack-base"></i>
+						<i class="icon-twitter icon-light"></i></a>
+					</span>
+				</a>
+				<a href="https://github.com/<?php echo WP_THEME_AUTHOR_GITHUB?>" title="GitHub">
+					<span class="icon-stack">
+						<i class="icon-circle icon-stack-base"></i>
+						<i class="icon-github-alt icon-light"></i></a>
+					</span>
+
+				<a href="<?php bloginfo('atom_url'); ?>" title="RSS">
+					<span class="icon-stack">
+						<i class="icon-circle icon-stack-base"></i>
+						<i class="icon-rss icon-light"></i></a>
+				</span>
+
+
+				</a>
+			</div>
 			<?php get_search_form(); ?>
 		</div>
 	</header>

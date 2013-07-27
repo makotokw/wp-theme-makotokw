@@ -19,16 +19,22 @@
   }
 }
 
-@media (max-width: $desktopMaxWidth) {
+// Desktop devices
+@media (min-width: $desktopMaxWidth) {
 
   .site-header {
-    .hgroup {
-      padding-left: 20px;
-    }
     .searchform {
-      right: 20px;
+      input[type="search"] {
+        &:focus {
+          width: 230px;
+        }
+      }
     }
   }
+}
+
+// Unless desktop
+@media (max-width: $desktopMaxWidth) {
 
   .page-header {
     padding: 10px 20px;
@@ -65,7 +71,7 @@
   }
 }
 
-/* Collapse oversized image and pulled images after iPad breakpoint. */
+// Collapse oversized image and pulled images after iPad breakpoint.
 @media (max-width: $ipadMaxWidth) {
   .entry-content img.alignleft,
   .entry-content .wp-caption.alignleft {
@@ -77,11 +83,12 @@
   }
 }
 
+// Mobile devices
 @media (max-width: $tabletMaxWidth) {
 
   .site-header {
     .site-title {
-      font-size: 30px;
+      font-size: 24px;
     }
   }
 
@@ -93,7 +100,6 @@
     .comment-content {
       width: 100%;
     }
-
   }
 
   .error404 {
@@ -106,22 +112,20 @@
   }
 }
 
-/* Mobile devices */
+// Mobile devices
 @media (max-width: $mobileMaxWidth) {
 
   .site-header {
-    .hgroup {
-      padding: 10px 20px;
+    .site-info {
+      float: none;
     }
-    .searchform {
-      position: static;
-      margin-top: 10px;
-
-      input[type="search"] {
-        width: 98%;
-        &:focus {
-          width: 98%;
-        }
+    .sub-nav {
+      float: none;
+      .social {
+        float: left;
+      }
+      .searchform {
+        float: right;
       }
     }
   }
@@ -141,7 +145,7 @@
   }
 }
 
-/* Retina-specific styles. */
+// Retina-specific styles.
 //@media print,
 //(-o-min-device-pixel-ratio: 5/4),
 //(-webkit-min-device-pixel-ratio: 1.25),

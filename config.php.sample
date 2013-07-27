@@ -4,6 +4,8 @@
  */
 define('WP_THEME_DEBUG', ARCADIA_WP_DEBUG === true);
 define('WP_THEME_GOOGLE_ANALYTICS_ACCOUNT', 'UA-3140223-1');
+define('WP_THEME_AUTHOR_TWITTER', 'username');
+define('WP_THEME_AUTHOR_GITHUB', 'username');
 define('WP_THEME_MEMO_POST_ID', 1716);
 define('WP_THEME_OGP', true);
 define('WP_THEME_OGP_LOCALE', 'ja_JP');

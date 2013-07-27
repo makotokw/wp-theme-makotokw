@@ -102,7 +102,7 @@ function makotokw_scripts()
 {
 	global $wp_styles;
 
-	wp_enqueue_style('makotokw-style', get_stylesheet_uri());
+	wp_enqueue_style('makotokw-style', get_stylesheet_uri(), array(), '20130727');
 	wp_enqueue_style('makotokw-fonts', esc_url_raw( makotokw_fonts_url() ), array(), null );
 
 	// Loads the Internet Explorer specific stylesheet.
@@ -129,9 +129,10 @@ add_action('wp_enqueue_scripts', 'makotokw_scripts');
 
 function makotokw_fonts_url() {
 
-	$font_families = array();
-	$font_families[] = 'Lato:300,400,700,300italic,400italic,700italic';
-
+	$font_families = array(
+		'Lato:300,400,700,300italic,400italic,700italic',
+		'Slackey',
+	);
 	$query_args = array(
 		'family' => implode( '|', $font_families ),
 		'subset' => 'latin,latin-ext',
