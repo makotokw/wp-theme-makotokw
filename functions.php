@@ -64,6 +64,13 @@ if (!function_exists('makotokw_setup')) :
 			'portfolio' => __('Portfolio Menu', 'makotokw'),
 		));
 
+		remove_action('wp_head', 'feed_links', 2);
+		remove_action('wp_head', 'feed_links_extra', 3);
+		remove_action('wp_head', 'rsd_link');
+		remove_action('wp_head', 'wlwmanifest_link');
+		remove_action('wp_head', 'wp_generator');
+		remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
+
 		/*
 		 * Disable Jetpack OGP
 		 */
@@ -142,6 +149,16 @@ function makotokw_fonts_url() {
 	$fonts_url = add_query_arg( $query_args, $protocol.'://fonts.googleapis.com/css' );
 
 	return $fonts_url;
+}
+
+function makotokw_feed_link() {
+
+	global $feedburner_settings;
+
+	if (isset($feedburner_settings)) {
+		return trim($feedburner_settings['feedburner_url']);
+	}
+	return get_feed_link();
 }
 
 function makotokw_quicktags()

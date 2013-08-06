@@ -26,6 +26,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/images/touch-icon-72.png">
 <link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/images/touch-icon-57.png">
 <link rel="profile" href="http://gmpg.org/xfn/11"/>
+<link rel="alternate" type="<?php echo feed_content_type()?>" title="<?php echo esc_attr(get_bloginfo('name'))?>" href="<?php echo makotokw_feed_link() ?>" />
 <?php if (WP_THEME_OGP === true): ?><?php include('header_ogp.php');?><?php endif ?>
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>"/>
 <!--[if lt IE 9]>
@@ -58,7 +59,7 @@
 						<i class="icon-github-alt icon-light"></i></a>
 					</span>
 
-				<a href="<?php bloginfo('atom_url'); ?>" title="RSS">
+				<a href="<?php echo makotokw_feed_link() ?>" title="RSS">
 					<span class="icon-stack">
 						<i class="icon-circle icon-stack-base"></i>
 						<i class="icon-rss icon-light"></i></a>
