@@ -16,6 +16,7 @@ WordPress theme for [kwLog](http://blog.makotokw.com).
 * [AmazonJS](http://wordpress.org/extend/plugins/amazonjs/) Plugin
 * [GitHub Flavored Markdown for WordPress](https://github.com/makotokw/wp-gfm) Plugin
 * [PukiWiki for WordPress](http://wordpress.org/extend/plugins/pukiwiki-for-wordpress/) Plugin
+* [Twitter Card](https://dev.twitter.com/docs/cards)
 * [Facebook Open Graph](http://developers.facebook.com/docs/opengraph/) Protocol
 * [Facebook Recommendations Bar](https://developers.facebook.com/docs/reference/plugins/recommendationsbar/)
 * [Zenback](http://zenback.jp/) Widget
