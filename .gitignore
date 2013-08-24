@@ -1,5 +1,11 @@
 /.*/
 /config.php
-/*.css
-.DS_Store
 
+### Node ###
+node_modules
+
+### Bower ###
+bower_components
+
+### OSX ###
+.DS_Store

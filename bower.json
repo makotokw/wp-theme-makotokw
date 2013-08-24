@@ -1,0 +1,28 @@
+{
+  "name": "wp-theme-makotokw",
+  "homepage": "https://github.com/makotokw/wp-theme-makotokw",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "google-code-prettify": "~1.0.0",
+    "font-awesome": "~3.2.1",
+    "html5shiv": "~3.6.2"
+  },
+  "exportsOverride": {
+    "html5shiv": {
+      "js": "dist/html5shiv.js"
+    },
+    "google-code-prettify": {
+      "js": "src/prettify.js"
+    },
+    "font-awesome": {
+      "scss": "scss/_*.scss",
+      "fonts": "font/*.*"
+    }
+  }
+}

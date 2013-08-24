@@ -5,10 +5,14 @@ WordPress theme for [kwLog](http://blog.makotokw.com).
 
  * Created by [_s](http://underscores.me)
  * Inspired [Twenty Thirteen](http://twentythirteendemo.wordpress.com/), [Twenty Eleven](http://wordpress.org/extend/themes/twentyeleven) and [Octopress](http://octopress.org/)
- * Developed CSS by using [Compass](http://compass-style.org/)
  * Include [Font Awesome](http://fortawesome.github.io/Font-Awesome/) Icons
  * Include [Genericons](http://genericons.com/)
  * Include [google-code-prettify](http://code.google.com/p/google-code-prettify/)
+
+ * Install some scripts by [Bower](http://bower.io/)
+ * Developed CSS by using [Compass](http://compass-style.org/)
+ * Build scripts by [Grunt](http://gruntjs.com/)
+
 
 ## Work With 
 
@@ -26,11 +30,11 @@ WordPress theme for [kwLog](http://blog.makotokw.com).
 * Tested on PHP 5.4 **ONLY** by makotokw for kwLog
  * Some styles are **depend on** posts on kwLog
  * **No** sidebar, **No** widgets
- * **Unsuppoted** post formats
+ * **Unsupported** post formats
  * **Not** implement for Comment Form (I use Jetpack Comment)
 
 Unfortunately, I did **NOT** design for purpose that others use.
-So, please use a reference of one implemention for WordPress theme.
+So, please use a reference of one implementation for WordPress theme.
 
 ## Installation
 
@@ -41,11 +45,23 @@ cd makotokw2013
 cp -p config.php.sample config.php
 ```
 
+## Development
+
+### Setup
+
+```
+cd /path/to/wordpress/wp-content/themes/makotokw2013
+gem install compass
+npm install -g grunt-cli bower
+npm install
+bower install
+grunt bower:install
+```
 ## Build
 
 ```
 cd /path/to/wordpress/wp-content/themes/makotokw2013
-compass compile
+grunt
 ```
 
 ## License

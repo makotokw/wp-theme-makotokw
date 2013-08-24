@@ -14,13 +14,15 @@
 @import "mixins";
 
 @import "partials/reset";
-@import "font-awesome/variables";
-@import "font-awesome/mixins";
-@import "font-awesome/path";
-@import "font-awesome/core";
-//@import "font-awesome/bootstrap";
-@import "font-awesome/extras";
-@import "font-awesome/icons";
+
+// font-awesome
+@import "../components/scss/font-awesome/variables";
+@import "../components/scss/font-awesome/mixins";
+@import "../components/scss/font-awesome/path";
+@import "../components/scss/font-awesome/core";
+@import "../components/scss/font-awesome/extras";
+@import "../components/scss/font-awesome/icons";
+
 @import "partials/genericons";
 @import "partials/global";
 @import "partials/form";

@@ -30,7 +30,7 @@
 <?php if (WP_THEME_OGP === true): ?><?php include('header_ogp.php');?><?php endif ?>
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>"/>
 <!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/components/js/html5shiv/html5shiv.js" type="text/javascript"></script>
 <![endif]-->
 <?php wp_head(); ?>
 <?php makotokw_google_analytics(); ?>
