@@ -101,25 +101,25 @@ function makotokw_breadcrumbs()
 		echo '<a href="' . esc_url(home_url('/')) . '"><i class="icon-home icon-large"></i></a><i class="icon-chevron-right"></i>';
 
 		if (is_category()) {
-			echo '<a href="/categories/" itemprop="url"><span itemprop="title">Categories</span></a><i class="icon-chevron-right"></i>';
+			echo '<a href="/categories/" itemprop="url"><span itemprop="title">' . __( 'Categories', 'makotokw' ) . '</span></a><i class="icon-chevron-right"></i>';
 			$term = $wp_query->get_queried_object();
 			if ($term->parent > 0) {
 				echo makotokw_breadcrumbs_category_parents($term->parent, '<i class="icon-chevron-right"></i>');
 			}
 			echo '<span itemprop="title">'.single_cat_title('', false).'</span>';
 		} else if (is_tag()) {
-			echo '<a href="/tags/" itemprop="url"><span itemprop="title">Tags</a><i class="icon-chevron-right"></i>';
+			echo '<a href="/tags/" itemprop="url"><span itemprop="title">' . __( 'Tags', 'makotokw' ) . '</a><i class="icon-chevron-right"></i>';
 			echo single_tag_title('', false);
 		} elseif (is_archive()) {
-			echo "  Archives";
+			echo "  "  . __( 'Archives', 'makotokw' );
 		} elseif (is_search()) {
-			echo "  Search Results";
+			echo "  " . __( 'Search Results', 'makotokw' );
 		} elseif (is_404()) {
-			echo "  404 Not Found";
+			echo "  " . __( '404 Not Found', 'makotokw' );
 		} elseif (is_single()) {
 			$category = get_the_category();
 			if (is_array($category) && count($category) > 0) {
-				echo '<a href="/categories/" itemprop="url"><span itemprop="title">Categories</span></a><i class="icon-chevron-right"></i>';
+				echo '<a href="/categories/" itemprop="url"><span itemprop="title">' . __( 'Categories', 'makotokw' ) . '</span></a><i class="icon-chevron-right"></i>';
 				$category_id = get_cat_ID($category[0]->cat_name);
 				echo makotokw_breadcrumbs_category_parents($category_id, '<i class="icon-chevron-right"></i>');
 			}

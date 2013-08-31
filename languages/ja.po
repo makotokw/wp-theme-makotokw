@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-28 18:45+0900\n"
+"Report-Msgid-Bugs-To: makoto.kw@gmail.com\n"
+"POT-Creation-Date: 2013-09-01 04:49+0900\n"
 "PO-Revision-Date: 2013-04-28 18:46+0900\n"
 "Last-Translator: Makoto Kawasaki <makoto.kw@gmail.com>\n"
 "Language-Team: Japanese\n"
@@ -18,80 +18,60 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: 404.php:14
-msgid "Not found"
+msgid "Not Found"
 msgstr ""
 
-#: 404.php:20
+#: 404.php:19
 msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr "ここには見つからないようです。検索をお試しください。"
 
 #: archive.php:21
 #, php-format
 msgid "Category Archives: %s"
-msgstr ""
+msgstr "カテゴリアーカイブ: %s"
 
 #: archive.php:24
 #, php-format
 msgid "Tag Archives: %s"
-msgstr ""
+msgstr "タグアーカイブ: %s"
 
-#: archive.php:31
-#, php-format
-msgid "Author Archives: %s"
-msgstr ""
-
-#: archive.php:39
+#: archive.php:27
 #, php-format
 msgid "Daily Archives: %s"
-msgstr ""
+msgstr "日別アーカイブ: %s"
 
-#: archive.php:42
+#: archive.php:30
 #, php-format
 msgid "Monthly Archives: %s"
-msgstr ""
+msgstr "月別アーカイブ: %s"
 
-#: archive.php:45
+#: archive.php:33
 #, php-format
 msgid "Yearly Archives: %s"
-msgstr ""
+msgstr "年別アーカイブ: %s"
 
-#: archive.php:48
-msgid "Asides"
-msgstr ""
+#: archive.php:36
+#, php-format
+msgid "Blog Archives: %s"
+msgstr "ブログアーカイブ: %s"
 
-#: archive.php:51
-msgid "Images"
-msgstr ""
-
-#: archive.php:54
-msgid "Videos"
-msgstr ""
-
-#: archive.php:57
-msgid "Quotes"
-msgstr ""
-
-#: archive.php:60
-msgid "Links"
-msgstr ""
-
-#: archive.php:63
+#: archive.php:39 inc/template-tags.php:114
 msgid "Archives"
-msgstr ""
+msgstr "アーカイブ"
 
-#: comments.php:48 comments.php:75
+#: comments.php:46
 msgid "Comment navigation"
 msgstr "コメントナビゲーション"
 
-#: comments.php:51 comments.php:78
+#: comments.php:49
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: comments.php:52 comments.php:79
+#: comments.php:50
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: comments.php:90
+#: comments.php:56
 msgid "Comments are closed."
 msgstr "コメントは停止中です。"
 
@@ -99,13 +79,17 @@ msgstr "コメントは停止中です。"
 msgid "Pages:"
 msgstr ""
 
-#: content-page.php:23 content-single.php:56 content.php:59
-#: inc/template-tags.php:97 inc/template-tags.php:118
+#: content-page.php:26 content-single.php:59 content.php:62
+#: inc/template-tags.php:233
 msgid "Edit"
 msgstr "編集"
 
-#: content-single.php:26 content-single.php:29 content.php:36 content.php:46
-msgid ", "
+#: content-single.php:26 content.php:36
+msgid " <i class=\"icon-folder-close\"></i> "
+msgstr ""
+
+#: content-single.php:29
+msgid " <i class=\"icon-tag\"></i> "
 msgstr ""
 
 #: content-single.php:34
@@ -133,26 +117,34 @@ msgstr ""
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "続きを読む <span class=\"meta-nav\">&rarr;</span>"
 
+#: content.php:46
+msgid " <i class=\"icon-tag\"></i>"
+msgstr ""
+
 #: content.php:50
 #, php-format
 msgid "<i class=\"icon-tag\"></i> %1$s"
 msgstr ""
 
-#: content.php:56
+#: content.php:59
 msgid "Leave a comment"
 msgstr "コメントを残す"
 
-#: content.php:56
+#: content.php:59
 msgid "1 Comment"
 msgstr ""
 
-#: content.php:56
+#: content.php:59
 msgid "% Comments"
 msgstr ""
 
-#: footer.php:30
+#: footer.php:31
 #, php-format
 msgid "Powered by %s"
+msgstr ""
+
+#: footer.php:32
+msgid "Semantic Personal Publishing Platform"
 msgstr ""
 
 #: functions.php:63
@@ -163,11 +155,11 @@ msgstr ""
 msgid "Portfolio Menu"
 msgstr ""
 
-#: functions.php:76
+#: functions.php:94
 msgid "Sidebar"
 msgstr ""
 
-#: header_ogp.php:57
+#: header_ogp.php:65
 msgid "Uncategorized"
 msgstr ""
 
@@ -175,19 +167,23 @@ msgstr ""
 msgid "Nothing Found"
 msgstr ""
 
-#: no-results.php:19
+#: no-results.php:18
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr "最初の投稿をする準備ができましたか ? <a href=\"%1$s\">ここからスタート</a>してください。"
+msgstr ""
+"最初の投稿をする準備ができましたか ? <a href=\"%1$s\">ここからスタート</a>し"
+"てください。"
 
-#: no-results.php:21
+#: no-results.php:20
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
-msgstr "ご指定の検索条件に合う投稿がありませんでした。他のキーワードでもう一度検索してみてください。"
+msgstr ""
+"ご指定の検索条件に合う投稿がありませんでした。他のキーワードでもう一度検索し"
+"てみてください。"
 
-#: no-results.php:24
+#: no-results.php:23
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
@@ -204,27 +200,57 @@ msgid "Page %s"
 msgstr ""
 
 #: inc/template-tags.php:34
+#, fuzzy
 msgid "Post navigation"
-msgstr ""
+msgstr "コメントナビゲーション"
 
 #: inc/template-tags.php:48
+#, fuzzy
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr ""
+msgstr "続きを読む <span class=\"meta-nav\">&rarr;</span>"
 
 #: inc/template-tags.php:52
+#, fuzzy
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "続きを読む <span class=\"meta-nav\">&rarr;</span>"
+
+#: inc/template-tags.php:104 inc/template-tags.php:122
+msgid "Categories"
+msgstr "カテゴリ"
+
+#: inc/template-tags.php:111
+msgid "Tags"
+msgstr "タグ"
+
+#: inc/template-tags.php:116
+#, fuzzy
+msgid "Search Results"
+msgstr "検索結果: %s"
+
+#: inc/template-tags.php:118
+msgid "404 Not Found"
 msgstr ""
 
-#: inc/template-tags.php:115
+#: inc/template-tags.php:160
 #, php-format
+msgid "View all posts in %s"
+msgstr ""
+
+#: inc/template-tags.php:230
+#, fuzzy, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s %2$"
 
-#: inc/template-tags.php:121 inc/template-tags.php:125
+#: inc/template-tags.php:237
 msgid "Your comment is awaiting moderation."
 msgstr "コメントは承認待ちです。"
 
-#: inc/template-tags.php:154
+#: inc/template-tags.php:261
 #, php-format
-msgid "<time class=\"entry-date\" datetime=\"%1$s\">%2$s</time></a>"
+msgid "<time class=\"published\" datetime=\"%1$s\">%2$s</time>"
+msgstr ""
+
+#: inc/template-tags.php:266
+#, php-format
+msgid "<time class=\"updated\" datetime=\"%1$s\"></time>"
 msgstr ""
