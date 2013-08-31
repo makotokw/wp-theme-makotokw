@@ -8,11 +8,9 @@ WordPress theme for [kwLog](http://blog.makotokw.com).
  * Include [Font Awesome](http://fortawesome.github.io/Font-Awesome/) Icons
  * Include [Genericons](http://genericons.com/)
  * Include [google-code-prettify](http://code.google.com/p/google-code-prettify/)
-
  * Install some scripts by [Bower](http://bower.io/)
  * Developed CSS by using [Compass](http://compass-style.org/)
  * Build scripts by [Grunt](http://gruntjs.com/)
-
 
 ## Work With 
 
@@ -57,6 +55,7 @@ npm install
 bower install
 grunt bower:install
 ```
+
 ## Build
 
 ```
