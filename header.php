@@ -50,22 +50,20 @@
 				<a href="http://twitter.com/<?php echo WP_THEME_AUTHOR_TWITTER?>" title="Twitter">
 					<span class="icon-stack">
 						<i class="icon-circle icon-stack-base"></i>
-						<i class="icon-twitter icon-light"></i></a>
+						<i class="icon-twitter icon-light"></i>
 					</span>
 				</a>
 				<a href="https://github.com/<?php echo WP_THEME_AUTHOR_GITHUB?>" title="GitHub">
 					<span class="icon-stack">
 						<i class="icon-circle icon-stack-base"></i>
-						<i class="icon-github-alt icon-light"></i></a>
+						<i class="icon-github-alt icon-light"></i>
 					</span>
-
+				</a>
 				<a href="<?php echo makotokw_feed_link() ?>" title="RSS">
 					<span class="icon-stack">
 						<i class="icon-circle icon-stack-base"></i>
-						<i class="icon-rss icon-light"></i></a>
-				</span>
-
-
+						<i class="icon-rss icon-light"></i>
+					</span>
 				</a>
 			</div>
 			<?php get_search_form(); ?>
