@@ -58,7 +58,10 @@
 
 		<?php edit_post_link( __( 'Edit', 'makotokw' ), '<i class="icon-pencil"></i> ', '' ); ?>
 
-		<?php makotokw_portfolio_posts(array('post_type'=>'page')); ?>
+		<?php makotokw_portfolio_note(); ?>
+
+		<?php makotokw_related_posts(); ?>
+
 
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->

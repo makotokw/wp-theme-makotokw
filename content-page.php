@@ -24,7 +24,7 @@
 	<footer class="entry-meta">
 		<?php printf( '<span class="author vcard"><span class="fn">%1$s</span></span>', get_the_author() ); ?>
 		<?php edit_post_link( __( 'Edit', 'makotokw' ), '<i class="icon-pencil"></i> ', '' ); ?>
-		<?php makotokw_portfolio_posts(); ?>
+		<?php makotokw_related_posts(); ?>
 	</footer>
 
 </article><!-- #post-## -->

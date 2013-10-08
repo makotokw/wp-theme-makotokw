@@ -37,10 +37,18 @@
 .note-ins {
   @extend .note;
   color: $grayDark;
-  border-color: darken(#fff9c0,0%);
+  border-color: darken(#fff9c0, 10%);
   background-color: #fff9c0;
   &:before {
     @extend .icon-comment:before;
+  }
+}
+
+.note-portfolio {
+  @extend .note;
+  border-color: $silver;
+  &:before {
+    @extend .icon-file:before;
   }
 }
 

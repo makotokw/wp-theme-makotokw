@@ -2483,7 +2483,7 @@ a .icon-rotate-90:before, a .icon-rotate-180:before, a .icon-rotate-270:before, 
 }
 
 /* line 336, components/scss/font-awesome/_icons.scss */
-.icon-file:before {
+.icon-file:before, .note-portfolio:before {
   content: "\f15b";
 }
 
@@ -3081,7 +3081,7 @@ a .icon-rotate-90:before, a .icon-rotate-180:before, a .icon-rotate-270:before, 
 }
 
 /* line 9, sass/partials/_global.scss */
-.block-content, .note, .note-link, .note-comment, .note-ins, .enclosure, .enclosure-evernote, .enclosure-qiita, .enclosure-github, .entry-content .syntaxhighlighter,
+.block-content, .note, .note-link, .note-comment, .note-ins, .note-portfolio, .enclosure, .enclosure-evernote, .enclosure-qiita, .enclosure-github, .entry-content .syntaxhighlighter,
 .entry-content .prettyprint,
 .page-content .syntaxhighlighter,
 .page-content .prettyprint,
@@ -3653,50 +3653,50 @@ input[type="color"]:focus,
   word-wrap: break-word;
 }
 
-/* line 15, sass/partials/_content.scss */
+/* line 14, sass/partials/_content.scss */
 .site-content .page-header {
   margin: 0 auto;
   max-width: 940px;
 }
-/* line 19, sass/partials/_content.scss */
+/* line 18, sass/partials/_content.scss */
 .site-content .page-header .page-title {
   margin-bottom: 10px;
   color: #2c3e50;
 }
-/* line 25, sass/partials/_content.scss */
+/* line 23, sass/partials/_content.scss */
 .site-content .hentry:first-of-type {
   padding-top: 20px;
 }
 
-/* line 31, sass/partials/_content.scss */
+/* line 29, sass/partials/_content.scss */
 .single .hentry {
   padding-bottom: 10px;
 }
 
-/* line 36, sass/partials/_content.scss */
+/* line 34, sass/partials/_content.scss */
 .entry-header {
   margin-bottom: 1.5em;
 }
 
-/* line 40, sass/partials/_content.scss */
+/* line 38, sass/partials/_content.scss */
 .entry-header {
   position: relative;
   padding-top: 2em;
 }
-/* line 44, sass/partials/_content.scss */
+/* line 42, sass/partials/_content.scss */
 .entry-header .entry-title {
   color: #2c3e50;
   margin: 0;
 }
-/* line 47, sass/partials/_content.scss */
+/* line 45, sass/partials/_content.scss */
 .entry-header .entry-title a {
   color: #2c3e50;
 }
-/* line 49, sass/partials/_content.scss */
+/* line 47, sass/partials/_content.scss */
 .entry-header .entry-title a:hover {
   color: #3ab1d5;
 }
-/* line 55, sass/partials/_content.scss */
+/* line 53, sass/partials/_content.scss */
 .entry-header .published {
   text-transform: uppercase;
   color: #bdc3c7;
@@ -3704,31 +3704,31 @@ input[type="color"]:focus,
   top: 0;
 }
 
-/* line 63, sass/partials/_content.scss */
+/* line 61, sass/partials/_content.scss */
 .entry-meta {
   margin: 10px 0 0 0;
 }
-/* line 65, sass/partials/_content.scss */
+/* line 63, sass/partials/_content.scss */
 .entry-meta i {
   margin-left: .5em;
   color: #2ba6cb;
 }
-/* line 70, sass/partials/_content.scss */
+/* line 68, sass/partials/_content.scss */
 .entry-meta .portfolio-posts-area .entry-date {
   margin: 0 4px;
 }
-/* line 75, sass/partials/_content.scss */
+/* line 73, sass/partials/_content.scss */
 .entry-meta .author,
 .entry-meta .date {
   display: none;
 }
 
-/* line 80, sass/partials/_content.scss */
+/* line 78, sass/partials/_content.scss */
 .entry-content {
   line-height: 2;
 }
 
-/* line 85, sass/partials/_content.scss */
+/* line 83, sass/partials/_content.scss */
 .entry-content,
 .entry-meta {
   *zoom: 1;
@@ -3746,28 +3746,28 @@ input[type="color"]:focus,
   clear: both;
 }
 
-/* line 90, sass/partials/_content.scss */
+/* line 88, sass/partials/_content.scss */
 .page .entry-header {
   max-width: 980px;
   margin: 0 auto;
   padding: 10px 0;
   width: 100%;
 }
-/* line 98, sass/partials/_content.scss */
+/* line 96, sass/partials/_content.scss */
 .page .entry-content,
 .page .entry-meta {
   margin: 0 auto;
   max-width: 940px;
   width: 100%;
 }
-/* line 104, sass/partials/_content.scss */
+/* line 102, sass/partials/_content.scss */
 .page .entry-title {
   margin: 5px 0;
 }
 
 /* =Media
 ----------------------------------------------- */
-/* line 118, sass/partials/_content.scss */
+/* line 114, sass/partials/_content.scss */
 .entry-content img,
 .entry-summary img,
 .comment-content img,
@@ -3779,7 +3779,7 @@ input[type="color"]:focus,
   max-width: 100%;
 }
 
-/* line 128, sass/partials/_content.scss */
+/* line 124, sass/partials/_content.scss */
 .entry-content img,
 .entry-summary img,
 .comment-content img[height],
@@ -3791,7 +3791,7 @@ img[class*="attachment-"] {
   border: 2px solid #ecf0f1;
 }
 
-/* line 136, sass/partials/_content.scss */
+/* line 132, sass/partials/_content.scss */
 img.size-full,
 img.size-large,
 img.wp-post-image {
@@ -3799,11 +3799,38 @@ img.wp-post-image {
   max-width: 100%;
 }
 
-/* line 143, sass/partials/_content.scss */
+/* line 139, sass/partials/_content.scss */
 embed,
 iframe,
 object {
   max-width: 100%;
+}
+
+/* =Related Posts
+----------------------------------------------- */
+/* line 148, sass/partials/_content.scss */
+.related-posts .related-post {
+  padding: 12px 6px;
+  margin: 0 0 12px;
+  border-bottom: 2px solid #ecf0f1;
+}
+/* line 154, sass/partials/_content.scss */
+.related-posts .related-post .entry-title {
+  font-size: 1em;
+  font-weight: 400;
+  margin: 0 0 .5em 0;
+}
+/* line 164, sass/partials/_content.scss */
+.related-posts .related-post .published {
+  color: #2c3e50;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin: 0 4px;
+}
+/* line 170, sass/partials/_content.scss */
+.related-posts .related-post .entry-summary {
+  font-weight: 300;
+  display: inline;
 }
 
 /* line 4, sass/partials/_comments.scss */
@@ -4221,17 +4248,17 @@ object {
 /* = Note styling
 -------------------------------------------------------------- */
 /* line 4, sass/partials/_note.scss */
-.note, .note-link, .note-comment, .note-ins, .enclosure, .enclosure-evernote, .enclosure-qiita, .enclosure-github {
+.note, .note-link, .note-comment, .note-ins, .note-portfolio, .enclosure, .enclosure-evernote, .enclosure-qiita, .enclosure-github {
   display: block;
   margin: 24px 0;
   min-height: 80px;
 }
 /* line 10, sass/partials/_note.scss */
-.note .syntaxhighlighter, .note-link .syntaxhighlighter, .note-comment .syntaxhighlighter, .note-ins .syntaxhighlighter, .enclosure .syntaxhighlighter, .enclosure-evernote .syntaxhighlighter, .enclosure-qiita .syntaxhighlighter, .enclosure-github .syntaxhighlighter {
+.note .syntaxhighlighter, .note-link .syntaxhighlighter, .note-comment .syntaxhighlighter, .note-ins .syntaxhighlighter, .note-portfolio .syntaxhighlighter, .enclosure .syntaxhighlighter, .enclosure-evernote .syntaxhighlighter, .enclosure-qiita .syntaxhighlighter, .enclosure-github .syntaxhighlighter {
   width: auto;
 }
 /* line 14, sass/partials/_note.scss */
-.note:before, .note-link:before, .note-comment:before, .note-ins:before, .enclosure:before, .enclosure-evernote:before, .enclosure-qiita:before, .enclosure-github:before {
+.note:before, .note-link:before, .note-comment:before, .note-ins:before, .note-portfolio:before, .enclosure:before, .enclosure-evernote:before, .enclosure-qiita:before, .enclosure-github:before {
   float: left;
   margin-right: 20px;
   -webkit-font-smoothing: antialiased;
@@ -4241,15 +4268,20 @@ object {
   color: #bdc3c7;
 }
 /* line 18, sass/partials/_note.scss */
-.note:after, .note-link:after, .note-comment:after, .note-ins:after, .enclosure:after, .enclosure-evernote:after, .enclosure-qiita:after, .enclosure-github:after {
+.note:after, .note-link:after, .note-comment:after, .note-ins:after, .note-portfolio:after, .enclosure:after, .enclosure-evernote:after, .enclosure-qiita:after, .enclosure-github:after {
   clear: both;
 }
 
 /* line 37, sass/partials/_note.scss */
 .note-ins {
   color: #7b8a8b;
-  border-color: #fff9c0;
+  border-color: #fff48d;
   background-color: #fff9c0;
+}
+
+/* line 47, sass/partials/_note.scss */
+.note-portfolio {
+  border-color: #bdc3c7;
 }
 
 @media screen {

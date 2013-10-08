@@ -6,8 +6,6 @@
  *
  * @package makotokw
  */
-
-if ( ! function_exists( 'makotokw_content_nav' ) ) :
 /**
  * Display navigation to next/previous pages when applicable
  */
@@ -59,9 +57,6 @@ function makotokw_content_nav( $nav_id ) {
 	</nav><!-- #<?php echo esc_html( $nav_id ); ?> -->
 	<?php
 }
-endif; // makotokw_content_nav
-
-if ( ! function_exists( 'makotokw_google_analytics' ) ) :
 
 function makotokw_google_analytics() {
 
@@ -81,8 +76,6 @@ _gaq.push(['_trackPageview']);
 </script>
 <?php
 }
-
-endif; // makotokw_google_analytics
 
 /**
  * @see http://gilbert.pellegrom.me/how-to-breadcrumbs-in-wordpress/
@@ -111,7 +104,15 @@ function makotokw_breadcrumbs()
 			echo '<a href="/tags/" itemprop="url"><span itemprop="title">' . __( 'Tags', 'makotokw' ) . '</a><i class="icon-chevron-right"></i>';
 			echo single_tag_title('', false);
 		} elseif (is_archive()) {
-			echo "  "  . __( 'Archives', 'makotokw' );
+			if ( is_tax( 'blogs' ) ) {
+				echo '<span itemprop="title">' . __( 'Blog', 'makotokw' ) . '</span>';
+				echo '<i class="icon-chevron-right"></i><span itemprop="title">'.single_cat_title('', false).'</span>';
+			} elseif ( is_tax( 'portfolios' ) ) {
+				echo '<span itemprop="title">' . __( 'Portfolio', 'makotokw' ) . '</span>';
+				echo '<i class="icon-chevron-right"></i><span itemprop="title">'.single_cat_title('', false).'</span>';
+			} else {
+				echo "  "  . __( 'Archives', 'makotokw' );
+			}
 		} elseif (is_search()) {
 			echo "  " . __( 'Search Results', 'makotokw' );
 		} elseif (is_404()) {
@@ -162,8 +163,6 @@ function makotokw_breadcrumbs_category_parents( $id, $separator = '/', $visited 
 	return $chain;
 }
 
-if ( ! function_exists( 'makotokw_zenback_widget' ) ) :
-
 function makotokw_zenback_widget() {
 	?>
 	<?php if (!is_preview() && comments_open() && (is_single() || is_page())):?>
@@ -178,11 +177,8 @@ function makotokw_zenback_widget() {
 <?php
 }
 
-endif; // ends check for makotokw_zenback_widget
-
-if ( ! function_exists( 'makotokw_facebook_sdk' ) ) :
-	function makotokw_facebook_sdk() {
-		if (WP_THEME_OGP === true):
+function makotokw_facebook_sdk() {
+	if (WP_THEME_OGP === true):
 ?>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -192,19 +188,15 @@ js = d.createElement(s); js.id = id;
 js.src = "//connect.facebook.net/<?php echo WP_OGP_LOCALE; ?>/all.js#xfbml=1&appId=<?php echo WP_OGP_FB_APPID; ?>";
 fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script><?php
-		endif;
-	}
-endif;
+	endif;
+}
 
-if ( ! function_exists( 'makotokw_facebook_recommendations_bar' ) ) :
 function makotokw_facebook_recommendations_bar() {
 	?>
 <div class="fb-recommendations-bar" data-href="<?php echo esc_url(( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'])?>"></div>
 <?php
 }
-endif;
 
-if ( ! function_exists( 'makotokw_comment' ) ) :
 /**
  * Template for comments and pingbacks.
  *
@@ -250,10 +242,8 @@ function makotokw_comment( $comment, $args, $depth ) {
 			<?php endif; ?>
 		</article><!-- #comment-## -->
 	<?php
-}
-endif; // ends check for makotokw_comment()
+} // ends check for makotokw_comment()
 
-if ( ! function_exists( 'makotokw_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
@@ -268,11 +258,96 @@ function makotokw_posted_on() {
 	);
 }
 
-endif;
+function makotokw_post_summary($content, $length = 50, $trimmarker = '...') {
+	if (class_exists('PukiWiki_for_WordPress')) {
+		$pukiwiki = PukiWiki_for_WordPress::getInstance();
+		$content = $pukiwiki->the_content($content);
+	}
+	if (class_exists('WP_GFM')) {
+		$gfm = WP_GFM::getInstance();
+		$content = $gfm->the_content($content);
+	}
+	return mb_strimwidth(strip_tags(strip_shortcodes($content)), 0, 128) . '...';
+}
 
-if ( ! function_exists( 'makotokw_portfolio_posts' ) ) :
+function makotokw_related_post($arg = array()) {
+	global $post;
+?>
+	<h1 class="entry-title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
+	<div class="entry-content">
+		<?php makotokw_posted_on(); ?>
+		<p class="entry-summary">
+			<?php echo makotokw_post_summary($post->post_content); ?>
+		</p>
+	</div>
+<?php
+}
 
-function makotokw_portfolio_posts($arg = array()) {
+function makotokw_related_posts($arg = array()) {
+	global $post;
+
+	$rq = false;
+
+	$arg = array_merge(array(
+		'post_type' => 'post',
+		'max_count' => 5,
+	), $arg);
+
+	$cur_post = $post;
+	$max_count = $arg['max_count'];
+
+	// find post by portfolio
+	unset($portfolio);
+	$terms = get_the_terms($cur_post->ID, 'portfolios');
+	if (!is_wp_error($terms) && !empty($terms)) {
+		$portfolio = array_shift($terms);
+
+		$query_arg = array(
+			'post_type' => $arg['post_type'],
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'portfolios',
+					'terms' => $portfolio->term_id,
+					'operator' => 'IN'
+				)
+			),
+			'showposts' => $max_count + 1,
+		);
+		$rq = new WP_Query($query_arg);
+	}
+
+	// find posts by category
+	if (!$rq || !$rq->have_posts()) {
+		$categories = get_the_category($cur_post->ID);
+		if (count($categories) > 0) {
+			$cat = $categories[0];
+			if ($cat->cat_ID != 1) { // ignore uncategorized category
+				$rq = new WP_Query(
+					array(
+						'cat' => $cat->cat_ID,
+						'showposts' => $max_count + 1,
+					)
+				);
+			}
+		}
+	}
+
+	if ($rq && $rq->have_posts()): $count = 0;?>
+		<aside class="related-posts">
+			<h2>Related Posts</h2>
+			<?php while ( $rq->have_posts() ): $rq->the_post(); ?>
+					<?php if ($post->ID != $cur_post->ID && $count < $max_count): ?>
+						<section class="related-post">
+							<?php makotokw_related_post(); ?>
+						</section>
+					<?php endif ?>
+			<?php endwhile ?>
+		</aside>
+	<?php endif;
+	wp_reset_query();
+}
+
+function makotokw_portfolio_note() {
 	global $post;
 	unset($portfolio);
 	$terms = get_the_terms($post->ID, 'portfolios');
@@ -280,14 +355,9 @@ function makotokw_portfolio_posts($arg = array()) {
 		$portfolio = array_shift($terms);
 	}
 
-	$arg = array_merge(array(
-		'header_title' => 'Related Posts',
-		'post_type' => 'post',
-	), $arg);
-
 	if (isset($portfolio)):
 		$query_arg = array(
-			'post_type' => $arg['post_type'],
+			'post_type' => 'page',
 			'tax_query' => array(
 				array(
 					'taxonomy' => 'portfolios',
@@ -297,29 +367,16 @@ function makotokw_portfolio_posts($arg = array()) {
 			)
 		);
 
-		$temp_post = $post;
 		$rq = new WP_Query($query_arg);
-		if ($rq->have_posts()): ?>
-			<section class="portfolio-posts-area">
-				<h2><?php echo $arg['header_title']?></h2>
-				<ul>
-					<?php while ($rq->have_posts()) : $rq->the_post(); ?>
-						<li>
-							<?php makotokw_posted_on(); ?>
-							<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
-						</li>
-					<?php endwhile ?>
-				</ul>
+		if ($rq->have_posts()): $rq->the_post(); ?>
+			<section class="note-portfolio">
+				<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
 			</section>
-		<?php
-		$post = $temp_post;
+			<?php
 		endif;
+		wp_reset_query();
 	endif;
 }
-
-endif;
-
-if ( ! function_exists( 'makotokw_tag_cloud' ) ) :
 
 function makotokw_tag_cloud($args = array()) {
 	$tags = wp_tag_cloud(array_merge(array(
@@ -351,8 +408,6 @@ function makotokw_tag_cloud($args = array()) {
 		echo '</ul>';
 	}
 }
-
-endif;
 
 /**
  * Returns true if a blog has more than 1 category
