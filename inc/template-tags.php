@@ -334,7 +334,7 @@ function makotokw_related_posts($arg = array()) {
 
 	if ($rq && $rq->have_posts()): $count = 0;?>
 		<aside class="related-posts">
-			<h2>Related Posts</h2>
+			<h2><?php _e('Related Posts', 'makotokw');?></h2>
 			<?php while ( $rq->have_posts() ): $rq->the_post(); ?>
 					<?php if ($post->ID != $cur_post->ID && $count < $max_count): ?>
 						<section class="related-post">

@@ -20,6 +20,7 @@
 				'theme_location' => 'site-info',
 				'depth' => 1,
 				'container_class' => 'navi',
+				'menu_id' => 'footerSiteMenu',
 				'link_before' => '',
 				'link_after' => '',
 			))
