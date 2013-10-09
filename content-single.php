@@ -6,8 +6,8 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php makotokw_posted_on(); ?>
 		<h1 class="entry-title"><?php the_title(); ?></h1>
+		<span class="entry-date"><?php makotokw_posted_on(); ?></span>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">

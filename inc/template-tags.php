@@ -275,7 +275,7 @@ function makotokw_related_post($arg = array()) {
 ?>
 	<h1 class="entry-title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 	<div class="entry-content">
-		<?php makotokw_posted_on(); ?>
+		<span class="entry-date"><?php makotokw_posted_on(); ?></span>
 		<p class="entry-summary">
 			<?php echo makotokw_post_summary($post->post_content); ?>
 		</p>

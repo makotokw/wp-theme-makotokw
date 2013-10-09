@@ -65,6 +65,9 @@ $monoFontFamily: Monaco, Menlo, Consolas, "Courier New", monospace;
 
 $baseFontSize: 16px;
 $baseLineHeight: 1.5;
+$fontSizeLarge:         $baseFontSize * 1.25; // ~18px
+$fontSizeSmall:         $baseFontSize * 0.85; // ~12px
+$fontSizeMini:          $baseFontSize * 0.75; // ~11px
 
 $desktopMaxWidth: 984px;
 $ipadMaxWidth: 767px;
@@ -93,8 +96,8 @@ $errorPageBackgroundColor: #f5f5f5;
 $errorPageBackgroundIconColor: #ddd;
 
 $entryTitleColor: $blueDark;
-$entryDateColor: $silver;
-$commentDateColor: $silver;
+$entryDateColor: #767676;
+$commentDateColor: #767676;
 
 $blockBorderColor: $siteBorderColor;
 $blockBorderWidth: $siteBorderWidth;
