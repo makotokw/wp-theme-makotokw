@@ -11,6 +11,9 @@
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
 <meta charset="<?php bloginfo('charset'); ?>"/>
 <meta name="viewport" content="width=device-width"/>
+<?php if(is_category() || is_tag() || is_archive()): ?>
+<meta name="robots" content="noindex,follow" />
+<?php endif; ?>
 <title><?php wp_title('|', true, 'right'); ?></title>
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo get_template_directory_uri(); ?>/images/touch-icon-144.png">

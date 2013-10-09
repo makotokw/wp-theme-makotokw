@@ -16,75 +16,74 @@ if (!isset($content_width))
  */
 require(get_template_directory() . '/inc/jetpack.php');
 
-if (!function_exists('makotokw_setup')) :
+/**
+ * Sets up theme defaults and registers support for various WordPress features.
+ *
+ * Note that this function is hooked into the after_setup_theme hook, which runs
+ * before the init hook. The init hook is too late for some features, such as indicating
+ * support post thumbnails.
+ */
+function makotokw_setup()
+{
+	require(get_template_directory() . '/config.php');
+
 	/**
-	 * Sets up theme defaults and registers support for various WordPress features.
-	 *
-	 * Note that this function is hooked into the after_setup_theme hook, which runs
-	 * before the init hook. The init hook is too late for some features, such as indicating
-	 * support post thumbnails.
+	 * Custom template tags for this theme.
 	 */
-	function makotokw_setup()
-	{
-		require(get_template_directory() . '/config.php');
+	require(get_template_directory() . '/inc/template-tags.php');
 
-		/**
-		 * Custom template tags for this theme.
-		 */
-		require(get_template_directory() . '/inc/template-tags.php');
+	/**
+	 * Custom functions that act independently of the theme templates
+	 */
+	require(get_template_directory() . '/inc/extras.php');
 
-		/**
-		 * Custom functions that act independently of the theme templates
-		 */
-		require(get_template_directory() . '/inc/extras.php');
+	/**
+	 * Make theme available for translation
+	 * Translations can be filed in the /languages/ directory
+	 * If you're building a theme based on makotokw, use a find and replace
+	 * to change 'makotokw' to the name of your theme in all the template files
+	 */
+	load_theme_textdomain('makotokw', get_template_directory() . '/languages');
 
-		/**
-		 * Make theme available for translation
-		 * Translations can be filed in the /languages/ directory
-		 * If you're building a theme based on makotokw, use a find and replace
-		 * to change 'makotokw' to the name of your theme in all the template files
-		 */
-		load_theme_textdomain('makotokw', get_template_directory() . '/languages');
+	/**
+	 * Add default posts and comments RSS feed links to head
+	 */
+	add_theme_support('automatic-feed-links');
 
-		/**
-		 * Add default posts and comments RSS feed links to head
-		 */
-		add_theme_support('automatic-feed-links');
+	/**
+	 * Enable support for Post Thumbnails
+	 */
+	add_theme_support('post-thumbnails');
 
-		/**
-		 * Enable support for Post Thumbnails
-		 */
-		add_theme_support('post-thumbnails');
+	/**
+	 * This theme uses wp_nav_menu() in one location.
+	 */
+	register_nav_menus(array(
+		'site-info' => __('Site Info Menu', 'makotokw'),
+		'portfolio' => __('Portfolio Menu', 'makotokw'),
+	));
 
-		/**
-		 * This theme uses wp_nav_menu() in one location.
-		 */
-		register_nav_menus(array(
-			'site-info' => __('Site Info Menu', 'makotokw'),
-			'portfolio' => __('Portfolio Menu', 'makotokw'),
-		));
+	remove_action('wp_head', 'feed_links', 2);
+	remove_action('wp_head', 'feed_links_extra', 3);
+	remove_action('wp_head', 'rsd_link');
+	remove_action('wp_head', 'wlwmanifest_link');
+	remove_action('wp_head', 'wp_generator');
 
-		remove_action('wp_head', 'feed_links', 2);
-		remove_action('wp_head', 'feed_links_extra', 3);
-		remove_action('wp_head', 'rsd_link');
-		remove_action('wp_head', 'wlwmanifest_link');
-		remove_action('wp_head', 'wp_generator');
-		
-		// Tospy may use shortlink
-		//remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
+	// Tospy may use shortlink
+	//remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
 
-		/*
-		 * Disable Jetpack OGP
-		 */
-		if (WP_THEME_OGP === true) {
-			add_filter( 'jetpack_enable_opengraph', '__return_false', 99 );
-		}
-
-		if (is_admin()) {
-			add_action('admin_print_footer_scripts',  'makotokw_quicktags');
-		}
+	/*
+	 * Disable Jetpack OGP
+	 */
+	if (WP_THEME_OGP === true) {
+		add_filter( 'jetpack_enable_opengraph', '__return_false', 99 );
 	}
-endif; // makotokw_setup
+
+	if (is_admin()) {
+		add_action('admin_print_footer_scripts',  'makotokw_quicktags');
+	}
+}
+
 add_action('after_setup_theme', 'makotokw_setup');
 
 /**
@@ -111,7 +110,17 @@ function makotokw_scripts()
 {
 	global $wp_styles;
 
-	wp_enqueue_style('makotokw-style', get_stylesheet_uri(), array(), '20130824');
+	// move jQuery to footer
+	if (!is_admin()){
+		wp_deregister_script('jquery-core');
+		wp_deregister_script('jquery-migrate');
+		wp_register_script( 'jquery-core', '/wp-includes/js/jquery/jquery.js', array(), '1.10.2', true);
+		wp_register_script( 'jquery-migrate', "/wp-includes/js/jquery/jquery-migrate.js", array(), '1.2.1', true );
+		wp_enqueue_script('jquery-core');
+		wp_enqueue_script('jquery-migrate');
+	}
+
+	wp_enqueue_style('makotokw-style', get_stylesheet_uri(), array(), '20131008');
 	wp_enqueue_style('makotokw-fonts', esc_url_raw( makotokw_fonts_url() ), array(), null );
 
 	// Loads the Internet Explorer specific stylesheet.
@@ -120,14 +129,15 @@ function makotokw_scripts()
 
 //	wp_enqueue_script('google-code-run-prettify', 'https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js', array(), false, true);
 	wp_enqueue_script('google-code-prettify', get_template_directory_uri() . '/components/js/google-code-prettify/prettify.min.js', array(), '20130305', true);
-	wp_enqueue_script('makotokw-script', get_template_directory_uri() . '/style.js', array('google-code-prettify'), '20130503', true);
+	wp_enqueue_script('makotokw-script', get_template_directory_uri() . '/style.js', array('jquery', 'google-code-prettify'), '20131008', true);
 
-	if (is_singular() && comments_open() && get_option('thread_comments')) {
-		wp_enqueue_script('comment-reply');
-	}
+// JetpackComment should work without comment-reply
+//	if (is_singular() && comments_open() && get_option('thread_comments')) {
+//		wp_enqueue_script('comment-reply');
+//	}
 
 	if (is_singular() && wp_attachment_is_image()) {
-		wp_enqueue_script('makotokw-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.min.js', array('jquery'), '20120202');
+		wp_enqueue_script('makotokw-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.min.js', array('jquery'), '20120202', true);
 	}
 }
 
@@ -151,12 +161,6 @@ function makotokw_fonts_url() {
 }
 
 function makotokw_feed_link() {
-
-	global $feedburner_settings;
-
-	if (isset($feedburner_settings)) {
-		return trim($feedburner_settings['feedburner_url']);
-	}
 	return get_feed_link();
 }
 
@@ -177,42 +181,43 @@ function makotokw_quicktags()
 	<script type="text/javascript">
 
 		(function($){
-			_datetime = (function() {
-				var now = new Date(), zeroise;
-				zeroise = function(number) {
-					var str = number.toString();
-					if ( str.length < 2 )
-						str = "0" + str;
-					return str;
-				}
-				return now.getUTCFullYear() + '-' +
-					zeroise( now.getUTCMonth() + 1 ) + '-' +
-					zeroise( now.getUTCDate() ) + 'T' +
-					zeroise( now.getUTCHours() ) + ':' +
-					zeroise( now.getUTCMinutes() ) + ':' +
-					zeroise( now.getUTCSeconds() ) +
-					'+00:00';
-			})();
+			if ( typeof(QTags) != 'undefined' ) {
+				_datetime = (function() {
+					var now = new Date(), zeroise;
+					zeroise = function(number) {
+						var str = number.toString();
+						if ( str.length < 2 )
+							str = "0" + str;
+						return str;
+					}
+					return now.getUTCFullYear() + '-' +
+						zeroise( now.getUTCMonth() + 1 ) + '-' +
+						zeroise( now.getUTCDate() ) + 'T' +
+						zeroise( now.getUTCHours() ) + ':' +
+						zeroise( now.getUTCMinutes() ) + ':' +
+						zeroise( now.getUTCSeconds() ) +
+						'+00:00';
+				})();
 
-			$.each(['h2','h3','h4','h5','p'], function(i, e){
-				QTags.addButton(e, e, '<'+e+'>', '</'+e+'>');
-			});
-			QTags.addButton('ins_block', 'ins_block', '<ins class="note-ins" datetime="' + _datetime + '">', '</ins>');
-			QTags.addButton('AA', 'aa', '<span class="aa">', '</span>');
-			QTags.addButton('big', 'big', '<span class="big">', '</span>');
+				$.each(['h2','h3','h4','h5','p'], function(i, e){
+					QTags.addButton(e, e, '<'+e+'>', '</'+e+'>');
+				});
+				QTags.addButton('ins_block', 'ins_block', '<ins class="note-ins" datetime="' + _datetime + '">', '</ins>');
+				QTags.addButton('AA', 'aa', '<span class="aa">', '</span>');
+				QTags.addButton('big', 'big', '<span class="big">', '</span>');
 
-			$.each(['', 'github','qiita','evernote'], function(i, t){
-				var cls = (t == '') ? 'enclosure' : 'enclosure-' + t;
-				QTags.addButton(cls, cls, '<div class="'+cls+'">', '</div>');
-			});
-			$.each(['comment','ins','link'], function(i, t){
-				var cls = 'note-' + t;
-				QTags.addButton(cls, cls, '<div class="'+cls+'">', '</div>');
-			});
+				$.each(['', 'github','qiita','evernote'], function(i, t){
+					var cls = (t == '') ? 'enclosure' : 'enclosure-' + t;
+					QTags.addButton(cls, cls, '<div class="'+cls+'">', '</div>');
+				});
+				$.each(['comment','ins','link'], function(i, t){
+					var cls = 'note-' + t;
+					QTags.addButton(cls, cls, '<div class="'+cls+'">', '</div>');
+				});
 
-			QTags.addButton('prettyprint', 'prettyprint', '<pre class="prettyprint">', '</pre>');
-			QTags.addButton('sh_code', '[code]', '[code autolinks="false" collapse="false" firstline="1" gutter="true" highlight="" htmlscript="false" light="false" padlinenumbers="false" toolbar="true" title="example-filename.php"]', '[/code]');
-
+				QTags.addButton('prettyprint', 'prettyprint', '<pre class="prettyprint">', '</pre>');
+				QTags.addButton('sh_code', '[code]', '[code autolinks="false" collapse="false" firstline="1" gutter="true" highlight="" htmlscript="false" light="false" padlinenumbers="false" toolbar="true" title="example-filename.php"]', '[/code]');
+			}
 		})(jQuery);
 	</script>
 <?php }
