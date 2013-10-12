@@ -296,7 +296,7 @@ function makotokw_related_posts($arg = array()) {
 	$cur_post = $post;
 	$max_count = $arg['max_count'];
 
-	// find post by portfolio
+	// find by portfolio
 	unset($portfolio);
 	$terms = get_the_terms($cur_post->ID, 'portfolios');
 	if (!is_wp_error($terms) && !empty($terms)) {
@@ -316,7 +316,30 @@ function makotokw_related_posts($arg = array()) {
 		$rq = new WP_Query($query_arg);
 	}
 
-	// find posts by category
+	// find by featured tags
+	if (defined('WP_THEME_FEATURED_TAG')) {
+		$featuredTagSlugs = explode(',', WP_THEME_FEATURED_TAG);
+		if (!$rq || !$rq->have_posts()) {
+			$tags = get_the_tags($cur_post->ID);
+			if (is_array($tags) && count($tags)) {
+				$tags = array_filter($tags, function ($t) use ($featuredTagSlugs) {
+					return in_array($t->slug, $featuredTagSlugs);
+				});
+				if (count($tags) > 0) {
+					$tag = array_pop($tags);
+					$rq = new WP_Query(
+						array(
+							'tag_id' => $tag->term_id,
+							'showposts' => $max_count + 1,
+						)
+					);
+				}
+
+			}
+		}
+	}
+
+	// find by category
 	if (!$rq || !$rq->have_posts()) {
 		$categories = get_the_category($cur_post->ID);
 		if (count($categories) > 0) {
