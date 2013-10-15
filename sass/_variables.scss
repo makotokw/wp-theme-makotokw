@@ -69,6 +69,10 @@ $fontSizeLarge:         $baseFontSize * 1.25; // ~18px
 $fontSizeSmall:         $baseFontSize * 0.85; // ~12px
 $fontSizeMini:          $baseFontSize * 0.75; // ~11px
 
+$baseBorderRadius:      4px !default;
+$borderRadiusLarge:     6px !default;
+$borderRadiusSmall:     3px !default;
+
 $desktopMaxWidth: 984px;
 $ipadMaxWidth: 767px;
 $tabletMaxWidth: 643px;

@@ -36,21 +36,33 @@
 // Unless desktop
 @media (max-width: $desktopMaxWidth) {
 
+  .site-navi {
+    .breadcrumb {
+      padding: 8px;
+    }
+  }
+
   .page-header {
     padding: 10px 20px;
   }
 
   .hentry {
     padding: 20px 0;
+
+    .entry-header {
+      padding: 5px 0;
+    }
   }
+
+  .site-navi,
   .hentry,
   .page-content,
   .nav-links,
   .zenback-widget-area,
   .comments-area,
   .pingbacks-area {
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
   }
 
   .page-title {
@@ -58,6 +70,36 @@
   }
   .entry-title {
     font-size: 22px;
+  }
+
+  .related-posts {
+    .related-post {
+      padding: 10px;
+    }
+  }
+
+  h1 {
+    margin: 16px 0;
+  }
+
+  h2 {
+    margin: 12px 0;
+  }
+
+  h3 {
+    margin: 11px 0;
+  }
+
+  h4 {
+    margin: 10px 0;
+  }
+
+  h5 {
+    margin: 9px 0;
+  }
+
+  h6 {
+    margin: 8px 0;
   }
 
   code,
@@ -82,7 +124,7 @@
   }
 }
 
-// Mobile devices
+// Tablet devices
 @media (max-width: $tabletMaxWidth) {
 
   .site-header {
@@ -117,6 +159,7 @@
   .site-header {
     .site-info {
       float: none;
+      text-align: center;
     }
     .sub-nav {
       float: none;

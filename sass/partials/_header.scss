@@ -56,26 +56,24 @@
 
     .searchform {
       float: left;
+
       input[type="search"] {
-        background: url(images/search.png) no-repeat 5px 9px;
+        background: url(images/search.png) no-repeat 10px 9px;
         padding: 8px 2px 8px 31px;
         width: 150px;
+        border: none;
+
         border: $siteBorderWidth solid $clouds;
-        @include border-radius($blockBorderRadius);
+        @include border-radius(27px);
         @include transition(width 400ms ease, background 400ms ease);
         &:focus {
           cursor: text;
           outline: 0;
-          border-color: $silver;
+          border-color: $siteLinkOverColor;
         }
       }
     }
 
   }
-
-
-
-
-
 }
 

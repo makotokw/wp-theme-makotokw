@@ -1,1 +1,67 @@
-.site{padding:10px}.site-header .searchform{position:static}.comment-body .comment-author{min-width:60px}.comment-body .comment-metadata,.comment-body .comment-awaiting-moderation,.comment-body .comment-content,.comment-body .reply{float:none;width:90%}.ie8 .navigation-paging .nav-previous .meta-nav{padding:5px 0 8px;width:40px}.ie8 .navigation-paging .nav-next{line-height:1}.ie7 .screen-reader-text{clip:rect(1px 1px 1px 1px)}.ie7 .hentry,.ie7 .page-content,.ie7 .nav-links,.ie7 .zenback-widget-area,.ie7 .comments-area,.ie7 .pingbacks-area{width:940px}.ie7 .entry-header{position:static}.ie7 .entry-header .entry-date{position:static}.ie7 .navigation-paging .nav-previous .meta-nav{padding:0 0 10px;vertical-align:middle;width:40px}.ie7 .navigation-paging .nav-next{line-height:1}
+/* line 4, sass/ie.scss */
+.site {
+  padding: 10px;
+}
+
+/* line 8, sass/ie.scss */
+.site-header .searchform {
+  position: static;
+}
+
+/* line 15, sass/ie.scss */
+.comment-body .comment-author {
+  min-width: 60px;
+}
+/* line 21, sass/ie.scss */
+.comment-body .comment-metadata,
+.comment-body .comment-awaiting-moderation,
+.comment-body .comment-content,
+.comment-body .reply {
+  float: none;
+  width: 90%;
+}
+
+/* Internet Explorer 8 */
+/* line 31, sass/ie.scss */
+.ie8 .navigation-paging .nav-previous .meta-nav {
+  padding: 5px 0 8px;
+  width: 40px;
+}
+/* line 36, sass/ie.scss */
+.ie8 .navigation-paging .nav-next {
+  line-height: 1;
+}
+
+/* Internet Explorer 7 */
+/* line 45, sass/ie.scss */
+.ie7 .screen-reader-text {
+  clip: rect(1px 1px 1px 1px);
+  /* IE7 */
+}
+/* line 54, sass/ie.scss */
+.ie7 .hentry,
+.ie7 .page-content,
+.ie7 .nav-links,
+.ie7 .zenback-widget-area,
+.ie7 .comments-area,
+.ie7 .pingbacks-area {
+  width: 940px;
+}
+/* line 58, sass/ie.scss */
+.ie7 .entry-header {
+  position: static;
+}
+/* line 60, sass/ie.scss */
+.ie7 .entry-header .entry-date {
+  position: static;
+}
+/* line 67, sass/ie.scss */
+.ie7 .navigation-paging .nav-previous .meta-nav {
+  padding: 0 0 10px;
+  vertical-align: middle;
+  width: 40px;
+}
+/* line 73, sass/ie.scss */
+.ie7 .navigation-paging .nav-next {
+  line-height: 1;
+}
