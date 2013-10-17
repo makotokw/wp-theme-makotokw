@@ -89,6 +89,10 @@ $siteLinkOverColor: lighten($blue,5%);
 $siteBorderColor: $clouds;
 $siteBorderWidth: 2px;
 
+$infoForegroundColor: #3a87ad;
+$infoBackgroundColor: #d9edf7;
+$infoBorderColor: darken(adjust-hue($infoBackgroundColor, -10), 7%);
+
 $formPlaceHolderColor: $silver;
 
 $naviBackgroundColor: $siteBackgroundColor;
@@ -103,7 +107,9 @@ $entryTitleColor: $blueDark;
 $entryDateColor: #767676;
 $commentDateColor: #767676;
 
-$blockBorderColor: $siteBorderColor;
+$blockBackgroundColor: #f7f9fa;
+$blockTextColor: #34495e;
+$blockBorderColor: #e9ecef;
 $blockBorderWidth: $siteBorderWidth;
 $blockBorderRadius: 6px;
 $blockPadding: 24px;

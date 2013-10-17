@@ -7,22 +7,14 @@
   max-width: $siteContentMaxWidth;
   width: 100%;
   word-wrap: break-word;
-
-  h2 {
-    padding-bottom: 10px;
-    border-bottom: solid 2px $borderColor;
-  }
-
-  h3 {
-    padding-bottom: 5px;
-    border-bottom: solid 1px $borderColor;
-  }
 }
 
 .site-content {
   .page-header {
     margin: 0 auto;
     max-width: $siteContentMaxWidth;
+    padding-bottom: 9px;
+    border-bottom: 1px solid $blockBorderColor;
 
     .page-title {
       margin: 20px 0 0 0;
@@ -40,24 +32,44 @@
   }
 }
 
+.archive {
+  .hentry {
+    .entry-title {
+      font-size: 26px;
+    }
+  }
+}
+
 .entry-header {
   position: relative;
   //padding-top: 1.5em;
   margin-bottom: 1.5em;
 
+  a {
+    color: $entryTitleColor;
+    &:hover {
+      color: $siteLinkOverColor;
+      text-decoration: none;
+    }
+  }
+
+  .cat-links {
+    font-size: $fontSizeMini;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: $gray;
+    margin-bottom: 4px;
+    display: block;
+  }
+
   .entry-title {
     color: $entryTitleColor;
-    margin: 0 0 6px 0;
-    a {
-      color: $entryTitleColor;
-      &:hover {
-        color: $siteLinkOverColor;
-      }
-    }
+    margin: 0 0 5px 0;
   }
 }
 
 .entry-date {
+  font-size: $fontSizeMini;
 
   &:before {
     font-family: FontAwesome;
@@ -67,7 +79,7 @@
   }
 
   .published {
-    font-weight: 300;
+    //font-weight: 300;
     text-transform: uppercase;
     color: $entryDateColor;
   }
@@ -92,6 +104,16 @@
 
 .entry-content {
   line-height: 2;
+
+  h2 {
+    padding-bottom: 10px;
+    border-bottom: solid 2px $borderColor;
+  }
+
+  h3 {
+    padding-bottom: 5px;
+    border-bottom: solid 1px $borderColor;
+  }
 }
 
 .entry-content,
@@ -159,15 +181,22 @@ object {
 ----------------------------------------------- */
 .related-posts {
 
+  h2 {
+    color: $blueDark;
+    margin-bottom: 0px;
+  }
+
   .related-post {
-    padding: 24px 12px;
+    padding: 24px 6px 24px 6px;
     margin: 12px 0;
 
-    //background-color: #f7f7f7;
+    color: $infoForegroundColor;
+    //background-color: lighten($infoBackgroundColor, 7%);
     //@include block(#fefefe);
-    border-bottom: $blockBorderWidth solid $blue;
+    //border: $blockBorderWidth solid $infoBorderColor;
     //border-top: $blockBorderWidth solid $clouds;
-    //border-left: $blockBorderWidth solid $blue;
+    border-bottom: $blockBorderWidth solid $infoBorderColor;
+    //border-left: 5px solid $infoBorderColor;
     //border-right: $blockBorderWidth solid $blue;
 
     .entry-title {
@@ -189,6 +218,10 @@ object {
       font-weight: 300;
       display: inline;
     }
+  }
+
+  h2 + .related-post {
+    margin-top: 0;
   }
 }
 

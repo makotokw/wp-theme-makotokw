@@ -1,0 +1,33 @@
+
+/* =Breadcrumb
+----------------------------------------------- */
+.breadcrumb {
+  display: block;
+  margin: 0 auto;
+  max-width: $siteMainMaxWidth;
+
+  width: 100%;
+  padding: 13px 20px;
+  font-weight: 300;
+
+  background-color: #f7f9fa;
+  color: #34495e;
+  border-left: solid 5px #e9ecef;
+
+  //border: $blockBorderWidth solid $clouds;
+  //@include border-radius($blockBorderRadius);
+  color: lighten(desaturate($siteForegroundColor, 20%), 40%);
+
+  .icon-chevron-right {
+    padding-right: 10px;
+    padding-left: 10px;
+    color: $silver;
+  }
+
+  a {
+    color: lighten(desaturate($blueDark, 10%), 20%);
+    &:hover {
+      color: $siteLinkOverColor;
+    }
+  }
+}

@@ -432,6 +432,49 @@ function makotokw_tag_cloud($args = array()) {
 	}
 }
 
+function makotokw_the_category_slug($separator = '', $post_id = false) {
+
+	global $wp_rewrite;
+	$categories = get_the_category( $post_id );
+
+	if ( empty( $categories ) ) {
+		return;
+	}
+
+	$rel = ( is_object( $wp_rewrite ) && $wp_rewrite->using_permalinks() ) ? 'rel="category tag"' : 'rel="category"';
+
+	$thelist = '';
+	$i = 0;
+	foreach ( $categories as $category ) {
+		if ( 0 < $i ) {
+			$thelist .= $separator;
+		}
+		$thelist .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" title="' . esc_attr( sprintf( __( "View all posts in %s" ), $category->name ) ) . '" ' . $rel . '>' . $category->slug.'</a>';
+		++$i;
+	}
+	echo $thelist;
+}
+
+function makotokw_the_category_and_tag() {
+	/* translators: used between list items, there is a space after the comma */
+	$categories_list = get_the_category_list( __( ' <i class="icon-folder-close"></i> ', 'makotokw' ) );
+	if ( $categories_list && makotokw_categorized_blog() ) :?>
+		<span class="cat-links">
+			<?php printf( __( '<i class="icon-folder-close"></i> %1$s', 'makotokw' ), $categories_list ); ?>
+		</span>
+	<?php endif; // End if categories ?>
+	<?php
+	/* translators: used between list items, there is a space after the comma */
+	$tags_list = get_the_tag_list( '', __( ' <i class="icon-tag"></i>', 'makotokw' ) );
+	if ( $tags_list ) :?>
+		<span class="tags-links">
+				<?php printf( __( '<i class="icon-tag"></i> %1$s', 'makotokw' ), $tags_list ); ?>
+			</span>
+	<?php endif; // End if $tags_list
+	printf( '<span class="author vcard"><span class="fn">%1$s</span></span>', get_the_author() );
+}
+
+
 /**
  * Returns true if a blog has more than 1 category
  */

@@ -3,35 +3,8 @@
 ----------------------------------------------- */
 
 .site-navi {
-
   font-family: $sansFontFamily;
-
-  .breadcrumb {
-    display: block;
-    margin: 0 auto;
-    max-width: $siteMainMaxWidth;
-    background-color: #f3f4f5;
-    width: 100%;
-    padding: 13px 20px;
-    font-weight: 300;
-
-    //border: $blockBorderWidth solid $clouds;
-    @include border-radius($blockBorderRadius);
-    color: lighten(desaturate($siteForegroundColor, 20%), 40%);
-
-    .icon-chevron-right {
-      padding-right: 10px;
-      padding-left: 10px;
-      color: $silver;
-    }
-
-    a {
-      color: lighten(desaturate($blueDark, 10%), 20%);
-      &:hover {
-        color: $siteLinkOverColor;
-      }
-    }
-  }
+  margin: 5px auto 0;
 }
 
 .navigation {

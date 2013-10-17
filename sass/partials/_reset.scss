@@ -437,3 +437,15 @@ hr {
   height: 1px;
   margin-bottom: 1.5em;
 }
+
+::selection {
+  background: $blue;
+  color: $white;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background: $blue;
+  color: $white;
+  text-shadow: none;
+}

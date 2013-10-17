@@ -6,6 +6,10 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
+		<?php if ( 'post' == get_post_type() ) : ?>
+			<span class="cat-links"><?php makotokw_the_category_slug(', '); ?></span>
+		<?php endif; ?>
+
 		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'makotokw' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 		<?php if ( 'post' == get_post_type() ) : ?>
 			<span class="entry-date"><?php makotokw_posted_on(); ?></span>
@@ -30,28 +34,8 @@
 
 	<footer class="entry-meta">
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
-			<?php
-				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( __( ' <i class="icon-folder-close"></i> ', 'makotokw' ) );
-				if ( $categories_list && makotokw_categorized_blog() ) :
-			?>
-			<span class="cat-links">
-				<?php printf( __( '<i class="icon-folder-close"></i> %1$s', 'makotokw' ), $categories_list ); ?>
-			</span>
-			<?php endif; // End if categories ?>
-
-			<?php
-				/* translators: used between list items, there is a space after the comma */
-				$tags_list = get_the_tag_list( '', __( ' <i class="icon-tag"></i>', 'makotokw' ) );
-				if ( $tags_list ) :
-			?>
-			<span class="tags-links">
-				<?php printf( __( '<i class="icon-tag"></i> %1$s', 'makotokw' ), $tags_list ); ?>
-			</span>
-			<?php endif; // End if $tags_list ?>
-
+			<?php makotokw_the_category_and_tag(); ?>
 			<?php printf( '<span class="author vcard"><span class="fn">%1$s</span></span>', get_the_author() ); ?>
-
 		<?php endif; // End if 'post' == get_post_type() ?>
 
 		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
