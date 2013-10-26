@@ -565,320 +565,208 @@ hr {
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url("components/fonts/font-awesome/fontawesome-webfont.eot?v=3.2.1");
-  src: url("components/fonts/font-awesome/fontawesome-webfont.eot?#iefix&v=3.2.1") format("embedded-opentype"), url("components/fonts/font-awesome/fontawesome-webfont.woff?v=3.2.1") format("woff"), url("components/fonts/font-awesome/fontawesome-webfont.ttf?v=3.2.1") format("truetype"), url("components/fonts/font-awesome/fontawesome-webfont.svg#fontawesomeregular?v=3.2.1") format("svg");
+  src: url("components/fonts/font-awesome/fontawesome-webfont.eot?v=4.0.0");
+  src: url("components/fonts/font-awesome/fontawesome-webfont.eot?#iefix&v=4.0.0") format("embedded-opentype"), url("components/fonts/font-awesome/fontawesome-webfont.woff?v=4.0.0") format("woff"), url("components/fonts/font-awesome/fontawesome-webfont.ttf?v=4.0.0") format("truetype"), url("components/fonts/font-awesome/fontawesome-webfont.svg?v=4.0.0#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
-/* FONT AWESOME CORE
- * -------------------------- */
-/* line 5, components/scss/font-awesome/_core.scss */
-[class^="icon-"],
-[class*=" icon-"] {
-  font-family: FontAwesome;
-  font-weight: normal;
-  font-style: normal;
-  text-decoration: inherit;
-  -webkit-font-smoothing: antialiased;
-  *margin-right: .3em;
-}
-
-/* line 10, components/scss/font-awesome/_core.scss */
-[class^="icon-"]:before,
-[class*=" icon-"]:before {
-  text-decoration: inherit;
+/* line 4, components/scss/font-awesome/_core.scss */
+.fa {
   display: inline-block;
-  speak: none;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* makes the font 33% larger relative to the icon container */
-/* line 17, components/scss/font-awesome/_core.scss */
-.icon-large:before {
-  vertical-align: -10%;
+/* line 5, components/scss/font-awesome/_larger.scss */
+.fa-lg {
   font-size: 1.33333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
 }
 
-/* makes sure icons active on rollover in links */
-/* line 25, components/scss/font-awesome/_core.scss */
-a [class^="icon-"],
-a [class*=" icon-"] {
-  display: inline;
+/* line 10, components/scss/font-awesome/_larger.scss */
+.fa-2x {
+  font-size: 2em;
 }
 
-/* increased font size for icon-large */
-/* line 33, components/scss/font-awesome/_core.scss */
-[class^="icon-"].icon-fixed-width,
-[class*=" icon-"].icon-fixed-width {
-  display: inline-block;
-  width: 1.14286em;
-  text-align: right;
-  padding-right: 0.28571em;
-}
-/* line 38, components/scss/font-awesome/_core.scss */
-[class^="icon-"].icon-fixed-width.icon-large,
-[class*=" icon-"].icon-fixed-width.icon-large {
-  width: 1.42857em;
+/* line 11, components/scss/font-awesome/_larger.scss */
+.fa-3x {
+  font-size: 3em;
 }
 
-/* line 44, components/scss/font-awesome/_core.scss */
-.icons-ul {
+/* line 12, components/scss/font-awesome/_larger.scss */
+.fa-4x {
+  font-size: 4em;
+}
+
+/* line 13, components/scss/font-awesome/_larger.scss */
+.fa-5x {
+  font-size: 5em;
+}
+
+/* line 3, components/scss/font-awesome/_fixed-width.scss */
+.fa-fw {
+  width: 1.28571em;
+  text-align: center;
+}
+
+/* line 4, components/scss/font-awesome/_list.scss */
+.fa-ul {
+  padding-left: 0;
   margin-left: 2.14286em;
   list-style-type: none;
 }
-/* line 48, components/scss/font-awesome/_core.scss */
-.icons-ul > li {
+/* line 8, components/scss/font-awesome/_list.scss */
+.fa-ul > li {
   position: relative;
 }
-/* line 50, components/scss/font-awesome/_core.scss */
-.icons-ul .icon-li {
+
+/* line 10, components/scss/font-awesome/_list.scss */
+.fa-li {
   position: absolute;
   left: -2.14286em;
   width: 2.14286em;
+  top: 0.14286em;
   text-align: center;
-  line-height: inherit;
+}
+/* line 16, components/scss/font-awesome/_list.scss */
+.fa-li.fa-lg {
+  left: -1.85714em;
 }
 
-/* line 62, components/scss/font-awesome/_core.scss */
-[class^="icon-"].hide,
-[class*=" icon-"].hide {
-  display: none;
-}
-
-/* line 67, components/scss/font-awesome/_core.scss */
-.icon-muted {
-  color: #eeeeee;
-}
-
-/* line 68, components/scss/font-awesome/_core.scss */
-.icon-light {
-  color: white;
-}
-
-/* line 69, components/scss/font-awesome/_core.scss */
-.icon-dark {
-  color: #333333;
-}
-
-/* line 74, components/scss/font-awesome/_core.scss */
-.icon-border {
-  border: solid 1px #eeeeee;
+/* line 4, components/scss/font-awesome/_bordered-pulled.scss */
+.fa-border {
   padding: .2em .25em .15em;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+  border: solid 0.08em #eeeeee;
+  border-radius: .1em;
 }
 
-/* line 83, components/scss/font-awesome/_core.scss */
-.icon-2x {
-  font-size: 2em;
-}
-/* line 85, components/scss/font-awesome/_core.scss */
-.icon-2x.icon-border {
-  border-width: 2px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-}
-
-/* line 90, components/scss/font-awesome/_core.scss */
-.icon-3x {
-  font-size: 3em;
-}
-/* line 92, components/scss/font-awesome/_core.scss */
-.icon-3x.icon-border {
-  border-width: 3px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-}
-
-/* line 97, components/scss/font-awesome/_core.scss */
-.icon-4x {
-  font-size: 4em;
-}
-/* line 99, components/scss/font-awesome/_core.scss */
-.icon-4x.icon-border {
-  border-width: 4px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
-}
-
-/* line 105, components/scss/font-awesome/_core.scss */
-.icon-5x {
-  font-size: 5em;
-}
-/* line 107, components/scss/font-awesome/_core.scss */
-.icon-5x.icon-border {
-  border-width: 5px;
-  -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;
-  border-radius: 7px;
-}
-
-/* line 118, components/scss/font-awesome/_core.scss */
+/* line 10, components/scss/font-awesome/_bordered-pulled.scss */
 .pull-right {
   float: right;
 }
 
-/* line 119, components/scss/font-awesome/_core.scss */
+/* line 11, components/scss/font-awesome/_bordered-pulled.scss */
 .pull-left {
   float: left;
 }
 
-/* line 123, components/scss/font-awesome/_core.scss */
-[class^="icon-"].pull-left,
-[class*=" icon-"].pull-left {
+/* line 14, components/scss/font-awesome/_bordered-pulled.scss */
+.fa.pull-left {
   margin-right: .3em;
 }
-/* line 126, components/scss/font-awesome/_core.scss */
-[class^="icon-"].pull-right,
-[class*=" icon-"].pull-right {
+/* line 15, components/scss/font-awesome/_bordered-pulled.scss */
+.fa.pull-right {
   margin-left: .3em;
 }
 
-/* EXTRAS
- * -------------------------- */
-/* Stacked and layered icon */
-/* line 25, components/scss/font-awesome/_mixins.scss */
-.icon-stack {
-  position: relative;
-  display: inline-block;
-  width: 2em;
-  height: 2em;
-  line-height: 2em;
-  vertical-align: -35%;
-}
-/* line 33, components/scss/font-awesome/_mixins.scss */
-.icon-stack [class^="icon-"],
-.icon-stack [class*=" icon-"] {
-  display: block;
-  text-align: center;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  font-size: 1em;
-  line-height: inherit;
-  *line-height: 2em;
-}
-/* line 43, components/scss/font-awesome/_mixins.scss */
-.icon-stack .icon-stack-base {
-  font-size: 2em;
-  *line-height: 1em;
-}
-
-/* Animated rotating icon */
-/* line 8, components/scss/font-awesome/_extras.scss */
-.icon-spin {
-  display: inline-block;
+/* line 4, components/scss/font-awesome/_spinning.scss */
+.fa-spin {
+  -webkit-animation: spin 2s infinite linear;
   -moz-animation: spin 2s infinite linear;
   -o-animation: spin 2s infinite linear;
-  -webkit-animation: spin 2s infinite linear;
   animation: spin 2s infinite linear;
 }
 
-/* Prevent stack and spinners from being taken inline when inside a link */
-/* line 18, components/scss/font-awesome/_extras.scss */
-a .icon-stack,
-a .icon-spin {
-  display: inline-block;
-  text-decoration: none;
-}
-
 @-moz-keyframes spin {
-  /* line 24, components/scss/font-awesome/_extras.scss */
+  /* line 12, components/scss/font-awesome/_spinning.scss */
   0% {
     -moz-transform: rotate(0deg);
   }
 
-  /* line 25, components/scss/font-awesome/_extras.scss */
+  /* line 13, components/scss/font-awesome/_spinning.scss */
   100% {
     -moz-transform: rotate(359deg);
   }
 }
 
 @-webkit-keyframes spin {
-  /* line 28, components/scss/font-awesome/_extras.scss */
+  /* line 16, components/scss/font-awesome/_spinning.scss */
   0% {
     -webkit-transform: rotate(0deg);
   }
 
-  /* line 29, components/scss/font-awesome/_extras.scss */
+  /* line 17, components/scss/font-awesome/_spinning.scss */
   100% {
     -webkit-transform: rotate(359deg);
   }
 }
 
 @-o-keyframes spin {
-  /* line 32, components/scss/font-awesome/_extras.scss */
+  /* line 20, components/scss/font-awesome/_spinning.scss */
   0% {
     -o-transform: rotate(0deg);
   }
 
-  /* line 33, components/scss/font-awesome/_extras.scss */
+  /* line 21, components/scss/font-awesome/_spinning.scss */
   100% {
     -o-transform: rotate(359deg);
   }
 }
 
 @-ms-keyframes spin {
-  /* line 36, components/scss/font-awesome/_extras.scss */
+  /* line 24, components/scss/font-awesome/_spinning.scss */
   0% {
     -ms-transform: rotate(0deg);
   }
 
-  /* line 37, components/scss/font-awesome/_extras.scss */
+  /* line 25, components/scss/font-awesome/_spinning.scss */
   100% {
     -ms-transform: rotate(359deg);
   }
 }
 
 @keyframes spin {
-  /* line 40, components/scss/font-awesome/_extras.scss */
+  /* line 28, components/scss/font-awesome/_spinning.scss */
   0% {
     transform: rotate(0deg);
   }
 
-  /* line 41, components/scss/font-awesome/_extras.scss */
+  /* line 29, components/scss/font-awesome/_spinning.scss */
   100% {
     transform: rotate(359deg);
   }
 }
 
-/* Icon rotations and mirroring */
-/* line 45, components/scss/font-awesome/_extras.scss */
-.icon-rotate-90:before {
+/* line 4, components/scss/font-awesome/_rotated-flipped.scss */
+.fa-rotate-90 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=$rotation);
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   -o-transform: rotate(90deg);
   transform: rotate(90deg);
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
 }
 
-/* line 54, components/scss/font-awesome/_extras.scss */
-.icon-rotate-180:before {
+/* line 5, components/scss/font-awesome/_rotated-flipped.scss */
+.fa-rotate-180 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=$rotation);
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   -o-transform: rotate(180deg);
   transform: rotate(180deg);
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
 }
 
-/* line 63, components/scss/font-awesome/_extras.scss */
-.icon-rotate-270:before {
+/* line 6, components/scss/font-awesome/_rotated-flipped.scss */
+.fa-rotate-270 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=$rotation);
   -webkit-transform: rotate(270deg);
   -moz-transform: rotate(270deg);
   -ms-transform: rotate(270deg);
   -o-transform: rotate(270deg);
   transform: rotate(270deg);
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
 
-/* line 72, components/scss/font-awesome/_extras.scss */
-.icon-flip-horizontal:before {
+/* line 8, components/scss/font-awesome/_rotated-flipped.scss */
+.fa-flip-horizontal {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=$rotation);
   -webkit-transform: scale(-1, 1);
   -moz-transform: scale(-1, 1);
   -ms-transform: scale(-1, 1);
@@ -886,8 +774,9 @@ a .icon-spin {
   transform: scale(-1, 1);
 }
 
-/* line 80, components/scss/font-awesome/_extras.scss */
-.icon-flip-vertical:before {
+/* line 9, components/scss/font-awesome/_rotated-flipped.scss */
+.fa-flip-vertical {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=$rotation);
   -webkit-transform: scale(1, -1);
   -moz-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
@@ -895,1836 +784,1929 @@ a .icon-spin {
   transform: scale(1, -1);
 }
 
-/* ensure rotation occurs inside anchor tags */
-/* line 91, components/scss/font-awesome/_extras.scss */
-a .icon-rotate-90:before, a .icon-rotate-180:before, a .icon-rotate-270:before, a .icon-flip-horizontal:before, a .icon-flip-vertical:before {
+/* line 4, components/scss/font-awesome/_stacked.scss */
+.fa-stack {
+  position: relative;
   display: inline-block;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  vertical-align: middle;
+}
+
+/* line 12, components/scss/font-awesome/_stacked.scss */
+.fa-stack-1x, .fa-stack-2x {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 17, components/scss/font-awesome/_stacked.scss */
+.fa-stack-1x {
+  line-height: inherit;
+}
+
+/* line 18, components/scss/font-awesome/_stacked.scss */
+.fa-stack-2x {
+  font-size: 2em;
+}
+
+/* line 19, components/scss/font-awesome/_stacked.scss */
+.fa-inverse {
+  color: white;
 }
 
 /* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
- * readers do not read off random characters that represent icons */
+   readers do not read off random characters that represent icons */
 /* line 4, components/scss/font-awesome/_icons.scss */
-.icon-glass:before {
+.fa-glass:before {
   content: "\f000";
 }
 
 /* line 5, components/scss/font-awesome/_icons.scss */
-.icon-music:before {
+.fa-music:before {
   content: "\f001";
 }
 
 /* line 6, components/scss/font-awesome/_icons.scss */
-.icon-search:before, .enclosure-qiita:before {
+.fa-search:before, .enclosure-qiita:before {
   content: "\f002";
 }
 
 /* line 7, components/scss/font-awesome/_icons.scss */
-.icon-envelope-alt:before {
+.fa-envelope-o:before {
   content: "\f003";
 }
 
 /* line 8, components/scss/font-awesome/_icons.scss */
-.icon-heart:before, .site-footer .site-info .poweredby .theme:before {
+.fa-heart:before, .site-footer .site-info .poweredby .theme:before {
   content: "\f004";
 }
 
 /* line 9, components/scss/font-awesome/_icons.scss */
-.icon-star:before {
+.fa-star:before {
   content: "\f005";
 }
 
 /* line 10, components/scss/font-awesome/_icons.scss */
-.icon-star-empty:before {
+.fa-star-o:before {
   content: "\f006";
 }
 
 /* line 11, components/scss/font-awesome/_icons.scss */
-.icon-user:before {
+.fa-user:before {
   content: "\f007";
 }
 
 /* line 12, components/scss/font-awesome/_icons.scss */
-.icon-film:before {
+.fa-film:before {
   content: "\f008";
 }
 
 /* line 13, components/scss/font-awesome/_icons.scss */
-.icon-th-large:before {
+.fa-th-large:before {
   content: "\f009";
 }
 
 /* line 14, components/scss/font-awesome/_icons.scss */
-.icon-th:before {
+.fa-th:before {
   content: "\f00a";
 }
 
 /* line 15, components/scss/font-awesome/_icons.scss */
-.icon-th-list:before {
+.fa-th-list:before {
   content: "\f00b";
 }
 
 /* line 16, components/scss/font-awesome/_icons.scss */
-.icon-ok:before {
+.fa-check:before {
   content: "\f00c";
 }
 
 /* line 17, components/scss/font-awesome/_icons.scss */
-.icon-remove:before {
+.fa-times:before {
   content: "\f00d";
 }
 
 /* line 18, components/scss/font-awesome/_icons.scss */
-.icon-zoom-in:before {
+.fa-search-plus:before {
   content: "\f00e";
 }
 
 /* line 19, components/scss/font-awesome/_icons.scss */
-.icon-zoom-out:before {
+.fa-search-minus:before {
   content: "\f010";
 }
 
-/* line 21, components/scss/font-awesome/_icons.scss */
-.icon-power-off:before,
-.icon-off:before {
+/* line 20, components/scss/font-awesome/_icons.scss */
+.fa-power-off:before {
   content: "\f011";
 }
 
-/* line 22, components/scss/font-awesome/_icons.scss */
-.icon-signal:before {
+/* line 21, components/scss/font-awesome/_icons.scss */
+.fa-signal:before {
   content: "\f012";
 }
 
-/* line 24, components/scss/font-awesome/_icons.scss */
-.icon-gear:before,
-.icon-cog:before {
+/* line 23, components/scss/font-awesome/_icons.scss */
+.fa-gear:before,
+.fa-cog:before {
   content: "\f013";
 }
 
-/* line 25, components/scss/font-awesome/_icons.scss */
-.icon-trash:before {
+/* line 24, components/scss/font-awesome/_icons.scss */
+.fa-trash-o:before {
   content: "\f014";
 }
 
-/* line 26, components/scss/font-awesome/_icons.scss */
-.icon-home:before {
+/* line 25, components/scss/font-awesome/_icons.scss */
+.fa-home:before {
   content: "\f015";
 }
 
-/* line 27, components/scss/font-awesome/_icons.scss */
-.icon-file-alt:before, .enclosure:before, .enclosure-evernote:before, .enclosure-qiita:before, .enclosure-github:before {
+/* line 26, components/scss/font-awesome/_icons.scss */
+.fa-file-o:before {
   content: "\f016";
 }
 
-/* line 28, components/scss/font-awesome/_icons.scss */
-.icon-time:before, .entry-date:before {
+/* line 27, components/scss/font-awesome/_icons.scss */
+.fa-clock-o:before {
   content: "\f017";
 }
 
-/* line 29, components/scss/font-awesome/_icons.scss */
-.icon-road:before {
+/* line 28, components/scss/font-awesome/_icons.scss */
+.fa-road:before {
   content: "\f018";
 }
 
-/* line 30, components/scss/font-awesome/_icons.scss */
-.icon-download-alt:before {
+/* line 29, components/scss/font-awesome/_icons.scss */
+.fa-download:before {
   content: "\f019";
 }
 
-/* line 31, components/scss/font-awesome/_icons.scss */
-.icon-download:before {
+/* line 30, components/scss/font-awesome/_icons.scss */
+.fa-arrow-circle-o-down:before {
   content: "\f01a";
 }
 
-/* line 32, components/scss/font-awesome/_icons.scss */
-.icon-upload:before {
+/* line 31, components/scss/font-awesome/_icons.scss */
+.fa-arrow-circle-o-up:before {
   content: "\f01b";
 }
 
-/* line 33, components/scss/font-awesome/_icons.scss */
-.icon-inbox:before {
+/* line 32, components/scss/font-awesome/_icons.scss */
+.fa-inbox:before {
   content: "\f01c";
 }
 
-/* line 34, components/scss/font-awesome/_icons.scss */
-.icon-play-circle:before {
+/* line 33, components/scss/font-awesome/_icons.scss */
+.fa-play-circle-o:before {
   content: "\f01d";
 }
 
-/* line 36, components/scss/font-awesome/_icons.scss */
-.icon-rotate-right:before,
-.icon-repeat:before {
+/* line 35, components/scss/font-awesome/_icons.scss */
+.fa-rotate-right:before,
+.fa-repeat:before {
   content: "\f01e";
 }
 
-/* line 37, components/scss/font-awesome/_icons.scss */
-.icon-refresh:before {
+/* line 36, components/scss/font-awesome/_icons.scss */
+.fa-refresh:before {
   content: "\f021";
 }
 
-/* line 38, components/scss/font-awesome/_icons.scss */
-.icon-list-alt:before {
+/* line 37, components/scss/font-awesome/_icons.scss */
+.fa-list-alt:before {
   content: "\f022";
 }
 
-/* line 39, components/scss/font-awesome/_icons.scss */
-.icon-lock:before {
+/* line 38, components/scss/font-awesome/_icons.scss */
+.fa-lock:before {
   content: "\f023";
 }
 
-/* line 40, components/scss/font-awesome/_icons.scss */
-.icon-flag:before {
+/* line 39, components/scss/font-awesome/_icons.scss */
+.fa-flag:before {
   content: "\f024";
 }
 
-/* line 41, components/scss/font-awesome/_icons.scss */
-.icon-headphones:before {
+/* line 40, components/scss/font-awesome/_icons.scss */
+.fa-headphones:before {
   content: "\f025";
 }
 
-/* line 42, components/scss/font-awesome/_icons.scss */
-.icon-volume-off:before {
+/* line 41, components/scss/font-awesome/_icons.scss */
+.fa-volume-off:before {
   content: "\f026";
 }
 
-/* line 43, components/scss/font-awesome/_icons.scss */
-.icon-volume-down:before {
+/* line 42, components/scss/font-awesome/_icons.scss */
+.fa-volume-down:before {
   content: "\f027";
 }
 
-/* line 44, components/scss/font-awesome/_icons.scss */
-.icon-volume-up:before {
+/* line 43, components/scss/font-awesome/_icons.scss */
+.fa-volume-up:before {
   content: "\f028";
 }
 
-/* line 45, components/scss/font-awesome/_icons.scss */
-.icon-qrcode:before {
+/* line 44, components/scss/font-awesome/_icons.scss */
+.fa-qrcode:before {
   content: "\f029";
 }
 
-/* line 46, components/scss/font-awesome/_icons.scss */
-.icon-barcode:before {
+/* line 45, components/scss/font-awesome/_icons.scss */
+.fa-barcode:before {
   content: "\f02a";
 }
 
-/* line 47, components/scss/font-awesome/_icons.scss */
-.icon-tag:before {
+/* line 46, components/scss/font-awesome/_icons.scss */
+.fa-tag:before {
   content: "\f02b";
 }
 
-/* line 48, components/scss/font-awesome/_icons.scss */
-.icon-tags:before {
+/* line 47, components/scss/font-awesome/_icons.scss */
+.fa-tags:before {
   content: "\f02c";
 }
 
-/* line 49, components/scss/font-awesome/_icons.scss */
-.icon-book:before {
+/* line 48, components/scss/font-awesome/_icons.scss */
+.fa-book:before {
   content: "\f02d";
 }
 
-/* line 50, components/scss/font-awesome/_icons.scss */
-.icon-bookmark:before, .note-link:before {
+/* line 49, components/scss/font-awesome/_icons.scss */
+.fa-bookmark:before, .note-link:before {
   content: "\f02e";
 }
 
-/* line 51, components/scss/font-awesome/_icons.scss */
-.icon-print:before {
+/* line 50, components/scss/font-awesome/_icons.scss */
+.fa-print:before {
   content: "\f02f";
 }
 
-/* line 52, components/scss/font-awesome/_icons.scss */
-.icon-camera:before {
+/* line 51, components/scss/font-awesome/_icons.scss */
+.fa-camera:before {
   content: "\f030";
 }
 
-/* line 53, components/scss/font-awesome/_icons.scss */
-.icon-font:before {
+/* line 52, components/scss/font-awesome/_icons.scss */
+.fa-font:before {
   content: "\f031";
 }
 
-/* line 54, components/scss/font-awesome/_icons.scss */
-.icon-bold:before {
+/* line 53, components/scss/font-awesome/_icons.scss */
+.fa-bold:before {
   content: "\f032";
 }
 
-/* line 55, components/scss/font-awesome/_icons.scss */
-.icon-italic:before {
+/* line 54, components/scss/font-awesome/_icons.scss */
+.fa-italic:before {
   content: "\f033";
 }
 
-/* line 56, components/scss/font-awesome/_icons.scss */
-.icon-text-height:before {
+/* line 55, components/scss/font-awesome/_icons.scss */
+.fa-text-height:before {
   content: "\f034";
 }
 
-/* line 57, components/scss/font-awesome/_icons.scss */
-.icon-text-width:before {
+/* line 56, components/scss/font-awesome/_icons.scss */
+.fa-text-width:before {
   content: "\f035";
 }
 
-/* line 58, components/scss/font-awesome/_icons.scss */
-.icon-align-left:before {
+/* line 57, components/scss/font-awesome/_icons.scss */
+.fa-align-left:before {
   content: "\f036";
 }
 
-/* line 59, components/scss/font-awesome/_icons.scss */
-.icon-align-center:before {
+/* line 58, components/scss/font-awesome/_icons.scss */
+.fa-align-center:before {
   content: "\f037";
 }
 
-/* line 60, components/scss/font-awesome/_icons.scss */
-.icon-align-right:before {
+/* line 59, components/scss/font-awesome/_icons.scss */
+.fa-align-right:before {
   content: "\f038";
 }
 
-/* line 61, components/scss/font-awesome/_icons.scss */
-.icon-align-justify:before {
+/* line 60, components/scss/font-awesome/_icons.scss */
+.fa-align-justify:before {
   content: "\f039";
 }
 
-/* line 62, components/scss/font-awesome/_icons.scss */
-.icon-list:before {
+/* line 61, components/scss/font-awesome/_icons.scss */
+.fa-list:before {
   content: "\f03a";
 }
 
 /* line 63, components/scss/font-awesome/_icons.scss */
-.icon-indent-left:before {
+.fa-dedent:before,
+.fa-outdent:before {
   content: "\f03b";
 }
 
 /* line 64, components/scss/font-awesome/_icons.scss */
-.icon-indent-right:before {
+.fa-indent:before {
   content: "\f03c";
 }
 
 /* line 65, components/scss/font-awesome/_icons.scss */
-.icon-facetime-video:before {
+.fa-video-camera:before {
   content: "\f03d";
 }
 
 /* line 66, components/scss/font-awesome/_icons.scss */
-.icon-picture:before {
+.fa-picture-o:before {
   content: "\f03e";
 }
 
 /* line 67, components/scss/font-awesome/_icons.scss */
-.icon-pencil:before, .bypostauthor > .comment-body .fn:before {
+.fa-pencil:before, .bypostauthor > .comment-body .fn:before {
   content: "\f040";
 }
 
 /* line 68, components/scss/font-awesome/_icons.scss */
-.icon-map-marker:before {
+.fa-map-marker:before {
   content: "\f041";
 }
 
 /* line 69, components/scss/font-awesome/_icons.scss */
-.icon-adjust:before {
+.fa-adjust:before {
   content: "\f042";
 }
 
 /* line 70, components/scss/font-awesome/_icons.scss */
-.icon-tint:before {
+.fa-tint:before {
   content: "\f043";
 }
 
-/* line 71, components/scss/font-awesome/_icons.scss */
-.icon-edit:before {
+/* line 72, components/scss/font-awesome/_icons.scss */
+.fa-edit:before,
+.fa-pencil-square-o:before {
   content: "\f044";
 }
 
-/* line 72, components/scss/font-awesome/_icons.scss */
-.icon-share:before {
+/* line 73, components/scss/font-awesome/_icons.scss */
+.fa-share-square-o:before {
   content: "\f045";
 }
 
-/* line 73, components/scss/font-awesome/_icons.scss */
-.icon-check:before {
+/* line 74, components/scss/font-awesome/_icons.scss */
+.fa-check-square-o:before {
   content: "\f046";
 }
 
-/* line 74, components/scss/font-awesome/_icons.scss */
-.icon-move:before {
+/* line 75, components/scss/font-awesome/_icons.scss */
+.fa-move:before {
   content: "\f047";
 }
 
-/* line 75, components/scss/font-awesome/_icons.scss */
-.icon-step-backward:before {
+/* line 76, components/scss/font-awesome/_icons.scss */
+.fa-step-backward:before {
   content: "\f048";
 }
 
-/* line 76, components/scss/font-awesome/_icons.scss */
-.icon-fast-backward:before {
+/* line 77, components/scss/font-awesome/_icons.scss */
+.fa-fast-backward:before {
   content: "\f049";
 }
 
-/* line 77, components/scss/font-awesome/_icons.scss */
-.icon-backward:before {
+/* line 78, components/scss/font-awesome/_icons.scss */
+.fa-backward:before {
   content: "\f04a";
 }
 
-/* line 78, components/scss/font-awesome/_icons.scss */
-.icon-play:before {
+/* line 79, components/scss/font-awesome/_icons.scss */
+.fa-play:before {
   content: "\f04b";
 }
 
-/* line 79, components/scss/font-awesome/_icons.scss */
-.icon-pause:before {
+/* line 80, components/scss/font-awesome/_icons.scss */
+.fa-pause:before {
   content: "\f04c";
 }
 
-/* line 80, components/scss/font-awesome/_icons.scss */
-.icon-stop:before {
+/* line 81, components/scss/font-awesome/_icons.scss */
+.fa-stop:before {
   content: "\f04d";
 }
 
-/* line 81, components/scss/font-awesome/_icons.scss */
-.icon-forward:before {
+/* line 82, components/scss/font-awesome/_icons.scss */
+.fa-forward:before {
   content: "\f04e";
 }
 
-/* line 82, components/scss/font-awesome/_icons.scss */
-.icon-fast-forward:before {
+/* line 83, components/scss/font-awesome/_icons.scss */
+.fa-fast-forward:before {
   content: "\f050";
 }
 
-/* line 83, components/scss/font-awesome/_icons.scss */
-.icon-step-forward:before {
+/* line 84, components/scss/font-awesome/_icons.scss */
+.fa-step-forward:before {
   content: "\f051";
 }
 
-/* line 84, components/scss/font-awesome/_icons.scss */
-.icon-eject:before {
+/* line 85, components/scss/font-awesome/_icons.scss */
+.fa-eject:before {
   content: "\f052";
 }
 
-/* line 85, components/scss/font-awesome/_icons.scss */
-.icon-chevron-left:before {
+/* line 86, components/scss/font-awesome/_icons.scss */
+.fa-chevron-left:before {
   content: "\f053";
 }
 
-/* line 86, components/scss/font-awesome/_icons.scss */
-.icon-chevron-right:before {
+/* line 87, components/scss/font-awesome/_icons.scss */
+.fa-chevron-right:before {
   content: "\f054";
 }
 
-/* line 87, components/scss/font-awesome/_icons.scss */
-.icon-plus-sign:before {
+/* line 88, components/scss/font-awesome/_icons.scss */
+.fa-plus-circle:before {
   content: "\f055";
 }
 
-/* line 88, components/scss/font-awesome/_icons.scss */
-.icon-minus-sign:before {
+/* line 89, components/scss/font-awesome/_icons.scss */
+.fa-minus-circle:before {
   content: "\f056";
 }
 
-/* line 89, components/scss/font-awesome/_icons.scss */
-.icon-remove-sign:before {
+/* line 90, components/scss/font-awesome/_icons.scss */
+.fa-times-circle:before {
   content: "\f057";
 }
 
-/* line 90, components/scss/font-awesome/_icons.scss */
-.icon-ok-sign:before {
+/* line 91, components/scss/font-awesome/_icons.scss */
+.fa-check-circle:before {
   content: "\f058";
 }
 
-/* line 91, components/scss/font-awesome/_icons.scss */
-.icon-question-sign:before {
+/* line 92, components/scss/font-awesome/_icons.scss */
+.fa-question-circle:before {
   content: "\f059";
 }
 
-/* line 92, components/scss/font-awesome/_icons.scss */
-.icon-info-sign:before {
+/* line 93, components/scss/font-awesome/_icons.scss */
+.fa-info-circle:before {
   content: "\f05a";
 }
 
-/* line 93, components/scss/font-awesome/_icons.scss */
-.icon-screenshot:before {
+/* line 94, components/scss/font-awesome/_icons.scss */
+.fa-crosshairs:before {
   content: "\f05b";
 }
 
-/* line 94, components/scss/font-awesome/_icons.scss */
-.icon-remove-circle:before {
+/* line 95, components/scss/font-awesome/_icons.scss */
+.fa-times-circle-o:before {
   content: "\f05c";
 }
 
-/* line 95, components/scss/font-awesome/_icons.scss */
-.icon-ok-circle:before {
+/* line 96, components/scss/font-awesome/_icons.scss */
+.fa-check-circle-o:before {
   content: "\f05d";
 }
 
-/* line 96, components/scss/font-awesome/_icons.scss */
-.icon-ban-circle:before {
+/* line 97, components/scss/font-awesome/_icons.scss */
+.fa-ban:before {
   content: "\f05e";
 }
 
-/* line 97, components/scss/font-awesome/_icons.scss */
-.icon-arrow-left:before {
+/* line 98, components/scss/font-awesome/_icons.scss */
+.fa-arrow-left:before {
   content: "\f060";
 }
 
-/* line 98, components/scss/font-awesome/_icons.scss */
-.icon-arrow-right:before {
+/* line 99, components/scss/font-awesome/_icons.scss */
+.fa-arrow-right:before {
   content: "\f061";
 }
 
-/* line 99, components/scss/font-awesome/_icons.scss */
-.icon-arrow-up:before {
+/* line 100, components/scss/font-awesome/_icons.scss */
+.fa-arrow-up:before {
   content: "\f062";
 }
 
-/* line 100, components/scss/font-awesome/_icons.scss */
-.icon-arrow-down:before {
+/* line 101, components/scss/font-awesome/_icons.scss */
+.fa-arrow-down:before {
   content: "\f063";
 }
 
-/* line 102, components/scss/font-awesome/_icons.scss */
-.icon-mail-forward:before,
-.icon-share-alt:before {
+/* line 103, components/scss/font-awesome/_icons.scss */
+.fa-mail-forward:before,
+.fa-share:before {
   content: "\f064";
 }
 
-/* line 103, components/scss/font-awesome/_icons.scss */
-.icon-resize-full:before {
+/* line 104, components/scss/font-awesome/_icons.scss */
+.fa-resize-full:before {
   content: "\f065";
 }
 
-/* line 104, components/scss/font-awesome/_icons.scss */
-.icon-resize-small:before {
+/* line 105, components/scss/font-awesome/_icons.scss */
+.fa-resize-small:before {
   content: "\f066";
 }
 
-/* line 105, components/scss/font-awesome/_icons.scss */
-.icon-plus:before {
+/* line 106, components/scss/font-awesome/_icons.scss */
+.fa-plus:before {
   content: "\f067";
 }
 
-/* line 106, components/scss/font-awesome/_icons.scss */
-.icon-minus:before {
+/* line 107, components/scss/font-awesome/_icons.scss */
+.fa-minus:before {
   content: "\f068";
 }
 
-/* line 107, components/scss/font-awesome/_icons.scss */
-.icon-asterisk:before {
+/* line 108, components/scss/font-awesome/_icons.scss */
+.fa-asterisk:before {
   content: "\f069";
 }
 
-/* line 108, components/scss/font-awesome/_icons.scss */
-.icon-exclamation-sign:before {
+/* line 109, components/scss/font-awesome/_icons.scss */
+.fa-exclamation-circle:before {
   content: "\f06a";
 }
 
-/* line 109, components/scss/font-awesome/_icons.scss */
-.icon-gift:before {
+/* line 110, components/scss/font-awesome/_icons.scss */
+.fa-gift:before {
   content: "\f06b";
 }
 
-/* line 110, components/scss/font-awesome/_icons.scss */
-.icon-leaf:before {
+/* line 111, components/scss/font-awesome/_icons.scss */
+.fa-leaf:before {
   content: "\f06c";
 }
 
-/* line 111, components/scss/font-awesome/_icons.scss */
-.icon-fire:before {
+/* line 112, components/scss/font-awesome/_icons.scss */
+.fa-fire:before {
   content: "\f06d";
 }
 
-/* line 112, components/scss/font-awesome/_icons.scss */
-.icon-eye-open:before {
+/* line 113, components/scss/font-awesome/_icons.scss */
+.fa-eye:before {
   content: "\f06e";
 }
 
-/* line 113, components/scss/font-awesome/_icons.scss */
-.icon-eye-close:before {
+/* line 114, components/scss/font-awesome/_icons.scss */
+.fa-eye-slash:before {
   content: "\f070";
 }
 
-/* line 114, components/scss/font-awesome/_icons.scss */
-.icon-warning-sign:before, .comment-body .comment-awaiting-moderation:before {
+/* line 116, components/scss/font-awesome/_icons.scss */
+.fa-warning:before,
+.fa-exclamation-triangle:before {
   content: "\f071";
 }
 
-/* line 115, components/scss/font-awesome/_icons.scss */
-.icon-plane:before {
+/* line 117, components/scss/font-awesome/_icons.scss */
+.fa-plane:before {
   content: "\f072";
 }
 
-/* line 116, components/scss/font-awesome/_icons.scss */
-.icon-calendar:before {
+/* line 118, components/scss/font-awesome/_icons.scss */
+.fa-calendar:before {
   content: "\f073";
 }
 
-/* line 117, components/scss/font-awesome/_icons.scss */
-.icon-random:before {
+/* line 119, components/scss/font-awesome/_icons.scss */
+.fa-random:before {
   content: "\f074";
 }
 
-/* line 118, components/scss/font-awesome/_icons.scss */
-.icon-comment:before, .note-comment:before, .note-ins:before {
+/* line 120, components/scss/font-awesome/_icons.scss */
+.fa-comment:before, .note-comment:before, .note-ins:before {
   content: "\f075";
 }
 
-/* line 119, components/scss/font-awesome/_icons.scss */
-.icon-magnet:before {
+/* line 121, components/scss/font-awesome/_icons.scss */
+.fa-magnet:before {
   content: "\f076";
 }
 
-/* line 120, components/scss/font-awesome/_icons.scss */
-.icon-chevron-up:before {
+/* line 122, components/scss/font-awesome/_icons.scss */
+.fa-chevron-up:before {
   content: "\f077";
 }
 
-/* line 121, components/scss/font-awesome/_icons.scss */
-.icon-chevron-down:before {
+/* line 123, components/scss/font-awesome/_icons.scss */
+.fa-chevron-down:before {
   content: "\f078";
 }
 
-/* line 122, components/scss/font-awesome/_icons.scss */
-.icon-retweet:before {
+/* line 124, components/scss/font-awesome/_icons.scss */
+.fa-retweet:before {
   content: "\f079";
 }
 
-/* line 123, components/scss/font-awesome/_icons.scss */
-.icon-shopping-cart:before {
+/* line 125, components/scss/font-awesome/_icons.scss */
+.fa-shopping-cart:before {
   content: "\f07a";
 }
 
-/* line 124, components/scss/font-awesome/_icons.scss */
-.icon-folder-close:before {
+/* line 126, components/scss/font-awesome/_icons.scss */
+.fa-folder:before {
   content: "\f07b";
 }
 
-/* line 125, components/scss/font-awesome/_icons.scss */
-.icon-folder-open:before {
+/* line 127, components/scss/font-awesome/_icons.scss */
+.fa-folder-open:before {
   content: "\f07c";
 }
 
-/* line 126, components/scss/font-awesome/_icons.scss */
-.icon-resize-vertical:before {
+/* line 128, components/scss/font-awesome/_icons.scss */
+.fa-resize-vertical:before {
   content: "\f07d";
 }
 
-/* line 127, components/scss/font-awesome/_icons.scss */
-.icon-resize-horizontal:before {
+/* line 129, components/scss/font-awesome/_icons.scss */
+.fa-resize-horizontal:before {
   content: "\f07e";
 }
 
-/* line 128, components/scss/font-awesome/_icons.scss */
-.icon-bar-chart:before {
+/* line 130, components/scss/font-awesome/_icons.scss */
+.fa-bar-chart-o:before {
   content: "\f080";
 }
 
-/* line 129, components/scss/font-awesome/_icons.scss */
-.icon-twitter-sign:before {
+/* line 131, components/scss/font-awesome/_icons.scss */
+.fa-twitter-square:before {
   content: "\f081";
 }
 
-/* line 130, components/scss/font-awesome/_icons.scss */
-.icon-facebook-sign:before {
+/* line 132, components/scss/font-awesome/_icons.scss */
+.fa-facebook-square:before {
   content: "\f082";
 }
 
-/* line 131, components/scss/font-awesome/_icons.scss */
-.icon-camera-retro:before {
+/* line 133, components/scss/font-awesome/_icons.scss */
+.fa-camera-retro:before {
   content: "\f083";
 }
 
-/* line 132, components/scss/font-awesome/_icons.scss */
-.icon-key:before {
+/* line 134, components/scss/font-awesome/_icons.scss */
+.fa-key:before {
   content: "\f084";
 }
 
-/* line 134, components/scss/font-awesome/_icons.scss */
-.icon-gears:before,
-.icon-cogs:before {
+/* line 136, components/scss/font-awesome/_icons.scss */
+.fa-gears:before,
+.fa-cogs:before {
   content: "\f085";
 }
 
-/* line 135, components/scss/font-awesome/_icons.scss */
-.icon-comments:before {
+/* line 137, components/scss/font-awesome/_icons.scss */
+.fa-comments:before {
   content: "\f086";
 }
 
-/* line 136, components/scss/font-awesome/_icons.scss */
-.icon-thumbs-up-alt:before {
+/* line 138, components/scss/font-awesome/_icons.scss */
+.fa-thumbs-o-up:before {
   content: "\f087";
 }
 
-/* line 137, components/scss/font-awesome/_icons.scss */
-.icon-thumbs-down-alt:before {
+/* line 139, components/scss/font-awesome/_icons.scss */
+.fa-thumbs-o-down:before {
   content: "\f088";
 }
 
-/* line 138, components/scss/font-awesome/_icons.scss */
-.icon-star-half:before {
+/* line 140, components/scss/font-awesome/_icons.scss */
+.fa-star-half:before {
   content: "\f089";
 }
 
-/* line 139, components/scss/font-awesome/_icons.scss */
-.icon-heart-empty:before {
+/* line 141, components/scss/font-awesome/_icons.scss */
+.fa-heart-o:before {
   content: "\f08a";
 }
 
-/* line 140, components/scss/font-awesome/_icons.scss */
-.icon-signout:before {
+/* line 142, components/scss/font-awesome/_icons.scss */
+.fa-sign-out:before {
   content: "\f08b";
 }
 
-/* line 141, components/scss/font-awesome/_icons.scss */
-.icon-linkedin-sign:before {
+/* line 143, components/scss/font-awesome/_icons.scss */
+.fa-linkedin-square:before {
   content: "\f08c";
 }
 
-/* line 142, components/scss/font-awesome/_icons.scss */
-.icon-pushpin:before {
+/* line 144, components/scss/font-awesome/_icons.scss */
+.fa-thumb-tack:before {
   content: "\f08d";
 }
 
-/* line 143, components/scss/font-awesome/_icons.scss */
-.icon-external-link:before {
+/* line 145, components/scss/font-awesome/_icons.scss */
+.fa-external-link:before {
   content: "\f08e";
 }
 
-/* line 144, components/scss/font-awesome/_icons.scss */
-.icon-signin:before {
+/* line 146, components/scss/font-awesome/_icons.scss */
+.fa-sign-in:before {
   content: "\f090";
 }
 
-/* line 145, components/scss/font-awesome/_icons.scss */
-.icon-trophy:before {
+/* line 147, components/scss/font-awesome/_icons.scss */
+.fa-trophy:before {
   content: "\f091";
 }
 
-/* line 146, components/scss/font-awesome/_icons.scss */
-.icon-github-sign:before {
+/* line 148, components/scss/font-awesome/_icons.scss */
+.fa-github-square:before {
   content: "\f092";
 }
 
-/* line 147, components/scss/font-awesome/_icons.scss */
-.icon-upload-alt:before {
+/* line 149, components/scss/font-awesome/_icons.scss */
+.fa-upload:before {
   content: "\f093";
 }
 
-/* line 148, components/scss/font-awesome/_icons.scss */
-.icon-lemon:before {
+/* line 150, components/scss/font-awesome/_icons.scss */
+.fa-lemon-o:before {
   content: "\f094";
 }
 
-/* line 149, components/scss/font-awesome/_icons.scss */
-.icon-phone:before {
+/* line 151, components/scss/font-awesome/_icons.scss */
+.fa-phone:before {
   content: "\f095";
 }
 
-/* line 151, components/scss/font-awesome/_icons.scss */
-.icon-unchecked:before,
-.icon-check-empty:before {
+/* line 152, components/scss/font-awesome/_icons.scss */
+.fa-square-o:before {
   content: "\f096";
 }
 
-/* line 152, components/scss/font-awesome/_icons.scss */
-.icon-bookmark-empty:before {
+/* line 153, components/scss/font-awesome/_icons.scss */
+.fa-bookmark-o:before {
   content: "\f097";
 }
 
-/* line 153, components/scss/font-awesome/_icons.scss */
-.icon-phone-sign:before {
+/* line 154, components/scss/font-awesome/_icons.scss */
+.fa-phone-square:before {
   content: "\f098";
 }
 
-/* line 154, components/scss/font-awesome/_icons.scss */
-.icon-twitter:before {
+/* line 155, components/scss/font-awesome/_icons.scss */
+.fa-twitter:before {
   content: "\f099";
 }
 
-/* line 155, components/scss/font-awesome/_icons.scss */
-.icon-facebook:before {
+/* line 156, components/scss/font-awesome/_icons.scss */
+.fa-facebook:before {
   content: "\f09a";
 }
 
-/* line 156, components/scss/font-awesome/_icons.scss */
-.icon-github:before {
+/* line 157, components/scss/font-awesome/_icons.scss */
+.fa-github:before {
   content: "\f09b";
 }
 
-/* line 157, components/scss/font-awesome/_icons.scss */
-.icon-unlock:before {
+/* line 158, components/scss/font-awesome/_icons.scss */
+.fa-unlock:before {
   content: "\f09c";
 }
 
-/* line 158, components/scss/font-awesome/_icons.scss */
-.icon-credit-card:before {
+/* line 159, components/scss/font-awesome/_icons.scss */
+.fa-credit-card:before {
   content: "\f09d";
 }
 
-/* line 159, components/scss/font-awesome/_icons.scss */
-.icon-rss:before {
+/* line 160, components/scss/font-awesome/_icons.scss */
+.fa-rss:before {
   content: "\f09e";
 }
 
-/* line 160, components/scss/font-awesome/_icons.scss */
-.icon-hdd:before {
+/* line 161, components/scss/font-awesome/_icons.scss */
+.fa-hdd:before {
   content: "\f0a0";
 }
 
-/* line 161, components/scss/font-awesome/_icons.scss */
-.icon-bullhorn:before {
+/* line 162, components/scss/font-awesome/_icons.scss */
+.fa-bullhorn:before {
   content: "\f0a1";
 }
 
-/* line 162, components/scss/font-awesome/_icons.scss */
-.icon-bell:before {
-  content: "\f0a2";
-}
-
 /* line 163, components/scss/font-awesome/_icons.scss */
-.icon-certificate:before {
-  content: "\f0a3";
-}
-
-/* line 164, components/scss/font-awesome/_icons.scss */
-.icon-hand-right:before {
-  content: "\f0a4";
-}
-
-/* line 165, components/scss/font-awesome/_icons.scss */
-.icon-hand-left:before {
-  content: "\f0a5";
-}
-
-/* line 166, components/scss/font-awesome/_icons.scss */
-.icon-hand-up:before {
-  content: "\f0a6";
-}
-
-/* line 167, components/scss/font-awesome/_icons.scss */
-.icon-hand-down:before {
-  content: "\f0a7";
-}
-
-/* line 168, components/scss/font-awesome/_icons.scss */
-.icon-circle-arrow-left:before {
-  content: "\f0a8";
-}
-
-/* line 169, components/scss/font-awesome/_icons.scss */
-.icon-circle-arrow-right:before {
-  content: "\f0a9";
-}
-
-/* line 170, components/scss/font-awesome/_icons.scss */
-.icon-circle-arrow-up:before {
-  content: "\f0aa";
-}
-
-/* line 171, components/scss/font-awesome/_icons.scss */
-.icon-circle-arrow-down:before {
-  content: "\f0ab";
-}
-
-/* line 172, components/scss/font-awesome/_icons.scss */
-.icon-globe:before {
-  content: "\f0ac";
-}
-
-/* line 173, components/scss/font-awesome/_icons.scss */
-.icon-wrench:before {
-  content: "\f0ad";
-}
-
-/* line 174, components/scss/font-awesome/_icons.scss */
-.icon-tasks:before {
-  content: "\f0ae";
-}
-
-/* line 175, components/scss/font-awesome/_icons.scss */
-.icon-filter:before {
-  content: "\f0b0";
-}
-
-/* line 176, components/scss/font-awesome/_icons.scss */
-.icon-briefcase:before {
-  content: "\f0b1";
-}
-
-/* line 177, components/scss/font-awesome/_icons.scss */
-.icon-fullscreen:before {
-  content: "\f0b2";
-}
-
-/* line 178, components/scss/font-awesome/_icons.scss */
-.icon-group:before {
-  content: "\f0c0";
-}
-
-/* line 179, components/scss/font-awesome/_icons.scss */
-.icon-link:before {
-  content: "\f0c1";
-}
-
-/* line 180, components/scss/font-awesome/_icons.scss */
-.icon-cloud:before {
-  content: "\f0c2";
-}
-
-/* line 181, components/scss/font-awesome/_icons.scss */
-.icon-beaker:before {
-  content: "\f0c3";
-}
-
-/* line 182, components/scss/font-awesome/_icons.scss */
-.icon-cut:before {
-  content: "\f0c4";
-}
-
-/* line 183, components/scss/font-awesome/_icons.scss */
-.icon-copy:before {
-  content: "\f0c5";
-}
-
-/* line 185, components/scss/font-awesome/_icons.scss */
-.icon-paperclip:before,
-.icon-paper-clip:before {
-  content: "\f0c6";
-}
-
-/* line 186, components/scss/font-awesome/_icons.scss */
-.icon-save:before {
-  content: "\f0c7";
-}
-
-/* line 187, components/scss/font-awesome/_icons.scss */
-.icon-sign-blank:before {
-  content: "\f0c8";
-}
-
-/* line 188, components/scss/font-awesome/_icons.scss */
-.icon-reorder:before {
-  content: "\f0c9";
-}
-
-/* line 189, components/scss/font-awesome/_icons.scss */
-.icon-list-ul:before {
-  content: "\f0ca";
-}
-
-/* line 190, components/scss/font-awesome/_icons.scss */
-.icon-list-ol:before {
-  content: "\f0cb";
-}
-
-/* line 191, components/scss/font-awesome/_icons.scss */
-.icon-strikethrough:before {
-  content: "\f0cc";
-}
-
-/* line 192, components/scss/font-awesome/_icons.scss */
-.icon-underline:before {
-  content: "\f0cd";
-}
-
-/* line 193, components/scss/font-awesome/_icons.scss */
-.icon-table:before {
-  content: "\f0ce";
-}
-
-/* line 194, components/scss/font-awesome/_icons.scss */
-.icon-magic:before {
-  content: "\f0d0";
-}
-
-/* line 195, components/scss/font-awesome/_icons.scss */
-.icon-truck:before {
-  content: "\f0d1";
-}
-
-/* line 196, components/scss/font-awesome/_icons.scss */
-.icon-pinterest:before {
-  content: "\f0d2";
-}
-
-/* line 197, components/scss/font-awesome/_icons.scss */
-.icon-pinterest-sign:before {
-  content: "\f0d3";
-}
-
-/* line 198, components/scss/font-awesome/_icons.scss */
-.icon-google-plus-sign:before {
-  content: "\f0d4";
-}
-
-/* line 199, components/scss/font-awesome/_icons.scss */
-.icon-google-plus:before {
-  content: "\f0d5";
-}
-
-/* line 200, components/scss/font-awesome/_icons.scss */
-.icon-money:before {
-  content: "\f0d6";
-}
-
-/* line 201, components/scss/font-awesome/_icons.scss */
-.icon-caret-down:before {
-  content: "\f0d7";
-}
-
-/* line 202, components/scss/font-awesome/_icons.scss */
-.icon-caret-up:before {
-  content: "\f0d8";
-}
-
-/* line 203, components/scss/font-awesome/_icons.scss */
-.icon-caret-left:before {
-  content: "\f0d9";
-}
-
-/* line 204, components/scss/font-awesome/_icons.scss */
-.icon-caret-right:before {
-  content: "\f0da";
-}
-
-/* line 205, components/scss/font-awesome/_icons.scss */
-.icon-columns:before {
-  content: "\f0db";
-}
-
-/* line 206, components/scss/font-awesome/_icons.scss */
-.icon-sort:before {
-  content: "\f0dc";
-}
-
-/* line 207, components/scss/font-awesome/_icons.scss */
-.icon-sort-down:before {
-  content: "\f0dd";
-}
-
-/* line 208, components/scss/font-awesome/_icons.scss */
-.icon-sort-up:before {
-  content: "\f0de";
-}
-
-/* line 209, components/scss/font-awesome/_icons.scss */
-.icon-envelope:before {
-  content: "\f0e0";
-}
-
-/* line 210, components/scss/font-awesome/_icons.scss */
-.icon-linkedin:before {
-  content: "\f0e1";
-}
-
-/* line 212, components/scss/font-awesome/_icons.scss */
-.icon-rotate-left:before,
-.icon-undo:before {
-  content: "\f0e2";
-}
-
-/* line 213, components/scss/font-awesome/_icons.scss */
-.icon-legal:before {
-  content: "\f0e3";
-}
-
-/* line 214, components/scss/font-awesome/_icons.scss */
-.icon-dashboard:before {
-  content: "\f0e4";
-}
-
-/* line 215, components/scss/font-awesome/_icons.scss */
-.icon-comment-alt:before {
-  content: "\f0e5";
-}
-
-/* line 216, components/scss/font-awesome/_icons.scss */
-.icon-comments-alt:before {
-  content: "\f0e6";
-}
-
-/* line 217, components/scss/font-awesome/_icons.scss */
-.icon-bolt:before {
-  content: "\f0e7";
-}
-
-/* line 218, components/scss/font-awesome/_icons.scss */
-.icon-sitemap:before {
-  content: "\f0e8";
-}
-
-/* line 219, components/scss/font-awesome/_icons.scss */
-.icon-umbrella:before {
-  content: "\f0e9";
-}
-
-/* line 220, components/scss/font-awesome/_icons.scss */
-.icon-paste:before {
-  content: "\f0ea";
-}
-
-/* line 221, components/scss/font-awesome/_icons.scss */
-.icon-lightbulb:before {
-  content: "\f0eb";
-}
-
-/* line 222, components/scss/font-awesome/_icons.scss */
-.icon-exchange:before {
-  content: "\f0ec";
-}
-
-/* line 223, components/scss/font-awesome/_icons.scss */
-.icon-cloud-download:before {
-  content: "\f0ed";
-}
-
-/* line 224, components/scss/font-awesome/_icons.scss */
-.icon-cloud-upload:before {
-  content: "\f0ee";
-}
-
-/* line 225, components/scss/font-awesome/_icons.scss */
-.icon-user-md:before {
-  content: "\f0f0";
-}
-
-/* line 226, components/scss/font-awesome/_icons.scss */
-.icon-stethoscope:before {
-  content: "\f0f1";
-}
-
-/* line 227, components/scss/font-awesome/_icons.scss */
-.icon-suitcase:before {
-  content: "\f0f2";
-}
-
-/* line 228, components/scss/font-awesome/_icons.scss */
-.icon-bell-alt:before {
+.fa-bell:before {
   content: "\f0f3";
 }
 
-/* line 229, components/scss/font-awesome/_icons.scss */
-.icon-coffee:before {
-  content: "\f0f4";
+/* line 164, components/scss/font-awesome/_icons.scss */
+.fa-certificate:before {
+  content: "\f0a3";
 }
 
-/* line 230, components/scss/font-awesome/_icons.scss */
-.icon-food:before {
-  content: "\f0f5";
+/* line 165, components/scss/font-awesome/_icons.scss */
+.fa-hand-o-right:before {
+  content: "\f0a4";
+}
+
+/* line 166, components/scss/font-awesome/_icons.scss */
+.fa-hand-o-left:before {
+  content: "\f0a5";
+}
+
+/* line 167, components/scss/font-awesome/_icons.scss */
+.fa-hand-o-up:before {
+  content: "\f0a6";
+}
+
+/* line 168, components/scss/font-awesome/_icons.scss */
+.fa-hand-o-down:before {
+  content: "\f0a7";
+}
+
+/* line 169, components/scss/font-awesome/_icons.scss */
+.fa-arrow-circle-left:before {
+  content: "\f0a8";
+}
+
+/* line 170, components/scss/font-awesome/_icons.scss */
+.fa-arrow-circle-right:before {
+  content: "\f0a9";
+}
+
+/* line 171, components/scss/font-awesome/_icons.scss */
+.fa-arrow-circle-up:before {
+  content: "\f0aa";
+}
+
+/* line 172, components/scss/font-awesome/_icons.scss */
+.fa-arrow-circle-down:before {
+  content: "\f0ab";
+}
+
+/* line 173, components/scss/font-awesome/_icons.scss */
+.fa-globe:before {
+  content: "\f0ac";
+}
+
+/* line 174, components/scss/font-awesome/_icons.scss */
+.fa-wrench:before {
+  content: "\f0ad";
+}
+
+/* line 175, components/scss/font-awesome/_icons.scss */
+.fa-tasks:before {
+  content: "\f0ae";
+}
+
+/* line 176, components/scss/font-awesome/_icons.scss */
+.fa-filter:before {
+  content: "\f0b0";
+}
+
+/* line 177, components/scss/font-awesome/_icons.scss */
+.fa-briefcase:before {
+  content: "\f0b1";
+}
+
+/* line 178, components/scss/font-awesome/_icons.scss */
+.fa-fullscreen:before {
+  content: "\f0b2";
+}
+
+/* line 179, components/scss/font-awesome/_icons.scss */
+.fa-group:before {
+  content: "\f0c0";
+}
+
+/* line 181, components/scss/font-awesome/_icons.scss */
+.fa-chain:before,
+.fa-link:before {
+  content: "\f0c1";
+}
+
+/* line 182, components/scss/font-awesome/_icons.scss */
+.fa-cloud:before {
+  content: "\f0c2";
+}
+
+/* line 183, components/scss/font-awesome/_icons.scss */
+.fa-flask:before {
+  content: "\f0c3";
+}
+
+/* line 185, components/scss/font-awesome/_icons.scss */
+.fa-cut:before,
+.fa-scissors:before {
+  content: "\f0c4";
+}
+
+/* line 187, components/scss/font-awesome/_icons.scss */
+.fa-copy:before,
+.fa-files-o:before {
+  content: "\f0c5";
+}
+
+/* line 188, components/scss/font-awesome/_icons.scss */
+.fa-paperclip:before {
+  content: "\f0c6";
+}
+
+/* line 190, components/scss/font-awesome/_icons.scss */
+.fa-save:before,
+.fa-floppy-o:before {
+  content: "\f0c7";
+}
+
+/* line 191, components/scss/font-awesome/_icons.scss */
+.fa-square:before {
+  content: "\f0c8";
+}
+
+/* line 192, components/scss/font-awesome/_icons.scss */
+.fa-reorder:before {
+  content: "\f0c9";
+}
+
+/* line 193, components/scss/font-awesome/_icons.scss */
+.fa-list-ul:before {
+  content: "\f0ca";
+}
+
+/* line 194, components/scss/font-awesome/_icons.scss */
+.fa-list-ol:before {
+  content: "\f0cb";
+}
+
+/* line 195, components/scss/font-awesome/_icons.scss */
+.fa-strikethrough:before {
+  content: "\f0cc";
+}
+
+/* line 196, components/scss/font-awesome/_icons.scss */
+.fa-underline:before {
+  content: "\f0cd";
+}
+
+/* line 197, components/scss/font-awesome/_icons.scss */
+.fa-table:before {
+  content: "\f0ce";
+}
+
+/* line 198, components/scss/font-awesome/_icons.scss */
+.fa-magic:before {
+  content: "\f0d0";
+}
+
+/* line 199, components/scss/font-awesome/_icons.scss */
+.fa-truck:before {
+  content: "\f0d1";
+}
+
+/* line 200, components/scss/font-awesome/_icons.scss */
+.fa-pinterest:before {
+  content: "\f0d2";
+}
+
+/* line 201, components/scss/font-awesome/_icons.scss */
+.fa-pinterest-square:before {
+  content: "\f0d3";
+}
+
+/* line 202, components/scss/font-awesome/_icons.scss */
+.fa-google-plus-square:before {
+  content: "\f0d4";
+}
+
+/* line 203, components/scss/font-awesome/_icons.scss */
+.fa-google-plus:before {
+  content: "\f0d5";
+}
+
+/* line 204, components/scss/font-awesome/_icons.scss */
+.fa-money:before {
+  content: "\f0d6";
+}
+
+/* line 205, components/scss/font-awesome/_icons.scss */
+.fa-caret-down:before {
+  content: "\f0d7";
+}
+
+/* line 206, components/scss/font-awesome/_icons.scss */
+.fa-caret-up:before {
+  content: "\f0d8";
+}
+
+/* line 207, components/scss/font-awesome/_icons.scss */
+.fa-caret-left:before {
+  content: "\f0d9";
+}
+
+/* line 208, components/scss/font-awesome/_icons.scss */
+.fa-caret-right:before {
+  content: "\f0da";
+}
+
+/* line 209, components/scss/font-awesome/_icons.scss */
+.fa-columns:before {
+  content: "\f0db";
+}
+
+/* line 211, components/scss/font-awesome/_icons.scss */
+.fa-unsorted:before,
+.fa-sort:before {
+  content: "\f0dc";
+}
+
+/* line 213, components/scss/font-awesome/_icons.scss */
+.fa-sort-down:before,
+.fa-sort-asc:before {
+  content: "\f0dd";
+}
+
+/* line 215, components/scss/font-awesome/_icons.scss */
+.fa-sort-up:before,
+.fa-sort-desc:before {
+  content: "\f0de";
+}
+
+/* line 216, components/scss/font-awesome/_icons.scss */
+.fa-envelope:before {
+  content: "\f0e0";
+}
+
+/* line 217, components/scss/font-awesome/_icons.scss */
+.fa-linkedin:before {
+  content: "\f0e1";
+}
+
+/* line 219, components/scss/font-awesome/_icons.scss */
+.fa-rotate-left:before,
+.fa-undo:before {
+  content: "\f0e2";
+}
+
+/* line 221, components/scss/font-awesome/_icons.scss */
+.fa-legal:before,
+.fa-gavel:before {
+  content: "\f0e3";
+}
+
+/* line 223, components/scss/font-awesome/_icons.scss */
+.fa-dashboard:before,
+.fa-tachometer:before {
+  content: "\f0e4";
+}
+
+/* line 224, components/scss/font-awesome/_icons.scss */
+.fa-comment-o:before {
+  content: "\f0e5";
+}
+
+/* line 225, components/scss/font-awesome/_icons.scss */
+.fa-comments-o:before {
+  content: "\f0e6";
+}
+
+/* line 227, components/scss/font-awesome/_icons.scss */
+.fa-flash:before,
+.fa-bolt:before {
+  content: "\f0e7";
+}
+
+/* line 228, components/scss/font-awesome/_icons.scss */
+.fa-sitemap:before {
+  content: "\f0e8";
+}
+
+/* line 229, components/scss/font-awesome/_icons.scss */
+.fa-umbrella:before {
+  content: "\f0e9";
 }
 
 /* line 231, components/scss/font-awesome/_icons.scss */
-.icon-file-text-alt:before {
-  content: "\f0f6";
+.fa-paste:before,
+.fa-clipboard:before {
+  content: "\f0ea";
 }
 
 /* line 232, components/scss/font-awesome/_icons.scss */
-.icon-building:before {
-  content: "\f0f7";
+.fa-lightbulb-o:before {
+  content: "\f0eb";
 }
 
 /* line 233, components/scss/font-awesome/_icons.scss */
-.icon-hospital:before {
-  content: "\f0f8";
+.fa-exchange:before {
+  content: "\f0ec";
 }
 
 /* line 234, components/scss/font-awesome/_icons.scss */
-.icon-ambulance:before {
-  content: "\f0f9";
+.fa-cloud-download:before {
+  content: "\f0ed";
 }
 
 /* line 235, components/scss/font-awesome/_icons.scss */
-.icon-medkit:before {
-  content: "\f0fa";
+.fa-cloud-upload:before {
+  content: "\f0ee";
 }
 
 /* line 236, components/scss/font-awesome/_icons.scss */
-.icon-fighter-jet:before {
-  content: "\f0fb";
+.fa-user-md:before {
+  content: "\f0f0";
 }
 
 /* line 237, components/scss/font-awesome/_icons.scss */
-.icon-beer:before {
-  content: "\f0fc";
+.fa-stethoscope:before {
+  content: "\f0f1";
 }
 
 /* line 238, components/scss/font-awesome/_icons.scss */
-.icon-h-sign:before {
-  content: "\f0fd";
+.fa-suitcase:before {
+  content: "\f0f2";
 }
 
 /* line 239, components/scss/font-awesome/_icons.scss */
-.icon-plus-sign-alt:before {
-  content: "\f0fe";
+.fa-bell-o:before {
+  content: "\f0a2";
 }
 
 /* line 240, components/scss/font-awesome/_icons.scss */
-.icon-double-angle-left:before {
-  content: "\f100";
+.fa-coffee:before {
+  content: "\f0f4";
 }
 
 /* line 241, components/scss/font-awesome/_icons.scss */
-.icon-double-angle-right:before {
-  content: "\f101";
+.fa-cutlery:before {
+  content: "\f0f5";
 }
 
 /* line 242, components/scss/font-awesome/_icons.scss */
-.icon-double-angle-up:before {
-  content: "\f102";
+.fa-file-text-o:before {
+  content: "\f0f6";
 }
 
 /* line 243, components/scss/font-awesome/_icons.scss */
-.icon-double-angle-down:before {
-  content: "\f103";
+.fa-building:before {
+  content: "\f0f7";
 }
 
 /* line 244, components/scss/font-awesome/_icons.scss */
-.icon-angle-left:before {
-  content: "\f104";
+.fa-hospital:before {
+  content: "\f0f8";
 }
 
 /* line 245, components/scss/font-awesome/_icons.scss */
-.icon-angle-right:before {
-  content: "\f105";
+.fa-ambulance:before {
+  content: "\f0f9";
 }
 
 /* line 246, components/scss/font-awesome/_icons.scss */
-.icon-angle-up:before {
-  content: "\f106";
+.fa-medkit:before {
+  content: "\f0fa";
 }
 
 /* line 247, components/scss/font-awesome/_icons.scss */
-.icon-angle-down:before {
-  content: "\f107";
+.fa-fighter-jet:before {
+  content: "\f0fb";
 }
 
 /* line 248, components/scss/font-awesome/_icons.scss */
-.icon-desktop:before {
-  content: "\f108";
+.fa-beer:before {
+  content: "\f0fc";
 }
 
 /* line 249, components/scss/font-awesome/_icons.scss */
-.icon-laptop:before {
-  content: "\f109";
+.fa-h-square:before {
+  content: "\f0fd";
 }
 
 /* line 250, components/scss/font-awesome/_icons.scss */
-.icon-tablet:before {
-  content: "\f10a";
+.fa-plus-square:before {
+  content: "\f0fe";
 }
 
 /* line 251, components/scss/font-awesome/_icons.scss */
-.icon-mobile-phone:before {
-  content: "\f10b";
+.fa-angle-double-left:before {
+  content: "\f100";
 }
 
 /* line 252, components/scss/font-awesome/_icons.scss */
-.icon-circle-blank:before {
-  content: "\f10c";
+.fa-angle-double-right:before {
+  content: "\f101";
 }
 
 /* line 253, components/scss/font-awesome/_icons.scss */
-.icon-quote-left:before, blockquote:before {
-  content: "\f10d";
+.fa-angle-double-up:before {
+  content: "\f102";
 }
 
 /* line 254, components/scss/font-awesome/_icons.scss */
-.icon-quote-right:before {
-  content: "\f10e";
+.fa-angle-double-down:before {
+  content: "\f103";
 }
 
 /* line 255, components/scss/font-awesome/_icons.scss */
-.icon-spinner:before {
-  content: "\f110";
+.fa-angle-left:before {
+  content: "\f104";
 }
 
 /* line 256, components/scss/font-awesome/_icons.scss */
-.icon-circle:before {
-  content: "\f111";
+.fa-angle-right:before {
+  content: "\f105";
+}
+
+/* line 257, components/scss/font-awesome/_icons.scss */
+.fa-angle-up:before {
+  content: "\f106";
 }
 
 /* line 258, components/scss/font-awesome/_icons.scss */
-.icon-mail-reply:before,
-.icon-reply:before,
+.fa-angle-down:before {
+  content: "\f107";
+}
+
+/* line 259, components/scss/font-awesome/_icons.scss */
+.fa-desktop:before {
+  content: "\f108";
+}
+
+/* line 260, components/scss/font-awesome/_icons.scss */
+.fa-laptop:before {
+  content: "\f109";
+}
+
+/* line 261, components/scss/font-awesome/_icons.scss */
+.fa-tablet:before {
+  content: "\f10a";
+}
+
+/* line 263, components/scss/font-awesome/_icons.scss */
+.fa-mobile-phone:before,
+.fa-mobile:before {
+  content: "\f10b";
+}
+
+/* line 264, components/scss/font-awesome/_icons.scss */
+.fa-circle-o:before {
+  content: "\f10c";
+}
+
+/* line 265, components/scss/font-awesome/_icons.scss */
+.fa-quote-left:before, blockquote:before {
+  content: "\f10d";
+}
+
+/* line 266, components/scss/font-awesome/_icons.scss */
+.fa-quote-right:before {
+  content: "\f10e";
+}
+
+/* line 267, components/scss/font-awesome/_icons.scss */
+.fa-spinner:before {
+  content: "\f110";
+}
+
+/* line 268, components/scss/font-awesome/_icons.scss */
+.fa-circle:before {
+  content: "\f111";
+}
+
+/* line 270, components/scss/font-awesome/_icons.scss */
+.fa-mail-reply:before,
+.fa-reply:before,
 .comment-reply-link:before,
 .comment-reply-login:before {
   content: "\f112";
 }
 
-/* line 259, components/scss/font-awesome/_icons.scss */
-.icon-github-alt:before, .enclosure-github:before {
+/* line 271, components/scss/font-awesome/_icons.scss */
+.fa-github-alt:before, .enclosure-github:before {
   content: "\f113";
 }
 
-/* line 260, components/scss/font-awesome/_icons.scss */
-.icon-folder-close-alt:before {
+/* line 272, components/scss/font-awesome/_icons.scss */
+.fa-folder-o:before {
   content: "\f114";
 }
 
-/* line 261, components/scss/font-awesome/_icons.scss */
-.icon-folder-open-alt:before {
+/* line 273, components/scss/font-awesome/_icons.scss */
+.fa-folder-open-o:before {
   content: "\f115";
 }
 
-/* line 262, components/scss/font-awesome/_icons.scss */
-.icon-expand-alt:before {
+/* line 274, components/scss/font-awesome/_icons.scss */
+.fa-expand-o:before {
   content: "\f116";
 }
 
-/* line 263, components/scss/font-awesome/_icons.scss */
-.icon-collapse-alt:before {
+/* line 275, components/scss/font-awesome/_icons.scss */
+.fa-collapse-o:before {
   content: "\f117";
 }
 
-/* line 264, components/scss/font-awesome/_icons.scss */
-.icon-smile:before {
+/* line 276, components/scss/font-awesome/_icons.scss */
+.fa-smile-o:before {
   content: "\f118";
 }
 
-/* line 265, components/scss/font-awesome/_icons.scss */
-.icon-frown:before {
+/* line 277, components/scss/font-awesome/_icons.scss */
+.fa-frown-o:before {
   content: "\f119";
 }
 
-/* line 266, components/scss/font-awesome/_icons.scss */
-.icon-meh:before {
+/* line 278, components/scss/font-awesome/_icons.scss */
+.fa-meh-o:before {
   content: "\f11a";
 }
 
-/* line 267, components/scss/font-awesome/_icons.scss */
-.icon-gamepad:before {
+/* line 279, components/scss/font-awesome/_icons.scss */
+.fa-gamepad:before {
   content: "\f11b";
 }
 
-/* line 268, components/scss/font-awesome/_icons.scss */
-.icon-keyboard:before {
+/* line 280, components/scss/font-awesome/_icons.scss */
+.fa-keyboard-o:before {
   content: "\f11c";
 }
 
-/* line 269, components/scss/font-awesome/_icons.scss */
-.icon-flag-alt:before {
+/* line 281, components/scss/font-awesome/_icons.scss */
+.fa-flag-o:before {
   content: "\f11d";
 }
 
-/* line 270, components/scss/font-awesome/_icons.scss */
-.icon-flag-checkered:before {
+/* line 282, components/scss/font-awesome/_icons.scss */
+.fa-flag-checkered:before {
   content: "\f11e";
 }
 
-/* line 271, components/scss/font-awesome/_icons.scss */
-.icon-terminal:before {
+/* line 283, components/scss/font-awesome/_icons.scss */
+.fa-terminal:before {
   content: "\f120";
 }
 
-/* line 272, components/scss/font-awesome/_icons.scss */
-.icon-code:before {
+/* line 284, components/scss/font-awesome/_icons.scss */
+.fa-code:before {
   content: "\f121";
 }
 
-/* line 273, components/scss/font-awesome/_icons.scss */
-.icon-reply-all:before {
-  content: "\f122";
-}
-
-/* line 274, components/scss/font-awesome/_icons.scss */
-.icon-mail-reply-all:before {
-  content: "\f122";
-}
-
-/* line 276, components/scss/font-awesome/_icons.scss */
-.icon-star-half-full:before,
-.icon-star-half-empty:before {
-  content: "\f123";
-}
-
-/* line 277, components/scss/font-awesome/_icons.scss */
-.icon-location-arrow:before {
-  content: "\f124";
-}
-
-/* line 278, components/scss/font-awesome/_icons.scss */
-.icon-crop:before {
-  content: "\f125";
-}
-
-/* line 279, components/scss/font-awesome/_icons.scss */
-.icon-code-fork:before {
-  content: "\f126";
-}
-
-/* line 280, components/scss/font-awesome/_icons.scss */
-.icon-unlink:before {
-  content: "\f127";
-}
-
-/* line 281, components/scss/font-awesome/_icons.scss */
-.icon-question:before {
-  content: "\f128";
-}
-
-/* line 282, components/scss/font-awesome/_icons.scss */
-.icon-info:before {
-  content: "\f129";
-}
-
-/* line 283, components/scss/font-awesome/_icons.scss */
-.icon-exclamation:before {
-  content: "\f12a";
-}
-
-/* line 284, components/scss/font-awesome/_icons.scss */
-.icon-superscript:before {
-  content: "\f12b";
-}
-
 /* line 285, components/scss/font-awesome/_icons.scss */
-.icon-subscript:before {
-  content: "\f12c";
+.fa-reply-all:before {
+  content: "\f122";
 }
 
 /* line 286, components/scss/font-awesome/_icons.scss */
-.icon-eraser:before {
-  content: "\f12d";
-}
-
-/* line 287, components/scss/font-awesome/_icons.scss */
-.icon-puzzle-piece:before {
-  content: "\f12e";
-}
-
-/* line 288, components/scss/font-awesome/_icons.scss */
-.icon-microphone:before {
-  content: "\f130";
+.fa-mail-reply-all:before {
+  content: "\f122";
 }
 
 /* line 289, components/scss/font-awesome/_icons.scss */
-.icon-microphone-off:before {
-  content: "\f131";
+.fa-star-half-empty:before,
+.fa-star-half-full:before,
+.fa-star-half-o:before {
+  content: "\f123";
 }
 
 /* line 290, components/scss/font-awesome/_icons.scss */
-.icon-shield:before {
-  content: "\f132";
+.fa-location-arrow:before {
+  content: "\f124";
 }
 
 /* line 291, components/scss/font-awesome/_icons.scss */
-.icon-calendar-empty:before {
-  content: "\f133";
+.fa-crop:before {
+  content: "\f125";
 }
 
 /* line 292, components/scss/font-awesome/_icons.scss */
-.icon-fire-extinguisher:before {
-  content: "\f134";
-}
-
-/* line 293, components/scss/font-awesome/_icons.scss */
-.icon-rocket:before {
-  content: "\f135";
+.fa-code-fork:before {
+  content: "\f126";
 }
 
 /* line 294, components/scss/font-awesome/_icons.scss */
-.icon-maxcdn:before {
-  content: "\f136";
+.fa-unlink:before,
+.fa-chain-broken:before {
+  content: "\f127";
 }
 
 /* line 295, components/scss/font-awesome/_icons.scss */
-.icon-chevron-sign-left:before {
-  content: "\f137";
+.fa-question:before {
+  content: "\f128";
 }
 
 /* line 296, components/scss/font-awesome/_icons.scss */
-.icon-chevron-sign-right:before {
-  content: "\f138";
+.fa-info:before {
+  content: "\f129";
 }
 
 /* line 297, components/scss/font-awesome/_icons.scss */
-.icon-chevron-sign-up:before {
-  content: "\f139";
+.fa-exclamation:before {
+  content: "\f12a";
 }
 
 /* line 298, components/scss/font-awesome/_icons.scss */
-.icon-chevron-sign-down:before {
-  content: "\f13a";
+.fa-superscript:before {
+  content: "\f12b";
 }
 
 /* line 299, components/scss/font-awesome/_icons.scss */
-.icon-html5:before {
-  content: "\f13b";
+.fa-subscript:before {
+  content: "\f12c";
 }
 
 /* line 300, components/scss/font-awesome/_icons.scss */
-.icon-css3:before {
-  content: "\f13c";
+.fa-eraser:before {
+  content: "\f12d";
 }
 
 /* line 301, components/scss/font-awesome/_icons.scss */
-.icon-anchor:before {
-  content: "\f13d";
+.fa-puzzle-piece:before {
+  content: "\f12e";
 }
 
 /* line 302, components/scss/font-awesome/_icons.scss */
-.icon-unlock-alt:before {
-  content: "\f13e";
+.fa-microphone:before {
+  content: "\f130";
 }
 
 /* line 303, components/scss/font-awesome/_icons.scss */
-.icon-bullseye:before {
-  content: "\f140";
+.fa-microphone-slash:before {
+  content: "\f131";
 }
 
 /* line 304, components/scss/font-awesome/_icons.scss */
-.icon-ellipsis-horizontal:before {
-  content: "\f141";
+.fa-shield:before {
+  content: "\f132";
 }
 
 /* line 305, components/scss/font-awesome/_icons.scss */
-.icon-ellipsis-vertical:before {
-  content: "\f142";
+.fa-calendar-o:before {
+  content: "\f133";
 }
 
 /* line 306, components/scss/font-awesome/_icons.scss */
-.icon-rss-sign:before {
-  content: "\f143";
+.fa-fire-extinguisher:before {
+  content: "\f134";
 }
 
 /* line 307, components/scss/font-awesome/_icons.scss */
-.icon-play-sign:before {
-  content: "\f144";
+.fa-rocket:before {
+  content: "\f135";
 }
 
 /* line 308, components/scss/font-awesome/_icons.scss */
-.icon-ticket:before {
-  content: "\f145";
+.fa-maxcdn:before {
+  content: "\f136";
 }
 
 /* line 309, components/scss/font-awesome/_icons.scss */
-.icon-minus-sign-alt:before {
-  content: "\f146";
+.fa-chevron-circle-left:before {
+  content: "\f137";
 }
 
 /* line 310, components/scss/font-awesome/_icons.scss */
-.icon-check-minus:before {
-  content: "\f147";
+.fa-chevron-circle-right:before {
+  content: "\f138";
 }
 
 /* line 311, components/scss/font-awesome/_icons.scss */
-.icon-level-up:before {
-  content: "\f148";
+.fa-chevron-circle-up:before {
+  content: "\f139";
 }
 
 /* line 312, components/scss/font-awesome/_icons.scss */
-.icon-level-down:before {
-  content: "\f149";
+.fa-chevron-circle-down:before {
+  content: "\f13a";
 }
 
 /* line 313, components/scss/font-awesome/_icons.scss */
-.icon-check-sign:before {
-  content: "\f14a";
+.fa-html5:before {
+  content: "\f13b";
 }
 
 /* line 314, components/scss/font-awesome/_icons.scss */
-.icon-edit-sign:before {
-  content: "\f14b";
+.fa-css3:before {
+  content: "\f13c";
 }
 
 /* line 315, components/scss/font-awesome/_icons.scss */
-.icon-external-link-sign:before {
-  content: "\f14c";
+.fa-anchor:before {
+  content: "\f13d";
 }
 
 /* line 316, components/scss/font-awesome/_icons.scss */
-.icon-share-sign:before {
-  content: "\f14d";
+.fa-unlock-o:before {
+  content: "\f13e";
 }
 
 /* line 317, components/scss/font-awesome/_icons.scss */
-.icon-compass:before {
-  content: "\f14e";
+.fa-bullseye:before {
+  content: "\f140";
 }
 
 /* line 318, components/scss/font-awesome/_icons.scss */
-.icon-collapse:before {
-  content: "\f150";
+.fa-ellipsis-horizontal:before {
+  content: "\f141";
 }
 
 /* line 319, components/scss/font-awesome/_icons.scss */
-.icon-collapse-top:before {
-  content: "\f151";
+.fa-ellipsis-vertical:before {
+  content: "\f142";
 }
 
 /* line 320, components/scss/font-awesome/_icons.scss */
-.icon-expand:before {
-  content: "\f152";
+.fa-rss-square:before {
+  content: "\f143";
+}
+
+/* line 321, components/scss/font-awesome/_icons.scss */
+.fa-play-circle:before {
+  content: "\f144";
 }
 
 /* line 322, components/scss/font-awesome/_icons.scss */
-.icon-euro:before,
-.icon-eur:before {
-  content: "\f153";
+.fa-ticket:before {
+  content: "\f145";
 }
 
 /* line 323, components/scss/font-awesome/_icons.scss */
-.icon-gbp:before {
-  content: "\f154";
+.fa-minus-square:before {
+  content: "\f146";
+}
+
+/* line 324, components/scss/font-awesome/_icons.scss */
+.fa-minus-square-o:before {
+  content: "\f147";
 }
 
 /* line 325, components/scss/font-awesome/_icons.scss */
-.icon-dollar:before,
-.icon-usd:before {
-  content: "\f155";
+.fa-level-up:before {
+  content: "\f148";
+}
+
+/* line 326, components/scss/font-awesome/_icons.scss */
+.fa-level-down:before {
+  content: "\f149";
 }
 
 /* line 327, components/scss/font-awesome/_icons.scss */
-.icon-rupee:before,
-.icon-inr:before {
-  content: "\f156";
+.fa-check-square:before {
+  content: "\f14a";
+}
+
+/* line 328, components/scss/font-awesome/_icons.scss */
+.fa-pencil-square:before {
+  content: "\f14b";
 }
 
 /* line 329, components/scss/font-awesome/_icons.scss */
-.icon-yen:before,
-.icon-jpy:before {
-  content: "\f157";
+.fa-external-link-square:before {
+  content: "\f14c";
+}
+
+/* line 330, components/scss/font-awesome/_icons.scss */
+.fa-share-square:before {
+  content: "\f14d";
 }
 
 /* line 331, components/scss/font-awesome/_icons.scss */
-.icon-renminbi:before,
-.icon-cny:before {
-  content: "\f158";
+.fa-compass:before {
+  content: "\f14e";
 }
 
 /* line 333, components/scss/font-awesome/_icons.scss */
-.icon-won:before,
-.icon-krw:before {
-  content: "\f159";
+.fa-toggle-down:before,
+.fa-caret-square-o-down:before {
+  content: "\f150";
 }
 
 /* line 335, components/scss/font-awesome/_icons.scss */
-.icon-bitcoin:before,
-.icon-btc:before {
-  content: "\f15a";
-}
-
-/* line 336, components/scss/font-awesome/_icons.scss */
-.icon-file:before, .note-portfolio:before {
-  content: "\f15b";
+.fa-toggle-up:before,
+.fa-caret-square-o-up:before {
+  content: "\f151";
 }
 
 /* line 337, components/scss/font-awesome/_icons.scss */
-.icon-file-text:before {
-  content: "\f15c";
-}
-
-/* line 338, components/scss/font-awesome/_icons.scss */
-.icon-sort-by-alphabet:before {
-  content: "\f15d";
+.fa-toggle-right:before,
+.fa-caret-square-o-right:before {
+  content: "\f152";
 }
 
 /* line 339, components/scss/font-awesome/_icons.scss */
-.icon-sort-by-alphabet-alt:before {
-  content: "\f15e";
+.fa-euro:before,
+.fa-eur:before {
+  content: "\f153";
 }
 
 /* line 340, components/scss/font-awesome/_icons.scss */
-.icon-sort-by-attributes:before {
-  content: "\f160";
-}
-
-/* line 341, components/scss/font-awesome/_icons.scss */
-.icon-sort-by-attributes-alt:before {
-  content: "\f161";
+.fa-gbp:before {
+  content: "\f154";
 }
 
 /* line 342, components/scss/font-awesome/_icons.scss */
-.icon-sort-by-order:before {
-  content: "\f162";
-}
-
-/* line 343, components/scss/font-awesome/_icons.scss */
-.icon-sort-by-order-alt:before {
-  content: "\f163";
+.fa-dollar:before,
+.fa-usd:before {
+  content: "\f155";
 }
 
 /* line 344, components/scss/font-awesome/_icons.scss */
-.icon-thumbs-up:before {
-  content: "\f164";
-}
-
-/* line 345, components/scss/font-awesome/_icons.scss */
-.icon-thumbs-down:before {
-  content: "\f165";
-}
-
-/* line 346, components/scss/font-awesome/_icons.scss */
-.icon-youtube-sign:before {
-  content: "\f166";
-}
-
-/* line 347, components/scss/font-awesome/_icons.scss */
-.icon-youtube:before {
-  content: "\f167";
+.fa-rupee:before,
+.fa-inr:before {
+  content: "\f156";
 }
 
 /* line 348, components/scss/font-awesome/_icons.scss */
-.icon-xing:before {
-  content: "\f168";
-}
-
-/* line 349, components/scss/font-awesome/_icons.scss */
-.icon-xing-sign:before {
-  content: "\f169";
-}
-
-/* line 350, components/scss/font-awesome/_icons.scss */
-.icon-youtube-play:before {
-  content: "\f16a";
+.fa-cny:before,
+.fa-rmb:before,
+.fa-yen:before,
+.fa-jpy:before {
+  content: "\f157";
 }
 
 /* line 351, components/scss/font-awesome/_icons.scss */
-.icon-dropbox:before {
-  content: "\f16b";
-}
-
-/* line 352, components/scss/font-awesome/_icons.scss */
-.icon-stackexchange:before {
-  content: "\f16c";
+.fa-ruble:before,
+.fa-rouble:before,
+.fa-rub:before {
+  content: "\f158";
 }
 
 /* line 353, components/scss/font-awesome/_icons.scss */
-.icon-instagram:before {
-  content: "\f16d";
-}
-
-/* line 354, components/scss/font-awesome/_icons.scss */
-.icon-flickr:before {
-  content: "\f16e";
+.fa-won:before,
+.fa-krw:before {
+  content: "\f159";
 }
 
 /* line 355, components/scss/font-awesome/_icons.scss */
-.icon-adn:before {
-  content: "\f170";
+.fa-bitcoin:before,
+.fa-btc:before {
+  content: "\f15a";
 }
 
 /* line 356, components/scss/font-awesome/_icons.scss */
-.icon-bitbucket:before {
-  content: "\f171";
+.fa-file:before, .note-portfolio:before {
+  content: "\f15b";
 }
 
 /* line 357, components/scss/font-awesome/_icons.scss */
-.icon-bitbucket-sign:before {
-  content: "\f172";
+.fa-file-text:before {
+  content: "\f15c";
 }
 
 /* line 358, components/scss/font-awesome/_icons.scss */
-.icon-tumblr:before {
-  content: "\f173";
+.fa-sort-alpha-asc:before {
+  content: "\f15d";
 }
 
 /* line 359, components/scss/font-awesome/_icons.scss */
-.icon-tumblr-sign:before {
-  content: "\f174";
+.fa-sort-alpha-desc:before {
+  content: "\f15e";
 }
 
 /* line 360, components/scss/font-awesome/_icons.scss */
-.icon-long-arrow-down:before {
-  content: "\f175";
+.fa-sort-amount-asc:before {
+  content: "\f160";
 }
 
 /* line 361, components/scss/font-awesome/_icons.scss */
-.icon-long-arrow-up:before {
-  content: "\f176";
+.fa-sort-amount-desc:before {
+  content: "\f161";
 }
 
 /* line 362, components/scss/font-awesome/_icons.scss */
-.icon-long-arrow-left:before {
-  content: "\f177";
+.fa-sort-numeric-asc:before {
+  content: "\f162";
 }
 
 /* line 363, components/scss/font-awesome/_icons.scss */
-.icon-long-arrow-right:before {
-  content: "\f178";
+.fa-sort-numeric-desc:before {
+  content: "\f163";
 }
 
 /* line 364, components/scss/font-awesome/_icons.scss */
-.icon-apple:before {
-  content: "\f179";
+.fa-thumbs-up:before {
+  content: "\f164";
 }
 
 /* line 365, components/scss/font-awesome/_icons.scss */
-.icon-windows:before {
-  content: "\f17a";
+.fa-thumbs-down:before {
+  content: "\f165";
 }
 
 /* line 366, components/scss/font-awesome/_icons.scss */
-.icon-android:before {
-  content: "\f17b";
+.fa-youtube-square:before {
+  content: "\f166";
 }
 
 /* line 367, components/scss/font-awesome/_icons.scss */
-.icon-linux:before {
-  content: "\f17c";
+.fa-youtube:before {
+  content: "\f167";
 }
 
 /* line 368, components/scss/font-awesome/_icons.scss */
-.icon-dribbble:before {
-  content: "\f17d";
+.fa-xing:before {
+  content: "\f168";
 }
 
 /* line 369, components/scss/font-awesome/_icons.scss */
-.icon-skype:before {
-  content: "\f17e";
+.fa-xing-square:before {
+  content: "\f169";
 }
 
 /* line 370, components/scss/font-awesome/_icons.scss */
-.icon-foursquare:before {
-  content: "\f180";
+.fa-youtube-play:before {
+  content: "\f16a";
 }
 
 /* line 371, components/scss/font-awesome/_icons.scss */
-.icon-trello:before {
-  content: "\f181";
+.fa-dropbox:before {
+  content: "\f16b";
 }
 
 /* line 372, components/scss/font-awesome/_icons.scss */
-.icon-female:before {
-  content: "\f182";
+.fa-stack-overflow:before {
+  content: "\f16c";
 }
 
 /* line 373, components/scss/font-awesome/_icons.scss */
-.icon-male:before {
-  content: "\f183";
+.fa-instagram:before {
+  content: "\f16d";
 }
 
 /* line 374, components/scss/font-awesome/_icons.scss */
-.icon-gittip:before {
-  content: "\f184";
+.fa-flickr:before {
+  content: "\f16e";
 }
 
 /* line 375, components/scss/font-awesome/_icons.scss */
-.icon-sun:before {
-  content: "\f185";
+.fa-adn:before {
+  content: "\f170";
 }
 
 /* line 376, components/scss/font-awesome/_icons.scss */
-.icon-moon:before {
-  content: "\f186";
+.fa-bitbucket:before {
+  content: "\f171";
 }
 
 /* line 377, components/scss/font-awesome/_icons.scss */
-.icon-archive:before {
-  content: "\f187";
+.fa-bitbucket-square:before {
+  content: "\f172";
 }
 
 /* line 378, components/scss/font-awesome/_icons.scss */
-.icon-bug:before {
-  content: "\f188";
+.fa-tumblr:before {
+  content: "\f173";
 }
 
 /* line 379, components/scss/font-awesome/_icons.scss */
-.icon-vk:before {
-  content: "\f189";
+.fa-tumblr-square:before {
+  content: "\f174";
 }
 
 /* line 380, components/scss/font-awesome/_icons.scss */
-.icon-weibo:before {
-  content: "\f18a";
+.fa-long-arrow-down:before {
+  content: "\f175";
 }
 
 /* line 381, components/scss/font-awesome/_icons.scss */
-.icon-renren:before {
+.fa-long-arrow-up:before {
+  content: "\f176";
+}
+
+/* line 382, components/scss/font-awesome/_icons.scss */
+.fa-long-arrow-left:before {
+  content: "\f177";
+}
+
+/* line 383, components/scss/font-awesome/_icons.scss */
+.fa-long-arrow-right:before {
+  content: "\f178";
+}
+
+/* line 384, components/scss/font-awesome/_icons.scss */
+.fa-apple:before {
+  content: "\f179";
+}
+
+/* line 385, components/scss/font-awesome/_icons.scss */
+.fa-windows:before {
+  content: "\f17a";
+}
+
+/* line 386, components/scss/font-awesome/_icons.scss */
+.fa-android:before {
+  content: "\f17b";
+}
+
+/* line 387, components/scss/font-awesome/_icons.scss */
+.fa-linux:before {
+  content: "\f17c";
+}
+
+/* line 388, components/scss/font-awesome/_icons.scss */
+.fa-dribbble:before {
+  content: "\f17d";
+}
+
+/* line 389, components/scss/font-awesome/_icons.scss */
+.fa-skype:before {
+  content: "\f17e";
+}
+
+/* line 390, components/scss/font-awesome/_icons.scss */
+.fa-foursquare:before {
+  content: "\f180";
+}
+
+/* line 391, components/scss/font-awesome/_icons.scss */
+.fa-trello:before {
+  content: "\f181";
+}
+
+/* line 392, components/scss/font-awesome/_icons.scss */
+.fa-female:before {
+  content: "\f182";
+}
+
+/* line 393, components/scss/font-awesome/_icons.scss */
+.fa-male:before {
+  content: "\f183";
+}
+
+/* line 394, components/scss/font-awesome/_icons.scss */
+.fa-gittip:before {
+  content: "\f184";
+}
+
+/* line 395, components/scss/font-awesome/_icons.scss */
+.fa-sun-o:before {
+  content: "\f185";
+}
+
+/* line 396, components/scss/font-awesome/_icons.scss */
+.fa-moon-o:before {
+  content: "\f186";
+}
+
+/* line 397, components/scss/font-awesome/_icons.scss */
+.fa-archive:before {
+  content: "\f187";
+}
+
+/* line 398, components/scss/font-awesome/_icons.scss */
+.fa-bug:before {
+  content: "\f188";
+}
+
+/* line 399, components/scss/font-awesome/_icons.scss */
+.fa-vk:before {
+  content: "\f189";
+}
+
+/* line 400, components/scss/font-awesome/_icons.scss */
+.fa-weibo:before {
+  content: "\f18a";
+}
+
+/* line 401, components/scss/font-awesome/_icons.scss */
+.fa-renren:before {
   content: "\f18b";
+}
+
+/* line 402, components/scss/font-awesome/_icons.scss */
+.fa-pagelines:before {
+  content: "\f18c";
+}
+
+/* line 403, components/scss/font-awesome/_icons.scss */
+.fa-stack-exchange:before {
+  content: "\f18d";
+}
+
+/* line 404, components/scss/font-awesome/_icons.scss */
+.fa-arrow-circle-o-right:before {
+  content: "\f18e";
+}
+
+/* line 405, components/scss/font-awesome/_icons.scss */
+.fa-arrow-circle-o-left:before {
+  content: "\f190";
+}
+
+/* line 407, components/scss/font-awesome/_icons.scss */
+.fa-toggle-left:before,
+.fa-caret-square-o-left:before {
+  content: "\f191";
+}
+
+/* line 408, components/scss/font-awesome/_icons.scss */
+.fa-dot-circle-o:before {
+  content: "\f192";
+}
+
+/* line 409, components/scss/font-awesome/_icons.scss */
+.fa-wheelchair:before {
+  content: "\f193";
+}
+
+/* line 410, components/scss/font-awesome/_icons.scss */
+.fa-vimeo-square:before {
+  content: "\f194";
+}
+
+/* line 412, components/scss/font-awesome/_icons.scss */
+.fa-turkish-lira:before,
+.fa-try:before {
+  content: "\f195";
 }
 
 /**
@@ -3105,6 +3087,8 @@ a .icon-rotate-90:before, a .icon-rotate-180:before, a .icon-rotate-270:before, 
   border: 2px solid #e9ecef;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
   border-radius: 6px;
   padding: 24px;
   background-color: white;
@@ -3198,6 +3182,8 @@ a .icon-rotate-90:before, a .icon-rotate-180:before, a .icon-rotate-270:before, 
   border: 2px solid #e9ecef;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
   border-radius: 6px;
   padding: 24px;
   background-color: white;
@@ -3220,6 +3206,8 @@ a .icon-rotate-90:before, a .icon-rotate-180:before, a .icon-rotate-270:before, 
   border: none;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
   border-radius: 0;
 }
 
@@ -3334,6 +3322,8 @@ input[type="color"],
   text-indent: 1px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
   border-radius: 6px;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
@@ -3438,7 +3428,7 @@ input[type="color"]:focus,
   color: #999999;
 }
 /* line 21, sass/partials/_breadcrumb.scss */
-.breadcrumb .icon-chevron-right {
+.breadcrumb .fa-chevron-right {
   padding-right: 10px;
   padding-left: 10px;
   color: #bdc3c7;
@@ -3562,6 +3552,8 @@ input[type="color"]:focus,
   border: 2px solid #ecf0f1;
   -webkit-border-radius: 27px;
   -moz-border-radius: 27px;
+  -ms-border-radius: 27px;
+  -o-border-radius: 27px;
   border-radius: 27px;
   -webkit-transition: width 400ms ease, background 400ms ease;
   -moz-transition: width 400ms ease, background 400ms ease;
@@ -3770,12 +3762,12 @@ input[type="color"]:focus,
 /* line 108, sass/partials/_content.scss */
 .entry-content h2 {
   padding-bottom: 10px;
-  border-bottom: solid 2px #eeeeee;
+  border-bottom: solid 2px #ecf0f1;
 }
 /* line 113, sass/partials/_content.scss */
 .entry-content h3 {
   padding-bottom: 5px;
-  border-bottom: solid 1px #eeeeee;
+  border-bottom: solid 1px #ecf0f1;
 }
 
 /* line 120, sass/partials/_content.scss */
@@ -3824,6 +3816,8 @@ input[type="color"]:focus,
 .wp-caption {
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
   border-radius: 6px;
   max-width: 100%;
 }
@@ -4001,6 +3995,8 @@ object {
   border: 2px solid #e9ecef;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
   border-radius: 4px;
   padding: 24px;
   background-color: white;
@@ -4062,6 +4058,8 @@ object {
 .zenback-widget-area #zenback-widget .zenback-module-more-link {
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
   border-radius: 6px;
   border: none;
   background-color: #3498db;
@@ -4079,6 +4077,8 @@ object {
   color: white;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
   border-radius: 6px;
   border: none;
   background-color: #1abc9c;
@@ -4135,6 +4135,8 @@ object {
 .zenback-widget-area-debug {
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
   border-radius: 6px;
   text-shadow: none;
   background-color: #18bc9c;
@@ -4339,6 +4341,8 @@ object {
   border: 2px solid #e9ecef;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
   border-radius: 6px;
   padding: 24px;
   background-color: white;
@@ -4361,6 +4365,8 @@ object {
   border: 2px solid #1f2c39;
   -webkit-border-radius: none;
   -moz-border-radius: none;
+  -ms-border-radius: none;
+  -o-border-radius: none;
   border-radius: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;

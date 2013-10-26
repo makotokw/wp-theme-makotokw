@@ -39,9 +39,9 @@
 		<?php endif; // End if 'post' == get_post_type() ?>
 
 		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-		<span class="comments-link"><i class="icon-comment"></i> <?php comments_popup_link( __( 'Leave a comment', 'makotokw' ), __( '1 Comment', 'makotokw' ), __( '% Comments', 'makotokw' ) ); ?></span>
+		<span class="comments-link"><i class="fa fa-comment"></i> <?php comments_popup_link( __( 'Leave a comment', 'makotokw' ), __( '1 Comment', 'makotokw' ), __( '% Comments', 'makotokw' ) ); ?></span>
 		<?php endif; ?>
 
-		<?php edit_post_link( __( 'Edit', 'makotokw' ), '<i class="icon-pencil"></i> ', '' ); ?>
+		<?php edit_post_link( __( 'Edit', 'makotokw' ), '<i class="fa fa-pencil"></i> ', '' ); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->

@@ -43,21 +43,21 @@
 		<div class="sub-nav">
 			<div class="socials">
 				<a href="http://twitter.com/<?php echo WP_THEME_AUTHOR_TWITTER?>" title="Twitter">
-					<span class="icon-stack">
-						<i class="icon-circle icon-stack-base"></i>
-						<i class="icon-twitter icon-light"></i>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-circle fa-stack-2x"></i>
+						<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
 					</span>
 				</a>
 				<a href="https://github.com/<?php echo WP_THEME_AUTHOR_GITHUB?>" title="GitHub">
-					<span class="icon-stack">
-						<i class="icon-circle icon-stack-base"></i>
-						<i class="icon-github-alt icon-light"></i>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-circle fa-stack-2x"></i>
+						<i class="fa fa-github-alt fa-stack-1x fa-inverse"></i>
 					</span>
 				</a>
 				<a href="<?php echo makotokw_feed_link() ?>" title="RSS">
-					<span class="icon-stack">
-						<i class="icon-circle icon-stack-base"></i>
-						<i class="icon-rss icon-light"></i>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-circle fa-stack-2x"></i>
+						<i class="fa fa-rss fa-stack-1x fa-inverse"></i>
 					</span>
 				</a>
 			</div>

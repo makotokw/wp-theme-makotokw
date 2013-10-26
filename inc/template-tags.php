@@ -91,25 +91,25 @@ function makotokw_breadcrumbs()
 		echo '<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="breadcrumb">';
 
 		// Add the Home link
-		echo '<a href="' . esc_url(home_url('/')) . '"><i class="icon-home icon-large"></i></a><i class="icon-chevron-right"></i>';
+		echo '<a href="' . esc_url(home_url('/')) . '"><i class="fa fa-home icon-large"></i></a><i class="fa fa-chevron-right"></i>';
 
 		if (is_category()) {
-			echo '<a href="/categories/" itemprop="url"><span itemprop="title">' . __( 'Categories', 'makotokw' ) . '</span></a><i class="icon-chevron-right"></i>';
+			echo '<a href="/categories/" itemprop="url"><span itemprop="title">' . __( 'Categories', 'makotokw' ) . '</span></a><i class="fa fa-chevron-right"></i>';
 			$term = $wp_query->get_queried_object();
 			if ($term->parent > 0) {
-				echo makotokw_breadcrumbs_category_parents($term->parent, '<i class="icon-chevron-right"></i>');
+				echo makotokw_breadcrumbs_category_parents($term->parent, '<i class="fa fa-chevron-right"></i>');
 			}
 			echo '<span itemprop="title">'.single_cat_title('', false).'</span>';
 		} else if (is_tag()) {
-			echo '<a href="/tags/" itemprop="url"><span itemprop="title">' . __( 'Tags', 'makotokw' ) . '</a><i class="icon-chevron-right"></i>';
+			echo '<a href="/tags/" itemprop="url"><span itemprop="title">' . __( 'Tags', 'makotokw' ) . '</a><i class="fa fa-chevron-right"></i>';
 			echo single_tag_title('', false);
 		} elseif (is_archive()) {
 			if ( is_tax( 'blogs' ) ) {
 				echo '<span itemprop="title">' . __( 'Blog', 'makotokw' ) . '</span>';
-				echo '<i class="icon-chevron-right"></i><span itemprop="title">'.single_cat_title('', false).'</span>';
+				echo '<i class="fa fa-chevron-right"></i><span itemprop="title">'.single_cat_title('', false).'</span>';
 			} elseif ( is_tax( 'portfolios' ) ) {
 				echo '<span itemprop="title">' . __( 'Portfolio', 'makotokw' ) . '</span>';
-				echo '<i class="icon-chevron-right"></i><span itemprop="title">'.single_cat_title('', false).'</span>';
+				echo '<i class="fa fa-chevron-right"></i><span itemprop="title">'.single_cat_title('', false).'</span>';
 			} else {
 				echo "  "  . __( 'Archives', 'makotokw' );
 			}
@@ -120,9 +120,9 @@ function makotokw_breadcrumbs()
 		} elseif (is_single()) {
 			$category = get_the_category();
 			if (is_array($category) && count($category) > 0) {
-				echo '<a href="/categories/" itemprop="url"><span itemprop="title">' . __( 'Categories', 'makotokw' ) . '</span></a><i class="icon-chevron-right"></i>';
+				echo '<a href="/categories/" itemprop="url"><span itemprop="title">' . __( 'Categories', 'makotokw' ) . '</span></a><i class="fa fa-chevron-right"></i>';
 				$category_id = get_cat_ID($category[0]->cat_name);
-				echo makotokw_breadcrumbs_category_parents($category_id, '<i class="icon-chevron-right"></i>');
+				echo makotokw_breadcrumbs_category_parents($category_id, '<i class="fa fa-chevron-right"></i>');
 			}
 			echo the_title('', '', false);
 		} elseif (is_page()) {
@@ -134,7 +134,7 @@ function makotokw_breadcrumbs()
 				array_push($ancestors, $post->ID);
 				foreach ($ancestors as $ancestor) {
 					if ($ancestor != end($ancestors)) {
-						echo '<a href="' . get_permalink($ancestor) . '" itemprop="url"><span itemprop="title">' . strip_tags(apply_filters('single_post_title', get_the_title($ancestor))) . '</span></a><i class="icon-chevron-right"></i>';
+						echo '<a href="' . get_permalink($ancestor) . '" itemprop="url"><span itemprop="title">' . strip_tags(apply_filters('single_post_title', get_the_title($ancestor))) . '</span></a><i class="fa fa-chevron-right"></i>';
 					} else {
 						echo strip_tags(apply_filters('single_post_title', get_the_title($ancestor)));
 					}
@@ -222,7 +222,7 @@ function makotokw_comment( $comment, $args, $depth ) {
 					sprintf( __( '%1$s at %2$s', 'makotokw' ), get_comment_date(), get_comment_time() )
 				);
 				?>
-				<?php edit_comment_link( __( 'Edit', 'makotokw' ), '<span class="edit-link"><i class="icon-pencil"></i> ', '</span>' ); ?>
+				<?php edit_comment_link( __( 'Edit', 'makotokw' ), '<span class="edit-link"><i class="fa fa-pencil"></i> ', '</span>' ); ?>
 			</div><!-- .comment-meta -->
 			<div class="comment-content">
 				<?php if ( '0' == $comment->comment_approved ) : ?>
@@ -457,18 +457,18 @@ function makotokw_the_category_slug($separator = '', $post_id = false) {
 
 function makotokw_the_category_and_tag() {
 	/* translators: used between list items, there is a space after the comma */
-	$categories_list = get_the_category_list( __( ' <i class="icon-folder-close"></i> ', 'makotokw' ) );
+	$categories_list = get_the_category_list( __( ' <i class="fa fa-folder-close"></i> ', 'makotokw' ) );
 	if ( $categories_list && makotokw_categorized_blog() ) :?>
 		<span class="cat-links">
-			<?php printf( __( '<i class="icon-folder-close"></i> %1$s', 'makotokw' ), $categories_list ); ?>
+			<?php printf( __( '<i class="fa fa-folder-close"></i> %1$s', 'makotokw' ), $categories_list ); ?>
 		</span>
 	<?php endif; // End if categories ?>
 	<?php
 	/* translators: used between list items, there is a space after the comma */
-	$tags_list = get_the_tag_list( '', __( ' <i class="icon-tag"></i>', 'makotokw' ) );
+	$tags_list = get_the_tag_list( '', __( ' <i class="fa fa-tag"></i>', 'makotokw' ) );
 	if ( $tags_list ) :?>
 		<span class="tags-links">
-				<?php printf( __( '<i class="icon-tag"></i> %1$s', 'makotokw' ), $tags_list ); ?>
+				<?php printf( __( '<i class="fa fa-tag"></i> %1$s', 'makotokw' ), $tags_list ); ?>
 			</span>
 	<?php endif; // End if $tags_list
 	printf( '<span class="author vcard"><span class="fn">%1$s</span></span>', get_the_author() );

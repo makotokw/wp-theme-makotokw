@@ -41,7 +41,7 @@
     .poweredby .theme {
       &:before {
         font-family: FontAwesome;
-        @extend .icon-heart:before;
+        @extend .fa-heart:before;
         color: hotpink;
         margin-right: 2px;
         font-size: .5em;

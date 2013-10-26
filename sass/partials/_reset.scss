@@ -220,7 +220,7 @@ blockquote {
 
   &:before {
     @include block-awesome-icon(3em);
-    @extend .icon-quote-left:before;
+    @extend .fa-quote-left:before;
     color: #bac1c8;
   }
 

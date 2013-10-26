@@ -10,7 +10,7 @@
   ],
   "dependencies": {
     "google-code-prettify": "~1.0.0",
-    "font-awesome": "~3.2.1",
+    "font-awesome": "~4.0.0",
     "html5shiv": "~3.6.2"
   },
   "exportsOverride": {
@@ -22,7 +22,7 @@
     },
     "font-awesome": {
       "scss": "scss/_*.scss",
-      "fonts": "font/*.*"
+      "fonts": "fonts/*.*"
     }
   }
 }
