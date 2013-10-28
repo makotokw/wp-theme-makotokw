@@ -39,7 +39,7 @@
         .zenback-module-item {
           a {
             color: $white;
-            @include border-radius($blockBorderRadius);
+            @include border-radius(0);
             border: none;
             background-color: $turquoise;
             margin-right: 5px;

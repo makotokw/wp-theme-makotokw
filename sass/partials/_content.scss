@@ -40,6 +40,22 @@
   }
 }
 
+.entry-date {
+  font-size: $fontSizeMini;
+
+  &:before {
+    font-family: FontAwesome;
+    content: $fa-var-clock-o;
+    margin-right: 3px;
+  }
+
+  .published {
+    //font-weight: 300;
+    text-transform: uppercase;
+  }
+}
+
+
 .entry-header {
   position: relative;
   //padding-top: 1.5em;
@@ -54,34 +70,16 @@
   }
 
   .cat-links {
+    color: $entryTitleColor;
     font-size: $fontSizeMini;
-    font-weight: 900;
     text-transform: uppercase;
-    color: $gray;
     margin-bottom: 4px;
-    display: block;
+    margin-right: 4px;
   }
 
   .entry-title {
     color: $entryTitleColor;
     margin: 0 0 5px 0;
-  }
-}
-
-.entry-date {
-  font-size: $fontSizeMini;
-
-  &:before {
-    font-family: FontAwesome;
-    content: $fa-var-clock-o;
-    margin-right: 3px;
-    color: $entryDateColor;
-  }
-
-  .published {
-    //font-weight: 300;
-    text-transform: uppercase;
-    color: $entryDateColor;
   }
 }
 

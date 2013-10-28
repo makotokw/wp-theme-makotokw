@@ -121,7 +121,7 @@ function makotokw_scripts()
 	}
 
 	wp_enqueue_style('makotokw-fonts', esc_url_raw( makotokw_fonts_url() ), array(), null );
-	wp_enqueue_style('makotokw-style', get_stylesheet_uri(), array(), '20131016');
+	wp_enqueue_style('makotokw-style', get_stylesheet_uri(), array(), '20131029');
 
 	// Loads the Internet Explorer specific stylesheet.
 	wp_enqueue_style( 'makotokw-ie', get_template_directory_uri() . '/ie.css', array( 'makotokw-style' ), '20130428');

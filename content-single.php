@@ -6,8 +6,8 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<span class="cat-links"><?php makotokw_the_category_slug(', '); ?></span>
 		<h1 class="entry-title"><?php the_title(); ?></h1>
+		<span class="cat-links"><i class="fa fa-folder"></i> <?php makotokw_the_category_slug(', '); ?></span>
 		<span class="entry-date"><?php makotokw_posted_on(); ?></span>
 	</header><!-- .entry-header -->
 

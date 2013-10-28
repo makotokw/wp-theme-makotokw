@@ -14,17 +14,12 @@
     padding: 30px 0;
     width: 100%;
 
-    .credit,
-    .poweredby {
-      font-size: 14px;
-      font-weight: 300;
-      display: inline;
-      margin: 0 4px;
-      padding: 0;
-    }
+
 
     .navi {
       padding: 12px 0;
+      text-transform: uppercase;
+      font-size: $fontSizeSmall;
       a {
         font-weight: 300;
         margin: 0 6px;
@@ -38,14 +33,34 @@
       }
     }
 
-    .poweredby {
-      .theme {
-        &:before {
-          font-family: FontAwesome;
-          @extend .fa-heart:before;
-          color: hotpink;
-          margin-right: 2px;
-          font-size: .5em;
+    .copyrights {
+
+      @include clearfix;
+      border-top: 1px solid $siteBorderColor;
+      padding-bottom: 12px;
+      padding-top: 12px;
+
+      .credit,
+      .poweredby {
+        font-size: $fontSizeSmall;
+        font-weight: 300;
+        display: inline;
+        margin: 0 4px;
+        padding: 0;
+      }
+      .credit {
+        float: left;
+      }
+      .poweredby {
+        float: right;
+        .theme {
+          &:before {
+            font-family: FontAwesome;
+            @extend .fa-heart:before;
+            color: hotpink;
+            margin-right: 2px;
+            font-size: .5em;
+          }
         }
       }
     }

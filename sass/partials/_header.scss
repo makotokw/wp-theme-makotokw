@@ -19,15 +19,18 @@
     width: auto;
 
     .site-title {
-      font-family: 'Slackey';
       margin: 0;
-      //letter-spacing: -2px;
-      font-size: 40px;
-      //font-size: 52px;
-      //font-weight: bold;
-      &:hover {
-        color: $siteLinkColor;
+      font-family: 'Slackey';
+      font-size: 52px;
+
+      a {
+        color: $blueDark;
+        &:hover {
+          color: $siteAccentColor;
+        }
       }
+
+
     }
     .site-description {
       margin: 0;
@@ -43,7 +46,7 @@
 
     .socials {
       float: left;
-      margin-right: 15px;
+      margin-right: 5px;
       line-height: 40px;
 
       a {

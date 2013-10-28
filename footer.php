@@ -25,14 +25,18 @@
 				'link_after' => '',
 			))
 		; ?>
-		<span class="credit">
-			<?php do_action( 'makotokw_credits' ); ?>
-		</span>
-		<span class="poweredby">
-			<?php printf( __( 'Powered by %s', 'makotokw' ),
-				'<a href="http://wordpress.org/" title="' . esc_attr( __( 'Semantic Personal Publishing Platform', 'makotokw' ) ).'">WordPress</a>' ) ?>
-			<a href="https://github.com/makotokw/wp-theme-makotokw" class="theme">makotokw</a> theme.
-		</span>
+
+		<div class="copyrights">
+			<div class="credit">
+				<?php do_action( 'makotokw_credits' ); ?>
+			</div>
+			<div class="poweredby">
+
+				<?php printf( __( 'Powered by %s', 'makotokw' ),
+					'<a href="http://wordpress.org/" title="' . esc_attr( __( 'Semantic Personal Publishing Platform', 'makotokw' ) ).'">WordPress</a>' ) ?>
+				<a href="https://github.com/makotokw/wp-theme-makotokw" class="theme">makotokw</a> theme.
+			</div>
+		</div>
 	</div>
 </footer>
 </div><!-- #page -->

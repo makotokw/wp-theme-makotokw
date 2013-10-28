@@ -491,10 +491,10 @@ function makotokw_the_category_slug($separator = '', $post_id = false) {
 
 function makotokw_the_category_and_tag() {
 	/* translators: used between list items, there is a space after the comma */
-	$categories_list = get_the_category_list( __( ' <i class="fa fa-folder-close"></i> ', 'makotokw' ) );
+	$categories_list = get_the_category_list( __( ' <i class="fa fa-folder"></i> ', 'makotokw' ) );
 	if ( $categories_list && makotokw_categorized_blog() ) :?>
 		<span class="cat-links">
-			<?php printf( __( '<i class="fa fa-folder-close"></i> %1$s', 'makotokw' ), $categories_list ); ?>
+			<?php printf( __( '<i class="fa fa-folder"></i> %1$s', 'makotokw' ), $categories_list ); ?>
 		</span>
 	<?php endif; // End if categories ?>
 	<?php

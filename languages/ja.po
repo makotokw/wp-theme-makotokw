@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: makoto.kw@gmail.com\n"
-"POT-Creation-Date: 2013-09-01 04:49+0900\n"
+"POT-Creation-Date: 2013-10-29 01:40+0900\n"
 "PO-Revision-Date: 2013-04-28 18:46+0900\n"
 "Last-Translator: Makoto Kawasaki <makoto.kw@gmail.com>\n"
 "Language-Team: Japanese\n"
@@ -55,7 +55,12 @@ msgstr "年別アーカイブ: %s"
 msgid "Blog Archives: %s"
 msgstr "ブログアーカイブ: %s"
 
-#: archive.php:39 inc/template-tags.php:114
+#: archive.php:39
+#, php-format
+msgid "Portfolio Archives: %s"
+msgstr "ポートフォリオアーカイブ: %s"
+
+#: archive.php:42 inc/template-tags.php:148
 msgid "Archives"
 msgstr "アーカイブ"
 
@@ -75,40 +80,16 @@ msgstr ""
 msgid "Comments are closed."
 msgstr "コメントは停止中です。"
 
-#: content-page.php:18 content-single.php:17 content.php:25
+#: content-page.php:18 content-single.php:18 content.php:25
 msgid "Pages:"
 msgstr ""
 
-#: content-page.php:26 content-single.php:59 content.php:62
-#: inc/template-tags.php:233
+#: content-page.php:26 content-single.php:28 content.php:42
+#: inc/template-tags.php:259
 msgid "Edit"
 msgstr "編集"
 
-#: content-single.php:26 content.php:36
-msgid " <i class=\"icon-folder-close\"></i> "
-msgstr ""
-
-#: content-single.php:29
-msgid " <i class=\"icon-tag\"></i> "
-msgstr ""
-
-#: content-single.php:34
-#, php-format
-msgid "<i class=\"icon-tag\"></i> %2$s"
-msgstr ""
-
-#: content-single.php:42
-#, php-format
-msgid ""
-"<i class=\"icon-folder-close\"></i> %1$s <i class=\"icon-tag\"></i> %2$s"
-msgstr ""
-
-#: content-single.php:44 content.php:40
-#, php-format
-msgid "<i class=\"icon-folder-close\"></i> %1$s"
-msgstr ""
-
-#: content.php:13
+#: content.php:9
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
@@ -117,45 +98,36 @@ msgstr ""
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "続きを読む <span class=\"meta-nav\">&rarr;</span>"
 
-#: content.php:46
-msgid " <i class=\"icon-tag\"></i>"
-msgstr ""
-
-#: content.php:50
-#, php-format
-msgid "<i class=\"icon-tag\"></i> %1$s"
-msgstr ""
-
-#: content.php:59
+#: content.php:39
 msgid "Leave a comment"
 msgstr "コメントを残す"
 
-#: content.php:59
+#: content.php:39
 msgid "1 Comment"
 msgstr ""
 
-#: content.php:59
+#: content.php:39
 msgid "% Comments"
 msgstr ""
 
-#: footer.php:31
+#: footer.php:35
 #, php-format
 msgid "Powered by %s"
 msgstr ""
 
-#: footer.php:32
+#: footer.php:36
 msgid "Semantic Personal Publishing Platform"
 msgstr ""
 
-#: functions.php:63
+#: functions.php:62
 msgid "Site Info Menu"
 msgstr ""
 
-#: functions.php:64
+#: functions.php:63
 msgid "Portfolio Menu"
 msgstr ""
 
-#: functions.php:94
+#: functions.php:95
 msgid "Sidebar"
 msgstr ""
 
@@ -190,67 +162,112 @@ msgid ""
 msgstr "お探しのコンテンツを見つけられませんでした。検索をお試しください。"
 
 #: search.php:16
-#, php-format
 msgid "Search Results for: %s"
 msgstr "検索結果: %s"
+
+#: searchform.php:11
+msgid "Search the site"
+msgstr ""
 
 #: inc/extras.php:66
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: inc/template-tags.php:34
-#, fuzzy
+#: inc/template-tags.php:32
 msgid "Post navigation"
-msgstr "コメントナビゲーション"
+msgstr ""
 
-#: inc/template-tags.php:48
-#, fuzzy
+#: inc/template-tags.php:47
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "続きを読む <span class=\"meta-nav\">&rarr;</span>"
 
-#: inc/template-tags.php:52
-#, fuzzy
+#: inc/template-tags.php:51
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "続きを読む <span class=\"meta-nav\">&rarr;</span>"
 
-#: inc/template-tags.php:104 inc/template-tags.php:122
+#: inc/template-tags.php:77
+msgid "First"
+msgstr ""
+
+#: inc/template-tags.php:79
+msgid "Previous"
+msgstr ""
+
+#: inc/template-tags.php:86
+msgid "Next"
+msgstr ""
+
+#: inc/template-tags.php:88
+msgid "Last"
+msgstr ""
+
+#: inc/template-tags.php:131 inc/template-tags.php:157
 msgid "Categories"
 msgstr "カテゴリ"
 
-#: inc/template-tags.php:111
+#: inc/template-tags.php:138
 msgid "Tags"
 msgstr "タグ"
 
-#: inc/template-tags.php:116
-#, fuzzy
-msgid "Search Results"
-msgstr "検索結果: %s"
+#: inc/template-tags.php:142
+msgid "Blog"
+msgstr ""
 
-#: inc/template-tags.php:118
+#: inc/template-tags.php:145
+msgid "Portfolio"
+msgstr ""
+
+#: inc/template-tags.php:151
+msgid "Search Results"
+msgstr "検索結果"
+
+#: inc/template-tags.php:153
 msgid "404 Not Found"
 msgstr ""
 
-#: inc/template-tags.php:160
+#: inc/template-tags.php:195 inc/template-tags.php:486
 #, php-format
 msgid "View all posts in %s"
 msgstr ""
 
-#: inc/template-tags.php:230
-#, fuzzy, php-format
+#: inc/template-tags.php:256
+#, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s %2$"
 
-#: inc/template-tags.php:237
+#: inc/template-tags.php:263
 msgid "Your comment is awaiting moderation."
 msgstr "コメントは承認待ちです。"
 
-#: inc/template-tags.php:261
+#: inc/template-tags.php:285
 #, php-format
 msgid "<time class=\"published\" datetime=\"%1$s\">%2$s</time>"
 msgstr ""
 
-#: inc/template-tags.php:266
+#: inc/template-tags.php:290
 #, php-format
 msgid "<time class=\"updated\" datetime=\"%1$s\"></time>"
+msgstr ""
+
+#: inc/template-tags.php:394
+msgid "Related Posts"
+msgstr ""
+
+#: inc/template-tags.php:494
+msgid " <i class=\"fa fa-folder\"></i> "
+msgstr ""
+
+#: inc/template-tags.php:497
+#, php-format
+msgid "<i class=\"fa fa-folder\"></i> %1$s"
+msgstr ""
+
+#: inc/template-tags.php:502
+msgid " <i class=\"fa fa-tag\"></i>"
+msgstr ""
+
+#: inc/template-tags.php:505
+#, php-format
+msgid "<i class=\"fa fa-tag\"></i> %1$s"
 msgstr ""
