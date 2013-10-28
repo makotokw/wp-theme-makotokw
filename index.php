@@ -31,7 +31,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php makotokw_content_nav( 'nav-below' ); ?>
+			<?php makotokw_pagination(); ?>
 
 		<?php else : ?>
 

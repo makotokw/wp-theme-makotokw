@@ -1,8 +1,10 @@
 
+
 .no-results,
 .error404 {
-  page-header {
+  .page-header {
     background-color: $white;
+    border-bottom: none;
   }
 
   .page-wrapper {

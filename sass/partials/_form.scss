@@ -26,6 +26,5 @@ input[type="color"],
     outline: 0;
     outline: thin dotted \9; /* IE6-9 */
     @include box-shadow(none);
-
   }
 }

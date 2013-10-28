@@ -83,6 +83,7 @@ $siteContentMaxWidth: 940px;
 
 $siteForegroundColor: $grayDarker;
 $siteBackgroundColor: $white;
+$siteAccentColor: $blue;
 $siteLinkColor: $blue;
 $siteLinkOverColor: lighten($blue,5%);
 $siteBorderColor: $clouds;
@@ -92,7 +93,7 @@ $infoForegroundColor: #3a87ad;
 $infoBackgroundColor: #d9edf7;
 $infoBorderColor: darken(adjust-hue($infoBackgroundColor, -10), 7%);
 
-$formPlaceHolderColor: $silver;
+$formPlaceHolderColor: $gray;
 
 $naviBackgroundColor: $siteBackgroundColor;
 $footerForegroundColor: $silver;

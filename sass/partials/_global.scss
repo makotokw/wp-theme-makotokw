@@ -146,10 +146,10 @@
 }
 
 /* Clearing */
-.clear
-.entry-content
-.page-content
-.nav-links
+.clear,
+.entry-content,
+.page-content,
+.nav-links,
 .comment-body {
   @include clearfix;
 }

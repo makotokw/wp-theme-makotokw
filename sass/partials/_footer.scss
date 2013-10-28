@@ -38,13 +38,15 @@
       }
     }
 
-    .poweredby .theme {
-      &:before {
-        font-family: FontAwesome;
-        @extend .fa-heart:before;
-        color: hotpink;
-        margin-right: 2px;
-        font-size: .5em;
+    .poweredby {
+      .theme {
+        &:before {
+          font-family: FontAwesome;
+          @extend .fa-heart:before;
+          color: hotpink;
+          margin-right: 2px;
+          font-size: .5em;
+        }
       }
     }
   }

@@ -4,15 +4,12 @@
 .breadcrumb {
   display: block;
   margin: 0 auto;
-  max-width: $siteMainMaxWidth;
+  max-width: $siteContentMaxWidth;
 
   width: 100%;
-  padding: 13px 20px;
-  font-weight: 300;
-
-  background-color: #f7f9fa;
-  color: #34495e;
-  border-left: solid 5px #e9ecef;
+  font-size: $fontSizeSmall;
+//  font-weight: 300;
+  color: $blueDark;
 
   //border: $blockBorderWidth solid $clouds;
   //@include border-radius($blockBorderRadius);

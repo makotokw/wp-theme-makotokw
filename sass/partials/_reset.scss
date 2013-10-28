@@ -223,7 +223,6 @@ blockquote {
     @extend .fa-quote-left:before;
     color: #bac1c8;
   }
-
 }
 
 small {
@@ -371,15 +370,15 @@ input[type="radio"] {
   padding: 0;
 }
 
-input[type="search"] {
-  -webkit-appearance: textfield;
-  padding-right: 2px; /* Don't cut off the webkit search cancel button */
-  width: 270px;
-}
-
-input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
+//input[type="search"] {
+//  -webkit-appearance: none;
+//  padding-right: 2px; /* Don't cut off the webkit search cancel button */
+//  width: 270px;
+//}
+//
+//input[type="search"]::-webkit-search-decoration {
+//  -webkit-appearance: none;
+//}
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
