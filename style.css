@@ -3488,7 +3488,7 @@ input[type="color"]:focus,
 }
 
 /* line 2, sass/partials/_pagination.scss */
-.pagination ul .current .page, .pagination a {
+.pagination ul .current .page, .pagination a, .navigation-comment a {
   margin: 0 10px 0 0;
   display: inline-block;
   float: left;
@@ -4123,6 +4123,16 @@ object {
   vertical-align: text-top;
   color: #2ba6cb;
   margin-right: 5px;
+}
+
+/* line 155, sass/partials/_comments.scss */
+.navigation-comment a {
+  float: none;
+  background-color: #2ba6cb;
+}
+/* line 159, sass/partials/_comments.scss */
+.navigation-comment a:hover {
+  background-color: #2c3e50;
 }
 
 /* =Zenback

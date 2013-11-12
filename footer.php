@@ -34,7 +34,7 @@
 
 				<?php printf( __( 'Powered by %s', 'makotokw' ),
 					'<a href="http://wordpress.org/" title="' . esc_attr( __( 'Semantic Personal Publishing Platform', 'makotokw' ) ).'">WordPress</a>' ) ?>
-				<a href="https://github.com/makotokw/wp-theme-makotokw" class="theme">makotokw</a> theme.
+				<a href="https://github.com/makotokw/wp-theme-makotokw" class="theme">makotokw themne</a>.
 			</div>
 		</div>
 	</div>

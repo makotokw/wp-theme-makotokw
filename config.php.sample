@@ -19,7 +19,7 @@ EOT
 );
 function makotokw_credits() {
 ?>
-&copy; 2001-<?php echo date('Y')?> <a href="http://makotokw.com">makoto_kw</a>
+<a href="<?php echo home_url(); ?>/" title="<?php bloginfo('description'); ?>"><?php bloginfo('name'); ?></a> Copyright &copy; <?php echo date("Y") ?>.
 <?php
 }
 add_action('makotokw_credits', 'makotokw_credits');

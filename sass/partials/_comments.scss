@@ -150,3 +150,14 @@
     }
   }
 }
+
+.navigation-comment {
+  a {
+    @extend %pagenation-page;
+    float: none;
+    background-color: $siteAccentColor;
+    &:hover {
+      background-color: $blueDark;
+    }
+  }
+}
