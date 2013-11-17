@@ -3,18 +3,18 @@
  * @package makotokw
  */
 define('WP_THEME_DEBUG', ARCADIA_WP_DEBUG === true);
-define('WP_THEME_GOOGLE_ANALYTICS_ACCOUNT', 'UA-3140223-1');
+define('WP_THEME_GOOGLE_ANALYTICS_ACCOUNT', 'UA-xxxxxx-1');
 define('WP_THEME_AUTHOR_TWITTER', 'username');
 define('WP_THEME_AUTHOR_GITHUB', 'username');
 define('WP_THEME_MEMO_POST_ID', 1716);
 define('WP_THEME_OGP', true);
 define('WP_THEME_OGP_LOCALE', 'ja_JP');
-define('WP_THEME_OGP_FB_APPID', '499078796784603');
-define('WP_THEME_OGP_FB_ADMINS', 'makoto.kw');
+define('WP_THEME_OGP_FB_APPID', 'xxxxxxxx');
+define('WP_THEME_OGP_FB_ADMINS', 'username.kw');
 define('WP_THEME_FB_RECOMMEND_BAR', false);
 define('WP_THEME_ZENBACK', true);
 define('WP_THEME_ZENBACK_WIDGET_SCRYPT', <<<'EOT'
-<!-- X:S ZenBackWidget --><script type="text/javascript">document.write(unescape("%3Cscript")+" src='http://widget.zenback.jp/?base_uri=http%3A//blog.makotokw.com&nsid=90639670723005736%3A%3A90639675017984340&rand="+Math.ceil((new Date()*1)*Math.random())+"' type='text/javascript'"+unescape("%3E%3C/script%3E"));</script><!-- X:E ZenBackWidget -->
+<!-- X:S ZenBackWidget --><!-- X:E ZenBackWidget -->
 EOT
 );
 function makotokw_credits() {

@@ -22,7 +22,7 @@ WordPress theme for [kwLog](http://blog.makotokw.com).
 
 ## Limitation
 
-* Tested on PHP 5.4 **ONLY** by makotokw for kwLog
+* Tested on PHP 5.5 **ONLY** by makotokw for kwLog
  * Some styles are **depend on** posts on kwLog
  * **No** sidebar, **No** widgets
  * **Unsupported** post formats
