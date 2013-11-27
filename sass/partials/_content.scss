@@ -41,7 +41,6 @@
 }
 
 .entry-date {
-  font-size: $fontSizeMini;
 
   &:before {
     font-family: FontAwesome;
@@ -50,7 +49,6 @@
   }
 
   .published {
-    //font-weight: 300;
     text-transform: uppercase;
   }
 }
@@ -70,11 +68,21 @@
   }
 
   .cat-links {
-    color: $entryTitleColor;
-    font-size: $fontSizeMini;
+    color: $silver;
     text-transform: uppercase;
     margin-bottom: 4px;
     margin-right: 4px;
+    a {
+      color: $silver;
+      &:hover {
+        color: $siteLinkOverColor;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .entry-date {
+    color: $silver;
   }
 
   .entry-title {
