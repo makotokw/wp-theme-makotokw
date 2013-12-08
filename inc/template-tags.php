@@ -452,7 +452,7 @@ function makotokw_related_posts($arg = array()) {
 	wp_reset_query();
 }
 
-function makotokw_portfolio_note() {
+function makotokw_related_portfolio() {
 	global $post;
 	unset($portfolio);
 	$terms = get_the_terms($post->ID, 'portfolios');
@@ -476,11 +476,7 @@ function makotokw_portfolio_note() {
 		if ($rq->have_posts()): $rq->the_post(); ?>
 			<section class="section section-mini section-portfolio">
 				<h2 class="section-title">Related Software</h2>
-				<div class="section-content">
-					<div class="note note-portfolio">
-						<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
-					</div>
-				</div>
+				<div class="section-content"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></div>
 			</section>
 			<?php
 		endif;

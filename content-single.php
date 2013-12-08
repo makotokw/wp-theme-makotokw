@@ -30,7 +30,7 @@
 			<?php makotokw_share_this(); ?>
 		<?php endif; ?>
 		<?php makotokw_section_category_and_tag('Tag'); ?>
-		<?php makotokw_portfolio_note(); ?>
+		<?php makotokw_related_portfolio(); ?>
 		<?php makotokw_related_posts(); ?>
 		<?php makotokw_content_nav( 'nav-below' ); ?>
 

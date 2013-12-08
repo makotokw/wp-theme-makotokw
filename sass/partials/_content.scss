@@ -275,14 +275,6 @@ object {
   @include clearfix;
 }
 
-.section-portfolio {
-  .section-title {
-    &:before {
-      content: $fa-var-file-o;
-    }
-  }
-}
-
 /* =Related Posts
 ----------------------------------------------- */
 .section-related-posts {

@@ -176,9 +176,9 @@
   a {
     @extend %pagenation-page;
     float: none;
-    background-color: $siteAccentColor;
+    background-color: $siteDarkAccentColor;
     &:hover {
-      background-color: $blueDark;
+      background-color: $siteAccentColor;
     }
   }
 }

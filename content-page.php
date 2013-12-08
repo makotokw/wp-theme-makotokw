@@ -25,6 +25,7 @@
 		<?php printf( '<span class="author vcard"><span class="fn">%1$s</span></span>', get_the_author() ); ?>
 
 		<?php if (!is_preview()): ?>
+			<?php makotokw_share_this(); ?>
 			<?php makotokw_related_posts(); ?>
 		<?php endif; ?>
 	</footer>
