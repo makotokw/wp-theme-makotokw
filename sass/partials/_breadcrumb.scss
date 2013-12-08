@@ -3,28 +3,29 @@
 ----------------------------------------------- */
 .breadcrumb {
   display: block;
-  margin: 0 auto;
+  margin: 10px auto 10px auto;
   max-width: $siteContentMaxWidth;
 
   width: 100%;
-  font-size: $fontSizeSmall;
+//  font-size: $fontSizeSmall;
 //  font-weight: 300;
-  color: $blueDark;
 
   //border: $blockBorderWidth solid $clouds;
   //@include border-radius($blockBorderRadius);
   color: lighten(desaturate($siteForegroundColor, 20%), 40%);
 
   .fa-chevron-right {
-    padding-right: 10px;
-    padding-left: 10px;
+    padding-right: 5px;
+    padding-left: 5px;
     color: $silver;
   }
 
   a {
+    padding: 10px 10px 10px 10px;
     color: lighten(desaturate($blueDark, 10%), 20%);
     &:hover {
-      color: $siteLinkOverColor;
+      color: white;
+      background-color: $siteLinkColor;
     }
   }
 }

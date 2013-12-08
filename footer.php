@@ -19,8 +19,9 @@
 			array(
 				'theme_location' => 'site-info',
 				'depth' => 1,
-				'container_class' => 'navi',
+				'container_class' => 'site-navi',
 				'menu_id' => 'footerSiteMenu',
+				'menu_class' => 'site-menu',
 				'link_before' => '',
 				'link_after' => '',
 			))
@@ -41,5 +42,8 @@
 </footer>
 </div><!-- #page -->
 <?php wp_footer(); ?>
+<?php if (WP_THEME_DEBUG): ?>
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+<?php endif ?>
 </body>
 </html>

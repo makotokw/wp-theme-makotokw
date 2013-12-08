@@ -25,7 +25,7 @@ function makotokw_publicize_save_meta($submit_post, $post_id, $service_name, $co
 	if ($service_name != 'twitter') {
 		return;
 	}
-	$prefix = 'ブログ書いた:';
+	$prefix = 'ブログ更新:';
 	$title = get_the_title($post_id);
 	$publicize_custom_message = get_post_meta($post_id, '_wpas_mess', true);
 	if (empty($publicize_custom_message)

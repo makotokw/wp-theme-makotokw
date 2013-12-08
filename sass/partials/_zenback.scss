@@ -14,7 +14,7 @@
 
 
     .zenback-module-label {
-      text-shadow: none;
+      @include text-shadow(none);
     }
 
     .zenback-module-content {

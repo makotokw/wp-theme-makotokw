@@ -49,13 +49,11 @@
 }
 
 .note-portfolio {
-  @extend %base-note;
-  @include block($blueDark, none);
+  @extend .note;
   margin: 24px 0;
   line-height: 2em;
   &:before {
-    color: $white;
-    content: $fa-var-file;
+    content: $fa-var-file-o;
   }
 }
 

@@ -14,8 +14,6 @@ get_header(); ?>
 
 			<?php get_template_part( 'content', 'single' ); ?>
 
-			<?php makotokw_content_nav( 'nav-below' ); ?>
-
 			<?php if (WP_THEME_ZENBACK === true): ?>
 				<?php makotokw_zenback_widget(); ?>
 			<?php endif ?>

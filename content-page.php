@@ -6,7 +6,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('post-single'); ?>>
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 	</header><!-- .entry-header -->
@@ -23,7 +23,6 @@
 
 	<footer class="entry-meta">
 		<?php printf( '<span class="author vcard"><span class="fn">%1$s</span></span>', get_the_author() ); ?>
-		<?php edit_post_link( __( 'Edit', 'makotokw' ), '<i class="fa fa-pencil"></i> ', '' ); ?>
 
 		<?php if (!is_preview()): ?>
 			<?php makotokw_related_posts(); ?>

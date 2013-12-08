@@ -16,13 +16,18 @@
 
 
 
-    .navi {
+    .site-menu {
       padding: 12px 0;
       text-transform: uppercase;
       font-size: $fontSizeSmall;
       a {
         font-weight: 300;
-        margin: 0 6px;
+        margin: 0 5px;
+        padding: 5px;
+        &:hover {
+          color: $white;
+          background-color: $siteAccentColor;
+        }
       }
       ul {
         margin: 0;

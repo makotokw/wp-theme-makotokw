@@ -35,8 +35,8 @@ So, please use a reference of one implementation for WordPress theme.
 
 ```
 cd /path/to/wordpress/wp-content/themes
-git clone https://github.com/makotokw/wp-theme-makotokw.git makotokw2013
-cd makotokw2013
+git clone https://github.com/makotokw/wp-theme-makotokw.git makotokw2014
+cd makotokw2014
 cp -p config.php.sample config.php
 ```
 
@@ -51,7 +51,7 @@ cp -p config.php.sample config.php
 ### Setup
 
 ```
-cd /path/to/wordpress/wp-content/themes/makotokw2013
+cd /path/to/wordpress/wp-content/themes/makotokw2014
 gem install compass
 npm install -g grunt-cli bower
 npm install
@@ -62,10 +62,11 @@ grunt bower:install
 ## Build
 
 ```
-cd /path/to/wordpress/wp-content/themes/makotokw2013
+cd /path/to/wordpress/wp-content/themes/makotokw2014
 grunt
 ```
 
 ## License
 
 * GPL v2
+

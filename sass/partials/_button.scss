@@ -1,0 +1,19 @@
+
+.btn {
+  margin: 0 10px 0 0;
+  display: inline-block;
+  float: left;
+  line-height: 1;
+  text-decoration: none;
+  background-color: $siteDarkAccentColor;
+  color: $white;
+  padding: 12px 15px 12px 16px;
+  font-weight: bold;
+  font-size: 16px;
+  @include transition(all 0.25s linear);
+
+  &:hover {
+    background-color: $siteAccentColor;
+    color: $white;
+  }
+}

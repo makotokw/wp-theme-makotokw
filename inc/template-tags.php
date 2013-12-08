@@ -33,15 +33,20 @@ function makotokw_content_nav( $nav_id ) {
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
 
-		<div class="nav-links">
-			<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'makotokw' ) . '</span> %title' ); ?>
-			<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'makotokw' ) . '</span>' ); ?>
+		<?php if ( get_next_post_link() ) : ?>
+		<div class="section section-mini">
+			<h2 class="section-title">Newer post</h2>
+			<div class="section-content"><?php next_post_link( '%link', '%title' ); ?></div>
 		</div>
+		<?php endif; ?>
+		<?php if ( get_previous_post_link() ) : ?>
+		<div class="section section-mini">
+			<h2 class="section-title">Older post</h2>
+			<div class="section-content"><?php previous_post_link( '%link', '%title' ); ?></div>
+		</div>
+		<?php endif; ?>
 
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
-
-
-
 		<div class="nav-links">
 			<?php if ( get_next_posts_link() ) : ?>
 			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'makotokw' ) ); ?></div>
@@ -52,7 +57,6 @@ function makotokw_content_nav( $nav_id ) {
 			<?php endif; ?>
 
 		</div>
-
 	<?php endif; ?>
 
 	</nav><!-- #<?php echo esc_html( $nav_id ); ?> -->
@@ -61,9 +65,12 @@ function makotokw_content_nav( $nav_id ) {
 
 
 function makotokw_pagination($pages = '', $range = 3) {
-	$showitems = ($range * 3) + 1;
 	global $paged;
-	if (empty($paged)) $paged = 1;
+	$showitems = ($range * 3) + 1;
+
+	if (empty($paged)) {
+		$paged = 1;
+	}
 	if ($pages == '') {
 		global $wp_query;
 		$pages = $wp_query->max_num_pages;
@@ -73,16 +80,18 @@ function makotokw_pagination($pages = '', $range = 3) {
 	}
 	if (1 != $pages) {
 		echo '<div class="pagination"><ul>';
-		if ($paged > 2 && $paged > $range + 1 && $showitems < $pages)
+		if ($paged > 2 && $paged > $range + 1 && $showitems < $pages) {
 			echo '<li><a rel="nofollow" href="' . get_pagenum_link(1) . '">&laquo; ' . __('First', 'makotokw') . '</a></li>';
-		if ($paged > 1 && $showitems < $pages)
+		}
+		if ($paged > 1) {
 			echo '<li><a rel="nofollow" href="' . get_pagenum_link($paged - 1) . '" class="inactive">&lsaquo; ' . __('Previous', 'makotokw') . '</a></li>';
+		}
 		for ($i = 1; $i <= $pages; $i++) {
 			if (1 != $pages && (!($i >= $paged + $range + 1 || $i <= $paged - $range - 1) || $pages <= $showitems)) {
 				echo ($paged == $i) ? '<li class="current"><span class="page">' . $i . '</span></li>' : '<li><a rel="nofollow" href="' . get_pagenum_link($i) . '" class="inactive">' . $i . '</a></li>';
 			}
 		}
-		if ($paged < $pages && $showitems < $pages)
+		if ($paged < $pages)
 			echo '<li><a rel="nofollow" href="' . get_pagenum_link($paged + 1) . '" class="inactive">' . __('Next', 'makotokw') . ' &rsaquo;</a></li>';
 		if ($paged < $pages - 1 && $paged + $range - 1 < $pages && $showitems < $pages)
 			echo '<a rel="nofollow" class="inactive" href="' . get_pagenum_link($pages) . '">' . __('Last', 'makotokw') . ' &raquo;</a>';
@@ -118,8 +127,7 @@ function makotokw_breadcrumbs()
 
 	if (!is_home()) {
 
-		$divider = '<i class="fa fa-chevron-right"></i>';
-		$divider = '&nbsp;/&nbsp;';
+		$divider = '&nbsp;<i class="fa fa-chevron-right"></i>&nbsp;';
 
 		echo '<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="breadcrumb">';
 
@@ -304,6 +312,44 @@ function makotokw_post_summary($content, $length = 50, $trimmarker = '...') {
 	return mb_strimwidth(strip_tags(strip_shortcodes($content)), 0, 128) . '...';
 }
 
+function makotokw_share_this() {
+	// twitter: https://about.twitter.com/resources/buttons#tweet
+	// hatena: http://b.hatena.ne.jp/guide/bbutton
+	// pocket: http://getpocket.com/publisher/button
+	// google+: https://developers.google.com/+/web/+1button/
+?>
+<div class="section section-mini section-share-this">
+	<h2 class="section-title"><?php _e('Share This', 'makotokw');?></h2>
+	<div class="section-content">
+		<div class="share-item share-item-twitter">
+			<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php the_permalink(); ?>" data-text="<?php the_title(); ?>" data-via="makoto_kw" data-lang="en">Tweet</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	  </div>
+		<div class="share-item share-item-hatena-bookmark">
+			<a href="http://b.hatena.ne.jp/entry/<?php the_permalink(); ?>" class="hatena-bookmark-button" data-hatena-bookmark-title="<?php the_title(); ?>｜<?php bloginfo('name'); ?>" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="en" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+		</div>
+		<div class="share-item share-item-pocket">
+			<a data-pocket-label="pocket"  data-save-url="<?php the_permalink(); ?>" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a>
+			<script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+		</div>
+		<div class="share-item share-item-google-plus"">
+			<div class="g-plusone" data-size="medium" data-href="<?php the_permalink(); ?>"></div>
+			<script type="text/javascript">
+				(function() {
+					var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+					po.src = 'https://apis.google.com/js/platform.js';
+					var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+				})();
+			</script>
+		</div>
+		<div class="share-item share-item-facebook-like">
+			<iframe src="//www.facebook.com/plugins/like.php?href=<?php the_permalink(); ?>&amp;send=false&amp;layout=button_count&amp;width=110&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=verdana&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
+		</div>
+	</div>
+</div>
+<?php
+}
+
 function makotokw_related_post($arg = array()) {
 	global $post;
 ?>
@@ -390,15 +436,17 @@ function makotokw_related_posts($arg = array()) {
 	}
 
 	if ($rq && $rq->have_posts()): $count = 0;?>
-		<aside class="related-posts">
-			<h2><?php _e('Related Posts', 'makotokw');?></h2>
-			<?php while ( $rq->have_posts() ): $rq->the_post(); ?>
+		<aside class="section section-mini section-related-posts">
+			<h2 class="section-title"><?php _e('Related Posts', 'makotokw');?></h2>
+			<div class="section-content">
+				<ul>
+				<?php while ( $rq->have_posts() ): $rq->the_post(); ?>
 					<?php if ($post->ID != $cur_post->ID && $count < $max_count): ?>
-						<section class="related-post">
-							<?php makotokw_related_post(); ?>
-						</section>
+						<li><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></li>
 					<?php endif ?>
-			<?php endwhile ?>
+				<?php endwhile ?>
+				</ul>
+			</div>
 		</aside>
 	<?php endif;
 	wp_reset_query();
@@ -426,8 +474,13 @@ function makotokw_portfolio_note() {
 
 		$rq = new WP_Query($query_arg);
 		if ($rq->have_posts()): $rq->the_post(); ?>
-			<section class="note-portfolio">
-				<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+			<section class="section section-mini section-portfolio">
+				<h2 class="section-title">Related Software</h2>
+				<div class="section-content">
+					<div class="note note-portfolio">
+						<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+					</div>
+				</div>
 			</section>
 			<?php
 		endif;
@@ -489,6 +542,16 @@ function makotokw_the_category_slug($separator = '', $post_id = false) {
 	echo $thelist;
 }
 
+function makotokw_section_category_and_tag($title = 'Tag') {
+	?>
+	<section class="section section-mini section-category-tag">
+		<h2 class="section-title"><?php echo $title?></h2>
+		<div class="section-content">
+			<?php makotokw_the_category_and_tag(); ?></a>
+		</div>
+	</section>
+<?php
+}
 function makotokw_the_category_and_tag() {
 	/* translators: used between list items, there is a space after the comma */
 	$categories_list = get_the_category_list( __( ' <i class="fa fa-folder"></i> ', 'makotokw' ) );
@@ -501,13 +564,18 @@ function makotokw_the_category_and_tag() {
 	/* translators: used between list items, there is a space after the comma */
 	$tags_list = get_the_tag_list( '', __( ' <i class="fa fa-tag"></i>', 'makotokw' ) );
 	if ( $tags_list ) :?>
-		<span class="tags-links">
+		<span class="tag-links">
 				<?php printf( __( '<i class="fa fa-tag"></i> %1$s', 'makotokw' ), $tags_list ); ?>
 			</span>
 	<?php endif; // End if $tags_list
 	printf( '<span class="author vcard"><span class="fn">%1$s</span></span>', get_the_author() );
 }
 
+function makotokw_the_tag_links( $prefix = '<i class="fa fa-tag"></i>') {
+	/* translators: used between list items, there is a space after the comma */
+	$tags_list = get_the_tag_list( '', $prefix );
+	if ( $tags_list ) printf( __( $prefix.' %1$s', 'makotokw' ), $tags_list );
+}
 
 /**
  * Returns true if a blog has more than 1 category

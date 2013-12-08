@@ -22,13 +22,13 @@ if (post_password_required())
 
 ?>
 
-<aside id="comments" class="comments-area">
+<aside id="comments" class="section section-default section-comment">
 
 	<?php // You can start editing here -- including this comment! ?>
 
 	<?php if (have_comments()) : ?>
 
-		<h2 class="comments-title">
+		<h2 class="section-title section-comments-title">
 			<?php
 			printf(_nx('1 Comment', '%1$s Comments', get_comments_number(), 'comments title', 'makotokw'),
 				number_format_i18n(get_comments_number()));

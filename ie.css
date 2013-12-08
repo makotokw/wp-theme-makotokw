@@ -43,7 +43,7 @@
 .ie7 .page-content,
 .ie7 .nav-links,
 .ie7 .zenback-widget-area,
-.ie7 .comments-area,
+.ie7 .section-comment,
 .ie7 .pingbacks-area {
   width: 940px;
 }

@@ -83,9 +83,10 @@ $siteContentMaxWidth: 940px;
 
 $siteForegroundColor: $grayDarker;
 $siteBackgroundColor: $white;
-$siteAccentColor: $blue;
-$siteLinkColor: $blue;
-$siteLinkOverColor: lighten($blue,5%);
+$siteAccentColor: saturate($blue, 10%);
+$siteDarkAccentColor: lighten($blueDark, 10%);
+$siteLinkColor: saturate($blue, 10%);
+$siteLinkOverColor: lighten($siteLinkColor, 20%);
 $siteBorderColor: $clouds;
 $siteBorderWidth: 2px;
 

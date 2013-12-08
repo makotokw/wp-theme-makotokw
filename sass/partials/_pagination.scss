@@ -1,16 +1,7 @@
 
 %pagenation-page {
-  margin: 0 10px 0 0;
-  display: inline-block;
-  float: left;
-  line-height: 1;
-  text-decoration: none;
-  background-color: $blueDark;
-  color: $white;
-  padding: 12px 15px 12px 16px;
-  font-weight: bold;
-  font-size: 16px;
-  @include transition(all 0.25s linear);
+  @extend .btn;
+  @include border-radius(20px);
 }
 
 .pagination {
@@ -25,26 +16,25 @@
 
   ul {
     list-style: none;
-    margin: 0;
+    margin: 10px 0 10px 0;
     padding: 0;
 
     li {
       float: left;
-      margin-bottom: 10px;
     }
 
     .current {
       .page {
         @extend %pagenation-page;
+        background-color: $siteAccentColor;
       }
     }
   }
 
   a {
     @extend %pagenation-page;
-    background-color: $siteAccentColor;
     &:hover {
-      background-color: $blueDark;
+      background-color: $siteAccentColor;
     }
   }
 }

@@ -1,9 +1,9 @@
 /*!
- * Theme Name: makotokw2013
+ * Theme Name: makotokw2014
  * Theme URI: http://blog.makotokw.com/
  * Author: makoto_kw
  * Author URI: http://makotokw.com/
- * Description: 2013 theme for kwLog.
+ * Description: 2014 theme for kwLog.
  * Version: 1.0
  *
  * This theme, like WordPress, is licensed under the GPL.
@@ -12,8 +12,7 @@
 @charset "utf-8";
 @import "variables";
 @import "mixins";
-
-@import "partials/reset";
+@import "partials/normalize";
 
 // font-awesome
 @import "../components/scss/font-awesome/variables";
@@ -31,6 +30,7 @@
 
 @import "partials/genericons";
 @import "partials/global";
+@import "partials/button";
 @import "partials/form";
 @import "partials/searchform";
 @import "partials/breadcrumb";

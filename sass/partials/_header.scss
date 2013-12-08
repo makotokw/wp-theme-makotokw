@@ -7,10 +7,9 @@
   @include clearfix;
 
   a {
-    color: $siteForegroundColor;
-    text-decoration: none;
+    color: $siteDarkAccentColor;
     &:hover {
-      color: $siteLinkOverColor;
+      color: $siteAccentColor;
     }
   }
 
@@ -22,15 +21,6 @@
       margin: 0;
       font-family: 'Slackey';
       font-size: 52px;
-
-      a {
-        color: $blueDark;
-        &:hover {
-          color: $siteAccentColor;
-        }
-      }
-
-
     }
     .site-description {
       margin: 0;
@@ -48,13 +38,6 @@
       float: left;
       margin-right: 5px;
       line-height: 40px;
-
-      a {
-        color: $silver;
-        &:hover {
-          color: $siteLinkOverColor;
-        }
-      }
     }
 
     .search-form {
