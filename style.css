@@ -226,7 +226,8 @@ pre {
 
 /* line 196, sass/partials/_normalize.scss */
 .quote-caption, blockquote cite,
-blockquote small {
+blockquote small,
+blockquote .small {
   font-size: 14px;
   font-weight: normal;
   text-transform: uppercase;
@@ -284,7 +285,7 @@ blockquote:before {
 }
 
 /* line 245, sass/partials/_normalize.scss */
-small {
+small, .small {
   font-size: 75%;
 }
 
@@ -3097,12 +3098,12 @@ li > ol {
   text-decoration: line-through;
 }
 
-/* line 21, sass/partials/_global.scss */
+/* line 25, sass/partials/_global.scss */
 .muted {
   color: #999;
 }
 
-/* line 25, sass/partials/_global.scss */
+/* line 29, sass/partials/_global.scss */
 .table-bordered, .markdown-content table {
   border: 2px solid #ecf0f1;
   border-collapse: separate;
@@ -3111,12 +3112,12 @@ li > ol {
   border-radius: 6px;
   background-color: #fff;
 }
-/* line 33, sass/partials/_global.scss */
+/* line 37, sass/partials/_global.scss */
 .table-bordered th, .markdown-content table th {
   background-color: white;
   background-color: rgba(236, 240, 241, 0.3);
 }
-/* line 39, sass/partials/_global.scss */
+/* line 43, sass/partials/_global.scss */
 .table-bordered th, .markdown-content table th,
 .table-bordered td,
 .markdown-content table td {
@@ -3126,7 +3127,7 @@ li > ol {
   border-top: 2px solid #ecf0f1;
   border-left: 2px solid #ecf0f1;
 }
-/* line 54, sass/partials/_global.scss */
+/* line 58, sass/partials/_global.scss */
 .table-bordered caption + thead tr:first-child th, .markdown-content table caption + thead tr:first-child th,
 .table-bordered caption + tbody tr:first-child th,
 .markdown-content table caption + tbody tr:first-child th,
@@ -3146,33 +3147,33 @@ li > ol {
 .markdown-content table tbody:first-child tr:first-child td {
   border-top: 0;
 }
-/* line 58, sass/partials/_global.scss */
+/* line 62, sass/partials/_global.scss */
 .table-bordered thead:first-child tr:first-child th:first-child, .markdown-content table thead:first-child tr:first-child th:first-child,
 .table-bordered tbody:first-child tr:first-child td:first-child,
 .markdown-content table tbody:first-child tr:first-child td:first-child {
   border-top-left-radius: 6px;
 }
-/* line 62, sass/partials/_global.scss */
+/* line 66, sass/partials/_global.scss */
 .table-bordered thead:first-child tr:first-child th:last-child, .markdown-content table thead:first-child tr:first-child th:last-child,
 .table-bordered tbody:first-child tr:first-child td:last-child,
 .markdown-content table tbody:first-child tr:first-child td:last-child {
   border-top-right-radius: 6px;
 }
-/* line 66, sass/partials/_global.scss */
+/* line 70, sass/partials/_global.scss */
 .table-bordered thead:last-child tr:last-child th:first-child, .markdown-content table thead:last-child tr:last-child th:first-child,
 .table-bordered tbody:last-child tr:last-child td:first-child,
 .markdown-content table tbody:last-child tr:last-child td:first-child {
   border-radius: 0 0 0 6px;
   border-bottom-left-radius: 6px;
 }
-/* line 71, sass/partials/_global.scss */
+/* line 75, sass/partials/_global.scss */
 .table-bordered thead:last-child tr:last-child th:last-child, .markdown-content table thead:last-child tr:last-child th:last-child,
 .table-bordered tbody:last-child tr:last-child td:last-child,
 .markdown-content table tbody:last-child tr:last-child td:last-child {
   border-bottom-right-radius: 6px;
 }
 
-/* line 77, sass/partials/_global.scss */
+/* line 81, sass/partials/_global.scss */
 .rakuten-afl {
   border: 2px solid #e9ecef;
   -webkit-border-radius: 6px;
@@ -3187,16 +3188,16 @@ li > ol {
   box-shadow: none;
   margin-bottom: 20px;
 }
-/* line 79, sass/partials/_global.scss */
+/* line 83, sass/partials/_global.scss */
 .rakuten-afl table {
   margin: 0;
   border-bottom: none;
 }
-/* line 82, sass/partials/_global.scss */
+/* line 86, sass/partials/_global.scss */
 .rakuten-afl table td, .rakuten-afl table tr {
   border: none;
 }
-/* line 85, sass/partials/_global.scss */
+/* line 89, sass/partials/_global.scss */
 .rakuten-afl table img {
   border: none;
   -webkit-border-radius: 0;
@@ -3207,7 +3208,7 @@ li > ol {
 }
 
 /* Ascii Art */
-/* line 94, sass/partials/_global.scss */
+/* line 98, sass/partials/_global.scss */
 .aa, .aa p {
   color: #333333 !important;
   font-family: 'Mona','IPAMonaPGothic','IPA モナー Pゴシック','MS PGothic AA','MS PGothic','ＭＳ Ｐゴシック',sans-serif !important;
@@ -3216,21 +3217,21 @@ li > ol {
 }
 
 /* Alignment */
-/* line 105, sass/partials/_global.scss */
+/* line 109, sass/partials/_global.scss */
 .align-left {
   display: inline;
   float: left;
   margin-right: 1.5em;
 }
 
-/* line 110, sass/partials/_global.scss */
+/* line 114, sass/partials/_global.scss */
 .align-right {
   display: inline;
   float: right;
   margin-left: 1.5em;
 }
 
-/* line 115, sass/partials/_global.scss */
+/* line 119, sass/partials/_global.scss */
 .align-center {
   clear: both;
   display: block;
@@ -3238,12 +3239,12 @@ li > ol {
 }
 
 /* Text meant only for screen readers */
-/* line 122, sass/partials/_global.scss */
+/* line 126, sass/partials/_global.scss */
 .screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
 }
-/* line 128, sass/partials/_global.scss */
+/* line 132, sass/partials/_global.scss */
 .screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus {
   background-color: #f1f1f1;
   border-radius: 3px;
@@ -3265,7 +3266,7 @@ li > ol {
 }
 
 /* Clearing */
-/* line 153, sass/partials/_global.scss */
+/* line 157, sass/partials/_global.scss */
 .clear,
 .entry-content,
 .page-content,
@@ -3715,60 +3716,61 @@ input[type="color"]:focus,
 
 /* =Content
 ----------------------------------------------- */
-/* line 5, sass/partials/_content.scss */
-.post {
+/* line 6, sass/partials/_content.scss */
+.post-summary,
+.post-single {
   margin: 20px auto 20px auto;
   max-width: 940px;
   width: 100%;
   word-wrap: break-word;
 }
 
-/* line 13, sass/partials/_content.scss */
+/* line 14, sass/partials/_content.scss */
 .post-summary .entry-title {
   font-size: 26px;
 }
-/* line 17, sass/partials/_content.scss */
+/* line 18, sass/partials/_content.scss */
 .post-summary .entry-summary p {
   color: #3e5771;
 }
 
-/* line 24, sass/partials/_content.scss */
+/* line 25, sass/partials/_content.scss */
 .site-content .page-header {
   margin: 0 auto;
   max-width: 940px;
   padding-bottom: 9px;
   border-bottom: 1px solid #e9ecef;
 }
-/* line 30, sass/partials/_content.scss */
+/* line 31, sass/partials/_content.scss */
 .site-content .page-header .page-title {
   margin: 20px 0 0 0;
   color: #2c3e50;
 }
 
-/* line 39, sass/partials/_content.scss */
+/* line 40, sass/partials/_content.scss */
 .entry-header .entry-date:before {
   font-family: FontAwesome;
   content: "\f017";
   margin-right: 3px;
 }
-/* line 44, sass/partials/_content.scss */
+/* line 45, sass/partials/_content.scss */
 .entry-header .entry-date .published {
   text-transform: uppercase;
 }
 
-/* line 50, sass/partials/_content.scss */
+/* line 51, sass/partials/_content.scss */
 .entry-header {
   position: relative;
 }
-/* line 53, sass/partials/_content.scss */
+/* line 54, sass/partials/_content.scss */
 .entry-header a {
   color: #2c3e50;
 }
-/* line 55, sass/partials/_content.scss */
+/* line 56, sass/partials/_content.scss */
 .entry-header a:hover {
   color: #71cfeb;
 }
-/* line 61, sass/partials/_content.scss */
+/* line 62, sass/partials/_content.scss */
 .entry-header .cat-links,
 .entry-header .tag-links {
   color: #bdc3c7;
@@ -3776,69 +3778,69 @@ input[type="color"]:focus,
   margin-bottom: 5px;
   margin-right: 5px;
 }
-/* line 66, sass/partials/_content.scss */
+/* line 67, sass/partials/_content.scss */
 .entry-header .cat-links a,
 .entry-header .tag-links a {
   color: #bdc3c7;
 }
-/* line 69, sass/partials/_content.scss */
+/* line 70, sass/partials/_content.scss */
 .entry-header .cat-links a:hover,
 .entry-header .tag-links a:hover {
   color: #71cfeb;
 }
-/* line 75, sass/partials/_content.scss */
+/* line 76, sass/partials/_content.scss */
 .entry-header .tag-links {
   margin-left: 5px;
 }
-/* line 77, sass/partials/_content.scss */
+/* line 78, sass/partials/_content.scss */
 .entry-header .tag-links a {
   margin-right: 10px;
 }
-/* line 82, sass/partials/_content.scss */
+/* line 83, sass/partials/_content.scss */
 .entry-header .entry-date {
   color: #bdc3c7;
 }
-/* line 86, sass/partials/_content.scss */
+/* line 87, sass/partials/_content.scss */
 .entry-header .entry-title {
   color: #2c3e50;
   margin: 0 0 5px 0;
 }
 
-/* line 92, sass/partials/_content.scss */
+/* line 93, sass/partials/_content.scss */
 .entry-meta {
   margin: 10px 0 0 0;
 }
-/* line 94, sass/partials/_content.scss */
+/* line 95, sass/partials/_content.scss */
 .entry-meta i {
   margin-left: .5em;
   color: #1fadd7;
 }
-/* line 99, sass/partials/_content.scss */
+/* line 100, sass/partials/_content.scss */
 .entry-meta .portfolio-posts-area .entry-date {
   margin: 0 4px;
 }
-/* line 104, sass/partials/_content.scss */
+/* line 105, sass/partials/_content.scss */
 .entry-meta .author,
 .entry-meta .date {
   display: none;
 }
 
-/* line 152, sass/partials/_content.scss */
+/* line 110, sass/partials/_content.scss */
 .entry-content {
   line-height: 2;
 }
-/* line 155, sass/partials/_content.scss */
+/* line 113, sass/partials/_content.scss */
 .entry-content h2 {
   padding-bottom: 10px;
   border-bottom: solid 2px #ecf0f1;
 }
-/* line 160, sass/partials/_content.scss */
+/* line 118, sass/partials/_content.scss */
 .entry-content h3 {
   padding-bottom: 5px;
   border-bottom: solid 1px #ecf0f1;
 }
 
-/* line 167, sass/partials/_content.scss */
+/* line 125, sass/partials/_content.scss */
 .entry-content,
 .entry-meta {
   *zoom: 1;
@@ -3856,25 +3858,7 @@ input[type="color"]:focus,
   clear: both;
 }
 
-/* line 172, sass/partials/_content.scss */
-.page .entry-header {
-  max-width: 980px;
-  margin: 0 auto;
-  width: 100%;
-}
-/* line 179, sass/partials/_content.scss */
-.page .entry-content,
-.page .entry-meta {
-  margin: 0 auto;
-  max-width: 940px;
-  width: 100%;
-}
-/* line 185, sass/partials/_content.scss */
-.page .entry-title {
-  margin: 5px 0;
-}
-
-/* line 190, sass/partials/_content.scss */
+/* line 129, sass/partials/_content.scss */
 .more-link {
   float: right;
   -webkit-border-radius: 20px;
@@ -3886,7 +3870,7 @@ input[type="color"]:focus,
 
 /* =Media
 ----------------------------------------------- */
-/* line 202, sass/partials/_content.scss */
+/* line 141, sass/partials/_content.scss */
 .entry-content img,
 .entry-summary img,
 .comment-content img,
@@ -3900,7 +3884,7 @@ input[type="color"]:focus,
   max-width: 100%;
 }
 
-/* line 212, sass/partials/_content.scss */
+/* line 151, sass/partials/_content.scss */
 .entry-content img,
 .entry-summary img,
 .comment-content img[height],
@@ -3912,7 +3896,7 @@ img[class*="attachment-"] {
   border: 2px solid #e9ecef;
 }
 
-/* line 220, sass/partials/_content.scss */
+/* line 159, sass/partials/_content.scss */
 img.size-full,
 img.size-large,
 img.wp-post-image {
@@ -3920,30 +3904,30 @@ img.wp-post-image {
   max-width: 100%;
 }
 
-/* line 227, sass/partials/_content.scss */
+/* line 166, sass/partials/_content.scss */
 embed,
 iframe,
 object {
   max-width: 100%;
 }
 
-/* line 231, sass/partials/_content.scss */
+/* line 170, sass/partials/_content.scss */
 .section, .section-comment .comment-respond {
   margin: 15px 0 0 0;
   padding: 15px 0 0 0;
 }
-/* line 234, sass/partials/_content.scss */
+/* line 173, sass/partials/_content.scss */
 .section .section-title, .section-comment .comment-respond .section-title, .section-comment .comment-respond .comment-reply-title {
   text-transform: uppercase;
 }
 
-/* line 240, sass/partials/_content.scss */
+/* line 179, sass/partials/_content.scss */
 .section-default .section-title, .section-comment .comment-respond .section-title, .section-comment .comment-respond .comment-reply-title {
   color: #3e5771;
   margin: 10px 0;
   border-bottom: 5px solid #3e5771;
 }
-/* line 244, sass/partials/_content.scss */
+/* line 183, sass/partials/_content.scss */
 .section-default .section-title:before, .section-comment .comment-respond .section-title:before, .section-comment .comment-respond .comment-reply-title:before {
   font-family: FontAwesome;
   background-color: #3e5771;
@@ -3955,12 +3939,12 @@ object {
   width: 36px;
 }
 
-/* line 257, sass/partials/_content.scss */
+/* line 196, sass/partials/_content.scss */
 .section-mini {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   *zoom: 1;
 }
-/* line 260, sass/partials/_content.scss */
+/* line 199, sass/partials/_content.scss */
 .section-mini .section-title, .section-mini .section-comment .comment-respond .comment-reply-title, .section-comment .comment-respond .section-mini .comment-reply-title {
   float: left;
   width: 15.625%;
@@ -3970,7 +3954,7 @@ object {
   font-size: 13.6px;
   margin: 5px 0;
 }
-/* line 269, sass/partials/_content.scss */
+/* line 208, sass/partials/_content.scss */
 .section-mini .section-content {
   width: 82.125%;
   float: right;
@@ -3988,22 +3972,22 @@ object {
 
 /* =Related Posts
 ----------------------------------------------- */
-/* line 282, sass/partials/_content.scss */
+/* line 221, sass/partials/_content.scss */
 .section-related-posts ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-/* line 286, sass/partials/_content.scss */
+/* line 225, sass/partials/_content.scss */
 .section-related-posts ul li {
   list-style: none;
 }
-/* line 292, sass/partials/_content.scss */
+/* line 231, sass/partials/_content.scss */
 .section-related-posts .entry-date {
   color: #bdc3c7;
 }
 
-/* line 298, sass/partials/_content.scss */
+/* line 237, sass/partials/_content.scss */
 .section-share-this {
   *zoom: 1;
 }
@@ -4017,7 +4001,7 @@ object {
   clear: both;
 }
 
-/* line 305, sass/partials/_content.scss */
+/* line 244, sass/partials/_content.scss */
 .share-item {
   float: left;
   min-height: 30px;
@@ -4027,19 +4011,19 @@ object {
   vertical-align: middle;
 }
 
-/* line 314, sass/partials/_content.scss */
+/* line 253, sass/partials/_content.scss */
 .share-item-twitter {
   width: 91px;
   height: 30px;
 }
 
-/* line 319, sass/partials/_content.scss */
+/* line 258, sass/partials/_content.scss */
 .share-item-pocket {
   width: 101px;
   height: 30px;
 }
 
-/* line 324, sass/partials/_content.scss */
+/* line 263, sass/partials/_content.scss */
 .share-item-google-plus {
   width: 71px;
 }

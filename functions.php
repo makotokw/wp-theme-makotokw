@@ -5,11 +5,7 @@
  * @package makotokw
  */
 
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if (!isset($content_width))
-	$content_width = 640; /* pixels */
+define('THEME_STYLE_CSS_REV', '201312100');
 
 /*
  * Load Jetpack compatibility file.
@@ -121,7 +117,7 @@ function makotokw_scripts()
 	}
 
 	wp_enqueue_style('makotokw-fonts', esc_url_raw( makotokw_fonts_url() ), array(), null );
-	wp_enqueue_style('makotokw-style', get_stylesheet_uri(), array(), '201312093');
+	wp_enqueue_style('makotokw-style', get_stylesheet_uri(), array(), THEME_STYLE_CSS_REV);
 
 	// Loads the Internet Explorer specific stylesheet.
 	wp_enqueue_style( 'makotokw-ie', get_template_directory_uri() . '/ie.css', array( 'makotokw-style' ), '20130428');

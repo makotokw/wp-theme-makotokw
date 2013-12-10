@@ -18,6 +18,10 @@
   @extend big;
 }
 
+.small {
+  @extend small;
+}
+
 .muted {
   color: #999;
 }
