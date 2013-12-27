@@ -55,6 +55,40 @@ $amazonOrange: #e47911;
 $twitterBlue: #00acee;
 $hatenaBookmarkBlue: #5279e7;
 $zenbackGreen: #7fc527;
+$qiitaGreen: #59bb0c;
+$evernoteGreen: #5fb336;
+
+
+$brandPrimary:         #428bca;
+$brandSuccess:         #5cb85c;
+$brandWarning:         #f0ad4e;
+$brandDanger:          #d9534f;
+$brandInfo:            #5bc0de;
+
+$brandPrimaryText: $blueDark;
+$brandDefaultText: #444;
+$brandDefaultBg: #f9f9fb;
+$brandDefaultBorder: #ddd;
+
+$stateWarningText:             #c09853;
+$stateWarningBg:               #fcf8e3;
+$stateWarningBorder:           darken(adjust-hue($stateWarningBg, -10), 3%);
+$stateDangerText:              #b94a48;
+$stateDangerBg:                #f2dede;
+$stateDangerBorder:            darken(adjust-hue($stateDangerBg, -10), 3%);
+$stateSuccessText:             #468847;
+$stateSuccessBg:               #dff0d8;
+$stateSuccessBorder:           darken(adjust-hue($stateSuccessBg, -10), 5%);
+$stateInfoText:                #3a87ad;
+$stateInfoBg:                  lighten(#d9edf7, 7%);
+$stateInfoBorder:              darken(adjust-hue($stateInfoBg, -10), 7%);
+
+$githubBg: #f9f9fb;
+$githubBorder: #ddd;
+$qiitaBg:     lighten(desaturate($qiitaGreen, 20%), 58%);
+$qiitaBorder: darken(adjust-hue($qiitaGreen, -10), 5%);
+$evernoteBg:     lighten(desaturate($evernoteGreen, 20%), 52%);
+$evernoteBorder: darken(adjust-hue($evernoteGreen, -10), 5%);
 
 $sansFontFamily: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 //$sansFontFamily: 'Open Sans', Helvetica, Arial, sans-serif;
@@ -87,12 +121,9 @@ $siteAccentColor: saturate($blue, 10%);
 $siteDarkAccentColor: lighten($blueDark, 10%);
 $siteLinkColor: saturate($blue, 10%);
 $siteLinkOverColor: lighten($siteLinkColor, 20%);
-$siteBorderColor: $clouds;
+$siteBorderColor: $brandDefaultBorder;
 $siteBorderWidth: 2px;
-
-$infoForegroundColor: #3a87ad;
-$infoBackgroundColor: #d9edf7;
-$infoBorderColor: darken(adjust-hue($infoBackgroundColor, -10), 7%);
+$siteBorderLeftWidth: 5px;
 
 $formPlaceHolderColor: $gray;
 

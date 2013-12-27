@@ -5,7 +5,8 @@
  * @package makotokw
  */
 
-define('THEME_STYLE_CSS_REV', '201312100');
+define('THEME_STYLE_CSS_REV', '201312270');
+define('THEME_STYLE_SCRIPT_REV', '201312270');
 
 /*
  * Load Jetpack compatibility file.
@@ -27,10 +28,7 @@ function makotokw_setup()
 	 * Custom template tags for this theme.
 	 */
 	require(get_template_directory() . '/inc/template-tags.php');
-
-	/**
-	 * Custom functions that act independently of the theme templates
-	 */
+	require(get_template_directory() . '/inc/comments.php');
 	require(get_template_directory() . '/inc/extras.php');
 
 	/**
@@ -123,9 +121,7 @@ function makotokw_scripts()
 	wp_enqueue_style( 'makotokw-ie', get_template_directory_uri() . '/ie.css', array( 'makotokw-style' ), '20130428');
 	$wp_styles->add_data( 'makotokw-ie', 'conditional', 'lt IE 9' );
 
-//	wp_enqueue_script('google-code-run-prettify', 'https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js', array(), false, true);
-	wp_enqueue_script('google-code-prettify', get_template_directory_uri() . '/components/js/google-code-prettify/prettify.min.js', array(), '20130305', true);
-	wp_enqueue_script('makotokw-script', get_template_directory_uri() . '/style.js', array('jquery', 'google-code-prettify'), '20131009', true);
+	wp_enqueue_script('makotokw-script', get_template_directory_uri() . '/style.js', array('jquery'), THEME_STYLE_SCRIPT_REV, true);
 
 // JetpackComment should work without comment-reply
 //	if (is_singular() && comments_open() && get_option('thread_comments')) {
@@ -133,7 +129,7 @@ function makotokw_scripts()
 //	}
 
 	if (is_singular() && wp_attachment_is_image()) {
-		wp_enqueue_script('makotokw-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.min.js', array('jquery'), '20120202', true);
+		wp_enqueue_script('makotokw-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array('jquery'), '20120202', true);
 	}
 }
 

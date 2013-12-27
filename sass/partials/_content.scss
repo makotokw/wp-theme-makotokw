@@ -139,7 +139,7 @@
 .comment-content img,
 .widget img,
 .wp-caption {
-  @include border-radius($blockBorderRadius);
+//  @include border-radius($blockBorderRadius);
   max-width: 100%;
 }
 
@@ -149,9 +149,9 @@
 img[class*="align"],
 img[class*="wp-image-"],
 img[class*="attachment-"] {
-  padding: 10px;
-  background-color: $white;
-  border: $blockBorderWidth solid $blockBorderColor;
+//  padding: 10px;
+//  background-color: $white;
+//  border: $blockBorderWidth solid $blockBorderColor;
 }
 
 img.size-full,
@@ -231,35 +231,4 @@ object {
   .entry-date {
     color: $silver;
   }
-}
-
-
-.section-share-this {
-  @include clearfix;
-}
-
-.section-share-this {
-}
-
-.share-item {
-  float: left;
-  min-height: 30px;
-  margin: 0;
-  padding: 0 10px 0 0;
-  line-height: 18px;
-  vertical-align: middle;
-}
-
-.share-item-twitter {
-  width: 91px;
-  height: 30px;
-}
-
-.share-item-pocket {
-  width: 101px;
-  height: 30px;
-}
-
-.share-item-google-plus {
-  width: 71px;
 }

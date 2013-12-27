@@ -239,52 +239,6 @@ function makotokw_facebook_recommendations_bar() {
 <?php
 }
 
-/**
- * Template for comments and pingbacks.
- *
- * Used as a callback by wp_list_comments() for displaying the comments.
- */
-function makotokw_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
-	$is_trackback = ($comment->comment_type == 'pingback' || $comment->comment_type == 'trackback');
-?>
-	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-		<article id="comment-<?php comment_ID(); ?>" class="comment-body">
-			<?php if (!$is_trackback): ?>
-			<div class="comment-author vcard">
-				<?php echo get_avatar( $comment, 50 ); ?>
-			</div>
-			<?php endif; ?>
-			<div class="comment-metadata">
-				<?php printf( '<cite class="fn">%1$s</cite>', get_comment_author_link()); ?>
-				<?php printf( '<a class="comment-time" href="%1$s"><time datetime="%2$s">%3$s</time></a>',
-					esc_url( get_comment_link( $comment->comment_ID ) ),
-					get_comment_time(),
-					/* translators: 1: date, 2: time */
-					sprintf( __( '%1$s at %2$s', 'makotokw' ), get_comment_date(), get_comment_time() )
-				);
-				?>
-				<?php edit_comment_link( __( 'Edit', 'makotokw' ), '<span class="edit-link"><i class="fa fa-pencil"></i> ', '</span>' ); ?>
-			</div><!-- .comment-meta -->
-			<div class="comment-content">
-				<?php if ( '0' == $comment->comment_approved ) : ?>
-					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'makotokw' ); ?></em>
-				<?php endif; ?>
-				<?php comment_text(); ?>
-			</div>
-			<?php if (!$is_trackback): ?>
-			<div class="reply">
-			<?php
-				comment_reply_link( array_merge( $args,array(
-					'depth'     => $depth,
-					'max_depth' => $args['max_depth'],
-				) ) );
-			?>
-			</div><!-- .reply -->
-			<?php endif; ?>
-		</article><!-- #comment-## -->
-	<?php
-} // ends check for makotokw_comment()
 
 /**
  * Prints HTML with meta information for the current post-date/time and author.
@@ -317,19 +271,23 @@ function makotokw_share_this() {
 	// hatena: http://b.hatena.ne.jp/guide/bbutton
 	// pocket: http://getpocket.com/publisher/button
 	// google+: https://developers.google.com/+/web/+1button/
+	$permalink = get_permalink();
+	if (WP_THEME_DEBUG === true) {
+		$permalink = str_replace(home_url(), WP_THEME_PRODUCTION_URL, $permalink);
+	}
 ?>
 <div class="section section-mini section-share-this">
 	<h2 class="section-title"><?php _e('Share This', 'makotokw');?></h2>
 	<div class="section-content">
 		<div class="share-item share-item-twitter">
-			<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php the_permalink(); ?>" data-text="<?php the_title(); ?>" data-via="makoto_kw" data-lang="en">Tweet</a>
+			<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo $permalink; ?>" data-text="<?php the_title(); ?>" data-via="makoto_kw" data-lang="en">Tweet</a>
 			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	  </div>
 		<div class="share-item share-item-hatena-bookmark">
-			<a href="http://b.hatena.ne.jp/entry/<?php the_permalink(); ?>" class="hatena-bookmark-button" data-hatena-bookmark-title="<?php the_title(); ?>｜<?php bloginfo('name'); ?>" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="en" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+			<a href="http://b.hatena.ne.jp/entry/<?php echo $permalink; ?>" class="hatena-bookmark-button" data-hatena-bookmark-title="<?php the_title(); ?>｜<?php bloginfo('name'); ?>" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="en" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 		</div>
 		<div class="share-item share-item-pocket">
-			<a data-pocket-label="pocket"  data-save-url="<?php the_permalink(); ?>" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a>
+			<a data-pocket-label="pocket"  data-save-url="<?php echo $permalink; ?>" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a>
 			<script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
 		</div>
 		<div class="share-item share-item-google-plus"">
@@ -343,7 +301,7 @@ function makotokw_share_this() {
 			</script>
 		</div>
 		<div class="share-item share-item-facebook-like">
-			<iframe src="//www.facebook.com/plugins/like.php?href=<?php the_permalink(); ?>&amp;send=false&amp;layout=button_count&amp;width=110&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=verdana&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
+			<iframe src="//www.facebook.com/plugins/like.php?href=<?php echo $permalink; ?>&amp;send=false&amp;layout=button_count&amp;width=110&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=verdana&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
 		</div>
 	</div>
 </div>

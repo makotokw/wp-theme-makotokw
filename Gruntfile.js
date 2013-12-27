@@ -4,7 +4,7 @@ module.exports = function(grunt) {
 			dist: {
 				options: {
 					config: 'config.rb',
-					environment: 'production',
+					environment: 'development',
 					force: true
 				}
 			}
@@ -12,10 +12,7 @@ module.exports = function(grunt) {
 		uglify: {
 			dist: {
 				files: {
-					'components/js/google-code-prettify/prettify.min.js': ['components/js/google-code-prettify/prettify.js'],
-					'style.js': ['js/navigation.js', 'js/skip-link-focus-fix.js', 'js/script.js'],
-					'js/keyboard-image-navigation.min.js': ['js/keyboard-image-navigation.js'],
-					'amazonjs.js': ['js/amazonjs.js']
+					'style.js': ['components/js/google-code-prettify/prettify.js', 'js/navigation.js', 'js/skip-link-focus-fix.js', 'js/script.js']
 				}
 			}
 		},

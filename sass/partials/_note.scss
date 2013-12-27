@@ -1,10 +1,20 @@
 /* = Note styling
 -------------------------------------------------------------- */
 
+@mixin note-variant($color) {
+  background-color: $color;
+  &[href] {
+    &:hover,
+    &:focus {
+      background-color: darken($color, 10%);
+    }
+  }
+}
+
 %base-note {
   display: block;
-  margin: 24px 0;
-  min-height: 80px;
+  margin: 20px 0;
+  padding: 20px;
 
   .syntaxhighlighter {
     width: auto;
@@ -21,64 +31,79 @@
 
 .note {
   @extend %base-note;
-  @include block-white($blockBorderRadius);
+  color: $brandDefaultText;
+  border-left: $siteBorderLeftWidth solid $brandDefaultBorder;
+  background-color: $brandDefaultBg;
+}
+
+.note-ins {
+  @extend .note;
+  color: $stateWarningText;
+  border-color: $stateWarningBorder;
+  background-color: $stateWarningBg;
+//  &:before {
+//    color: $stateWarningText;
+//    @extend .fa-pencil:before;
+//  }
 }
 
 .note-link {
   @extend .note;
+  color: $stateInfoText;
+  border-color: $stateInfoBorder;
+  background-color: $stateInfoBg;
   &:before {
+    color: $stateInfoText;
     @extend .fa-bookmark:before;
   }
 }
 
 .note-comment {
   @extend .note;
+  color: $stateWarningText;
+  border-color: $stateWarningBorder;
+  background-color: $stateWarningBg;
   &:before {
-    @extend .fa-comment:before;
-  }
-}
-
-.note-ins {
-  @extend .note;
-  color: $grayDark;
-  border-color: darken(#fff9c0, 10%);
-  background-color: #fff9c0;
-  &:before {
-    @extend .fa-comment:before;
-  }
-}
-
-.note-portfolio {
-  @extend .note;
-  margin: 24px 0;
-  line-height: 2em;
-  &:before {
-    content: $fa-var-file-o;
+    color: $stateWarningText;
+    @extend .fa-comment-o:before;
   }
 }
 
 .enclosure {
-  @extend .note;
+  @extend %base-note;
+  color: $brandPrimaryText;
+  border-left: $siteBorderLeftWidth solid $stateInfoBorder;
+//  background-color: $stateInfoBg;
   &:before {
-    content: $fa-var-file;
-  }
-}
-.enclosure-evernote {
-  @extend .enclosure;
-  &:before {
-    content: $fa-var-file;
-  }
-}
-.enclosure-qiita {
-  @extend .enclosure;
-  &:before {
-    content: $fa-var-search;
+    color: $stateInfoText;
+    content: $fa-var-file-o;
   }
 }
 .enclosure-github {
   @extend .enclosure;
+  border-color: $githubBorder;
+//  background-color: $githubBg;
   &:before {
+    color: $githubBorder;
     content: $fa-var-github-alt;
+  }
+}
+.enclosure-qiita {
+  @extend .enclosure;
+  border-color: $qiitaBorder;
+  background-color: $qiitaBg;
+  &:before {
+    color: $qiitaBorder;
+    content: $fa-var-search;
+  }
+}
+.enclosure-evernote {
+  @extend .enclosure;
+  border-color: $evernoteBorder;
+  background-color: $evernoteBg;
+  &:before {
+    color: $evernoteBorder;
+    content: $fa-var-file;
   }
 }
 

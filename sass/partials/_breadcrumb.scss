@@ -22,7 +22,7 @@
 
   a {
     padding: 10px 10px 10px 10px;
-    color: lighten(desaturate($blueDark, 10%), 20%);
+    color: lighten(desaturate($brandPrimaryText, 10%), 20%);
     &:hover {
       color: white;
       background-color: $siteLinkColor;

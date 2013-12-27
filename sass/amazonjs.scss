@@ -2,8 +2,9 @@
 @import "mixins";
 
 .amazonjs_item {
-  @include block-white($blockBorderRadius);
+//  @include block-white($blockBorderRadius);
   border-color: lighten(desaturate($amazonOrange, 20%), 40%);
+  border-width: 0;
 
   .amazonjs_indicator,
   a {

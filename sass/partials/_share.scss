@@ -1,0 +1,29 @@
+.section-share-this {
+  @include clearfix;
+}
+
+.section-share-this {
+}
+
+.share-item {
+  float: left;
+  min-height: 30px;
+  margin: 0;
+  padding: 0 10px 0 0;
+  line-height: 18px;
+  vertical-align: middle;
+}
+
+.share-item-twitter {
+  width: 91px;
+  height: 30px;
+}
+
+.share-item-pocket {
+  width: 103px;
+  height: 30px;
+}
+
+.share-item-google-plus {
+  width: 71px;
+}
