@@ -556,6 +556,51 @@ function makotokw_categorized_blog() {
 	}
 }
 
+function makotokw_inline_archives($args = '')
+{
+	global $wp_locale;
+	$base_url = '/';
+	$defaults = array('before_year' => '', 'after_year' => '', 'year_format' => 'Y', 'month_format' => 'n', 'echo' => 1);
+	$args = wp_parse_args($args, $defaults);
+	$archives = explode("\n", wp_get_archives(array_merge($args, (array('echo' => 0)))));
+	extract($args, EXTR_SKIP);
+	$years = array();
+	foreach ($archives as $a) {
+		if (preg_match('/\/([0-9]{4})\/([0-9]{2})\//', $a, $matches)) {
+			$year = $matches[1];
+			$month = $matches[2];
+			$label = (empty($month_format)) ? $wp_locale->get_month($month) : date($month_format, mktime(0, 0, 0, $month, 1, $year));
+			$a = preg_replace('/(.+<a[^>]+>)([^<]+)(<\/a>.+)/', '${1}' . $label . '$3', $a);
+			if (!isset($years[$year])) {
+				$years[$year] = array();
+			}
+			$years[$year][(int)$month] = $a;
+		}
+	}
+	$output = '<ul class="list-archives list-archives-year">';
+	foreach ($years as $year => $monthes) {
+		$label = date($year_format, mktime(0, 0, 0, 1, 1, $year));
+		$url = '/' . $year . '/';
+		$output .= '<li class="list-archives-item list-archives-item-year"><a href="' . $url . '">' . $before_year . $label . $after_year . '</a><ul class="list-archives  list-archives-month">';
+
+		for ($month = 1; $month <= 12; $month++) {
+			if (is_null($monthes[$month])) {
+				$output .= '<li class="list-archives-item list-archives-item-month list-archives-item-month-no-items"><span>' . $month . '</span></li>';
+			} else {
+				$url = sprintf('%s%04d/%02d/', $base_url, $year, $month);
+				$output .= '<li class="list-archives-item list-archives-item-month"><a href="' . $url . '">' . $month . '</a></li>';
+			}
+		}
+		$output .= '</ul></li>';
+	}
+	$output .= '</ul>';
+	if ($echo) {
+		echo $output;
+	} else {
+		return $output;
+	}
+}
+
 /**
  * Flush out the transients used in makotokw_categorized_blog
  */

@@ -113,8 +113,8 @@ $tabletMaxWidth: 643px;
 $mobileMaxWidth: 359px;
 
 $siteMaxWidth: 1600px;
-$siteMainMaxWidth: 980px;
-$siteContentMaxWidth: 940px;
+//$siteMainMaxWidth: 980px;
+//$siteContentMaxWidth: 940px;
 $siteMainMaxWidth: 1200px;
 $siteContentMaxWidth: 1160px;
 
@@ -131,8 +131,8 @@ $siteBorderLeftWidth: 5px;
 $formPlaceHolderColor: $gray;
 
 $naviBackgroundColor: $siteBackgroundColor;
-$footerForegroundColor: $silver;
-$footerBackgroundColor: $white;
+$footerForegroundColor: $white;
+$footerBackgroundColor: $siteDarkAccentColor;
 $footerSidebarBackgroundColor: #000;
 $footerSidebarForegroundColor: #fff;
 $errorPageBackgroundColor: #f5f5f5;

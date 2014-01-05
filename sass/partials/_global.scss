@@ -26,6 +26,26 @@
   color: #999;
 }
 
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+// Inline turns list items into inline-block
+.list-inline {
+  @extend .list-unstyled;
+
+  > li {
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+}
+
 .table-bordered {
   border: $siteBorderWidth solid $siteBorderColor;
   border-collapse: separate;

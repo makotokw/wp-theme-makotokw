@@ -15,18 +15,6 @@
 <?php endif ?>
 <footer id="colophon" class="site-footer" role="contentinfo">
 	<div class="site-info">
-		<?php wp_nav_menu(
-			array(
-				'theme_location' => 'site-info',
-				'depth' => 1,
-				'container_class' => 'site-navi',
-				'menu_id' => 'footerSiteMenu',
-				'menu_class' => 'site-menu',
-				'link_before' => '',
-				'link_after' => '',
-			))
-		; ?>
-
 		<div class="copyrights">
 			<div class="credit">
 				<?php do_action( 'makotokw_credits' ); ?>

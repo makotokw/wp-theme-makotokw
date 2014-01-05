@@ -1,0 +1,173 @@
+
+%circle-btn {
+  @extend .btn;
+  @include border-radius(20px);
+  float: none;
+}
+
+.section-page {
+  @include clearfix;
+  padding: 20px;
+
+  .container {
+    margin: 0 auto;
+    max-width: $siteMainMaxWidth;
+  }
+
+  .section-title {
+    font-size: 50px;
+    line-height: 50px;
+    margin-bottom: 40px;
+  }
+
+  h2, h3 {
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}
+
+.section-page-first {
+  padding-top: 0;
+}
+
+%time-label {
+  background: darken(#01a3b2, 10%);
+  color: $white;
+  padding: 8px;
+  margin-right: 5px;
+  font-weight: 400;
+}
+.section-page-entry {
+
+  .list-entries {
+    list-style: none;
+    padding-left: 0;
+
+    .entry-title {
+      font-size: 26px;
+      margin-right: 10px;
+    }
+
+    li {
+      padding: 5px 0;
+      margin: 0;
+      line-height: 1.8;
+    }
+
+//    time {
+//      @extend %time-label;
+//      background-color: $concrete;
+//    }
+//
+//    .cat-links {
+//      margin-left: 10px;
+//      a {
+//        @extend .btn;
+//        float: none;
+//        text-transform: uppercase;
+//      }
+//    }
+  }
+}
+
+.section-page-category {
+
+  background-color: #01a3b2;
+  background-color: $siteDarkAccentColor;
+
+  .list-category {
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: inline;
+      a {
+        @extend .btn;
+        display: inline-block;
+        margin: 5px;
+        float: none;
+      }
+    }
+
+    .children {
+      display: inline;
+      list-style: none;
+      padding: 0;
+    }
+  }
+}
+.section-page-about {
+  background-color: #01a3b2;
+  color: $white;
+  a {
+    color: $siteDarkAccentColor;
+  }
+
+  .list-history {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      padding: 5px 0;
+      margin: 0;
+      line-height: 2;
+    }
+
+    time {
+      @extend %time-label;
+    }
+  }
+}
+
+.section-page-archive {
+//  background-color: $siteDarkAccentColor;
+//  .section-title {
+//    color: $white;
+//  }
+}
+
+.list-archives {
+  padding: 0;
+  list-style: none;
+
+  .list-archives-item-year {
+    display: block;
+    margin: 10px auto;
+    > a {
+      @extend .btn;
+      margin-bottom: 5px;
+      float: none;
+    }
+  }
+  .list-archives-item-month {
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    a {
+      @extend %circle-btn;
+    }
+  }
+  .list-archives-item-month-no-items {
+
+    &:hover {
+      span {
+        background-color: $silver;
+      }
+    }
+    span {
+      @extend %circle-btn;
+      background-color: $silver;
+    }
+  }
+}
+
+.list-archives-year {
+}
+
+.list-archives-month {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+
+}

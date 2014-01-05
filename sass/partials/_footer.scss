@@ -5,7 +5,7 @@
   text-align: center;
 
   a {
-    color: darken($footerForegroundColor, 20%);
+    color: lighten($siteLinkColor, 40%);
   }
 
   .site-info {
@@ -14,32 +14,9 @@
     padding: 30px 0;
     width: 100%;
 
-    .site-menu {
-      padding: 12px 0;
-      text-transform: uppercase;
-      font-size: $fontSizeSmall;
-      a {
-        font-weight: 300;
-        margin: 0 5px;
-        padding: 5px;
-        &:hover {
-          color: $white;
-          background-color: $siteAccentColor;
-        }
-      }
-      ul {
-        margin: 0;
-        padding: 0;
-        li {
-          display: inline;
-        }
-      }
-    }
-
     .copyrights {
 
       @include clearfix;
-      border-top: 1px solid $siteBorderColor;
       padding-bottom: 12px;
       padding-top: 12px;
 

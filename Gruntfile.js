@@ -24,10 +24,20 @@ module.exports = function(grunt) {
 					layout: 'byType'
 				}
 			}
+		},
+		watch: {
+			scripts: {
+				files: ['js/*.js'],
+				tasks: ['uglify'],
+				options: {
+					spawn: false
+				}
+			}
 		}
 	});
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-bower-task');
 
 	grunt.registerTask('default', ['compass', 'uglify']);
