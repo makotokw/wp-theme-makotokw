@@ -26,15 +26,15 @@
     .current {
       .page {
         @extend %pagenation-page;
-        background-color: $siteAccentColor;
+        background-color: $siteDarkAccentColor;
+        &:hover {
+          background-color: $siteDarkAccentColor;
+        }
       }
     }
   }
 
   a {
     @extend %pagenation-page;
-    &:hover {
-      background-color: $siteAccentColor;
-    }
   }
 }

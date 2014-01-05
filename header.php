@@ -32,14 +32,13 @@
 </head>
 <body <?php body_class(); ?>>
 <?php if (WP_THEME_DEBUG === false && WP_THEME_FB_RECOMMEND_BAR === true): ?><?php makotokw_facebook_sdk(); ?><?php endif; ?>
+<?php do_action('makotekw_after_body'); ?>
 <div id="page" class="hfeed site">
-	<?php do_action('before'); ?>
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-info">
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</div>
-
 		<div class="sub-nav">
 			<div class="socials">
 				<a href="http://twitter.com/<?php echo WP_THEME_AUTHOR_TWITTER?>" title="Twitter">

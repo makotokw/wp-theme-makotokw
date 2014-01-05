@@ -36,19 +36,6 @@
 }
 
 .entry-header {
-  .entry-date {
-    &:before {
-      font-family: FontAwesome;
-      content: $fa-var-clock-o;
-      margin-right: 3px;
-    }
-    .published {
-      text-transform: uppercase;
-    }
-  }
-}
-
-.entry-header {
   position: relative;
 
   a {
@@ -82,6 +69,14 @@
 
   .entry-date {
     color: $silver;
+    &:before {
+      font-family: FontAwesome;
+      content: $fa-var-clock-o;
+      margin-right: 3px;
+    }
+    .published {
+      text-transform: uppercase;
+    }
   }
 
   .entry-title {

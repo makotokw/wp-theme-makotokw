@@ -6,13 +6,6 @@
   width: 100%;
   @include clearfix;
 
-  a {
-    color: $siteDarkAccentColor;
-    &:hover {
-      color: $siteAccentColor;
-    }
-  }
-
   .site-info {
     float: left;
     width: auto;

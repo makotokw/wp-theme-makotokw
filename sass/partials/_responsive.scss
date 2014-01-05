@@ -43,29 +43,6 @@
     }
   }
 
-  .page-header {
-    padding: 10px 20px;
-  }
-
-  .hentry {
-    padding: 20px 0;
-
-    .entry-header {
-      padding: 5px 0;
-    }
-  }
-
-  .hentry,
-  .page-content,
-  .nav-links,
-  .zenback-widget-area,
-  .section-comment,
-  .pingbacks-area,
-  .pagination {
-    padding-right: 10px;
-    padding-left: 10px;
-  }
-
   .page-title {
     font-size: 22px;
   }
@@ -115,13 +92,15 @@
 
 // Collapse oversized image and pulled images after iPad breakpoint.
 @media (max-width: $ipadMaxWidth) {
-  .entry-content img.alignleft,
-  .entry-content .wp-caption.alignleft {
-    margin-left: 0;
-  }
-  .entry-content img.alignright,
-  .entry-content .wp-caption.alignright {
-    margin-right: 0;
+  .entry-content {
+    img.alignleft,
+    .wp-caption.alignleft {
+      margin-left: 0;
+    }
+    img.alignright,
+    .wp-caption.alignright {
+      margin-right: 0;
+    }
   }
 }
 
@@ -278,14 +257,15 @@
     font-size: 10pt;
   }
 
-  .entry-content img.alignleft,
-  .entry-content .wp-caption.alignleft {
-    margin-left: 0;
-  }
-
-  .entry-content img.alignright,
-  .entry-content .wp-caption.alignright {
-    margin-right: 0;
+  .entry-content {
+    img.alignleft,
+    .wp-caption.alignleft {
+      margin-left: 0;
+    }
+    img.alignright,
+    .wp-caption.alignright {
+      margin-right: 0;
+    }
   }
 
   .comment-body .comment-metadata,
