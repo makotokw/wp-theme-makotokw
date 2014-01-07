@@ -29,7 +29,7 @@
 				var docHeight = $(document.body).height() - $margin.height();
 				var diff = windowHeight - docHeight;
 				if ( $('#wpadminbar').length > 0 ) {
-					diff -= 28;
+					diff -= 32;
 				}
 				if (diff <= 0) {
 					diff = 1;
@@ -41,3 +41,4 @@
 	$('.site-footer').stickyFooter();
 
 })(jQuery);
+

@@ -11,6 +11,9 @@ module.exports = function(grunt) {
 		},
 		uglify: {
 			dist: {
+				options: {
+					beautify: true
+				},
 				files: {
 					'style.js': ['components/js/google-code-prettify/prettify.js', 'js/navigation.js', 'js/skip-link-focus-fix.js', 'js/script.js']
 				}

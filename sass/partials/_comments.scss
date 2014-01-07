@@ -160,6 +160,9 @@
   .comment-respond {
     @extend .section;
     @extend .section-default;
+    @include clearfix;
+    margin: 0;
+    padding: 15px 0;
     .comment-reply-title {
       @extend .section-title;
       &:before {

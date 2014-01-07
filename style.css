@@ -5267,17 +5267,32 @@ object {
   margin-right: 5px;
 }
 
-/* line 165, sass/partials/_comments.scss */
+/* line 160, sass/partials/_comments.scss */
+.section-comment .comment-respond {
+  *zoom: 1;
+  margin: 0;
+  padding: 15px 0;
+}
+/* line 266, sass/_mixins.scss */
+.section-comment .comment-respond:before, .section-comment .comment-respond:after {
+  content: "";
+  display: table;
+}
+/* line 270, sass/_mixins.scss */
+.section-comment .comment-respond:after {
+  clear: both;
+}
+/* line 168, sass/partials/_comments.scss */
 .section-comment .comment-respond .comment-reply-title:before {
   content: "\f0e5";
 }
 
-/* line 173, sass/partials/_comments.scss */
+/* line 176, sass/partials/_comments.scss */
 .navigation-comment a {
   float: none;
   background-color: #3e5771;
 }
-/* line 177, sass/partials/_comments.scss */
+/* line 180, sass/partials/_comments.scss */
 .navigation-comment a:hover {
   background-color: #1fadd7;
 }
@@ -5336,12 +5351,13 @@ object {
   background-color: #3e5771;
   color: white;
   text-align: center;
+  padding: 10px 0;
 }
-/* line 7, sass/partials/_footer.scss */
+/* line 8, sass/partials/_footer.scss */
 .site-footer a {
   color: #caedf8;
 }
-/* line 12, sass/partials/_footer.scss */
+/* line 13, sass/partials/_footer.scss */
 .site-footer .site-info .copyrights {
   *zoom: 1;
   padding-bottom: 12px;
@@ -5356,7 +5372,7 @@ object {
 .site-footer .site-info .copyrights:after {
   clear: both;
 }
-/* line 19, sass/partials/_footer.scss */
+/* line 20, sass/partials/_footer.scss */
 .site-footer .site-info .copyrights .credit,
 .site-footer .site-info .copyrights .poweredby {
   font-size: 13.6px;
@@ -5365,15 +5381,15 @@ object {
   margin: 0 4px;
   padding: 0;
 }
-/* line 26, sass/partials/_footer.scss */
+/* line 27, sass/partials/_footer.scss */
 .site-footer .site-info .copyrights .credit {
   float: left;
 }
-/* line 29, sass/partials/_footer.scss */
+/* line 30, sass/partials/_footer.scss */
 .site-footer .site-info .copyrights .poweredby {
   float: right;
 }
-/* line 32, sass/partials/_footer.scss */
+/* line 33, sass/partials/_footer.scss */
 .site-footer .site-info .copyrights .poweredby .theme:before {
   font-family: FontAwesome;
   color: hotpink;
@@ -5381,7 +5397,7 @@ object {
   font-size: .5em;
 }
 
-/* line 45, sass/partials/_footer.scss */
+/* line 46, sass/partials/_footer.scss */
 #wpstats {
   display: block;
   margin: -10px auto 0;

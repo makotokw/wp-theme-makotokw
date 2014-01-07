@@ -5,8 +5,8 @@
  * @package makotokw
  */
 
-define('THEME_STYLE_CSS_REV', '201401070');
-define('THEME_STYLE_SCRIPT_REV', '201401070');
+define('THEME_STYLE_CSS_REV', '201401072');
+define('THEME_STYLE_SCRIPT_REV', '201401073');
 
 /*
  * Load Jetpack compatibility file.

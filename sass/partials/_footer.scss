@@ -3,6 +3,7 @@
   background-color: $footer-background-color;
   color: $footer-foreground-color;
   text-align: center;
+  padding: 10px 0;
 
   a {
     color: lighten($site-link-color, 40%);
