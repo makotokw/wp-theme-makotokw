@@ -35,47 +35,42 @@
 <?php do_action('makotekw_after_body'); ?>
 <div id="page" class="hfeed site">
 	<header id="masthead" class="site-header" role="banner">
-		<div class="site-info">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</div>
-		<div class="sub-nav">
-			<div class="socials">
-				<a href="http://twitter.com/<?php echo WP_THEME_AUTHOR_TWITTER?>" title="Twitter">
-					<span class="fa-stack fa-lg">
-						<i class="fa fa-circle fa-stack-2x"></i>
-						<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-					</span>
-				</a>
-				<a href="https://github.com/<?php echo WP_THEME_AUTHOR_GITHUB?>" title="GitHub">
-					<span class="fa-stack fa-lg">
-						<i class="fa fa-circle fa-stack-2x"></i>
-						<i class="fa fa-github-alt fa-stack-1x fa-inverse"></i>
-					</span>
-				</a>
-				<a href="<?php echo makotokw_feed_link() ?>" title="RSS">
-					<span class="fa-stack fa-lg">
-						<i class="fa fa-circle fa-stack-2x"></i>
-						<i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-					</span>
-				</a>
+		<div class="container">
+			<div class="site-info">
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 			</div>
-			<?php get_search_form(); ?>
+			<div class="sub-nav">
+				<div class="socials">
+					<a href="http://twitter.com/<?php echo WP_THEME_AUTHOR_TWITTER?>" title="Twitter">
+						<span class="fa-stack fa-lg">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+						</span>
+					</a>
+					<a href="https://github.com/<?php echo WP_THEME_AUTHOR_GITHUB?>" title="GitHub">
+						<span class="fa-stack fa-lg">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-github-alt fa-stack-1x fa-inverse"></i>
+						</span>
+					</a>
+					<a href="<?php echo makotokw_feed_link() ?>" title="RSS">
+						<span class="fa-stack fa-lg">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+						</span>
+					</a>
+				</div>
+				<?php get_search_form(); ?>
+			</div>
 		</div>
 	</header>
 		<?php if (is_home()): ?>
-			<?php /*wp_nav_menu(
-				array(
-					'theme_location' => 'site-info',
-					'depth' => 1,
-					'container_class' => 'navi',
-					'link_before' => '',
-					'link_after' => '',
-				))
-			;*/ ?>
 		<?php else: ?>
 	<nav class="site-navi">
+		<div class="container">
 			<?php makotokw_breadcrumbs(); ?>
+		</div>
 	</nav>
 		<?php endif ?>
 

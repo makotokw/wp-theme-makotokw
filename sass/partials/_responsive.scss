@@ -20,7 +20,7 @@
 }
 
 // Desktop devices
-@media (min-width: $desktopMaxWidth) {
+@media (min-width: $container-desktop) {
 
   .site-header {
     .search-form {
@@ -34,7 +34,7 @@
 }
 
 // Unless desktop
-@media (max-width: $desktopMaxWidth) {
+@media (max-width: $container-desktop) {
 
   .site-navi {
     .breadcrumb {
@@ -91,7 +91,7 @@
 }
 
 // Collapse oversized image and pulled images after iPad breakpoint.
-@media (max-width: $ipadMaxWidth) {
+@media (max-width: $container-tablet) {
   .entry-content {
     img.alignleft,
     .wp-caption.alignleft {
@@ -105,7 +105,7 @@
 }
 
 // Tablet devices
-@media (max-width: $tabletMaxWidth) {
+@media (max-width: $container-tablet) {
 
   .site-header {
     .site-info {
@@ -173,7 +173,7 @@
 }
 
 // Mobile devices
-@media (max-width: $mobileMaxWidth) {
+@media (max-width: $container-mobile) {
 
   .site-header {
     .site-info {
@@ -205,13 +205,6 @@
     }
   }
 }
-
-// Retina-specific styles.
-//@media print,
-//(-o-min-device-pixel-ratio: 5/4),
-//(-webkit-min-device-pixel-ratio: 1.25),
-//(min-resolution: 120dpi) {
-//}
 
 @media print {
   body {

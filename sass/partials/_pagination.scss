@@ -6,13 +6,8 @@
 
 .pagination {
   display: block;
-  margin: 20px auto;
-  max-width: $siteContentMaxWidth;
   @include clearfix;
-
-  .page {
-
-  }
+  padding: 20px 0;
 
   ul {
     list-style: none;
@@ -26,9 +21,9 @@
     .current {
       .page {
         @extend %pagenation-page;
-        background-color: $siteDarkAccentColor;
+        background-color: $site-dark-accent-color;
         &:hover {
-          background-color: $siteDarkAccentColor;
+          background-color: $site-dark-accent-color;
         }
       }
     }

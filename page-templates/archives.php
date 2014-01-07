@@ -3,7 +3,7 @@
  * @subpackage makotokw
  * Template Name: Archives
  */
-get_header(); ?>
+include __DIR__ . '/header.php'; ?>
 
 <section id="primary" class="content-area">
 	<div id="content" class="site-content" role="main">
@@ -20,4 +20,4 @@ get_header(); ?>
 	</div>
 </section>
 
-<?php get_footer(); ?>
+<?php include __DIR__ . '/footer.php'; ?>

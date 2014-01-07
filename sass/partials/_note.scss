@@ -31,16 +31,16 @@
 
 .note {
   @extend %base-note;
-  color: $brandDefaultText;
-  border-left: $siteBorderLeftWidth solid $brandDefaultBorder;
-  background-color: $brandDefaultBg;
+  color: $brand-default-text;
+  border-left: $site-border-left-width solid $brand-default-border;
+  background-color: $brand-default-bg;
 }
 
 .note-ins {
   @extend .note;
-  color: $stateWarningText;
-  border-color: $stateWarningBorder;
-  background-color: $stateWarningBg;
+  color: $state-warning-text;
+  border-color: $state-warning-border;
+  background-color: $state-warning-bg;
 //  &:before {
 //    color: $stateWarningText;
 //    @extend .fa-pencil:before;
@@ -49,60 +49,60 @@
 
 .note-link {
   @extend .note;
-  color: $stateInfoText;
-  border-color: $stateInfoBorder;
-  background-color: $stateInfoBg;
+  color: $state-info-text;
+  border-color: $state-info-border;
+  background-color: $state-info-bg;
   &:before {
-    color: $stateInfoText;
+    color: $state-info-text;
     @extend .fa-bookmark:before;
   }
 }
 
 .note-comment {
   @extend .note;
-  color: $stateWarningText;
-  border-color: $stateWarningBorder;
-  background-color: $stateWarningBg;
+  color: $state-warning-text;
+  border-color: $state-warning-border;
+  background-color: $state-warning-bg;
   &:before {
-    color: $stateWarningText;
+    color: $state-warning-text;
     @extend .fa-comment-o:before;
   }
 }
 
 .enclosure {
   @extend %base-note;
-  color: $brandPrimaryText;
-  border-left: $siteBorderLeftWidth solid $stateInfoBorder;
+  color: $brand-primary-text;
+  border-left: $site-border-left-width solid $state-info-border;
 //  background-color: $stateInfoBg;
   &:before {
-    color: $stateInfoText;
+    color: $state-info-text;
     content: $fa-var-file-o;
   }
 }
 .enclosure-github {
   @extend .enclosure;
-  border-color: $githubBorder;
+  border-color: $github-border;
 //  background-color: $githubBg;
   &:before {
-    color: $githubBorder;
+    color: $github-border;
     content: $fa-var-github-alt;
   }
 }
 .enclosure-qiita {
   @extend .enclosure;
-  border-color: $qiitaBorder;
-  background-color: $qiitaBg;
+  border-color: $qiita-border;
+  background-color: $qiita-bg;
   &:before {
-    color: $qiitaBorder;
+    color: $qiita-border;
     content: $fa-var-search;
   }
 }
 .enclosure-evernote {
   @extend .enclosure;
-  border-color: $evernoteBorder;
-  background-color: $evernoteBg;
+  border-color: $evernote-border;
+  background-color: $evernote-bg;
   &:before {
-    color: $evernoteBorder;
+    color: $evernote-border;
     content: $fa-var-file;
   }
 }

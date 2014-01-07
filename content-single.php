@@ -7,8 +7,8 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('post-single'); ?>>
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
-		<span class="cat-links"><i class="fa fa-folder"></i> <?php makotokw_the_category_slug(', '); ?></span>
 		<span class="entry-date"><?php makotokw_posted_on(); ?></span>
+		<span class="cat-links"><i class="fa fa-folder"></i> <?php makotokw_the_category_slug(', '); ?></span>
 		<span class="tag-links"><?php makotokw_the_tag_links(); ?></span>
 	</header><!-- .entry-header -->
 

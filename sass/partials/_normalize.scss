@@ -59,16 +59,16 @@ button,
 input,
 select,
 textarea {
-  color: $siteForegroundColor;
-  font-family: $sansFontFamily;;
-  font-size: $baseFontSize;
-  line-height: $baseLineHeight;
+  color: $site-foreground-color;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
 }
 
 body {
   @include hyphens(auto);
   margin: 0;
-  background-color: $siteBackgroundColor;
+  background-color: $site-background-color;
 }
 
 // ==========================================================================
@@ -76,7 +76,7 @@ body {
 // ==========================================================================
 
 a {
-  color: $siteLinkColor;
+  color: $site-link-color;
   @include transition(all 0.25s linear);
   // Remove the gray background color from active links in IE 10.
   background: transparent;
@@ -90,7 +90,7 @@ a:focus {
 
 a:active,
 a:hover {
-  color: $siteLinkOverColor;
+  color: $site-link-over-color;
   // Improve readability when focused and also mouse hovered in all browsers.
   outline: 0;
 }
@@ -146,13 +146,13 @@ address {
 }
 
 abbr, acronym {
-  border-bottom: $siteBorderWidth dotted #666;
+  border-bottom: $site-border-width dotted #666;
   cursor: help;
 }
 
 abbr[title] {
   // Address styling not present in IE 8/9, Safari 5, and Chrome.
-  border-bottom: $siteBorderWidth dotted;
+  border-bottom: $site-border-width dotted;
 }
 
 b,
@@ -178,14 +178,14 @@ code,
 kbd,
 pre,
 samp {
-  font-family: $monoFontFamily;
+  font-family: $font-family-monospace;
   font-size: 14px;
   font-weight: 300;
   @include hyphens(none);
 }
 
 pre {
-  @include block-white($blockBorderRadius);
+  @include block-white($block-border-radius);
   margin: 20px 0;
   overflow: auto;
   padding: 20px;
@@ -215,10 +215,10 @@ q:after {
 }
 
 blockquote {
-  padding: $blockPadding;
-  color: $brandDefaultText;
-  background-color: $brandDefaultBg;
-  border-left: $siteBorderLeftWidth solid $brandDefaultBorder;
+  padding: $block-padding;
+  color: $brand-default-text;
+  background-color: $brand-default-bg;
+  border-left: $site-border-left-width solid $brand-default-border;
   font-size: 16px;
   font-style: italic;
   font-weight: 300;
@@ -234,7 +234,7 @@ blockquote {
   &:before {
     @include block-awesome-icon(2em);
     @extend .fa-quote-left:before;
-    color: $brandDefaultBorder;
+    color: $brand-default-border;
   }
 }
 
@@ -267,26 +267,26 @@ del {
 }
 
 ins {
-  color: $stateWarningText;
-  background-color: $stateWarningBg;
+  color: $state-warning-text;
+  background-color: $state-warning-bg;
   text-decoration: none;
 }
 
 hr {
-  background-color: $siteBorderColor;
+  background-color: $site-border-color;
   border: 0;
   height: 1px;
   margin-bottom: 1.5em;
 }
 
 ::selection {
-  background: $siteAccentColor;
+  background: $site-accent-color;
   color: $white;
   @include text-shadow(none);
 }
 
 ::-moz-selection {
-  background: $siteAccentColor;
+  background: $site-accent-color;
   color: $white;
   @include text-shadow(none);
 }
@@ -332,17 +332,17 @@ form {
 
 /* Placeholder text color -- selectors need to be in separate to work. */
 :-webkit-input-placeholder {
-  color: $formPlaceHolderColor;
+  color: $form-place-holder-color;
   font-style: normal;
 }
 :-moz-placeholder {
-  color: $formPlaceHolderColor;
+  color: $form-place-holder-color;
 }
 ::-moz-placeholder {
-  color: $formPlaceHolderColor;
+  color: $form-place-holder-color;
 }
 :-ms-input-placeholder {
-  color: $formPlaceHolderColor;
+  color: $form-place-holder-color;
 }
 
 // Define consistent border, margin, and padding.
@@ -452,7 +452,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 
-  border-bottom: $siteBorderWidth solid $siteBorderColor;
+  border-bottom: $site-border-width solid $site-border-color;
   line-height: 2;
   margin: 0 0 20px;
   width: 100%;
@@ -475,7 +475,7 @@ th {
 }
 
 td {
-  border-top: $siteBorderWidth solid $siteBorderColor;
+  border-top: $site-border-width solid $site-border-color;
   padding: 6px 10px 6px 0;
 }
 

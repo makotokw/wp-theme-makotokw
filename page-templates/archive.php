@@ -5,39 +5,35 @@
  */
 $paged = get_query_var('paged');
 $offset = 0;
-if ($paged != 0 ) {
-	$offset = ($paged-1) * get_query_var('posts_per_page') ;
+if ($paged != 0) {
+	$offset = ($paged - 1) * get_query_var('posts_per_page');
 }
 query_posts('post_type=post&offset=' . $offset);
-$GLOBALS['wp_query']->is_archive = true;
-get_header();?>
-	<div id="primary" class="content-area">
-		<main id="content" class="site-content" role="main">
+$GLOBALS['wp_query']->is_archive = true;?>
 
-		<?php if ( have_posts() ) : ?>
+<?php include __DIR__ . '/header.php'; ?>
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+<?php if (have_posts()) : ?>
 
-				<?php
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to overload this in a child theme then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'content', get_post_format() );
-				?>
+	<?php /* Start the Loop */ ?>
+	<?php while (have_posts()) : the_post(); ?>
 
-			<?php endwhile; ?>
+		<?php
+		/* Include the Post-Format-specific template for the content.
+		 * If you want to overload this in a child theme then include a file
+		 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+		 */
+		get_template_part('content', get_post_format());
+		?>
 
-			<?php makotokw_pagination(); ?>
+	<?php endwhile; ?>
 
-		<?php else : ?>
+	<?php makotokw_pagination(); ?>
 
-			<?php get_template_part( 'no-results', 'index' ); ?>
+<?php else : ?>
 
-		<?php endif; ?>
+	<?php get_template_part('no-results', 'index'); ?>
 
-		</main><!-- #content -->
-	</div><!-- #primary -->
+<?php endif; ?>
 
-<?php get_footer(); ?>
+<?php include __DIR__ . '/footer.php'; ?>

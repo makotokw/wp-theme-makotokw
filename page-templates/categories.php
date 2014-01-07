@@ -3,10 +3,8 @@
  * @subpackage makotokw
  * Template Name: Categories
  */
-get_header(); ?>
+include __DIR__ . '/header.php'; ?>
 
-<section id="primary" class="content-area">
-	<div id="content" class="site-content" role="main">
 		<article class="hentry">
 			<header class="entry-header">
 				<h1 class="entry-title"><?php the_title(); ?></h1>
@@ -23,4 +21,4 @@ get_header(); ?>
 	</div>
 </section>
 
-<?php get_footer(); ?>
+<?php include __DIR__ . '/footer.php'; ?>

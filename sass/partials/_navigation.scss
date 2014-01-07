@@ -3,12 +3,12 @@
 ----------------------------------------------- */
 
 .site-navi {
-  font-family: $sansFontFamily;
-  margin: 5px auto 0;
+  font-family: $font-family-base;
+  padding: 20px 10px;
 }
 
 .navigation-paging {
-  background-color: $naviBackgroundColor;
+  background-color: $navi-background-color;
   padding: 40px 0;
 
   a {
@@ -18,17 +18,13 @@
   }
 
   .nav-links {
-    margin: 0 auto;
-    max-width: $siteContentMaxWidth;
-    width: 100%;
-
     .nav-next {
       padding: 13px 0;
     }
   }
 
   .meta-nav {
-    background-color: $siteLinkColor;
+    background-color: $site-link-color;
     border-radius: 50%;
     color: #fff;
     display: inline-block;
@@ -50,6 +46,6 @@
   }
 
   a:hover .meta-nav {
-    background-color: $siteLinkOverColor;
+    background-color: $site-link-over-color;
   }
 }

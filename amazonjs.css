@@ -29,15 +29,3 @@
 .amazonjs_item .amazonjs_review {
   font-size: .9em;
 }
-
-@media (max-width: 359px) {
-  /* line 42, sass/amazonjs.scss */
-  .amazonjs_item {
-    padding: 6px 6px 24px 6px;
-  }
-  /* line 45, sass/amazonjs.scss */
-  .amazonjs_item .amazonjs_info {
-    padding-left: 0;
-    margin-left: 0 !important;
-  }
-}

@@ -3,12 +3,12 @@
 
 .amazonjs_item {
 //  @include block-white($blockBorderRadius);
-  border-color: lighten(desaturate($amazonOrange, 20%), 40%);
+  border-color: lighten(desaturate($amazon-orange, 20%), 40%);
   border-width: 0;
 
   .amazonjs_indicator,
   a {
-    color: $amazonOrange;
+    color: $amazon-orange;
   }
 
   .amazonjs_image {
@@ -37,18 +37,5 @@
   }
 }
 
-@media (max-width: $mobileMaxWidth) {
-
-  .amazonjs_item {
-    padding: 6px 6px 24px 6px;
-
-    .amazonjs_info {
-      padding-left: 0;
-      margin-left: 0 !important;
-    }
-
-  }
-
-
-
+@media (min-width: $screen-sm-min) {
 }

@@ -7,6 +7,7 @@
  * @package makotokw
  */
 ?>
+<div id="footerMargin"></div>
 </div><!-- #main -->
 <?php if (!is_preview()): ?>
 <?php if (WP_THEME_FB_RECOMMEND_BAR === true): ?>
@@ -14,16 +15,17 @@
 <?php endif; ?>
 <?php endif ?>
 <footer id="colophon" class="site-footer" role="contentinfo">
-	<div class="site-info">
-		<div class="copyrights">
-			<div class="credit">
-				<?php do_action( 'makotokw_credits' ); ?>
-			</div>
-			<div class="poweredby">
-
-				<?php printf( __( 'Powered by %s', 'makotokw' ),
-					'<a href="http://wordpress.org/" title="' . esc_attr( __( 'Semantic Personal Publishing Platform', 'makotokw' ) ).'">WordPress</a>' ) ?>
-				<a href="https://github.com/makotokw/wp-theme-makotokw" class="theme">makotokw themne</a>.
+	<div class="container">
+		<div class="site-info">
+			<div class="copyrights">
+				<div class="credit">
+					<?php do_action( 'makotokw_credits' ); ?>
+				</div>
+				<div class="poweredby">
+					<?php printf( __( 'Powered by %s', 'makotokw' ),
+						'<a href="http://wordpress.org/" title="' . esc_attr( __( 'Semantic Personal Publishing Platform', 'makotokw' ) ).'">WordPress</a>' ) ?>
+					<a href="https://github.com/makotokw/wp-theme-makotokw" class="theme">makotokw themne</a>.
+				</div>
 			</div>
 		</div>
 	</div>

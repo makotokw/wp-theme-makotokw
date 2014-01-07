@@ -11,12 +11,12 @@
   .entry-title {
     font-size: 26px;
     a {
-      color: $siteLinkColor;
+      color: $site-link-color;
     }
   }
   .entry-summary {
     p {
-      color: $siteDarkAccentColor;
+      color: $site-dark-accent-color;
     }
   }
 }
@@ -25,11 +25,11 @@
   .page-header {
     padding-bottom: 10px;
     margin-bottom: 20px;
-    border-bottom: 1px solid $blockBorderColor;
+    border-bottom: 1px solid $block-border-color;
 
     .page-title {
       margin: 0;
-      color: $entryTitleColor;
+      color: $entry-title-color;
     }
   }
 }
@@ -38,23 +38,25 @@
   position: relative;
 
   a {
-    color: $entryTitleColor;
+    color: $entry-title-color;
     &:hover {
-      color: $siteLinkOverColor;
+      color: $site-link-over-color;
     }
+  }
+
+  span {
+    margin-right: 5px;
   }
 
   .cat-links,
   .tag-links {
     color: $silver;
     text-transform: uppercase;
-    margin-bottom: 5px;
-    margin-right: 5px;
     a {
       color: $silver;
 
       &:hover {
-        color: $siteLinkOverColor;
+        color: $site-link-over-color;
       }
     }
   }
@@ -80,7 +82,7 @@
 
   .entry-title {
     font-weight: 700;
-    color: $entryTitleColor;
+    color: $entry-title-color;
     margin: 0 0 5px 0;
   }
 }
@@ -89,7 +91,7 @@
   margin: 10px 0 0 0;
   i {
     margin-left: .5em;
-    color: $siteLinkColor;
+    color: $site-link-color;
   }
   .portfolio-posts-area {
     .entry-date {
@@ -107,12 +109,12 @@
 
   h2 {
     padding-bottom: 10px;
-    border-bottom: solid 2px $siteBorderColor;
+    border-bottom: solid 2px $site-border-color;
   }
 
   h3 {
     padding-bottom: 5px;
-    border-bottom: solid 1px $siteBorderColor;
+    border-bottom: solid 1px $site-border-color;
   }
 }
 
@@ -124,9 +126,9 @@
 .more-link {
   float: right;
   @include border-radius(20px);
-  background-color: $siteDarkAccentColor;
+  background-color: $site-dark-accent-color;
   &:hover {
-    background-color: $siteLinkOverColor;
+    background-color: $site-link-over-color;
   }
 }
 
@@ -176,12 +178,12 @@ object {
 
 .section-default {
   .section-title {
-    color: $siteDarkAccentColor;
+    color: $site-dark-accent-color;
     margin: 10px 0;
-    border-bottom: 5px solid $siteDarkAccentColor;
+    border-bottom: 5px solid $site-dark-accent-color;
     &:before {
       font-family: FontAwesome;
-      background-color: $siteDarkAccentColor;
+      background-color: $site-dark-accent-color;
       color: #fff;
       margin: 0 10px 0 0;
       padding: 5px 10px;
@@ -201,7 +203,7 @@ object {
     color: $silver;
     font-weight: 400;
     text-transform: uppercase;
-    font-size: $fontSizeSmall;
+    font-size: $font-size-small;
     margin: 5px 0;
   }
   .section-content {

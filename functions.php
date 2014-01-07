@@ -5,8 +5,8 @@
  * @package makotokw
  */
 
-define('THEME_STYLE_CSS_REV', '2014010600');
-define('THEME_STYLE_SCRIPT_REV', '2014010600');
+define('THEME_STYLE_CSS_REV', '201401070');
+define('THEME_STYLE_SCRIPT_REV', '201401070');
 
 /*
  * Load Jetpack compatibility file.
@@ -106,6 +106,19 @@ function makotokw_pre_get_posts( $query ) {
 	}
 }
 add_action( 'pre_get_posts', 'makotokw_pre_get_posts' );
+
+function makotokw_template_redirect()
+{
+	if (is_page()) {
+		if ($values = get_post_custom_values('makotokw_part_of_home')) {
+			if ($values[0] == 1) {
+				wp_redirect( home_url( '/' ) );
+				exit();
+			}
+		}
+	}
+}
+add_action( 'template_redirect', 'makotokw_template_redirect' );
 
 /**
  * Enqueue scripts and styles

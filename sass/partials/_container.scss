@@ -8,25 +8,9 @@
 
 .site-content-area {
   margin: 0 auto;
-  max-width: $siteMaxWidth;
   position: relative;
-  padding: 10px 20px;
 }
 
 .site-content {
   margin: 0 auto;
-  max-width: $siteMainMaxWidth;
-}
-
-.sidebar-container {
-  height: 0;
-  position: absolute;
-  top: 40px;
-  width: 100%;
-  z-index: 1;
-}
-
-.sidebar-inner {
-  margin: 0 auto;
-  max-width: $siteMainMaxWidth;
 }

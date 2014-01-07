@@ -3,10 +3,7 @@
  * @subpackage makotokw
  * Template Name: Portfolios
  */
-get_header(); ?>
-
-<section id="primary" class="content-area">
-	<div id="content" class="site-content" role="main">
+include __DIR__ . '/header.php'; ?>
 		<article class="hentry">
 			<header class="entry-header">
 				<h1 class="entry-title"><?php the_title(); ?></h1>
@@ -25,4 +22,4 @@ get_header(); ?>
 	</div>
 </section>
 
-<?php get_footer(); ?>
+<?php include __DIR__ . '/footer.php'; ?>

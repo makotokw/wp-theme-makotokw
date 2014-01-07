@@ -3,16 +3,7 @@
 ----------------------------------------------- */
 .breadcrumb {
   display: block;
-  margin: 10px auto 10px auto;
-  max-width: $siteContentMaxWidth;
-
-  width: 100%;
-//  font-size: $fontSizeSmall;
-//  font-weight: 300;
-
-  //border: $blockBorderWidth solid $clouds;
-  //@include border-radius($blockBorderRadius);
-  color: lighten(desaturate($siteForegroundColor, 20%), 40%);
+  color: lighten(desaturate($site-foreground-color, 20%), 40%);
 
   .fa-chevron-right {
     padding-right: 5px;
@@ -22,10 +13,10 @@
 
   a {
     padding: 10px 10px 10px 10px;
-    color: lighten(desaturate($brandPrimaryText, 10%), 20%);
+    color: lighten(desaturate($brand-primary-text, 10%), 20%);
     &:hover {
       color: white;
-      background-color: $siteLinkColor;
+      background-color: $site-link-color;
     }
   }
 }

@@ -7,27 +7,30 @@
 
 get_header(); ?>
 
-	<div id="primary" class="site-content-area">
-		<main id="content" class="site-content" role="main">
+	<div class="site-content-area">
+		<main class="site-content" role="main">
 
-		<?php while ( have_posts() ) : the_post(); ?>
+			<div class="container">
 
-			<?php get_template_part( 'content', 'single' ); ?>
+				<?php while (have_posts()) : the_post(); ?>
 
-			<?php if (WP_THEME_ZENBACK === true): ?>
-				<?php makotokw_zenback_widget(); ?>
-			<?php endif ?>
+					<?php get_template_part('content', 'single'); ?>
 
-			<?php
-				// If comments are open or we have at least one comment, load up the comment template
-				if ( comments_open() || '0' != get_comments_number() )
-					comments_template();
-			?>
+					<?php if (WP_THEME_ZENBACK === true): ?>
+						<?php makotokw_zenback_widget(); ?>
+					<?php endif ?>
 
-		<?php endwhile; // end of the loop. ?>
+					<?php
+					// If comments are open or we have at least one comment, load up the comment template
+					if (comments_open() || '0' != get_comments_number())
+						comments_template();
+					?>
 
-		</main><!-- #content -->
-	</div><!-- #primary -->
+				<?php endwhile; // end of the loop. ?>
 
-<?php get_sidebar(); ?>
+			</div>
+
+		</main>
+	</div>
+
 <?php get_footer(); ?>

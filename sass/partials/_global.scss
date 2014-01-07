@@ -3,11 +3,11 @@
 ----------------------------------------------- */
 
 .hr {
-  border-bottom: $siteBorderWidth solid $siteBorderColor;
+  border-bottom: $site-border-width solid $site-border-color;
 }
 
 .block-content {
-  @include block-white($blockBorderRadius);
+  @include block-white($block-border-radius);
 }
 
 .strike {
@@ -47,16 +47,16 @@
 }
 
 .table-bordered {
-  border: $siteBorderWidth solid $siteBorderColor;
+  border: $site-border-width solid $site-border-color;
   border-collapse: separate;
   *border-collapse: collapsed;
   border-left: 0;
-  border-radius: $blockBorderRadius;
+  border-radius: $block-border-radius;
   background-color: #fff;
 
   th {
-    background-color: lighten(desaturate($siteBorderColor, 10%), 20%);
-    background-color: rgba($siteBorderColor, .3);
+    background-color: lighten(desaturate($site-border-color, 10%), 20%);
+    background-color: rgba($site-border-color, .3);
   }
 
   th,
@@ -64,8 +64,8 @@
     padding: 8px;
     text-align: left;
     vertical-align: top;
-    border-top: $siteBorderWidth solid $siteBorderColor;
-    border-left: $siteBorderWidth solid $siteBorderColor;
+    border-top: $site-border-width solid $site-border-color;
+    border-left: $site-border-width solid $site-border-color;
   }
   caption + thead tr:first-child th,
   caption + tbody tr:first-child th,
@@ -80,26 +80,26 @@
   }
   thead:first-child tr:first-child th:first-child,
   tbody:first-child tr:first-child td:first-child {
-    border-top-left-radius: $blockBorderRadius;
+    border-top-left-radius: $block-border-radius;
   }
   thead:first-child tr:first-child th:last-child,
   tbody:first-child tr:first-child td:last-child {
-    border-top-right-radius: $blockBorderRadius;
+    border-top-right-radius: $block-border-radius;
   }
   thead:last-child tr:last-child th:first-child,
   tbody:last-child tr:last-child td:first-child {
-    border-radius: 0 0 0 $blockBorderRadius;
-    border-bottom-left-radius: $blockBorderRadius;
+    border-radius: 0 0 0 $block-border-radius;
+    border-bottom-left-radius: $block-border-radius;
   }
   thead:last-child tr:last-child th:last-child,
   tbody:last-child tr:last-child td:last-child {
-    border-bottom-right-radius: $blockBorderRadius;
+    border-bottom-right-radius: $block-border-radius;
   }
 }
 
 
 .rakuten-afl {
-  @include block-white($blockBorderRadius);
+  @include block-white($block-border-radius);
   table {
     margin: 0;
     border-bottom: none;
@@ -116,7 +116,7 @@
 
 /* Ascii Art */
 .aa {
-  color: $siteForegroundColor !important;
+  color: $site-foreground-color !important;
   font-family: 'Mona','IPAMonaPGothic','IPA モナー Pゴシック','MS PGothic AA','MS PGothic','ＭＳ Ｐゴシック',sans-serif !important;
   font-size: 16px !important;
   line-height: 18px !important;

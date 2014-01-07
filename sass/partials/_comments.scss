@@ -3,9 +3,6 @@
 .section-comment,
 .pingbacks-area {
   display: block;
-  margin: 0 auto;
-  max-width: $siteContentMaxWidth;
-  width: 100%;
 }
 
 /* =Comments
@@ -93,7 +90,7 @@
     cite {
       display: block;
       a {
-        color: $siteForegroundColor;
+        color: $site-foreground-color;
       }
     }
 
@@ -102,7 +99,7 @@
       display: inline-block;
     }
     .comment-time {
-      color: $commentDateColor;
+      color: $comment-date-color;
       font-style: normal;
       font-weight: 300;
     }
@@ -123,7 +120,7 @@
     display: block;
     width: 100%;
     @extend .comment-small;
-    color: $commentDateColor;
+    color: $comment-date-color;
 
     &:before {
       font-family: FontAwesome;
@@ -153,7 +150,7 @@
       font-family: FontAwesome;
       content: $fa-var-pencil;
       vertical-align: text-top;
-      color:$siteLinkColor;
+      color: $site-link-color;
       margin-right: 5px;
     }
   }
@@ -176,9 +173,9 @@
   a {
     @extend %pagenation-page;
     float: none;
-    background-color: $siteDarkAccentColor;
+    background-color: $site-dark-accent-color;
     &:hover {
-      background-color: $siteAccentColor;
+      background-color: $site-accent-color;
     }
   }
 }

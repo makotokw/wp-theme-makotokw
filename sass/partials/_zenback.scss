@@ -18,15 +18,15 @@
     }
 
     .zenback-module-content {
-      border-top: $blockBorderWidth solid;
+      border-top: $block-border-width solid;
     }
 
     .zenback-module-more-link {
-      @include border-radius($blockBorderRadius);
+      @include border-radius($block-border-radius);
       border: none;
-      background-color: $peterRiver;
+      background-color: $peter-river;
       &:hover {
-        background-color: lighten(desaturate($peterRiver, 10%), 20%);
+        background-color: lighten(desaturate($peter-river, 10%), 20%);
       }
       a {
         color: $white;
@@ -71,31 +71,31 @@
     }
     #zenback-twitter {
       .zenback-module-item {
-        border-bottom: $blockBorderWidth solid $clouds;
+        border-bottom: $block-border-width solid $clouds;
       }
     }
     #zenback-hatena-bookmark {
       .zenback-module-label {
-        background-color: lighten(desaturate($hatenaBookmarkBlue,3%),6%);
+        background-color: lighten(desaturate($hatena-bookmark-blue,3%),6%);
       }
       .zenback-module-content {
-        border-color: lighten(desaturate($hatenaBookmarkBlue,3%),6%);
+        border-color: lighten(desaturate($hatena-bookmark-blue,3%),6%);
       }
       .zenback-module-item {
-        border-bottom: $blockBorderWidth solid $clouds;
+        border-bottom: $block-border-width solid $clouds;
       }
     }
     #zenback-powered {
-      border-top: $blockBorderWidth solid lighten(desaturate($zenbackGreen,10%),20%);
+      border-top: $block-border-width solid lighten(desaturate($zenback-green,10%),20%);
       img {
-        background-color: lighten(desaturate($zenbackGreen,10%),20%);
+        background-color: lighten(desaturate($zenback-green,10%),20%);
       }
     }
   }
 }
 
 .zenback-widget-area-debug {
-  @include border-radius($blockBorderRadius);
+  @include border-radius($block-border-radius);
   @include text-shadow(none);
   background-color: $green;
   color: #fff;

@@ -2,7 +2,7 @@
 
   .search-form-fieldset {
     position: relative;
-    border: $siteBorderWidth solid $clouds;
+    border: $site-border-width solid $clouds;
     background: $white;
     @include border-radius(27px);
     margin: 0;
@@ -27,7 +27,7 @@
     &:focus {
       cursor: text;
       outline: 0;
-      color: $siteForegroundColor;
+      color: $site-foreground-color;
     }
   }
 

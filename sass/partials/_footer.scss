@@ -1,19 +1,14 @@
 
 .site-footer {
-  background-color: $footerBackgroundColor;
-  color: $footerForegroundColor;
+  background-color: $footer-background-color;
+  color: $footer-foreground-color;
   text-align: center;
 
   a {
-    color: lighten($siteLinkColor, 40%);
+    color: lighten($site-link-color, 40%);
   }
 
   .site-info {
-    margin: 0 auto;
-    max-width: $siteContentMaxWidth;
-    padding: 30px 0;
-    width: 100%;
-
     .copyrights {
 
       @include clearfix;
@@ -22,7 +17,7 @@
 
       .credit,
       .poweredby {
-        font-size: $fontSizeSmall;
+        font-size: $font-size-small;
         font-weight: 300;
         display: inline;
         margin: 0 4px;

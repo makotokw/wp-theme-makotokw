@@ -1,15 +1,12 @@
 
 .site-header {
-  margin: 0 auto;
-  padding: 20px 10px 10px 10px;
-  max-width: $siteMainMaxWidth;
-  width: 100%;
+  padding: 10px 0 10px 0;
   @include clearfix;
 
   a {
-    color: $siteDarkAccentColor;
+    color: $site-dark-accent-color;
     &:hover {
-      color: $siteLinkOverColor;
+      color: $site-link-over-color;
     }
   }
 
