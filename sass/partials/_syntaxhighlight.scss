@@ -1,6 +1,3 @@
-
-
-
 .entry-content,
 .page-content,
 .comment-content {
@@ -20,8 +17,7 @@
     color: #000;
   }
 
-  .syntaxhighlighter,
-  .prettyprint {
+  .syntaxhighlighter {
     @extend .block-content;
   }
 
