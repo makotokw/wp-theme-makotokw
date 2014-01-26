@@ -2711,8 +2711,8 @@ li > ol {
  */
 @font-face {
   font-family: 'Genericons';
-  src: url("font/genericons-regular-webfont.eot");
-  src: url("font/genericons-regular-webfont.eot?#iefix") format("embedded-opentype"), url("font/genericons-regular-webfont.woff") format("woff"), url("font/genericons-regular-webfont.ttf") format("truetype"), url("font/genericons-regular-webfont.svg#genericonsregular") format("svg");
+  src: url("fonts/genericons-regular-webfont.eot");
+  src: url("fonts/genericons-regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/genericons-regular-webfont.woff") format("woff"), url("fonts/genericons-regular-webfont.ttf") format("truetype"), url("fonts/genericons-regular-webfont.svg#genericonsregular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -5436,8 +5436,9 @@ object {
 /* line 37, sass/partials/_error.scss */
 .error404 .page-title {
   padding: 300px;
+  width: 900px;
 }
-/* line 39, sass/partials/_error.scss */
+/* line 40, sass/partials/_error.scss */
 .error404 .page-title:before {
   font-family: Genericons;
   color: #dddddd;
@@ -5445,7 +5446,7 @@ object {
   line-height: 0.6;
   overflow: hidden;
   position: absolute;
-  left: -4px;
+  left: -24px;
   top: 48px;
 }
 
@@ -6054,10 +6055,11 @@ object {
   }
   /* line 10, sass/partials/_responsive.scss */
   .error404 .page-title {
-    font-size: 24px;
+    font-size: 20px;
     padding: 180px;
+    width: 604px;
   }
-  /* line 13, sass/partials/_responsive.scss */
+  /* line 14, sass/partials/_responsive.scss */
   .error404 .page-title:before {
     font-size: 554px;
     left: 7px;
@@ -6065,63 +6067,63 @@ object {
   }
 }
 @media (min-width: 970px) {
-  /* line 28, sass/partials/_responsive.scss */
+  /* line 29, sass/partials/_responsive.scss */
   .site-header .search-form .search-form-text:focus {
     width: 230px;
   }
 }
 @media (max-width: 970px) {
-  /* line 40, sass/partials/_responsive.scss */
+  /* line 41, sass/partials/_responsive.scss */
   .site-navi .breadcrumb {
     padding: 8px;
   }
 
-  /* line 46, sass/partials/_responsive.scss */
+  /* line 47, sass/partials/_responsive.scss */
   .page-title {
     font-size: 22px;
   }
 
-  /* line 49, sass/partials/_responsive.scss */
+  /* line 50, sass/partials/_responsive.scss */
   .entry-title {
     font-size: 22px;
   }
 
-  /* line 54, sass/partials/_responsive.scss */
+  /* line 55, sass/partials/_responsive.scss */
   .related-posts .related-post {
     padding: 10px;
   }
 
-  /* line 59, sass/partials/_responsive.scss */
+  /* line 60, sass/partials/_responsive.scss */
   h1 {
     margin: 16px 0;
   }
 
-  /* line 63, sass/partials/_responsive.scss */
+  /* line 64, sass/partials/_responsive.scss */
   h2 {
     margin: 12px 0;
   }
 
-  /* line 67, sass/partials/_responsive.scss */
+  /* line 68, sass/partials/_responsive.scss */
   h3 {
     margin: 11px 0;
   }
 
-  /* line 71, sass/partials/_responsive.scss */
+  /* line 72, sass/partials/_responsive.scss */
   h4 {
     margin: 10px 0;
   }
 
-  /* line 75, sass/partials/_responsive.scss */
+  /* line 76, sass/partials/_responsive.scss */
   h5 {
     margin: 9px 0;
   }
 
-  /* line 79, sass/partials/_responsive.scss */
+  /* line 80, sass/partials/_responsive.scss */
   h6 {
     margin: 8px 0;
   }
 
-  /* line 88, sass/partials/_responsive.scss */
+  /* line 89, sass/partials/_responsive.scss */
   code,
   kbd,
   pre,
@@ -6132,29 +6134,29 @@ object {
   }
 }
 @media (max-width: 750px) {
-  /* line 97, sass/partials/_responsive.scss */
+  /* line 98, sass/partials/_responsive.scss */
   .entry-content img.alignleft,
   .entry-content .wp-caption.alignleft {
     margin-left: 0;
   }
-  /* line 101, sass/partials/_responsive.scss */
+  /* line 102, sass/partials/_responsive.scss */
   .entry-content img.alignright,
   .entry-content .wp-caption.alignright {
     margin-right: 0;
   }
 }
 @media (max-width: 750px) {
-  /* line 111, sass/partials/_responsive.scss */
+  /* line 112, sass/partials/_responsive.scss */
   .site-header .site-info {
     float: none;
     width: 100%;
     text-align: center;
   }
-  /* line 116, sass/partials/_responsive.scss */
+  /* line 117, sass/partials/_responsive.scss */
   .site-header .site-info .site-title {
     font-size: 40px;
   }
-  /* line 121, sass/partials/_responsive.scss */
+  /* line 122, sass/partials/_responsive.scss */
   .site-header .sub-nav {
     float: none;
     clear: both;
@@ -6162,14 +6164,14 @@ object {
     margin: 0 auto;
     width: 350px;
   }
-  /* line 129, sass/partials/_responsive.scss */
+  /* line 130, sass/partials/_responsive.scss */
   .site-header .sub-nav .socials,
   .site-header .sub-nav .search-form {
     display: inline-block;
     float: none;
   }
 
-  /* line 145, sass/partials/_responsive.scss */
+  /* line 146, sass/partials/_responsive.scss */
   .site-footer .site-info .copyrights .credit,
   .site-footer .site-info .copyrights .poweredby {
     float: none;
@@ -6177,73 +6179,73 @@ object {
     text-align: center;
   }
 
-  /* line 155, sass/partials/_responsive.scss */
+  /* line 156, sass/partials/_responsive.scss */
   blockquote {
     margin: 16px 0;
   }
 
-  /* line 160, sass/partials/_responsive.scss */
+  /* line 161, sass/partials/_responsive.scss */
   .comment-body .comment-content {
     width: 100%;
   }
 
-  /* line 166, sass/partials/_responsive.scss */
+  /* line 167, sass/partials/_responsive.scss */
   .error404 .page-title {
     padding: 20px;
   }
-  /* line 168, sass/partials/_responsive.scss */
+  /* line 169, sass/partials/_responsive.scss */
   .error404 .page-title:before {
     content: normal;
   }
 }
 @media (max-width: 390px) {
-  /* line 179, sass/partials/_responsive.scss */
+  /* line 180, sass/partials/_responsive.scss */
   .site-header .site-info {
     float: none;
     text-align: center;
   }
-  /* line 183, sass/partials/_responsive.scss */
+  /* line 184, sass/partials/_responsive.scss */
   .site-header .sub-nav {
     float: none;
   }
-  /* line 185, sass/partials/_responsive.scss */
+  /* line 186, sass/partials/_responsive.scss */
   .site-header .sub-nav .social {
     float: left;
   }
-  /* line 188, sass/partials/_responsive.scss */
+  /* line 189, sass/partials/_responsive.scss */
   .site-header .sub-nav .searchform {
     float: right;
   }
 
-  /* line 195, sass/partials/_responsive.scss */
+  /* line 196, sass/partials/_responsive.scss */
   .entry-content .align-right {
     float: none;
   }
 
-  /* line 202, sass/partials/_responsive.scss */
+  /* line 203, sass/partials/_responsive.scss */
   .site-footer .site-info .credit {
     display: block;
   }
 }
 @media print {
-  /* line 210, sass/partials/_responsive.scss */
+  /* line 211, sass/partials/_responsive.scss */
   body {
     background: none !important;
     color: #000;
     font-size: 10pt;
   }
 
-  /* line 216, sass/partials/_responsive.scss */
+  /* line 217, sass/partials/_responsive.scss */
   .site-title {
     font-size: 21pt;
   }
 
-  /* line 219, sass/partials/_responsive.scss */
+  /* line 220, sass/partials/_responsive.scss */
   .site-description {
     font-size: 10pt;
   }
 
-  /* line 238, sass/partials/_responsive.scss */
+  /* line 239, sass/partials/_responsive.scss */
   .search-form,
   .author-avatar,
   .site-footer,
@@ -6263,31 +6265,31 @@ object {
     display: none;
   }
 
-  /* line 243, sass/partials/_responsive.scss */
+  /* line 244, sass/partials/_responsive.scss */
   .page-title,
   .entry-title {
     font-size: 21pt;
   }
 
-  /* line 248, sass/partials/_responsive.scss */
+  /* line 249, sass/partials/_responsive.scss */
   .entry-meta,
   .entry-meta a {
     color: #444;
     font-size: 10pt;
   }
 
-  /* line 255, sass/partials/_responsive.scss */
+  /* line 256, sass/partials/_responsive.scss */
   .entry-content img.alignleft,
   .entry-content .wp-caption.alignleft {
     margin-left: 0;
   }
-  /* line 259, sass/partials/_responsive.scss */
+  /* line 260, sass/partials/_responsive.scss */
   .entry-content img.alignright,
   .entry-content .wp-caption.alignright {
     margin-right: 0;
   }
 
-  /* line 266, sass/partials/_responsive.scss */
+  /* line 267, sass/partials/_responsive.scss */
   .comment-body .comment-metadata,
   .comment-body .comment-awaiting-moderation,
   .comment-body .comment-content {

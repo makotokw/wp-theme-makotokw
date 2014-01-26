@@ -36,6 +36,7 @@
 
   .page-title {
     padding: 300px;
+    width: 900px;
     &:before {
       @extend .genericon-404:before;
       font-family: Genericons;
@@ -44,7 +45,7 @@
       line-height: 0.6;
       overflow: hidden;
       position: absolute;
-      left: -4px;
+      left: -24px;
       top: 48px;
     }
   }
