@@ -32,6 +32,9 @@ get_header(); ?>
 							elseif (is_year()) :
 								printf(__('Yearly Archives: %s', 'makotokw'), '<span>' . get_the_date('Y') . '</span>');
 
+							elseif (is_tax('mylist')) :
+								printf(__('%s', 'makotokw'), '<span>' . single_term_title('', false) . '</span>');
+
 							elseif (is_tax('blogs')) :
 								printf(__('Blog Archives: %s', 'makotokw'), '<span>' . single_term_title('', false) . '</span>');
 

@@ -64,6 +64,48 @@ function makotokw_content_nav( $nav_id ) {
 }
 
 
+function makotokw_list_nav()
+{
+	global $post;
+
+	if ($mylist = get_mylist($post)) {
+
+		$first_post = get_first_post_on_mylist($post);
+		$prev_post = get_adjacent_post_on_mylist($post, true);
+		$next_post = get_adjacent_post_on_mylist($post, false);
+
+		if ($first_post->ID == $post->ID || $first_post->ID == $prev_post->ID) {
+			unset($first_post);
+		}
+
+		$mylist_link = get_term_link($mylist, 'mylist');
+
+		?>
+		<div class="section section-mini">
+			<h2 class="section-title">List</h2>
+
+			<div class="section-content">
+				<?php if ($first_post): ?>
+					最初→&nbsp;<a href="<?php echo get_permalink($first_post) ?>"
+								rel="prev"><?php echo get_the_title($first_post) ?></a>&nbsp;
+				<?php endif ?>
+				<?php if ($prev_post): ?>
+					前→&nbsp;<a href="<?php echo get_permalink($prev_post) ?>"
+								rel="prev"><?php echo get_the_title($prev_post) ?></a>&nbsp;
+				<?php endif ?>
+				<?php if ($next_post): ?>
+					次→&nbsp;<a href="<?php echo get_permalink($next_post) ?>"
+								rel="prev"><?php echo get_the_title($next_post) ?></a>&nbsp;
+				<?php endif ?>
+				<?php if (!is_wp_error($mylist_link)): ?>
+					マイリスト→&nbsp;<a href="<?= $mylist_link ?>"><?= $mylist->name ?></a>&nbsp;
+				<?php endif ?>
+			</div>
+		</div>
+	<?php
+	}
+}
+
 function makotokw_pagination($pages = '', $range = 3) {
 	global $paged;
 	$showitems = ($range * 3) + 1;
@@ -145,6 +187,8 @@ function makotokw_breadcrumbs()
 		} else if (is_tag()) {
 			echo '<a href="/tags/" itemprop="url"><span itemprop="title">' . __( 'Tags', 'makotokw' ) . '</a>'.$divider;
 			echo single_tag_title('', false);
+		} elseif (is_mylist()) {
+			echo "  "  . __( 'Mylist', 'makotokw' );
 		} elseif (is_archive()) {
 			if ( is_tax( 'blogs' ) ) {
 				echo '<span itemprop="title">' . __( 'Blog', 'makotokw' ) . '</span>' . $divider;
