@@ -5,7 +5,7 @@
  * @package makotokw
  */
 
-define('THEME_STYLE_CSS_REV', '201401101');
+define('THEME_STYLE_CSS_REV', '2014021714');
 define('THEME_STYLE_SCRIPT_REV', '201401073');
 
 /*
@@ -164,10 +164,6 @@ function makotokw_fonts_url() {
 	return $fonts_url;
 }
 
-function makotokw_feed_link() {
-	return get_feed_link();
-}
-
 function makotokw_quicktags()
 	// http://wordpress.stackexchange.com/questions/37849/add-custom-shortcode-button-to-editor
 	/* Add custom Quicktag buttons to the editor Wordpress ver. 3.3 and above only
@@ -225,5 +221,3 @@ function makotokw_quicktags()
 		})(jQuery);
 	</script>
 <?php }
-
-

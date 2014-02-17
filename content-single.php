@@ -29,6 +29,7 @@
 		<?php if (!is_preview()): ?>
 			<?php makotokw_share_this(); ?>
 		<?php endif; ?>
+		<?php makotokw_about_me(); ?>
 		<?php makotokw_list_nav(); ?>
 		<?php makotokw_section_category_and_tag('Tag'); ?>
 		<?php makotokw_related_portfolio(); ?>

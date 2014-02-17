@@ -115,6 +115,10 @@
 
     time {
       @extend %time-label;
+      padding: 0;
+      width: 120px;
+      display: inline-block;
+      text-align: center;
     }
   }
 }

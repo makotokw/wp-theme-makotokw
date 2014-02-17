@@ -25,6 +25,11 @@ function makotokw_credits() {
 }
 add_action('makotokw_credits', 'makotokw_credits');
 
+function makotokw_about_comment() {
+	?>
+<?php
+}
+
 /**
  * @param WP_Query $query
  */

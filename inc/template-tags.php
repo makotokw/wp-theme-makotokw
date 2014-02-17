@@ -352,6 +352,19 @@ function makotokw_share_this() {
 <?php
 }
 
+function makotokw_about_me() {
+	$email = get_the_author_meta('user_email');
+	$avatar = get_avatar( $email, '48', '', true );
+?>
+<div class="section section-mini section-about-me">
+	<h2 class="section-title"><?php _e('About', 'makotokw');?></h2>
+	<div class="section-content">
+		<?php echo $avatar ?><?php makotokw_about_comment() ?>
+	</div>
+</div>
+<?php
+}
+
 function makotokw_related_post($arg = array()) {
 	global $post;
 ?>

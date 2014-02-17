@@ -91,7 +91,7 @@ add_action('pre_get_posts', 'makotokw_pre_get_posts');
 
 function makotokw_template_redirect()
 {
-	if (is_page()) {
+	if (is_page() && !is_preview()) {
 		if ($values = get_post_custom_values('makotokw_part_of_home')) {
 			if ($values[0] == 1) {
 				wp_redirect(home_url('/'));
