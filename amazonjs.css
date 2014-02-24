@@ -3,11 +3,6 @@
   border-color: #f5e0cc;
   border-width: 0;
 }
-/* line 10, sass/amazonjs.scss */
-.amazonjs_item .amazonjs_indicator,
-.amazonjs_item a {
-  color: #e47911;
-}
 /* line 15, sass/amazonjs.scss */
 .amazonjs_item .amazonjs_image img {
   -webkit-box-shadow: none;

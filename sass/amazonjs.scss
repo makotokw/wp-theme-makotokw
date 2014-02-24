@@ -6,11 +6,6 @@
   border-color: lighten(desaturate($amazon-orange, 20%), 40%);
   border-width: 0;
 
-  .amazonjs_indicator,
-  a {
-    color: $amazon-orange;
-  }
-
   .amazonjs_image {
     img {
       @include box-shadow(none);
