@@ -5,7 +5,7 @@
  * @package makotokw
  */
 
-define('THEME_STYLE_CSS_REV', '2014021714');
+define('THEME_STYLE_CSS_REV', '2014030320');
 define('THEME_STYLE_SCRIPT_REV', '201401073');
 
 /*
