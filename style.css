@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@charset "utf-8";
 /*
  * Theme Name: makotokw2014
  * Theme URI: http://blog.makotokw.com/
@@ -3883,7 +3883,7 @@ li > ol {
 @media (min-width: 992px) {
   /* line 63, sass/partials/_grid.scss */
   .container {
-    width: 970px;
+    width: 930px;
   }
 
   /* line 221, sass/_mixins.scss */
@@ -4149,7 +4149,7 @@ li > ol {
 @media (min-width: 1200px) {
   /* line 83, sass/partials/_grid.scss */
   .container {
-    width: 1170px;
+    width: 970px;
   }
 
   /* line 221, sass/_mixins.scss */
@@ -4997,18 +4997,18 @@ object {
   padding: 15px 0 0 0;
 }
 /* line 174, sass/partials/_content.scss */
-.section .section-title, .section-comment .comment-respond .section-title, .section-comment .comment-respond .comment-reply-title {
+.section .section-title, .section-comment .comment-respond .section-title, .section .section-comment .comment-respond .comment-reply-title, .section-comment .comment-respond .section .comment-reply-title, .section-comment .comment-respond .comment-reply-title {
   text-transform: uppercase;
 }
 
 /* line 180, sass/partials/_content.scss */
-.section-default .section-title, .section-comment .comment-respond .section-title, .section-comment .comment-respond .comment-reply-title {
+.section-default .section-title, .section-comment .comment-respond .section-title, .section-default .section-comment .comment-respond .comment-reply-title, .section-comment .comment-respond .section-default .comment-reply-title, .section-comment .comment-respond .comment-reply-title {
   color: #3e5771;
   margin: 10px 0;
   border-bottom: 5px solid #3e5771;
 }
 /* line 184, sass/partials/_content.scss */
-.section-default .section-title:before, .section-comment .comment-respond .section-title:before, .section-comment .comment-respond .comment-reply-title:before {
+.section-default .section-title:before, .section-comment .comment-respond .section-title:before, .section-default .section-comment .comment-respond .comment-reply-title:before, .section-comment .comment-respond .section-default .comment-reply-title:before, .section-comment .comment-respond .comment-reply-title:before {
   font-family: FontAwesome;
   background-color: #3e5771;
   color: #fff;
@@ -5980,7 +5980,7 @@ object {
   background-color: #bdc3c7;
 }
 
-@media (min-width: 970px) {
+@media (min-width: 930px) {
   /* line 186, sass/partials/_home.scss */
   .list-archives .list-archives-item-month {
     padding-left: 10px;
@@ -6098,13 +6098,13 @@ object {
     top: 28px;
   }
 }
-@media (min-width: 970px) {
+@media (min-width: 930px) {
   /* line 29, sass/partials/_responsive.scss */
   .site-header .search-form .search-form-text:focus {
     width: 230px;
   }
 }
-@media (max-width: 970px) {
+@media (max-width: 930px) {
   /* line 41, sass/partials/_responsive.scss */
   .site-navi .breadcrumb {
     padding: 8px;

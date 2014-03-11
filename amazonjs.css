@@ -1,26 +1,27 @@
+@charset "utf-8";
 /* line 4, sass/amazonjs.scss */
 .amazonjs_item {
   border-color: #f5e0cc;
   border-width: 0;
 }
-/* line 15, sass/amazonjs.scss */
+/* line 10, sass/amazonjs.scss */
 .amazonjs_item .amazonjs_image img {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
   border: none;
 }
-/* line 22, sass/amazonjs.scss */
+/* line 17, sass/amazonjs.scss */
 .amazonjs_item .amazonjs_info h4 {
   font-size: 1.2em;
   font-weight: normal;
   text-shadow: none;
 }
-/* line 29, sass/amazonjs.scss */
+/* line 24, sass/amazonjs.scss */
 .amazonjs_item .amazonjs_info ul li {
   font-size: 1em;
 }
-/* line 35, sass/amazonjs.scss */
+/* line 30, sass/amazonjs.scss */
 .amazonjs_item .amazonjs_review {
   font-size: .9em;
 }

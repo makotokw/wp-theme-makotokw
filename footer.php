@@ -33,7 +33,7 @@
 </div><!-- #page -->
 <?php wp_footer(); ?>
 <?php if (WP_THEME_DEBUG): ?>
-<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':38085/livereload.js?snipver=1"></' + 'script>')</script>
 <?php endif ?>
 </body>
 </html>

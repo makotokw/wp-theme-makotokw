@@ -1,11 +1,17 @@
 module.exports = function(grunt) {
 	grunt.initConfig({
 		compass: {
-			dist: {
+			prod: {
 				options: {
 					config: 'config.rb',
-					environment: 'development',
+					environment: 'production',
 					force: true
+				}
+			},
+			dev: {
+				options: {
+					config: 'config.rb',
+					environment: 'development'
 				}
 			}
 		},
@@ -35,6 +41,16 @@ module.exports = function(grunt) {
 				options: {
 					spawn: false
 				}
+			},
+			sass: {
+				files: ['sass/**/*.scss'],
+				tasks: ['compass:dev']
+			},
+			livereload: {
+				options: {
+					livereload: 38085
+				},
+				files: ['*.css', '*.js']
 			}
 		}
 	});
@@ -43,5 +59,5 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-bower-task');
 
-	grunt.registerTask('default', ['compass', 'uglify']);
+	grunt.registerTask('default', ['compass:prod', 'uglify']);
 };

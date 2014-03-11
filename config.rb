@@ -1,5 +1,6 @@
-
+if RUBY_VERSION =~ /1.9/
 Encoding.default_external = 'utf-8'
+end
 
 # Require any additional compass plugins here.
 # require 'bootstrap-sass'
