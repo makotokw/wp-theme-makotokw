@@ -24,9 +24,9 @@
 <?php endif; ?>
 <title><?php wp_title('|', true, 'right'); ?></title>
 <link rel="shortcut icon" href="/favicon.ico">
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo get_template_directory_uri(); ?>/images/touch-icon-144.png">
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo get_template_directory_uri(); ?>/images/touch-icon-114.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/images/touch-icon-72.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="<?php echo get_template_directory_uri(); ?>/images/touch-icon-152.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="<?php echo get_template_directory_uri(); ?>/images/touch-icon-120.png">
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="<?php echo get_template_directory_uri(); ?>/images/touch-icon-76.png">
 <link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/images/touch-icon-57.png">
 <link rel="profile" href="http://gmpg.org/xfn/11"/>
 <link rel="alternate" type="<?php echo feed_content_type()?>" title="<?php echo esc_attr(get_bloginfo('name'))?>" href="<?php echo get_feed_link() ?>" />
