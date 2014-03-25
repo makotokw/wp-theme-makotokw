@@ -450,7 +450,7 @@ var prettyPrintOne, prettyPrint;
         stickyFooter: function() {
             function b() {
                 var b = a(window).height(), d = a(document.body).height() - c.height(), e = b - d;
-                a("#wpadminbar").length > 0 && (e -= 28), 0 >= e && (e = 1), c.height(e);
+                a("#wpadminbar").length > 0 && (e -= 32), 0 >= e && (e = 1), c.height(e);
             }
             var c = (a("#main"), a("#footerMargin"));
             a(this), b(), a(window).on("sticky", b).scroll(b).resize(b);

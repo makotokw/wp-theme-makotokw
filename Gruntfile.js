@@ -1,16 +1,19 @@
+var LIVERELOAD_PORT = 38085;
 module.exports = function(grunt) {
+	require('load-grunt-tasks')(grunt);
 	grunt.initConfig({
 		compass: {
+			options: {
+				config: 'config.rb'
+			},
 			prod: {
 				options: {
-					config: 'config.rb',
 					environment: 'production',
 					force: true
 				}
 			},
 			dev: {
 				options: {
-					config: 'config.rb',
 					environment: 'development'
 				}
 			}
@@ -48,16 +51,24 @@ module.exports = function(grunt) {
 			},
 			livereload: {
 				options: {
-					livereload: 38085
+					livereload: LIVERELOAD_PORT
 				},
 				files: ['*.css', '*.js']
 			}
 		}
 	});
-	grunt.loadNpmTasks('grunt-contrib-compass');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-bower-task');
+	grunt.registerTask('build', [
+		'bower:install',
+		'compass:prod',
+		'uglify'
+	]);
 
-	grunt.registerTask('default', ['compass:prod', 'uglify']);
+	grunt.registerTask('debug', [
+		'bower:install',
+		'compass:dev',
+		'uglify',
+		'watch'
+	]);
+
+	grunt.registerTask('default', ['build']);
 };

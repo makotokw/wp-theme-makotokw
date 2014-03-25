@@ -66,7 +66,7 @@ grunt bower:install
 
 ```
 cd /path/to/wordpress/wp-content/themes/makotokw2014
-grunt
+grunt build
 ```
 
 ## License
