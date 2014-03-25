@@ -3,6 +3,9 @@ makotokw theme for WordPress
 
 WordPress theme for [kwLog](http://blog.makotokw.com).
 
+
+![Screenshot](https://raw.githubusercontent.com/makotokw/wp-theme-makotokw/makotokw2014/screenshot.png)
+
  * Created by [_s](http://underscores.me)
  * Inspired [Twenty Thirteen](http://twentythirteendemo.wordpress.com/), [Twenty Eleven](http://wordpress.org/extend/themes/twentyeleven) and [Octopress](http://octopress.org/)
  * Include [Font Awesome](http://fortawesome.github.io/Font-Awesome/) Icons
