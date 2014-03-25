@@ -40,6 +40,7 @@ So, please use a reference of one implementation for WordPress theme.
 cd /path/to/wordpress/wp-content/themes
 git clone https://github.com/makotokw/wp-theme-makotokw.git makotokw2014
 cd makotokw2014
+git checkout -b makotokw2014 origin/makotokw2014
 cp -p config.php.sample config.php
 ```
 
