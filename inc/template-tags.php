@@ -142,29 +142,34 @@ function makotokw_pagination($pages = '', $range = 3) {
 }
 
 function makotokw_google_analytics() {
-
 	if (WP_THEME_DEBUG === true || WP_THEME_GOOGLE_ANALYTICS_ACCOUNT === false) {
 		return;
 	}
 ?>
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', '<?php echo WP_THEME_GOOGLE_ANALYTICS_ACCOUNT?>']);
-_gaq.push(['_trackPageview']);
-(function() {
-	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', '<?php echo WP_THEME_GOOGLE_ANALYTICS_ACCOUNT; ?>', '<?php echo WP_THEME_GOOGLE_ANALYTICS_DOMAIN; ?>');
+  ga('send', 'pageview');
 </script>
+<?php
+}
+
+function makotokw_itunes_affiliate_script() {
+	if (WP_THEME_ITUNES_AFFILIATE_ID === false) {
+		return;
+	}
+?>
+<script type='text/javascript'>var _merchantSettings=_merchantSettings || [];_merchantSettings.push(['AT', '<?php echo WP_THEME_ITUNES_AFFILIATE_ID ?>']);(function(){var autolink=document.createElement('script');autolink.type='text/javascript';autolink.async=true; autolink.src= ('https:' == document.location.protocol) ? 'https://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js' : 'http://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(autolink, s);})();</script>
 <?php
 }
 
 /**
  * @see http://gilbert.pellegrom.me/how-to-breadcrumbs-in-wordpress/
  */
-function makotokw_breadcrumbs()
-{
+function makotokw_breadcrumbs() {
 	global $wp_query;
 
 	if (!is_home()) {
