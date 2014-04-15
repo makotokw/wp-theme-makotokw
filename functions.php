@@ -5,8 +5,9 @@
  * @package makotokw
  */
 
-define('THEME_STYLE_CSS_REV', '2014030320');
+define('THEME_STYLE_CSS_REV', '2014041601');
 define('THEME_STYLE_SCRIPT_REV', '201401073');
+define('THEME_DATE_FORMAT', 'Y/m/d');
 
 /*
  * Load Jetpack compatibility file.

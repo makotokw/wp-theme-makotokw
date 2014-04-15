@@ -44,14 +44,14 @@
     .entry-header {
       .entry-title {
         font-size: 26px;
-        margin-right: 10px;
+        margin: 0px;
+        display: block;
       }
     }
 
     li {
       padding: 5px 0;
       margin: 0;
-      line-height: 1.8;
     }
 
 //    time {

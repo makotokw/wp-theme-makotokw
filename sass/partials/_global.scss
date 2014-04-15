@@ -26,6 +26,21 @@
   color: #999;
 }
 
+.time {
+  color: $site-date-color;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.time-icon {
+  &:before {
+    font-family: FontAwesome;
+    content: $fa-var-calendar;
+    margin-right: 3px;
+  }
+}
+
 .list-unstyled {
   padding-left: 0;
   list-style: none;

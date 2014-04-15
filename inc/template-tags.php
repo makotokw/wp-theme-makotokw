@@ -293,9 +293,9 @@ function makotokw_facebook_recommendations_bar() {
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function makotokw_posted_on() {
-	printf( __( '<time class="published" datetime="%1$s">%2$s</time>', 'makotokw' ),
+	printf( __( '<time class="published time time-icon" datetime="%1$s">%2$s</time>', 'makotokw' ),
 		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_post_time( 'M jS, Y') )
+		esc_html( get_post_time(THEME_DATE_FORMAT) )
 	);
 
 	printf( __( '<time class="updated" datetime="%1$s"></time>', 'makotokw' ),

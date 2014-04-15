@@ -50,6 +50,9 @@
   .entry-title {
     font-size: 22px;
   }
+  .entry-content {
+    overflow-x: auto;
+  }
 
   .related-posts {
     .related-post {
@@ -152,14 +155,44 @@
     }
   }
 
-
   blockquote {
     margin: 16px 0;
   }
 
+  .section-mini {
+    .section-title {
+      float: none;
+      width: auto;
+    }
+    .section-content {
+      width: auto;
+      float: none;
+      margin-left: 10px;
+    }
+  }
+
+  .comment {
+    .comment-body {
+
+      .comment-metadata {
+        margin-top: 10px;
+      }
+      .comment-awaiting-moderation,
+      .comment-content {
+        float: none;
+        width: 100%;
+        padding: 12px;
+      }
+    }
+  }
   .comment-body {
     .comment-content {
-      width: 100%;
+      font-size: $font-size-small;
+    }
+  }
+  .comment-list {
+    .children {
+      margin-left: 10px;
     }
   }
 

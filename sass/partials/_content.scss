@@ -69,14 +69,8 @@
   }
 
   .entry-date {
-    color: $silver;
-    &:before {
-      font-family: FontAwesome;
-      content: $fa-var-clock-o;
-      margin-right: 3px;
-    }
-    .published {
-      text-transform: uppercase;
+    .time {
+      color: $silver;
     }
   }
 
@@ -105,7 +99,7 @@
 }
 
 .entry-content {
-  line-height: 2;
+  line-height: $line-height-large;
 
   h2 {
     padding-bottom: 10px;
@@ -239,6 +233,13 @@ object {
     padding: 0;
     li {
       list-style: none;
+      &:before {
+        font-family: FontAwesome;
+        content: $fa-var-chevron-circle-right; // fa-chevron-circle-right
+        vertical-align: middle;
+        color: $site-link-color;
+        margin-right: 5px;
+      }
     }
 
 

@@ -1,4 +1,4 @@
-@charset "utf-8";
+@charset "UTF-8";
 /*
  * Theme Name: makotokw2014
  * Theme URI: http://blog.makotokw.com/
@@ -74,7 +74,7 @@ textarea {
   color: #333333;
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
-  line-height: 1.42857;
+  line-height: 1.7;
 }
 
 /* line 68, sass/partials/_normalize.scss */
@@ -3099,23 +3099,38 @@ li > ol {
 }
 
 /* line 29, sass/partials/_global.scss */
+.time {
+  color: #767676;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+/* line 37, sass/partials/_global.scss */
+.time-icon:before {
+  font-family: FontAwesome;
+  content: "\f073";
+  margin-right: 3px;
+}
+
+/* line 44, sass/partials/_global.scss */
 .list-unstyled, .list-inline {
   padding-left: 0;
   list-style: none;
 }
 
-/* line 38, sass/partials/_global.scss */
+/* line 53, sass/partials/_global.scss */
 .list-inline > li {
   display: inline-block;
   padding-left: 5px;
   padding-right: 5px;
 }
-/* line 43, sass/partials/_global.scss */
+/* line 58, sass/partials/_global.scss */
 .list-inline > li:first-child {
   padding-left: 0;
 }
 
-/* line 49, sass/partials/_global.scss */
+/* line 64, sass/partials/_global.scss */
 .table-bordered, .markdown-content table {
   border: 2px solid #dddddd;
   border-collapse: separate;
@@ -3124,12 +3139,12 @@ li > ol {
   border-radius: 6px;
   background-color: #fff;
 }
-/* line 57, sass/partials/_global.scss */
+/* line 72, sass/partials/_global.scss */
 .table-bordered th, .markdown-content table th {
   background-color: white;
   background-color: rgba(221, 221, 221, 0.3);
 }
-/* line 63, sass/partials/_global.scss */
+/* line 78, sass/partials/_global.scss */
 .table-bordered th, .markdown-content table th,
 .table-bordered td,
 .markdown-content table td {
@@ -3139,7 +3154,7 @@ li > ol {
   border-top: 2px solid #dddddd;
   border-left: 2px solid #dddddd;
 }
-/* line 78, sass/partials/_global.scss */
+/* line 93, sass/partials/_global.scss */
 .table-bordered caption + thead tr:first-child th, .markdown-content table caption + thead tr:first-child th,
 .table-bordered caption + tbody tr:first-child th,
 .markdown-content table caption + tbody tr:first-child th,
@@ -3159,33 +3174,33 @@ li > ol {
 .markdown-content table tbody:first-child tr:first-child td {
   border-top: 0;
 }
-/* line 82, sass/partials/_global.scss */
+/* line 97, sass/partials/_global.scss */
 .table-bordered thead:first-child tr:first-child th:first-child, .markdown-content table thead:first-child tr:first-child th:first-child,
 .table-bordered tbody:first-child tr:first-child td:first-child,
 .markdown-content table tbody:first-child tr:first-child td:first-child {
   border-top-left-radius: 6px;
 }
-/* line 86, sass/partials/_global.scss */
+/* line 101, sass/partials/_global.scss */
 .table-bordered thead:first-child tr:first-child th:last-child, .markdown-content table thead:first-child tr:first-child th:last-child,
 .table-bordered tbody:first-child tr:first-child td:last-child,
 .markdown-content table tbody:first-child tr:first-child td:last-child {
   border-top-right-radius: 6px;
 }
-/* line 90, sass/partials/_global.scss */
+/* line 105, sass/partials/_global.scss */
 .table-bordered thead:last-child tr:last-child th:first-child, .markdown-content table thead:last-child tr:last-child th:first-child,
 .table-bordered tbody:last-child tr:last-child td:first-child,
 .markdown-content table tbody:last-child tr:last-child td:first-child {
   border-radius: 0 0 0 6px;
   border-bottom-left-radius: 6px;
 }
-/* line 95, sass/partials/_global.scss */
+/* line 110, sass/partials/_global.scss */
 .table-bordered thead:last-child tr:last-child th:last-child, .markdown-content table thead:last-child tr:last-child th:last-child,
 .table-bordered tbody:last-child tr:last-child td:last-child,
 .markdown-content table tbody:last-child tr:last-child td:last-child {
   border-bottom-right-radius: 6px;
 }
 
-/* line 101, sass/partials/_global.scss */
+/* line 116, sass/partials/_global.scss */
 .rakuten-afl {
   border: 2px solid #e9ecef;
   -webkit-border-radius: 6px;
@@ -3200,16 +3215,16 @@ li > ol {
   box-shadow: none;
   margin-bottom: 20px;
 }
-/* line 103, sass/partials/_global.scss */
+/* line 118, sass/partials/_global.scss */
 .rakuten-afl table {
   margin: 0;
   border-bottom: none;
 }
-/* line 106, sass/partials/_global.scss */
+/* line 121, sass/partials/_global.scss */
 .rakuten-afl table td, .rakuten-afl table tr {
   border: none;
 }
-/* line 109, sass/partials/_global.scss */
+/* line 124, sass/partials/_global.scss */
 .rakuten-afl table img {
   border: none;
   -webkit-border-radius: 0;
@@ -3220,7 +3235,7 @@ li > ol {
 }
 
 /* Ascii Art */
-/* line 118, sass/partials/_global.scss */
+/* line 133, sass/partials/_global.scss */
 .aa, .aa p {
   color: #333333 !important;
   font-family: 'Mona','IPAMonaPGothic','IPA モナー Pゴシック','MS PGothic AA','MS PGothic','ＭＳ Ｐゴシック',sans-serif !important;
@@ -3229,21 +3244,21 @@ li > ol {
 }
 
 /* Alignment */
-/* line 129, sass/partials/_global.scss */
+/* line 144, sass/partials/_global.scss */
 .align-left {
   display: inline;
   float: left;
   margin-right: 1.5em;
 }
 
-/* line 134, sass/partials/_global.scss */
+/* line 149, sass/partials/_global.scss */
 .align-right {
   display: inline;
   float: right;
   margin-left: 1.5em;
 }
 
-/* line 139, sass/partials/_global.scss */
+/* line 154, sass/partials/_global.scss */
 .align-center {
   clear: both;
   display: block;
@@ -3251,12 +3266,12 @@ li > ol {
 }
 
 /* Text meant only for screen readers */
-/* line 146, sass/partials/_global.scss */
+/* line 161, sass/partials/_global.scss */
 .screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
 }
-/* line 152, sass/partials/_global.scss */
+/* line 167, sass/partials/_global.scss */
 .screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus {
   background-color: #f1f1f1;
   border-radius: 3px;
@@ -3278,7 +3293,7 @@ li > ol {
 }
 
 /* Clearing */
-/* line 178, sass/partials/_global.scss */
+/* line 193, sass/partials/_global.scss */
 .clear,
 .site-main,
 .entry-content,
@@ -4877,62 +4892,52 @@ input[type="color"]:focus,
 .entry-header .tag-links a {
   margin-right: 10px;
 }
-/* line 71, sass/partials/_content.scss */
-.entry-header .entry-date {
+/* line 72, sass/partials/_content.scss */
+.entry-header .entry-date .time {
   color: #bdc3c7;
 }
-/* line 73, sass/partials/_content.scss */
-.entry-header .entry-date:before {
-  font-family: FontAwesome;
-  content: "\f017";
-  margin-right: 3px;
-}
-/* line 78, sass/partials/_content.scss */
-.entry-header .entry-date .published {
-  text-transform: uppercase;
-}
-/* line 83, sass/partials/_content.scss */
+/* line 77, sass/partials/_content.scss */
 .entry-header .entry-title {
   font-weight: 700;
   color: #2c3e50;
   margin: 0 0 5px 0;
 }
 
-/* line 90, sass/partials/_content.scss */
+/* line 84, sass/partials/_content.scss */
 .entry-meta {
   margin: 10px 0 0 0;
 }
-/* line 92, sass/partials/_content.scss */
+/* line 86, sass/partials/_content.scss */
 .entry-meta i {
   margin-left: .5em;
   color: #1fadd7;
 }
-/* line 97, sass/partials/_content.scss */
+/* line 91, sass/partials/_content.scss */
 .entry-meta .portfolio-posts-area .entry-date {
   margin: 0 4px;
 }
-/* line 102, sass/partials/_content.scss */
+/* line 96, sass/partials/_content.scss */
 .entry-meta .author,
 .entry-meta .date {
   display: none;
 }
 
-/* line 107, sass/partials/_content.scss */
+/* line 101, sass/partials/_content.scss */
 .entry-content {
   line-height: 2;
 }
-/* line 110, sass/partials/_content.scss */
+/* line 104, sass/partials/_content.scss */
 .entry-content h2 {
   padding-bottom: 10px;
   border-bottom: solid 2px #dddddd;
 }
-/* line 115, sass/partials/_content.scss */
+/* line 109, sass/partials/_content.scss */
 .entry-content h3 {
   padding-bottom: 5px;
   border-bottom: solid 1px #dddddd;
 }
 
-/* line 122, sass/partials/_content.scss */
+/* line 116, sass/partials/_content.scss */
 .entry-content,
 .entry-meta {
   *zoom: 1;
@@ -4950,7 +4955,7 @@ input[type="color"]:focus,
   clear: both;
 }
 
-/* line 126, sass/partials/_content.scss */
+/* line 120, sass/partials/_content.scss */
 .more-link {
   float: right;
   -webkit-border-radius: 20px;
@@ -4960,14 +4965,14 @@ input[type="color"]:focus,
   border-radius: 20px;
   background-color: #3e5771;
 }
-/* line 130, sass/partials/_content.scss */
+/* line 124, sass/partials/_content.scss */
 .more-link:hover {
   background-color: #71cfeb;
 }
 
 /* =Media
 ----------------------------------------------- */
-/* line 142, sass/partials/_content.scss */
+/* line 136, sass/partials/_content.scss */
 .entry-content img,
 .entry-summary img,
 .comment-content img,
@@ -4976,7 +4981,7 @@ input[type="color"]:focus,
   max-width: 100%;
 }
 
-/* line 160, sass/partials/_content.scss */
+/* line 154, sass/partials/_content.scss */
 img.size-full,
 img.size-large,
 img.wp-post-image {
@@ -4984,31 +4989,31 @@ img.wp-post-image {
   max-width: 100%;
 }
 
-/* line 167, sass/partials/_content.scss */
+/* line 161, sass/partials/_content.scss */
 embed,
 iframe,
 object {
   max-width: 100%;
 }
 
-/* line 171, sass/partials/_content.scss */
+/* line 165, sass/partials/_content.scss */
 .section, .section-comment .comment-respond {
   margin: 15px 0 0 0;
   padding: 15px 0 0 0;
 }
-/* line 174, sass/partials/_content.scss */
-.section .section-title, .section-comment .comment-respond .section-title, .section .section-comment .comment-respond .comment-reply-title, .section-comment .comment-respond .section .comment-reply-title, .section-comment .comment-respond .comment-reply-title {
+/* line 168, sass/partials/_content.scss */
+.section .section-title, .section-comment .comment-respond .section-title, .section-comment .comment-respond .comment-reply-title {
   text-transform: uppercase;
 }
 
-/* line 180, sass/partials/_content.scss */
-.section-default .section-title, .section-comment .comment-respond .section-title, .section-default .section-comment .comment-respond .comment-reply-title, .section-comment .comment-respond .section-default .comment-reply-title, .section-comment .comment-respond .comment-reply-title {
+/* line 174, sass/partials/_content.scss */
+.section-default .section-title, .section-comment .comment-respond .section-title, .section-comment .comment-respond .comment-reply-title {
   color: #3e5771;
   margin: 10px 0;
   border-bottom: 5px solid #3e5771;
 }
-/* line 184, sass/partials/_content.scss */
-.section-default .section-title:before, .section-comment .comment-respond .section-title:before, .section-default .section-comment .comment-respond .comment-reply-title:before, .section-comment .comment-respond .section-default .comment-reply-title:before, .section-comment .comment-respond .comment-reply-title:before {
+/* line 178, sass/partials/_content.scss */
+.section-default .section-title:before, .section-comment .comment-respond .section-title:before, .section-comment .comment-respond .comment-reply-title:before {
   font-family: FontAwesome;
   background-color: #3e5771;
   color: #fff;
@@ -5019,12 +5024,12 @@ object {
   width: 36px;
 }
 
-/* line 197, sass/partials/_content.scss */
+/* line 191, sass/partials/_content.scss */
 .section-mini {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   *zoom: 1;
 }
-/* line 200, sass/partials/_content.scss */
+/* line 194, sass/partials/_content.scss */
 .section-mini .section-title, .section-mini .section-comment .comment-respond .comment-reply-title, .section-comment .comment-respond .section-mini .comment-reply-title {
   float: left;
   width: 15.625%;
@@ -5034,7 +5039,7 @@ object {
   font-size: 13.6px;
   margin: 5px 0;
 }
-/* line 209, sass/partials/_content.scss */
+/* line 203, sass/partials/_content.scss */
 .section-mini .section-content {
   width: 82.125%;
   float: right;
@@ -5050,7 +5055,7 @@ object {
   clear: both;
 }
 
-/* line 219, sass/partials/_content.scss */
+/* line 213, sass/partials/_content.scss */
 .section-about-me .section-content {
   color: #95a5a6;
   font-weight: 300;
@@ -5058,7 +5063,7 @@ object {
   line-height: 24px;
   /* half avatar */
 }
-/* line 225, sass/partials/_content.scss */
+/* line 219, sass/partials/_content.scss */
 .section-about-me .avatar {
   border: 1px solid #dddddd;
   margin-right: 5px;
@@ -5067,17 +5072,25 @@ object {
 
 /* =Related Posts
 ----------------------------------------------- */
-/* line 236, sass/partials/_content.scss */
+/* line 230, sass/partials/_content.scss */
 .section-related-posts ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-/* line 240, sass/partials/_content.scss */
+/* line 234, sass/partials/_content.scss */
 .section-related-posts ul li {
   list-style: none;
 }
-/* line 246, sass/partials/_content.scss */
+/* line 236, sass/partials/_content.scss */
+.section-related-posts ul li:before {
+  font-family: FontAwesome;
+  content: "\f138";
+  vertical-align: middle;
+  color: #1fadd7;
+  margin-right: 5px;
+}
+/* line 247, sass/partials/_content.scss */
 .section-related-posts .entry-date {
   color: #bdc3c7;
 }
@@ -5170,12 +5183,12 @@ object {
   line-height: 1;
 }
 
-/* line 53, sass/partials/_comments.scss */
+/* line 51, sass/partials/_comments.scss */
 .comment .comment-body .comment-author {
   float: left;
   max-width: 74px;
 }
-/* line 60, sass/partials/_comments.scss */
+/* line 57, sass/partials/_comments.scss */
 .comment .comment-body .comment-metadata,
 .comment .comment-body .comment-awaiting-moderation,
 .comment .comment-body .comment-content {
@@ -5185,7 +5198,7 @@ object {
   width: calc(100% - 64px);
 }
 
-/* line 71, sass/partials/_comments.scss */
+/* line 67, sass/partials/_comments.scss */
 .comment-body {
   padding: 24px 0;
   position: relative;
@@ -5200,7 +5213,7 @@ object {
 .comment-body:after {
   clear: both;
 }
-/* line 77, sass/partials/_comments.scss */
+/* line 73, sass/partials/_comments.scss */
 .comment-body .comment-author .avatar {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -5212,26 +5225,20 @@ object {
   padding: 2px;
   border: 1px solid #dddddd;
 }
-/* line 91, sass/partials/_comments.scss */
+/* line 87, sass/partials/_comments.scss */
 .comment-body .comment-metadata cite {
   display: block;
 }
-/* line 93, sass/partials/_comments.scss */
+/* line 89, sass/partials/_comments.scss */
 .comment-body .comment-metadata cite a {
   color: #333333;
 }
-/* line 99, sass/partials/_comments.scss */
+/* line 95, sass/partials/_comments.scss */
 .comment-body .comment-metadata .fn,
 .comment-body .comment-metadata .comment-time {
   display: inline-block;
 }
-/* line 102, sass/partials/_comments.scss */
-.comment-body .comment-metadata .comment-time {
-  color: #767676;
-  font-style: normal;
-  font-weight: 300;
-}
-/* line 109, sass/partials/_comments.scss */
+/* line 100, sass/partials/_comments.scss */
 .comment-body .comment-content {
   border: 2px solid #e9ecef;
   -webkit-border-radius: 4px;
@@ -5244,30 +5251,35 @@ object {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-  font-size: 16px;
+  line-height: 2;
+  overflow-x: auto;
+  color: #4d4d4d;
 }
-/* line 112, sass/partials/_comments.scss */
+/* line 105, sass/partials/_comments.scss */
 .comment-body .comment-content a {
   word-wrap: break-word;
 }
-/* line 115, sass/partials/_comments.scss */
+/* line 108, sass/partials/_comments.scss */
+.comment-body .comment-content > p:first-of-type {
+  margin-top: 0;
+}
+/* line 111, sass/partials/_comments.scss */
 .comment-body .comment-content > p:last-of-type {
   margin-bottom: 0;
 }
-/* line 120, sass/partials/_comments.scss */
+/* line 116, sass/partials/_comments.scss */
 .comment-body .comment-awaiting-moderation {
   display: block;
   width: 100%;
-  color: #767676;
 }
-/* line 126, sass/partials/_comments.scss */
+/* line 120, sass/partials/_comments.scss */
 .comment-body .comment-awaiting-moderation:before {
   font-family: FontAwesome;
   content: "\f071";
   margin-right: 5px;
 }
 
-/* line 137, sass/partials/_comments.scss */
+/* line 131, sass/partials/_comments.scss */
 .comment-reply-link:before,
 .comment-reply-login:before {
   font-family: FontAwesome;
@@ -5275,7 +5287,7 @@ object {
   margin-right: 5px;
 }
 
-/* line 150, sass/partials/_comments.scss */
+/* line 144, sass/partials/_comments.scss */
 .bypostauthor > .comment-body .fn:before {
   font-family: FontAwesome;
   content: "\f040";
@@ -5284,7 +5296,7 @@ object {
   margin-right: 5px;
 }
 
-/* line 161, sass/partials/_comments.scss */
+/* line 155, sass/partials/_comments.scss */
 .section-comment .comment-respond {
   *zoom: 1;
   margin: 0;
@@ -5299,22 +5311,22 @@ object {
 .section-comment .comment-respond:after {
   clear: both;
 }
-/* line 169, sass/partials/_comments.scss */
+/* line 163, sass/partials/_comments.scss */
 .section-comment .comment-respond .comment-reply-title:before {
   content: "\f0e5";
 }
 
-/* line 177, sass/partials/_comments.scss */
+/* line 171, sass/partials/_comments.scss */
 .navigation-comment a {
   float: none;
   background-color: #3e5771;
 }
-/* line 181, sass/partials/_comments.scss */
+/* line 175, sass/partials/_comments.scss */
 .navigation-comment a:hover {
   background-color: #1fadd7;
 }
 
-/* line 188, sass/partials/_comments.scss */
+/* line 182, sass/partials/_comments.scss */
 .comment-form-comment textarea {
   width: 100%;
 }
@@ -5876,13 +5888,13 @@ object {
 /* line 45, sass/partials/_home.scss */
 .section-page-entry .list-entries .entry-header .entry-title {
   font-size: 26px;
-  margin-right: 10px;
+  margin: 0px;
+  display: block;
 }
-/* line 51, sass/partials/_home.scss */
+/* line 52, sass/partials/_home.scss */
 .section-page-entry .list-entries li {
   padding: 5px 0;
   margin: 0;
-  line-height: 1.8;
 }
 
 /* line 73, sass/partials/_home.scss */
@@ -6120,42 +6132,47 @@ object {
     font-size: 22px;
   }
 
-  /* line 55, sass/partials/_responsive.scss */
+  /* line 53, sass/partials/_responsive.scss */
+  .entry-content {
+    overflow-x: auto;
+  }
+
+  /* line 58, sass/partials/_responsive.scss */
   .related-posts .related-post {
     padding: 10px;
   }
 
-  /* line 60, sass/partials/_responsive.scss */
+  /* line 63, sass/partials/_responsive.scss */
   h1 {
     margin: 16px 0;
   }
 
-  /* line 64, sass/partials/_responsive.scss */
+  /* line 67, sass/partials/_responsive.scss */
   h2 {
     margin: 12px 0;
   }
 
-  /* line 68, sass/partials/_responsive.scss */
+  /* line 71, sass/partials/_responsive.scss */
   h3 {
     margin: 11px 0;
   }
 
-  /* line 72, sass/partials/_responsive.scss */
+  /* line 75, sass/partials/_responsive.scss */
   h4 {
     margin: 10px 0;
   }
 
-  /* line 76, sass/partials/_responsive.scss */
+  /* line 79, sass/partials/_responsive.scss */
   h5 {
     margin: 9px 0;
   }
 
-  /* line 80, sass/partials/_responsive.scss */
+  /* line 83, sass/partials/_responsive.scss */
   h6 {
     margin: 8px 0;
   }
 
-  /* line 89, sass/partials/_responsive.scss */
+  /* line 92, sass/partials/_responsive.scss */
   code,
   kbd,
   pre,
@@ -6166,29 +6183,29 @@ object {
   }
 }
 @media (max-width: 750px) {
-  /* line 98, sass/partials/_responsive.scss */
+  /* line 101, sass/partials/_responsive.scss */
   .entry-content img.alignleft,
   .entry-content .wp-caption.alignleft {
     margin-left: 0;
   }
-  /* line 102, sass/partials/_responsive.scss */
+  /* line 105, sass/partials/_responsive.scss */
   .entry-content img.alignright,
   .entry-content .wp-caption.alignright {
     margin-right: 0;
   }
 }
 @media (max-width: 750px) {
-  /* line 112, sass/partials/_responsive.scss */
+  /* line 115, sass/partials/_responsive.scss */
   .site-header .site-info {
     float: none;
     width: 100%;
     text-align: center;
   }
-  /* line 117, sass/partials/_responsive.scss */
+  /* line 120, sass/partials/_responsive.scss */
   .site-header .site-info .site-title {
     font-size: 40px;
   }
-  /* line 122, sass/partials/_responsive.scss */
+  /* line 125, sass/partials/_responsive.scss */
   .site-header .sub-nav {
     float: none;
     clear: both;
@@ -6196,14 +6213,14 @@ object {
     margin: 0 auto;
     width: 260px;
   }
-  /* line 130, sass/partials/_responsive.scss */
+  /* line 133, sass/partials/_responsive.scss */
   .site-header .sub-nav .socials,
   .site-header .sub-nav .search-form {
     display: inline-block;
     float: none;
   }
 
-  /* line 146, sass/partials/_responsive.scss */
+  /* line 149, sass/partials/_responsive.scss */
   .site-footer .site-info .copyrights .credit,
   .site-footer .site-info .copyrights .poweredby {
     float: none;
@@ -6211,73 +6228,102 @@ object {
     text-align: center;
   }
 
-  /* line 156, sass/partials/_responsive.scss */
+  /* line 158, sass/partials/_responsive.scss */
   blockquote {
     margin: 16px 0;
   }
 
-  /* line 161, sass/partials/_responsive.scss */
-  .comment-body .comment-content {
-    width: 100%;
+  /* line 163, sass/partials/_responsive.scss */
+  .section-mini .section-title, .section-mini .section-comment .comment-respond .comment-reply-title, .section-comment .comment-respond .section-mini .comment-reply-title {
+    float: none;
+    width: auto;
+  }
+  /* line 167, sass/partials/_responsive.scss */
+  .section-mini .section-content {
+    width: auto;
+    float: none;
+    margin-left: 10px;
   }
 
-  /* line 167, sass/partials/_responsive.scss */
+  /* line 177, sass/partials/_responsive.scss */
+  .comment .comment-body .comment-metadata {
+    margin-top: 10px;
+  }
+  /* line 181, sass/partials/_responsive.scss */
+  .comment .comment-body .comment-awaiting-moderation,
+  .comment .comment-body .comment-content {
+    float: none;
+    width: 100%;
+    padding: 12px;
+  }
+
+  /* line 189, sass/partials/_responsive.scss */
+  .comment-body .comment-content {
+    font-size: 13.6px;
+  }
+
+  /* line 194, sass/partials/_responsive.scss */
+  .comment-list .children {
+    margin-left: 10px;
+  }
+
+  /* line 200, sass/partials/_responsive.scss */
   .error404 .page-title {
     padding: 20px;
   }
-  /* line 169, sass/partials/_responsive.scss */
+  /* line 202, sass/partials/_responsive.scss */
   .error404 .page-title:before {
     content: normal;
   }
 }
 @media (max-width: 390px) {
-  /* line 180, sass/partials/_responsive.scss */
+  /* line 213, sass/partials/_responsive.scss */
   .site-header .site-info {
     float: none;
     text-align: center;
   }
-  /* line 184, sass/partials/_responsive.scss */
+  /* line 217, sass/partials/_responsive.scss */
   .site-header .sub-nav {
     float: none;
   }
-  /* line 186, sass/partials/_responsive.scss */
+  /* line 219, sass/partials/_responsive.scss */
   .site-header .sub-nav .social {
     float: left;
   }
-  /* line 189, sass/partials/_responsive.scss */
+  /* line 222, sass/partials/_responsive.scss */
   .site-header .sub-nav .searchform {
     float: right;
   }
 
-  /* line 196, sass/partials/_responsive.scss */
+  /* line 229, sass/partials/_responsive.scss */
   .entry-content .align-right {
     float: none;
   }
 
-  /* line 203, sass/partials/_responsive.scss */
+  /* line 236, sass/partials/_responsive.scss */
   .site-footer .site-info .credit {
     display: block;
   }
 }
 @media print {
-  /* line 211, sass/partials/_responsive.scss */
+  /* line 244, sass/partials/_responsive.scss */
   body {
     background: none !important;
     color: #000;
     font-size: 10pt;
   }
 
-  /* line 217, sass/partials/_responsive.scss */
+  /* line 250, sass/partials/_responsive.scss */
   .site-title {
     font-size: 21pt;
   }
 
-  /* line 220, sass/partials/_responsive.scss */
+  /* line 253, sass/partials/_responsive.scss */
   .site-description {
     font-size: 10pt;
   }
 
-  /* line 239, sass/partials/_responsive.scss */
+  /* line 272, sass/partials/_responsive.scss */
   .search-form,
   .author-avatar,
   .site-footer,
@@ -6297,31 +6343,31 @@ object {
     display: none;
   }
 
-  /* line 244, sass/partials/_responsive.scss */
+  /* line 277, sass/partials/_responsive.scss */
   .page-title,
   .entry-title {
     font-size: 21pt;
   }
 
-  /* line 249, sass/partials/_responsive.scss */
+  /* line 282, sass/partials/_responsive.scss */
   .entry-meta,
   .entry-meta a {
     color: #444;
     font-size: 10pt;
   }
 
-  /* line 256, sass/partials/_responsive.scss */
+  /* line 289, sass/partials/_responsive.scss */
   .entry-content img.alignleft,
   .entry-content .wp-caption.alignleft {
     margin-left: 0;
   }
-  /* line 260, sass/partials/_responsive.scss */
+  /* line 293, sass/partials/_responsive.scss */
   .entry-content img.alignright,
   .entry-content .wp-caption.alignright {
     margin-right: 0;
   }
 
-  /* line 267, sass/partials/_responsive.scss */
+  /* line 300, sass/partials/_responsive.scss */
   .comment-body .comment-metadata,
   .comment-body .comment-awaiting-moderation,
   .comment-body .comment-content {

@@ -47,14 +47,11 @@
 }
 
 .comment {
-
   .comment-body {
-
     .comment-author {
       float: left;
       max-width: 74px;
     }
-
     .comment-metadata,
     .comment-awaiting-moderation,
     .comment-content {
@@ -62,7 +59,6 @@
       width: 80%;
       width: -webkit-calc(100% - 64px);
       width:         calc(100% - 64px);
-
     }
   }
 
@@ -99,18 +95,18 @@
     .comment-time {
       display: inline-block;
     }
-    .comment-time {
-      color: $comment-date-color;
-      font-style: normal;
-      font-weight: 300;
-    }
   }
 
   .comment-content {
     @include block-white(4px);
-    font-size:16px;
+    line-height: $line-height-large;
+    overflow-x: auto;
+    color: lighten($site-foreground-color, 10%);
     a {
       word-wrap: break-word;
+    }
+    > p:first-of-type {
+      margin-top: 0;
     }
     > p:last-of-type {
       margin-bottom: 0;
@@ -121,8 +117,6 @@
     display: block;
     width: 100%;
     @extend .comment-small;
-    color: $comment-date-color;
-
     &:before {
       font-family: FontAwesome;
       content: $fa-var-exclamation-triangle;

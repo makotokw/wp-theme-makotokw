@@ -27,7 +27,7 @@
 		<div class="section section-mini section-last-updated">
 			<h2 class="section-title"><?php _e('Last Updated', 'makotokw');?></h2>
 			<div class="section-content"><?php printf( __( '<time class="updated" datetime="%1$s">%2$s</time>', 'makotokw' ),
-					esc_attr( get_the_modified_date( 'c' ) ), get_the_modified_date('Y.m.d')) ;?></div>
+					esc_attr( get_the_modified_date( 'c' ) ), get_the_modified_date(THEME_DATE_FORMAT)) ;?></div>
 		</div>
 
 		<?php if (!is_preview()): ?>

@@ -14,7 +14,8 @@ module.exports = function(grunt) {
 			},
 			dev: {
 				options: {
-					environment: 'development'
+					environment: 'development',
+					force: true
 				}
 			}
 		},
