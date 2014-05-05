@@ -624,8 +624,16 @@ function makotokw_inline_archives($args = '')
 	$base_url = '/';
 	$defaults = array('before_year' => '', 'after_year' => '', 'year_format' => 'Y', 'month_format' => 'n', 'echo' => 1);
 	$args = wp_parse_args($args, $defaults);
+	/**
+	 * @var string $before_year
+	 * @var string $after_year
+	 * @var string $year_format
+	 * @var string $month_format
+	 * @var int $echo
+	 */
 	$archives = explode("\n", wp_get_archives(array_merge($args, (array('echo' => 0)))));
 	extract($args, EXTR_SKIP);
+	$now = time();
 	$years = array();
 	foreach ($archives as $a) {
 		if (preg_match('/\/([0-9]{4})\/([0-9]{2})\//', $a, $matches)) {
@@ -640,14 +648,19 @@ function makotokw_inline_archives($args = '')
 		}
 	}
 	$output = '<ul class="list-archives list-archives-year">';
-	foreach ($years as $year => $monthes) {
+	foreach ($years as $year => $months) {
 		$label = date($year_format, mktime(0, 0, 0, 1, 1, $year));
 		$url = '/' . $year . '/';
 		$output .= '<li class="list-archives-item list-archives-item-year"><a href="' . $url . '">' . $before_year . $label . $after_year . '</a><ul class="list-archives  list-archives-month">';
 
 		for ($month = 1; $month <= 12; $month++) {
-			if (is_null($monthes[$month])) {
-				$output .= '<li class="list-archives-item list-archives-item-month list-archives-item-month-no-items"><span>' . $month . '</span></li>';
+			if (is_null(@$months[$month])) {
+				$no_month_cls = ' list-archives-item-month-no-items';
+				$month_time = mktime(0, 0, 0, $month, 1, $year);
+				if ($month_time > $now) {
+					$no_month_cls .= ' list-archives-item-month-no-items-future';
+				}
+				$output .= '<li class="list-archives-item list-archives-item-month' . $no_month_cls .'"><span>' . $month . '</span></li>';
 			} else {
 				$url = sprintf('%s%04d/%02d/', $base_url, $year, $month);
 				$output .= '<li class="list-archives-item list-archives-item-month"><a href="' . $url . '">' . $month . '</a></li>';

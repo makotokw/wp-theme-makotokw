@@ -163,16 +163,15 @@
   }
 
   .list-archives-item-month-no-items {
-
-    &:hover {
-      span {
-        background-color: $silver;
-      }
-    }
     span {
       @extend %circle-btn;
       margin: 0;
       background-color: $silver;
+    }
+  }
+  .list-archives-item-month-no-items.list-archives-item-month-no-items-future {
+    span {
+      background-color: lighten($silver, 15%);
     }
   }
 }
