@@ -41,32 +41,15 @@
     list-style: none;
     padding-left: 0;
 
+    li {
+    }
+
     .entry-header {
       .entry-title {
         font-size: 26px;
-        margin: 0px;
         display: block;
       }
     }
-
-    li {
-      padding: 5px 0;
-      margin: 0;
-    }
-
-//    time {
-//      @extend %time-label;
-//      background-color: $concrete;
-//    }
-//
-//    .cat-links {
-//      margin-left: 10px;
-//      a {
-//        @extend .btn;
-//        float: none;
-//        text-transform: uppercase;
-//      }
-//    }
   }
 }
 
@@ -121,13 +104,6 @@
       text-align: center;
     }
   }
-}
-
-.section-page-archive {
-//  background-color: $siteDarkAccentColor;
-//  .section-title {
-//    color: $white;
-//  }
 }
 
 .list-archives {

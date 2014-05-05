@@ -4428,7 +4428,7 @@ li > ol {
   }
 }
 /* line 2, sass/partials/_button.scss */
-.btn, .pagination ul .current .page, .pagination a, .navigation-comment a, .list-archives .list-archives-item-month a, .list-archives .list-archives-item-month-no-items span, .list-archives .list-archives-item-month-no-items.list-archives-item-month-no-items-future span, .section-page-category .list-category li a, .list-archives .list-archives-item-year > a {
+.btn, .pagination ul .current .page, .pagination a, .navigation-comment a, .list-archives .list-archives-item-month a, .list-archives .list-archives-item-month-no-items span, .section-page-category .list-category li a, .list-archives .list-archives-item-year > a {
   margin: 0 10px 0 0;
   display: inline-block;
   float: left;
@@ -5831,7 +5831,7 @@ object {
 }
 
 /* line 2, sass/partials/_home.scss */
-.list-archives .list-archives-item-month a, .list-archives .list-archives-item-month-no-items span, .list-archives .list-archives-item-month-no-items.list-archives-item-month-no-items-future span {
+.list-archives .list-archives-item-month a, .list-archives .list-archives-item-month-no-items span {
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
@@ -5885,66 +5885,60 @@ object {
   list-style: none;
   padding-left: 0;
 }
-/* line 45, sass/partials/_home.scss */
+/* line 48, sass/partials/_home.scss */
 .section-page-entry .list-entries .entry-header .entry-title {
   font-size: 26px;
-  margin: 0px;
   display: block;
 }
-/* line 52, sass/partials/_home.scss */
-.section-page-entry .list-entries li {
-  padding: 5px 0;
-  margin: 0;
-}
 
-/* line 73, sass/partials/_home.scss */
+/* line 56, sass/partials/_home.scss */
 .section-page-category {
   background-color: #01a3b2;
   background-color: #3e5771;
 }
-/* line 78, sass/partials/_home.scss */
+/* line 61, sass/partials/_home.scss */
 .section-page-category .list-category {
   list-style: none;
   padding: 0;
 }
-/* line 82, sass/partials/_home.scss */
+/* line 65, sass/partials/_home.scss */
 .section-page-category .list-category li {
   display: inline;
 }
-/* line 84, sass/partials/_home.scss */
+/* line 67, sass/partials/_home.scss */
 .section-page-category .list-category li a {
   display: inline-block;
   margin: 5px;
   float: none;
 }
-/* line 92, sass/partials/_home.scss */
+/* line 75, sass/partials/_home.scss */
 .section-page-category .list-category .children {
   display: inline;
   list-style: none;
   padding: 0;
 }
 
-/* line 99, sass/partials/_home.scss */
+/* line 82, sass/partials/_home.scss */
 .section-page-about {
   background-color: #01a3b2;
   color: white;
 }
-/* line 102, sass/partials/_home.scss */
+/* line 85, sass/partials/_home.scss */
 .section-page-about a {
   color: #3e5771;
 }
-/* line 106, sass/partials/_home.scss */
+/* line 89, sass/partials/_home.scss */
 .section-page-about .list-history {
   list-style: none;
   padding-left: 0;
 }
-/* line 110, sass/partials/_home.scss */
+/* line 93, sass/partials/_home.scss */
 .section-page-about .list-history li {
   padding: 5px 0;
   margin: 0;
   line-height: 2;
 }
-/* line 116, sass/partials/_home.scss */
+/* line 99, sass/partials/_home.scss */
 .section-page-about .list-history time {
   padding: 0;
   width: 120px;
@@ -5952,49 +5946,48 @@ object {
   text-align: center;
 }
 
-/* line 133, sass/partials/_home.scss */
+/* line 109, sass/partials/_home.scss */
 .list-archives {
   padding: 0;
   list-style: none;
 }
-/* line 140, sass/partials/_home.scss */
+/* line 116, sass/partials/_home.scss */
 .list-archives .list-archives-item-year {
   display: block;
   margin: 10px auto;
 }
-/* line 143, sass/partials/_home.scss */
+/* line 119, sass/partials/_home.scss */
 .list-archives .list-archives-item-year > a {
   margin-bottom: 5px;
   float: none;
 }
-/* line 150, sass/partials/_home.scss */
+/* line 126, sass/partials/_home.scss */
 .list-archives .list-archives-month {
   display: inline-block;
   padding-left: 5px;
   padding-right: 5px;
 }
-/* line 156, sass/partials/_home.scss */
+/* line 132, sass/partials/_home.scss */
 .list-archives .list-archives-item-month {
   display: inline-block;
   padding: 5px;
 }
-/* line 159, sass/partials/_home.scss */
+/* line 135, sass/partials/_home.scss */
 .list-archives .list-archives-item-month a {
   margin: 0;
 }
-/* line 166, sass/partials/_home.scss */
+/* line 142, sass/partials/_home.scss */
 .list-archives .list-archives-item-month-no-items span {
   margin: 0;
   background-color: #bdc3c7;
 }
-/* line 173, sass/partials/_home.scss */
+/* line 149, sass/partials/_home.scss */
 .list-archives .list-archives-item-month-no-items.list-archives-item-month-no-items-future span {
-  margin: 0;
   background-color: #e6e9ea;
 }
 
 @media (min-width: 930px) {
-  /* line 187, sass/partials/_home.scss */
+  /* line 161, sass/partials/_home.scss */
   .list-archives .list-archives-item-month {
     padding-left: 10px;
     padding-right: 10px;
