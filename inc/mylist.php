@@ -48,14 +48,14 @@ function get_mylist($post)
 	return null;
 }
 
-function mylist_pre_get_posts($query)
-{
-	if (is_mylist()) {
-		$query->set('order', 'ASC');
-	}
-}
-
-add_action('pre_get_posts', 'mylist_pre_get_posts');
+//function mylist_pre_get_posts($query)
+//{
+//	if (is_mylist()) {
+//		$query->set('order', 'ASC');
+//	}
+//}
+//
+//add_action('pre_get_posts', 'mylist_pre_get_posts');
 
 function get_first_post_on_mylist($post)
 {
