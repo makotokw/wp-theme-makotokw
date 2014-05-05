@@ -18,31 +18,40 @@ get_header(); ?>
 						<h1 class="page-title">
 							<?php
 							if (is_category()) :
-								printf(__('Category Archives: %s', 'makotokw'), '<span>' . single_cat_title('', false) . '</span>');
+								echo '<i class="fa fa-folder"></i> '
+									. sprintf(__('Category Archives: %s', 'makotokw'), '<span>' . single_cat_title('', false) . '</span>');
 
 							elseif (is_tag()) :
-								printf(__('Tag Archives: %s', 'makotokw'), '<span>' . single_tag_title('', false) . '</span>');
+								echo '<i class="fa fa-tag"></i> '
+									. sprintf(__('Tag Archives: %s', 'makotokw'), '<span>' . single_tag_title('', false) . '</span>');
 
 							elseif (is_day()) :
-								printf(__('Daily Archives: %s', 'makotokw'), '<span>' . get_the_date() . '</span>');
+								echo '<i class="fa fa-calendar"></i> '
+									. sprintf(__('Daily Archives: %s', 'makotokw'), '<span>' . get_the_date() . '</span>');
 
 							elseif (is_month()) :
-								printf(__('Monthly Archives: %s', 'makotokw'), '<span>' . get_the_date('F Y') . '</span>');
+								echo '<i class="fa fa-calendar"></i> '
+									. sprintf(__('Monthly Archives: %s', 'makotokw'), '<span>' . get_the_date('F Y') . '</span>');
 
 							elseif (is_year()) :
-								printf(__('Yearly Archives: %s', 'makotokw'), '<span>' . get_the_date('Y') . '</span>');
+								echo '<i class="fa fa-calendar"></i> '
+									. sprintf(__('Yearly Archives: %s', 'makotokw'), '<span>' . get_the_date('Y') . '</span>');
 
 							elseif (is_tax('mylist')) :
-								printf(__('%s', 'makotokw'), '<span>' . single_term_title('', false) . '</span>');
+								echo '<i class="fa fa-list-alt"></i> '
+									. sprintf(__('%s', 'makotokw'), '<span>' . single_term_title('', false) . '</span>');
 
 							elseif (is_tax('blogs')) :
-								printf(__('Blog Archives: %s', 'makotokw'), '<span>' . single_term_title('', false) . '</span>');
+								echo '<i class="fa fa-folder"></i> '
+									. sprintf(__('Blog Archives: %s', 'makotokw'), '<span>' . single_term_title('', false) . '</span>');
 
 							elseif (is_tax('portfolios')) :
-								printf(__('Portfolio Archives: %s', 'makotokw'), '<span>' . single_term_title('', false) . '</span>');
+								echo '<i class="fa fa-folder"></i> '
+									. sprintf(__('Portfolio Archives: %s', 'makotokw'), '<span>' . single_term_title('', false) . '</span>');
 
 							else :
-								_e('Archives', 'makotokw');
+								echo '<i class="fa fa-folder"></i> '
+									. _('Archives', 'makotokw');
 
 							endif;
 							?>
