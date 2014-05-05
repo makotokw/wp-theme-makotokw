@@ -81,25 +81,27 @@ function makotokw_list_nav()
 		$mylist_link = get_term_link($mylist, 'mylist');
 
 		?>
-		<div class="section section-mini">
+		<div class="section section-mini section-mylist">
 			<h2 class="section-title">List</h2>
 
 			<div class="section-content">
+				<?php if (!is_wp_error($mylist_link)): ?>
+					<i class="fa fa-list-alt"></i> <a href="<?= $mylist_link ?>"><?= $mylist->name ?></a>
+				<?php endif ?>
+				<ul>
 				<?php if ($first_post): ?>
-					最初→&nbsp;<a href="<?php echo get_permalink($first_post) ?>"
-								rel="prev"><?php echo get_the_title($first_post) ?></a>&nbsp;
+					<li><i class="fa fa-angle-double-left"></i>&nbsp;<a href="<?php echo get_permalink($first_post) ?>"
+								rel="prev"><?php echo get_the_title($first_post) ?></a></li>
 				<?php endif ?>
 				<?php if ($prev_post): ?>
-					前→&nbsp;<a href="<?php echo get_permalink($prev_post) ?>"
-								rel="prev"><?php echo get_the_title($prev_post) ?></a>&nbsp;
+					<li><i class="fa fa-angle-left"></i>&nbsp;<a href="<?php echo get_permalink($prev_post) ?>"
+								rel="prev"><?php echo get_the_title($prev_post) ?></a></li>
 				<?php endif ?>
 				<?php if ($next_post): ?>
-					次→&nbsp;<a href="<?php echo get_permalink($next_post) ?>"
-								rel="prev"><?php echo get_the_title($next_post) ?></a>&nbsp;
+					<li><i class="fa fa-angle-right"></i>&nbsp;<a href="<?php echo get_permalink($next_post) ?>"
+								rel="prev"><?php echo get_the_title($next_post) ?></a></li>
 				<?php endif ?>
-				<?php if (!is_wp_error($mylist_link)): ?>
-					マイリスト→&nbsp;<a href="<?= $mylist_link ?>"><?= $mylist->name ?></a>&nbsp;
-				<?php endif ?>
+				</ul>
 			</div>
 		</div>
 	<?php

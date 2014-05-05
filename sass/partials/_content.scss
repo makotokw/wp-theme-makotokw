@@ -223,6 +223,20 @@ object {
   }
 }
 
+/* =Mylist
+----------------------------------------------- */
+.section-mylist {
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 10px;
+    li {
+      list-style: none;
+    }
+  }
+}
+
 /* =Related Posts
 ----------------------------------------------- */
 .section-related-posts {
