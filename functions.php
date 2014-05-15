@@ -46,11 +46,6 @@ function makotokw_setup()
 	load_theme_textdomain('makotokw', get_template_directory() . '/languages');
 
 	/**
-	 * Disable XML RPC
-	 */
-	add_filter('xmlrpc_enabled', '__return_false');
-
-	/**
 	 * Add default posts and comments RSS feed links to head
 	 */
 	add_theme_support('automatic-feed-links');
