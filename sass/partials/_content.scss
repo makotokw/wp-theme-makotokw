@@ -110,6 +110,13 @@
     padding-bottom: 5px;
     border-bottom: solid 1px $site-border-color;
   }
+
+  img {
+    padding: 4px;
+    background-color: #fff;
+    border: 1px solid $site-border-color;
+    @include border-radius($border-radius-base);
+  }
 }
 
 .entry-content,
