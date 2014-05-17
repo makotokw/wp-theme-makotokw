@@ -305,6 +305,14 @@ function makotokw_posted_on() {
 	);
 }
 
+function makotokw_the_content_more_link($link) {
+	if (preg_match('/href="([^"]+)"/',$link, $match)) {
+		return '<a class="btn more-link" href="' . $match[1] . '">続きを読む</a>';
+	}
+	return $link;
+}
+add_filter('the_content_more_link', 'makotokw_the_content_more_link');
+
 function makotokw_post_summary($content, $length = 50, $trimmarker = '...') {
 	if (class_exists('PukiWiki_for_WordPress')) {
 		$pukiwiki = PukiWiki_for_WordPress::getInstance();
