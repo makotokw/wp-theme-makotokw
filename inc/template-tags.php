@@ -319,7 +319,7 @@ function makotokw_post_summary($content, $length = 50, $trimmarker = '...') {
 		$content = $pukiwiki->the_content($content);
 	}
 	if (class_exists('WP_GFM')) {
-		$gfm = WP_GFM::getInstance();
+		$gfm = WP_GFM::get_instance();
 		$content = $gfm->the_content($content);
 	}
 	return mb_strimwidth(strip_tags(strip_shortcodes($content)), 0, 128) . '...';
