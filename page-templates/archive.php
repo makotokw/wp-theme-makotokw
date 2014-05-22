@@ -8,15 +8,17 @@ $offset = 0;
 if ( $paged != 0 ) {
 	$offset = ($paged - 1) * get_query_var( 'posts_per_page' );
 }
-query_posts( 'post_type=post&offset=' . $offset );
-$GLOBALS['wp_query']->is_archive = true;?>
+$query = new WP_Query( 'post_type=post&offset=' . $offset );
+// hack: for is_home()
+$query->is_archive   = true;
+$GLOBALS['wp_query'] = $query;?>
 
 <?php include __DIR__ . '/header.php'; ?>
 
-	<?php if ( have_posts() ) : ?>
+	<?php if ( $query->have_posts() ) : ?>
 
 		<?php /* Start the Loop */ ?>
-		<?php while ( have_posts() ) : the_post(); ?>
+		<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
 			<?php
 			/* Include the Post-Format-specific template for the content.
