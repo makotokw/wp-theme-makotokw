@@ -28,7 +28,7 @@ function makotokw_content_nav( $nav_id ) {
 	$nav_class = (is_single()) ? 'navigation-post' : 'navigation-paging';
 
 	?>
-	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>">
+	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo esc_attr( $nav_class ); ?>">
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'makotokw' ); ?></h1>
 
 		<?php if ( is_single() ) : // navigation links for single posts ?>
@@ -130,7 +130,11 @@ function makotokw_pagination( $pages = '', $range = 3 ) {
 		}
 		for ( $i = 1; $i <= $pages; $i++ ) {
 			if ( 1 != $pages && ( ! ($i >= $paged + $range + 1 || $i <= $paged - $range - 1) || $pages <= $showitems) ) {
-				echo ($paged == $i) ? '<li class="current"><span class="page">' . $i . '</span></li>' : '<li><a rel="nofollow" href="' . get_pagenum_link( $i ) . '" class="inactive">' . $i . '</a></li>';
+				if ( $paged == $i ) {
+					echo '<li class="current"><span class="page">' . $i . '</span></li>';
+				} else {
+					echo '<li><a rel="nofollow" href="' . get_pagenum_link( $i ) . '" class="inactive">' . $i . '</a></li>';
+				}
 			}
 		}
 		if ( $paged < $pages ) {
@@ -343,14 +347,14 @@ function makotokw_share_this() {
 		<h2 class="section-title"><?php _e( 'Share This', 'makotokw' ); ?></h2>
 		<div class="section-content">
 			<div class="share-item share-item-twitter">
-			<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo $permalink; ?>" data-text="<?php the_title(); ?>" data-via="makoto_kw" data-lang="en">Tweet</a>
+			<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?= $permalink; ?>" data-text="<?php the_title(); ?>" data-via="makoto_kw" data-lang="en">Tweet</a>
 			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 			</div>
 			<div class="share-item share-item-hatena-bookmark">
-			<a href="http://b.hatena.ne.jp/entry/<?php echo $permalink; ?>" class="hatena-bookmark-button" data-hatena-bookmark-title="<?php the_title(); ?>｜<?php bloginfo( 'name' ); ?>" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="en" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+			<a href="http://b.hatena.ne.jp/entry/<?= $permalink; ?>" class="hatena-bookmark-button" data-hatena-bookmark-title="<?php the_title(); ?>｜<?php bloginfo( 'name' ); ?>" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="en" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 			</div>
 			<div class="share-item share-item-pocket">
-			<a data-pocket-label="pocket"  data-save-url="<?php echo $permalink; ?>" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a>
+			<a data-pocket-label="pocket"  data-save-url="<?= $permalink; ?>" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a>
 			<script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
 			</div>
 		<div class="share-item share-item-google-plus"">
@@ -364,7 +368,7 @@ function makotokw_share_this() {
 			</script>
 		</div>
 		<div class="share-item share-item-facebook-like">
-			<iframe src="//www.facebook.com/plugins/like.php?href=<?php echo $permalink; ?>&amp;send=false&amp;layout=button_count&amp;width=110&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=verdana&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
+			<iframe src="//www.facebook.com/plugins/like.php?href=<?= $permalink; ?>&amp;send=false&amp;layout=button_count&amp;width=110&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=verdana&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
 		</div>
 	</div>
 	</div>
@@ -488,7 +492,7 @@ function makotokw_related_posts( $arg = array() ) {
 			</div>
 		</aside>
 	<?php endif;
-	wp_reset_query();
+	wp_reset_postdata();
 }
 
 function makotokw_related_portfolio() {
@@ -519,7 +523,7 @@ function makotokw_related_portfolio() {
 			</section>
 		<?php
 		endif;
-		wp_reset_query();
+		wp_reset_postdata();
 	endif;
 }
 
@@ -586,7 +590,7 @@ function makotokw_the_category_slug( $separator = '', $post_id = false ) {
 function makotokw_section_category_and_tag( $title = 'Tag' ) {
 	?>
 	<section class="section section-mini section-category-tag">
-		<h2 class="section-title"><?php echo $title ?></h2>
+		<h2 class="section-title"><?= esc_html( $title ) ?></h2>
 		<div class="section-content">
 			<?php makotokw_the_category_and_tag(); ?></a>
 		</div>
