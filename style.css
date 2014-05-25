@@ -4644,6 +4644,10 @@ input[type="color"]:focus,
   color: white;
   background-color: #1fadd7;
 }
+/* line 22, sass/partials/_breadcrumb.scss */
+.breadcrumb .breadcrumb-last {
+  margin-left: 5px;
+}
 
 /* line 2, sass/partials/_pagination.scss */
 .pagination ul .current .page, .pagination a, .navigation-comment a {

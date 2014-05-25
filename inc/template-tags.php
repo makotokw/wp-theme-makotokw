@@ -184,7 +184,7 @@ function makotokw_breadcrumbs() {
 		$divider = '&nbsp;<i class="fa fa-chevron-right"></i>&nbsp;';
 		?>
 		<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="breadcrumb">
-		<a href="<?= esc_url( home_url( '/' ) ) ?>"><i class="fa fa-home"></i> Home</a><?= $divider ?>
+		<a href="<?= esc_url( home_url( '/' ) ) ?>"><i class="fa fa-home"></i></a><?= $divider ?>
 		<?php if ( is_category() ) : $term = $wp_query->get_queried_object(); ?>
 			<a href="/categories/" itemprop="url"><span itemprop="title"><?php _e( 'Categories', 'makotokw' ) ?></span></a><?= $divider ?>
 			<?php if ( $term->parent > 0 ) : ?>
