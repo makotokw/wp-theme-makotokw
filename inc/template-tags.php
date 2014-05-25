@@ -28,7 +28,7 @@ function makotokw_content_nav( $nav_id ) {
 	$nav_class = (is_single()) ? 'navigation-post' : 'navigation-paging';
 
 	?>
-	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo esc_attr( $nav_class ); ?>">
+	<nav role="navigation" id="<?= esc_attr( $nav_id ); ?>" class="<?= esc_attr( $nav_class ); ?>">
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'makotokw' ); ?></h1>
 
 		<?php if ( is_single() ) : // navigation links for single posts ?>
@@ -59,7 +59,7 @@ function makotokw_content_nav( $nav_id ) {
 			</div>
 		<?php endif; ?>
 
-	</nav><!-- #<?php echo esc_html( $nav_id ); ?> -->
+	</nav><!-- #<?= esc_html( $nav_id ); ?> -->
 	<?php
 }
 
@@ -90,14 +90,14 @@ function makotokw_list_nav() {
 				<ul>
 					<?php if ( $first_post ): ?>
 						<li><i class="fa fa-angle-double-left"></i>&nbsp;<a
-								href="<?php echo get_permalink( $first_post ) ?>"
-								rel="prev"><?php echo get_the_title( $first_post ) ?></a></li>
+								href="<?= get_permalink( $first_post ) ?>"
+								rel="prev"><?= get_the_title( $first_post ) ?></a></li>
 					<?php endif ?>
 					<?php if ( $prev_post ): ?>
-						<li><i class="fa fa-angle-left"></i>&nbsp;<a href="<?php echo get_permalink( $prev_post ) ?>" rel="prev"><?php echo get_the_title( $prev_post ) ?></a></li>
+						<li><i class="fa fa-angle-left"></i>&nbsp;<a href="<?= get_permalink( $prev_post ) ?>" rel="prev"><?= get_the_title( $prev_post ) ?></a></li>
 					<?php endif ?>
 					<?php if ( $next_post ): ?>
-						<li><i class="fa fa-angle-right"></i>&nbsp;<a href="<?php echo get_permalink( $next_post ) ?>" rel="prev"><?php echo get_the_title( $next_post ) ?></a></li>
+						<li><i class="fa fa-angle-right"></i>&nbsp;<a href="<?= get_permalink( $next_post ) ?>" rel="prev"><?= get_the_title( $next_post ) ?></a></li>
 					<?php endif ?>
 				</ul>
 			</div>
@@ -121,29 +121,31 @@ function makotokw_pagination( $pages = '', $range = 3 ) {
 		}
 	}
 	if ( 1 != $pages ) {
-		echo '<div class="pagination"><ul>';
-		if ( $paged > 2 && $paged > $range + 1 && $showitems < $pages ) {
-			echo '<li><a rel="nofollow" href="' . get_pagenum_link( 1 ) . '">&laquo; ' . __( 'First', 'makotokw' ) . '</a></li>';
-		}
-		if ( $paged > 1 ) {
-			echo '<li><a rel="nofollow" href="' . get_pagenum_link( $paged - 1 ) . '" class="inactive">&lsaquo; ' . __( 'Previous', 'makotokw' ) . '</a></li>';
-		}
-		for ( $i = 1; $i <= $pages; $i++ ) {
-			if ( 1 != $pages && ( ! ($i >= $paged + $range + 1 || $i <= $paged - $range - 1) || $pages <= $showitems) ) {
-				if ( $paged == $i ) {
-					echo '<li class="current"><span class="page">' . $i . '</span></li>';
-				} else {
-					echo '<li><a rel="nofollow" href="' . get_pagenum_link( $i ) . '" class="inactive">' . $i . '</a></li>';
-				}
-			}
-		}
-		if ( $paged < $pages ) {
-			echo '<li><a rel="nofollow" href="' . get_pagenum_link( $paged + 1 ) . '" class="inactive">' . __( 'Next', 'makotokw' ) . ' &rsaquo;</a></li>';
-		}
-		if ( $paged < $pages - 1 && $paged + $range - 1 < $pages && $showitems < $pages ) {
-			echo '<a rel="nofollow" class="inactive" href="' . get_pagenum_link( $pages ) . '">' . __( 'Last', 'makotokw' ) . ' &raquo;</a>';
-		}
-		echo '</ul></div>';
+		?>
+		<div class="pagination"><ul>
+		<?php if ( $paged > 2 && $paged > $range + 1 && $showitems < $pages ) : ?>
+			<li><a rel="nofollow" href="<?= get_pagenum_link( 1 ) ?>">&laquo; <?php __( 'First', 'makotokw' ) ?></a></li>
+		<?php endif ?>
+		<?php if ( $paged > 1 ) : ?>
+			<li><a rel="nofollow" href="<?= get_pagenum_link( $paged - 1 ) ?>" class="inactive">&lsaquo; <?php __( 'Previous', 'makotokw' ) ?></a></li>
+		<?php endif ?>
+		<?php for ( $i = 1; $i <= $pages; $i++ ) : ?>
+			<?php if ( 1 != $pages && ( ! ($i >= $paged + $range + 1 || $i <= $paged - $range - 1) || $pages <= $showitems) ) : ?>
+				<?php if ( $paged == $i ) : ?>
+					<li class="current"><span class="page"><?= $i ?></span></li>
+				<? else : ?>
+					<li><a rel="nofollow" href="<?= get_pagenum_link( $i ) ?>" class="inactive"><?= $i ?></a></li>
+				<? endif ?>
+			<?php endif ?>
+		<?php endfor ?>
+		<?php if ( $paged < $pages ) : ?>
+			<li><a rel="nofollow" href="<?= get_pagenum_link( $paged + 1 ) ?>" class="inactive"><?php __( 'Next', 'makotokw' ) ?> &rsaquo;</a></li>
+		<?php endif ?>
+		<?php if ( $paged < $pages - 1 && $paged + $range - 1 < $pages && $showitems < $pages ) : ?>
+			<a rel="nofollow" class="inactive" href="<?= get_pagenum_link( $pages ) ?>"><?php __( 'Last', 'makotokw' ) ?> &raquo;</a>
+		<?php endif ?>
+		</ul></div>
+		<?php
 	}
 }
 
@@ -157,7 +159,7 @@ function makotokw_google_analytics() {
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-		ga('create', '<?php echo WP_THEME_GOOGLE_ANALYTICS_ACCOUNT; ?>', '<?php echo WP_THEME_GOOGLE_ANALYTICS_DOMAIN; ?>');
+		ga('create', '<?= WP_THEME_GOOGLE_ANALYTICS_ACCOUNT; ?>', '<?= WP_THEME_GOOGLE_ANALYTICS_DOMAIN; ?>');
 		ga('send', 'pageview');
 	</script>
 	<?php
@@ -168,7 +170,7 @@ function makotokw_itunes_affiliate_script() {
 		return;
 	}
 	?>
-	<script type='text/javascript'>var _merchantSettings=_merchantSettings || [];_merchantSettings.push(['AT', '<?php echo WP_THEME_ITUNES_AFFILIATE_ID ?>']);(function(){var autolink=document.createElement('script');autolink.type='text/javascript';autolink.async=true; autolink.src= ('https:' == document.location.protocol) ? 'https://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js' : 'http://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(autolink, s);})();</script>
+	<script type='text/javascript'>var _merchantSettings=_merchantSettings || [];_merchantSettings.push(['AT', '<?= WP_THEME_ITUNES_AFFILIATE_ID ?>']);(function(){var autolink=document.createElement('script');autolink.type='text/javascript';autolink.async=true; autolink.src= ('https:' == document.location.protocol) ? 'https://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js' : 'http://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(autolink, s);})();</script>
 	<?php
 }
 
@@ -179,68 +181,63 @@ function makotokw_breadcrumbs() {
 	global $wp_query;
 
 	if ( ! is_home() ) {
-
 		$divider = '&nbsp;<i class="fa fa-chevron-right"></i>&nbsp;';
-
-		echo '<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="breadcrumb">';
-
-
-		// Add the Home link
-		echo '<a href="' . esc_url( home_url( '/' ) ) . '"><i class="fa fa-home"></i> Home</a>' . $divider;
-
-		if ( is_category() ) {
-			echo '<a href="/categories/" itemprop="url"><span itemprop="title">' . __( 'Categories', 'makotokw' ) . '</span></a>' . $divider;
-			$term = $wp_query->get_queried_object();
-			if ( $term->parent > 0 ) {
-				echo makotokw_breadcrumbs_category_parents( $term->parent, $divider );
-			}
-			echo '<span itemprop="title">' . single_cat_title( '', false ) . '</span>';
-		} else if ( is_tag() ) {
-			echo '<a href="/tags/" itemprop="url"><span itemprop="title">' . __( 'Tags', 'makotokw' ) . '</a>' . $divider;
-			echo single_tag_title( '', false );
-		} elseif ( is_mylist() ) {
-			echo '  ' . __( 'Mylist', 'makotokw' );
-		} elseif ( is_archive() ) {
-			if ( is_tax( 'blogs' ) ) {
-				echo '<span itemprop="title">' . __( 'Blog', 'makotokw' ) . '</span>' . $divider;
-				echo '<span itemprop="title">' . single_cat_title( '', false ) . '</span>';
-			} elseif ( is_tax( 'portfolios' ) ) {
-				echo '<span itemprop="title">' . __( 'Portfolio', 'makotokw' ) . '</span>' . $divider;
-				echo '<span itemprop="title">' . single_cat_title( '', false ) . '</span>';
-			} else {
-				echo '  ' . __( 'Archives', 'makotokw' );
-			}
-		} elseif ( is_search() ) {
-			echo '  ' . __( 'Search Results', 'makotokw' );
-		} elseif ( is_404() ) {
-			echo '  ' . __( '404 Not Found', 'makotokw' );
-		} elseif ( is_single() ) {
-			$category = get_the_category();
-			if ( is_array( $category ) && count( $category ) > 0 ) {
-				echo '<a href="/categories/" itemprop="url"><span itemprop="title">' . __( 'Categories', 'makotokw' ) . '</span></a>' . $divider;
-				$category_id = get_cat_ID( $category[0]->cat_name );
-				echo makotokw_breadcrumbs_category_parents( $category_id, $divider );
-			}
-			echo the_title( '', '', false );
-		} elseif ( is_page() ) {
-			$post = $wp_query->get_queried_object();
-			if ( $post->post_parent == 0 ) {
-				echo the_title( '', '', false );
-			} else {
+		?>
+		<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="breadcrumb">
+		<a href="<?= esc_url( home_url( '/' ) ) ?>"><i class="fa fa-home"></i> Home</a><?= $divider ?>
+		<?php if ( is_category() ) : $term = $wp_query->get_queried_object(); ?>
+			<a href="/categories/" itemprop="url"><span itemprop="title"><?php _e( 'Categories', 'makotokw' ) ?></span></a><?= $divider ?>
+			<?php if ( $term->parent > 0 ) : ?>
+				 <?= makotokw_breadcrumbs_category_parents( $term->parent, $divider ); ?>
+			<?php endif; ?>
+			<span itemprop="title"><?= single_cat_title( '', false ) ?></span>
+		<?php elseif ( is_tag() ) :?>
+			<a href="/tags/" itemprop="url"><span itemprop="title"><?php _e( 'Tags', 'makotokw' ) ?></a><?= $divider ?>
+			<span class="breadcrumb-last"><?= single_tag_title( '', false ) ?></span>
+		<?php elseif ( is_mylist() ): ?>
+			<span class="breadcrumb-last"><?php _e( 'Mylist', 'makotokw' ) ?></span>
+		<?php elseif ( is_archive() ) : ?>
+			<?php if ( is_tax( 'blogs' ) ) : ?>
+				<span itemprop="title"><?php _e( 'Blog', 'makotokw' ) ?></span><?= $divider ?>
+				<span itemprop="title"><?= single_cat_title( '', false ) ?></span>
+			<?php elseif ( is_tax( 'portfolios' ) ) : ?>
+				<span itemprop="title"><?php _e( 'Portfolio', 'makotokw' ) ?></span><?= $divider ?>
+				<span itemprop="title"><?= single_cat_title( '', false ) ?></span>
+			<?php else : ?>
+				<span class="breadcrumb-last"><?php _e( 'Archives', 'makotokw' ) ?></span>
+			<?php endif ?>
+		<?php elseif ( is_search() ) : ?>
+			<span class="breadcrumb-last"><?php _e( 'Search Results', 'makotokw' ) ?></span>
+		<?php elseif ( is_404() ) : ?>
+			<span class="breadcrumb-last"><?php _e( '404 Not Found', 'makotokw' ) ?></span>
+		<?php elseif ( is_single() ) : $category = get_the_category(); ?>
+			<?php if ( is_array( $category ) && count( $category ) > 0 ) : $category_id = get_cat_ID( $category[0]->cat_name ); ?>
+				<a href="/categories/" itemprop="url"><span itemprop="title"><?php _e( 'Categories', 'makotokw' ) ?></span></a><?= $divider ?>
+				<?= makotokw_breadcrumbs_category_parents( $category_id, $divider ); ?>
+			<?php endif ?>
+			<span class="breadcrumb-last"><?= the_title( '', '', false ) ?></span>
+		<?php elseif ( is_page() ) : $post = $wp_query->get_queried_object(); ?>
+			<?php if ( $post->post_parent == 0 ) : ?>
+				<span class="breadcrumb-last"><?= the_title( '', '', false ) ?></span>
+			<?php else : ?>
+				<?php
 				$ancestors = array_reverse( get_post_ancestors( $post->ID ) );
 				array_push( $ancestors, $post->ID );
-				foreach ( $ancestors as $ancestor ) {
-					if ( $ancestor != end( $ancestors ) ) {
-						echo '<a href="' . get_permalink( $ancestor ) . '" itemprop="url"><span itemprop="title">' . strip_tags( apply_filters( 'single_post_title', get_the_title( $ancestor ) ) ) . '</span></a>' . $divider;
-					} else {
-						echo strip_tags( apply_filters( 'single_post_title', get_the_title( $ancestor ) ) );
-					}
-				}
-			}
-		}
-
-		// End the UL
-		echo '</div>';
+				?>
+				<?php foreach ( $ancestors as $ancestor ) : ?>
+					<?php if ( $ancestor != end( $ancestors ) ) : ?>
+						<a href="<?= get_permalink( $ancestor ) ?>" itemprop="url">
+							<span itemprop="title"><?= strip_tags( apply_filters( 'single_post_title', get_the_title( $ancestor ) ) ) ?></span>
+						</a>
+						<?= $divider ?>
+					<?php else : ?>
+						<span class="breadcrumb-last"><?= strip_tags( apply_filters( 'single_post_title', get_the_title( $ancestor ) ) ) ?></span>
+					<?php endif ?>
+				<?php endforeach ?>
+			<?php endif ?>
+		<?php endif ?>
+		</div>
+		<?php
 	}
 }
 
@@ -265,7 +262,7 @@ function makotokw_zenback_widget() {
 	<?php if ( ! is_preview() && comments_open() && (is_single() || is_page()) ): ?>
 		<aside class="zenback-widget-area">
 			<?php if ( WP_THEME_DEBUG === false ): ?>
-				<?php echo WP_THEME_ZENBACK_WIDGET_SCRYPT ?>
+				<?= WP_THEME_ZENBACK_WIDGET_SCRYPT ?>
 			<?php else : ?>
 				<?php include 'zenback.debug.html' ?>
 			<?php endif; ?>
@@ -282,7 +279,7 @@ function makotokw_facebook_sdk() {
 			var js, fjs = d.getElementsByTagName(s)[0];
 			if (d.getElementById(id)) return;
 			js = d.createElement(s); js.id = id;
-			js.src = "//connect.facebook.net/<?php echo WP_OGP_LOCALE; ?>/all.js#xfbml=1&appId=<?php echo WP_OGP_FB_APPID; ?>";
+			js.src = "//connect.facebook.net/<?= WP_OGP_LOCALE; ?>/all.js#xfbml=1&appId=<?= WP_OGP_FB_APPID; ?>";
 			fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));</script>
 		<?php
@@ -291,7 +288,7 @@ function makotokw_facebook_sdk() {
 
 function makotokw_facebook_recommendations_bar() {
 	?>
-	<div class="fb-recommendations-bar" data-href="<?php echo esc_url( ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] )?>"></div>
+	<div class="fb-recommendations-bar" data-href="<?= esc_url( ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] )?>"></div>
 	<?php
 }
 
@@ -376,13 +373,11 @@ function makotokw_share_this() {
 }
 
 function makotokw_about_me() {
-	$email  = get_the_author_meta( 'user_email' );
-	$avatar = get_avatar( $email, '48', '', true );
 	?>
 	<div class="section section-mini section-about-me">
 		<h2 class="section-title"><?php _e( 'About', 'makotokw' ); ?></h2>
 		<div class="section-content">
-			<?php echo $avatar ?><?php makotokw_about_comment() ?>
+			<?= get_avatar( get_the_author_meta( 'user_email' ), '48', '', true ) ?><?php makotokw_about_comment() ?>
 		</div>
 	</div>
 	<?php
@@ -395,7 +390,7 @@ function makotokw_related_post( $arg = array() ) {
 	<div class="entry-content">
 		<span class="entry-date"><?php makotokw_posted_on(); ?></span>
 		<p class="entry-summary">
-			<?php echo makotokw_post_summary( $post->post_content ); ?>
+			<?= makotokw_post_summary( $post->post_content ); ?>
 		</p>
 	</div>
 	<?php
@@ -575,16 +570,17 @@ function makotokw_the_category_slug( $separator = '', $post_id = false ) {
 
 	$rel = (is_object( $wp_rewrite ) && $wp_rewrite->using_permalinks()) ? 'rel="category tag"' : 'rel="category"';
 
-	$thelist = '';
+	$the_list = '';
 	$i       = 0;
 	foreach ( $categories as $category ) {
 		if ( 0 < $i ) {
-			$thelist .= $separator;
+			$the_list .= $separator;
 		}
-		$thelist .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" title="' . esc_attr( sprintf( __( 'View all posts in %s' ), $category->name ) ) . '" ' . $rel . '>' . $category->slug . '</a>';
+		?>
+		<a href="<?= esc_url( get_category_link( $category->term_id ) ) ?>" title="<?= esc_attr( sprintf( __( 'View all posts in %s' ), $category->name ) ) ?>" <?= $rel ?>><?= esc_html( $category->slug ) ?></a>
+		<?php
 		++$i;
 	}
-	echo $thelist;
 }
 
 function makotokw_section_category_and_tag( $title = 'Tag' ) {
@@ -658,7 +654,6 @@ function makotokw_inline_archives( $args = '' ) {
 		'after_year'   => '',
 		'year_format'  => 'Y',
 		'month_format' => 'n',
-		'echo'         => 1,
 	);
 	$args     = wp_parse_args( $args, $defaults );
 	$archives = explode( "\n", wp_get_archives( array_merge( $args, (array( 'echo' => 0 )) ) ) );
@@ -684,33 +679,35 @@ function makotokw_inline_archives( $args = '' ) {
 			$years[$year][(int)$month] = $a;
 		}
 	}
-	$output = '<ul class="list-archives list-archives-year">';
-	foreach ( $years as $year => $months ) {
-		$label   = date( $year_format, mktime( 0, 0, 0, 1, 1, $year ) );
-		$url     = '/' . $year . '/';
-		$output .= '<li class="list-archives-item list-archives-item-year"><a href="' . $url . '">' . $before_year . $label . $after_year . '</a><ul class="list-archives  list-archives-month">';
-
-		for ( $month = 1; $month <= 12; $month++ ) {
-			if ( is_null( @$months[$month] ) ) {
+	?>
+	<ul class="list-archives list-archives-year">
+	<?php foreach ( $years as $year => $months ) : ?>
+		<?php
+		$label = date( $year_format, mktime( 0, 0, 0, 1, 1, $year ) );
+		$url   = '/' . $year . '/'
+		?>
+		<li class="list-archives-item list-archives-item-year">
+			<a href="<?= $url ?>"><?= $before_year . $label . $after_year ?></a>
+			<ul class="list-archives  list-archives-month">
+		<?php for ( $month = 1; $month <= 12; $month++ ) : ?>
+			<?php if ( is_null( @$months[$month] ) ) : ?>
+				<?php
 				$no_month_cls = ' list-archives-item-month-no-items';
 				$month_time   = mktime( 0, 0, 0, $month, 1, $year );
 				if ( $month_time > $now ) {
 					$no_month_cls .= ' list-archives-item-month-no-items-future';
 				}
-				$output .= '<li class="list-archives-item list-archives-item-month' . $no_month_cls . '"><span>' . $month . '</span></li>';
-			} else {
-				$url     = sprintf( '%s%04d/%02d/', $base_url, $year, $month );
-				$output .= '<li class="list-archives-item list-archives-item-month"><a href="' . $url . '">' . $month . '</a></li>';
-			}
-		}
-		$output .= '</ul></li>';
-	}
-	$output .= '</ul>';
-	if ( $echo ) {
-		echo $output;
-	} else {
-		return $output;
-	}
+				?>
+				<li class="list-archives-item list-archives-item-month <?= $no_month_cls ?>"><span><?= $month ?></span></li>
+			<?php else : ?>
+				<li class="list-archives-item list-archives-item-month"><a href="<?= sprintf( '%s%04d/%02d/', $base_url, $year, $month ) ?>"><?= $month ?></a></li>
+			<?php endif ?>
+		<?php endfor ?>
+			</ul>
+		</li>
+	<?php endforeach; ?>
+	</ul>
+	<?php
 }
 
 /**

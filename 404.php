@@ -12,7 +12,7 @@ get_header(); ?>
 			<div class="container">
 
 				<header class="page-header">
-					<h1 class="page-title"><?php _e('Not Found', 'makotokw'); ?></h1>
+					<h1 class="page-title"><?php _e( 'Not Found', 'makotokw' ); ?></h1>
 				</header>
 
 			</div>
@@ -20,7 +20,7 @@ get_header(); ?>
 			<div class="page-wrapper">
 				<div class="page-content">
 					<div class="container">
-						<p><?php _e('It looks like nothing was found at this location. Maybe try a search?', 'makotokw'); ?></p>
+						<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'makotokw' ); ?></p>
 						<?php get_search_form(); ?>
 					</div>
 				</div>

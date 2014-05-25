@@ -2,45 +2,34 @@
 /**
  * @package makotokw
  */
-define('WP_THEME_DEBUG', ARCADIA_WP_DEBUG === true);
-define('WP_THEME_PRODUCTION_URL', 'http://example.com');
-define('WP_THEME_GOOGLE_ANALYTICS_ACCOUNT', 'UA-xxxxxx-1');
-define('WP_THEME_GOOGLE_ANALYTICS_DOMAIN', 'example.com');
-define('WP_THEME_ITUNES_AFFILIATE_ID', false);
-define('WP_THEME_AUTHOR_TWITTER', 'username');
-define('WP_THEME_AUTHOR_GITHUB', 'username');
-define('WP_THEME_MEMO_POST_ID', 1716);
-define('WP_THEME_OGP', true);
-define('WP_THEME_OGP_LOCALE', 'ja_JP');
-define('WP_THEME_OGP_FB_APPID', 'xxxxxxxx');
-define('WP_THEME_OGP_FB_ADMINS', 'username.kw');
-define('WP_THEME_FB_RECOMMEND_BAR', false);
-define('WP_THEME_ZENBACK', true);
-define('WP_THEME_ZENBACK_WIDGET_SCRYPT', <<<'EOT'
+define( 'WP_THEME_DEBUG', ARCADIA_WP_DEBUG === true );
+define( 'WP_THEME_PRODUCTION_URL', 'http://example.com' );
+define( 'WP_THEME_GOOGLE_ANALYTICS_ACCOUNT', 'UA-xxxxxx-1' );
+define( 'WP_THEME_GOOGLE_ANALYTICS_DOMAIN', 'example.com' );
+define( 'WP_THEME_ITUNES_AFFILIATE_ID', false );
+define( 'WP_THEME_AUTHOR_TWITTER', 'username' );
+define( 'WP_THEME_AUTHOR_GITHUB', 'username' );
+define( 'WP_THEME_MEMO_POST_ID', 1716 );
+define( 'WP_THEME_OGP', true );
+define( 'WP_THEME_OGP_LOCALE', 'ja_JP' );
+define( 'WP_THEME_OGP_FB_APPID', 'xxxxxxxx' );
+define( 'WP_THEME_OGP_FB_ADMINS', 'username.kw' );
+define( 'WP_THEME_FB_RECOMMEND_BAR', false );
+define( 'WP_THEME_ZENBACK', true );
+
+$zenback_scrypt = <<<'EOT'
 <!-- X:S ZenBackWidget --><!-- X:E ZenBackWidget -->
-EOT
-);
+EOT;
+define( 'WP_THEME_ZENBACK_WIDGET_SCRYPT', $zenback_scrypt );
+
 function makotokw_credits() {
-?>
-<a href="<?php echo home_url(); ?>/" title="<?php bloginfo('description'); ?>"><?php bloginfo('name'); ?></a> Copyright &copy; <?php echo date("Y") ?>.
-<?php
+	?>
+<a href="<?= home_url(); ?>/" title="<?php bloginfo( 'description' ); ?>"><?php bloginfo( 'name' ); ?></a> Copyright &copy; <?= date( 'Y' ) ?>.
+	<?php
 }
-add_action('makotokw_credits', 'makotokw_credits');
+add_action( 'makotokw_credits', 'makotokw_credits' );
 
 function makotokw_about_comment() {
 	?>
-<?php
-}
-
-/**
- * @param WP_Query $query
- */
-function makotokw_pre_get_posts( $query ) {
-	if (is_archive()) {
-		$query->set( 'posts_per_page', '365' );
-		$query->set( 'order', 'ASC' );
-	}
-}
-if (WP_THEME_DEBUG) {
-	add_action( 'pre_get_posts', 'makotokw_pre_get_posts' );
+	<?php
 }

@@ -6,31 +6,33 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('post-single'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'post-single' ); ?>>
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 		<?php the_content(); ?>
-		<?php
-			wp_link_pages( array(
+		<?php wp_link_pages(
+			array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'makotokw' ),
 				'after'  => '</div>',
-			) );
-		?>
+			)
+		); ?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta">
 		<?php printf( '<span class="author vcard"><span class="fn">%1$s</span></span>', get_the_author() ); ?>
-
 		<div class="section section-mini section-last-updated">
-			<h2 class="section-title"><?php _e('Last Updated', 'makotokw');?></h2>
-			<div class="section-content"><?php printf( __( '<time class="updated" datetime="%1$s">%2$s</time>', 'makotokw' ),
-					esc_attr( get_the_modified_date( 'c' ) ), get_the_modified_date(THEME_DATE_FORMAT)) ;?></div>
+			<h2 class="section-title"><?php _e( 'Last Updated', 'makotokw' ); ?></h2>
+			<div class="section-content">
+				<?php printf(
+					__( '<time class="updated" datetime="%1$s">%2$s</time>', 'makotokw' ),
+					esc_attr( get_the_modified_date( 'c' ) ), get_the_modified_date( THEME_DATE_FORMAT )
+				);?>
+			</div>
 		</div>
-
-		<?php if (!is_preview()): ?>
+		<?php if ( ! is_preview() ): ?>
 			<?php makotokw_share_this(); ?>
 		<?php endif; ?>
 		<?php makotokw_about_me(); ?>
