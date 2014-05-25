@@ -1,5 +1,7 @@
-/.*/
 /config.php
+
+### Sass ###
+.sass-cache
 
 ### Node ###
 node_modules
@@ -9,3 +11,9 @@ bower_components
 
 ### OSX ###
 .DS_Store
+
+
+### php ###
+
+### Composer ###
+/vendor/

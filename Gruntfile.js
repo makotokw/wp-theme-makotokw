@@ -2,6 +2,11 @@ var LIVERELOAD_PORT = 38085;
 module.exports = function(grunt) {
 	require('load-grunt-tasks')(grunt);
 	grunt.initConfig({
+		exec: {
+			phpcs: {
+				cmd: 'phpcs --standard=WordPress *.php ./**/*.php'
+			}
+		},
 		compass: {
 			options: {
 				config: 'config.rb'
@@ -70,6 +75,8 @@ module.exports = function(grunt) {
 		'uglify',
 		'watch'
 	]);
+
+	grunt.registerTask('phpcs', ['exec:phpcs']);
 
 	grunt.registerTask('default', ['build']);
 };
