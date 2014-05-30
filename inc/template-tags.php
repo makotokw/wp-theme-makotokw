@@ -377,7 +377,9 @@ function makotokw_about_me() {
 	<div class="section section-mini section-about-me">
 		<h2 class="section-title"><?php _e( 'About', 'makotokw' ); ?></h2>
 		<div class="section-content">
-			<?= get_avatar( get_the_author_meta( 'user_email' ), '48', '', true ) ?><?php makotokw_about_comment() ?>
+			<div itemprop="author copyrightHolder editor" itemscope itemtype="http://data-vocabulary.org/Person">
+			<?= str_replace( '<img ', '<img itemprop="image" ', get_avatar( get_the_author_meta( 'user_email' ), '48', '', get_the_author() ) ) ?><?php makotokw_about_comment() ?>
+			</div>
 		</div>
 	</div>
 	<?php
