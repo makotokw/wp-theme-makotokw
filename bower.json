@@ -10,8 +10,8 @@
   ],
   "dependencies": {
     "google-code-prettify": "~1.0.0",
-    "font-awesome": "~4.0.0",
-    "html5shiv": "~3.6.2"
+    "font-awesome": "~4.1",
+    "html5shiv": "~3.7"
   },
   "exportsOverride": {
     "html5shiv": {
