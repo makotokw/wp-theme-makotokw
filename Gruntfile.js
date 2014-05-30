@@ -4,7 +4,8 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		exec: {
 			phpcs: {
-				cmd: 'phpcs --standard=WordPress *.php ./**/*.php'
+				cmd: 'phpcs --standard=WordPress *.php ./**/*.php',
+				exitCode: [0, 1]
 			}
 		},
 		compass: {
@@ -55,6 +56,10 @@ module.exports = function(grunt) {
 				files: ['sass/**/*.scss'],
 				tasks: ['compass:dev']
 			},
+			php: {
+				files: ['*.php', './**/*.php'],
+				tasks: ['phpcs']
+			},
 			livereload: {
 				options: {
 					livereload: LIVERELOAD_PORT
@@ -72,6 +77,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('debug', [
 		'bower:install',
 		'compass:dev',
+		'phpcs',
 		'uglify',
 		'watch'
 	]);
