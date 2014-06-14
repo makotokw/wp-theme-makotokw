@@ -5527,8 +5527,6 @@ object {
   display: block;
 }
 
-/* =Comments
--------------------------------------------------------------- */
 /* line 13, sass/partials/_comments.scss */
 .section-comment .section-title:before, .section-comment .comment-respond .comment-reply-title:before {
   content: "\f0e6";
@@ -5567,12 +5565,12 @@ object {
   line-height: 1;
 }
 
-/* line 51, sass/partials/_comments.scss */
-.comment .comment-body .comment-author {
+/* line 52, sass/partials/_comments.scss */
+.comment .comment-body .comment-author .avatar {
   float: left;
   max-width: 74px;
 }
-/* line 57, sass/partials/_comments.scss */
+/* line 59, sass/partials/_comments.scss */
 .comment .comment-body .comment-metadata,
 .comment .comment-body .comment-awaiting-moderation,
 .comment .comment-body .comment-content {
@@ -5582,7 +5580,7 @@ object {
   width: calc(100% - 64px);
 }
 
-/* line 67, sass/partials/_comments.scss */
+/* line 69, sass/partials/_comments.scss */
 .comment-body {
   padding: 24px 0;
   position: relative;
@@ -5597,7 +5595,7 @@ object {
 .comment-body:after {
   clear: both;
 }
-/* line 73, sass/partials/_comments.scss */
+/* line 75, sass/partials/_comments.scss */
 .comment-body .comment-author .avatar {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -5609,20 +5607,20 @@ object {
   padding: 2px;
   border: 1px solid #dddddd;
 }
-/* line 87, sass/partials/_comments.scss */
+/* line 89, sass/partials/_comments.scss */
 .comment-body .comment-metadata cite {
   display: block;
 }
-/* line 89, sass/partials/_comments.scss */
+/* line 91, sass/partials/_comments.scss */
 .comment-body .comment-metadata cite a {
   color: #333333;
 }
-/* line 95, sass/partials/_comments.scss */
+/* line 97, sass/partials/_comments.scss */
 .comment-body .comment-metadata .fn,
 .comment-body .comment-metadata .comment-time {
   display: inline-block;
 }
-/* line 100, sass/partials/_comments.scss */
+/* line 102, sass/partials/_comments.scss */
 .comment-body .comment-content {
   border: 2px solid #e9ecef;
   -webkit-border-radius: 4px;
@@ -5639,31 +5637,31 @@ object {
   overflow-x: auto;
   color: #4d4d4d;
 }
-/* line 105, sass/partials/_comments.scss */
+/* line 107, sass/partials/_comments.scss */
 .comment-body .comment-content a {
   word-wrap: break-word;
 }
-/* line 108, sass/partials/_comments.scss */
+/* line 110, sass/partials/_comments.scss */
 .comment-body .comment-content > p:first-of-type {
   margin-top: 0;
 }
-/* line 111, sass/partials/_comments.scss */
+/* line 113, sass/partials/_comments.scss */
 .comment-body .comment-content > p:last-of-type {
   margin-bottom: 0;
 }
-/* line 116, sass/partials/_comments.scss */
+/* line 118, sass/partials/_comments.scss */
 .comment-body .comment-awaiting-moderation {
   display: block;
   width: 100%;
 }
-/* line 120, sass/partials/_comments.scss */
+/* line 122, sass/partials/_comments.scss */
 .comment-body .comment-awaiting-moderation:before {
   font-family: FontAwesome;
   content: "\f071";
   margin-right: 5px;
 }
 
-/* line 131, sass/partials/_comments.scss */
+/* line 133, sass/partials/_comments.scss */
 .comment-reply-link:before,
 .comment-reply-login:before {
   font-family: FontAwesome;
@@ -5671,7 +5669,7 @@ object {
   margin-right: 5px;
 }
 
-/* line 144, sass/partials/_comments.scss */
+/* line 146, sass/partials/_comments.scss */
 .bypostauthor > .comment-body .fn:before {
   font-family: FontAwesome;
   content: "\f040";
@@ -5680,7 +5678,7 @@ object {
   margin-right: 5px;
 }
 
-/* line 155, sass/partials/_comments.scss */
+/* line 157, sass/partials/_comments.scss */
 .section-comment .comment-respond {
   *zoom: 1;
   margin: 0;
@@ -5695,22 +5693,22 @@ object {
 .section-comment .comment-respond:after {
   clear: both;
 }
-/* line 163, sass/partials/_comments.scss */
+/* line 165, sass/partials/_comments.scss */
 .section-comment .comment-respond .comment-reply-title:before {
   content: "\f0e5";
 }
 
-/* line 171, sass/partials/_comments.scss */
+/* line 173, sass/partials/_comments.scss */
 .navigation-comment a {
   float: none;
   background-color: #3e5771;
 }
-/* line 175, sass/partials/_comments.scss */
+/* line 177, sass/partials/_comments.scss */
 .navigation-comment a:hover {
   background-color: #1fadd7;
 }
 
-/* line 182, sass/partials/_comments.scss */
+/* line 184, sass/partials/_comments.scss */
 .comment-form-comment textarea {
   width: 100%;
 }

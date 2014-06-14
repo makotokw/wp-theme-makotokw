@@ -5,8 +5,8 @@
   display: block;
 }
 
-/* =Comments
--------------------------------------------------------------- */
+// Comments
+// --------------------------------------------------------------
 
 .section-comment {
   .section-title {
@@ -49,8 +49,10 @@
 .comment {
   .comment-body {
     .comment-author {
-      float: left;
-      max-width: 74px;
+      .avatar {
+        float: left;
+        max-width: 74px;
+      }
     }
     .comment-metadata,
     .comment-awaiting-moderation,
