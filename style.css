@@ -5053,8 +5053,6 @@ input[type="color"]:focus,
   background-color: #3e5771;
 }
 
-/* =Container
------------------------------------------------ */
 /* line 4, sass/partials/_container.scss */
 .site {
   -webkit-box-sizing: content-box;
@@ -5184,8 +5182,6 @@ input[type="color"]:focus,
   background-color: #71cfeb;
 }
 
-/* =Content
------------------------------------------------ */
 /* line 6, sass/partials/_content.scss */
 .post-summary,
 .post-single {
@@ -5346,8 +5342,6 @@ input[type="color"]:focus,
   background-color: #71cfeb;
 }
 
-/* =Media
------------------------------------------------ */
 /* line 143, sass/partials/_content.scss */
 .entry-content img,
 .entry-summary img,
@@ -5446,8 +5440,6 @@ object {
   float: left;
 }
 
-/* =Mylist
------------------------------------------------ */
 /* line 237, sass/partials/_content.scss */
 .section-mylist ul {
   list-style: none;
@@ -5459,8 +5451,6 @@ object {
   list-style: none;
 }
 
-/* =Related Posts
------------------------------------------------ */
 /* line 251, sass/partials/_content.scss */
 .section-related-posts ul {
   list-style: none;
@@ -5482,6 +5472,11 @@ object {
 /* line 268, sass/partials/_content.scss */
 .section-related-posts .entry-date {
   color: #bdc3c7;
+}
+
+/* line 277, sass/partials/_content.scss */
+.post-single .section-last-updated {
+  display: none;
 }
 
 /* line 1, sass/partials/_share.scss */

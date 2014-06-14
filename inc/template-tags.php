@@ -302,10 +302,14 @@ function makotokw_posted_on() {
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_post_time( THEME_DATE_FORMAT ) )
 	);
+}
 
+
+function makotokw_updated_on() {
 	printf(
-		__( '<time class="updated" datetime="%1$s"></time>', 'makotokw' ),
-		esc_attr( get_the_modified_date( 'c' ) )
+		__( '<time class="updated" datetime="%1$s">%2$s</time>', 'makotokw' ),
+		esc_attr( get_the_modified_date( 'c' ) ),
+		esc_html( get_post_time( THEME_DATE_FORMAT ) )
 	);
 }
 

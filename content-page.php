@@ -25,12 +25,7 @@
 		<?php printf( '<span class="author vcard"><span class="fn">%1$s</span></span>', get_the_author() ); ?>
 		<div class="section section-mini section-last-updated">
 			<h2 class="section-title"><?php _e( 'Last Updated', 'makotokw' ); ?></h2>
-			<div class="section-content">
-				<?php printf(
-					__( '<time class="updated" datetime="%1$s">%2$s</time>', 'makotokw' ),
-					esc_attr( get_the_modified_date( 'c' ) ), get_the_modified_date( THEME_DATE_FORMAT )
-				);?>
-			</div>
+			<div class="section-content"><?php makotokw_updated_on(); ?></div>
 		</div>
 		<?php if ( ! is_preview() ): ?>
 			<?php makotokw_share_this(); ?>
