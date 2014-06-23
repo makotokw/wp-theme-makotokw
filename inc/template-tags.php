@@ -339,14 +339,48 @@ function makotokw_share_this() {
 	// hatena: http://b.hatena.ne.jp/guide/bbutton
 	// pocket: http://getpocket.com/publisher/button
 	// google+: https://developers.google.com/+/web/+1button/
+
+	$title = get_the_title();
 	$permalink = get_permalink();
 	if ( WP_THEME_DEBUG === true ) {
 		$permalink = str_replace( home_url(), WP_THEME_PRODUCTION_URL, $permalink );
 	}
+	$permalink_schemeless = preg_replace("/^https?:\/\//", '', $permalink);
 	?>
 	<div class="section section-mini section-share-this">
 		<h2 class="section-title"><?php _e( 'Share This', 'makotokw' ); ?></h2>
 		<div class="section-content">
+			<?php if ( WP_THEME_DEBUG === true ): ?>
+			<div class="share-content">
+				<ul>
+					<li class="share-twitter">
+						<a rel="nofollow" data-url="<?= $permalink; ?>" class="share-button-twitter share-button" href="https://twitter.com/intent/tweet?original_referer=<?= rawurlencode($permalink) ?>&text=<?= rawurlencode($title) ?>&tw_p=tweetbutton&url=<?= urlencode($permalink)?>&via=<?= urlencode(WP_THEME_AUTHOR_TWITTER)?>" target="_blank">
+							<span>Twitter<span class="share-count">9</span></span>
+						</a>
+					</li>
+					<li class="share-hatena">
+						<a rel="nofollow" class="share-button-hatena share-button" href="http://b.hatena.ne.jp/entry/<?= $permalink_schemeless ?>" target="_blank">
+							<span>はてブ<span class="share-count">9</span></span>
+						</a>
+					</li>
+					<li class="share-pocket">
+						<a rel="nofollow" class="share-button-pocket share-button" href="https://getpocket.com/save/?url=<?= rawurlencode($permalink) ?>&title=<?= rawurlencode($title) ?>" target="_blank">
+							<span>Pocket<span class="share-count">9</span></span>
+						</a>
+					</li>
+					<li class="share-googleplus">
+						<a rel="nofollow" class="share-button-googleplus share-button" href="https://plus.google.com/share?url=<?= rawurlencode($permalink) ?>" target="_blank">
+							<span>Google<span class="share-count">9</span></span>
+						</a>
+					</li>
+					<li class="share-facebook">
+						<a rel="nofollow" class="share-button-facebook share-button" href="//www.facebook.com/sharer.php?u=<?= rawurlencode($permalink) ?>&t=<?= rawurlencode($title) ?>" target="_blank">
+							<span>Facebook<span class="share-count">9</span></span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<?php endif ?>
 			<div class="share-item share-item-twitter">
 			<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?= $permalink; ?>" data-text="<?php the_title(); ?>" data-via="makoto_kw" data-lang="en">Tweet</a>
 			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
