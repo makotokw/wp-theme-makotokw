@@ -1,0 +1,40 @@
+$entyposocialicon-font-path: "font" !default;
+
+@font-face {
+  font-family: 'EntypoSocialIcon';
+  src: url('#{$entyposocialicon-font-path}/entypo-social.eot');
+  src: url('#{$entyposocialicon-font-path}/entypo-social.eot?#iefix') format('embedded-opentype'),
+  url('#{$entyposocialicon-font-path}/entypo-social.woff') format('woff'),
+  url('#{$entyposocialicon-font-path}/entypo-social.ttf') format('truetype'),
+  url('#{$entyposocialicon-font-path}/entypo-social.svg#entypo-social') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.entyposocialicon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  line-height: 1;
+  font-family: 'EntypoSocialIcon';
+  text-decoration: inherit;
+  font-weight: normal;
+  font-style: normal;
+  vertical-align: top;
+}
+
+/**
+ * IE7 and IE6 hacks
+ */
+
+.entyposocialicon {
+  *overflow: auto;
+  *zoom: 1;
+  *display: inline;
+}
+
+$es-var-hatebu: "\f354";
+
+
