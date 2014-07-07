@@ -25,13 +25,16 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		jshint: {
+			beforeconcat: ['js/navigation.js', 'js/skip-link-focus-fix.js', 'js/script.js']
+		},
 		uglify: {
 			dist: {
 				options: {
 					beautify: true
 				},
 				files: {
-					'style.js': ['components/js/google-code-prettify/prettify.js', 'js/navigation.js', 'js/skip-link-focus-fix.js', 'js/script.js']
+					'style.js': ['components/js/google-code-prettify/prettify.js', 'js/skip-link-focus-fix.js', 'js/script.js']
 				}
 			}
 		},
@@ -47,7 +50,7 @@ module.exports = function(grunt) {
 		watch: {
 			scripts: {
 				files: ['js/*.js'],
-				tasks: ['uglify'],
+				tasks: ['jshint', 'uglify'],
 				options: {
 					spawn: false
 				}
@@ -64,13 +67,15 @@ module.exports = function(grunt) {
 				options: {
 					livereload: LIVERELOAD_PORT
 				},
-				files: ['*.css', '*.js']
+				files: ['*.css', '*.js', '*.php', './**/*.php']
 			}
 		}
 	});
+
 	grunt.registerTask('build', [
 		'bower:install',
 		'compass:prod',
+		'jshint',
 		'uglify'
 	]);
 
@@ -78,6 +83,7 @@ module.exports = function(grunt) {
 		'bower:install',
 		'compass:dev',
 		'phpcs',
+		'jshint',
 		'uglify',
 		'watch'
 	]);

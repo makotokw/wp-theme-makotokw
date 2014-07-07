@@ -423,15 +423,6 @@ var prettyPrintOne, prettyPrint;
         return T;
     });
 })(), function() {
-    var a = document.getElementById("site-navigation");
-    if (void 0 == a) return !1;
-    var b = a.getElementsByTagName("h1")[0], c = a.getElementsByTagName("ul")[0];
-    return void 0 == b || void 0 == c ? !1 : (b.onclick = function() {
-        -1 == c.className.indexOf("nav-menu") && (c.className = "nav-menu"), -1 != b.className.indexOf("toggled-on") ? (b.className = b.className.replace(" toggled-on", ""), 
-        c.className = c.className.replace(" toggled-on", ""), a.className = a.className.replace("main-small-navigation", "navigation-main")) : (b.className += " toggled-on", 
-        c.className += " toggled-on", a.className = a.className.replace("navigation-main", "main-small-navigation"));
-    }, c.childNodes.length || (b.style.display = "none"), void 0);
-}(), function() {
     var a = navigator.userAgent.toLowerCase().indexOf("webkit") > -1, b = navigator.userAgent.toLowerCase().indexOf("opera") > -1, c = navigator.userAgent.toLowerCase().indexOf("msie") > -1;
     if ((a || b || c) && "undefined" != typeof document.getElementById) {
         var d = window.addEventListener ? "addEventListener" : "attachEvent";
@@ -442,15 +433,52 @@ var prettyPrintOne, prettyPrint;
         }, !1);
     }
 }(), function(a) {
-    var b = navigator.userAgent, c = b.match(/msie/i), d = c && b.match(/msie 7\./i), e = c && b.match(/msie 8\./i);
-    c && (d ? a("html").addClass("ie ie7") : e ? a("html").addClass("ie ie8") : a("html").addClass("ie")), 
+    function b() {
+        var b = a("#shareThis");
+        b.length > 0 && a(window).bind("scroll.shareThis load.shareThis", function() {
+            if (a(this).scrollTop() + a(this).height() > b.offset().top) {
+                var c = b.data("url"), d = encodeURIComponent(c);
+                h || (a.ajax({
+                    url: "http://urls.api.twitter.com/1/urls/count.json?url=" + d,
+                    dataType: "jsonp"
+                }).done(function(c) {
+                    if (c && c.count > 0) {
+                        var e = a("<a/>").addClass("share-count share-count-link").text(c.count);
+                        e.attr({
+                            href: "http://twitter.com/search?q=" + d,
+                            target: "_blank"
+                        }), b.find(".share-twitter .share-title").append(e);
+                    }
+                }), a.ajax({
+                    url: "http://api.b.st-hatena.com/entry.count?url=" + d,
+                    dataType: "jsonp"
+                }).done(function(c) {
+                    if (c > 0) {
+                        var d = a("<span/>").addClass("share-count").text(c);
+                        b.find(".share-hatena .share-title").append(d);
+                    }
+                }), a.ajax({
+                    url: "https://graph.facebook.com/?id=" + d,
+                    dataType: "jsonp"
+                }).done(function(c) {
+                    if (c && c.shares > 0) {
+                        var d = a("<span/>").addClass("share-count").text(c.shares);
+                        b.find(".share-facebook .share-title").append(d);
+                    }
+                })), a(this).unbind("scroll.shareThis load.shareThis");
+            }
+        });
+    }
+    var c = navigator.userAgent, d = c.match(/msie/i), e = d && c.match(/msie 7\./i), f = d && c.match(/msie 8\./i);
+    d && (e ? a("html").addClass("ie ie7") : f ? a("html").addClass("ie ie8") : a("html").addClass("ie"));
+    var g = a("#wpadminbar"), h = g.length > 0;
     a(document).ready(function() {
-        prettyPrint();
+        a.isFunction(prettyPrint) && prettyPrint(), b();
     }), a.fn.extend({
         stickyFooter: function() {
             function b() {
                 var b = a(window).height(), d = a(document.body).height() - c.height(), e = b - d;
-                a("#wpadminbar").length > 0 && (e -= 32), 0 >= e && (e = 1), c.height(e);
+                h && (e -= 32), 0 >= e && (e = 1), c.height(e);
             }
             var c = (a("#main"), a("#footerMargin"));
             a(this), b(), a(window).on("sticky", b).scroll(b).resize(b);

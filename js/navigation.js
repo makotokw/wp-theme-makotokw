@@ -6,13 +6,13 @@
 ( function() {
 	var container = document.getElementById( 'site-navigation' );
 
-	if (undefined == container)
+	if (undefined === container)
 		return false;
 
 	var button    = container.getElementsByTagName( 'h1' )[0],
 	    menu      = container.getElementsByTagName( 'ul' )[0];
 
-	if ( undefined == button || undefined == menu )
+	if ( undefined === button || undefined === menu )
 		return false;
 
 	button.onclick = function() {
