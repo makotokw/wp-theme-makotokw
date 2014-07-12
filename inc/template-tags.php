@@ -350,7 +350,6 @@ function makotokw_share_this() {
 	<div id="shareThis" class="section section-mini section-share-this" data-url="<?= $permalink ?>">
 		<h2 class="section-title"><?php _e( 'Share This', 'makotokw' ); ?></h2>
 		<div class="section-content">
-			<?php if ( WP_THEME_DEBUG === true ): ?>
 			<div class="share-content">
 				<ul>
 					<li class="share-twitter">
@@ -365,12 +364,12 @@ function makotokw_share_this() {
 					</li>
 					<li class="share-pocket">
 						<a rel="nofollow" class="share-button-pocket share-button" href="https://getpocket.com/save/?url=<?= rawurlencode( $permalink ) ?>&title=<?= rawurlencode( $title ) ?>" target="_blank">
-							<span>Pocket</span>
+							<span class="share-title">Pocket</span>
 						</a>
 					</li>
 					<li class="share-googleplus">
 						<a rel="nofollow" class="share-button-googleplus share-button" href="https://plus.google.com/share?url=<?= rawurlencode( $permalink ) ?>" target="_blank">
-							<span>Google</span>
+							<span class="share-title">Google</span>
 						</a>
 					</li>
 					<li class="share-facebook">
@@ -380,8 +379,8 @@ function makotokw_share_this() {
 					</li>
 				</ul>
 			</div>
-			<?php endif ?>
-			<?php if (is_user_logged_in()): ?>
+			<?php if ( is_user_logged_in() ): ?>
+				<?php /*
 			<div class="share-item share-item-twitter">
 			<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?= $permalink; ?>" data-text="<?php the_title(); ?>" data-via="makoto_kw" data-lang="en">Tweet</a>
 			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
@@ -407,6 +406,7 @@ function makotokw_share_this() {
 			<div class="share-item share-item-facebook-like">
 				<iframe src="//www.facebook.com/plugins/like.php?href=<?= $permalink; ?>&amp;send=false&amp;layout=button_count&amp;width=110&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=verdana&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
 			</div>
+*/?>
 			<?php endif ?>
 		</div>
 	</div>

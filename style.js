@@ -434,54 +434,63 @@ var prettyPrintOne, prettyPrint;
     }
 }(), function(a) {
     function b() {
-        var b = a("#shareThis");
-        b.length > 0 && a(window).bind("scroll.shareThis load.shareThis", function() {
-            if (a(this).scrollTop() + a(this).height() > b.offset().top) {
-                var c = b.data("url"), d = encodeURIComponent(c);
-                h || (a.ajax({
-                    url: "http://urls.api.twitter.com/1/urls/count.json?url=" + d,
-                    dataType: "jsonp"
-                }).done(function(c) {
-                    if (c && c.count > 0) {
-                        var e = a("<a/>").addClass("share-count share-count-link").text(c.count);
-                        e.attr({
-                            href: "http://twitter.com/search?q=" + d,
-                            target: "_blank"
-                        }), b.find(".share-twitter .share-title").append(e);
-                    }
-                }), a.ajax({
-                    url: "http://api.b.st-hatena.com/entry.count?url=" + d,
-                    dataType: "jsonp"
-                }).done(function(c) {
-                    if (c > 0) {
-                        var d = a("<span/>").addClass("share-count").text(c);
-                        b.find(".share-hatena .share-title").append(d);
-                    }
-                }), a.ajax({
-                    url: "https://graph.facebook.com/?id=" + d,
-                    dataType: "jsonp"
-                }).done(function(c) {
-                    if (c && c.shares > 0) {
-                        var d = a("<span/>").addClass("share-count").text(c.shares);
-                        b.find(".share-facebook .share-title").append(d);
-                    }
-                })), a(this).unbind("scroll.shareThis load.shareThis");
+        function b(a) {
+            var b = parseInt(a);
+            return isNaN(b) ? 0 : b;
+        }
+        var c = a("#shareThis"), d = c.data("url"), f = encodeURIComponent(d);
+        e && (a.ajax({
+            url: "http://urls.api.twitter.com/1/urls/count.json?url=" + f,
+            dataType: "jsonp"
+        }).done(function(d) {
+            if (d) {
+                var e = a("<a/>").addClass("share-count share-count-link").text(b(d.count));
+                e.attr({
+                    href: "http://twitter.com/search?q=" + f,
+                    target: "_blank"
+                }), c.find(".share-twitter .share-title").append(e);
             }
+        }), a.ajax({
+            url: "http://api.b.st-hatena.com/entry.count?url=" + f,
+            dataType: "jsonp"
+        }).done(function(d) {
+            var e = a("<span/>").addClass("share-count").text(b(d));
+            c.find(".share-hatena .share-title").append(e);
+        }), a.ajax({
+            url: "https://graph.facebook.com/?id=" + f,
+            dataType: "jsonp"
+        }).done(function(d) {
+            if (d) {
+                var e = a("<span/>").addClass("share-count").text(b(d.shares));
+                c.find(".share-facebook .share-title").append(e);
+            }
+        }), makotokw && makotokw.counter_api && makotokw.counter_api.length > 0 && a.ajax({
+            url: makotokw.counter_api + "?url=" + f,
+            dataType: "jsonp"
+        }).done(function(d) {
+            if (d) {
+                var e = a("<span/>").addClass("share-count").text(b(d.pocket));
+                c.find(".share-pocket .share-title").append(e);
+                var f = a("<span/>").addClass("share-count").text(b(d.google));
+                c.find(".share-googleplus .share-title").append(f);
+            }
+        }));
+    }
+    function c() {
+        var c = a("#shareThis");
+        c.length > 0 && e && a(window).bind("scroll.shareThis load.shareThis", function() {
+            a(this).scrollTop() + a(this).height() > c.offset().top && (b(), a(this).unbind("scroll.shareThis load.shareThis"));
         });
     }
-    var c = navigator.userAgent, d = c.match(/msie/i), e = d && c.match(/msie 7\./i), f = d && c.match(/msie 8\./i);
-    d && (e ? a("html").addClass("ie ie7") : f ? a("html").addClass("ie ie8") : a("html").addClass("ie"));
-    var g = a("#wpadminbar"), h = g.length > 0;
-    a(document).ready(function() {
-        a.isFunction(prettyPrint) && prettyPrint(), b();
-    }), a.fn.extend({
-        stickyFooter: function() {
-            function b() {
-                var b = a(window).height(), d = a(document.body).height() - c.height(), e = b - d;
-                h && (e -= 32), 0 >= e && (e = 1), c.height(e);
-            }
-            var c = (a("#main"), a("#footerMargin"));
-            a(this), b(), a(window).on("sticky", b).scroll(b).resize(b);
-        }
-    }), a(".site-footer").stickyFooter();
+    function d() {
+        var b = a(window).height(), c = a(document.body).height() - j.height(), d = b - c;
+        e && (d -= 32), 0 >= d && (d = 1), j.height(d);
+    }
+    var e = !1, f = navigator.userAgent, g = f.match(/msie/i), h = g && f.match(/msie 7\./i), i = g && f.match(/msie 8\./i);
+    g && (h ? a("html").addClass("ie ie7") : i ? a("html").addClass("ie ie8") : a("html").addClass("ie"));
+    var j = (a("#main"), a("#footerMargin"));
+    a(window).on("sticky", d).scroll(d).resize(d), a(document).ready(function() {
+        a.isFunction(prettyPrint) && prettyPrint(), e = a("#wpadminbar").length > 0, c(), 
+        d();
+    });
 }(jQuery);

@@ -5,8 +5,8 @@
  * @package makotokw
  */
 
-define( 'THEME_STYLE_CSS_REV', '2014061421' );
-define( 'THEME_STYLE_SCRIPT_REV', '201401073' );
+define( 'THEME_STYLE_CSS_REV', '2014071209' );
+define( 'THEME_STYLE_SCRIPT_REV', '2014071209' );
 define( 'THEME_DATE_FORMAT', 'Y/m/d' );
 
 /*
@@ -128,7 +128,9 @@ function makotokw_scripts() {
 	wp_enqueue_style( 'makotokw-ie', get_template_directory_uri() . '/ie.css', array( 'makotokw-style' ), '20130428' );
 	$wp_styles->add_data( 'makotokw-ie', 'conditional', 'lt IE 9' );
 
-	wp_enqueue_script( 'makotokw-script', get_template_directory_uri() . '/style.js', array( 'jquery' ), THEME_STYLE_SCRIPT_REV, true );
+	wp_register_script( 'makotokw-script', get_template_directory_uri() . '/style.js', array( 'jquery' ), THEME_STYLE_SCRIPT_REV, true  );
+	wp_localize_script( 'makotokw-script', 'makotokw', array( 'counter_api' => WP_THEME_COUNT_API ) );
+	wp_enqueue_script( 'makotokw-script' );
 
 	/*
 	// JetpackComment should work without comment-reply

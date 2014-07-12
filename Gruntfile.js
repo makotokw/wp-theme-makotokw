@@ -26,6 +26,9 @@ module.exports = function(grunt) {
 			}
 		},
 		jshint: {
+			options: {
+				force: true
+			},
 			beforeconcat: ['js/navigation.js', 'js/skip-link-focus-fix.js', 'js/script.js']
 		},
 		uglify: {

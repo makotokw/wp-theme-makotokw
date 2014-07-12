@@ -5256,7 +5256,7 @@ object {
 /* line 32, sass/partials/_share.scss */
 .share-content ul {
   padding: 0;
-  margin: 0 0 .7em 0;
+  margin: 4px 0 4px 0;
   list-style: none;
 }
 /* line 36, sass/partials/_share.scss */

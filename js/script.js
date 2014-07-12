@@ -1,5 +1,7 @@
+/*global makotokw, jQuery*/
 (function($){
-	var ua = navigator.userAgent,
+	var isAdmin = false,
+		ua = navigator.userAgent,
 		isIE = ua.match(/msie/i),
 		isIE7 = isIE && ua.match(/msie 7\./i),
 		isIE8 = isIE && ua.match(/msie 8\./i);
@@ -13,82 +15,92 @@
 		}
 	}
 
-	var $adminBar = $('#wpadminbar'),
-		isAdmin = ( $adminBar.length > 0 );
+	function updateShareCount() {
+		var $shareThis = $('#shareThis');
+		var permalink = $shareThis.data('url'), encodedPermalink = encodeURIComponent(permalink);
+		function toInt(num) {
+			var i = parseInt(num);
+			return (isNaN(i)) ? 0 : i;
+		}
+		if (isAdmin) {
+			$.ajax({url: 'http://urls.api.twitter.com/1/urls/count.json?url=' + encodedPermalink, dataType: 'jsonp'})
+				.done(function (data) {
+					if (data) {
+						var $count = $('<a/>').addClass('share-count share-count-link').text(toInt(data.count));
+						$count.attr({
+							'href': 'http://twitter.com/search?q=' + encodedPermalink,
+							'target': '_blank'
+						});
+						$shareThis.find('.share-twitter .share-title').append($count);
+					}
+				});
+			$.ajax({url: 'http://api.b.st-hatena.com/entry.count?url=' + encodedPermalink, dataType: 'jsonp'})
+				.done(function (data) {
+					var $count = $('<span/>').addClass('share-count').text(toInt(data));
+					$shareThis.find('.share-hatena .share-title').append($count);
+				});
+			$.ajax({url: 'https://graph.facebook.com/?id=' + encodedPermalink, dataType: 'jsonp'})
+				.done(function (data) {
+					if (data) {
+						var $count = $('<span/>').addClass('share-count').text(toInt(data.shares));
+						$shareThis.find('.share-facebook .share-title').append($count);
+					}
+				});
+
+			if (makotokw && makotokw.counter_api && makotokw.counter_api.length > 0) {
+				$.ajax({url: makotokw.counter_api + '?url=' + encodedPermalink, dataType: 'jsonp'})
+					.done(function (data) {
+						if (!data) return;
+						var $countPocket = $('<span/>').addClass('share-count').text(toInt(data.pocket));
+						$shareThis.find('.share-pocket .share-title').append($countPocket);
+						var $countGooglePlus = $('<span/>').addClass('share-count').text(toInt(data.google));
+						$shareThis.find('.share-googleplus .share-title').append($countGooglePlus);
+					});
+			}
+
+		}
+	}
 
 	function lazyLoadShareCount() {
 		var $shareThis = $('#shareThis');
-		if ( $shareThis.length > 0 ) {
-			$(window).bind('scroll.shareThis load.shareThis', function(){
+		if ( $shareThis.length > 0 && isAdmin) {
+			$(window).bind('scroll.shareThis load.shareThis', function() {
 				if ( $(this).scrollTop() + $(this).height() > $shareThis.offset().top ) {
-					var permalink = $shareThis.data('url'), encodedPermalink = encodeURIComponent(permalink);
-					if ( isAdmin ) {
-
-					} else {
-						$.ajax({url: 'http://urls.api.twitter.com/1/urls/count.json?url=' + encodedPermalink, dataType: 'jsonp'})
-							.done(function( data ) {
-								if (data && data.count > 0) {
-									var $count = $('<a/>').addClass('share-count share-count-link').text(data.count);
-									$count.attr({
-										'href': 'http://twitter.com/search?q=' + encodedPermalink,
-										'target': '_blank'
-									});
-									$shareThis.find('.share-twitter .share-title').append($count);
-								}
-							});
-						$.ajax({url: 'http://api.b.st-hatena.com/entry.count?url=' + encodedPermalink, dataType: 'jsonp'})
-							.done(function( data ) {
-								if (data > 0) {
-									var $count = $('<span/>').addClass('share-count').text(data);
-									$shareThis.find('.share-hatena .share-title').append($count);
-								}
-							});
-						$.ajax({url: 'https://graph.facebook.com/?id=' + encodedPermalink, dataType: 'jsonp'})
-							.done(function( data ) {
-								if (data && data.shares > 0) {
-									var $count = $('<span/>').addClass('share-count').text(data.shares);
-									$shareThis.find('.share-facebook .share-title').append($count);
-								}
-							});
-					}
+					updateShareCount();
 					$(this).unbind('scroll.shareThis load.shareThis');
 				}
 			});
 		}
 	}
 
+	var $main = $('#main'),
+		$footerMargin = $('#footerMargin');
+
+	function stickyFooter() {
+		var windowHeight = $(window).height();
+		var docHeight = $(document.body).height() - $footerMargin.height();
+		var diff = windowHeight - docHeight;
+		if ( isAdmin ) {
+			diff -= 32;
+		}
+		if (diff <= 0) {
+			diff = 1;
+		}
+		$footerMargin.height(diff);
+	}
+
+	$(window)
+		.on('sticky', stickyFooter)
+		.scroll(stickyFooter)
+		.resize(stickyFooter);
+
 	$(document).ready(function(){
 		if ($.isFunction(prettyPrint)) {
 			prettyPrint();
 		}
+		isAdmin = ( $('#wpadminbar').length > 0 );
 		lazyLoadShareCount();
+		stickyFooter();
 	});
-
-
-
-	$.fn.extend({
-		stickyFooter: function(options) {
-			var $main = $('#main'), $margin = $('#footerMargin'), $footer = $(this);
-			positionFooter();
-			$(window)
-				.on('sticky', positionFooter)
-				.scroll(positionFooter)
-				.resize(positionFooter);
-			function positionFooter() {
-				var windowHeight = $(window).height();
-				var docHeight = $(document.body).height() - $margin.height();
-				var diff = windowHeight - docHeight;
-				if ( isAdmin ) {
-					diff -= 32;
-				}
-				if (diff <= 0) {
-					diff = 1;
-				}
-				$margin.height(diff);
-			}
-		}
-	});
-	$('.site-footer').stickyFooter();
 
 })(jQuery);
-
