@@ -46,7 +46,8 @@
   font-weight: normal;
   border-radius: 4px;
   color: $white;
-  background-color: $site-link-color;
+  background-color: $site-dark-accent-color;
+//  background-color: $site-link-color;
   text-shadow: none;
   line-height: 23px;
   padding: 4px 16px 4px 16px;
@@ -54,20 +55,23 @@
   text-align: center;
 
   &:hover {
-    color: $blue-dark;
+//    color: $blue-dark;
+    color: $white;
     background-color: $site-link-over-color;
   }
 
   .share-count {
     background-color: $white;
-    color: $site-foreground-color;
-    border-radius: 10px;
+    color: $site-dark-accent-color;
+    border-radius: 50%;
     display: inline-block;
     text-align: center;
-    font-size: .8em;
-    font-weight: 300;
+    font-size: .85em;
+    font-weight: blod;
     margin-left: 8px;
     padding: 4px;
+    min-height: 18px;
+    min-width: 18px;
     line-height: 1;
   }
   .share-count-link {
@@ -78,30 +82,30 @@
 }
 
 @mixin share-button-with-generic-icon($brand-color, $icon-content) {
-  background-color: $brand-color;
-  &:hover {
-    background-color: lighten($brand-color, 20%);
-  }
+//  background-color: $brand-color;
+//  &:hover {
+//    background-color: lighten($brand-color, 20%);
+//  }
   &:before {
     font-family: Genericons;
     content: $icon-content;
-    margin-right: 4px;
+    margin-right: 2px;
     font-size: 1.2em;
-    vertical-align: bottom;
+    vertical-align: sub;
   }
 }
 
 @mixin share-button-with-entypo-icon($brand-color, $icon-content) {
-  background-color: $brand-color;
-  &:hover {
-    background-color: lighten($brand-color, 20%);
-  }
+//  background-color: $brand-color;
+//  &:hover {
+//    background-color: lighten($brand-color, 20%);
+//  }
   &:before {
-    font-family: EntypoSocialIcon;
+    font-family: EntypoSocialRegular;
+    @extend .entypo-social;
     content: $icon-content;
     margin-right: 2px;
-    font-size: 24px;
-    vertical-align: bottom;
+    vertical-align: sub;
   }
 }
 

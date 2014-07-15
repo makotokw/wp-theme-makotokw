@@ -133,9 +133,9 @@ function makotokw_pagination( $pages = '', $range = 3 ) {
 			<?php if ( 1 != $pages && ( ! ($i >= $paged + $range + 1 || $i <= $paged - $range - 1) || $pages <= $showitems) ) : ?>
 				<?php if ( $paged == $i ) : ?>
 					<li class="current"><span class="page"><?= $i ?></span></li>
-				<? else : ?>
+				<?php else : ?>
 					<li><a rel="nofollow" href="<?= get_pagenum_link( $i ) ?>" class="inactive"><?= $i ?></a></li>
-				<? endif ?>
+				<?php endif ?>
 			<?php endif ?>
 		<?php endfor ?>
 		<?php if ( $paged < $pages ) : ?>

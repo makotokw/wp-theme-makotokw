@@ -1,7 +1,7 @@
 $entyposocialicon-font-path: "font" !default;
 
 @font-face {
-  font-family: 'EntypoSocialIcon';
+  font-family: 'EntypoSocialRegular';
   src: url('#{$entyposocialicon-font-path}/entypo-social.eot');
   src: url('#{$entyposocialicon-font-path}/entypo-social.eot?#iefix') format('embedded-opentype'),
   url('#{$entyposocialicon-font-path}/entypo-social.woff') format('woff'),
@@ -11,25 +11,18 @@ $entyposocialicon-font-path: "font" !default;
   font-style: normal;
 }
 
-.entyposocialicon {
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  -webkit-font-smoothing: antialiased;
-  font-size: 14px;
-  line-height: 1;
-  font-family: 'EntypoSocialIcon';
-  text-decoration: inherit;
+.entypo-social {
+  font-family: 'EntypoSocialRegular';
+  font-size: 2em;
   font-weight: normal;
-  font-style: normal;
-  vertical-align: top;
+  line-height: 0;
 }
 
 /**
  * IE7 and IE6 hacks
  */
 
-.entyposocialicon {
+.entypo-social {
   *overflow: auto;
   *zoom: 1;
   *display: inline;

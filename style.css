@@ -3116,7 +3116,7 @@ li > ol {
 /* Other icons */
 /* Generic shapes */
 @font-face {
-  font-family: 'EntypoSocialIcon';
+  font-family: 'EntypoSocialRegular';
   src: url("fonts/entypo-social.eot");
   src: url("fonts/entypo-social.eot?#iefix") format("embedded-opentype"), url("fonts/entypo-social.woff") format("woff"), url("fonts/entypo-social.ttf") format("truetype"), url("fonts/entypo-social.svg#entypo-social") format("svg");
   font-weight: normal;
@@ -3124,25 +3124,18 @@ li > ol {
 }
 
 /* line 14, sass/partials/_entyposocialicon.scss */
-.entyposocialicon {
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  -webkit-font-smoothing: antialiased;
-  font-size: 14px;
-  line-height: 1;
-  font-family: 'EntypoSocialIcon';
-  text-decoration: inherit;
+.entypo-social, .share-button-hatena:before {
+  font-family: 'EntypoSocialRegular';
+  font-size: 2em;
   font-weight: normal;
-  font-style: normal;
-  vertical-align: top;
+  line-height: 0;
 }
 
 /**
  * IE7 and IE6 hacks
  */
-/* line 32, sass/partials/_entyposocialicon.scss */
-.entyposocialicon {
+/* line 25, sass/partials/_entyposocialicon.scss */
+.entypo-social, .share-button-hatena:before {
   *overflow: auto;
   *zoom: 1;
   *display: inline;
@@ -5273,119 +5266,80 @@ object {
   font-weight: normal;
   border-radius: 4px;
   color: white;
-  background-color: #1fadd7;
+  background-color: #3e5771;
   text-shadow: none;
   line-height: 23px;
   padding: 4px 16px 4px 16px;
   min-width: 100px;
   text-align: center;
 }
-/* line 56, sass/partials/_share.scss */
+/* line 57, sass/partials/_share.scss */
 .share-button:hover {
-  color: #2c3e50;
+  color: white;
   background-color: #71cfeb;
 }
-/* line 61, sass/partials/_share.scss */
+/* line 63, sass/partials/_share.scss */
 .share-button .share-count {
   background-color: white;
-  color: #333333;
-  border-radius: 10px;
+  color: #3e5771;
+  border-radius: 50%;
   display: inline-block;
   text-align: center;
-  font-size: .8em;
-  font-weight: 300;
+  font-size: .85em;
+  font-weight: blod;
   margin-left: 8px;
   padding: 4px;
+  min-height: 18px;
+  min-width: 18px;
   line-height: 1;
 }
-/* line 74, sass/partials/_share.scss */
+/* line 78, sass/partials/_share.scss */
 .share-button .share-count-link:hover {
   text-decoration: underline;
 }
 
-/* line 108, sass/partials/_share.scss */
-.share-button-twitter {
-  background-color: #55acee;
-}
-/* line 82, sass/partials/_share.scss */
-.share-button-twitter:hover {
-  background-color: #b2d9f7;
-}
-/* line 85, sass/partials/_share.scss */
+/* line 89, sass/partials/_share.scss */
 .share-button-twitter:before {
   font-family: Genericons;
   content: "\f202";
-  margin-right: 4px;
+  margin-right: 2px;
   font-size: 1.2em;
-  vertical-align: bottom;
+  vertical-align: sub;
 }
 
-/* line 111, sass/partials/_share.scss */
-.share-button-hatena {
-  background-color: #5279e7;
-}
-/* line 96, sass/partials/_share.scss */
-.share-button-hatena:hover {
-  background-color: #acbef3;
-}
-/* line 99, sass/partials/_share.scss */
+/* line 103, sass/partials/_share.scss */
 .share-button-hatena:before {
-  font-family: EntypoSocialIcon;
+  font-family: EntypoSocialRegular;
   content: "\f354";
   margin-right: 2px;
-  font-size: 24px;
-  vertical-align: bottom;
+  vertical-align: sub;
 }
 
-/* line 114, sass/partials/_share.scss */
-.share-button-pocket {
-  background-color: #d3505a;
-}
-/* line 82, sass/partials/_share.scss */
-.share-button-pocket:hover {
-  background-color: #e7a2a7;
-}
-/* line 85, sass/partials/_share.scss */
+/* line 89, sass/partials/_share.scss */
 .share-button-pocket:before {
   font-family: Genericons;
   content: "\f224";
-  margin-right: 4px;
+  margin-right: 2px;
   font-size: 1.2em;
-  vertical-align: bottom;
+  vertical-align: sub;
 }
 
-/* line 117, sass/partials/_share.scss */
-.share-button-googleplus {
-  background-color: #dd4b39;
-}
-/* line 82, sass/partials/_share.scss */
-.share-button-googleplus:hover {
-  background-color: #ec9a90;
-}
-/* line 85, sass/partials/_share.scss */
+/* line 89, sass/partials/_share.scss */
 .share-button-googleplus:before {
   font-family: Genericons;
   content: "\f218";
-  margin-right: 4px;
+  margin-right: 2px;
   font-size: 1.2em;
-  vertical-align: bottom;
+  vertical-align: sub;
 }
 
-/* line 120, sass/partials/_share.scss */
-.share-button-facebook {
-  background-color: #3b5998;
-}
-/* line 82, sass/partials/_share.scss */
-.share-button-facebook:hover {
-  background-color: #718dc8;
-}
-/* line 85, sass/partials/_share.scss */
+/* line 89, sass/partials/_share.scss */
 .share-button-facebook:before {
   font-family: Genericons;
   content: "\f204";
-  margin-right: 4px;
+  margin-right: 2px;
   font-size: 1.2em;
-  vertical-align: bottom;
+  vertical-align: sub;
 }
 
 /* line 4, sass/partials/_comments.scss */
