@@ -37,13 +37,6 @@
 // Unless desktop
 @media (max-width: $container-desktop) {
 
-  .site-navi {
-    .breadcrumb {
-      padding: 8px;
-
-    }
-  }
-
   .page-title {
     font-size: 22px;
   }
@@ -222,6 +215,12 @@
       .searchform {
         float: right;
       }
+    }
+  }
+
+  .breadcrumb {
+    a {
+      padding: 5px 5px 5px 5px;
     }
   }
 

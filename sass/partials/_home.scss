@@ -41,12 +41,13 @@
     list-style: none;
     padding-left: 0;
 
-    li {
+    .post-summary {
+      margin-bottom: 15px;
     }
 
     .entry-header {
       .entry-title {
-        font-size: 26px;
+        line-height: 1.4;
         display: block;
       }
     }
@@ -55,7 +56,6 @@
 
 .section-page-category {
 
-  background-color: #01a3b2;
   background-color: $site-dark-accent-color;
 
   .list-category {
@@ -151,9 +151,6 @@
     }
   }
 }
-
-
-
 
 // Desktop devices
 @media (min-width: $container-desktop) {
