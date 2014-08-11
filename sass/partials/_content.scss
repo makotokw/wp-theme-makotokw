@@ -216,27 +216,6 @@ object {
   @include clearfix;
 }
 
-.section-about-me {
-  .section-content {
-    color: $gray;
-    font-weight: 300;
-    font-size: $font-size-small;
-    line-height: 24px; /* half avatar */
-  }
-  .avatar {
-    border: 1px solid $site-border-color;
-    margin-right: 5px;
-    float: left;
-  }
-  .author-info {
-    display: none;
-  }
-  p {
-    margin: 0;
-    padding: 0;
-  }
-}
-
 // Mylist
 // -----------------------------------------------
 .section-mylist {

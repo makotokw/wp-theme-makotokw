@@ -30,7 +30,10 @@ function makotokw_credits() {
 }
 add_action( 'makotokw_credits', 'makotokw_credits' );
 
-function makotokw_about_comment() {
+function makotokw_author() {
 	?>
+	<?php printf( '<span class="author vcard"><span class="fn">%1$s</span></span>', get_the_author() ); ?>
 	<?php
 }
+
+add_action( 'makotokw_author', 'makotokw_author' );

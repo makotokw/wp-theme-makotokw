@@ -5142,52 +5142,28 @@ object {
   clear: both;
 }
 
-/* line 220, sass/partials/_content.scss */
-.section-about-me .section-content {
-  color: #95a5a6;
-  font-weight: 300;
-  font-size: 13.6px;
-  line-height: 24px;
-  /* half avatar */
-}
-/* line 226, sass/partials/_content.scss */
-.section-about-me .avatar {
-  border: 1px solid #dddddd;
-  margin-right: 5px;
-  float: left;
-}
-/* line 231, sass/partials/_content.scss */
-.section-about-me .author-info {
-  display: none;
-}
-/* line 234, sass/partials/_content.scss */
-.section-about-me p {
-  margin: 0;
-  padding: 0;
-}
-
-/* line 244, sass/partials/_content.scss */
+/* line 223, sass/partials/_content.scss */
 .section-mylist ul {
   list-style: none;
   margin: 0;
   padding: 0 0 0 10px;
 }
-/* line 248, sass/partials/_content.scss */
+/* line 227, sass/partials/_content.scss */
 .section-mylist ul li {
   list-style: none;
 }
 
-/* line 258, sass/partials/_content.scss */
+/* line 237, sass/partials/_content.scss */
 .section-related-posts ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-/* line 262, sass/partials/_content.scss */
+/* line 241, sass/partials/_content.scss */
 .section-related-posts ul li {
   list-style: none;
 }
-/* line 264, sass/partials/_content.scss */
+/* line 243, sass/partials/_content.scss */
 .section-related-posts ul li:before {
   font-family: FontAwesome;
   content: "\f138";
@@ -5195,12 +5171,12 @@ object {
   color: #1fadd7;
   margin-right: 5px;
 }
-/* line 275, sass/partials/_content.scss */
+/* line 254, sass/partials/_content.scss */
 .section-related-posts .entry-date {
   color: #bdc3c7;
 }
 
-/* line 284, sass/partials/_content.scss */
+/* line 263, sass/partials/_content.scss */
 .post-single .section-last-updated {
   display: none;
 }

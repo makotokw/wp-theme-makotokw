@@ -23,9 +23,7 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta">
-
-		<?php printf( '<span class="author vcard"><span class="fn">%1$s</span></span>', get_the_author() ); ?>
-
+		<?php makotokw_author(); ?>
 		<div class="section section-mini section-last-updated">
 			<h2 class="section-title"><?php _e( 'Last Updated', 'makotokw' ); ?></h2>
 			<div class="section-content"><?php makotokw_updated_on(); ?></div>
@@ -33,7 +31,6 @@
 		<?php if ( ! is_preview() ): ?>
 			<?php makotokw_share_this(); ?>
 		<?php endif; ?>
-		<?php makotokw_about_me(); ?>
 		<?php makotokw_list_nav(); ?>
 		<?php makotokw_section_category_and_tag( 'Tag' ); ?>
 		<?php makotokw_related_portfolio(); ?>
