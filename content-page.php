@@ -30,7 +30,6 @@
 		<?php if ( ! is_preview() ): ?>
 			<?php makotokw_share_this(); ?>
 		<?php endif; ?>
-		<?php makotokw_about_me(); ?>
 		<?php makotokw_related_posts(); ?>
 	</footer>
 
