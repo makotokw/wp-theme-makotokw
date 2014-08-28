@@ -22,7 +22,7 @@
 
   &:before {
     @include block-awesome-icon(2em);
-    color: $silver;
+    color: $site-neutral-color;
   }
   &:after {
     clear: both;

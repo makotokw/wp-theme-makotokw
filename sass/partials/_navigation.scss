@@ -24,7 +24,7 @@
   }
 
   .meta-nav {
-    background-color: $site-link-color;
+    background-color: $site-link-base-color;
     border-radius: 50%;
     color: #fff;
     display: inline-block;
@@ -46,6 +46,6 @@
   }
 
   a:hover .meta-nav {
-    background-color: $site-link-over-color;
+    background-color: $site-link-base-over-color;
   }
 }

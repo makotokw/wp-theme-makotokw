@@ -3,21 +3,15 @@
 ----------------------------------------------- */
 .breadcrumb {
   display: block;
-  color: lighten(desaturate($site-foreground-color, 20%), 40%);
 
   .fa-chevron-right {
     padding-right: 5px;
     padding-left: 5px;
-    color: $silver;
+    color: $site-neutral-color;
   }
 
   a {
     padding: 10px 10px 10px 10px;
-    color: lighten(desaturate($brand-primary-text, 10%), 20%);
-    &:hover {
-      color: white;
-      background-color: $site-link-color;
-    }
   }
   .breadcrumb-last {
     margin-left: 5px;

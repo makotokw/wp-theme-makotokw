@@ -69,6 +69,11 @@ body {
   @include hyphens(auto);
   margin: 0;
   background-color: $site-background-color;
+
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility
 }
 
 // ==========================================================================
@@ -76,7 +81,7 @@ body {
 // ==========================================================================
 
 a {
-  color: $site-link-color;
+  color: $site-link-base-color;
   @include transition(all 0.25s linear);
   // Remove the gray background color from active links in IE 10.
   background: transparent;
@@ -90,7 +95,7 @@ a:focus {
 
 a:active,
 a:hover {
-  color: $site-link-over-color;
+  color: $site-link-base-over-color;
   // Improve readability when focused and also mouse hovered in all browsers.
   outline: 0;
 }

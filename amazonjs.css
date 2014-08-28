@@ -1,26 +1,58 @@
-/* line 4, sass/amazonjs.scss */
-.amazonjs_item {
-  border-color: #f5e0cc;
-  border-width: 0;
-}
-/* line 10, sass/amazonjs.scss */
-.amazonjs_item .amazonjs_image img {
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  border: none;
-}
-/* line 17, sass/amazonjs.scss */
-.amazonjs_item .amazonjs_info h4 {
-  font-size: 1.2em;
-  font-weight: normal;
-  text-shadow: none;
-}
-/* line 24, sass/amazonjs.scss */
-.amazonjs_item .amazonjs_info ul li {
-  font-size: 1em;
-}
-/* line 30, sass/amazonjs.scss */
-.amazonjs_item .amazonjs_review {
-  font-size: .9em;
-}
+/*
+Syntax error: Undefined variable: "$md-light-blue-50".
+        on line 139 of /Users/makoto_kw/arcadia/blog.makotokw.com/wp-content/themes/makotokw2014/sass/_variables.scss
+        from line 1 of /Users/makoto_kw/arcadia/blog.makotokw.com/wp-content/themes/makotokw2014/sass/amazonjs.scss
+
+Backtrace:
+/Users/makoto_kw/arcadia/blog.makotokw.com/wp-content/themes/makotokw2014/sass/_variables.scss:139
+/Users/makoto_kw/arcadia/blog.makotokw.com/wp-content/themes/makotokw2014/sass/amazonjs.scss:1
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/sass-3.2.19/lib/sass/script/variable.rb:49:in `_perform'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/sass-3.2.19/lib/sass/script/node.rb:40:in `perform'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:327:in `visit_variable'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:100:in `visit'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:227:in `block in visit_import'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:227:in `map'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:227:in `visit_import'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:100:in `visit'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `map'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:128:in `visit_root'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/sass-3.2.19/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:100:in `visit'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/sass-3.2.19/lib/sass/tree/visitors/perform.rb:7:in `visit'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/sass-3.2.19/lib/sass/tree/root_node.rb:20:in `render'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/sass-3.2.19/lib/sass/engine.rb:315:in `_render'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/sass-3.2.19/lib/sass/engine.rb:262:in `render'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/compass-0.12.6/lib/compass/compiler.rb:139:in `block (2 levels) in compile'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/compass-0.12.6/lib/compass/compiler.rb:126:in `timed'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/compass-0.12.6/lib/compass/compiler.rb:138:in `block in compile'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/compass-0.12.6/lib/compass/logger.rb:45:in `red'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/compass-0.12.6/lib/compass/compiler.rb:137:in `compile'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/compass-0.12.6/lib/compass/compiler.rb:118:in `compile_if_required'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/compass-0.12.6/lib/compass/compiler.rb:103:in `block (2 levels) in run'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/compass-0.12.6/lib/compass/compiler.rb:101:in `each'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/compass-0.12.6/lib/compass/compiler.rb:101:in `block in run'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/compass-0.12.6/lib/compass/compiler.rb:126:in `timed'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/compass-0.12.6/lib/compass/compiler.rb:100:in `run'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/compass-0.12.6/lib/compass/commands/update_project.rb:45:in `perform'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/compass-0.12.6/lib/compass/commands/base.rb:18:in `execute'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/compass-0.12.6/lib/compass/commands/project_base.rb:19:in `execute'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/compass-0.12.6/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/compass-0.12.6/lib/compass/exec/sub_command_ui.rb:15:in `run!'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/compass-0.12.6/bin/compass:30:in `block in <top (required)>'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/compass-0.12.6/bin/compass:44:in `call'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/lib/ruby/gems/1.9.1/gems/compass-0.12.6/bin/compass:44:in `<top (required)>'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/bin/compass:23:in `load'
+/Users/makoto_kw/.rbenv/versions/1.9.3-p545/bin/compass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Undefined variable: \"$md-light-blue-50\".\A         on line 139 of /Users/makoto_kw/arcadia/blog.makotokw.com/wp-content/themes/makotokw2014/sass/_variables.scss\A         from line 1 of /Users/makoto_kw/arcadia/blog.makotokw.com/wp-content/themes/makotokw2014/sass/amazonjs.scss"; }

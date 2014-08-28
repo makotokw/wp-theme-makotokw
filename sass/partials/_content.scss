@@ -11,7 +11,7 @@
   .entry-title {
     font-size: 26px;
     a {
-      color: $site-link-color;
+      color: $site-link-base-color;
     }
   }
   .entry-summary {
@@ -40,7 +40,7 @@
   a {
     color: $entry-title-color;
     &:hover {
-      color: $site-link-over-color;
+      color: $site-link-base-over-color;
     }
   }
 
@@ -50,13 +50,13 @@
 
   .cat-links,
   .tag-links {
-    color: $silver;
+    color: $site-neutral-color;
     text-transform: uppercase;
     a {
-      color: $silver;
+      color: $site-link-neutral-color;
 
       &:hover {
-        color: $site-link-over-color;
+        color: $site-link-neutral-over-color;
       }
     }
   }
@@ -70,7 +70,7 @@
 
   .entry-date {
     .time {
-      color: $silver;
+      color: $site-neutral-color;
     }
   }
 
@@ -85,7 +85,7 @@
   margin: 10px 0 0 0;
   i {
     margin-left: .5em;
-    color: $site-link-color;
+    color: $site-link-base-color;
   }
   .portfolio-posts-area {
     .entry-date {
@@ -129,7 +129,7 @@
   @include border-radius(20px);
   background-color: $site-dark-accent-color;
   &:hover {
-    background-color: $site-link-over-color;
+    background-color: $site-link-base-over-color;
   }
 }
 
@@ -201,7 +201,7 @@ object {
   .section-title {
     float: left;
     width: 15.625%;
-    color: $silver;
+    color: $site-neutral-color;
     font-weight: 400;
     text-transform: uppercase;
     font-size: $font-size-small;
@@ -244,7 +244,7 @@ object {
         font-family: FontAwesome;
         content: $fa-var-chevron-circle-right; // fa-chevron-circle-right
         vertical-align: middle;
-        color: $site-link-color;
+        color: $site-link-base-color;
         margin-right: 5px;
       }
     }
@@ -252,7 +252,7 @@ object {
 
   }
   .entry-date {
-    color: $silver;
+    color: $site-neutral-color;
   }
 }
 

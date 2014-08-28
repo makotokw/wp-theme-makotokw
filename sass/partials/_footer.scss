@@ -6,7 +6,10 @@
   padding: 10px 0;
 
   a {
-    color: lighten($site-link-color, 40%);
+    color: $footer-link-color;
+    &:hover {
+      color: $footer-link-over-color;
+    }
   }
 
   .site-info {

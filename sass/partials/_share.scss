@@ -46,8 +46,7 @@
   font-weight: normal;
   border-radius: 4px;
   color: $white;
-  background-color: $site-dark-accent-color;
-//  background-color: $site-link-color;
+  background-color: $site-link-accent-color;
   text-shadow: none;
   line-height: 23px;
   padding: 4px 16px 4px 16px;
@@ -55,9 +54,8 @@
   text-align: center;
 
   &:hover {
-//    color: $blue-dark;
     color: $white;
-    background-color: $site-link-over-color;
+    background-color: $site-link-accent-over-color;
   }
 
   .share-count {

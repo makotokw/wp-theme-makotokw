@@ -14,7 +14,7 @@
     @include border-radius(27px);
     left: 3px;
     top: 3px;
-    color: $silver;
+    color: $site-neutral-color;
     position: absolute;
     padding: 7px 8px 8px 8px;
   }
@@ -23,7 +23,7 @@
     padding: 0;
     border: none;
     @include transition(width 400ms ease, background 400ms ease);
-    color: $silver;
+    color: $site-neutral-color;
     &:focus {
       cursor: text;
       outline: 0;

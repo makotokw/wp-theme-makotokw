@@ -56,7 +56,7 @@
 
 .section-page-category {
 
-  background-color: $site-dark-accent-color;
+  background-color: $md-blue-grey-500;
 
   .list-category {
     list-style: none;
@@ -66,6 +66,10 @@
       display: inline;
       a {
         @extend .btn;
+        background-color: $md-blue-grey-700;
+        &:hover {
+          background-color: $md-blue-grey-800;
+        }
         display: inline-block;
         margin: 5px;
         float: none;
@@ -79,11 +83,18 @@
     }
   }
 }
+
+
 .section-page-about {
-  background-color: #01a3b2;
+
   color: $white;
+  background-color: $md-cyan-500;
+
   a {
-    color: $site-dark-accent-color;
+    color: $md-cyan-a100;
+    &:hover {
+      color: $md-cyan-a200;
+    }
   }
 
   .list-history {
@@ -98,6 +109,7 @@
 
     time {
       @extend %time-label;
+      background-color: $md-cyan-900;
       padding: 0;
       width: 120px;
       display: inline-block;
@@ -142,7 +154,10 @@
     span {
       @extend %circle-btn;
       margin: 0;
-      background-color: $silver;
+      background-color: $site-link-neutral-color;
+      &:hover {
+        background-color: $site-link-neutral-color;
+      }
     }
   }
   .list-archives-item-month-no-items.list-archives-item-month-no-items-future {

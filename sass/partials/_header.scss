@@ -4,9 +4,9 @@
   @include clearfix;
 
   a {
-    color: $site-dark-accent-color;
+    color: $site-link-accent-color;
     &:hover {
-      color: $site-link-over-color;
+      color: $site-link-accent-over-color;
     }
   }
 
@@ -21,7 +21,7 @@
     }
     .site-description {
       margin: 0;
-      color: $silver;
+      color: $site-neutral-color;
       font-size: 12px;
       font-style: italic;
     }
