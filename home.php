@@ -60,7 +60,6 @@ get_header(); ?>
 
 	<section class="section-page section-page-archive">
 		<div class="container">
-			<h2 class="section-title">Archives</h2>
 			<?php makotokw_inline_archives() ?>
 		</div>
 	</section>

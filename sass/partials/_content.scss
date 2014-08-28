@@ -126,11 +126,8 @@
 
 .more-link {
   float: right;
+  @extend .btn;
   @include border-radius(20px);
-  background-color: $site-dark-accent-color;
-  &:hover {
-    background-color: $site-link-base-over-color;
-  }
 }
 
 // Media

@@ -10,14 +10,12 @@
  * This theme, like WordPress, is licensed under the GPL.
  * Use it to make something cool, have fun, and share what you've learned with others.
 */
-/* line 2, sass/partials/_normalize.scss */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 17, sass/partials/_normalize.scss */
 article,
 aside,
 details,
@@ -33,26 +31,22 @@ summary {
   display: block;
 }
 
-/* line 24, sass/partials/_normalize.scss */
 audio,
 canvas,
 video {
   display: inline-block;
 }
 
-/* line 30, sass/partials/_normalize.scss */
 audio:not([controls]) {
   display: none;
   height: 0;
 }
 
-/* line 38, sass/partials/_normalize.scss */
 [hidden],
 template {
   display: none;
 }
 
-/* line 42, sass/partials/_normalize.scss */
 html {
   font-size: 100%;
   overflow-y: scroll;
@@ -60,12 +54,10 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-/* line 52, sass/partials/_normalize.scss */
 body {
   margin: 0;
 }
 
-/* line 61, sass/partials/_normalize.scss */
 body,
 button,
 input,
@@ -77,7 +69,6 @@ textarea {
   line-height: 1.7;
 }
 
-/* line 68, sass/partials/_normalize.scss */
 body {
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -90,7 +81,6 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* line 83, sass/partials/_normalize.scss */
 a {
   color: #2ba6cb;
   -webkit-transition: all 0.25s linear;
@@ -101,19 +91,16 @@ a {
   text-decoration: none;
 }
 
-/* line 91, sass/partials/_normalize.scss */
 a:focus {
   outline: thin dotted;
 }
 
-/* line 97, sass/partials/_normalize.scss */
 a:active,
 a:hover {
-  color: #196177;
+  color: #2284a1;
   outline: 0;
 }
 
-/* line 112, sass/partials/_normalize.scss */
 h1,
 h2,
 h3,
@@ -125,66 +112,55 @@ h6 {
   font-weight: 300;
 }
 
-/* line 118, sass/partials/_normalize.scss */
 h1 {
   font-size: 33px;
   margin: 33px 0;
 }
 
-/* line 123, sass/partials/_normalize.scss */
 h2 {
   font-size: 24px;
   margin: 24px 0;
 }
 
-/* line 128, sass/partials/_normalize.scss */
 h3 {
   font-size: 22px;
   margin: 22px 0;
 }
 
-/* line 133, sass/partials/_normalize.scss */
 h4 {
   font-size: 20px;
   margin: 20px 0;
 }
 
-/* line 138, sass/partials/_normalize.scss */
 h5 {
   font-size: 18px;
   margin: 18px 0;
 }
 
-/* line 143, sass/partials/_normalize.scss */
 h6 {
   font-size: 16px;
   margin: 16px 0;
 }
 
-/* line 148, sass/partials/_normalize.scss */
 address {
   font-style: italic;
   margin: 0 0 24px;
 }
 
-/* line 153, sass/partials/_normalize.scss */
 abbr, acronym {
   border-bottom: 2px dotted #666666;
   cursor: help;
 }
 
-/* line 158, sass/partials/_normalize.scss */
 abbr[title] {
   border-bottom: 2px dotted;
 }
 
-/* line 164, sass/partials/_normalize.scss */
 b,
 strong {
   font-weight: bold;
 }
 
-/* line 172, sass/partials/_normalize.scss */
 dfn,
 cite,
 em,
@@ -192,13 +168,11 @@ i {
   font-style: italic;
 }
 
-/* line 177, sass/partials/_normalize.scss */
 mark {
   background: #ff0;
   color: #000;
 }
 
-/* line 185, sass/partials/_normalize.scss */
 code,
 kbd,
 pre,
@@ -211,7 +185,6 @@ samp {
   hyphens: none;
 }
 
-/* line 192, sass/partials/_normalize.scss */
 pre {
   border: 2px solid #e9ecef;
   -webkit-border-radius: 6px;
@@ -232,7 +205,6 @@ pre {
   word-wrap: break-word;
 }
 
-/* line 202, sass/partials/_normalize.scss */
 .quote-caption, blockquote cite,
 blockquote small,
 blockquote .small {
@@ -241,7 +213,6 @@ blockquote .small {
   text-transform: uppercase;
 }
 
-/* line 209, sass/partials/_normalize.scss */
 blockquote,
 q {
   -webkit-hyphens: none;
@@ -250,7 +221,6 @@ q {
   quotes: none;
 }
 
-/* line 217, sass/partials/_normalize.scss */
 blockquote:before,
 blockquote:after,
 q:before,
@@ -259,7 +229,6 @@ q:after {
   content: none;
 }
 
-/* line 222, sass/partials/_normalize.scss */
 blockquote {
   padding: 24px;
   color: #444444;
@@ -270,11 +239,9 @@ blockquote {
   font-weight: 300;
   min-height: 100px;
 }
-/* line 236, sass/partials/_normalize.scss */
 blockquote blockquote {
   margin-right: 0;
 }
-/* line 239, sass/partials/_normalize.scss */
 blockquote:before {
   float: left;
   margin-right: 20px;
@@ -285,17 +252,14 @@ blockquote:before {
   color: #dddddd;
 }
 
-/* line 246, sass/partials/_normalize.scss */
 small, .small {
   font-size: 75%;
 }
 
-/* line 250, sass/partials/_normalize.scss */
 big, .big {
   font-size: 125%;
 }
 
-/* line 255, sass/partials/_normalize.scss */
 sub,
 sup {
   font-size: 75%;
@@ -304,29 +268,24 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 262, sass/partials/_normalize.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 266, sass/partials/_normalize.scss */
 sub {
   bottom: -0.25em;
 }
 
-/* line 270, sass/partials/_normalize.scss */
 del {
   color: #333;
 }
 
-/* line 274, sass/partials/_normalize.scss */
 ins {
   color: #c09853;
   background-color: #fcf8e3;
   text-decoration: none;
 }
 
-/* line 280, sass/partials/_normalize.scss */
 hr {
   background-color: #dddddd;
   border: 0;
@@ -334,21 +293,18 @@ hr {
   margin-bottom: 1.5em;
 }
 
-/* line 287, sass/partials/_normalize.scss */
 ::selection {
   background: #1fadd7;
   color: white;
   text-shadow: none;
 }
 
-/* line 293, sass/partials/_normalize.scss */
 ::-moz-selection {
   background: #1fadd7;
   color: white;
   text-shadow: none;
 }
 
-/* line 304, sass/partials/_normalize.scss */
 img {
   border: 0;
   -ms-interpolation-mode: bicubic;
@@ -359,58 +315,48 @@ img {
   /* Adhere to container width. */
 }
 
-/* line 315, sass/partials/_normalize.scss */
 svg:not(:root) {
   overflow: hidden;
 }
 
-/* line 324, sass/partials/_normalize.scss */
 figure {
   margin: 0;
 }
 
-/* line 334, sass/partials/_normalize.scss */
 form {
   margin: 0;
 }
 
 /* Placeholder text color -- selectors need to be in separate to work. */
-/* line 339, sass/partials/_normalize.scss */
 :-webkit-input-placeholder {
   color: #95a5a6;
   font-style: normal;
 }
 
-/* line 343, sass/partials/_normalize.scss */
 :-moz-placeholder {
   color: #95a5a6;
 }
 
-/* line 346, sass/partials/_normalize.scss */
 ::-moz-placeholder {
   color: #95a5a6;
 }
 
-/* line 349, sass/partials/_normalize.scss */
 :-ms-input-placeholder {
   color: #95a5a6;
 }
 
-/* line 354, sass/partials/_normalize.scss */
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
 
-/* line 360, sass/partials/_normalize.scss */
 legend {
   border: 0;
   padding: 0;
   white-space: normal;
 }
 
-/* line 371, sass/partials/_normalize.scss */
 button,
 input,
 select,
@@ -420,19 +366,16 @@ textarea {
   margin: 0;
 }
 
-/* line 384, sass/partials/_normalize.scss */
 button,
 input {
   line-height: normal;
 }
 
-/* line 395, sass/partials/_normalize.scss */
 button,
 select {
   text-transform: none;
 }
 
-/* line 405, sass/partials/_normalize.scss */
 button,
 html input[type="button"],
 input[type="reset"],
@@ -441,19 +384,16 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-/* line 411, sass/partials/_normalize.scss */
 button[disabled],
 input[disabled] {
   cursor: default;
 }
 
-/* line 417, sass/partials/_normalize.scss */
 input[type="checkbox"],
 input[type="radio"] {
   padding: 0;
 }
 
-/* line 423, sass/partials/_normalize.scss */
 input[type="search"] {
   -webkit-appearance: textfield;
   -moz-box-sizing: content-box;
@@ -461,26 +401,22 @@ input[type="search"] {
   box-sizing: content-box;
 }
 
-/* line 432, sass/partials/_normalize.scss */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-/* line 438, sass/partials/_normalize.scss */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
 
-/* line 444, sass/partials/_normalize.scss */
 textarea {
   overflow: auto;
   vertical-align: top;
 }
 
-/* line 455, sass/partials/_normalize.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -490,7 +426,6 @@ table {
   width: 100%;
 }
 
-/* line 468, sass/partials/_normalize.scss */
 caption,
 th,
 td {
@@ -498,39 +433,32 @@ td {
   text-align: left;
 }
 
-/* line 473, sass/partials/_normalize.scss */
 caption {
   font-size: 16px;
   margin: 20px 0;
 }
 
-/* line 478, sass/partials/_normalize.scss */
 th {
   font-weight: bold;
 }
 
-/* line 482, sass/partials/_normalize.scss */
 td {
   border-top: 2px solid #dddddd;
   padding: 6px 10px 6px 0;
 }
 
-/* line 491, sass/partials/_normalize.scss */
 dl {
   margin: 0 20px;
 }
 
-/* line 495, sass/partials/_normalize.scss */
 dt {
   font-weight: bold;
 }
 
-/* line 499, sass/partials/_normalize.scss */
 dd {
   margin: 0 1.5em 1.5em;
 }
 
-/* line 506, sass/partials/_normalize.scss */
 menu,
 ol,
 ul {
@@ -538,24 +466,20 @@ ul {
   padding: 0 0 0 40px;
 }
 
-/* line 511, sass/partials/_normalize.scss */
 ul {
   list-style-type: disc;
 }
 
-/* line 515, sass/partials/_normalize.scss */
 ol {
   list-style: decimal;
 }
 
-/* line 520, sass/partials/_normalize.scss */
 nav ul,
 nav ol {
   list-style: none;
   list-style-image: none;
 }
 
-/* line 526, sass/partials/_normalize.scss */
 li > ul,
 li > ol {
   margin: 0;
@@ -571,7 +495,6 @@ li > ol {
   font-style: normal;
 }
 
-/* line 4, components/scss/font-awesome/_core.scss */
 .fa {
   display: inline-block;
   font-family: FontAwesome;
@@ -583,51 +506,42 @@ li > ol {
 }
 
 /* makes the font 33% larger relative to the icon container */
-/* line 5, components/scss/font-awesome/_larger.scss */
 .fa-lg {
   font-size: 1.33333em;
   line-height: 0.75em;
   vertical-align: -15%;
 }
 
-/* line 10, components/scss/font-awesome/_larger.scss */
 .fa-2x {
   font-size: 2em;
 }
 
-/* line 11, components/scss/font-awesome/_larger.scss */
 .fa-3x {
   font-size: 3em;
 }
 
-/* line 12, components/scss/font-awesome/_larger.scss */
 .fa-4x {
   font-size: 4em;
 }
 
-/* line 13, components/scss/font-awesome/_larger.scss */
 .fa-5x {
   font-size: 5em;
 }
 
-/* line 3, components/scss/font-awesome/_fixed-width.scss */
 .fa-fw {
   width: 1.28571em;
   text-align: center;
 }
 
-/* line 4, components/scss/font-awesome/_list.scss */
 .fa-ul {
   padding-left: 0;
   margin-left: 2.14286em;
   list-style-type: none;
 }
-/* line 8, components/scss/font-awesome/_list.scss */
 .fa-ul > li {
   position: relative;
 }
 
-/* line 10, components/scss/font-awesome/_list.scss */
 .fa-li {
   position: absolute;
   left: -2.14286em;
@@ -635,38 +549,31 @@ li > ol {
   top: 0.14286em;
   text-align: center;
 }
-/* line 16, components/scss/font-awesome/_list.scss */
 .fa-li.fa-lg {
   left: -1.85714em;
 }
 
-/* line 4, components/scss/font-awesome/_bordered-pulled.scss */
 .fa-border {
   padding: .2em .25em .15em;
   border: solid 0.08em #eeeeee;
   border-radius: .1em;
 }
 
-/* line 10, components/scss/font-awesome/_bordered-pulled.scss */
 .pull-right {
   float: right;
 }
 
-/* line 11, components/scss/font-awesome/_bordered-pulled.scss */
 .pull-left {
   float: left;
 }
 
-/* line 14, components/scss/font-awesome/_bordered-pulled.scss */
 .fa.pull-left {
   margin-right: .3em;
 }
-/* line 15, components/scss/font-awesome/_bordered-pulled.scss */
 .fa.pull-right {
   margin-left: .3em;
 }
 
-/* line 4, components/scss/font-awesome/_spinning.scss */
 .fa-spin {
   -webkit-animation: spin 2s infinite linear;
   -moz-animation: spin 2s infinite linear;
@@ -675,56 +582,47 @@ li > ol {
 }
 
 @-moz-keyframes spin {
-  /* line 12, components/scss/font-awesome/_spinning.scss */
   0% {
     -moz-transform: rotate(0deg);
   }
 
-  /* line 13, components/scss/font-awesome/_spinning.scss */
   100% {
     -moz-transform: rotate(359deg);
   }
 }
 
 @-webkit-keyframes spin {
-  /* line 16, components/scss/font-awesome/_spinning.scss */
   0% {
     -webkit-transform: rotate(0deg);
   }
 
-  /* line 17, components/scss/font-awesome/_spinning.scss */
   100% {
     -webkit-transform: rotate(359deg);
   }
 }
 
 @-o-keyframes spin {
-  /* line 20, components/scss/font-awesome/_spinning.scss */
   0% {
     -o-transform: rotate(0deg);
   }
 
-  /* line 21, components/scss/font-awesome/_spinning.scss */
   100% {
     -o-transform: rotate(359deg);
   }
 }
 
 @keyframes spin {
-  /* line 24, components/scss/font-awesome/_spinning.scss */
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
 
-  /* line 28, components/scss/font-awesome/_spinning.scss */
   100% {
     -webkit-transform: rotate(359deg);
     transform: rotate(359deg);
   }
 }
 
-/* line 4, components/scss/font-awesome/_rotated-flipped.scss */
 .fa-rotate-90 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
   -webkit-transform: rotate(90deg);
@@ -734,7 +632,6 @@ li > ol {
   transform: rotate(90deg);
 }
 
-/* line 5, components/scss/font-awesome/_rotated-flipped.scss */
 .fa-rotate-180 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
   -webkit-transform: rotate(180deg);
@@ -744,7 +641,6 @@ li > ol {
   transform: rotate(180deg);
 }
 
-/* line 6, components/scss/font-awesome/_rotated-flipped.scss */
 .fa-rotate-270 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   -webkit-transform: rotate(270deg);
@@ -754,7 +650,6 @@ li > ol {
   transform: rotate(270deg);
 }
 
-/* line 8, components/scss/font-awesome/_rotated-flipped.scss */
 .fa-flip-horizontal {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
   -webkit-transform: scale(-1, 1);
@@ -764,7 +659,6 @@ li > ol {
   transform: scale(-1, 1);
 }
 
-/* line 9, components/scss/font-awesome/_rotated-flipped.scss */
 .fa-flip-vertical {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
   -webkit-transform: scale(1, -1);
@@ -774,7 +668,6 @@ li > ol {
   transform: scale(1, -1);
 }
 
-/* line 4, components/scss/font-awesome/_stacked.scss */
 .fa-stack {
   position: relative;
   display: inline-block;
@@ -784,7 +677,6 @@ li > ol {
   vertical-align: middle;
 }
 
-/* line 12, components/scss/font-awesome/_stacked.scss */
 .fa-stack-1x, .fa-stack-2x {
   position: absolute;
   left: 0;
@@ -792,1600 +684,1288 @@ li > ol {
   text-align: center;
 }
 
-/* line 18, components/scss/font-awesome/_stacked.scss */
 .fa-stack-1x {
   line-height: inherit;
 }
 
-/* line 19, components/scss/font-awesome/_stacked.scss */
 .fa-stack-2x {
   font-size: 2em;
 }
 
-/* line 20, components/scss/font-awesome/_stacked.scss */
 .fa-inverse {
   color: white;
 }
 
 /* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
    readers do not read off random characters that represent icons */
-/* line 4, components/scss/font-awesome/_icons.scss */
 .fa-glass:before {
   content: "\f000";
 }
 
-/* line 5, components/scss/font-awesome/_icons.scss */
 .fa-music:before {
   content: "\f001";
 }
 
-/* line 6, components/scss/font-awesome/_icons.scss */
 .fa-search:before {
   content: "\f002";
 }
 
-/* line 7, components/scss/font-awesome/_icons.scss */
 .fa-envelope-o:before {
   content: "\f003";
 }
 
-/* line 8, components/scss/font-awesome/_icons.scss */
 .fa-heart:before, .site-footer .site-info .copyrights .poweredby .theme:before {
   content: "\f004";
 }
 
-/* line 9, components/scss/font-awesome/_icons.scss */
 .fa-star:before {
   content: "\f005";
 }
 
-/* line 10, components/scss/font-awesome/_icons.scss */
 .fa-star-o:before {
   content: "\f006";
 }
 
-/* line 11, components/scss/font-awesome/_icons.scss */
 .fa-user:before {
   content: "\f007";
 }
 
-/* line 12, components/scss/font-awesome/_icons.scss */
 .fa-film:before {
   content: "\f008";
 }
 
-/* line 13, components/scss/font-awesome/_icons.scss */
 .fa-th-large:before {
   content: "\f009";
 }
 
-/* line 14, components/scss/font-awesome/_icons.scss */
 .fa-th:before {
   content: "\f00a";
 }
 
-/* line 15, components/scss/font-awesome/_icons.scss */
 .fa-th-list:before {
   content: "\f00b";
 }
 
-/* line 16, components/scss/font-awesome/_icons.scss */
 .fa-check:before {
   content: "\f00c";
 }
 
-/* line 17, components/scss/font-awesome/_icons.scss */
 .fa-times:before {
   content: "\f00d";
 }
 
-/* line 18, components/scss/font-awesome/_icons.scss */
 .fa-search-plus:before {
   content: "\f00e";
 }
 
-/* line 19, components/scss/font-awesome/_icons.scss */
 .fa-search-minus:before {
   content: "\f010";
 }
 
-/* line 20, components/scss/font-awesome/_icons.scss */
 .fa-power-off:before {
   content: "\f011";
 }
 
-/* line 21, components/scss/font-awesome/_icons.scss */
 .fa-signal:before {
   content: "\f012";
 }
 
-/* line 23, components/scss/font-awesome/_icons.scss */
 .fa-gear:before,
 .fa-cog:before {
   content: "\f013";
 }
 
-/* line 24, components/scss/font-awesome/_icons.scss */
 .fa-trash-o:before {
   content: "\f014";
 }
 
-/* line 25, components/scss/font-awesome/_icons.scss */
 .fa-home:before {
   content: "\f015";
 }
 
-/* line 26, components/scss/font-awesome/_icons.scss */
 .fa-file-o:before {
   content: "\f016";
 }
 
-/* line 27, components/scss/font-awesome/_icons.scss */
 .fa-clock-o:before {
   content: "\f017";
 }
 
-/* line 28, components/scss/font-awesome/_icons.scss */
 .fa-road:before {
   content: "\f018";
 }
 
-/* line 29, components/scss/font-awesome/_icons.scss */
 .fa-download:before {
   content: "\f019";
 }
 
-/* line 30, components/scss/font-awesome/_icons.scss */
 .fa-arrow-circle-o-down:before {
   content: "\f01a";
 }
 
-/* line 31, components/scss/font-awesome/_icons.scss */
 .fa-arrow-circle-o-up:before {
   content: "\f01b";
 }
 
-/* line 32, components/scss/font-awesome/_icons.scss */
 .fa-inbox:before {
   content: "\f01c";
 }
 
-/* line 33, components/scss/font-awesome/_icons.scss */
 .fa-play-circle-o:before {
   content: "\f01d";
 }
 
-/* line 35, components/scss/font-awesome/_icons.scss */
 .fa-rotate-right:before,
 .fa-repeat:before {
   content: "\f01e";
 }
 
-/* line 36, components/scss/font-awesome/_icons.scss */
 .fa-refresh:before {
   content: "\f021";
 }
 
-/* line 37, components/scss/font-awesome/_icons.scss */
 .fa-list-alt:before {
   content: "\f022";
 }
 
-/* line 38, components/scss/font-awesome/_icons.scss */
 .fa-lock:before {
   content: "\f023";
 }
 
-/* line 39, components/scss/font-awesome/_icons.scss */
 .fa-flag:before {
   content: "\f024";
 }
 
-/* line 40, components/scss/font-awesome/_icons.scss */
 .fa-headphones:before {
   content: "\f025";
 }
 
-/* line 41, components/scss/font-awesome/_icons.scss */
 .fa-volume-off:before {
   content: "\f026";
 }
 
-/* line 42, components/scss/font-awesome/_icons.scss */
 .fa-volume-down:before {
   content: "\f027";
 }
 
-/* line 43, components/scss/font-awesome/_icons.scss */
 .fa-volume-up:before {
   content: "\f028";
 }
 
-/* line 44, components/scss/font-awesome/_icons.scss */
 .fa-qrcode:before {
   content: "\f029";
 }
 
-/* line 45, components/scss/font-awesome/_icons.scss */
 .fa-barcode:before {
   content: "\f02a";
 }
 
-/* line 46, components/scss/font-awesome/_icons.scss */
 .fa-tag:before {
   content: "\f02b";
 }
 
-/* line 47, components/scss/font-awesome/_icons.scss */
 .fa-tags:before {
   content: "\f02c";
 }
 
-/* line 48, components/scss/font-awesome/_icons.scss */
 .fa-book:before {
   content: "\f02d";
 }
 
-/* line 49, components/scss/font-awesome/_icons.scss */
 .fa-bookmark:before, .note-link:before {
   content: "\f02e";
 }
 
-/* line 50, components/scss/font-awesome/_icons.scss */
 .fa-print:before {
   content: "\f02f";
 }
 
-/* line 51, components/scss/font-awesome/_icons.scss */
 .fa-camera:before {
   content: "\f030";
 }
 
-/* line 52, components/scss/font-awesome/_icons.scss */
 .fa-font:before {
   content: "\f031";
 }
 
-/* line 53, components/scss/font-awesome/_icons.scss */
 .fa-bold:before {
   content: "\f032";
 }
 
-/* line 54, components/scss/font-awesome/_icons.scss */
 .fa-italic:before {
   content: "\f033";
 }
 
-/* line 55, components/scss/font-awesome/_icons.scss */
 .fa-text-height:before {
   content: "\f034";
 }
 
-/* line 56, components/scss/font-awesome/_icons.scss */
 .fa-text-width:before {
   content: "\f035";
 }
 
-/* line 57, components/scss/font-awesome/_icons.scss */
 .fa-align-left:before {
   content: "\f036";
 }
 
-/* line 58, components/scss/font-awesome/_icons.scss */
 .fa-align-center:before {
   content: "\f037";
 }
 
-/* line 59, components/scss/font-awesome/_icons.scss */
 .fa-align-right:before {
   content: "\f038";
 }
 
-/* line 60, components/scss/font-awesome/_icons.scss */
 .fa-align-justify:before {
   content: "\f039";
 }
 
-/* line 61, components/scss/font-awesome/_icons.scss */
 .fa-list:before {
   content: "\f03a";
 }
 
-/* line 63, components/scss/font-awesome/_icons.scss */
 .fa-dedent:before,
 .fa-outdent:before {
   content: "\f03b";
 }
 
-/* line 64, components/scss/font-awesome/_icons.scss */
 .fa-indent:before {
   content: "\f03c";
 }
 
-/* line 65, components/scss/font-awesome/_icons.scss */
 .fa-video-camera:before {
   content: "\f03d";
 }
 
-/* line 68, components/scss/font-awesome/_icons.scss */
 .fa-photo:before,
 .fa-image:before,
 .fa-picture-o:before {
   content: "\f03e";
 }
 
-/* line 69, components/scss/font-awesome/_icons.scss */
 .fa-pencil:before {
   content: "\f040";
 }
 
-/* line 70, components/scss/font-awesome/_icons.scss */
 .fa-map-marker:before {
   content: "\f041";
 }
 
-/* line 71, components/scss/font-awesome/_icons.scss */
 .fa-adjust:before {
   content: "\f042";
 }
 
-/* line 72, components/scss/font-awesome/_icons.scss */
 .fa-tint:before {
   content: "\f043";
 }
 
-/* line 74, components/scss/font-awesome/_icons.scss */
 .fa-edit:before,
 .fa-pencil-square-o:before {
   content: "\f044";
 }
 
-/* line 75, components/scss/font-awesome/_icons.scss */
 .fa-share-square-o:before {
   content: "\f045";
 }
 
-/* line 76, components/scss/font-awesome/_icons.scss */
 .fa-check-square-o:before {
   content: "\f046";
 }
 
-/* line 77, components/scss/font-awesome/_icons.scss */
 .fa-arrows:before {
   content: "\f047";
 }
 
-/* line 78, components/scss/font-awesome/_icons.scss */
 .fa-step-backward:before {
   content: "\f048";
 }
 
-/* line 79, components/scss/font-awesome/_icons.scss */
 .fa-fast-backward:before {
   content: "\f049";
 }
 
-/* line 80, components/scss/font-awesome/_icons.scss */
 .fa-backward:before {
   content: "\f04a";
 }
 
-/* line 81, components/scss/font-awesome/_icons.scss */
 .fa-play:before {
   content: "\f04b";
 }
 
-/* line 82, components/scss/font-awesome/_icons.scss */
 .fa-pause:before {
   content: "\f04c";
 }
 
-/* line 83, components/scss/font-awesome/_icons.scss */
 .fa-stop:before {
   content: "\f04d";
 }
 
-/* line 84, components/scss/font-awesome/_icons.scss */
 .fa-forward:before {
   content: "\f04e";
 }
 
-/* line 85, components/scss/font-awesome/_icons.scss */
 .fa-fast-forward:before {
   content: "\f050";
 }
 
-/* line 86, components/scss/font-awesome/_icons.scss */
 .fa-step-forward:before {
   content: "\f051";
 }
 
-/* line 87, components/scss/font-awesome/_icons.scss */
 .fa-eject:before {
   content: "\f052";
 }
 
-/* line 88, components/scss/font-awesome/_icons.scss */
 .fa-chevron-left:before {
   content: "\f053";
 }
 
-/* line 89, components/scss/font-awesome/_icons.scss */
 .fa-chevron-right:before {
   content: "\f054";
 }
 
-/* line 90, components/scss/font-awesome/_icons.scss */
 .fa-plus-circle:before {
   content: "\f055";
 }
 
-/* line 91, components/scss/font-awesome/_icons.scss */
 .fa-minus-circle:before {
   content: "\f056";
 }
 
-/* line 92, components/scss/font-awesome/_icons.scss */
 .fa-times-circle:before {
   content: "\f057";
 }
 
-/* line 93, components/scss/font-awesome/_icons.scss */
 .fa-check-circle:before {
   content: "\f058";
 }
 
-/* line 94, components/scss/font-awesome/_icons.scss */
 .fa-question-circle:before {
   content: "\f059";
 }
 
-/* line 95, components/scss/font-awesome/_icons.scss */
 .fa-info-circle:before {
   content: "\f05a";
 }
 
-/* line 96, components/scss/font-awesome/_icons.scss */
 .fa-crosshairs:before {
   content: "\f05b";
 }
 
-/* line 97, components/scss/font-awesome/_icons.scss */
 .fa-times-circle-o:before {
   content: "\f05c";
 }
 
-/* line 98, components/scss/font-awesome/_icons.scss */
 .fa-check-circle-o:before {
   content: "\f05d";
 }
 
-/* line 99, components/scss/font-awesome/_icons.scss */
 .fa-ban:before {
   content: "\f05e";
 }
 
-/* line 100, components/scss/font-awesome/_icons.scss */
 .fa-arrow-left:before {
   content: "\f060";
 }
 
-/* line 101, components/scss/font-awesome/_icons.scss */
 .fa-arrow-right:before {
   content: "\f061";
 }
 
-/* line 102, components/scss/font-awesome/_icons.scss */
 .fa-arrow-up:before {
   content: "\f062";
 }
 
-/* line 103, components/scss/font-awesome/_icons.scss */
 .fa-arrow-down:before {
   content: "\f063";
 }
 
-/* line 105, components/scss/font-awesome/_icons.scss */
 .fa-mail-forward:before,
 .fa-share:before {
   content: "\f064";
 }
 
-/* line 106, components/scss/font-awesome/_icons.scss */
 .fa-expand:before {
   content: "\f065";
 }
 
-/* line 107, components/scss/font-awesome/_icons.scss */
 .fa-compress:before {
   content: "\f066";
 }
 
-/* line 108, components/scss/font-awesome/_icons.scss */
 .fa-plus:before {
   content: "\f067";
 }
 
-/* line 109, components/scss/font-awesome/_icons.scss */
 .fa-minus:before {
   content: "\f068";
 }
 
-/* line 110, components/scss/font-awesome/_icons.scss */
 .fa-asterisk:before {
   content: "\f069";
 }
 
-/* line 111, components/scss/font-awesome/_icons.scss */
 .fa-exclamation-circle:before {
   content: "\f06a";
 }
 
-/* line 112, components/scss/font-awesome/_icons.scss */
 .fa-gift:before {
   content: "\f06b";
 }
 
-/* line 113, components/scss/font-awesome/_icons.scss */
 .fa-leaf:before {
   content: "\f06c";
 }
 
-/* line 114, components/scss/font-awesome/_icons.scss */
 .fa-fire:before {
   content: "\f06d";
 }
 
-/* line 115, components/scss/font-awesome/_icons.scss */
 .fa-eye:before {
   content: "\f06e";
 }
 
-/* line 116, components/scss/font-awesome/_icons.scss */
 .fa-eye-slash:before {
   content: "\f070";
 }
 
-/* line 118, components/scss/font-awesome/_icons.scss */
 .fa-warning:before,
 .fa-exclamation-triangle:before {
   content: "\f071";
 }
 
-/* line 119, components/scss/font-awesome/_icons.scss */
 .fa-plane:before {
   content: "\f072";
 }
 
-/* line 120, components/scss/font-awesome/_icons.scss */
 .fa-calendar:before {
   content: "\f073";
 }
 
-/* line 121, components/scss/font-awesome/_icons.scss */
 .fa-random:before {
   content: "\f074";
 }
 
-/* line 122, components/scss/font-awesome/_icons.scss */
 .fa-comment:before {
   content: "\f075";
 }
 
-/* line 123, components/scss/font-awesome/_icons.scss */
 .fa-magnet:before {
   content: "\f076";
 }
 
-/* line 124, components/scss/font-awesome/_icons.scss */
 .fa-chevron-up:before {
   content: "\f077";
 }
 
-/* line 125, components/scss/font-awesome/_icons.scss */
 .fa-chevron-down:before {
   content: "\f078";
 }
 
-/* line 126, components/scss/font-awesome/_icons.scss */
 .fa-retweet:before {
   content: "\f079";
 }
 
-/* line 127, components/scss/font-awesome/_icons.scss */
 .fa-shopping-cart:before {
   content: "\f07a";
 }
 
-/* line 128, components/scss/font-awesome/_icons.scss */
 .fa-folder:before {
   content: "\f07b";
 }
 
-/* line 129, components/scss/font-awesome/_icons.scss */
 .fa-folder-open:before {
   content: "\f07c";
 }
 
-/* line 130, components/scss/font-awesome/_icons.scss */
 .fa-arrows-v:before {
   content: "\f07d";
 }
 
-/* line 131, components/scss/font-awesome/_icons.scss */
 .fa-arrows-h:before {
   content: "\f07e";
 }
 
-/* line 132, components/scss/font-awesome/_icons.scss */
 .fa-bar-chart-o:before {
   content: "\f080";
 }
 
-/* line 133, components/scss/font-awesome/_icons.scss */
 .fa-twitter-square:before {
   content: "\f081";
 }
 
-/* line 134, components/scss/font-awesome/_icons.scss */
 .fa-facebook-square:before {
   content: "\f082";
 }
 
-/* line 135, components/scss/font-awesome/_icons.scss */
 .fa-camera-retro:before {
   content: "\f083";
 }
 
-/* line 136, components/scss/font-awesome/_icons.scss */
 .fa-key:before {
   content: "\f084";
 }
 
-/* line 138, components/scss/font-awesome/_icons.scss */
 .fa-gears:before,
 .fa-cogs:before {
   content: "\f085";
 }
 
-/* line 139, components/scss/font-awesome/_icons.scss */
 .fa-comments:before {
   content: "\f086";
 }
 
-/* line 140, components/scss/font-awesome/_icons.scss */
 .fa-thumbs-o-up:before {
   content: "\f087";
 }
 
-/* line 141, components/scss/font-awesome/_icons.scss */
 .fa-thumbs-o-down:before {
   content: "\f088";
 }
 
-/* line 142, components/scss/font-awesome/_icons.scss */
 .fa-star-half:before {
   content: "\f089";
 }
 
-/* line 143, components/scss/font-awesome/_icons.scss */
 .fa-heart-o:before {
   content: "\f08a";
 }
 
-/* line 144, components/scss/font-awesome/_icons.scss */
 .fa-sign-out:before {
   content: "\f08b";
 }
 
-/* line 145, components/scss/font-awesome/_icons.scss */
 .fa-linkedin-square:before {
   content: "\f08c";
 }
 
-/* line 146, components/scss/font-awesome/_icons.scss */
 .fa-thumb-tack:before {
   content: "\f08d";
 }
 
-/* line 147, components/scss/font-awesome/_icons.scss */
 .fa-external-link:before {
   content: "\f08e";
 }
 
-/* line 148, components/scss/font-awesome/_icons.scss */
 .fa-sign-in:before {
   content: "\f090";
 }
 
-/* line 149, components/scss/font-awesome/_icons.scss */
 .fa-trophy:before {
   content: "\f091";
 }
 
-/* line 150, components/scss/font-awesome/_icons.scss */
 .fa-github-square:before {
   content: "\f092";
 }
 
-/* line 151, components/scss/font-awesome/_icons.scss */
 .fa-upload:before {
   content: "\f093";
 }
 
-/* line 152, components/scss/font-awesome/_icons.scss */
 .fa-lemon-o:before {
   content: "\f094";
 }
 
-/* line 153, components/scss/font-awesome/_icons.scss */
 .fa-phone:before {
   content: "\f095";
 }
 
-/* line 154, components/scss/font-awesome/_icons.scss */
 .fa-square-o:before {
   content: "\f096";
 }
 
-/* line 155, components/scss/font-awesome/_icons.scss */
 .fa-bookmark-o:before {
   content: "\f097";
 }
 
-/* line 156, components/scss/font-awesome/_icons.scss */
 .fa-phone-square:before {
   content: "\f098";
 }
 
-/* line 157, components/scss/font-awesome/_icons.scss */
 .fa-twitter:before {
   content: "\f099";
 }
 
-/* line 158, components/scss/font-awesome/_icons.scss */
 .fa-facebook:before {
   content: "\f09a";
 }
 
-/* line 159, components/scss/font-awesome/_icons.scss */
 .fa-github:before {
   content: "\f09b";
 }
 
-/* line 160, components/scss/font-awesome/_icons.scss */
 .fa-unlock:before {
   content: "\f09c";
 }
 
-/* line 161, components/scss/font-awesome/_icons.scss */
 .fa-credit-card:before {
   content: "\f09d";
 }
 
-/* line 162, components/scss/font-awesome/_icons.scss */
 .fa-rss:before {
   content: "\f09e";
 }
 
-/* line 163, components/scss/font-awesome/_icons.scss */
 .fa-hdd-o:before {
   content: "\f0a0";
 }
 
-/* line 164, components/scss/font-awesome/_icons.scss */
 .fa-bullhorn:before {
   content: "\f0a1";
 }
 
-/* line 165, components/scss/font-awesome/_icons.scss */
 .fa-bell:before {
   content: "\f0f3";
 }
 
-/* line 166, components/scss/font-awesome/_icons.scss */
 .fa-certificate:before {
   content: "\f0a3";
 }
 
-/* line 167, components/scss/font-awesome/_icons.scss */
 .fa-hand-o-right:before {
   content: "\f0a4";
 }
 
-/* line 168, components/scss/font-awesome/_icons.scss */
 .fa-hand-o-left:before {
   content: "\f0a5";
 }
 
-/* line 169, components/scss/font-awesome/_icons.scss */
 .fa-hand-o-up:before {
   content: "\f0a6";
 }
 
-/* line 170, components/scss/font-awesome/_icons.scss */
 .fa-hand-o-down:before {
   content: "\f0a7";
 }
 
-/* line 171, components/scss/font-awesome/_icons.scss */
 .fa-arrow-circle-left:before {
   content: "\f0a8";
 }
 
-/* line 172, components/scss/font-awesome/_icons.scss */
 .fa-arrow-circle-right:before {
   content: "\f0a9";
 }
 
-/* line 173, components/scss/font-awesome/_icons.scss */
 .fa-arrow-circle-up:before {
   content: "\f0aa";
 }
 
-/* line 174, components/scss/font-awesome/_icons.scss */
 .fa-arrow-circle-down:before {
   content: "\f0ab";
 }
 
-/* line 175, components/scss/font-awesome/_icons.scss */
 .fa-globe:before {
   content: "\f0ac";
 }
 
-/* line 176, components/scss/font-awesome/_icons.scss */
 .fa-wrench:before {
   content: "\f0ad";
 }
 
-/* line 177, components/scss/font-awesome/_icons.scss */
 .fa-tasks:before {
   content: "\f0ae";
 }
 
-/* line 178, components/scss/font-awesome/_icons.scss */
 .fa-filter:before {
   content: "\f0b0";
 }
 
-/* line 179, components/scss/font-awesome/_icons.scss */
 .fa-briefcase:before {
   content: "\f0b1";
 }
 
-/* line 180, components/scss/font-awesome/_icons.scss */
 .fa-arrows-alt:before {
   content: "\f0b2";
 }
 
-/* line 182, components/scss/font-awesome/_icons.scss */
 .fa-group:before,
 .fa-users:before {
   content: "\f0c0";
 }
 
-/* line 184, components/scss/font-awesome/_icons.scss */
 .fa-chain:before,
 .fa-link:before {
   content: "\f0c1";
 }
 
-/* line 185, components/scss/font-awesome/_icons.scss */
 .fa-cloud:before {
   content: "\f0c2";
 }
 
-/* line 186, components/scss/font-awesome/_icons.scss */
 .fa-flask:before {
   content: "\f0c3";
 }
 
-/* line 188, components/scss/font-awesome/_icons.scss */
 .fa-cut:before,
 .fa-scissors:before {
   content: "\f0c4";
 }
 
-/* line 190, components/scss/font-awesome/_icons.scss */
 .fa-copy:before,
 .fa-files-o:before {
   content: "\f0c5";
 }
 
-/* line 191, components/scss/font-awesome/_icons.scss */
 .fa-paperclip:before {
   content: "\f0c6";
 }
 
-/* line 193, components/scss/font-awesome/_icons.scss */
 .fa-save:before,
 .fa-floppy-o:before {
   content: "\f0c7";
 }
 
-/* line 194, components/scss/font-awesome/_icons.scss */
 .fa-square:before {
   content: "\f0c8";
 }
 
-/* line 197, components/scss/font-awesome/_icons.scss */
 .fa-navicon:before,
 .fa-reorder:before,
 .fa-bars:before {
   content: "\f0c9";
 }
 
-/* line 198, components/scss/font-awesome/_icons.scss */
 .fa-list-ul:before {
   content: "\f0ca";
 }
 
-/* line 199, components/scss/font-awesome/_icons.scss */
 .fa-list-ol:before {
   content: "\f0cb";
 }
 
-/* line 200, components/scss/font-awesome/_icons.scss */
 .fa-strikethrough:before {
   content: "\f0cc";
 }
 
-/* line 201, components/scss/font-awesome/_icons.scss */
 .fa-underline:before {
   content: "\f0cd";
 }
 
-/* line 202, components/scss/font-awesome/_icons.scss */
 .fa-table:before {
   content: "\f0ce";
 }
 
-/* line 203, components/scss/font-awesome/_icons.scss */
 .fa-magic:before {
   content: "\f0d0";
 }
 
-/* line 204, components/scss/font-awesome/_icons.scss */
 .fa-truck:before {
   content: "\f0d1";
 }
 
-/* line 205, components/scss/font-awesome/_icons.scss */
 .fa-pinterest:before {
   content: "\f0d2";
 }
 
-/* line 206, components/scss/font-awesome/_icons.scss */
 .fa-pinterest-square:before {
   content: "\f0d3";
 }
 
-/* line 207, components/scss/font-awesome/_icons.scss */
 .fa-google-plus-square:before {
   content: "\f0d4";
 }
 
-/* line 208, components/scss/font-awesome/_icons.scss */
 .fa-google-plus:before {
   content: "\f0d5";
 }
 
-/* line 209, components/scss/font-awesome/_icons.scss */
 .fa-money:before {
   content: "\f0d6";
 }
 
-/* line 210, components/scss/font-awesome/_icons.scss */
 .fa-caret-down:before {
   content: "\f0d7";
 }
 
-/* line 211, components/scss/font-awesome/_icons.scss */
 .fa-caret-up:before {
   content: "\f0d8";
 }
 
-/* line 212, components/scss/font-awesome/_icons.scss */
 .fa-caret-left:before {
   content: "\f0d9";
 }
 
-/* line 213, components/scss/font-awesome/_icons.scss */
 .fa-caret-right:before {
   content: "\f0da";
 }
 
-/* line 214, components/scss/font-awesome/_icons.scss */
 .fa-columns:before {
   content: "\f0db";
 }
 
-/* line 216, components/scss/font-awesome/_icons.scss */
 .fa-unsorted:before,
 .fa-sort:before {
   content: "\f0dc";
 }
 
-/* line 218, components/scss/font-awesome/_icons.scss */
 .fa-sort-down:before,
 .fa-sort-desc:before {
   content: "\f0dd";
 }
 
-/* line 220, components/scss/font-awesome/_icons.scss */
 .fa-sort-up:before,
 .fa-sort-asc:before {
   content: "\f0de";
 }
 
-/* line 221, components/scss/font-awesome/_icons.scss */
 .fa-envelope:before {
   content: "\f0e0";
 }
 
-/* line 222, components/scss/font-awesome/_icons.scss */
 .fa-linkedin:before {
   content: "\f0e1";
 }
 
-/* line 224, components/scss/font-awesome/_icons.scss */
 .fa-rotate-left:before,
 .fa-undo:before {
   content: "\f0e2";
 }
 
-/* line 226, components/scss/font-awesome/_icons.scss */
 .fa-legal:before,
 .fa-gavel:before {
   content: "\f0e3";
 }
 
-/* line 228, components/scss/font-awesome/_icons.scss */
 .fa-dashboard:before,
 .fa-tachometer:before {
   content: "\f0e4";
 }
 
-/* line 229, components/scss/font-awesome/_icons.scss */
 .fa-comment-o:before, .note-comment:before {
   content: "\f0e5";
 }
 
-/* line 230, components/scss/font-awesome/_icons.scss */
 .fa-comments-o:before {
   content: "\f0e6";
 }
 
-/* line 232, components/scss/font-awesome/_icons.scss */
 .fa-flash:before,
 .fa-bolt:before {
   content: "\f0e7";
 }
 
-/* line 233, components/scss/font-awesome/_icons.scss */
 .fa-sitemap:before {
   content: "\f0e8";
 }
 
-/* line 234, components/scss/font-awesome/_icons.scss */
 .fa-umbrella:before {
   content: "\f0e9";
 }
 
-/* line 236, components/scss/font-awesome/_icons.scss */
 .fa-paste:before,
 .fa-clipboard:before {
   content: "\f0ea";
 }
 
-/* line 237, components/scss/font-awesome/_icons.scss */
 .fa-lightbulb-o:before {
   content: "\f0eb";
 }
 
-/* line 238, components/scss/font-awesome/_icons.scss */
 .fa-exchange:before {
   content: "\f0ec";
 }
 
-/* line 239, components/scss/font-awesome/_icons.scss */
 .fa-cloud-download:before {
   content: "\f0ed";
 }
 
-/* line 240, components/scss/font-awesome/_icons.scss */
 .fa-cloud-upload:before {
   content: "\f0ee";
 }
 
-/* line 241, components/scss/font-awesome/_icons.scss */
 .fa-user-md:before {
   content: "\f0f0";
 }
 
-/* line 242, components/scss/font-awesome/_icons.scss */
 .fa-stethoscope:before {
   content: "\f0f1";
 }
 
-/* line 243, components/scss/font-awesome/_icons.scss */
 .fa-suitcase:before {
   content: "\f0f2";
 }
 
-/* line 244, components/scss/font-awesome/_icons.scss */
 .fa-bell-o:before {
   content: "\f0a2";
 }
 
-/* line 245, components/scss/font-awesome/_icons.scss */
 .fa-coffee:before {
   content: "\f0f4";
 }
 
-/* line 246, components/scss/font-awesome/_icons.scss */
 .fa-cutlery:before {
   content: "\f0f5";
 }
 
-/* line 247, components/scss/font-awesome/_icons.scss */
 .fa-file-text-o:before {
   content: "\f0f6";
 }
 
-/* line 248, components/scss/font-awesome/_icons.scss */
 .fa-building-o:before {
   content: "\f0f7";
 }
 
-/* line 249, components/scss/font-awesome/_icons.scss */
 .fa-hospital-o:before {
   content: "\f0f8";
 }
 
-/* line 250, components/scss/font-awesome/_icons.scss */
 .fa-ambulance:before {
   content: "\f0f9";
 }
 
-/* line 251, components/scss/font-awesome/_icons.scss */
 .fa-medkit:before {
   content: "\f0fa";
 }
 
-/* line 252, components/scss/font-awesome/_icons.scss */
 .fa-fighter-jet:before {
   content: "\f0fb";
 }
 
-/* line 253, components/scss/font-awesome/_icons.scss */
 .fa-beer:before {
   content: "\f0fc";
 }
 
-/* line 254, components/scss/font-awesome/_icons.scss */
 .fa-h-square:before {
   content: "\f0fd";
 }
 
-/* line 255, components/scss/font-awesome/_icons.scss */
 .fa-plus-square:before {
   content: "\f0fe";
 }
 
-/* line 256, components/scss/font-awesome/_icons.scss */
 .fa-angle-double-left:before {
   content: "\f100";
 }
 
-/* line 257, components/scss/font-awesome/_icons.scss */
 .fa-angle-double-right:before {
   content: "\f101";
 }
 
-/* line 258, components/scss/font-awesome/_icons.scss */
 .fa-angle-double-up:before {
   content: "\f102";
 }
 
-/* line 259, components/scss/font-awesome/_icons.scss */
 .fa-angle-double-down:before {
   content: "\f103";
 }
 
-/* line 260, components/scss/font-awesome/_icons.scss */
 .fa-angle-left:before {
   content: "\f104";
 }
 
-/* line 261, components/scss/font-awesome/_icons.scss */
 .fa-angle-right:before {
   content: "\f105";
 }
 
-/* line 262, components/scss/font-awesome/_icons.scss */
 .fa-angle-up:before {
   content: "\f106";
 }
 
-/* line 263, components/scss/font-awesome/_icons.scss */
 .fa-angle-down:before {
   content: "\f107";
 }
 
-/* line 264, components/scss/font-awesome/_icons.scss */
 .fa-desktop:before {
   content: "\f108";
 }
 
-/* line 265, components/scss/font-awesome/_icons.scss */
 .fa-laptop:before {
   content: "\f109";
 }
 
-/* line 266, components/scss/font-awesome/_icons.scss */
 .fa-tablet:before {
   content: "\f10a";
 }
 
-/* line 268, components/scss/font-awesome/_icons.scss */
 .fa-mobile-phone:before,
 .fa-mobile:before {
   content: "\f10b";
 }
 
-/* line 269, components/scss/font-awesome/_icons.scss */
 .fa-circle-o:before {
   content: "\f10c";
 }
 
-/* line 270, components/scss/font-awesome/_icons.scss */
 .fa-quote-left:before, blockquote:before {
   content: "\f10d";
 }
 
-/* line 271, components/scss/font-awesome/_icons.scss */
 .fa-quote-right:before {
   content: "\f10e";
 }
 
-/* line 272, components/scss/font-awesome/_icons.scss */
 .fa-spinner:before {
   content: "\f110";
 }
 
-/* line 273, components/scss/font-awesome/_icons.scss */
 .fa-circle:before {
   content: "\f111";
 }
 
-/* line 275, components/scss/font-awesome/_icons.scss */
 .fa-mail-reply:before,
 .fa-reply:before {
   content: "\f112";
 }
 
-/* line 276, components/scss/font-awesome/_icons.scss */
 .fa-github-alt:before {
   content: "\f113";
 }
 
-/* line 277, components/scss/font-awesome/_icons.scss */
 .fa-folder-o:before {
   content: "\f114";
 }
 
-/* line 278, components/scss/font-awesome/_icons.scss */
 .fa-folder-open-o:before {
   content: "\f115";
 }
 
-/* line 279, components/scss/font-awesome/_icons.scss */
 .fa-smile-o:before {
   content: "\f118";
 }
 
-/* line 280, components/scss/font-awesome/_icons.scss */
 .fa-frown-o:before {
   content: "\f119";
 }
 
-/* line 281, components/scss/font-awesome/_icons.scss */
 .fa-meh-o:before {
   content: "\f11a";
 }
 
-/* line 282, components/scss/font-awesome/_icons.scss */
 .fa-gamepad:before {
   content: "\f11b";
 }
 
-/* line 283, components/scss/font-awesome/_icons.scss */
 .fa-keyboard-o:before {
   content: "\f11c";
 }
 
-/* line 284, components/scss/font-awesome/_icons.scss */
 .fa-flag-o:before {
   content: "\f11d";
 }
 
-/* line 285, components/scss/font-awesome/_icons.scss */
 .fa-flag-checkered:before {
   content: "\f11e";
 }
 
-/* line 286, components/scss/font-awesome/_icons.scss */
 .fa-terminal:before {
   content: "\f120";
 }
 
-/* line 287, components/scss/font-awesome/_icons.scss */
 .fa-code:before {
   content: "\f121";
 }
 
-/* line 289, components/scss/font-awesome/_icons.scss */
 .fa-mail-reply-all:before,
 .fa-reply-all:before {
   content: "\f122";
 }
 
-/* line 292, components/scss/font-awesome/_icons.scss */
 .fa-star-half-empty:before,
 .fa-star-half-full:before,
 .fa-star-half-o:before {
   content: "\f123";
 }
 
-/* line 293, components/scss/font-awesome/_icons.scss */
 .fa-location-arrow:before {
   content: "\f124";
 }
 
-/* line 294, components/scss/font-awesome/_icons.scss */
 .fa-crop:before {
   content: "\f125";
 }
 
-/* line 295, components/scss/font-awesome/_icons.scss */
 .fa-code-fork:before {
   content: "\f126";
 }
 
-/* line 297, components/scss/font-awesome/_icons.scss */
 .fa-unlink:before,
 .fa-chain-broken:before {
   content: "\f127";
 }
 
-/* line 298, components/scss/font-awesome/_icons.scss */
 .fa-question:before {
   content: "\f128";
 }
 
-/* line 299, components/scss/font-awesome/_icons.scss */
 .fa-info:before {
   content: "\f129";
 }
 
-/* line 300, components/scss/font-awesome/_icons.scss */
 .fa-exclamation:before {
   content: "\f12a";
 }
 
-/* line 301, components/scss/font-awesome/_icons.scss */
 .fa-superscript:before {
   content: "\f12b";
 }
 
-/* line 302, components/scss/font-awesome/_icons.scss */
 .fa-subscript:before {
   content: "\f12c";
 }
 
-/* line 303, components/scss/font-awesome/_icons.scss */
 .fa-eraser:before {
   content: "\f12d";
 }
 
-/* line 304, components/scss/font-awesome/_icons.scss */
 .fa-puzzle-piece:before {
   content: "\f12e";
 }
 
-/* line 305, components/scss/font-awesome/_icons.scss */
 .fa-microphone:before {
   content: "\f130";
 }
 
-/* line 306, components/scss/font-awesome/_icons.scss */
 .fa-microphone-slash:before {
   content: "\f131";
 }
 
-/* line 307, components/scss/font-awesome/_icons.scss */
 .fa-shield:before {
   content: "\f132";
 }
 
-/* line 308, components/scss/font-awesome/_icons.scss */
 .fa-calendar-o:before {
   content: "\f133";
 }
 
-/* line 309, components/scss/font-awesome/_icons.scss */
 .fa-fire-extinguisher:before {
   content: "\f134";
 }
 
-/* line 310, components/scss/font-awesome/_icons.scss */
 .fa-rocket:before {
   content: "\f135";
 }
 
-/* line 311, components/scss/font-awesome/_icons.scss */
 .fa-maxcdn:before {
   content: "\f136";
 }
 
-/* line 312, components/scss/font-awesome/_icons.scss */
 .fa-chevron-circle-left:before {
   content: "\f137";
 }
 
-/* line 313, components/scss/font-awesome/_icons.scss */
 .fa-chevron-circle-right:before {
   content: "\f138";
 }
 
-/* line 314, components/scss/font-awesome/_icons.scss */
 .fa-chevron-circle-up:before {
   content: "\f139";
 }
 
-/* line 315, components/scss/font-awesome/_icons.scss */
 .fa-chevron-circle-down:before {
   content: "\f13a";
 }
 
-/* line 316, components/scss/font-awesome/_icons.scss */
 .fa-html5:before {
   content: "\f13b";
 }
 
-/* line 317, components/scss/font-awesome/_icons.scss */
 .fa-css3:before {
   content: "\f13c";
 }
 
-/* line 318, components/scss/font-awesome/_icons.scss */
 .fa-anchor:before {
   content: "\f13d";
 }
 
-/* line 319, components/scss/font-awesome/_icons.scss */
 .fa-unlock-alt:before {
   content: "\f13e";
 }
 
-/* line 320, components/scss/font-awesome/_icons.scss */
 .fa-bullseye:before {
   content: "\f140";
 }
 
-/* line 321, components/scss/font-awesome/_icons.scss */
 .fa-ellipsis-h:before {
   content: "\f141";
 }
 
-/* line 322, components/scss/font-awesome/_icons.scss */
 .fa-ellipsis-v:before {
   content: "\f142";
 }
 
-/* line 323, components/scss/font-awesome/_icons.scss */
 .fa-rss-square:before {
   content: "\f143";
 }
 
-/* line 324, components/scss/font-awesome/_icons.scss */
 .fa-play-circle:before {
   content: "\f144";
 }
 
-/* line 325, components/scss/font-awesome/_icons.scss */
 .fa-ticket:before {
   content: "\f145";
 }
 
-/* line 326, components/scss/font-awesome/_icons.scss */
 .fa-minus-square:before {
   content: "\f146";
 }
 
-/* line 327, components/scss/font-awesome/_icons.scss */
 .fa-minus-square-o:before {
   content: "\f147";
 }
 
-/* line 328, components/scss/font-awesome/_icons.scss */
 .fa-level-up:before {
   content: "\f148";
 }
 
-/* line 329, components/scss/font-awesome/_icons.scss */
 .fa-level-down:before {
   content: "\f149";
 }
 
-/* line 330, components/scss/font-awesome/_icons.scss */
 .fa-check-square:before {
   content: "\f14a";
 }
 
-/* line 331, components/scss/font-awesome/_icons.scss */
 .fa-pencil-square:before {
   content: "\f14b";
 }
 
-/* line 332, components/scss/font-awesome/_icons.scss */
 .fa-external-link-square:before {
   content: "\f14c";
 }
 
-/* line 333, components/scss/font-awesome/_icons.scss */
 .fa-share-square:before {
   content: "\f14d";
 }
 
-/* line 334, components/scss/font-awesome/_icons.scss */
 .fa-compass:before {
   content: "\f14e";
 }
 
-/* line 336, components/scss/font-awesome/_icons.scss */
 .fa-toggle-down:before,
 .fa-caret-square-o-down:before {
   content: "\f150";
 }
 
-/* line 338, components/scss/font-awesome/_icons.scss */
 .fa-toggle-up:before,
 .fa-caret-square-o-up:before {
   content: "\f151";
 }
 
-/* line 340, components/scss/font-awesome/_icons.scss */
 .fa-toggle-right:before,
 .fa-caret-square-o-right:before {
   content: "\f152";
 }
 
-/* line 342, components/scss/font-awesome/_icons.scss */
 .fa-euro:before,
 .fa-eur:before {
   content: "\f153";
 }
 
-/* line 343, components/scss/font-awesome/_icons.scss */
 .fa-gbp:before {
   content: "\f154";
 }
 
-/* line 345, components/scss/font-awesome/_icons.scss */
 .fa-dollar:before,
 .fa-usd:before {
   content: "\f155";
 }
 
-/* line 347, components/scss/font-awesome/_icons.scss */
 .fa-rupee:before,
 .fa-inr:before {
   content: "\f156";
 }
 
-/* line 351, components/scss/font-awesome/_icons.scss */
 .fa-cny:before,
 .fa-rmb:before,
 .fa-yen:before,
@@ -2393,574 +1973,463 @@ li > ol {
   content: "\f157";
 }
 
-/* line 354, components/scss/font-awesome/_icons.scss */
 .fa-ruble:before,
 .fa-rouble:before,
 .fa-rub:before {
   content: "\f158";
 }
 
-/* line 356, components/scss/font-awesome/_icons.scss */
 .fa-won:before,
 .fa-krw:before {
   content: "\f159";
 }
 
-/* line 358, components/scss/font-awesome/_icons.scss */
 .fa-bitcoin:before,
 .fa-btc:before {
   content: "\f15a";
 }
 
-/* line 359, components/scss/font-awesome/_icons.scss */
 .fa-file:before {
   content: "\f15b";
 }
 
-/* line 360, components/scss/font-awesome/_icons.scss */
 .fa-file-text:before {
   content: "\f15c";
 }
 
-/* line 361, components/scss/font-awesome/_icons.scss */
 .fa-sort-alpha-asc:before {
   content: "\f15d";
 }
 
-/* line 362, components/scss/font-awesome/_icons.scss */
 .fa-sort-alpha-desc:before {
   content: "\f15e";
 }
 
-/* line 363, components/scss/font-awesome/_icons.scss */
 .fa-sort-amount-asc:before {
   content: "\f160";
 }
 
-/* line 364, components/scss/font-awesome/_icons.scss */
 .fa-sort-amount-desc:before {
   content: "\f161";
 }
 
-/* line 365, components/scss/font-awesome/_icons.scss */
 .fa-sort-numeric-asc:before {
   content: "\f162";
 }
 
-/* line 366, components/scss/font-awesome/_icons.scss */
 .fa-sort-numeric-desc:before {
   content: "\f163";
 }
 
-/* line 367, components/scss/font-awesome/_icons.scss */
 .fa-thumbs-up:before {
   content: "\f164";
 }
 
-/* line 368, components/scss/font-awesome/_icons.scss */
 .fa-thumbs-down:before {
   content: "\f165";
 }
 
-/* line 369, components/scss/font-awesome/_icons.scss */
 .fa-youtube-square:before {
   content: "\f166";
 }
 
-/* line 370, components/scss/font-awesome/_icons.scss */
 .fa-youtube:before {
   content: "\f167";
 }
 
-/* line 371, components/scss/font-awesome/_icons.scss */
 .fa-xing:before {
   content: "\f168";
 }
 
-/* line 372, components/scss/font-awesome/_icons.scss */
 .fa-xing-square:before {
   content: "\f169";
 }
 
-/* line 373, components/scss/font-awesome/_icons.scss */
 .fa-youtube-play:before {
   content: "\f16a";
 }
 
-/* line 374, components/scss/font-awesome/_icons.scss */
 .fa-dropbox:before {
   content: "\f16b";
 }
 
-/* line 375, components/scss/font-awesome/_icons.scss */
 .fa-stack-overflow:before {
   content: "\f16c";
 }
 
-/* line 376, components/scss/font-awesome/_icons.scss */
 .fa-instagram:before {
   content: "\f16d";
 }
 
-/* line 377, components/scss/font-awesome/_icons.scss */
 .fa-flickr:before {
   content: "\f16e";
 }
 
-/* line 378, components/scss/font-awesome/_icons.scss */
 .fa-adn:before {
   content: "\f170";
 }
 
-/* line 379, components/scss/font-awesome/_icons.scss */
 .fa-bitbucket:before {
   content: "\f171";
 }
 
-/* line 380, components/scss/font-awesome/_icons.scss */
 .fa-bitbucket-square:before {
   content: "\f172";
 }
 
-/* line 381, components/scss/font-awesome/_icons.scss */
 .fa-tumblr:before {
   content: "\f173";
 }
 
-/* line 382, components/scss/font-awesome/_icons.scss */
 .fa-tumblr-square:before {
   content: "\f174";
 }
 
-/* line 383, components/scss/font-awesome/_icons.scss */
 .fa-long-arrow-down:before {
   content: "\f175";
 }
 
-/* line 384, components/scss/font-awesome/_icons.scss */
 .fa-long-arrow-up:before {
   content: "\f176";
 }
 
-/* line 385, components/scss/font-awesome/_icons.scss */
 .fa-long-arrow-left:before {
   content: "\f177";
 }
 
-/* line 386, components/scss/font-awesome/_icons.scss */
 .fa-long-arrow-right:before {
   content: "\f178";
 }
 
-/* line 387, components/scss/font-awesome/_icons.scss */
 .fa-apple:before {
   content: "\f179";
 }
 
-/* line 388, components/scss/font-awesome/_icons.scss */
 .fa-windows:before {
   content: "\f17a";
 }
 
-/* line 389, components/scss/font-awesome/_icons.scss */
 .fa-android:before {
   content: "\f17b";
 }
 
-/* line 390, components/scss/font-awesome/_icons.scss */
 .fa-linux:before {
   content: "\f17c";
 }
 
-/* line 391, components/scss/font-awesome/_icons.scss */
 .fa-dribbble:before {
   content: "\f17d";
 }
 
-/* line 392, components/scss/font-awesome/_icons.scss */
 .fa-skype:before {
   content: "\f17e";
 }
 
-/* line 393, components/scss/font-awesome/_icons.scss */
 .fa-foursquare:before {
   content: "\f180";
 }
 
-/* line 394, components/scss/font-awesome/_icons.scss */
 .fa-trello:before {
   content: "\f181";
 }
 
-/* line 395, components/scss/font-awesome/_icons.scss */
 .fa-female:before {
   content: "\f182";
 }
 
-/* line 396, components/scss/font-awesome/_icons.scss */
 .fa-male:before {
   content: "\f183";
 }
 
-/* line 397, components/scss/font-awesome/_icons.scss */
 .fa-gittip:before {
   content: "\f184";
 }
 
-/* line 398, components/scss/font-awesome/_icons.scss */
 .fa-sun-o:before {
   content: "\f185";
 }
 
-/* line 399, components/scss/font-awesome/_icons.scss */
 .fa-moon-o:before {
   content: "\f186";
 }
 
-/* line 400, components/scss/font-awesome/_icons.scss */
 .fa-archive:before {
   content: "\f187";
 }
 
-/* line 401, components/scss/font-awesome/_icons.scss */
 .fa-bug:before {
   content: "\f188";
 }
 
-/* line 402, components/scss/font-awesome/_icons.scss */
 .fa-vk:before {
   content: "\f189";
 }
 
-/* line 403, components/scss/font-awesome/_icons.scss */
 .fa-weibo:before {
   content: "\f18a";
 }
 
-/* line 404, components/scss/font-awesome/_icons.scss */
 .fa-renren:before {
   content: "\f18b";
 }
 
-/* line 405, components/scss/font-awesome/_icons.scss */
 .fa-pagelines:before {
   content: "\f18c";
 }
 
-/* line 406, components/scss/font-awesome/_icons.scss */
 .fa-stack-exchange:before {
   content: "\f18d";
 }
 
-/* line 407, components/scss/font-awesome/_icons.scss */
 .fa-arrow-circle-o-right:before {
   content: "\f18e";
 }
 
-/* line 408, components/scss/font-awesome/_icons.scss */
 .fa-arrow-circle-o-left:before {
   content: "\f190";
 }
 
-/* line 410, components/scss/font-awesome/_icons.scss */
 .fa-toggle-left:before,
 .fa-caret-square-o-left:before {
   content: "\f191";
 }
 
-/* line 411, components/scss/font-awesome/_icons.scss */
 .fa-dot-circle-o:before {
   content: "\f192";
 }
 
-/* line 412, components/scss/font-awesome/_icons.scss */
 .fa-wheelchair:before {
   content: "\f193";
 }
 
-/* line 413, components/scss/font-awesome/_icons.scss */
 .fa-vimeo-square:before {
   content: "\f194";
 }
 
-/* line 415, components/scss/font-awesome/_icons.scss */
 .fa-turkish-lira:before,
 .fa-try:before {
   content: "\f195";
 }
 
-/* line 416, components/scss/font-awesome/_icons.scss */
 .fa-plus-square-o:before {
   content: "\f196";
 }
 
-/* line 417, components/scss/font-awesome/_icons.scss */
 .fa-space-shuttle:before {
   content: "\f197";
 }
 
-/* line 418, components/scss/font-awesome/_icons.scss */
 .fa-slack:before {
   content: "\f198";
 }
 
-/* line 419, components/scss/font-awesome/_icons.scss */
 .fa-envelope-square:before {
   content: "\f199";
 }
 
-/* line 420, components/scss/font-awesome/_icons.scss */
 .fa-wordpress:before {
   content: "\f19a";
 }
 
-/* line 421, components/scss/font-awesome/_icons.scss */
 .fa-openid:before {
   content: "\f19b";
 }
 
-/* line 424, components/scss/font-awesome/_icons.scss */
 .fa-institution:before,
 .fa-bank:before,
 .fa-university:before {
   content: "\f19c";
 }
 
-/* line 426, components/scss/font-awesome/_icons.scss */
 .fa-mortar-board:before,
 .fa-graduation-cap:before {
   content: "\f19d";
 }
 
-/* line 427, components/scss/font-awesome/_icons.scss */
 .fa-yahoo:before {
   content: "\f19e";
 }
 
-/* line 428, components/scss/font-awesome/_icons.scss */
 .fa-google:before {
   content: "\f1a0";
 }
 
-/* line 429, components/scss/font-awesome/_icons.scss */
 .fa-reddit:before {
   content: "\f1a1";
 }
 
-/* line 430, components/scss/font-awesome/_icons.scss */
 .fa-reddit-square:before {
   content: "\f1a2";
 }
 
-/* line 431, components/scss/font-awesome/_icons.scss */
 .fa-stumbleupon-circle:before {
   content: "\f1a3";
 }
 
-/* line 432, components/scss/font-awesome/_icons.scss */
 .fa-stumbleupon:before {
   content: "\f1a4";
 }
 
-/* line 433, components/scss/font-awesome/_icons.scss */
 .fa-delicious:before {
   content: "\f1a5";
 }
 
-/* line 434, components/scss/font-awesome/_icons.scss */
 .fa-digg:before {
   content: "\f1a6";
 }
 
-/* line 436, components/scss/font-awesome/_icons.scss */
 .fa-pied-piper-square:before,
 .fa-pied-piper:before {
   content: "\f1a7";
 }
 
-/* line 437, components/scss/font-awesome/_icons.scss */
 .fa-pied-piper-alt:before {
   content: "\f1a8";
 }
 
-/* line 438, components/scss/font-awesome/_icons.scss */
 .fa-drupal:before {
   content: "\f1a9";
 }
 
-/* line 439, components/scss/font-awesome/_icons.scss */
 .fa-joomla:before {
   content: "\f1aa";
 }
 
-/* line 440, components/scss/font-awesome/_icons.scss */
 .fa-language:before {
   content: "\f1ab";
 }
 
-/* line 441, components/scss/font-awesome/_icons.scss */
 .fa-fax:before {
   content: "\f1ac";
 }
 
-/* line 442, components/scss/font-awesome/_icons.scss */
 .fa-building:before {
   content: "\f1ad";
 }
 
-/* line 443, components/scss/font-awesome/_icons.scss */
 .fa-child:before {
   content: "\f1ae";
 }
 
-/* line 444, components/scss/font-awesome/_icons.scss */
 .fa-paw:before {
   content: "\f1b0";
 }
 
-/* line 445, components/scss/font-awesome/_icons.scss */
 .fa-spoon:before {
   content: "\f1b1";
 }
 
-/* line 446, components/scss/font-awesome/_icons.scss */
 .fa-cube:before {
   content: "\f1b2";
 }
 
-/* line 447, components/scss/font-awesome/_icons.scss */
 .fa-cubes:before {
   content: "\f1b3";
 }
 
-/* line 448, components/scss/font-awesome/_icons.scss */
 .fa-behance:before {
   content: "\f1b4";
 }
 
-/* line 449, components/scss/font-awesome/_icons.scss */
 .fa-behance-square:before {
   content: "\f1b5";
 }
 
-/* line 450, components/scss/font-awesome/_icons.scss */
 .fa-steam:before {
   content: "\f1b6";
 }
 
-/* line 451, components/scss/font-awesome/_icons.scss */
 .fa-steam-square:before {
   content: "\f1b7";
 }
 
-/* line 452, components/scss/font-awesome/_icons.scss */
 .fa-recycle:before {
   content: "\f1b8";
 }
 
-/* line 454, components/scss/font-awesome/_icons.scss */
 .fa-automobile:before,
 .fa-car:before {
   content: "\f1b9";
 }
 
-/* line 456, components/scss/font-awesome/_icons.scss */
 .fa-cab:before,
 .fa-taxi:before {
   content: "\f1ba";
 }
 
-/* line 457, components/scss/font-awesome/_icons.scss */
 .fa-tree:before {
   content: "\f1bb";
 }
 
-/* line 458, components/scss/font-awesome/_icons.scss */
 .fa-spotify:before {
   content: "\f1bc";
 }
 
-/* line 459, components/scss/font-awesome/_icons.scss */
 .fa-deviantart:before {
   content: "\f1bd";
 }
 
-/* line 460, components/scss/font-awesome/_icons.scss */
 .fa-soundcloud:before {
   content: "\f1be";
 }
 
-/* line 461, components/scss/font-awesome/_icons.scss */
 .fa-database:before {
   content: "\f1c0";
 }
 
-/* line 462, components/scss/font-awesome/_icons.scss */
 .fa-file-pdf-o:before {
   content: "\f1c1";
 }
 
-/* line 463, components/scss/font-awesome/_icons.scss */
 .fa-file-word-o:before {
   content: "\f1c2";
 }
 
-/* line 464, components/scss/font-awesome/_icons.scss */
 .fa-file-excel-o:before {
   content: "\f1c3";
 }
 
-/* line 465, components/scss/font-awesome/_icons.scss */
 .fa-file-powerpoint-o:before {
   content: "\f1c4";
 }
 
-/* line 468, components/scss/font-awesome/_icons.scss */
 .fa-file-photo-o:before,
 .fa-file-picture-o:before,
 .fa-file-image-o:before {
   content: "\f1c5";
 }
 
-/* line 470, components/scss/font-awesome/_icons.scss */
 .fa-file-zip-o:before,
 .fa-file-archive-o:before {
   content: "\f1c6";
 }
 
-/* line 472, components/scss/font-awesome/_icons.scss */
 .fa-file-sound-o:before,
 .fa-file-audio-o:before {
   content: "\f1c7";
 }
 
-/* line 474, components/scss/font-awesome/_icons.scss */
 .fa-file-movie-o:before,
 .fa-file-video-o:before {
   content: "\f1c8";
 }
 
-/* line 475, components/scss/font-awesome/_icons.scss */
 .fa-file-code-o:before {
   content: "\f1c9";
 }
 
-/* line 476, components/scss/font-awesome/_icons.scss */
 .fa-vine:before {
   content: "\f1ca";
 }
 
-/* line 477, components/scss/font-awesome/_icons.scss */
 .fa-codepen:before {
   content: "\f1cb";
 }
 
-/* line 478, components/scss/font-awesome/_icons.scss */
 .fa-jsfiddle:before {
   content: "\f1cc";
 }
 
-/* line 482, components/scss/font-awesome/_icons.scss */
 .fa-life-bouy:before,
 .fa-life-saver:before,
 .fa-support:before,
@@ -2968,102 +2437,83 @@ li > ol {
   content: "\f1cd";
 }
 
-/* line 483, components/scss/font-awesome/_icons.scss */
 .fa-circle-o-notch:before {
   content: "\f1ce";
 }
 
-/* line 485, components/scss/font-awesome/_icons.scss */
 .fa-ra:before,
 .fa-rebel:before {
   content: "\f1d0";
 }
 
-/* line 487, components/scss/font-awesome/_icons.scss */
 .fa-ge:before,
 .fa-empire:before {
   content: "\f1d1";
 }
 
-/* line 488, components/scss/font-awesome/_icons.scss */
 .fa-git-square:before {
   content: "\f1d2";
 }
 
-/* line 489, components/scss/font-awesome/_icons.scss */
 .fa-git:before {
   content: "\f1d3";
 }
 
-/* line 490, components/scss/font-awesome/_icons.scss */
 .fa-hacker-news:before {
   content: "\f1d4";
 }
 
-/* line 491, components/scss/font-awesome/_icons.scss */
 .fa-tencent-weibo:before {
   content: "\f1d5";
 }
 
-/* line 492, components/scss/font-awesome/_icons.scss */
 .fa-qq:before {
   content: "\f1d6";
 }
 
-/* line 494, components/scss/font-awesome/_icons.scss */
 .fa-wechat:before,
 .fa-weixin:before {
   content: "\f1d7";
 }
 
-/* line 496, components/scss/font-awesome/_icons.scss */
 .fa-send:before,
 .fa-paper-plane:before {
   content: "\f1d8";
 }
 
-/* line 498, components/scss/font-awesome/_icons.scss */
 .fa-send-o:before,
 .fa-paper-plane-o:before {
   content: "\f1d9";
 }
 
-/* line 499, components/scss/font-awesome/_icons.scss */
 .fa-history:before {
   content: "\f1da";
 }
 
-/* line 500, components/scss/font-awesome/_icons.scss */
 .fa-circle-thin:before {
   content: "\f1db";
 }
 
-/* line 501, components/scss/font-awesome/_icons.scss */
 .fa-header:before {
   content: "\f1dc";
 }
 
-/* line 502, components/scss/font-awesome/_icons.scss */
 .fa-paragraph:before {
   content: "\f1dd";
 }
 
-/* line 503, components/scss/font-awesome/_icons.scss */
 .fa-sliders:before {
   content: "\f1de";
 }
 
-/* line 504, components/scss/font-awesome/_icons.scss */
 .fa-share-alt:before {
   content: "\f1e0";
 }
 
-/* line 505, components/scss/font-awesome/_icons.scss */
 .fa-share-alt-square:before {
   content: "\f1e1";
 }
 
-/* line 506, components/scss/font-awesome/_icons.scss */
 .fa-bomb:before {
   content: "\f1e2";
 }
@@ -3085,7 +2535,6 @@ li > ol {
 /**
  * All Genericons
  */
-/* line 27, sass/partials/_genericons.scss */
 .genericon {
   display: inline-block;
   width: 16px;
@@ -3104,7 +2553,6 @@ li > ol {
 /**
  * IE7 and IE6 hacks
  */
-/* line 46, sass/partials/_genericons.scss */
 .genericon {
   *overflow: auto;
   *zoom: 1;
@@ -3127,7 +2575,6 @@ li > ol {
   font-style: normal;
 }
 
-/* line 14, sass/partials/_entyposocialicon.scss */
 .entypo-social, .share-button-hatena:before {
   font-family: 'EntypoSocialRegular';
   font-size: 2em;
@@ -3138,7 +2585,6 @@ li > ol {
 /**
  * IE7 and IE6 hacks
  */
-/* line 25, sass/partials/_entyposocialicon.scss */
 .entypo-social, .share-button-hatena:before {
   *overflow: auto;
   *zoom: 1;
@@ -3147,13 +2593,11 @@ li > ol {
 
 /* =Global
 ----------------------------------------------- */
-/* line 5, sass/partials/_global.scss */
 .hr, .comment-list > .comment:after, .comment-list > .pingback:after,
 .comment-list .children > .comment:before {
   border-bottom: 2px solid #dddddd;
 }
 
-/* line 9, sass/partials/_global.scss */
 .block-content, .entry-content .syntaxhighlighter,
 .page-content .syntaxhighlighter,
 .comment-content .syntaxhighlighter {
@@ -3170,17 +2614,14 @@ li > ol {
   box-shadow: none;
 }
 
-/* line 13, sass/partials/_global.scss */
 .strike {
   text-decoration: line-through;
 }
 
-/* line 25, sass/partials/_global.scss */
 .muted {
   color: #999;
 }
 
-/* line 29, sass/partials/_global.scss */
 .time {
   color: #767676;
   font-style: normal;
@@ -3188,31 +2629,26 @@ li > ol {
   text-transform: uppercase;
 }
 
-/* line 37, sass/partials/_global.scss */
 .time-icon:before {
   font-family: FontAwesome;
   content: "\f073";
   margin-right: 3px;
 }
 
-/* line 44, sass/partials/_global.scss */
 .list-unstyled, .list-inline {
   padding-left: 0;
   list-style: none;
 }
 
-/* line 53, sass/partials/_global.scss */
 .list-inline > li {
   display: inline-block;
   padding-left: 5px;
   padding-right: 5px;
 }
-/* line 58, sass/partials/_global.scss */
 .list-inline > li:first-child {
   padding-left: 0;
 }
 
-/* line 64, sass/partials/_global.scss */
 .table-bordered, .markdown-content table {
   border: 2px solid #dddddd;
   border-collapse: separate;
@@ -3221,12 +2657,10 @@ li > ol {
   border-radius: 6px;
   background-color: #fff;
 }
-/* line 72, sass/partials/_global.scss */
 .table-bordered th, .markdown-content table th {
   background-color: white;
   background-color: rgba(221, 221, 221, 0.3);
 }
-/* line 78, sass/partials/_global.scss */
 .table-bordered th, .markdown-content table th,
 .table-bordered td,
 .markdown-content table td {
@@ -3236,7 +2670,6 @@ li > ol {
   border-top: 2px solid #dddddd;
   border-left: 2px solid #dddddd;
 }
-/* line 93, sass/partials/_global.scss */
 .table-bordered caption + thead tr:first-child th, .markdown-content table caption + thead tr:first-child th,
 .table-bordered caption + tbody tr:first-child th,
 .markdown-content table caption + tbody tr:first-child th,
@@ -3256,33 +2689,28 @@ li > ol {
 .markdown-content table tbody:first-child tr:first-child td {
   border-top: 0;
 }
-/* line 97, sass/partials/_global.scss */
 .table-bordered thead:first-child tr:first-child th:first-child, .markdown-content table thead:first-child tr:first-child th:first-child,
 .table-bordered tbody:first-child tr:first-child td:first-child,
 .markdown-content table tbody:first-child tr:first-child td:first-child {
   border-top-left-radius: 6px;
 }
-/* line 101, sass/partials/_global.scss */
 .table-bordered thead:first-child tr:first-child th:last-child, .markdown-content table thead:first-child tr:first-child th:last-child,
 .table-bordered tbody:first-child tr:first-child td:last-child,
 .markdown-content table tbody:first-child tr:first-child td:last-child {
   border-top-right-radius: 6px;
 }
-/* line 105, sass/partials/_global.scss */
 .table-bordered thead:last-child tr:last-child th:first-child, .markdown-content table thead:last-child tr:last-child th:first-child,
 .table-bordered tbody:last-child tr:last-child td:first-child,
 .markdown-content table tbody:last-child tr:last-child td:first-child {
   border-radius: 0 0 0 6px;
   border-bottom-left-radius: 6px;
 }
-/* line 110, sass/partials/_global.scss */
 .table-bordered thead:last-child tr:last-child th:last-child, .markdown-content table thead:last-child tr:last-child th:last-child,
 .table-bordered tbody:last-child tr:last-child td:last-child,
 .markdown-content table tbody:last-child tr:last-child td:last-child {
   border-bottom-right-radius: 6px;
 }
 
-/* line 116, sass/partials/_global.scss */
 .rakuten-afl {
   border: 2px solid #e9ecef;
   -webkit-border-radius: 6px;
@@ -3297,16 +2725,13 @@ li > ol {
   box-shadow: none;
   margin-bottom: 20px;
 }
-/* line 118, sass/partials/_global.scss */
 .rakuten-afl table {
   margin: 0;
   border-bottom: none;
 }
-/* line 121, sass/partials/_global.scss */
 .rakuten-afl table td, .rakuten-afl table tr {
   border: none;
 }
-/* line 124, sass/partials/_global.scss */
 .rakuten-afl table img {
   border: none;
   -webkit-border-radius: 0;
@@ -3317,7 +2742,6 @@ li > ol {
 }
 
 /* Ascii Art */
-/* line 133, sass/partials/_global.scss */
 .aa, .aa p {
   color: #333333 !important;
   font-family: 'Mona','IPAMonaPGothic','IPA モナー Pゴシック','MS PGothic AA','MS PGothic','ＭＳ Ｐゴシック',sans-serif !important;
@@ -3326,21 +2750,18 @@ li > ol {
 }
 
 /* Alignment */
-/* line 144, sass/partials/_global.scss */
 .align-left {
   display: inline;
   float: left;
   margin-right: 1.5em;
 }
 
-/* line 149, sass/partials/_global.scss */
 .align-right {
   display: inline;
   float: right;
   margin-left: 1.5em;
 }
 
-/* line 154, sass/partials/_global.scss */
 .align-center {
   clear: both;
   display: block;
@@ -3348,12 +2769,10 @@ li > ol {
 }
 
 /* Text meant only for screen readers */
-/* line 161, sass/partials/_global.scss */
 .screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
 }
-/* line 167, sass/partials/_global.scss */
 .screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus {
   background-color: #f1f1f1;
   border-radius: 3px;
@@ -3375,7 +2794,6 @@ li > ol {
 }
 
 /* Clearing */
-/* line 193, sass/partials/_global.scss */
 .clear,
 .site-main,
 .entry-content,
@@ -3384,7 +2802,6 @@ li > ol {
 .comment-body {
   *zoom: 1;
 }
-/* line 266, sass/_mixins.scss */
 .clear:before, .clear:after,
 .site-main:before,
 .site-main:after,
@@ -3399,7 +2816,6 @@ li > ol {
   content: "";
   display: table;
 }
-/* line 270, sass/_mixins.scss */
 .clear:after,
 .site-main:after,
 .entry-content:after,
@@ -3409,7 +2825,6 @@ li > ol {
   clear: both;
 }
 
-/* line 6, sass/partials/_grid.scss */
 .container {
   margin-right: auto;
   margin-left: auto;
@@ -3417,33 +2832,27 @@ li > ol {
   padding-right: 15px;
   *zoom: 1;
 }
-/* line 266, sass/_mixins.scss */
 .container:before, .container:after {
   content: "";
   display: table;
 }
-/* line 270, sass/_mixins.scss */
 .container:after {
   clear: both;
 }
 
-/* line 11, sass/partials/_grid.scss */
 .row {
   margin-left: -15px;
   margin-right: -15px;
   *zoom: 1;
 }
-/* line 266, sass/_mixins.scss */
 .row:before, .row:after {
   content: "";
   display: table;
 }
-/* line 270, sass/_mixins.scss */
 .row:after {
   clear: both;
 }
 
-/* line 202, sass/_mixins.scss */
 .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1 {
   position: relative;
   min-height: 1px;
@@ -3451,1066 +2860,854 @@ li > ol {
   padding-right: 15px;
 }
 
-/* line 221, sass/_mixins.scss */
 .col-xs-12, .col-xs-11, .col-xs-10, .col-xs-9, .col-xs-8, .col-xs-7, .col-xs-6, .col-xs-5, .col-xs-4, .col-xs-3, .col-xs-2, .col-xs-1 {
   float: left;
 }
 
-/* line 229, sass/_mixins.scss */
 .col-xs-1 {
   width: 8.33333%;
 }
 
-/* line 229, sass/_mixins.scss */
 .col-xs-2 {
   width: 16.66667%;
 }
 
-/* line 229, sass/_mixins.scss */
 .col-xs-3 {
   width: 25%;
 }
 
-/* line 229, sass/_mixins.scss */
 .col-xs-4 {
   width: 33.33333%;
 }
 
-/* line 229, sass/_mixins.scss */
 .col-xs-5 {
   width: 41.66667%;
 }
 
-/* line 229, sass/_mixins.scss */
 .col-xs-6 {
   width: 50%;
 }
 
-/* line 229, sass/_mixins.scss */
 .col-xs-7 {
   width: 58.33333%;
 }
 
-/* line 229, sass/_mixins.scss */
 .col-xs-8 {
   width: 66.66667%;
 }
 
-/* line 229, sass/_mixins.scss */
 .col-xs-9 {
   width: 75%;
 }
 
-/* line 229, sass/_mixins.scss */
 .col-xs-10 {
   width: 83.33333%;
 }
 
-/* line 229, sass/_mixins.scss */
 .col-xs-11 {
   width: 91.66667%;
 }
 
-/* line 229, sass/_mixins.scss */
 .col-xs-12 {
   width: 100%;
 }
 
-/* line 239, sass/_mixins.scss */
 .col-xs-pull-0 {
   right: 0%;
 }
 
-/* line 239, sass/_mixins.scss */
 .col-xs-pull-1 {
   right: 8.33333%;
 }
 
-/* line 239, sass/_mixins.scss */
 .col-xs-pull-2 {
   right: 16.66667%;
 }
 
-/* line 239, sass/_mixins.scss */
 .col-xs-pull-3 {
   right: 25%;
 }
 
-/* line 239, sass/_mixins.scss */
 .col-xs-pull-4 {
   right: 33.33333%;
 }
 
-/* line 239, sass/_mixins.scss */
 .col-xs-pull-5 {
   right: 41.66667%;
 }
 
-/* line 239, sass/_mixins.scss */
 .col-xs-pull-6 {
   right: 50%;
 }
 
-/* line 239, sass/_mixins.scss */
 .col-xs-pull-7 {
   right: 58.33333%;
 }
 
-/* line 239, sass/_mixins.scss */
 .col-xs-pull-8 {
   right: 66.66667%;
 }
 
-/* line 239, sass/_mixins.scss */
 .col-xs-pull-9 {
   right: 75%;
 }
 
-/* line 239, sass/_mixins.scss */
 .col-xs-pull-10 {
   right: 83.33333%;
 }
 
-/* line 239, sass/_mixins.scss */
 .col-xs-pull-11 {
   right: 91.66667%;
 }
 
-/* line 239, sass/_mixins.scss */
 .col-xs-pull-12 {
   right: 100%;
 }
 
-/* line 234, sass/_mixins.scss */
 .col-xs-push-0 {
   left: 0%;
 }
 
-/* line 234, sass/_mixins.scss */
 .col-xs-push-1 {
   left: 8.33333%;
 }
 
-/* line 234, sass/_mixins.scss */
 .col-xs-push-2 {
   left: 16.66667%;
 }
 
-/* line 234, sass/_mixins.scss */
 .col-xs-push-3 {
   left: 25%;
 }
 
-/* line 234, sass/_mixins.scss */
 .col-xs-push-4 {
   left: 33.33333%;
 }
 
-/* line 234, sass/_mixins.scss */
 .col-xs-push-5 {
   left: 41.66667%;
 }
 
-/* line 234, sass/_mixins.scss */
 .col-xs-push-6 {
   left: 50%;
 }
 
-/* line 234, sass/_mixins.scss */
 .col-xs-push-7 {
   left: 58.33333%;
 }
 
-/* line 234, sass/_mixins.scss */
 .col-xs-push-8 {
   left: 66.66667%;
 }
 
-/* line 234, sass/_mixins.scss */
 .col-xs-push-9 {
   left: 75%;
 }
 
-/* line 234, sass/_mixins.scss */
 .col-xs-push-10 {
   left: 83.33333%;
 }
 
-/* line 234, sass/_mixins.scss */
 .col-xs-push-11 {
   left: 91.66667%;
 }
 
-/* line 234, sass/_mixins.scss */
 .col-xs-push-12 {
   left: 100%;
 }
 
-/* line 244, sass/_mixins.scss */
 .col-xs-offset-0 {
   margin-left: 0%;
 }
 
-/* line 244, sass/_mixins.scss */
 .col-xs-offset-1 {
   margin-left: 8.33333%;
 }
 
-/* line 244, sass/_mixins.scss */
 .col-xs-offset-2 {
   margin-left: 16.66667%;
 }
 
-/* line 244, sass/_mixins.scss */
 .col-xs-offset-3 {
   margin-left: 25%;
 }
 
-/* line 244, sass/_mixins.scss */
 .col-xs-offset-4 {
   margin-left: 33.33333%;
 }
 
-/* line 244, sass/_mixins.scss */
 .col-xs-offset-5 {
   margin-left: 41.66667%;
 }
 
-/* line 244, sass/_mixins.scss */
 .col-xs-offset-6 {
   margin-left: 50%;
 }
 
-/* line 244, sass/_mixins.scss */
 .col-xs-offset-7 {
   margin-left: 58.33333%;
 }
 
-/* line 244, sass/_mixins.scss */
 .col-xs-offset-8 {
   margin-left: 66.66667%;
 }
 
-/* line 244, sass/_mixins.scss */
 .col-xs-offset-9 {
   margin-left: 75%;
 }
 
-/* line 244, sass/_mixins.scss */
 .col-xs-offset-10 {
   margin-left: 83.33333%;
 }
 
-/* line 244, sass/_mixins.scss */
 .col-xs-offset-11 {
   margin-left: 91.66667%;
 }
 
-/* line 244, sass/_mixins.scss */
 .col-xs-offset-12 {
   margin-left: 100%;
 }
 
 @media (min-width: 768px) {
-  /* line 43, sass/partials/_grid.scss */
   .container {
     width: 750px;
   }
 
-  /* line 221, sass/_mixins.scss */
   .col-sm-12, .col-sm-11, .col-sm-10, .col-sm-9, .col-sm-8, .col-sm-7, .col-sm-6, .col-sm-5, .col-sm-4, .col-sm-3, .col-sm-2, .col-sm-1 {
     float: left;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-sm-1 {
     width: 8.33333%;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-sm-2 {
     width: 16.66667%;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-sm-3 {
     width: 25%;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-sm-4 {
     width: 33.33333%;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-sm-5 {
     width: 41.66667%;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-sm-6 {
     width: 50%;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-sm-7 {
     width: 58.33333%;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-sm-8 {
     width: 66.66667%;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-sm-9 {
     width: 75%;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-sm-10 {
     width: 83.33333%;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-sm-11 {
     width: 91.66667%;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-sm-12 {
     width: 100%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-sm-pull-0 {
     right: 0%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-sm-pull-1 {
     right: 8.33333%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-sm-pull-2 {
     right: 16.66667%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-sm-pull-3 {
     right: 25%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-sm-pull-4 {
     right: 33.33333%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-sm-pull-5 {
     right: 41.66667%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-sm-pull-6 {
     right: 50%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-sm-pull-7 {
     right: 58.33333%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-sm-pull-8 {
     right: 66.66667%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-sm-pull-9 {
     right: 75%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-sm-pull-10 {
     right: 83.33333%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-sm-pull-11 {
     right: 91.66667%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-sm-pull-12 {
     right: 100%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-sm-push-0 {
     left: 0%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-sm-push-1 {
     left: 8.33333%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-sm-push-2 {
     left: 16.66667%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-sm-push-3 {
     left: 25%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-sm-push-4 {
     left: 33.33333%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-sm-push-5 {
     left: 41.66667%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-sm-push-6 {
     left: 50%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-sm-push-7 {
     left: 58.33333%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-sm-push-8 {
     left: 66.66667%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-sm-push-9 {
     left: 75%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-sm-push-10 {
     left: 83.33333%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-sm-push-11 {
     left: 91.66667%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-sm-push-12 {
     left: 100%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-sm-offset-0 {
     margin-left: 0%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-sm-offset-1 {
     margin-left: 8.33333%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-sm-offset-2 {
     margin-left: 16.66667%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-sm-offset-3 {
     margin-left: 25%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-sm-offset-4 {
     margin-left: 33.33333%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-sm-offset-5 {
     margin-left: 41.66667%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-sm-offset-6 {
     margin-left: 50%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-sm-offset-7 {
     margin-left: 58.33333%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-sm-offset-8 {
     margin-left: 66.66667%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-sm-offset-9 {
     margin-left: 75%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-sm-offset-10 {
     margin-left: 83.33333%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-sm-offset-11 {
     margin-left: 91.66667%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-sm-offset-12 {
     margin-left: 100%;
   }
 }
 @media (min-width: 992px) {
-  /* line 63, sass/partials/_grid.scss */
   .container {
     width: 930px;
   }
 
-  /* line 221, sass/_mixins.scss */
   .col-md-12, .col-md-11, .col-md-10, .col-md-9, .col-md-8, .col-md-7, .col-md-6, .col-md-5, .col-md-4, .col-md-3, .col-md-2, .col-md-1 {
     float: left;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-md-1 {
     width: 8.33333%;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-md-2 {
     width: 16.66667%;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-md-3 {
     width: 25%;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-md-4 {
     width: 33.33333%;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-md-5 {
     width: 41.66667%;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-md-6 {
     width: 50%;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-md-7 {
     width: 58.33333%;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-md-8 {
     width: 66.66667%;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-md-9 {
     width: 75%;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-md-10 {
     width: 83.33333%;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-md-11 {
     width: 91.66667%;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-md-12 {
     width: 100%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-md-pull-0 {
     right: 0%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-md-pull-1 {
     right: 8.33333%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-md-pull-2 {
     right: 16.66667%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-md-pull-3 {
     right: 25%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-md-pull-4 {
     right: 33.33333%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-md-pull-5 {
     right: 41.66667%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-md-pull-6 {
     right: 50%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-md-pull-7 {
     right: 58.33333%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-md-pull-8 {
     right: 66.66667%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-md-pull-9 {
     right: 75%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-md-pull-10 {
     right: 83.33333%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-md-pull-11 {
     right: 91.66667%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-md-pull-12 {
     right: 100%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-md-push-0 {
     left: 0%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-md-push-1 {
     left: 8.33333%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-md-push-2 {
     left: 16.66667%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-md-push-3 {
     left: 25%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-md-push-4 {
     left: 33.33333%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-md-push-5 {
     left: 41.66667%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-md-push-6 {
     left: 50%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-md-push-7 {
     left: 58.33333%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-md-push-8 {
     left: 66.66667%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-md-push-9 {
     left: 75%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-md-push-10 {
     left: 83.33333%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-md-push-11 {
     left: 91.66667%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-md-push-12 {
     left: 100%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-md-offset-0 {
     margin-left: 0%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-md-offset-1 {
     margin-left: 8.33333%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-md-offset-2 {
     margin-left: 16.66667%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-md-offset-3 {
     margin-left: 25%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-md-offset-4 {
     margin-left: 33.33333%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-md-offset-5 {
     margin-left: 41.66667%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-md-offset-6 {
     margin-left: 50%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-md-offset-7 {
     margin-left: 58.33333%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-md-offset-8 {
     margin-left: 66.66667%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-md-offset-9 {
     margin-left: 75%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-md-offset-10 {
     margin-left: 83.33333%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-md-offset-11 {
     margin-left: 91.66667%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-md-offset-12 {
     margin-left: 100%;
   }
 }
 @media (min-width: 1200px) {
-  /* line 83, sass/partials/_grid.scss */
   .container {
     width: 970px;
   }
 
-  /* line 221, sass/_mixins.scss */
   .col-lg-12, .col-lg-11, .col-lg-10, .col-lg-9, .col-lg-8, .col-lg-7, .col-lg-6, .col-lg-5, .col-lg-4, .col-lg-3, .col-lg-2, .col-lg-1 {
     float: left;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-lg-1 {
     width: 8.33333%;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-lg-2 {
     width: 16.66667%;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-lg-3 {
     width: 25%;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-lg-4 {
     width: 33.33333%;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-lg-5 {
     width: 41.66667%;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-lg-6 {
     width: 50%;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-lg-7 {
     width: 58.33333%;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-lg-8 {
     width: 66.66667%;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-lg-9 {
     width: 75%;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-lg-10 {
     width: 83.33333%;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-lg-11 {
     width: 91.66667%;
   }
 
-  /* line 229, sass/_mixins.scss */
   .col-lg-12 {
     width: 100%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-lg-pull-0 {
     right: 0%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-lg-pull-1 {
     right: 8.33333%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-lg-pull-2 {
     right: 16.66667%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-lg-pull-3 {
     right: 25%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-lg-pull-4 {
     right: 33.33333%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-lg-pull-5 {
     right: 41.66667%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-lg-pull-6 {
     right: 50%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-lg-pull-7 {
     right: 58.33333%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-lg-pull-8 {
     right: 66.66667%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-lg-pull-9 {
     right: 75%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-lg-pull-10 {
     right: 83.33333%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-lg-pull-11 {
     right: 91.66667%;
   }
 
-  /* line 239, sass/_mixins.scss */
   .col-lg-pull-12 {
     right: 100%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-lg-push-0 {
     left: 0%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-lg-push-1 {
     left: 8.33333%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-lg-push-2 {
     left: 16.66667%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-lg-push-3 {
     left: 25%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-lg-push-4 {
     left: 33.33333%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-lg-push-5 {
     left: 41.66667%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-lg-push-6 {
     left: 50%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-lg-push-7 {
     left: 58.33333%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-lg-push-8 {
     left: 66.66667%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-lg-push-9 {
     left: 75%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-lg-push-10 {
     left: 83.33333%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-lg-push-11 {
     left: 91.66667%;
   }
 
-  /* line 234, sass/_mixins.scss */
   .col-lg-push-12 {
     left: 100%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-lg-offset-0 {
     margin-left: 0%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-lg-offset-1 {
     margin-left: 8.33333%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-lg-offset-2 {
     margin-left: 16.66667%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-lg-offset-3 {
     margin-left: 25%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-lg-offset-4 {
     margin-left: 33.33333%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-lg-offset-5 {
     margin-left: 41.66667%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-lg-offset-6 {
     margin-left: 50%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-lg-offset-7 {
     margin-left: 58.33333%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-lg-offset-8 {
     margin-left: 66.66667%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-lg-offset-9 {
     margin-left: 75%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-lg-offset-10 {
     margin-left: 83.33333%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-lg-offset-11 {
     margin-left: 91.66667%;
   }
 
-  /* line 244, sass/_mixins.scss */
   .col-lg-offset-12 {
     margin-left: 100%;
   }
 }
-/* line 2, sass/partials/_button.scss */
-.btn, .pagination ul .current .page, .pagination a, .navigation-comment a, .list-archives .list-archives-item-month a, .list-archives .list-archives-item-month-no-items span, .section-page-category .list-category li a, .list-archives .list-archives-item-year > a {
+.btn, .pagination ul .current .page, .pagination a, .navigation-comment a, .more-link, .list-archives .list-archives-item-month a, .list-archives .list-archives-item-month-no-items span, .section-page-category .list-category li a, .list-archives .list-archives-item-year > a {
   margin: 0 10px 0 0;
   display: inline-block;
   float: left;
@@ -4522,13 +3719,11 @@ li > ol {
   font-weight: bold;
   font-size: 16px;
 }
-/* line 14, sass/partials/_button.scss */
-.btn:hover, .pagination ul .current .page:hover, .pagination a:hover, .navigation-comment a:hover, .list-archives .list-archives-item-month a:hover, .list-archives .list-archives-item-month-no-items span:hover, .section-page-category .list-category li a:hover, .list-archives .list-archives-item-year > a:hover {
-  background-color: #071c23;
+.btn:hover, .pagination ul .current .page:hover, .pagination a:hover, .navigation-comment a:hover, .more-link:hover, .list-archives .list-archives-item-month a:hover, .list-archives .list-archives-item-month-no-items span:hover, .section-page-category .list-category li a:hover, .list-archives .list-archives-item-year > a:hover {
+  background-color: #103f4d;
   color: white;
 }
 
-/* line 16, sass/partials/_form.scss */
 textarea,
 input[type="text"],
 input[type="password"],
@@ -4557,7 +3752,6 @@ input[type="color"],
   -moz-box-shadow: none;
   box-shadow: none;
 }
-/* line 4, sass/_mixins.scss */
 textarea:-moz-placeholder,
 input[type="text"]:-moz-placeholder,
 input[type="password"]:-moz-placeholder,
@@ -4576,7 +3770,6 @@ input[type="color"]:-moz-placeholder,
 .uneditable-input:-moz-placeholder {
   color: #ecf0f1;
 }
-/* line 7, sass/_mixins.scss */
 textarea:-ms-input-placeholder,
 input[type="text"]:-ms-input-placeholder,
 input[type="password"]:-ms-input-placeholder,
@@ -4595,7 +3788,6 @@ input[type="color"]:-ms-input-placeholder,
 .uneditable-input:-ms-input-placeholder {
   color: #ecf0f1;
 }
-/* line 10, sass/_mixins.scss */
 textarea::-webkit-input-placeholder,
 input[type="text"]::-webkit-input-placeholder,
 input[type="password"]::-webkit-input-placeholder,
@@ -4614,7 +3806,6 @@ input[type="color"]::-webkit-input-placeholder,
 .uneditable-input::-webkit-input-placeholder {
   color: #ecf0f1;
 }
-/* line 24, sass/partials/_form.scss */
 textarea:focus,
 input[type="text"]:focus,
 input[type="password"]:focus,
@@ -4640,7 +3831,6 @@ input[type="color"]:focus,
   box-shadow: none;
 }
 
-/* line 3, sass/partials/_searchform.scss */
 .search-form .search-form-fieldset {
   position: relative;
   border: 2px solid #ecf0f1;
@@ -4653,7 +3843,6 @@ input[type="color"]:focus,
   margin: 0;
   padding: 8px 8px 8px 40px;
 }
-/* line 12, sass/partials/_searchform.scss */
 .search-form .fa-search {
   font-size: 20px;
   -webkit-border-radius: 27px;
@@ -4667,7 +3856,6 @@ input[type="color"]:focus,
   position: absolute;
   padding: 7px 8px 8px 8px;
 }
-/* line 22, sass/partials/_searchform.scss */
 .search-form .search-form-text {
   padding: 0;
   border: none;
@@ -4677,13 +3865,11 @@ input[type="color"]:focus,
   transition: width 400ms ease, background 400ms ease;
   color: #bdc3c7;
 }
-/* line 27, sass/partials/_searchform.scss */
 .search-form .search-form-text:focus {
   cursor: text;
   outline: 0;
   color: #333333;
 }
-/* line 34, sass/partials/_searchform.scss */
 .search-form .search-form-submit {
   left: 3px;
   top: 3px;
@@ -4705,26 +3891,21 @@ input[type="color"]:focus,
 
 /* =Breadcrumb
 ----------------------------------------------- */
-/* line 4, sass/partials/_breadcrumb.scss */
 .breadcrumb {
   display: block;
 }
-/* line 7, sass/partials/_breadcrumb.scss */
 .breadcrumb .fa-chevron-right {
   padding-right: 5px;
   padding-left: 5px;
   color: #bdc3c7;
 }
-/* line 13, sass/partials/_breadcrumb.scss */
 .breadcrumb a {
   padding: 10px 10px 10px 10px;
 }
-/* line 16, sass/partials/_breadcrumb.scss */
 .breadcrumb .breadcrumb-last {
   margin-left: 5px;
 }
 
-/* line 2, sass/partials/_pagination.scss */
 .pagination ul .current .page, .pagination a, .navigation-comment a {
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -4733,41 +3914,30 @@ input[type="color"]:focus,
   border-radius: 20px;
 }
 
-/* line 7, sass/partials/_pagination.scss */
 .pagination {
   display: block;
   *zoom: 1;
   padding: 20px 0;
 }
-/* line 266, sass/_mixins.scss */
 .pagination:before, .pagination:after {
   content: "";
   display: table;
 }
-/* line 270, sass/_mixins.scss */
 .pagination:after {
   clear: both;
 }
-/* line 12, sass/partials/_pagination.scss */
 .pagination ul {
   list-style: none;
   margin: 10px 0 10px 0;
   padding: 0;
 }
-/* line 17, sass/partials/_pagination.scss */
 .pagination ul li {
   float: left;
 }
-/* line 22, sass/partials/_pagination.scss */
 .pagination ul .current .page {
-  background-color: #3e5771;
-}
-/* line 25, sass/partials/_pagination.scss */
-.pagination ul .current .page:hover {
-  background-color: #3e5771;
+  background-color: #103f4d;
 }
 
-/* line 4, sass/partials/_container.scss */
 .site {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
@@ -4776,101 +3946,82 @@ input[type="color"]:focus,
   width: 100%;
 }
 
-/* line 10, sass/partials/_container.scss */
 .site-content-area {
   margin: 0 auto;
   position: relative;
 }
 
-/* line 15, sass/partials/_container.scss */
 .site-content {
   margin: 0 auto;
 }
 
-/* line 2, sass/partials/_header.scss */
 .site-header {
   padding: 10px 0 10px 0;
   *zoom: 1;
 }
-/* line 266, sass/_mixins.scss */
 .site-header:before, .site-header:after {
   content: "";
   display: table;
 }
-/* line 270, sass/_mixins.scss */
 .site-header:after {
   clear: both;
 }
-/* line 6, sass/partials/_header.scss */
 .site-header a {
   color: #196177;
 }
-/* line 8, sass/partials/_header.scss */
 .site-header a:hover {
-  color: #071c23;
+  color: #103f4d;
 }
-/* line 13, sass/partials/_header.scss */
 .site-header .site-info {
   float: left;
   width: auto;
 }
-/* line 17, sass/partials/_header.scss */
 .site-header .site-info .site-title {
   margin: 0;
   font-family: 'Slackey';
   font-size: 52px;
 }
-/* line 22, sass/partials/_header.scss */
 .site-header .site-info .site-description {
   margin: 0;
   color: #bdc3c7;
   font-size: 12px;
   font-style: italic;
 }
-/* line 30, sass/partials/_header.scss */
 .site-header .sub-nav {
   float: right;
   padding-top: 10px;
 }
-/* line 34, sass/partials/_header.scss */
 .site-header .sub-nav .socials {
   float: left;
   margin-right: 5px;
   line-height: 40px;
 }
-/* line 40, sass/partials/_header.scss */
 .site-header .sub-nav .search-form {
   float: left;
 }
-/* line 43, sass/partials/_header.scss */
 .site-header .sub-nav .search-form .search-form-text {
   width: 150px;
 }
 
 /* =Navigation
 ----------------------------------------------- */
-/* line 5, sass/partials/_navigation.scss */
 .site-navi {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   padding: 20px 0px;
 }
 
-/* line 10, sass/partials/_navigation.scss */
 .navigation-paging {
   background-color: white;
   padding: 40px 0;
 }
-/* line 14, sass/partials/_navigation.scss */
 .navigation-paging a {
   font-size: 22px;
   font-style: italic;
   font-weight: 300;
 }
-/* line 21, sass/partials/_navigation.scss */
 .navigation-paging .nav-links .nav-next {
   padding: 13px 0;
 }
-/* line 26, sass/partials/_navigation.scss */
 .navigation-paging .meta-nav {
   background-color: #2ba6cb;
   border-radius: 50%;
@@ -4882,137 +4033,109 @@ input[type="color"]:focus,
   text-align: center;
   width: 50px;
 }
-/* line 38, sass/partials/_navigation.scss */
 .navigation-paging .nav-previous .meta-nav {
   margin-right: 10px;
   padding: 18px;
   width: 80px;
 }
-/* line 44, sass/partials/_navigation.scss */
 .navigation-paging .nav-next .meta-nav {
   margin-left: 10px;
 }
-/* line 48, sass/partials/_navigation.scss */
 .navigation-paging a:hover .meta-nav {
-  background-color: #196177;
+  background-color: #2284a1;
 }
 
-/* line 6, sass/partials/_content.scss */
 .post-summary,
 .post-single {
   word-wrap: break-word;
 }
 
-/* line 11, sass/partials/_content.scss */
 .post-summary .entry-title {
   font-size: 26px;
 }
-/* line 13, sass/partials/_content.scss */
 .post-summary .entry-title a {
   color: #2ba6cb;
 }
-/* line 18, sass/partials/_content.scss */
 .post-summary .entry-summary p {
   color: #3e5771;
 }
 
-/* line 25, sass/partials/_content.scss */
 .site-content .page-header {
   padding-bottom: 10px;
   margin-bottom: 20px;
   border-bottom: 1px solid #e9ecef;
 }
-/* line 30, sass/partials/_content.scss */
 .site-content .page-header .page-title {
   margin: 0;
   color: #2c3e50;
 }
 
-/* line 37, sass/partials/_content.scss */
 .entry-header {
   position: relative;
 }
-/* line 40, sass/partials/_content.scss */
 .entry-header a {
   color: #2c3e50;
 }
-/* line 42, sass/partials/_content.scss */
 .entry-header a:hover {
-  color: #196177;
+  color: #2284a1;
 }
-/* line 47, sass/partials/_content.scss */
 .entry-header span {
   margin-right: 5px;
 }
-/* line 52, sass/partials/_content.scss */
 .entry-header .cat-links,
 .entry-header .tag-links {
   color: #bdc3c7;
   text-transform: uppercase;
 }
-/* line 55, sass/partials/_content.scss */
 .entry-header .cat-links a,
 .entry-header .tag-links a {
   color: #bdc3c7;
 }
-/* line 58, sass/partials/_content.scss */
 .entry-header .cat-links a:hover,
 .entry-header .tag-links a:hover {
-  color: #869198;
+  color: #a1aab0;
 }
-/* line 64, sass/partials/_content.scss */
 .entry-header .tag-links {
   margin-left: 5px;
 }
-/* line 66, sass/partials/_content.scss */
 .entry-header .tag-links a {
   margin-right: 10px;
 }
-/* line 72, sass/partials/_content.scss */
 .entry-header .entry-date .time {
   color: #bdc3c7;
 }
-/* line 77, sass/partials/_content.scss */
 .entry-header .entry-title {
   font-weight: 700;
   color: #2c3e50;
   margin: 0 0 5px 0;
 }
 
-/* line 84, sass/partials/_content.scss */
 .entry-meta {
   margin: 10px 0 0 0;
 }
-/* line 86, sass/partials/_content.scss */
 .entry-meta i {
   margin-left: .5em;
   color: #2ba6cb;
 }
-/* line 91, sass/partials/_content.scss */
 .entry-meta .portfolio-posts-area .entry-date {
   margin: 0 4px;
 }
-/* line 96, sass/partials/_content.scss */
 .entry-meta .author,
 .entry-meta .date {
   display: none;
 }
 
-/* line 101, sass/partials/_content.scss */
 .entry-content {
   line-height: 2;
 }
-/* line 104, sass/partials/_content.scss */
 .entry-content h2 {
   padding-bottom: 10px;
   border-bottom: solid 2px #dddddd;
 }
-/* line 109, sass/partials/_content.scss */
 .entry-content h3 {
   padding-bottom: 5px;
   border-bottom: solid 1px #dddddd;
 }
-/* line 114, sass/partials/_content.scss */
 .entry-content img {
   padding: 4px;
   background-color: #fff;
@@ -5024,25 +4147,21 @@ input[type="color"]:focus,
   border-radius: 4px;
 }
 
-/* line 123, sass/partials/_content.scss */
 .entry-content,
 .entry-meta {
   *zoom: 1;
 }
-/* line 266, sass/_mixins.scss */
 .entry-content:before, .entry-content:after,
 .entry-meta:before,
 .entry-meta:after {
   content: "";
   display: table;
 }
-/* line 270, sass/_mixins.scss */
 .entry-content:after,
 .entry-meta:after {
   clear: both;
 }
 
-/* line 127, sass/partials/_content.scss */
 .more-link {
   float: right;
   -webkit-border-radius: 20px;
@@ -5050,14 +4169,8 @@ input[type="color"]:focus,
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
   border-radius: 20px;
-  background-color: #3e5771;
-}
-/* line 131, sass/partials/_content.scss */
-.more-link:hover {
-  background-color: #196177;
 }
 
-/* line 143, sass/partials/_content.scss */
 .entry-content img,
 .entry-summary img,
 .comment-content img,
@@ -5066,7 +4179,6 @@ input[type="color"]:focus,
   max-width: 100%;
 }
 
-/* line 161, sass/partials/_content.scss */
 img.size-full,
 img.size-large,
 img.wp-post-image {
@@ -5074,30 +4186,25 @@ img.wp-post-image {
   max-width: 100%;
 }
 
-/* line 168, sass/partials/_content.scss */
 embed,
 iframe,
 object {
   max-width: 100%;
 }
 
-/* line 172, sass/partials/_content.scss */
 .section, .section-comment .comment-respond {
   margin: 15px 0 0 0;
   padding: 15px 0 0 0;
 }
-/* line 175, sass/partials/_content.scss */
 .section .section-title, .section-comment .comment-respond .section-title, .section-comment .comment-respond .comment-reply-title {
   text-transform: uppercase;
 }
 
-/* line 181, sass/partials/_content.scss */
 .section-default .section-title, .section-comment .comment-respond .section-title, .section-comment .comment-respond .comment-reply-title {
   color: #3e5771;
   margin: 10px 0;
   border-bottom: 5px solid #3e5771;
 }
-/* line 185, sass/partials/_content.scss */
 .section-default .section-title:before, .section-comment .comment-respond .section-title:before, .section-comment .comment-respond .comment-reply-title:before {
   font-family: FontAwesome;
   background-color: #3e5771;
@@ -5109,12 +4216,10 @@ object {
   width: 36px;
 }
 
-/* line 198, sass/partials/_content.scss */
 .section-mini {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   *zoom: 1;
 }
-/* line 201, sass/partials/_content.scss */
 .section-mini .section-title, .section-mini .section-comment .comment-respond .comment-reply-title, .section-comment .comment-respond .section-mini .comment-reply-title {
   float: left;
   width: 15.625%;
@@ -5124,44 +4229,36 @@ object {
   font-size: 13.6px;
   margin: 5px 0;
 }
-/* line 210, sass/partials/_content.scss */
 .section-mini .section-content {
   width: 82.125%;
   float: right;
   margin: 5px 0;
 }
-/* line 266, sass/_mixins.scss */
 .section-mini:before, .section-mini:after {
   content: "";
   display: table;
 }
-/* line 270, sass/_mixins.scss */
 .section-mini:after {
   clear: both;
 }
 
-/* line 223, sass/partials/_content.scss */
 .section-mylist ul {
   list-style: none;
   margin: 0;
   padding: 0 0 0 10px;
 }
-/* line 227, sass/partials/_content.scss */
 .section-mylist ul li {
   list-style: none;
 }
 
-/* line 237, sass/partials/_content.scss */
 .section-related-posts ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-/* line 241, sass/partials/_content.scss */
 .section-related-posts ul li {
   list-style: none;
 }
-/* line 243, sass/partials/_content.scss */
 .section-related-posts ul li:before {
   font-family: FontAwesome;
   content: "\f138";
@@ -5169,31 +4266,25 @@ object {
   color: #2ba6cb;
   margin-right: 5px;
 }
-/* line 254, sass/partials/_content.scss */
 .section-related-posts .entry-date {
   color: #bdc3c7;
 }
 
-/* line 263, sass/partials/_content.scss */
 .post-single .section-last-updated {
   display: none;
 }
 
-/* line 1, sass/partials/_share.scss */
 .section-share-this {
   *zoom: 1;
 }
-/* line 266, sass/_mixins.scss */
 .section-share-this:before, .section-share-this:after {
   content: "";
   display: table;
 }
-/* line 270, sass/_mixins.scss */
 .section-share-this:after {
   clear: both;
 }
 
-/* line 8, sass/partials/_share.scss */
 .share-item {
   float: left;
   min-height: 30px;
@@ -5203,35 +4294,29 @@ object {
   vertical-align: middle;
 }
 
-/* line 17, sass/partials/_share.scss */
 .share-item-twitter {
   width: 96px;
   height: 30px;
 }
 
-/* line 22, sass/partials/_share.scss */
 .share-item-pocket {
   width: 103px;
   height: 30px;
 }
 
-/* line 27, sass/partials/_share.scss */
 .share-item-google-plus {
   width: 71px;
 }
 
-/* line 32, sass/partials/_share.scss */
 .share-content ul {
   padding: 0;
   margin: 4px 0 4px 0;
   list-style: none;
 }
-/* line 36, sass/partials/_share.scss */
 .share-content ul li {
   display: inline;
 }
 
-/* line 41, sass/partials/_share.scss */
 .share-button {
   text-decoration: none;
   display: inline-block;
@@ -5247,12 +4332,10 @@ object {
   min-width: 100px;
   text-align: center;
 }
-/* line 56, sass/partials/_share.scss */
 .share-button:hover {
   color: white;
-  background-color: #071c23;
+  background-color: #103f4d;
 }
-/* line 61, sass/partials/_share.scss */
 .share-button .share-count {
   background-color: white;
   color: #3e5771;
@@ -5267,12 +4350,10 @@ object {
   min-width: 18px;
   line-height: 1;
 }
-/* line 76, sass/partials/_share.scss */
 .share-button .share-count-link:hover {
   text-decoration: underline;
 }
 
-/* line 87, sass/partials/_share.scss */
 .share-button-twitter:before {
   font-family: Genericons;
   content: "\f202";
@@ -5281,7 +4362,6 @@ object {
   vertical-align: sub;
 }
 
-/* line 101, sass/partials/_share.scss */
 .share-button-hatena:before {
   font-family: EntypoSocialRegular;
   content: "\f354";
@@ -5289,7 +4369,6 @@ object {
   vertical-align: sub;
 }
 
-/* line 87, sass/partials/_share.scss */
 .share-button-pocket:before {
   font-family: Genericons;
   content: "\f224";
@@ -5298,7 +4377,6 @@ object {
   vertical-align: sub;
 }
 
-/* line 87, sass/partials/_share.scss */
 .share-button-googleplus:before {
   font-family: Genericons;
   content: "\f218";
@@ -5307,7 +4385,6 @@ object {
   vertical-align: sub;
 }
 
-/* line 87, sass/partials/_share.scss */
 .share-button-facebook:before {
   font-family: Genericons;
   content: "\f204";
@@ -5316,30 +4393,25 @@ object {
   vertical-align: sub;
 }
 
-/* line 4, sass/partials/_comments.scss */
 .zenback-widget-area,
 .section-comment,
 .pingbacks-area {
   display: block;
 }
 
-/* line 13, sass/partials/_comments.scss */
 .section-comment .section-title:before, .section-comment .comment-respond .comment-reply-title:before {
   content: "\f0e6";
 }
 
-/* line 19, sass/partials/_comments.scss */
 .comment-list {
   list-style-type: none;
   padding: 0;
 }
-/* line 23, sass/partials/_comments.scss */
 .comment-list .children {
   list-style-type: none;
   padding: 0;
   margin-left: 20px;
 }
-/* line 31, sass/partials/_comments.scss */
 .comment-list > .comment:after, .comment-list > .pingback:after,
 .comment-list .children > .comment:before {
   content: "";
@@ -5347,12 +4419,10 @@ object {
   height: 1px;
   width: 100%;
 }
-/* line 39, sass/partials/_comments.scss */
 .comment-list > li:last-child:after {
   display: none;
 }
 
-/* line 44, sass/partials/_comments.scss */
 .comment-small, .comment-body .comment-metadata cite,
 .comment-body .comment-metadata time,
 .comment-body .comment-metadata a, .comment-body .comment-awaiting-moderation, .comment-reply-link,
@@ -5361,12 +4431,10 @@ object {
   line-height: 1;
 }
 
-/* line 52, sass/partials/_comments.scss */
 .comment .comment-body .comment-author .avatar {
   float: left;
   max-width: 74px;
 }
-/* line 59, sass/partials/_comments.scss */
 .comment .comment-body .comment-metadata,
 .comment .comment-body .comment-awaiting-moderation,
 .comment .comment-body .comment-content {
@@ -5376,22 +4444,18 @@ object {
   width: calc(100% - 64px);
 }
 
-/* line 69, sass/partials/_comments.scss */
 .comment-body {
   padding: 24px 0;
   position: relative;
   *zoom: 1;
 }
-/* line 266, sass/_mixins.scss */
 .comment-body:before, .comment-body:after {
   content: "";
   display: table;
 }
-/* line 270, sass/_mixins.scss */
 .comment-body:after {
   clear: both;
 }
-/* line 75, sass/partials/_comments.scss */
 .comment-body .comment-author .avatar {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -5403,20 +4467,16 @@ object {
   padding: 2px;
   border: 1px solid #dddddd;
 }
-/* line 89, sass/partials/_comments.scss */
 .comment-body .comment-metadata cite {
   display: block;
 }
-/* line 91, sass/partials/_comments.scss */
 .comment-body .comment-metadata cite a {
   color: #333333;
 }
-/* line 97, sass/partials/_comments.scss */
 .comment-body .comment-metadata .fn,
 .comment-body .comment-metadata .comment-time {
   display: inline-block;
 }
-/* line 102, sass/partials/_comments.scss */
 .comment-body .comment-content {
   border: 2px solid #e9ecef;
   -webkit-border-radius: 4px;
@@ -5433,31 +4493,25 @@ object {
   overflow-x: auto;
   color: #4d4d4d;
 }
-/* line 107, sass/partials/_comments.scss */
 .comment-body .comment-content a {
   word-wrap: break-word;
 }
-/* line 110, sass/partials/_comments.scss */
 .comment-body .comment-content > p:first-of-type {
   margin-top: 0;
 }
-/* line 113, sass/partials/_comments.scss */
 .comment-body .comment-content > p:last-of-type {
   margin-bottom: 0;
 }
-/* line 118, sass/partials/_comments.scss */
 .comment-body .comment-awaiting-moderation {
   display: block;
   width: 100%;
 }
-/* line 122, sass/partials/_comments.scss */
 .comment-body .comment-awaiting-moderation:before {
   font-family: FontAwesome;
   content: "\f071";
   margin-right: 5px;
 }
 
-/* line 133, sass/partials/_comments.scss */
 .comment-reply-link:before,
 .comment-reply-login:before {
   font-family: FontAwesome;
@@ -5465,7 +4519,6 @@ object {
   margin-right: 5px;
 }
 
-/* line 146, sass/partials/_comments.scss */
 .bypostauthor > .comment-body .fn:before {
   font-family: FontAwesome;
   content: "\f040";
@@ -5474,121 +4527,98 @@ object {
   margin-right: 5px;
 }
 
-/* line 157, sass/partials/_comments.scss */
 .section-comment .comment-respond {
   *zoom: 1;
   margin: 0;
   padding: 15px 0;
 }
-/* line 266, sass/_mixins.scss */
 .section-comment .comment-respond:before, .section-comment .comment-respond:after {
   content: "";
   display: table;
 }
-/* line 270, sass/_mixins.scss */
 .section-comment .comment-respond:after {
   clear: both;
 }
-/* line 165, sass/partials/_comments.scss */
 .section-comment .comment-respond .comment-reply-title:before {
   content: "\f0e5";
 }
 
-/* line 173, sass/partials/_comments.scss */
 .navigation-comment a {
   float: none;
   background-color: #3e5771;
 }
-/* line 177, sass/partials/_comments.scss */
 .navigation-comment a:hover {
   background-color: #1fadd7;
 }
 
-/* line 184, sass/partials/_comments.scss */
 .comment-form-comment textarea {
   width: 100%;
 }
 
-/* line 3, sass/partials/_sidebar.scss */
 .widget {
   font-size: 14px;
   margin: 0 0 24px;
   padding: 20px;
 }
-/* line 8, sass/partials/_sidebar.scss */
 .widget .widget-title {
   font-weight: 300;
   font-size: 20px;
   margin: 0 0 10px;
 }
-/* line 15, sass/partials/_sidebar.scss */
 .widget ul,
 .widget ol {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
-/* line 21, sass/partials/_sidebar.scss */
 .widget li {
   padding: 5px 0;
 }
-/* line 25, sass/partials/_sidebar.scss */
 .widget li > ul,
 .widget li > ol {
   margin-left: 20px;
 }
-/* line 30, sass/partials/_sidebar.scss */
 .widget .children li:last-child {
   padding-bottom: 0;
 }
-/* line 34, sass/partials/_sidebar.scss */
 .widget .searchform [type="text"] {
   width: 100%;
 }
 
 /* Inline Archives widget */
-/* line 42, sass/partials/_sidebar.scss */
 .widget-inline-archives li ul {
   margin-left: 5px;
 }
 
 /* Search widget */
-/* line 49, sass/partials/_sidebar.scss */
 .searchform [type="submit"] {
   display: none;
 }
 
-/* line 2, sass/partials/_footer.scss */
 .site-footer {
   background-color: #2ba6cb;
   color: white;
   text-align: center;
   padding: 10px 0;
 }
-/* line 8, sass/partials/_footer.scss */
 .site-footer a {
-  color: #e1f5fe;
+  color: #e0f7fa;
 }
-/* line 10, sass/partials/_footer.scss */
 .site-footer a:hover {
-  color: #b3e5fc;
+  color: #b2ebf2;
 }
-/* line 16, sass/partials/_footer.scss */
 .site-footer .site-info .copyrights {
   *zoom: 1;
   padding-bottom: 12px;
   padding-top: 12px;
 }
-/* line 266, sass/_mixins.scss */
 .site-footer .site-info .copyrights:before, .site-footer .site-info .copyrights:after {
   content: "";
   display: table;
 }
-/* line 270, sass/_mixins.scss */
 .site-footer .site-info .copyrights:after {
   clear: both;
 }
-/* line 23, sass/partials/_footer.scss */
 .site-footer .site-info .copyrights .credit,
 .site-footer .site-info .copyrights .poweredby {
   font-size: 13.6px;
@@ -5597,15 +4627,12 @@ object {
   margin: 0 4px;
   padding: 0;
 }
-/* line 30, sass/partials/_footer.scss */
 .site-footer .site-info .copyrights .credit {
   float: left;
 }
-/* line 33, sass/partials/_footer.scss */
 .site-footer .site-info .copyrights .poweredby {
   float: right;
 }
-/* line 36, sass/partials/_footer.scss */
 .site-footer .site-info .copyrights .poweredby .theme:before {
   font-family: FontAwesome;
   color: hotpink;
@@ -5613,24 +4640,20 @@ object {
   font-size: .5em;
 }
 
-/* line 49, sass/partials/_footer.scss */
 #wpstats {
   display: block;
   margin: -10px auto 0;
 }
 
-/* line 5, sass/partials/_error.scss */
 .no-results .page-header,
 .error404 .page-header {
   background-color: white;
   border-bottom: none;
 }
-/* line 10, sass/partials/_error.scss */
 .no-results .page-wrapper,
 .error404 .page-wrapper {
   background-color: #f8f9fa;
 }
-/* line 14, sass/partials/_error.scss */
 .no-results .page-title,
 .error404 .page-title {
   line-height: 0.6;
@@ -5640,24 +4663,20 @@ object {
   text-align: center;
   width: auto;
 }
-/* line 23, sass/partials/_error.scss */
 .no-results .page-content,
 .error404 .page-content {
   padding-top: 40px;
   padding-bottom: 40px;
 }
 
-/* line 30, sass/partials/_error.scss */
 .no-results .page-title {
   padding: 100px;
 }
 
-/* line 37, sass/partials/_error.scss */
 .error404 .page-title {
   padding: 300px;
   width: 900px;
 }
-/* line 40, sass/partials/_error.scss */
 .error404 .page-title:before {
   font-family: Genericons;
   content: "\f423";
@@ -5672,17 +4691,14 @@ object {
 
 /* = Note styling
 -------------------------------------------------------------- */
-/* line 14, sass/partials/_note.scss */
 .note, .note-ins, .note-link, .note-comment, .enclosure, .enclosure-github, .enclosure-qiita, .enclosure-evernote {
   display: block;
   margin: 20px 0;
   padding: 20px;
 }
-/* line 19, sass/partials/_note.scss */
 .note .syntaxhighlighter, .note-ins .syntaxhighlighter, .note-link .syntaxhighlighter, .note-comment .syntaxhighlighter, .enclosure .syntaxhighlighter, .enclosure-github .syntaxhighlighter, .enclosure-qiita .syntaxhighlighter, .enclosure-evernote .syntaxhighlighter {
   width: auto;
 }
-/* line 23, sass/partials/_note.scss */
 .note:before, .note-ins:before, .note-link:before, .note-comment:before, .enclosure:before, .enclosure-github:before, .enclosure-qiita:before, .enclosure-evernote:before {
   float: left;
   margin-right: 20px;
@@ -5692,200 +4708,159 @@ object {
   vertical-align: text-bottom;
   color: #bdc3c7;
 }
-/* line 27, sass/partials/_note.scss */
 .note:after, .note-ins:after, .note-link:after, .note-comment:after, .enclosure:after, .enclosure-github:after, .enclosure-qiita:after, .enclosure-evernote:after {
   clear: both;
 }
 
-/* line 32, sass/partials/_note.scss */
 .note, .note-ins, .note-link, .note-comment {
   color: #444444;
   border-left: 5px solid #dddddd;
   background-color: #f9f9fb;
 }
 
-/* line 39, sass/partials/_note.scss */
 .note-ins {
   color: #c09853;
   border-color: #fbeed5;
   background-color: #fcf8e3;
 }
 
-/* line 50, sass/partials/_note.scss */
 .note-link {
   color: #3a87ad;
   border-color: #d9f2f7;
   background-color: #f6fbfd;
 }
-/* line 55, sass/partials/_note.scss */
 .note-link:before {
   color: #3a87ad;
 }
 
-/* line 61, sass/partials/_note.scss */
 .note-comment {
   color: #c09853;
   border-color: #fbeed5;
   background-color: #fcf8e3;
 }
-/* line 66, sass/partials/_note.scss */
 .note-comment:before {
   color: #c09853;
 }
 
-/* line 72, sass/partials/_note.scss */
 .enclosure, .enclosure-github, .enclosure-qiita, .enclosure-evernote {
   color: #2c3e50;
   border-left: 5px solid #d9f2f7;
 }
-/* line 77, sass/partials/_note.scss */
 .enclosure:before, .enclosure-github:before, .enclosure-qiita:before, .enclosure-evernote:before {
   color: #3a87ad;
   content: "\f016";
 }
 
-/* line 82, sass/partials/_note.scss */
 .enclosure-github {
   border-color: #dddddd;
 }
-/* line 86, sass/partials/_note.scss */
 .enclosure-github:before {
   color: #dddddd;
   content: "\f113";
 }
 
-/* line 91, sass/partials/_note.scss */
 .enclosure-qiita {
   border-color: #67a30a;
   background-color: #f7fdf2;
 }
-/* line 95, sass/partials/_note.scss */
 .enclosure-qiita:before {
   color: #67a30a;
   content: "\f002";
 }
 
-/* line 100, sass/partials/_note.scss */
 .enclosure-evernote {
   border-color: #679f30;
   background-color: #f8fbf7;
 }
-/* line 104, sass/partials/_note.scss */
 .enclosure-evernote:before {
   color: #679f30;
   content: "\f15b";
 }
 
 @media screen {
-  /* line 21, sass/partials/_prettify.scss */
   .prettyprint .str {
     color: #dd1144;
   }
-  /* line 22, sass/partials/_prettify.scss */
   .prettyprint .kwd {
     color: #333333;
   }
-  /* line 23, sass/partials/_prettify.scss */
   .prettyprint .com {
     color: #999988;
   }
-  /* line 24, sass/partials/_prettify.scss */
   .prettyprint .typ {
     color: #445588;
   }
-  /* line 25, sass/partials/_prettify.scss */
   .prettyprint .lit {
     color: #445588;
   }
-  /* line 26, sass/partials/_prettify.scss */
   .prettyprint .pun {
     color: #333333;
   }
-  /* line 27, sass/partials/_prettify.scss */
   .prettyprint .pln {
     color: #333333;
   }
-  /* line 28, sass/partials/_prettify.scss */
   .prettyprint .opn {
     color: #333333;
   }
-  /* line 29, sass/partials/_prettify.scss */
   .prettyprint .clo {
     color: #333333;
   }
-  /* line 30, sass/partials/_prettify.scss */
   .prettyprint .tag {
     color: navy;
   }
-  /* line 31, sass/partials/_prettify.scss */
   .prettyprint .atn {
     color: teal;
   }
-  /* line 32, sass/partials/_prettify.scss */
   .prettyprint .atv {
     color: #dd1144;
   }
-  /* line 33, sass/partials/_prettify.scss */
   .prettyprint .dec {
     color: #333333;
   }
-  /* line 34, sass/partials/_prettify.scss */
   .prettyprint .var {
     color: teal;
   }
-  /* line 35, sass/partials/_prettify.scss */
   .prettyprint .fun {
     color: #990000;
   }
 }
 @media print, projection {
-  /* line 41, sass/partials/_prettify.scss */
   .prettyprint .str {
     color: #006600;
   }
-  /* line 44, sass/partials/_prettify.scss */
   .prettyprint .kwd {
     color: #006;
     font-weight: bold;
   }
-  /* line 48, sass/partials/_prettify.scss */
   .prettyprint .com {
     color: #600;
     font-style: italic;
   }
-  /* line 52, sass/partials/_prettify.scss */
   .prettyprint .typ {
     color: #404;
     font-weight: bold;
   }
-  /* line 56, sass/partials/_prettify.scss */
   .prettyprint .lit {
     color: #004444;
   }
-  /* line 59, sass/partials/_prettify.scss */
   .prettyprint .pun, .prettyprint .opn, .prettyprint .clo {
     color: #444400;
   }
-  /* line 62, sass/partials/_prettify.scss */
   .prettyprint .pln {
     color: black;
   }
-  /* line 65, sass/partials/_prettify.scss */
   .prettyprint .tag {
     color: #006;
     font-weight: bold;
   }
-  /* line 69, sass/partials/_prettify.scss */
   .prettyprint .atn {
     color: #440044;
   }
-  /* line 72, sass/partials/_prettify.scss */
   .prettyprint .atv {
     color: #006600;
   }
 }
 @media screen {
-  /* line 79, sass/partials/_prettify.scss */
   .code-frame {
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
@@ -5900,13 +4875,11 @@ object {
     padding-left: 12px;
     margin: 20px 10px;
   }
-  /* line 89, sass/partials/_prettify.scss */
   .code-frame .code-filename {
     color: #3e5771;
     line-height: 2;
     font-weight: 700;
   }
-  /* line 95, sass/partials/_prettify.scss */
   .code-frame .prettyprint {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
@@ -5921,12 +4894,10 @@ object {
     padding-left: 12px;
   }
 }
-/* line 111, sass/partials/_prettify.scss */
 .prettyprint .linenums {
   margin-top: 0;
   margin-bottom: 0;
 }
-/* line 125, sass/partials/_prettify.scss */
 .prettyprint li.L0,
 .prettyprint li.L1,
 .prettyprint li.L2,
@@ -5940,7 +4911,6 @@ object {
   list-style: none;
 }
 
-/* line 6, sass/partials/_syntaxhighlight.scss */
 .entry-content code,
 .page-content code,
 .comment-content code {
@@ -5951,20 +4921,17 @@ object {
   border: 2px solid #dddddd;
   white-space: nowrap;
 }
-/* line 16, sass/partials/_syntaxhighlight.scss */
 .entry-content .code > pre,
 .page-content .code > pre,
 .comment-content .code > pre {
   color: #000;
 }
-/* line 24, sass/partials/_syntaxhighlight.scss */
 .entry-content .syntaxhighlighter,
 .page-content .syntaxhighlighter,
 .comment-content .syntaxhighlighter {
   background-color: transparent;
   width: auto !important;
 }
-/* line 29, sass/partials/_syntaxhighlight.scss */
 .entry-content .syntaxhighlighter .gutter .line,
 .page-content .syntaxhighlighter .gutter .line,
 .comment-content .syntaxhighlighter .gutter .line {
@@ -5974,21 +4941,18 @@ object {
   line-height: 18px;
   text-shadow: 0 1px 0 white;
 }
-/* line 37, sass/partials/_syntaxhighlight.scss */
 .entry-content .syntaxhighlighter .gutter .line.highlighted,
 .page-content .syntaxhighlighter .gutter .line.highlighted,
 .comment-content .syntaxhighlighter .gutter .line.highlighted {
   background-color: #2ba6cb !important;
   color: white !important;
 }
-/* line 44, sass/partials/_syntaxhighlight.scss */
 .entry-content .ie.syntaxhighlighter,
 .page-content .ie.syntaxhighlighter,
 .comment-content .ie.syntaxhighlighter {
   padding: 24px !important;
 }
 
-/* line 1, sass/partials/_pukiwiki.scss */
 .powered_by_pukiwiki {
   display: block;
   padding: 4px;
@@ -5998,22 +4962,18 @@ object {
   margin-top: 1em;
 }
 
-/* line 11, sass/partials/_pukiwiki.scss */
 .pukiwiki_content div.jumpmenu {
   display: none;
 }
-/* line 14, sass/partials/_pukiwiki.scss */
 .pukiwiki_content a.anchor_super {
   visibility: collapse;
 }
 
-/* line 1, sass/partials/_twitter.scss */
 .twitter-tweet-rendered {
   border: 2px solid #e9ecef !important;
   box-shadow: none !important;
 }
 
-/* line 2, sass/partials/_home.scss */
 .list-archives .list-archives-item-month a, .list-archives .list-archives-item-month-no-items span {
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -6023,281 +4983,226 @@ object {
   float: none;
 }
 
-/* line 8, sass/partials/_home.scss */
 .section-page {
   *zoom: 1;
   padding: 20px;
 }
-/* line 266, sass/_mixins.scss */
 .section-page:before, .section-page:after {
   content: "";
   display: table;
 }
-/* line 270, sass/_mixins.scss */
 .section-page:after {
   clear: both;
 }
-/* line 15, sass/partials/_home.scss */
 .section-page .section-title, .section-page .section-comment .comment-respond .comment-reply-title, .section-comment .comment-respond .section-page .comment-reply-title {
   font-size: 50px;
   line-height: 50px;
   margin-bottom: 40px;
 }
-/* line 21, sass/partials/_home.scss */
 .section-page h2, .section-page h3 {
   font-weight: 700;
   text-transform: uppercase;
 }
 
-/* line 27, sass/partials/_home.scss */
 .section-page-first {
   padding-top: 0;
 }
 
-/* line 31, sass/partials/_home.scss */
 .section-page-about .list-history time {
-  background: #01757f;
-  color: white;
   padding: 8px;
   margin-right: 5px;
   font-weight: 400;
 }
 
-/* line 40, sass/partials/_home.scss */
 .section-page-entry .list-entries {
   list-style: none;
   padding-left: 0;
 }
-/* line 44, sass/partials/_home.scss */
 .section-page-entry .list-entries .post-summary {
   margin-bottom: 15px;
 }
-/* line 49, sass/partials/_home.scss */
 .section-page-entry .list-entries .entry-header .entry-title {
   line-height: 1.4;
   display: block;
 }
 
-/* line 57, sass/partials/_home.scss */
 .section-page-category {
-  background-color: #607d8b;
+  background-color: #f8f9fa;
 }
-/* line 61, sass/partials/_home.scss */
 .section-page-category .list-category {
   list-style: none;
   padding: 0;
 }
-/* line 65, sass/partials/_home.scss */
 .section-page-category .list-category li {
   display: inline;
 }
-/* line 67, sass/partials/_home.scss */
 .section-page-category .list-category li a {
   background-color: #455a64;
   display: inline-block;
   margin: 5px;
   float: none;
 }
-/* line 70, sass/partials/_home.scss */
 .section-page-category .list-category li a:hover {
   background-color: #37474f;
 }
-/* line 79, sass/partials/_home.scss */
 .section-page-category .list-category .children {
   display: inline;
   list-style: none;
   padding: 0;
 }
 
-/* line 88, sass/partials/_home.scss */
 .section-page-about {
   color: white;
-  background-color: #00bcd4;
+  background-color: #2ba6cb;
 }
-/* line 93, sass/partials/_home.scss */
 .section-page-about a {
   color: #84ffff;
 }
-/* line 95, sass/partials/_home.scss */
 .section-page-about a:hover {
   color: #18ffff;
 }
-/* line 100, sass/partials/_home.scss */
 .section-page-about .list-history {
   list-style: none;
   padding-left: 0;
 }
-/* line 104, sass/partials/_home.scss */
 .section-page-about .list-history li {
   padding: 5px 0;
   margin: 0;
   line-height: 2;
 }
-/* line 110, sass/partials/_home.scss */
 .section-page-about .list-history time {
-  background-color: #006064;
+  background-color: #2284a1;
   padding: 0;
   width: 120px;
   display: inline-block;
   text-align: center;
 }
 
-/* line 121, sass/partials/_home.scss */
+.section-page-archive {
+  background-color: #f8f9fa;
+}
+
 .list-archives {
   padding: 0;
   list-style: none;
 }
-/* line 128, sass/partials/_home.scss */
 .list-archives .list-archives-item-year {
   display: block;
   margin: 10px auto;
 }
-/* line 131, sass/partials/_home.scss */
 .list-archives .list-archives-item-year > a {
   margin-bottom: 5px;
   float: none;
 }
-/* line 138, sass/partials/_home.scss */
 .list-archives .list-archives-month {
-  display: inline-block;
+  display: inline;
   padding-left: 5px;
   padding-right: 5px;
 }
-/* line 144, sass/partials/_home.scss */
 .list-archives .list-archives-item-month {
   display: inline-block;
   padding: 5px;
 }
-/* line 147, sass/partials/_home.scss */
 .list-archives .list-archives-item-month a {
   margin: 0;
 }
-/* line 154, sass/partials/_home.scss */
 .list-archives .list-archives-item-month-no-items span {
   margin: 0;
   background-color: #bdc3c7;
 }
-/* line 158, sass/partials/_home.scss */
 .list-archives .list-archives-item-month-no-items span:hover {
   background-color: #bdc3c7;
 }
-/* line 164, sass/partials/_home.scss */
 .list-archives .list-archives-item-month-no-items.list-archives-item-month-no-items-future span {
   background-color: #e6e9ea;
 }
 
 @media (min-width: 930px) {
-  /* line 173, sass/partials/_home.scss */
   .list-archives .list-archives-item-month {
     padding-left: 10px;
     padding-right: 10px;
   }
 }
-/* line 2, sass/partials/_tags.scss */
 .tags-cloud {
   padding: 0 .5em;
   line-height: 2;
 }
-/* line 6, sass/partials/_tags.scss */
 .tags-cloud .tag {
   display: inline-block;
   margin: 0 .5em;
 }
-/* line 11, sass/partials/_tags.scss */
 .tags-cloud .rank-1 {
   font-size: 1.375rem;
 }
-/* line 13, sass/partials/_tags.scss */
 .tags-cloud .rank-1 a {
   color: #101010;
 }
-/* line 17, sass/partials/_tags.scss */
 .tags-cloud .rank-2 {
   font-size: 1.35rem;
 }
-/* line 19, sass/partials/_tags.scss */
 .tags-cloud .rank-2 a {
   color: #1f1f1f;
 }
-/* line 23, sass/partials/_tags.scss */
 .tags-cloud .rank-3 {
   font-size: 1.3rem;
 }
-/* line 25, sass/partials/_tags.scss */
 .tags-cloud .rank-3 a {
   color: #2f2f2f;
 }
-/* line 29, sass/partials/_tags.scss */
 .tags-cloud .rank-4 {
   font-size: 1.275rem;
 }
-/* line 31, sass/partials/_tags.scss */
 .tags-cloud .rank-4 a {
   color: #3e3e3e;
 }
-/* line 35, sass/partials/_tags.scss */
 .tags-cloud .rank-5 {
   font-size: 1.25rem;
 }
-/* line 37, sass/partials/_tags.scss */
 .tags-cloud .rank-5 a {
   color: #4e4e4e;
 }
-/* line 41, sass/partials/_tags.scss */
 .tags-cloud .rank-6 {
   font-size: 1.125rem;
 }
-/* line 43, sass/partials/_tags.scss */
 .tags-cloud .rank-6 a {
   color: #5d5d5d;
 }
-/* line 47, sass/partials/_tags.scss */
 .tags-cloud .rank-7 {
   font-size: 1.1rem;
 }
-/* line 49, sass/partials/_tags.scss */
 .tags-cloud .rank-7 a {
   color: #6d6d6d;
 }
-/* line 53, sass/partials/_tags.scss */
 .tags-cloud .rank-8 {
   font-size: 1rem;
 }
-/* line 55, sass/partials/_tags.scss */
 .tags-cloud .rank-8 a {
   color: #7c7c7c;
 }
-/* line 59, sass/partials/_tags.scss */
 .tags-cloud .rank-9 {
   font-size: 0.95rem;
 }
-/* line 61, sass/partials/_tags.scss */
 .tags-cloud .rank-9 a {
   color: #8c8c8c;
 }
-/* line 65, sass/partials/_tags.scss */
 .tags-cloud .rank-10 {
   font-size: 0.95rem;
 }
-/* line 67, sass/partials/_tags.scss */
 .tags-cloud .rank-10 a {
   color: #9b9b9b;
 }
 
 @media (max-width: 1069px) {
-  /* line 5, sass/partials/_responsive.scss */
   .error404 .page-header {
     margin-left: auto;
     max-width: 604px;
     width: 100%;
   }
-  /* line 10, sass/partials/_responsive.scss */
   .error404 .page-title {
     font-size: 20px;
     padding: 180px;
     width: 604px;
   }
-  /* line 14, sass/partials/_responsive.scss */
   .error404 .page-title:before {
     font-size: 554px;
     left: 7px;
@@ -6305,63 +5210,51 @@ object {
   }
 }
 @media (min-width: 930px) {
-  /* line 29, sass/partials/_responsive.scss */
   .site-header .search-form .search-form-text:focus {
     width: 230px;
   }
 }
 @media (max-width: 930px) {
-  /* line 40, sass/partials/_responsive.scss */
   .page-title {
     font-size: 22px;
   }
 
-  /* line 43, sass/partials/_responsive.scss */
   .entry-title {
     font-size: 22px;
   }
 
-  /* line 46, sass/partials/_responsive.scss */
   .entry-content {
     overflow-x: auto;
   }
 
-  /* line 51, sass/partials/_responsive.scss */
   .related-posts .related-post {
     padding: 10px;
   }
 
-  /* line 56, sass/partials/_responsive.scss */
   h1 {
     margin: 16px 0;
   }
 
-  /* line 60, sass/partials/_responsive.scss */
   h2 {
     margin: 12px 0;
   }
 
-  /* line 64, sass/partials/_responsive.scss */
   h3 {
     margin: 11px 0;
   }
 
-  /* line 68, sass/partials/_responsive.scss */
   h4 {
     margin: 10px 0;
   }
 
-  /* line 72, sass/partials/_responsive.scss */
   h5 {
     margin: 9px 0;
   }
 
-  /* line 76, sass/partials/_responsive.scss */
   h6 {
     margin: 8px 0;
   }
 
-  /* line 85, sass/partials/_responsive.scss */
   code,
   kbd,
   pre,
@@ -6372,29 +5265,24 @@ object {
   }
 }
 @media (max-width: 750px) {
-  /* line 94, sass/partials/_responsive.scss */
   .entry-content img.alignleft,
   .entry-content .wp-caption.alignleft {
     margin-left: 0;
   }
-  /* line 98, sass/partials/_responsive.scss */
   .entry-content img.alignright,
   .entry-content .wp-caption.alignright {
     margin-right: 0;
   }
 }
 @media (max-width: 750px) {
-  /* line 108, sass/partials/_responsive.scss */
   .site-header .site-info {
     float: none;
     width: 100%;
     text-align: center;
   }
-  /* line 113, sass/partials/_responsive.scss */
   .site-header .site-info .site-title {
     font-size: 40px;
   }
-  /* line 118, sass/partials/_responsive.scss */
   .site-header .sub-nav {
     float: none;
     clear: both;
@@ -6402,14 +5290,12 @@ object {
     margin: 0 auto;
     width: 260px;
   }
-  /* line 126, sass/partials/_responsive.scss */
   .site-header .sub-nav .socials,
   .site-header .sub-nav .search-form {
     display: inline-block;
     float: none;
   }
 
-  /* line 142, sass/partials/_responsive.scss */
   .site-footer .site-info .copyrights .credit,
   .site-footer .site-info .copyrights .poweredby {
     float: none;
@@ -6417,28 +5303,23 @@ object {
     text-align: center;
   }
 
-  /* line 151, sass/partials/_responsive.scss */
   blockquote {
     margin: 16px 0;
   }
 
-  /* line 156, sass/partials/_responsive.scss */
   .section-mini .section-title, .section-mini .section-comment .comment-respond .comment-reply-title, .section-comment .comment-respond .section-mini .comment-reply-title {
     float: none;
     width: auto;
   }
-  /* line 160, sass/partials/_responsive.scss */
   .section-mini .section-content {
     width: auto;
     float: none;
     margin-left: 10px;
   }
 
-  /* line 170, sass/partials/_responsive.scss */
   .comment .comment-body .comment-metadata {
     margin-top: 10px;
   }
-  /* line 174, sass/partials/_responsive.scss */
   .comment .comment-body .comment-awaiting-moderation,
   .comment .comment-body .comment-content {
     float: none;
@@ -6446,78 +5327,63 @@ object {
     padding: 12px;
   }
 
-  /* line 182, sass/partials/_responsive.scss */
   .comment-body .comment-content {
     font-size: 13.6px;
   }
 
-  /* line 187, sass/partials/_responsive.scss */
   .comment-list .children {
     margin-left: 10px;
   }
 
-  /* line 193, sass/partials/_responsive.scss */
   .error404 .page-title {
     padding: 20px;
   }
-  /* line 195, sass/partials/_responsive.scss */
   .error404 .page-title:before {
     content: normal;
   }
 }
 @media (max-width: 390px) {
-  /* line 206, sass/partials/_responsive.scss */
   .site-header .site-info {
     float: none;
     text-align: center;
   }
-  /* line 210, sass/partials/_responsive.scss */
   .site-header .sub-nav {
     float: none;
   }
-  /* line 212, sass/partials/_responsive.scss */
   .site-header .sub-nav .social {
     float: left;
   }
-  /* line 215, sass/partials/_responsive.scss */
   .site-header .sub-nav .searchform {
     float: right;
   }
 
-  /* line 222, sass/partials/_responsive.scss */
   .breadcrumb a {
     padding: 5px 5px 5px 5px;
   }
 
-  /* line 228, sass/partials/_responsive.scss */
   .entry-content .align-right {
     float: none;
   }
 
-  /* line 235, sass/partials/_responsive.scss */
   .site-footer .site-info .credit {
     display: block;
   }
 }
 @media print {
-  /* line 243, sass/partials/_responsive.scss */
   body {
     background: none !important;
     color: #000;
     font-size: 10pt;
   }
 
-  /* line 249, sass/partials/_responsive.scss */
   .site-title {
     font-size: 21pt;
   }
 
-  /* line 252, sass/partials/_responsive.scss */
   .site-description {
     font-size: 10pt;
   }
 
-  /* line 271, sass/partials/_responsive.scss */
   .search-form,
   .author-avatar,
   .site-footer,
@@ -6537,31 +5403,26 @@ object {
     display: none;
   }
 
-  /* line 276, sass/partials/_responsive.scss */
   .page-title,
   .entry-title {
     font-size: 21pt;
   }
 
-  /* line 281, sass/partials/_responsive.scss */
   .entry-meta,
   .entry-meta a {
     color: #444;
     font-size: 10pt;
   }
 
-  /* line 288, sass/partials/_responsive.scss */
   .entry-content img.alignleft,
   .entry-content .wp-caption.alignleft {
     margin-left: 0;
   }
-  /* line 292, sass/partials/_responsive.scss */
   .entry-content img.alignright,
   .entry-content .wp-caption.alignright {
     margin-right: 0;
   }
 
-  /* line 299, sass/partials/_responsive.scss */
   .comment-body .comment-metadata,
   .comment-body .comment-awaiting-moderation,
   .comment-body .comment-content {

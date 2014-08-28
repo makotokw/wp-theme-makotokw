@@ -1,18 +1,14 @@
-/* line 4, sass/ie.scss */
 .site {
   padding: 10px;
 }
 
-/* line 8, sass/ie.scss */
 .site-header .searchform {
   position: static;
 }
 
-/* line 15, sass/ie.scss */
 .comment-body .comment-author {
   min-width: 60px;
 }
-/* line 21, sass/ie.scss */
 .comment-body .comment-metadata,
 .comment-body .comment-awaiting-moderation,
 .comment-body .comment-content,
@@ -21,35 +17,28 @@
   width: 90%;
 }
 
-/* line 31, sass/ie.scss */
 .ie8 .navigation-paging .nav-previous .meta-nav {
   padding: 5px 0 8px;
   width: 40px;
 }
-/* line 36, sass/ie.scss */
 .ie8 .navigation-paging .nav-next {
   line-height: 1;
 }
 
-/* line 45, sass/ie.scss */
 .ie7 .screen-reader-text {
   clip: rect(1px 1px 1px 1px);
 }
-/* line 49, sass/ie.scss */
 .ie7 .entry-header {
   position: static;
 }
-/* line 51, sass/ie.scss */
 .ie7 .entry-header .entry-date {
   position: static;
 }
-/* line 58, sass/ie.scss */
 .ie7 .navigation-paging .nav-previous .meta-nav {
   padding: 0 0 10px;
   vertical-align: middle;
   width: 40px;
 }
-/* line 64, sass/ie.scss */
 .ie7 .navigation-paging .nav-next {
   line-height: 1;
 }

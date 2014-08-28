@@ -21,10 +21,7 @@
     .current {
       .page {
         @extend %pagenation-page;
-        background-color: $site-dark-accent-color;
-        &:hover {
-          background-color: $site-dark-accent-color;
-        }
+        background-color: darken($site-link-accent-color, 10%);
       }
     }
   }
