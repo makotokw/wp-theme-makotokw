@@ -3,7 +3,7 @@
 
 .site {
   @include box-sizing(content-box);
-  border-top: 10px solid $footer-background-color;
+  border-top: 10px solid $footer-default-bg;
   width: 100%;
 }
 

@@ -315,7 +315,7 @@ function makotokw_updated_on() {
 
 function makotokw_the_content_more_link( $link ) {
 	if ( preg_match( '/href="([^"]+)"/', $link, $match ) ) {
-		return '<a class="btn more-link" href="' . $match[1] . '">続きを読む</a>';
+		return '<a class="btn btn-default btn-more-link" href="' . $match[1] . '">続きを読む</a>';
 	}
 	return $link;
 }
@@ -334,80 +334,65 @@ function makotokw_post_summary( $content, $length = 50, $trimmarker = '...' ) {
 	return mb_strimwidth( strip_tags( strip_shortcodes( $content ) ), 0, 128 ) . '...';
 }
 
-function makotokw_share_this() {
+function makotokw_share_permalink()
+{
+	$permalink = get_permalink();
+	if ( WP_THEME_DEBUG === true ) {
+		$permalink = str_replace( home_url(), WP_THEME_PRODUCTION_URL, $permalink );
+	}
+	return $permalink;
+}
+
+function makotokw_share_buttons() {
 	// twitter: https://about.twitter.com/resources/buttons#tweet
 	// hatena: http://b.hatena.ne.jp/guide/bbutton
 	// pocket: http://getpocket.com/publisher/button
 	// google+: https://developers.google.com/+/web/+1button/
 
 	$title     = get_the_title();
-	$permalink = get_permalink();
-	if ( WP_THEME_DEBUG === true ) {
-		$permalink = str_replace( home_url(), WP_THEME_PRODUCTION_URL, $permalink );
-	}
+	$permalink = makotokw_share_permalink();
 	$permalink_schemeless = preg_replace( '/^https?:\/\//', '', $permalink );
 	?>
-	<div id="shareThis" class="section section-mini section-share-this" data-url="<?= $permalink ?>">
+	<div class="share-buttons">
+		<ul>
+			<li class="share-twitter">
+				<a rel="nofollow" data-url="<?= $permalink; ?>" class="btn btn-default btn-share btn-share-twitter" href="https://twitter.com/intent/tweet?original_referer=<?= rawurlencode( $permalink ) ?>&text=<?= rawurlencode( $title ) ?>&tw_p=tweetbutton&url=<?= urlencode( $permalink )?>&via=<?= urlencode( WP_THEME_AUTHOR_TWITTER )?>" target="_blank">
+					<span class="share-title">Twitter</span>
+				</a>
+			</li>
+			<li class="share-hatena">
+				<a rel="nofollow" class="btn btn-default btn-share btn-share-hatena" href="http://b.hatena.ne.jp/entry/<?= $permalink_schemeless ?>" target="_blank">
+					<span class="share-title">はてブ</span>
+				</a>
+			</li>
+			<li class="share-pocket">
+				<a rel="nofollow" class="btn btn-default btn-share btn-share-pocket" href="https://getpocket.com/save/?url=<?= rawurlencode( $permalink ) ?>&title=<?= rawurlencode( $title ) ?>" target="_blank">
+					<span class="share-title">Pocket</span>
+				</a>
+			</li>
+			<li class="share-googleplus">
+				<a rel="nofollow" class="btn btn-default btn-share btn-share-googleplus" href="https://plus.google.com/share?url=<?= rawurlencode( $permalink ) ?>" target="_blank">
+					<span class="share-title">Google</span>
+				</a>
+			</li>
+			<li class="share-facebook">
+				<a rel="nofollow" class="btn btn-default btn-share btn-share-facebook" href="//www.facebook.com/sharer.php?u=<?= rawurlencode( $permalink ) ?>&t=<?= rawurlencode( $title ) ?>" target="_blank">
+					<span class="share-title">Facebook</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<?php
+}
+
+function makotokw_share_this() {
+	?>
+	<div id="shareThis" class="section section-mini section-share-this" data-url="<?= makotokw_share_permalink(); ?>">
 		<h2 class="section-title"><?php _e( 'Share This', 'makotokw' ); ?></h2>
 		<div class="section-content">
 			<div class="share-content">
-				<ul>
-					<li class="share-twitter">
-						<a rel="nofollow" data-url="<?= $permalink; ?>" class="share-button-twitter share-button" href="https://twitter.com/intent/tweet?original_referer=<?= rawurlencode( $permalink ) ?>&text=<?= rawurlencode( $title ) ?>&tw_p=tweetbutton&url=<?= urlencode( $permalink )?>&via=<?= urlencode( WP_THEME_AUTHOR_TWITTER )?>" target="_blank">
-							<span class="share-title">Twitter</span>
-						</a>
-					</li>
-					<li class="share-hatena">
-						<a rel="nofollow" class="share-button-hatena share-button" href="http://b.hatena.ne.jp/entry/<?= $permalink_schemeless ?>" target="_blank">
-							<span class="share-title">はてブ</span>
-						</a>
-					</li>
-					<li class="share-pocket">
-						<a rel="nofollow" class="share-button-pocket share-button" href="https://getpocket.com/save/?url=<?= rawurlencode( $permalink ) ?>&title=<?= rawurlencode( $title ) ?>" target="_blank">
-							<span class="share-title">Pocket</span>
-						</a>
-					</li>
-					<li class="share-googleplus">
-						<a rel="nofollow" class="share-button-googleplus share-button" href="https://plus.google.com/share?url=<?= rawurlencode( $permalink ) ?>" target="_blank">
-							<span class="share-title">Google</span>
-						</a>
-					</li>
-					<li class="share-facebook">
-						<a rel="nofollow" class="share-button-facebook share-button" href="//www.facebook.com/sharer.php?u=<?= rawurlencode( $permalink ) ?>&t=<?= rawurlencode( $title ) ?>" target="_blank">
-							<span class="share-title">Facebook</span>
-						</a>
-					</li>
-				</ul>
+				<?php makotokw_share_buttons(); ?>
 			</div>
-			<?php if ( is_user_logged_in() ): ?>
-				<?php /*
-			<div class="share-item share-item-twitter">
-			<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?= $permalink; ?>" data-text="<?php the_title(); ?>" data-via="makoto_kw" data-lang="en">Tweet</a>
-			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-			</div>
-			<div class="share-item share-item-hatena-bookmark">
-			<a href="http://b.hatena.ne.jp/entry/<?= $permalink; ?>" class="hatena-bookmark-button" data-hatena-bookmark-title="<?php the_title(); ?>｜<?php bloginfo( 'name' ); ?>" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="en" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-			</div>
-			<div class="share-item share-item-pocket">
-			<a data-pocket-label="pocket"  data-save-url="<?= $permalink; ?>" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a>
-			<script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
-			</div>
-			<div class="share-item share-item-google-plus">
-				<div class="g-plusone" data-size="medium" data-href="<?php the_permalink(); ?>">
-				</div>
-				<script type="text/javascript">
-					(function () {
-						var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-						po.src = 'https://apis.google.com/js/platform.js';
-						var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-					})();
-				</script>
-			</div>
-			<div class="share-item share-item-facebook-like">
-				<iframe src="//www.facebook.com/plugins/like.php?href=<?= $permalink; ?>&amp;send=false&amp;layout=button_count&amp;width=110&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=verdana&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
-			</div>
-*/?>
-			<?php endif ?>
 		</div>
 	</div>
 	<?php

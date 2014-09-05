@@ -8,7 +8,7 @@
 }
 
 .navigation-paging {
-  background-color: $navi-background-color;
+  background-color: $navi-default-bg;
   padding: 40px 0;
 
   a {
@@ -24,7 +24,7 @@
   }
 
   .meta-nav {
-    background-color: $site-link-base-color;
+    background-color: $site-default-link;
     border-radius: 50%;
     color: #fff;
     display: inline-block;
@@ -46,6 +46,6 @@
   }
 
   a:hover .meta-nav {
-    background-color: $site-link-base-over-color;
+    background-color: $site-default-link-over;
   }
 }

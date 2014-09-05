@@ -4,9 +4,9 @@
   @include clearfix;
 
   a {
-    color: $site-link-accent-color;
+    color: $site-accent-link;
     &:hover {
-      color: $site-link-accent-over-color;
+      color: $site-accent-link-over;
     }
   }
 
@@ -45,7 +45,6 @@
       }
 
     }
-
   }
 }
 

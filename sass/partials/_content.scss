@@ -11,7 +11,7 @@
   .entry-title {
     font-size: 26px;
     a {
-      color: $site-link-base-color;
+      color: $site-default-link;
     }
   }
   .entry-summary {
@@ -25,11 +25,11 @@
   .page-header {
     padding-bottom: 10px;
     margin-bottom: 20px;
-    border-bottom: 1px solid $block-border-color;
+    border-bottom: 1px solid $block-default-border;
 
     .page-title {
       margin: 0;
-      color: $entry-title-color;
+      color: $entry-title-text;
     }
   }
 }
@@ -38,9 +38,9 @@
   position: relative;
 
   a {
-    color: $entry-title-color;
+    color: $entry-title-text;
     &:hover {
-      color: $site-link-base-over-color;
+      color: $site-default-link-over;
     }
   }
 
@@ -53,10 +53,10 @@
     color: $site-neutral-color;
     text-transform: uppercase;
     a {
-      color: $site-link-neutral-color;
+      color: $site-neutral-link;
 
       &:hover {
-        color: $site-link-neutral-over-color;
+        color: $site-neutral-link-over;
       }
     }
   }
@@ -76,16 +76,15 @@
 
   .entry-title {
     font-weight: 700;
-    color: $entry-title-color;
+    color: $entry-title-text;
     margin: 0 0 5px 0;
   }
 }
 
 .entry-meta {
-  margin: 10px 0 0 0;
   i {
     margin-left: .5em;
-    color: $site-link-base-color;
+    color: $site-default-link;
   }
   .portfolio-posts-area {
     .entry-date {
@@ -103,18 +102,18 @@
 
   h2 {
     padding-bottom: 10px;
-    border-bottom: solid 2px $site-border-color;
+    border-bottom: solid 2px $site-default-border;
   }
 
   h3 {
     padding-bottom: 5px;
-    border-bottom: solid 1px $site-border-color;
+    border-bottom: solid 1px $site-default-border;
   }
 
   img {
     padding: 4px;
     background-color: #fff;
-    border: 1px solid $site-border-color;
+    border: 1px solid $site-default-border;
     @include border-radius($border-radius-base);
   }
 }
@@ -124,10 +123,8 @@
   @include clearfix;
 }
 
-.more-link {
+.btn-more-link {
   float: right;
-  @extend .btn;
-  @include border-radius(20px);
 }
 
 // Media
@@ -241,7 +238,7 @@ object {
         font-family: FontAwesome;
         content: $fa-var-chevron-circle-right; // fa-chevron-circle-right
         vertical-align: middle;
-        color: $site-link-base-color;
+        color: $site-default-link;
         margin-right: 5px;
       }
     }
@@ -253,11 +250,30 @@ object {
   }
 }
 
-
 // Last Updated
 // -----------------------------------------------
 .post-single {
   .section-last-updated {
     display: none;
+  }
+}
+
+// Archives
+// -----------------------------------------------
+.archive {
+  .post-summary {
+    margin: 20px 0 10px;
+
+    .share-buttons {
+      float: right;
+    }
+    .btn-share {
+      min-width: 0;
+      width: auto;
+      .share-title {
+        display: none;
+      }
+    }
+
   }
 }

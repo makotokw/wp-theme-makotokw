@@ -59,7 +59,7 @@ button,
 input,
 select,
 textarea {
-  color: $site-foreground-color;
+  color: $site-default-text;
   font-family: $font-family-base;
   font-size: $font-size-base;
   line-height: $line-height-base;
@@ -68,7 +68,7 @@ textarea {
 body {
   @include hyphens(auto);
   margin: 0;
-  background-color: $site-background-color;
+  background-color: $site-default-bg;
 
   -webkit-font-smoothing: antialiased;
   overflow: hidden;
@@ -81,7 +81,7 @@ body {
 // ==========================================================================
 
 a {
-  color: $site-link-base-color;
+  color: $site-default-link;
   @include transition(all 0.25s linear);
   // Remove the gray background color from active links in IE 10.
   background: transparent;
@@ -95,7 +95,7 @@ a:focus {
 
 a:active,
 a:hover {
-  color: $site-link-base-over-color;
+  color: $site-default-link-over;
   // Improve readability when focused and also mouse hovered in all browsers.
   outline: 0;
 }
@@ -278,7 +278,7 @@ ins {
 }
 
 hr {
-  background-color: $site-border-color;
+  background-color: $site-default-border;
   border: 0;
   height: 1px;
   margin-bottom: 1.5em;
@@ -337,17 +337,17 @@ form {
 
 /* Placeholder text color -- selectors need to be in separate to work. */
 :-webkit-input-placeholder {
-  color: $form-place-holder-color;
+  color: $form-default-placeholder;
   font-style: normal;
 }
 :-moz-placeholder {
-  color: $form-place-holder-color;
+  color: $form-default-placeholder;
 }
 ::-moz-placeholder {
-  color: $form-place-holder-color;
+  color: $form-default-placeholder;
 }
 :-ms-input-placeholder {
-  color: $form-place-holder-color;
+  color: $form-default-placeholder;
 }
 
 // Define consistent border, margin, and padding.
@@ -457,7 +457,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 
-  border-bottom: $site-border-width solid $site-border-color;
+  border-bottom: $site-border-width solid $site-default-border;
   line-height: 2;
   margin: 0 0 20px;
   width: 100%;
@@ -480,7 +480,7 @@ th {
 }
 
 td {
-  border-top: $site-border-width solid $site-border-color;
+  border-top: $site-border-width solid $site-default-border;
   padding: 6px 10px 6px 0;
 }
 

@@ -3,7 +3,7 @@
 ----------------------------------------------- */
 
 .hr {
-  border-bottom: $site-border-width solid $site-border-color;
+  border-bottom: $site-border-width solid $site-default-border;
 }
 
 .block-content {
@@ -27,7 +27,7 @@
 }
 
 .time {
-  color: $site-date-color;
+  color: $site-date-text;
   font-style: normal;
   font-weight: 400;
   text-transform: uppercase;
@@ -62,7 +62,7 @@
 }
 
 .table-bordered {
-  border: $site-border-width solid $site-border-color;
+  border: $site-border-width solid $site-default-border;
   border-collapse: separate;
   *border-collapse: collapsed;
   border-left: 0;
@@ -70,8 +70,8 @@
   background-color: #fff;
 
   th {
-    background-color: lighten(desaturate($site-border-color, 10%), 20%);
-    background-color: rgba($site-border-color, .3);
+    background-color: lighten(desaturate($site-default-border, 10%), 20%);
+    background-color: rgba($site-default-border, .3);
   }
 
   th,
@@ -79,8 +79,8 @@
     padding: 8px;
     text-align: left;
     vertical-align: top;
-    border-top: $site-border-width solid $site-border-color;
-    border-left: $site-border-width solid $site-border-color;
+    border-top: $site-border-width solid $site-default-border;
+    border-left: $site-border-width solid $site-default-border;
   }
   caption + thead tr:first-child th,
   caption + tbody tr:first-child th,
@@ -131,7 +131,7 @@
 
 /* Ascii Art */
 .aa {
-  color: $site-foreground-color !important;
+  color: $site-default-text !important;
   font-family: 'Mona','IPAMonaPGothic','IPA モナー Pゴシック','MS PGothic AA','MS PGothic','ＭＳ Ｐゴシック',sans-serif !important;
   font-size: 16px !important;
   line-height: 18px !important;

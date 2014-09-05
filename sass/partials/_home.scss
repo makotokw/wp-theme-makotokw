@@ -1,8 +1,9 @@
 
 $section-page-alternate-background-color: lighten($gray-lighter, 4%);
 
-%circle-btn {
+%btn-circle {
   @extend .btn;
+  @extend .btn-primary;
   @include border-radius(20px);
   float: none;
 }
@@ -66,10 +67,7 @@ $section-page-alternate-background-color: lighten($gray-lighter, 4%);
       display: inline;
       a {
         @extend .btn;
-        background-color: $md-blue-grey-700;
-        &:hover {
-          background-color: $md-blue-grey-800;
-        }
+        @extend .btn-primary;
         display: inline-block;
         margin: 5px;
         float: none;
@@ -87,7 +85,7 @@ $section-page-alternate-background-color: lighten($gray-lighter, 4%);
 .section-page-about {
 
   color: $white;
-  background-color: $footer-background-color;
+  background-color: $footer-default-bg;
 
   a {
     color: $md-cyan-a100;
@@ -133,6 +131,7 @@ $section-page-alternate-background-color: lighten($gray-lighter, 4%);
     margin: 10px auto;
     > a {
       @extend .btn;
+      @extend .btn-primary;
       margin-bottom: 5px;
       float: none;
     }
@@ -148,24 +147,24 @@ $section-page-alternate-background-color: lighten($gray-lighter, 4%);
     display: inline-block;
     padding: 5px;
     a {
-      @extend %circle-btn;
+      @extend %btn-circle;
       margin: 0;
     }
   }
 
   .list-archives-item-month-no-items {
     span {
-      @extend %circle-btn;
+      @extend %btn-circle;
       margin: 0;
-      background-color: $site-link-neutral-color;
+      background-color: $site-neutral-link;
       &:hover {
-        background-color: $site-link-neutral-color;
+        background-color: $site-neutral-link;
       }
     }
   }
   .list-archives-item-month-no-items.list-archives-item-month-no-items-future {
     span {
-      background-color: lighten($site-link-neutral-color, 15%);
+      background-color: lighten($site-neutral-link, 15%);
     }
   }
 }

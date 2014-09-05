@@ -28,7 +28,7 @@
   width: 71px;
 }
 
-.share-content {
+.share-buttons {
   ul {
     padding: 0;
     margin: 4px 0 4px 0;
@@ -38,29 +38,20 @@
     }
   }
 }
-.share-button {
-  text-decoration: none;
-  display: inline-block;
-  margin: 4px 8px 4px 0;
+.btn-share {
   font-size: 12px;
   font-weight: normal;
-  border-radius: 4px;
-  color: $white;
-  background-color: $site-link-accent-color;
-  text-shadow: none;
   line-height: 23px;
   padding: 4px 16px 4px 16px;
   min-width: 100px;
-  text-align: center;
 
   &:hover {
-    color: $white;
-    background-color: $site-link-accent-over-color;
+    background-color: $button-default-bg-over;
   }
 
   .share-count {
-    background-color: $white;
-    color: $site-dark-accent-color;
+    background-color: $pink;
+    color: $white;
     border-radius: 50%;
     display: inline-block;
     text-align: center;
@@ -79,7 +70,7 @@
   }
 }
 
-@mixin share-button-with-generic-icon($brand-color, $icon-content) {
+@mixin btn-share-with-generic-icon($brand-color, $icon-content) {
 //  background-color: $brand-color;
 //  &:hover {
 //    background-color: lighten($brand-color, 20%);
@@ -93,7 +84,7 @@
   }
 }
 
-@mixin share-button-with-entypo-icon($brand-color, $icon-content) {
+@mixin btn-share-with-entypo-icon($brand-color, $icon-content) {
 //  background-color: $brand-color;
 //  &:hover {
 //    background-color: lighten($brand-color, 20%);
@@ -107,18 +98,18 @@
   }
 }
 
-.share-button-twitter {
-  @include share-button-with-generic-icon($twitter-blue, $gi-var-twitter);
+.btn-share-twitter {
+  @include btn-share-with-generic-icon($twitter-blue, $gi-var-twitter);
 }
-.share-button-hatena {
-  @include share-button-with-entypo-icon($hatena-bookmark-blue, $es-var-hatebu);
+.btn-share-hatena {
+  @include btn-share-with-entypo-icon($hatena-bookmark-blue, $es-var-hatebu);
 }
-.share-button-pocket {
-  @include share-button-with-generic-icon($pocket-pink, $gi-var-pocket);
+.btn-share-pocket {
+  @include btn-share-with-generic-icon($pocket-pink, $gi-var-pocket);
 }
-.share-button-googleplus {
-  @include share-button-with-generic-icon($google-plus-red, $gi-var-googleplus-alt);
+.btn-share-googleplus {
+  @include btn-share-with-generic-icon($google-plus-red, $gi-var-googleplus-alt);
 }
-.share-button-facebook {
-  @include share-button-with-generic-icon($facebook-blue, $gi-var-facebook-alt);
+.btn-share-facebook {
+  @include btn-share-with-generic-icon($facebook-blue, $gi-var-facebook-alt);
 }

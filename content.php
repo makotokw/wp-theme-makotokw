@@ -2,6 +2,7 @@
 /**
  * @package makotokw
  */
+$is_summary = is_home() || is_year() || is_month() || is_search();
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'post-summary' ); ?>>
@@ -14,10 +15,10 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php if ( is_home() || is_year() || is_month() || is_search() ) : // Only display Excerpts for Search ?>
+	<?php if ( $is_summary ) : // Only display Excerpts for Search ?>
 		<div class="entry-summary">
 			<p><?= makotokw_post_summary( $post->post_content ); ?></p>
-			<a class="btn more-link" href="<?php the_permalink() ?>">続きを読む</a>
+			<a class="btn btn-default btn-more-link" href="<?php the_permalink() ?>">続きを読む</a>
 		</div><!-- .entry-summary -->
 	<?php else : ?>
 		<div class="entry-content">
@@ -35,5 +36,8 @@
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 			<?php printf( '<span class="author vcard"><span class="fn">%1$s</span></span>', get_the_author() ); ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
+		<?php if ( ! $is_summary ): ?>
+		<?php makotokw_share_buttons(); ?>
+		<?php endif; ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->

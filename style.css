@@ -2575,7 +2575,7 @@ li > ol {
   font-style: normal;
 }
 
-.entypo-social, .share-button-hatena:before {
+.entypo-social, .btn-share-hatena:before {
   font-family: 'EntypoSocialRegular';
   font-size: 2em;
   font-weight: normal;
@@ -2585,7 +2585,7 @@ li > ol {
 /**
  * IE7 and IE6 hacks
  */
-.entypo-social, .share-button-hatena:before {
+.entypo-social, .btn-share-hatena:before {
   *overflow: auto;
   *zoom: 1;
   *display: inline;
@@ -3707,19 +3707,36 @@ li > ol {
     margin-left: 100%;
   }
 }
-.btn, .pagination ul .current .page, .pagination a, .navigation-comment a, .more-link, .list-archives .list-archives-item-month a, .list-archives .list-archives-item-month-no-items span, .section-page-category .list-category li a, .list-archives .list-archives-item-year > a {
+.btn, .pagination ul .current .page, .pagination a, .navigation-comment a, .list-archives .list-archives-item-month a, .list-archives .list-archives-item-month-no-items span, .section-page-category .list-category li a, .list-archives .list-archives-item-year > a {
   margin: 0 10px 0 0;
   display: inline-block;
   float: left;
   line-height: 1;
   text-decoration: none;
-  background-color: #196177;
-  color: white;
   padding: 12px 15px 12px 16px;
   font-weight: bold;
   font-size: 16px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
 }
-.btn:hover, .pagination ul .current .page:hover, .pagination a:hover, .navigation-comment a:hover, .more-link:hover, .list-archives .list-archives-item-month a:hover, .list-archives .list-archives-item-month-no-items span:hover, .section-page-category .list-category li a:hover, .list-archives .list-archives-item-year > a:hover {
+
+.btn-default, .pagination ul .current .page, .pagination a, .navigation-comment a {
+  border: 1px solid #dddddd;
+  background-color: white;
+  color: #333333;
+}
+.btn-default:hover, .pagination ul .current .page:hover, .pagination a:hover, .navigation-comment a:hover {
+  background-color: #ecf0f1;
+}
+
+.btn-primary, .list-archives .list-archives-item-month a, .list-archives .list-archives-item-month-no-items span, .section-page-category .list-category li a, .list-archives .list-archives-item-year > a {
+  background-color: #196177;
+  color: white;
+}
+.btn-primary:hover, .list-archives .list-archives-item-month a:hover, .list-archives .list-archives-item-month-no-items span:hover, .section-page-category .list-category li a:hover, .list-archives .list-archives-item-year > a:hover {
   background-color: #103f4d;
   color: white;
 }
@@ -3935,6 +3952,11 @@ input[type="color"]:focus,
   float: left;
 }
 .pagination ul .current .page {
+  color: white;
+  background-color: #103f4d;
+}
+.pagination ul .current .page:hover {
+  color: white;
   background-color: #103f4d;
 }
 
@@ -4110,9 +4132,6 @@ input[type="color"]:focus,
   margin: 0 0 5px 0;
 }
 
-.entry-meta {
-  margin: 10px 0 0 0;
-}
 .entry-meta i {
   margin-left: .5em;
   color: #2ba6cb;
@@ -4162,13 +4181,8 @@ input[type="color"]:focus,
   clear: both;
 }
 
-.more-link {
+.btn-more-link {
   float: right;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-  border-radius: 20px;
 }
 
 .entry-content img,
@@ -4274,6 +4288,20 @@ object {
   display: none;
 }
 
+.archive .post-summary {
+  margin: 20px 0 10px;
+}
+.archive .post-summary .share-buttons {
+  float: right;
+}
+.archive .post-summary .btn-share {
+  min-width: 0;
+  width: auto;
+}
+.archive .post-summary .btn-share .share-title {
+  display: none;
+}
+
 .section-share-this {
   *zoom: 1;
 }
@@ -4308,37 +4336,28 @@ object {
   width: 71px;
 }
 
-.share-content ul {
+.share-buttons ul {
   padding: 0;
   margin: 4px 0 4px 0;
   list-style: none;
 }
-.share-content ul li {
+.share-buttons ul li {
   display: inline;
 }
 
-.share-button {
-  text-decoration: none;
-  display: inline-block;
-  margin: 4px 8px 4px 0;
+.btn-share {
   font-size: 12px;
   font-weight: normal;
-  border-radius: 4px;
-  color: white;
-  background-color: #196177;
-  text-shadow: none;
   line-height: 23px;
   padding: 4px 16px 4px 16px;
   min-width: 100px;
-  text-align: center;
 }
-.share-button:hover {
+.btn-share:hover {
+  background-color: #ecf0f1;
+}
+.btn-share .share-count {
+  background-color: #ff6699;
   color: white;
-  background-color: #103f4d;
-}
-.share-button .share-count {
-  background-color: white;
-  color: #3e5771;
   border-radius: 50%;
   display: inline-block;
   text-align: center;
@@ -4350,11 +4369,11 @@ object {
   min-width: 18px;
   line-height: 1;
 }
-.share-button .share-count-link:hover {
+.btn-share .share-count-link:hover {
   text-decoration: underline;
 }
 
-.share-button-twitter:before {
+.btn-share-twitter:before {
   font-family: Genericons;
   content: "\f202";
   margin-right: 2px;
@@ -4362,14 +4381,14 @@ object {
   vertical-align: sub;
 }
 
-.share-button-hatena:before {
+.btn-share-hatena:before {
   font-family: EntypoSocialRegular;
   content: "\f354";
   margin-right: 2px;
   vertical-align: sub;
 }
 
-.share-button-pocket:before {
+.btn-share-pocket:before {
   font-family: Genericons;
   content: "\f224";
   margin-right: 2px;
@@ -4377,7 +4396,7 @@ object {
   vertical-align: sub;
 }
 
-.share-button-googleplus:before {
+.btn-share-googleplus:before {
   font-family: Genericons;
   content: "\f218";
   margin-right: 2px;
@@ -4385,7 +4404,7 @@ object {
   vertical-align: sub;
 }
 
-.share-button-facebook:before {
+.btn-share-facebook:before {
   font-family: Genericons;
   content: "\f204";
   margin-right: 2px;
@@ -5037,13 +5056,9 @@ object {
   display: inline;
 }
 .section-page-category .list-category li a {
-  background-color: #455a64;
   display: inline-block;
   margin: 5px;
   float: none;
-}
-.section-page-category .list-category li a:hover {
-  background-color: #37474f;
 }
 .section-page-category .list-category .children {
   display: inline;

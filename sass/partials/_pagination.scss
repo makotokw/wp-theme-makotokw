@@ -1,6 +1,7 @@
 
 %pagenation-page {
   @extend .btn;
+  @extend .btn-default;
   @include border-radius(20px);
 }
 
@@ -21,7 +22,12 @@
     .current {
       .page {
         @extend %pagenation-page;
-        background-color: darken($site-link-accent-color, 10%);
+        color: $white;
+        background-color: darken($site-accent-link, 10%);
+        &:hover {
+          color: $white;
+          background-color: darken($site-accent-link, 10%);
+        }
       }
     }
   }

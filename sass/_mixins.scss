@@ -13,7 +13,7 @@
 }
 
 @mixin block-white ($borderRadious) {
-  border: $site-border-width solid $block-border-color;
+  border: $site-border-width solid $block-default-border;
   @include border-radius($borderRadious);
   padding: $block-padding;
   background-color: $white;

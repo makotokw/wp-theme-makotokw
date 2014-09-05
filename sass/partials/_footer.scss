@@ -1,14 +1,14 @@
 
 .site-footer {
-  background-color: $footer-background-color;
-  color: $footer-foreground-color;
+  background-color: $footer-default-bg;
+  color: $footer-default-text;
   text-align: center;
   padding: 10px 0;
 
   a {
-    color: $footer-link-color;
+    color: $footer-default-link;
     &:hover {
-      color: $footer-link-over-color;
+      color: $footer-default-link-over;
     }
   }
 

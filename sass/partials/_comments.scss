@@ -77,7 +77,7 @@
       display: block;
       margin-bottom: 10px;
       padding: 2px;
-      border: 1px solid $site-border-color;
+      border: 1px solid $site-default-border;
     }
   }
   .comment-metadata {
@@ -89,7 +89,7 @@
     cite {
       display: block;
       a {
-        color: $site-foreground-color;
+        color: $site-default-text;
       }
     }
 
@@ -103,7 +103,7 @@
     @include block-white(4px);
     line-height: $line-height-large;
     overflow-x: auto;
-    color: lighten($site-foreground-color, 10%);
+    color: lighten($site-default-text, 10%);
     a {
       word-wrap: break-word;
     }
@@ -147,7 +147,7 @@
       font-family: FontAwesome;
       content: $fa-var-pencil;
       vertical-align: text-top;
-      color: $site-link-base-color;
+      color: $site-default-link;
       margin-right: 5px;
     }
   }

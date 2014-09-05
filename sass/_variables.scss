@@ -113,45 +113,50 @@ $border-radius-base: 4px;
 $border-radius-large: 6px;
 $border-radius-small: 3px;
 
-$site-foreground-color: $gray-darker;
-$site-background-color: $white;
-$site-neutral-color: $silver;
-$site-accent-color: saturate($blue, 10%);
-$site-dark-accent-color: lighten($blue-dark, 10%);
-
-$site-link-base-color: $blue;
-$site-link-base-over-color: darken($site-link-base-color, 10%);
-$site-link-neutral-color: $silver;
-$site-link-neutral-over-color: darken($site-link-neutral-color, 10%);
-$site-link-accent-color: darken($blue, 20%);
-$site-link-accent-over-color: darken($site-link-accent-color, 10%);
-$site-link-inverse-color: $silver;
-$site-link-inverse-over-color: darken($site-link-inverse-color, 10%);
-
-$site-border-color: $brand-default-border;
 $site-border-width: 2px;
 $site-border-left-width: 5px;
 
-$form-place-holder-color: $gray;
+$site-default-text: $gray-darker;
+$site-default-bg: $white;
+$site-neutral-color: $silver;
+$site-accent-color: saturate($blue, 10%);
+$site-dark-accent-color: lighten($blue-dark, 10%);
+$site-default-border: $brand-default-border;
 
-$navi-background-color: $site-background-color;
+$site-default-link: $blue;
+$site-default-link-over: darken($site-default-link, 10%);
+$site-neutral-link: $silver;
+$site-neutral-link-over: darken($site-neutral-link, 10%);
+$site-accent-link: darken($blue, 20%);
+$site-accent-link-over: darken($site-accent-link, 10%);
+$site-inverse-link-text: $silver;
+$site-inverse-link-over: darken($site-inverse-link-text, 10%);
 
-$footer-foreground-color: $white;
-$footer-background-color: $blue;
-$footer-link-color: $md-cyan-50;
-$footer-link-over-color: $md-cyan-100;
+$button-default-text: $site-default-text;
+$button-default-bg: $white;
+$button-default-bg-over: $clouds;
+$button-default-border: $site-default-border;
 
-$error-page-background-color: #f5f5f5;
-$error-page-background-icon-color: #ddd;
+$form-default-placeholder: $gray;
 
-$entry-title-color: $blue-dark;
-$site-date-color: #767676;
-$entry-date-color: $site-date-color;
-$comment-date-color: #767676;
+$navi-default-bg: $site-default-bg;
 
-$block-background-color: #f7f9fa;
-$block-text-color: #34495e;
-$block-border-color: #e9ecef;
+$footer-default-text: $white;
+$footer-default-bg: $blue;
+$footer-default-link: $md-cyan-50;
+$footer-default-link-over: $md-cyan-100;
+
+$errorpage-bg: #f5f5f5;
+$errorpage-bg-icon: #ddd;
+
+$site-date-text: #767676;
+$entry-title-text: $blue-dark;
+$entry-date-text: $site-date-text;
+$comment-date-text: #767676;
+
+$block-default-bg: #f7f9fa;
+$block-default-text: #34495e;
+$block-default-border: #e9ecef;
 $block-border-width: $site-border-width;
 $block-border-radius: 6px;
 $block-padding: 24px;
