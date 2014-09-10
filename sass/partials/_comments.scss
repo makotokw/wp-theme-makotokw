@@ -173,10 +173,6 @@
   a {
     @extend %pagenation-page;
     float: none;
-    background-color: $site-dark-accent-color;
-    &:hover {
-      background-color: $site-accent-color;
-    }
   }
 }
 

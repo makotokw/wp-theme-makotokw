@@ -4564,10 +4564,6 @@ object {
 
 .navigation-comment a {
   float: none;
-  background-color: #3e5771;
-}
-.navigation-comment a:hover {
-  background-color: #1fadd7;
 }
 
 .comment-form-comment textarea {
