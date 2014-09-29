@@ -44,6 +44,7 @@
   line-height: 23px;
   padding: 4px 16px 4px 16px;
   min-width: 100px;
+  margin: 0 10px 10px 0;
 
   &:hover {
     background-color: $button-default-bg-over;
@@ -71,10 +72,6 @@
 }
 
 @mixin btn-share-with-generic-icon($brand-color, $icon-content) {
-//  background-color: $brand-color;
-//  &:hover {
-//    background-color: lighten($brand-color, 20%);
-//  }
   &:before {
     font-family: Genericons;
     content: $icon-content;
@@ -85,10 +82,6 @@
 }
 
 @mixin btn-share-with-entypo-icon($brand-color, $icon-content) {
-//  background-color: $brand-color;
-//  &:hover {
-//    background-color: lighten($brand-color, 20%);
-//  }
   &:before {
     font-family: EntypoSocialRegular;
     @extend .entypo-social;

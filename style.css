@@ -4351,6 +4351,7 @@ object {
   line-height: 23px;
   padding: 4px 16px 4px 16px;
   min-width: 100px;
+  margin: 0 10px 10px 0;
 }
 .btn-share:hover {
   background-color: #ecf0f1;
