@@ -17,7 +17,7 @@ $is_summary = is_home() || is_year() || is_month() || is_search();
 
 	<?php if ( $is_summary ) : // Only display Excerpts for Search ?>
 		<div class="entry-summary">
-			<p><?= makotokw_post_summary( $post->post_content ); ?></p>
+			<p><?php echo makotokw_post_summary( $post->post_content ); ?></p>
 			<a class="btn btn-default btn-more-link" href="<?php the_permalink() ?>">続きを読む</a>
 		</div><!-- .entry-summary -->
 	<?php else : ?>

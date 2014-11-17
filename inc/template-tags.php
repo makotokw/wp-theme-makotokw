@@ -28,7 +28,7 @@ function makotokw_content_nav( $nav_id ) {
 	$nav_class = (is_single()) ? 'navigation-post' : 'navigation-paging';
 
 	?>
-	<nav role="navigation" id="<?= esc_attr( $nav_id ); ?>" class="<?= esc_attr( $nav_class ); ?>">
+	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo esc_attr( $nav_class ); ?>">
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'makotokw' ); ?></h1>
 
 		<?php if ( is_single() ) : // navigation links for single posts ?>
@@ -59,7 +59,7 @@ function makotokw_content_nav( $nav_id ) {
 			</div>
 		<?php endif; ?>
 
-	</nav><!-- #<?= esc_html( $nav_id ); ?> -->
+	</nav><!-- #<?php echo esc_html( $nav_id ); ?> -->
 	<?php
 }
 
@@ -85,19 +85,19 @@ function makotokw_list_nav() {
 
 			<div class="section-content">
 				<?php if ( ! is_wp_error( $mylist_link ) ): ?>
-					<i class="fa fa-list-alt"></i> <a href="<?= $mylist_link ?>"><?= $mylist->name ?></a>
+					<i class="fa fa-list-alt"></i> <a href="<?php echo $mylist_link ?>"><?php echo $mylist->name ?></a>
 				<?php endif ?>
 				<ul>
 					<?php if ( $first_post ): ?>
 						<li><i class="fa fa-angle-double-left"></i>&nbsp;<a
-								href="<?= get_permalink( $first_post ) ?>"
-								rel="prev"><?= get_the_title( $first_post ) ?></a></li>
+								href="<?php echo get_permalink( $first_post ) ?>"
+								rel="prev"><?php echo get_the_title( $first_post ) ?></a></li>
 					<?php endif ?>
 					<?php if ( $prev_post ): ?>
-						<li><i class="fa fa-angle-left"></i>&nbsp;<a href="<?= get_permalink( $prev_post ) ?>" rel="prev"><?= get_the_title( $prev_post ) ?></a></li>
+						<li><i class="fa fa-angle-left"></i>&nbsp;<a href="<?php echo get_permalink( $prev_post ) ?>" rel="prev"><?php echo get_the_title( $prev_post ) ?></a></li>
 					<?php endif ?>
 					<?php if ( $next_post ): ?>
-						<li><i class="fa fa-angle-right"></i>&nbsp;<a href="<?= get_permalink( $next_post ) ?>" rel="prev"><?= get_the_title( $next_post ) ?></a></li>
+						<li><i class="fa fa-angle-right"></i>&nbsp;<a href="<?php echo get_permalink( $next_post ) ?>" rel="prev"><?php echo get_the_title( $next_post ) ?></a></li>
 					<?php endif ?>
 				</ul>
 			</div>
@@ -124,25 +124,25 @@ function makotokw_pagination( $pages = '', $range = 3 ) {
 		?>
 		<div class="pagination"><ul>
 		<?php if ( $paged > 2 && $paged > $range + 1 && $showitems < $pages ) : ?>
-			<li><a rel="nofollow" href="<?= get_pagenum_link( 1 ) ?>">&laquo; <?php __( 'First', 'makotokw' ) ?></a></li>
+			<li><a rel="nofollow" href="<?php echo get_pagenum_link( 1 ) ?>">&laquo; <?php __( 'First', 'makotokw' ) ?></a></li>
 		<?php endif ?>
 		<?php if ( $paged > 1 ) : ?>
-			<li><a rel="nofollow" href="<?= get_pagenum_link( $paged - 1 ) ?>" class="inactive">&lsaquo; <?php __( 'Previous', 'makotokw' ) ?></a></li>
+			<li><a rel="nofollow" href="<?php echo get_pagenum_link( $paged - 1 ) ?>" class="inactive">&lsaquo; <?php __( 'Previous', 'makotokw' ) ?></a></li>
 		<?php endif ?>
 		<?php for ( $i = 1; $i <= $pages; $i++ ) : ?>
 			<?php if ( 1 != $pages && ( ! ($i >= $paged + $range + 1 || $i <= $paged - $range - 1) || $pages <= $showitems) ) : ?>
 				<?php if ( $paged == $i ) : ?>
-					<li class="current"><span class="page"><?= $i ?></span></li>
+					<li class="current"><span class="page"><?php echo $i ?></span></li>
 				<?php else : ?>
-					<li><a rel="nofollow" href="<?= get_pagenum_link( $i ) ?>" class="inactive"><?= $i ?></a></li>
+					<li><a rel="nofollow" href="<?php echo get_pagenum_link( $i ) ?>" class="inactive"><?php echo $i ?></a></li>
 				<?php endif ?>
 			<?php endif ?>
 		<?php endfor ?>
 		<?php if ( $paged < $pages ) : ?>
-			<li><a rel="nofollow" href="<?= get_pagenum_link( $paged + 1 ) ?>" class="inactive"><?php __( 'Next', 'makotokw' ) ?> &rsaquo;</a></li>
+			<li><a rel="nofollow" href="<?php echo get_pagenum_link( $paged + 1 ) ?>" class="inactive"><?php __( 'Next', 'makotokw' ) ?> &rsaquo;</a></li>
 		<?php endif ?>
 		<?php if ( $paged < $pages - 1 && $paged + $range - 1 < $pages && $showitems < $pages ) : ?>
-			<a rel="nofollow" class="inactive" href="<?= get_pagenum_link( $pages ) ?>"><?php __( 'Last', 'makotokw' ) ?> &raquo;</a>
+			<a rel="nofollow" class="inactive" href="<?php echo get_pagenum_link( $pages ) ?>"><?php __( 'Last', 'makotokw' ) ?> &raquo;</a>
 		<?php endif ?>
 		</ul></div>
 		<?php
@@ -159,7 +159,7 @@ function makotokw_google_analytics() {
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-		ga('create', '<?= WP_THEME_GOOGLE_ANALYTICS_ACCOUNT; ?>', '<?= WP_THEME_GOOGLE_ANALYTICS_DOMAIN; ?>');
+		ga('create', '<?php echo WP_THEME_GOOGLE_ANALYTICS_ACCOUNT; ?>', '<?php echo WP_THEME_GOOGLE_ANALYTICS_DOMAIN; ?>');
 		ga('send', 'pageview');
 	</script>
 	<?php
@@ -170,7 +170,7 @@ function makotokw_itunes_affiliate_script() {
 		return;
 	}
 	?>
-	<script type='text/javascript'>var _merchantSettings=_merchantSettings || [];_merchantSettings.push(['AT', '<?= WP_THEME_ITUNES_AFFILIATE_ID ?>']);(function(){var autolink=document.createElement('script');autolink.type='text/javascript';autolink.async=true; autolink.src= ('https:' == document.location.protocol) ? 'https://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js' : 'http://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(autolink, s);})();</script>
+	<script type='text/javascript'>var _merchantSettings=_merchantSettings || [];_merchantSettings.push(['AT', '<?php echo WP_THEME_ITUNES_AFFILIATE_ID ?>']);(function(){var autolink=document.createElement('script');autolink.type='text/javascript';autolink.async=true; autolink.src= ('https:' == document.location.protocol) ? 'https://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js' : 'http://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(autolink, s);})();</script>
 	<?php
 }
 
@@ -184,25 +184,25 @@ function makotokw_breadcrumbs() {
 		$divider = '&nbsp;<i class="fa fa-chevron-right"></i>&nbsp;';
 		?>
 		<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="breadcrumb">
-		<a href="<?= esc_url( home_url( '/' ) ) ?>"><i class="fa fa-home"></i></a><?= $divider ?>
+		<a href="<?php echo esc_url( home_url( '/' ) ) ?>"><i class="fa fa-home"></i></a><?php echo $divider ?>
 		<?php if ( is_category() ) : $term = $wp_query->get_queried_object(); ?>
-			<a href="/categories/" itemprop="url"><span itemprop="title"><?php _e( 'Categories', 'makotokw' ) ?></span></a><?= $divider ?>
+			<a href="/categories/" itemprop="url"><span itemprop="title"><?php _e( 'Categories', 'makotokw' ) ?></span></a><?php echo $divider ?>
 			<?php if ( $term->parent > 0 ) : ?>
-				 <?= makotokw_breadcrumbs_category_parents( $term->parent, $divider ); ?>
+				 <?php echo makotokw_breadcrumbs_category_parents( $term->parent, $divider ); ?>
 			<?php endif; ?>
-			<span itemprop="title"><?= single_cat_title( '', false ) ?></span>
+			<span itemprop="title"><?php echo single_cat_title( '', false ) ?></span>
 		<?php elseif ( is_tag() ) :?>
-			<a href="/tags/" itemprop="url"><span itemprop="title"><?php _e( 'Tags', 'makotokw' ) ?></a><?= $divider ?>
-			<span class="breadcrumb-last"><?= single_tag_title( '', false ) ?></span>
+			<a href="/tags/" itemprop="url"><span itemprop="title"><?php _e( 'Tags', 'makotokw' ) ?></a><?php echo $divider ?>
+			<span class="breadcrumb-last"><?php echo single_tag_title( '', false ) ?></span>
 		<?php elseif ( is_mylist() ): ?>
 			<span class="breadcrumb-last"><?php _e( 'Mylist', 'makotokw' ) ?></span>
 		<?php elseif ( is_archive() ) : ?>
 			<?php if ( is_tax( 'blogs' ) ) : ?>
-				<span itemprop="title"><?php _e( 'Blog', 'makotokw' ) ?></span><?= $divider ?>
-				<span itemprop="title"><?= single_cat_title( '', false ) ?></span>
+				<span itemprop="title"><?php _e( 'Blog', 'makotokw' ) ?></span><?php echo $divider ?>
+				<span itemprop="title"><?php echo single_cat_title( '', false ) ?></span>
 			<?php elseif ( is_tax( 'portfolios' ) ) : ?>
-				<span itemprop="title"><?php _e( 'Portfolio', 'makotokw' ) ?></span><?= $divider ?>
-				<span itemprop="title"><?= single_cat_title( '', false ) ?></span>
+				<span itemprop="title"><?php _e( 'Portfolio', 'makotokw' ) ?></span><?php echo $divider ?>
+				<span itemprop="title"><?php echo single_cat_title( '', false ) ?></span>
 			<?php else : ?>
 				<span class="breadcrumb-last"><?php _e( 'Archives', 'makotokw' ) ?></span>
 			<?php endif ?>
@@ -212,13 +212,13 @@ function makotokw_breadcrumbs() {
 			<span class="breadcrumb-last"><?php _e( '404 Not Found', 'makotokw' ) ?></span>
 		<?php elseif ( is_single() ) : $category = get_the_category(); ?>
 			<?php if ( is_array( $category ) && count( $category ) > 0 ) : $category_id = get_cat_ID( $category[0]->cat_name ); ?>
-				<a href="/categories/" itemprop="url"><span itemprop="title"><?php _e( 'Categories', 'makotokw' ) ?></span></a><?= $divider ?>
-				<?= makotokw_breadcrumbs_category_parents( $category_id, $divider ); ?>
+				<a href="/categories/" itemprop="url"><span itemprop="title"><?php _e( 'Categories', 'makotokw' ) ?></span></a><?php echo $divider ?>
+				<?php echo makotokw_breadcrumbs_category_parents( $category_id, $divider ); ?>
 			<?php endif ?>
-			<span class="breadcrumb-last"><?= the_title( '', '', false ) ?></span>
+			<span class="breadcrumb-last"><?php echo the_title( '', '', false ) ?></span>
 		<?php elseif ( is_page() ) : $post = $wp_query->get_queried_object(); ?>
 			<?php if ( $post->post_parent == 0 ) : ?>
-				<span class="breadcrumb-last"><?= the_title( '', '', false ) ?></span>
+				<span class="breadcrumb-last"><?php echo the_title( '', '', false ) ?></span>
 			<?php else : ?>
 				<?php
 				$ancestors = array_reverse( get_post_ancestors( $post->ID ) );
@@ -226,12 +226,12 @@ function makotokw_breadcrumbs() {
 				?>
 				<?php foreach ( $ancestors as $ancestor ) : ?>
 					<?php if ( $ancestor != end( $ancestors ) ) : ?>
-						<a href="<?= get_permalink( $ancestor ) ?>" itemprop="url">
-							<span itemprop="title"><?= strip_tags( apply_filters( 'single_post_title', get_the_title( $ancestor ) ) ) ?></span>
+						<a href="<?php echo get_permalink( $ancestor ) ?>" itemprop="url">
+							<span itemprop="title"><?php echo strip_tags( apply_filters( 'single_post_title', get_the_title( $ancestor ) ) ) ?></span>
 						</a>
-						<?= $divider ?>
+						<?php echo $divider ?>
 					<?php else : ?>
-						<span class="breadcrumb-last"><?= strip_tags( apply_filters( 'single_post_title', get_the_title( $ancestor ) ) ) ?></span>
+						<span class="breadcrumb-last"><?php echo strip_tags( apply_filters( 'single_post_title', get_the_title( $ancestor ) ) ) ?></span>
 					<?php endif ?>
 				<?php endforeach ?>
 			<?php endif ?>
@@ -262,7 +262,7 @@ function makotokw_zenback_widget() {
 	<?php if ( ! is_preview() && comments_open() && (is_single() || is_page()) ): ?>
 		<aside class="zenback-widget-area">
 			<?php if ( WP_THEME_DEBUG === false ): ?>
-				<?= WP_THEME_ZENBACK_WIDGET_SCRYPT ?>
+				<?php echo WP_THEME_ZENBACK_WIDGET_SCRYPT ?>
 			<?php else : ?>
 				<?php include 'zenback.debug.html' ?>
 			<?php endif; ?>
@@ -279,7 +279,7 @@ function makotokw_facebook_sdk() {
 			var js, fjs = d.getElementsByTagName(s)[0];
 			if (d.getElementById(id)) return;
 			js = d.createElement(s); js.id = id;
-			js.src = "//connect.facebook.net/<?= WP_OGP_LOCALE; ?>/all.js#xfbml=1&appId=<?= WP_OGP_FB_APPID; ?>";
+			js.src = "//connect.facebook.net/<?php echo WP_OGP_LOCALE; ?>/all.js#xfbml=1&appId=<?php echo WP_OGP_FB_APPID; ?>";
 			fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));</script>
 		<?php
@@ -288,7 +288,7 @@ function makotokw_facebook_sdk() {
 
 function makotokw_facebook_recommendations_bar() {
 	?>
-	<div class="fb-recommendations-bar" data-href="<?= esc_url( ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] )?>"></div>
+	<div class="fb-recommendations-bar" data-href="<?php echo esc_url( ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] )?>"></div>
 	<?php
 }
 
@@ -356,27 +356,27 @@ function makotokw_share_buttons() {
 	<div class="share-buttons">
 		<ul>
 			<li class="share-twitter">
-				<a rel="nofollow" data-url="<?= $permalink; ?>" class="btn btn-default btn-share btn-share-twitter" href="https://twitter.com/intent/tweet?original_referer=<?= rawurlencode( $permalink ) ?>&text=<?= rawurlencode( $title ) ?>&tw_p=tweetbutton&url=<?= urlencode( $permalink )?>&via=<?= urlencode( WP_THEME_AUTHOR_TWITTER )?>" target="_blank">
+				<a rel="nofollow" data-url="<?php echo $permalink; ?>" class="btn btn-default btn-share btn-share-twitter" href="https://twitter.com/intent/tweet?original_referer=<?php echo rawurlencode( $permalink ) ?>&text=<?php echo rawurlencode( $title ) ?>&tw_p=tweetbutton&url=<?php echo urlencode( $permalink )?>&via=<?php echo urlencode( WP_THEME_AUTHOR_TWITTER )?>" target="_blank">
 					<span class="share-title">Twitter</span>
 				</a>
 			</li>
 			<li class="share-hatena">
-				<a rel="nofollow" class="btn btn-default btn-share btn-share-hatena" href="http://b.hatena.ne.jp/entry/<?= $permalink_schemeless ?>" target="_blank">
+				<a rel="nofollow" class="btn btn-default btn-share btn-share-hatena" href="http://b.hatena.ne.jp/entry/<?php echo $permalink_schemeless ?>" target="_blank">
 					<span class="share-title">はてブ</span>
 				</a>
 			</li>
 			<li class="share-pocket">
-				<a rel="nofollow" class="btn btn-default btn-share btn-share-pocket" href="https://getpocket.com/save/?url=<?= rawurlencode( $permalink ) ?>&title=<?= rawurlencode( $title ) ?>" target="_blank">
+				<a rel="nofollow" class="btn btn-default btn-share btn-share-pocket" href="https://getpocket.com/save/?url=<?php echo rawurlencode( $permalink ) ?>&title=<?php echo rawurlencode( $title ) ?>" target="_blank">
 					<span class="share-title">Pocket</span>
 				</a>
 			</li>
 			<li class="share-googleplus">
-				<a rel="nofollow" class="btn btn-default btn-share btn-share-googleplus" href="https://plus.google.com/share?url=<?= rawurlencode( $permalink ) ?>" target="_blank">
+				<a rel="nofollow" class="btn btn-default btn-share btn-share-googleplus" href="https://plus.google.com/share?url=<?php echo rawurlencode( $permalink ) ?>" target="_blank">
 					<span class="share-title">Google</span>
 				</a>
 			</li>
 			<li class="share-facebook">
-				<a rel="nofollow" class="btn btn-default btn-share btn-share-facebook" href="//www.facebook.com/sharer.php?u=<?= rawurlencode( $permalink ) ?>&t=<?= rawurlencode( $title ) ?>" target="_blank">
+				<a rel="nofollow" class="btn btn-default btn-share btn-share-facebook" href="//www.facebook.com/sharer.php?u=<?php echo rawurlencode( $permalink ) ?>&t=<?php echo rawurlencode( $title ) ?>" target="_blank">
 					<span class="share-title">Facebook</span>
 				</a>
 			</li>
@@ -387,7 +387,7 @@ function makotokw_share_buttons() {
 
 function makotokw_share_this() {
 	?>
-	<div id="shareThis" class="section section-mini section-share-this" data-url="<?= makotokw_share_permalink(); ?>">
+	<div id="shareThis" class="section section-mini section-share-this" data-url="<?php echo makotokw_share_permalink(); ?>">
 		<h2 class="section-title"><?php _e( 'Share This', 'makotokw' ); ?></h2>
 		<div class="section-content">
 			<div class="share-content">
@@ -404,7 +404,7 @@ function makotokw_about_me() {
 		<h2 class="section-title"><?php _e( 'About', 'makotokw' ); ?></h2>
 		<div class="section-content">
 			<div itemprop="author copyrightHolder editor" itemscope itemtype="http://data-vocabulary.org/Person">
-			<?= str_replace( '<img ', '<img itemprop="image" ', get_avatar( get_the_author_meta( 'user_email' ), '48', '', get_the_author() ) ) ?>
+			<?php echo str_replace( '<img ', '<img itemprop="image" ', get_avatar( get_the_author_meta( 'user_email' ), '48', '', get_the_author() ) ) ?>
 			</div>
 		</div>
 	</div>
@@ -418,7 +418,7 @@ function makotokw_related_post( $arg = array() ) {
 	<div class="entry-content">
 		<span class="entry-date"><?php makotokw_posted_on(); ?></span>
 		<p class="entry-summary">
-			<?= makotokw_post_summary( $post->post_content ); ?>
+			<?php echo makotokw_post_summary( $post->post_content ); ?>
 		</p>
 	</div>
 	<?php
@@ -605,7 +605,7 @@ function makotokw_the_category_slug( $separator = '', $post_id = false ) {
 			$the_list .= $separator;
 		}
 		?>
-		<a href="<?= esc_url( get_category_link( $category->term_id ) ) ?>" title="<?= esc_attr( sprintf( __( 'View all posts in %s' ), $category->name ) ) ?>" <?= $rel ?>><?= esc_html( $category->slug ) ?></a>
+		<a href="<?php echo esc_url( get_category_link( $category->term_id ) ) ?>" title="<?php echo esc_attr( sprintf( __( 'View all posts in %s' ), $category->name ) ) ?>" <?php echo $rel ?>><?php echo esc_html( $category->slug ) ?></a>
 		<?php
 		++$i;
 	}
@@ -614,7 +614,7 @@ function makotokw_the_category_slug( $separator = '', $post_id = false ) {
 function makotokw_section_category_and_tag( $title = 'Tag' ) {
 	?>
 	<section class="section section-mini section-category-tag">
-		<h2 class="section-title"><?= esc_html( $title ) ?></h2>
+		<h2 class="section-title"><?php echo esc_html( $title ) ?></h2>
 		<div class="section-content">
 			<?php makotokw_the_category_and_tag(); ?></a>
 		</div>
@@ -715,7 +715,7 @@ function makotokw_inline_archives( $args = '' ) {
 		$url   = '/' . $year . '/'
 		?>
 		<li class="list-archives-item list-archives-item-year">
-			<a href="<?= $url ?>"><?= $before_year . $label . $after_year ?></a>
+			<a href="<?php echo $url ?>"><?php echo $before_year . $label . $after_year ?></a>
 			<ul class="list-archives  list-archives-month">
 		<?php for ( $month = 1; $month <= 12; $month++ ) : ?>
 			<?php if ( is_null( @$months[$month] ) ) : ?>
@@ -726,9 +726,9 @@ function makotokw_inline_archives( $args = '' ) {
 					$no_month_cls .= ' list-archives-item-month-no-items-future';
 				}
 				?>
-				<li class="list-archives-item list-archives-item-month <?= $no_month_cls ?>"><span><?= $month ?></span></li>
+				<li class="list-archives-item list-archives-item-month <?php echo $no_month_cls ?>"><span><?php echo $month ?></span></li>
 			<?php else : ?>
-				<li class="list-archives-item list-archives-item-month"><a href="<?= sprintf( '%s%04d/%02d/', $base_url, $year, $month ) ?>"><?= $month ?></a></li>
+				<li class="list-archives-item list-archives-item-month"><a href="<?php echo sprintf( '%s%04d/%02d/', $base_url, $year, $month ) ?>"><?php echo $month ?></a></li>
 			<?php endif ?>
 		<?php endfor ?>
 			</ul>

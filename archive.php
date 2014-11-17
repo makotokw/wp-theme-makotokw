@@ -17,32 +17,32 @@ get_header(); ?>
 					<header class="page-header">
 						<h1 class="page-title">
 							<?php if ( is_category() ) : ?>
-								<i class="fa fa-folder"></i> <?= sprintf( __( 'Category Archives: %s', 'makotokw' ), '<span>' . single_cat_title( '', false ) . '</span>' ); ?>
+								<i class="fa fa-folder"></i> <?php echo sprintf( __( 'Category Archives: %s', 'makotokw' ), '<span>' . single_cat_title( '', false ) . '</span>' ); ?>
 							<?php elseif ( is_tag() ) : ?>
-								<i class="fa fa-tag"></i> <?= sprintf( __( 'Tag Archives: %s', 'makotokw' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?>
+								<i class="fa fa-tag"></i> <?php echo sprintf( __( 'Tag Archives: %s', 'makotokw' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?>
 							<?php elseif ( is_day() ) : ?>
-								<i class="fa fa-calendar"></i> <?= sprintf( __( 'Daily Archives: %s', 'makotokw' ), '<span>' . get_the_date() . '</span>' ); ?>
+								<i class="fa fa-calendar"></i> <?php echo sprintf( __( 'Daily Archives: %s', 'makotokw' ), '<span>' . get_the_date() . '</span>' ); ?>
 							<?php elseif ( is_month() ) : ?>
-								<i class="fa fa-calendar"></i> <?= sprintf( __( 'Monthly Archives: %s', 'makotokw' ), '<span>' . get_the_date( 'F Y' ) . '</span>' ); ?>
+								<i class="fa fa-calendar"></i> <?php echo sprintf( __( 'Monthly Archives: %s', 'makotokw' ), '<span>' . get_the_date( 'F Y' ) . '</span>' ); ?>
 							<?php elseif ( is_year() ) : ?>
-								<i class="fa fa-calendar"></i> <?= sprintf( __( 'Yearly Archives: %s', 'makotokw' ), '<span>' . get_the_date( 'Y' ) . '</span>' ); ?>
+								<i class="fa fa-calendar"></i> <?php echo sprintf( __( 'Yearly Archives: %s', 'makotokw' ), '<span>' . get_the_date( 'Y' ) . '</span>' ); ?>
 							<?php elseif ( is_tax( 'mylist' ) ) : ?>
-								<i class="fa fa-list-alt"></i>  <?= sprintf( __( '%s', 'makotokw' ), '<span>' . single_term_title( '', false ) . '</span>' ); ?>
+								<i class="fa fa-list-alt"></i>  <?php echo sprintf( __( '%s', 'makotokw' ), '<span>' . single_term_title( '', false ) . '</span>' ); ?>
 							<?php elseif ( is_tax( 'blogs' ) ) : ?>
-								<i class="fa fa-folder"></i> <?= sprintf( __( 'Blog Archives: %s', 'makotokw' ), '<span>' . single_term_title( '', false ) . '</span>' ); ?>
+								<i class="fa fa-folder"></i> <?php echo sprintf( __( 'Blog Archives: %s', 'makotokw' ), '<span>' . single_term_title( '', false ) . '</span>' ); ?>
 							<?php elseif ( is_tax( 'portfolios' ) ) : ?>
-								<i class="fa fa-folder"></i> <?= sprintf( __( 'Portfolio Archives: %s', 'makotokw' ), '<span>' . single_term_title( '', false ) . '</span>' ); ?>
+								<i class="fa fa-folder"></i> <?php echo sprintf( __( 'Portfolio Archives: %s', 'makotokw' ), '<span>' . single_term_title( '', false ) . '</span>' ); ?>
 							<?php else : ?>
-								<i class="fa fa-folder"></i> <?= _( 'Archives', 'makotokw' ); ?>
+								<i class="fa fa-folder"></i> <?php echo _( 'Archives', 'makotokw' ); ?>
 							<?php endif; ?>
 						</h1>
 						<?php if ( is_category() ) :  $category_description = category_description(); ?>
 							<?php if ( ! empty($category_description) ) : ?>
-								<?= apply_filters( 'category_archive_meta', '<div class="taxonomy-description">' . $category_description . '</div>' ); ?>
+								<?php echo apply_filters( 'category_archive_meta', '<div class="taxonomy-description">' . $category_description . '</div>' ); ?>
 							<?php endif; ?>
 						<?php elseif ( is_tag() ) : $tag_description = tag_description(); ?>
 							<?php if ( ! empty($tag_description) ) : ?>
-								<?= apply_filters( 'tag_archive_meta', '<div class="taxonomy-description">' . $tag_description . '</div>' ); ?>
+								<?php echo apply_filters( 'tag_archive_meta', '<div class="taxonomy-description">' . $tag_description . '</div>' ); ?>
 							<?php endif; ?>
 						<?php endif; ?>
 					</header><!-- .page-header -->

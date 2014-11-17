@@ -48,9 +48,9 @@ cp -p config.php.sample config.php
 
 ### Requirements
 
+* [Grunt](http://gruntjs.com/)
 * [Bower](http://bower.io/)
 * [Compass](http://compass-style.org/)
-* [Grunt](http://gruntjs.com/)
 
 ### Setup
 

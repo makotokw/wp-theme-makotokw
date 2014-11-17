@@ -24,15 +24,15 @@
 	<?php endif ?>
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="shortcut icon" href="/favicon.ico">
-<link rel="apple-touch-icon-precomposed" sizes="152x152" href="<?= get_template_directory_uri(); ?>/images/touch-icon-152.png">
-<link rel="apple-touch-icon-precomposed" sizes="120x120" href="<?= get_template_directory_uri(); ?>/images/touch-icon-120.png">
-<link rel="apple-touch-icon-precomposed" sizes="76x76" href="<?= get_template_directory_uri(); ?>/images/touch-icon-76.png">
-<link rel="apple-touch-icon-precomposed" href="<?= get_template_directory_uri(); ?>/images/touch-icon-57.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="<?php echo get_template_directory_uri(); ?>/images/touch-icon-152.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="<?php echo get_template_directory_uri(); ?>/images/touch-icon-120.png">
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="<?php echo get_template_directory_uri(); ?>/images/touch-icon-76.png">
+<link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/images/touch-icon-57.png">
 <link rel="profile" href="http://gmpg.org/xfn/11"/>
-<link rel="alternate" type="<?= feed_content_type() ?>" title="<?= esc_attr( get_bloginfo( 'name' ) )?>" href="<?= get_feed_link() ?>" />
+<link rel="alternate" type="<?php echo feed_content_type() ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) )?>" href="<?php echo get_feed_link() ?>" />
 <?php if ( WP_THEME_OGP === true ) : ?><?php include('header-ogp.php'); ?><?php endif ?>
 <!--[if lt IE 9]>
-<script src="<?= get_template_directory_uri(); ?>/components/js/html5shiv/html5shiv.js" type="text/javascript"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/components/js/html5shiv/html5shiv.js" type="text/javascript"></script>
 <![endif]-->
 <?php wp_head(); ?>
 <?php makotokw_google_analytics(); ?>
@@ -44,12 +44,12 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="container">
 			<div class="site-info">
-				<h1 class="site-title"><a href="<?= esc_url( home_url( '/' ) ); ?>" title="<?= esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 			</div>
 			<div class="sub-nav">
 				<div class="socials">
-					<a href="<?= get_feed_link() ?>" title="RSS">
+					<a href="<?php echo get_feed_link() ?>" title="RSS">
 						<span class="fa-stack fa-lg">
 							<i class="fa fa-circle fa-stack-2x"></i>
 							<i class="fa fa-rss fa-stack-1x fa-inverse"></i>
