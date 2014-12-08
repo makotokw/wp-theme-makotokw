@@ -17,9 +17,9 @@
  * the visitor has not yet entered the password we will
  * return early without loading the comments.
  */
-if ( post_password_required() )
+if ( post_password_required() ) {
 	return;
-
+}
 ?>
 
 <aside id="comments" class="section section-default section-comment">
@@ -29,10 +29,12 @@ if ( post_password_required() )
 	<?php if ( have_comments() ) : ?>
 
 		<h2 class="section-title section-comments-title">
-			<?php printf(
+			<?php
+			printf(
 				_nx( '1 Comment', '%1$s Comments', get_comments_number(), 'comments title', 'makotokw' ),
 				number_format_i18n( get_comments_number() )
-			); ?>
+			);
+			?>
 		</h2>
 
 		<ol class="comment-list">

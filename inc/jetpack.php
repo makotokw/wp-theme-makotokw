@@ -23,7 +23,7 @@ function makotokw_infinite_scroll_setup() {
 add_action( 'after_setup_theme', 'makotokw_infinite_scroll_setup' );
 
 function makotokw_publicize_save_meta( $submit_post, $post_id, $service_name, $connection ) {
-	if ( $service_name != 'twitter' ) {
+	if ( 'twitter' != $service_name ) {
 		return;
 	}
 	$prefix = 'ブログ更新:';
@@ -31,8 +31,8 @@ function makotokw_publicize_save_meta( $submit_post, $post_id, $service_name, $c
 	$publicize_custom_message = get_post_meta( $post_id, '_wpas_mess', true );
 	if ( empty($publicize_custom_message)
 		|| ($publicize_custom_message &&
-			((strpos( $publicize_custom_message, $prefix ) === 0 && strpos( $publicize_custom_message, $prefix . ' ' . $title ) !== 0)
-				|| strpos( $publicize_custom_message, $title ) === 0))
+			((0 === strpos( $publicize_custom_message, $prefix ) && 0 !== strpos( $publicize_custom_message, $prefix . ' ' . $title ))
+				|| 0 === strpos( $publicize_custom_message, $title )))
 	) {
 		$publicize_custom_message = sprintf(
 			'%s %s %s',

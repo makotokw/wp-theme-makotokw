@@ -10,7 +10,7 @@
 		<div id="footerMargin"></div>
 		</div><!-- #main -->
 		<?php if ( ! is_preview() ): ?>
-			<?php if ( WP_THEME_FB_RECOMMEND_BAR === true ): ?>
+			<?php if ( true === WP_THEME_FB_RECOMMEND_BAR ): ?>
 				<?php makotokw_facebook_recommendations_bar(); ?>
 			<?php endif; ?>
 		<?php endif ?>
@@ -22,7 +22,8 @@
 							<?php do_action( 'makotokw_credits' ); ?>
 						</div>
 						<div class="poweredby">
-							<?php printf(
+							<?php
+							printf(
 								__( 'Powered by %s', 'makotokw' ),
 								'<a href="http://wordpress.org/" title="' . esc_attr( __( 'Semantic Personal Publishing Platform', 'makotokw' ) ) . '">WordPress</a>'
 							) ?>
@@ -34,11 +35,11 @@
 		</footer>
 	</div><!-- #page -->
 	<?php wp_footer(); ?>
-	<?php if ( WP_THEME_ITUNES_AFFILIATE_ID != false ): ?>
+	<?php if ( false != WP_THEME_ITUNES_AFFILIATE_ID ): ?>
 		<?php makotokw_itunes_affiliate_script(); ?>
 	<?php endif ?>
-	<?php if ( WP_THEME_DEBUG ): ?>
+	<?php if ( WP_THEME_DEBUG ): // @codingStandardsIgnoreStart ?>
 		<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':38085/livereload.js?snipver=1"></' + 'script>')</script>
-	<?php endif ?>
+	<?php endif // @codingStandardsIgnoreEnd ?>
 </body>
 </html>

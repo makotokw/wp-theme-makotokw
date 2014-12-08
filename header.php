@@ -30,15 +30,17 @@
 <link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/images/touch-icon-57.png">
 <link rel="profile" href="http://gmpg.org/xfn/11"/>
 <link rel="alternate" type="<?php echo feed_content_type() ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) )?>" href="<?php echo get_feed_link() ?>" />
-<?php if ( WP_THEME_OGP === true ) : ?><?php include('header-ogp.php'); ?><?php endif ?>
+<?php if ( true === WP_THEME_OGP ) : ?><?php include('header-ogp.php'); ?><?php endif ?>
+<?php // @codingStandardsIgnoreStart ?>
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/components/js/html5shiv/html5shiv.js" type="text/javascript"></script>
 <![endif]-->
+<?php // @codingStandardsIgnoreEnd ?>
 <?php wp_head(); ?>
 <?php makotokw_google_analytics(); ?>
 </head>
 <body <?php body_class(); ?>>
-<?php if ( WP_THEME_DEBUG === false && WP_THEME_FB_RECOMMEND_BAR === true ): ?><?php makotokw_facebook_sdk(); ?><?php endif; ?>
+<?php if ( false === WP_THEME_DEBUG && true === WP_THEME_FB_RECOMMEND_BAR ): ?><?php makotokw_facebook_sdk(); ?><?php endif; ?>
 <?php do_action( 'makotekw_after_body' ); ?>
 <div id="page" class="hfeed site">
 	<header id="masthead" class="site-header" role="banner">

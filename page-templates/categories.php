@@ -11,12 +11,14 @@ include __DIR__ . '/header.php'; ?>
 	</header>
 	<div class="entry-content">
 		<ul>
-			<?php wp_list_categories(
+			<?php
+			wp_list_categories(
 				array(
 					'title_li'   => '',
 					'show_count' => true,
 				)
-			); ?>
+			);
+			?>
 		</ul>
 	</div>
 </article>

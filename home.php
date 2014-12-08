@@ -38,7 +38,8 @@ get_header(); ?>
 	<section class="section-page section-page-category">
 		<div class="container">
 			<ul class="list-category">
-				<?php wp_list_categories(
+				<?php
+				wp_list_categories(
 					array(
 						'title_li'   => '',
 						'show_count' => false,

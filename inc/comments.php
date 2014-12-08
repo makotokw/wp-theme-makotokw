@@ -17,7 +17,8 @@ function makotokw_comment( $comment, $args, $depth ) {
 				<?php endif; ?>
 				<div class="comment-metadata">
 					<?php printf( '<cite class="fn">%1$s %2$s</cite>', ($is_trackback ? '<i class="fa fa-external-link"></i>' : ''), get_comment_author_link() ); ?>
-					<?php printf(
+					<?php
+					printf(
 						'<a class="comment-time" href="%1$s"><time class="time" datetime="%2$s">%3$s</time></a>',
 						esc_url( get_comment_link( $comment->comment_ID ) ),
 						get_comment_time(),
@@ -36,7 +37,8 @@ function makotokw_comment( $comment, $args, $depth ) {
 			</div>
 			<?php if ( ! $is_trackback ): ?>
 				<div class="reply">
-					<?php comment_reply_link(
+					<?php
+					comment_reply_link(
 						array_merge(
 							$args,
 							array(

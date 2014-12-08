@@ -35,12 +35,14 @@ add_filter( 'body_class', 'makotokw_body_classes' );
  * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
  */
 function makotokw_enhanced_image_navigation( $url, $id ) {
-	if ( ! is_attachment() && ! wp_attachment_is_image( $id ) )
+	if ( ! is_attachment() && ! wp_attachment_is_image( $id ) ) {
 		return $url;
+	}
 
 	$image = get_post( $id );
-	if ( ! empty($image->post_parent) && $image->post_parent != $id )
+	if ( ! empty($image->post_parent) && $image->post_parent != $id ) {
 		$url .= '#main';
+	}
 
 	return $url;
 }
@@ -53,20 +55,23 @@ add_filter( 'attachment_link', 'makotokw_enhanced_image_navigation', 10, 2 );
 function makotokw_wp_title( $title, $sep ) {
 	global $page, $paged;
 
-	if ( is_feed() )
+	if ( is_feed() ) {
 		return $title;
+	}
 
 	// Add the blog name
 	$title .= get_bloginfo( 'name' );
 
 	// Add the blog description for the home/front page.
 	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && (is_home() || is_front_page()) )
+	if ( $site_description && (is_home() || is_front_page()) ) {
 		$title .= " $sep $site_description";
+	}
 
 	// Add a page number if necessary:
-	if ( $paged >= 2 || $page >= 2 )
+	if ( $paged >= 2 || $page >= 2 ) {
 		$title .= " $sep " . sprintf( __( 'Page %s', 'makotokw' ), max( $paged, $page ) );
+	}
 
 	return $title;
 }
@@ -87,7 +92,7 @@ add_action( 'pre_get_posts', 'makotokw_pre_get_posts' );
 function makotokw_template_redirect() {
 	if ( is_page() && ! is_preview() ) {
 		if ( $values = get_post_custom_values( 'makotokw_part_of_home' ) ) {
-			if ( $values[0] == 1 ) {
+			if ( 1 == $values[0] ) {
 				wp_redirect( home_url( '/' ) );
 				exit();
 			}

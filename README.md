@@ -12,7 +12,7 @@ WordPress theme for [kwLog](http://blog.makotokw.com).
  * Include [Genericons](http://genericons.com/)
  * Include [google-code-prettify](http://code.google.com/p/google-code-prettify/)
 
-## Work With 
+## Work With
 
 * [SyntaxHighlighter Evolved](http://wordpress.org/extend/plugins/syntaxhighlighter/) Plugin
 * [AmazonJS](http://wordpress.org/extend/plugins/amazonjs/) Plugin
@@ -70,7 +70,16 @@ cd /path/to/wordpress/wp-content/themes/makotokw2014
 grunt build
 ```
 
+### phpcs
+
+https://github.com/squizlabs/PHP_CodeSniffer
+https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
+
+
+```
+phpcs --standard=build/phpcs.xml *.php ./**/*.php
+```
+
 ## License
 
 * GPL v2
-

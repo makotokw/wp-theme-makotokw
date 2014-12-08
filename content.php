@@ -23,7 +23,8 @@ $is_summary = is_home() || is_year() || is_month() || is_search();
 	<?php else : ?>
 		<div class="entry-content">
 			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'makotokw' ) ); ?>
-			<?php wp_link_pages(
+			<?php
+			wp_link_pages(
 				array(
 					'before' => '<div class="page-links">' . __( 'Pages:', 'makotokw' ),
 					'after'  => '</div>',

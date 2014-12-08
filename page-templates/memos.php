@@ -5,14 +5,14 @@
  */
 include __DIR__ . '/header.php'; ?>
 <article class="hentry">
-	<header class="entry-header">
+    <header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
-	</header>
-	<div class="entry-content">
-		<ul class="memo-list">
+    </header>
+    <div class="entry-content">
+        <ul class="memo-list">
 			<?php wp_list_pages( array( 'title_li' => false, 'show_date' => true, 'child_of' => WP_THEME_MEMO_POST_ID ) ); ?>
-		</ul>
-	</div>
+        </ul>
+    </div>
 </article>
 </div>
 </section>

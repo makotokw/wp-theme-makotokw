@@ -9,14 +9,16 @@ include __DIR__ . '/header.php'; ?>
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 	</header>
 	<div class="entry-content">
-		<?php wp_nav_menu(
+		<?php
+		wp_nav_menu(
 			array(
 				'theme_location'  => 'portfolio',
 				'container_class' => 'portfolio-list',
 				'link_before'     => '',
 				'link_after'      => '',
 			)
-		); ?>
+		);
+		?>
 	</div>
 </article>
 </div>

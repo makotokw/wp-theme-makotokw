@@ -33,6 +33,7 @@ function makotokw_setup() {
 	 * Custom template tags for this theme.
 	 */
 	require(get_template_directory() . '/inc/template-tags.php');
+	require(get_template_directory() . '/inc/related.php');
 	require(get_template_directory() . '/inc/comments.php');
 	require(get_template_directory() . '/inc/extras.php');
 
@@ -76,7 +77,7 @@ function makotokw_setup() {
 	/*
 	 * Disable Jetpack OGP
 	 */
-	if ( WP_THEME_OGP === true ) {
+	if ( true === WP_THEME_OGP ) {
 		add_filter( 'jetpack_enable_opengraph', '__return_false', 99 );
 	}
 
@@ -128,7 +129,7 @@ function makotokw_scripts() {
 	wp_enqueue_style( 'makotokw-ie', get_template_directory_uri() . '/ie.css', array( 'makotokw-style' ), '20130428' );
 	$wp_styles->add_data( 'makotokw-ie', 'conditional', 'lt IE 9' );
 
-	wp_register_script( 'makotokw-script', get_template_directory_uri() . '/style.js', array( 'jquery' ), THEME_STYLE_SCRIPT_REV, true  );
+	wp_register_script( 'makotokw-script', get_template_directory_uri() . '/style.js', array( 'jquery' ), THEME_STYLE_SCRIPT_REV, true );
 	wp_localize_script( 'makotokw-script', 'makotokw', array( 'counter_api' => WP_THEME_COUNT_API ) );
 	wp_enqueue_script( 'makotokw-script' );
 
