@@ -598,7 +598,7 @@ function makotokw_inline_archives( $args = '' ) {
 			<a href="<?php echo $url ?>"><?php echo $before_year . $label . $after_year ?></a>
 			<ul class="list-archives  list-archives-month">
 		<?php for ( $month = 1; $month <= 12; $month++ ) : ?>
-			<?php if ( isset( $months[ $month ] ) ) : ?>
+			<?php if ( !isset( $months[ $month ] ) ) : ?>
 				<?php
 				$no_month_cls = ' list-archives-item-month-no-items';
 				$month_time   = mktime( 0, 0, 0, $month, 1, $year );
