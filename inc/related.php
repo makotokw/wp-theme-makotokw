@@ -76,13 +76,13 @@ function makotokw_related_posts( $arg = array() ) {
 		}
 	}
 
-	if ( $rq && $rq->have_posts() ): $count = 0;?>
+	if ( $rq && $rq->have_posts() ) : $count = 0;?>
 		<aside class="section section-mini section-related-posts">
 			<h2 class="section-title"><?php _e( 'Related Posts', 'makotokw' ); ?></h2>
 			<div class="section-content">
 				<ul>
-					<?php while ( $rq->have_posts() ): $rq->the_post(); ?>
-						<?php if ( $post->ID != $cur_post->ID && $count < $max_count ): ?>
+					<?php while ( $rq->have_posts() ) : $rq->the_post(); ?>
+						<?php if ( $post->ID != $cur_post->ID && $count < $max_count ) : ?>
 							<li><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></li>
 						<?php endif ?>
 					<?php endwhile ?>
@@ -101,26 +101,28 @@ function makotokw_related_portfolio() {
 		$portfolio = array_shift( $terms );
 	}
 
-	if ( isset($portfolio) ):
+	if ( isset($portfolio) ) {
 		$query_arg = array(
 			'post_type' => 'page',
 			'tax_query' => array(
 				array(
 					'taxonomy' => 'portfolios',
-					'terms'    => $portfolio->term_id,
+					'terms' => $portfolio->term_id,
 					'operator' => 'IN',
 				),
 			)
 		);
 
 		$rq = new WP_Query( $query_arg );
-		if ( $rq->have_posts() ): $rq->the_post(); ?>
+		if ( $rq->have_posts() ) {
+			$rq->the_post(); ?>
 			<section class="section section-mini section-portfolio">
 				<h2 class="section-title">Related Software</h2>
+
 				<div class="section-content"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></div>
 			</section>
 		<?php
-		endif;
+		}
 		wp_reset_postdata();
-	endif;
+	}
 }

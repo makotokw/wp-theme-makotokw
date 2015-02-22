@@ -53,7 +53,7 @@ get_header(); ?>
 	<section class="section-page section-page-about">
 		<div class="container">
 			<h2 class="section-title">About</h2>
-			<?php if ( $pagePosts->have_posts() ): $pagePosts->the_post(); ?>
+			<?php if ( $pagePosts->have_posts() ) : $pagePosts->the_post(); ?>
 				<?php the_content(); ?>
 			<?php endif ?>
 		</div>

@@ -1,10 +1,14 @@
 var LIVERELOAD_PORT = 38085;
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 	require('load-grunt-tasks')(grunt);
 	grunt.initConfig({
 		exec: {
 			phpcs: {
-				cmd: 'phpcs --standard=WordPress *.php ./**/*.php',
+				cmd: 'phpcs --report-width=1024 --standard=build/phpcs.xml *.php ./**/*.php',
+				exitCode: [0, 1]
+			},
+			phpcbf: {
+				cmd: 'phpcbf --standard=WordPress *.php ./**/*.php',
 				exitCode: [0, 1]
 			}
 		},
@@ -90,8 +94,6 @@ module.exports = function(grunt) {
 		'uglify',
 		'watch'
 	]);
-
-	grunt.registerTask('phpcs', ['exec:phpcs']);
 
 	grunt.registerTask('default', ['build']);
 };

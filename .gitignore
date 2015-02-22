@@ -12,6 +12,8 @@ bower_components
 ### OSX ###
 .DS_Store
 
+### IntelliJ ###
+.idea/
 
 ### php ###
 

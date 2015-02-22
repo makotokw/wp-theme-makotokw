@@ -21,7 +21,5 @@ include __DIR__ . '/header.php'; ?>
 		?>
 	</div>
 </article>
-</div>
-</section>
 
 <?php include __DIR__ . '/footer.php'; ?>

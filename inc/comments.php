@@ -12,7 +12,7 @@ function makotokw_comment( $comment, $args, $depth ) {
 		<article id="comment-<?php comment_ID(); ?>" class="comment-body">
 
 			<div class="comment-author vcard">
-				<?php if ( ! $is_trackback ): ?>
+				<?php if ( ! $is_trackback ) : ?>
 					<?php echo get_avatar( $comment, 50 ); ?>
 				<?php endif; ?>
 				<div class="comment-metadata">
@@ -35,7 +35,7 @@ function makotokw_comment( $comment, $args, $depth ) {
 				<?php endif; ?>
 				<?php comment_text(); ?>
 			</div>
-			<?php if ( ! $is_trackback ): ?>
+			<?php if ( ! $is_trackback ) : ?>
 				<div class="reply">
 					<?php
 					comment_reply_link(

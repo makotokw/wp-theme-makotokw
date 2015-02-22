@@ -28,7 +28,7 @@
 			<h2 class="section-title"><?php _e( 'Last Updated', 'makotokw' ); ?></h2>
 			<div class="section-content"><?php makotokw_updated_on(); ?></div>
 		</div>
-		<?php if ( ! is_preview() ): ?>
+		<?php if ( ! is_preview() ) : ?>
 			<?php makotokw_share_this(); ?>
 		<?php endif; ?>
 		<?php makotokw_related_posts(); ?>

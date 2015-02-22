@@ -37,7 +37,7 @@ $is_summary = is_home() || is_year() || is_month() || is_search();
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 			<?php printf( '<span class="author vcard"><span class="fn">%1$s</span></span>', get_the_author() ); ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
-		<?php if ( ! $is_summary ): ?>
+		<?php if ( ! $is_summary ) : ?>
 		<?php makotokw_share_buttons(); ?>
 		<?php endif; ?>
 	</footer><!-- .entry-meta -->

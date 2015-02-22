@@ -9,8 +9,8 @@
 ?>
 		<div id="footerMargin"></div>
 		</div><!-- #main -->
-		<?php if ( ! is_preview() ): ?>
-			<?php if ( true === WP_THEME_FB_RECOMMEND_BAR ): ?>
+		<?php if ( ! is_preview() ) : ?>
+			<?php if ( true === WP_THEME_FB_RECOMMEND_BAR ) : ?>
 				<?php makotokw_facebook_recommendations_bar(); ?>
 			<?php endif; ?>
 		<?php endif ?>
@@ -35,10 +35,10 @@
 		</footer>
 	</div><!-- #page -->
 	<?php wp_footer(); ?>
-	<?php if ( false != WP_THEME_ITUNES_AFFILIATE_ID ): ?>
+	<?php if ( false != WP_THEME_ITUNES_AFFILIATE_ID ) : ?>
 		<?php makotokw_itunes_affiliate_script(); ?>
 	<?php endif ?>
-	<?php if ( WP_THEME_DEBUG ): // @codingStandardsIgnoreStart ?>
+	<?php if ( WP_THEME_DEBUG ) : // @codingStandardsIgnoreStart ?>
 		<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':38085/livereload.js?snipver=1"></' + 'script>')</script>
 	<?php endif // @codingStandardsIgnoreEnd ?>
 </body>

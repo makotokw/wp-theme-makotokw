@@ -16,7 +16,7 @@ get_header(); ?>
 
 					<?php get_template_part( 'content', 'single' ); ?>
 
-					<?php if ( true === WP_THEME_ZENBACK ): ?>
+					<?php if ( true === WP_THEME_ZENBACK ) : ?>
 						<?php makotokw_zenback_widget(); ?>
 					<?php endif ?>
 

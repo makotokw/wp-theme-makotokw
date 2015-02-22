@@ -94,7 +94,7 @@ function makotokw_template_redirect() {
 		if ( $values = get_post_custom_values( 'makotokw_part_of_home' ) ) {
 			if ( 1 == $values[0] ) {
 				wp_redirect( home_url( '/' ) );
-				exit();
+				exit;
 			}
 		}
 	}
