@@ -64,7 +64,7 @@ function ogp_post_image() {
 function ogp_post_section() {
 	$categories = get_the_category();
 	if ( count( $categories ) > 0 ) {
-		if ( $categories[0]->name != __( 'Uncategorized' ) ) {
+		if ( $categories[0]->name != __( 'Uncategorized', 'default' ) ) {
 			return $categories[0]->name;
 		}
 	}
@@ -132,7 +132,7 @@ function ogp_post_tag() {
 <meta property="og:title" content="<?php wp_title( '|', true, 'right' ); ?>"/>
 		<?php if ( is_front_page() || is_404() ) : ?>
 <meta property="og:type" content="blog"/>
-<meta property="og:url" content="<?php echo get_bloginfo( 'url' ) ?>"/>
+<meta property="og:url" content="<?php echo esc_url( home_url() ) ?>"/>
 		<?php else : ?>
 <meta property="og:type" content="article"/>
 <meta property="og:url" content="<?php echo get_pagenum_link() ?>"/>

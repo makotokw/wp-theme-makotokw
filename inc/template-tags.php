@@ -254,7 +254,7 @@ function makotokw_breadcrumbs_category_parents( $id, $separator = '/', $visited 
 		$chain    .= makotokw_breadcrumbs_category_parents( $parent->parent, $separator, $visited );
 	}
 
-	$chain .= '<a href="' . esc_url( get_category_link( $parent->term_id ) ) . '" title="' . esc_attr( sprintf( __( 'View all posts in %s' ), $parent->name ) ) . '" itemprop="url"><span itemprop="title">' . $parent->name . '</span></a>' . $separator;
+	$chain .= '<a href="' . esc_url( get_category_link( $parent->term_id ) ) . '" title="' . esc_attr( sprintf( __( 'View all posts in %s', 'makotokw' ), $parent->name ) ) . '" itemprop="url"><span itemprop="title">' . $parent->name . '</span></a>' . $separator;
 
 	return $chain;
 }
@@ -481,7 +481,7 @@ function makotokw_the_category_slug( $separator = '', $post_id = false ) {
 			$the_list .= $separator;
 		}
 		?>
-		<a href="<?php echo esc_url( get_category_link( $category->term_id ) ) ?>" title="<?php echo esc_attr( sprintf( __( 'View all posts in %s' ), $category->name ) ) ?>" <?php echo $rel ?>><?php echo esc_html( $category->slug ) ?></a>
+		<a href="<?php echo esc_url( get_category_link( $category->term_id ) ) ?>" title="<?php echo esc_attr( sprintf( __( 'View all posts in %s', 'makotokw' ), $category->name ) ) ?>" <?php echo $rel ?>><?php echo esc_html( $category->slug ) ?></a>
 		<?php
 		++$i;
 	}
@@ -500,18 +500,18 @@ function makotokw_section_category_and_tag( $title = 'Tag' ) {
 
 function makotokw_the_category_and_tag() {
 	/* translators: used between list items, there is a space after the comma */
-	$categories_list = get_the_category_list( __( ' <i class="fa fa-folder"></i> ', 'makotokw' ) );
+	$categories_list = get_the_category_list( ' <i class="fa fa-folder"></i> ' );
 	if ( $categories_list && makotokw_categorized_blog() ) :?>
 		<span class="cat-links">
-			<?php printf( __( '<i class="fa fa-folder"></i> %1$s', 'makotokw' ), $categories_list ); ?>
+			<?php printf( '<i class="fa fa-folder"></i> %1$s', $categories_list ); ?>
 		</span>
 	<?php endif; // End if categories ?>
 	<?php
 	/* translators: used between list items, there is a space after the comma */
-	$tags_list = get_the_tag_list( '', __( ' <i class="fa fa-tag"></i>', 'makotokw' ) );
+	$tags_list = get_the_tag_list( '', ' <i class="fa fa-tag"></i>' );
 	if ( $tags_list ) :?>
 		<span class="tag-links">
-				<?php printf( __( '<i class="fa fa-tag"></i> %1$s', 'makotokw' ), $tags_list ); ?>
+				<?php printf( '<i class="fa fa-tag"></i> %1$s', $tags_list ); ?>
 			</span>
 	<?php endif; // End if $tags_list
 	printf( '<span class="author vcard"><span class="fn">%1$s</span></span>', get_the_author() );
@@ -521,7 +521,7 @@ function makotokw_the_tag_links( $prefix = '<i class="fa fa-tag"></i>' ) {
 	/* translators: used between list items, there is a space after the comma */
 	$tags_list = get_the_tag_list( '', $prefix );
 	if ( $tags_list ) {
-		printf( __( $prefix . ' %1$s', 'makotokw' ), $tags_list );
+		printf( $prefix . ' %1$s', $tags_list );
 	}
 }
 
@@ -598,7 +598,7 @@ function makotokw_inline_archives( $args = '' ) {
 			<a href="<?php echo $url ?>"><?php echo $before_year . $label . $after_year ?></a>
 			<ul class="list-archives  list-archives-month">
 		<?php for ( $month = 1; $month <= 12; $month++ ) : ?>
-			<?php if ( !isset( $months[ $month ] ) ) : ?>
+			<?php if ( ! isset( $months[ $month ] ) ) : ?>
 				<?php
 				$no_month_cls = ' list-archives-item-month-no-items';
 				$month_time   = mktime( 0, 0, 0, $month, 1, $year );

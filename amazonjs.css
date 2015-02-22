@@ -3,8 +3,8 @@
   border-width: 0;
 }
 .amazonjs_item .amazonjs_image img {
-  -webkit-box-shadow: none;
   -moz-box-shadow: none;
+  -webkit-box-shadow: none;
   box-shadow: none;
   border: none;
 }

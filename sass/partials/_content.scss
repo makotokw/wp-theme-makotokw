@@ -112,7 +112,7 @@
 
   img {
     padding: 4px;
-    background-color: #fff;
+    background-color: $white;
     border: 1px solid $site-default-border;
     @include border-radius($border-radius-base);
   }
@@ -130,11 +130,39 @@
 // Media
 // -----------------------------------------------
 
+.alignleft {
+  float: left;
+}
+
+.alignright {
+  float: right;
+}
+
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+%content-caption {
+  color: $caption-text;
+  font-size: $font-size-small;
+}
+
+.wp-caption {
+  .wp-caption-text {
+    @extend %content-caption;
+  }
+}
+
+.gallery-caption {
+  @extend %content-caption;
+}
+
 .entry-content img,
 .entry-summary img,
 .comment-content img,
-.widget img,
-.wp-caption {
+.widget img {
 //  @include border-radius($blockBorderRadius);
   max-width: 100%;
 }

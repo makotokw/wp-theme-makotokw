@@ -85,7 +85,7 @@ module.exports = function (grunt) {
 			},
 			php: {
 				files: ['*.php', './**/*.php'],
-				tasks: ['phpcs']
+				tasks: ['exec:phpcs']
 			},
 			livereload: {
 				options: {
@@ -113,7 +113,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('debug', [
 		'bower:install',
 		'compass:dev',
-		'phpcs',
+		'exec:phpcs',
 		'jshint',
 		'uglify',
 		'watch'
