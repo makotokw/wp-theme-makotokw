@@ -311,7 +311,7 @@ function makotokw_updated_on() {
 	printf(
 		__( '<time class="updated" datetime="%1$s">%2$s</time>', 'makotokw' ),
 		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_post_time( THEME_DATE_FORMAT ) )
+		esc_html( get_the_modified_time( THEME_DATE_FORMAT ) )
 	);
 }
 
