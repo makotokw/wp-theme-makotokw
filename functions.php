@@ -14,10 +14,10 @@ define( 'THEME_DATE_FORMAT', 'Y/m/d' );
  */
 require(get_template_directory() . '/inc/jetpack.php');
 
-/**
- * mylist
+/*
+ * Custom Taxonomy
  */
-require(get_template_directory() . '/inc/mylist.php');
+require(get_template_directory() . '/inc/taxonomy.php');
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.

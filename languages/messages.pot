@@ -1,21 +1,17 @@
-# Japanese translations for PACKAGE package.
-# Copyright (C) 2013 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Makoto Kawasaki <makoto.kw@gmail.com>, 2013.
-#
+# Copyright (C) 2015 makoto_kw
+# This file is distributed under the same license as the makotokw2014 package.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: makotokw 1.0\n"
 "Report-Msgid-Bugs-To: makoto.kw@gmail.com\n"
 "POT-Creation-Date: 2015-02-22 02:44:10+00:00\n"
-"PO-Revision-Date: 2013-04-28 18:46+0900\n"
-"Last-Translator: Makoto Kawasaki <makoto.kw@gmail.com>\n"
-"Language-Team: Japanese\n"
-"Language: ja\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: grunt-wp-i18n 0.5.0\n"
 
 #: 404.php:15
 msgid "Not Found"
@@ -23,27 +19,27 @@ msgstr ""
 
 #: 404.php:23
 msgid "It looks like nothing was found at this location. Maybe try a search?"
-msgstr "ここには見つからないようです。検索をお試しください。"
+msgstr ""
 
 #: archive.php:20
 msgid "Category Archives: %s"
-msgstr "カテゴリアーカイブ: %s"
+msgstr ""
 
 #: archive.php:22
 msgid "Tag Archives: %s"
-msgstr "タグアーカイブ: %s"
+msgstr ""
 
 #: archive.php:24
 msgid "Daily Archives: %s"
-msgstr "日別アーカイブ: %s"
+msgstr ""
 
 #: archive.php:26
 msgid "Monthly Archives: %s"
-msgstr "月別アーカイブ: %s"
+msgstr ""
 
 #: archive.php:28
 msgid "Yearly Archives: %s"
-msgstr "年別アーカイブ: %s"
+msgstr ""
 
 #: archive.php:30
 msgid "%s"
@@ -51,19 +47,19 @@ msgstr ""
 
 #: archive.php:32
 msgid "Blog Archives: %s"
-msgstr "ブログアーカイブ: %s"
+msgstr ""
 
 #: archive.php:34
 msgid "Portfolio Archives: %s"
-msgstr "ポートフォリオアーカイブ: %s"
+msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Archives"
-msgstr "アーカイブ"
+msgstr ""
 
 #: comments.php:46
 msgid "Comment navigation"
-msgstr "コメントナビゲーション"
+msgstr ""
 
 #: comments.php:49
 msgid "&larr; Older Comments"
@@ -75,7 +71,7 @@ msgstr ""
 
 #: comments.php:56
 msgid "Comments are closed."
-msgstr "コメントは停止中です。"
+msgstr ""
 
 #: content-page.php:19 content-single.php:20 content.php:29
 msgid "Pages:"
@@ -91,7 +87,7 @@ msgstr ""
 
 #: content.php:25
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr "続きを読む <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
 
 #: footer.php:27
 msgid "Powered by %s"
@@ -117,18 +113,18 @@ msgstr ""
 msgid "Uncategorized"
 msgstr ""
 
-#. translators: 1: date, 2: time
 #: inc/comments.php:26
+#. translators: 1: date, 2: time
 msgid "%1$s at %2$s"
-msgstr "%1$s %2$"
+msgstr ""
 
 #: inc/comments.php:28
 msgid "Edit"
-msgstr "編集"
+msgstr ""
 
 #: inc/comments.php:34
 msgid "Your comment is awaiting moderation."
-msgstr "コメントは承認待ちです。"
+msgstr ""
 
 #: inc/extras.php:73
 msgid "Page %s"
@@ -140,39 +136,39 @@ msgstr ""
 
 #: inc/taxonomy.php:32
 msgid "Mylists"
-msgstr "マイリスト"
+msgstr ""
 
 #: inc/taxonomy.php:40
 msgid "Search Mylists"
-msgstr "マイリストの検索"
+msgstr ""
 
 #: inc/taxonomy.php:41
 msgid "All Mylists"
-msgstr "すべてのマイリスト"
+msgstr ""
 
 #: inc/taxonomy.php:42
 msgid "Edit Mylist"
-msgstr "マイリストの編集"
+msgstr ""
 
 #: inc/taxonomy.php:43
 msgid "Update Mylist"
-msgstr "マイリストの更新"
+msgstr ""
 
 #: inc/taxonomy.php:44
 msgid "Add New Mylist"
-msgstr "マイリストの新規作成"
+msgstr ""
 
 #: inc/taxonomy.php:45
 msgid "New Mylist Name"
-msgstr "マイリスト名"
+msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Portfolios"
-msgstr "ポートフォリオ"
+msgstr ""
 
 #: inc/taxonomy.php:81
 msgid "Blogs"
-msgstr "ブログシステム"
+msgstr ""
 
 #: inc/template-tags.php:34
 msgid "Post navigation"
@@ -180,11 +176,11 @@ msgstr ""
 
 #: inc/template-tags.php:54
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "続きを読む <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
 
 #: inc/template-tags.php:58
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "続きを読む <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
 
 #: inc/template-tags.php:129
 msgid "First"
@@ -204,15 +200,15 @@ msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Categories"
-msgstr "カテゴリ"
+msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Tags"
-msgstr "タグ"
+msgstr ""
 
 #: inc/template-tags.php:200
 msgid "Mylist"
-msgstr "マイリスト"
+msgstr ""
 
 #: inc/template-tags.php:203
 msgid "Blog"
@@ -224,7 +220,7 @@ msgstr ""
 
 #: inc/template-tags.php:212
 msgid "Search Results"
-msgstr "検索結果"
+msgstr ""
 
 #: inc/template-tags.php:214
 msgid "404 Not Found"
@@ -250,8 +246,8 @@ msgstr ""
 msgid "About"
 msgstr ""
 
-#. translators: used between list items, there is a space after the comma
 #: inc/template-tags.php:503
+#. translators: used between list items, there is a space after the comma
 msgid " <i class=\"fa fa-folder\"></i> "
 msgstr ""
 
@@ -259,8 +255,8 @@ msgstr ""
 msgid "<i class=\"fa fa-folder\"></i> %1$s"
 msgstr ""
 
-#. translators: used between list items, there is a space after the comma
 #: inc/template-tags.php:511
+#. translators: used between list items, there is a space after the comma
 msgid " <i class=\"fa fa-tag\"></i>"
 msgstr ""
 
@@ -273,29 +269,24 @@ msgid "Nothing Found"
 msgstr ""
 
 #: no-results.php:18
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
-"最初の投稿をする準備ができましたか ? <a href=\"%1$s\">ここからスタート</a>し"
-"てください。"
 
 #: no-results.php:20
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
-"ご指定の検索条件に合う投稿がありませんでした。他のキーワードでもう一度検索し"
-"てみてください。"
 
 #: no-results.php:23
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
-msgstr "お探しのコンテンツを見つけられませんでした。検索をお試しください。"
+msgstr ""
 
 #: search.php:15
 msgid "Search Results for: %s"
-msgstr "検索結果: %s"
+msgstr ""
 
 #: searchform.php:11
 msgid "Search the site"
@@ -323,7 +314,7 @@ msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Archive"
-msgstr "アーカイブ"
+msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Memos"
@@ -334,18 +325,19 @@ msgctxt "comments title"
 msgid "1 Comment"
 msgid_plural "%1$s Comments"
 msgstr[0] ""
+msgstr[1] ""
 
 #: inc/taxonomy.php:38
 msgctxt "taxonomy general name"
 msgid "Mylists"
-msgstr "マイリスト"
+msgstr ""
 
 #: inc/taxonomy.php:39
 msgctxt "taxonomy singular name"
 msgid "Mylist"
-msgstr "マイリスト"
+msgstr ""
 
 #: searchform.php:10
 msgctxt "assistive text"
 msgid "Search"
-msgstr "マイリストの検索"
+msgstr ""
