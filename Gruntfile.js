@@ -2,6 +2,20 @@ var LIVERELOAD_PORT = 38085;
 module.exports = function (grunt) {
 	require('load-grunt-tasks')(grunt);
 	grunt.initConfig({
+		makepot: {
+			target: {
+				options: {
+					domainPath: 'languages',
+					potFilename: 'messages.pot',
+					potHeaders: {
+						'Project-Id-Version': 'makotokw 1.0',
+						'Report-Msgid-Bugs-To': 'makoto.kw@gmail.com'
+					},
+					type: 'wp-theme',
+					updatePoFiles: true
+				}
+			}
+		},
 		exec: {
 			phpcs: {
 				cmd: 'phpcs --report-width=1024 --standard=build/phpcs.xml *.php ./**/*.php',
@@ -10,6 +24,9 @@ module.exports = function (grunt) {
 			phpcbf: {
 				cmd: 'phpcbf --standard=WordPress *.php ./**/*.php',
 				exitCode: [0, 1]
+			},
+			msgfmt: {
+				cmd: 'msgfmt -o ./languages/ja.mo ./languages/ja.po'
 			}
 		},
 		compass: {
@@ -78,6 +95,13 @@ module.exports = function (grunt) {
 			}
 		}
 	});
+
+	grunt.registerTask('update-po', [
+		'makepot'
+	]);
+	grunt.registerTask('update-mo', [
+		'exec:msgfmt'
+	]);
 
 	grunt.registerTask('build', [
 		'bower:install',
