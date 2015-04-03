@@ -17,21 +17,7 @@
 @import "variables";
 @import "mixins";
 @import "partials/normalize";
-
-// font-awesome
-@import "../components/scss/font-awesome/variables";
-@import "../components/scss/font-awesome/mixins";
-@import "../components/scss/font-awesome/path";
-@import "../components/scss/font-awesome/core";
-@import "../components/scss/font-awesome/larger";
-@import "../components/scss/font-awesome/fixed-width";
-@import "../components/scss/font-awesome/list";
-@import "../components/scss/font-awesome/bordered-pulled";
-@import "../components/scss/font-awesome/spinning";
-@import "../components/scss/font-awesome/rotated-flipped";
-@import "../components/scss/font-awesome/stacked";
-@import "../components/scss/font-awesome/icons";
-
+@import "font-awesome";
 @import "partials/genericons";
 @import "partials/entyposocialicon";
 @import "partials/global";

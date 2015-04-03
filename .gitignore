@@ -2,20 +2,29 @@
 
 ### Sass ###
 .sass-cache
+*.css.map
 
 ### Node ###
 node_modules
 
 ### Bower ###
 bower_components
+.bower-cache
+.bower-registry
+.bower-tmp
 
 ### OSX ###
 .DS_Store
+.AppleDouble
+.LSOverride
 
-### IntelliJ ###
+### Intellij ###
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
+*.iml
 .idea/
 
 ### php ###
 
 ### Composer ###
-/vendor/
+composer.phar
+vendor/

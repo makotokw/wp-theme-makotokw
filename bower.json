@@ -4,25 +4,22 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+    "bower_components"
   ],
   "dependencies": {
     "google-code-prettify": "~1.0.0",
     "font-awesome": "~4.1",
     "html5shiv": "~3.7"
   },
-  "exportsOverride": {
-    "html5shiv": {
-      "js": "dist/html5shiv.js"
-    },
+  "overrides": {
     "google-code-prettify": {
-      "js": "src/prettify.js"
+      "main": ["src/prettify.*"]
     },
     "font-awesome": {
-      "scss": "scss/_*.scss",
-      "fonts": "fonts/*.*"
+      "main": ["scss/_*.scss", "fonts/*.*"],
+      "normalize": {
+        "fonts": ["*.otf", "*-webfont.*"]
+      }
     }
   }
 }
