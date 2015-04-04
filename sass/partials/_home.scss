@@ -4,7 +4,7 @@ $section-page-alternate-background-color: lighten($gray-lighter, 4%);
 %btn-circle {
   @extend .btn;
   @extend .btn-primary;
-  @include border-radius(20px);
+  border-radius: 20px;
   float: none;
 }
 

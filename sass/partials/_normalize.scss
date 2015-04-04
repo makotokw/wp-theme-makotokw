@@ -1,6 +1,6 @@
 
 * {
-  @include box-sizing(border-box);
+  box-sizing: border-box;
 }
 
 article,
@@ -65,7 +65,7 @@ textarea {
 }
 
 body {
-  @include hyphens(auto);
+  hyphens: auto;
   margin: 0;
   background-color: $site-default-bg;
 
@@ -81,7 +81,7 @@ body {
 
 a {
   color: $site-default-link;
-  @include transition(all 0.25s linear);
+  transition: all 0.25s linear;
   // Remove the gray background color from active links in IE 10.
   background: transparent;
   text-decoration: none;
@@ -185,7 +185,7 @@ samp {
   font-family: $font-family-monospace;
   font-size: 14px;
   font-weight: 300;
-  @include hyphens(none);
+  hyphens: none;
 }
 
 pre {
@@ -206,7 +206,7 @@ pre {
 
 blockquote,
 q {
-  @include hyphens(none);
+  hyphens: none;
   quotes: none;
 }
 
@@ -286,13 +286,13 @@ hr {
 ::selection {
   background: $site-accent-color;
   color: $white;
-  @include text-shadow(none);
+  text-shadow: none;
 }
 
 ::-moz-selection {
   background: $site-accent-color;
   color: $white;
-  @include text-shadow(none);
+  text-shadow: none;
 }
 
 

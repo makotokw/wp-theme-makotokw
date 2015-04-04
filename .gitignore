@@ -1,5 +1,8 @@
 /config.php
 
+### Javascript ###
+*.js.map
+
 ### Sass ###
 .sass-cache
 *.css.map

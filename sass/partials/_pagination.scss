@@ -2,7 +2,7 @@
 %pagenation-page {
   @extend .btn;
   @extend .btn-default;
-  @include border-radius(20px);
+  border-radius: 20px;
 }
 
 .pagination {

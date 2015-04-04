@@ -114,7 +114,7 @@
     padding: 4px;
     background-color: $white;
     border: 1px solid $site-default-border;
-    @include border-radius($border-radius-base);
+    border-radius: $border-radius-base;
   }
 }
 
@@ -163,7 +163,6 @@
 .entry-summary img,
 .comment-content img,
 .widget img {
-//  @include border-radius($blockBorderRadius);
   max-width: 100%;
 }
 
@@ -173,9 +172,6 @@
 img[class*="align"],
 img[class*="wp-image-"],
 img[class*="attachment-"] {
-//  padding: 10px;
-//  background-color: $white;
-//  border: $blockBorderWidth solid $blockBorderColor;
 }
 
 img.size-full,

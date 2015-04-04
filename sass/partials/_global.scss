@@ -123,7 +123,7 @@
     }
     img {
       border: none;
-      @include border-radius(0);
+      border-radius: 0;
     }
   }
   margin-bottom: 20px;

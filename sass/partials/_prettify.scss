@@ -77,9 +77,8 @@
 
 @media screen {
   .code-frame {
-    @include border-radius($block-border-radius);
+    border-radius: $block-border-radius;
     border: $block-border-width solid $block-default-border;
-    background-color: #f9f9fb;
     background-color: $white;
     padding: 0;
     padding-top: $block-padding * 1/2;
@@ -93,7 +92,7 @@
     }
 
     .prettyprint {
-      @include border-radius(0);
+      border-radius: 0;
       border: none;
       background: none;
       margin: 0;

@@ -31,7 +31,7 @@
         padding-left: 12px;
         color: #BEBEC5;
         line-height: 18px;
-        @include text-shadow(0 1px 0 white);
+        text-shadow: 0 1px 0 white;
       }
 
       .line.highlighted {

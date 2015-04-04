@@ -43,29 +43,24 @@ gulp.task('jscompress', function () {
 		.pipe(plugins.sourcemaps.init())
 		.pipe(plugins.concat('style.js'))
 		.pipe(plugins.uglify({output: {'beautify': true}}))
-		.pipe(plugins.sourcemaps.write())
+		.pipe(plugins.sourcemaps.write('.'))
 		.pipe(gulp.dest('.'))
 		.pipe(reload({stream: true, once: true}));
 });
 
-gulp.task('compass', function () {
-	gulp.src('sass/**/*.scss')
-		.pipe(plugins.compass({
-			config_file: './config.rb',
-			environment: 'production',
-			force: 'true',
-			css: '.'
-		}));
-});
-
-gulp.task('compass-dev', function () {
-	gulp.src('sass/**/*.scss')
-		.pipe(plugins.compass({
-			config_file: './config.rb',
-			environment: 'development',
-			css: '.'
+gulp.task('sass', function () {
+	gulp.src('sass/*.scss')
+		.pipe(plugins.sourcemaps.init())
+		.pipe(plugins.sass({indentedSyntax: false}))
+		.pipe(plugins.pleeease({
+			autoprefixer: {
+				browsers: ['last 2 versions']
+			},
+			minifier: false
 		}))
-		.pipe(reload({stream: true}));
+		.pipe(plugins.sourcemaps.write('.'))
+		.pipe(gulp.dest('.'))
+		.pipe(reload({stream: true, once: true}));
 });
 
 gulp.task('browser-sync', function () {
@@ -89,12 +84,12 @@ gulp.task('bower', function () {
 gulp.task('default',
 	[
 		'jscompress',
-		'compass-dev',
+		'sass',
 		'browser-sync'
 	],
 	function () {
 		gulp.watch("js/*.js", ['jshint', 'jscompress']);
-		gulp.watch("sass/**/*.scss", ['compass-dev']);
+		gulp.watch("sass/**/*.scss", ['sass']);
 		gulp.watch("**/*.php", ['phpcs', 'bs-reload']);
 	}
 );
@@ -102,6 +97,6 @@ gulp.task('default',
 gulp.task('build', [
 	'clean',
 	'bower',
-	'compass'
+	'sass'
 ], function () {
 });

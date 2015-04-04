@@ -1,5 +1,3 @@
-@import "compass/css3";
-
 @mixin placeholder($color: $placeholderText) {
   &:-moz-placeholder {
     color: $color;
@@ -14,20 +12,18 @@
 
 @mixin block-white ($borderRadious) {
   border: $site-border-width solid $block-default-border;
-  @include border-radius($borderRadious);
+  border-radius: $borderRadious;
   padding: $block-padding;
   background-color: $white;
-//@include box-shadow(inset 0 1px 1px rgba(0,0,0,.05));
-  @include box-shadow(none);
+  box-shadow: none;
 }
 
 @mixin block ($backgroundColor, $borderRadius: $border-radius-base) {
   padding: $block-padding;
   background-color: $backgroundColor;
   border: $site-border-width solid darken($backgroundColor, 7%);
-  @include border-radius($borderRadius);
-//@include box-shadow(inset 0 1px $baseBorderRadius rgba(0,0,0,.05));
-  @include box-shadow(none);
+  border-radius: $borderRadious;
+  box-shadow: none;
 }
 
 @mixin block-awesome-icon($font-size) {

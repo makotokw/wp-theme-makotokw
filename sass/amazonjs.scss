@@ -8,7 +8,7 @@
 
   .amazonjs_image {
     img {
-      @include box-shadow(none);
+      box-shadow: none;
       border: none;
     }
   }
