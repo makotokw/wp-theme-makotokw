@@ -40,7 +40,6 @@
 <?php makotokw_google_analytics(); ?>
 </head>
 <body <?php body_class(); ?>>
-<?php if ( false === WP_THEME_DEBUG && true === WP_THEME_FB_RECOMMEND_BAR ) : ?><?php makotokw_facebook_sdk(); ?><?php endif; ?>
 <?php do_action( 'makotekw_after_body' ); ?>
 <div id="page" class="hfeed site">
 	<header id="masthead" class="site-header" role="banner">

@@ -16,10 +16,6 @@ get_header(); ?>
 
 					<?php get_template_part( 'content', 'single' ); ?>
 
-					<?php if ( true === WP_THEME_ZENBACK ) : ?>
-						<?php makotokw_zenback_widget(); ?>
-					<?php endif ?>
-
 					<?php
 					// If comments are open or we have at least one comment, load up the comment template
 					if ( comments_open() || '0' != get_comments_number() ) {

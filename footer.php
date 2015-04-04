@@ -9,11 +9,6 @@
 ?>
 		<div id="footerMargin"></div>
 		</div><!-- #main -->
-		<?php if ( ! is_preview() ) : ?>
-			<?php if ( true === WP_THEME_FB_RECOMMEND_BAR ) : ?>
-				<?php makotokw_facebook_recommendations_bar(); ?>
-			<?php endif; ?>
-		<?php endif ?>
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<div class="container">
 				<div class="site-info">

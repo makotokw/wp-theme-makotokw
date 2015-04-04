@@ -259,42 +259,6 @@ function makotokw_breadcrumbs_category_parents( $id, $separator = '/', $visited 
 	return $chain;
 }
 
-function makotokw_zenback_widget() {
-	?>
-	<?php if ( ! is_preview() && comments_open() && (is_single() || is_page()) ) : ?>
-		<aside class="zenback-widget-area">
-			<?php if ( false === WP_THEME_DEBUG ) : ?>
-				<?php echo WP_THEME_ZENBACK_WIDGET_SCRYPT ?>
-			<?php else : ?>
-				<?php include 'zenback.debug.html' ?>
-			<?php endif; ?>
-		</aside>
-	<?php endif; ?>
-	<?php
-}
-
-function makotokw_facebook_sdk() {
-	if ( true === WP_THEME_OGP ) :
-		?>
-		<div id="fb-root"></div>
-		<script>(function (d, s, id) {
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) return;
-			js = d.createElement(s); js.id = id;
-			js.src = "//connect.facebook.net/<?php echo WP_OGP_LOCALE; ?>/all.js#xfbml=1&appId=<?php echo WP_OGP_FB_APPID; ?>";
-			fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script>
-		<?php
-	endif;
-}
-
-function makotokw_facebook_recommendations_bar() {
-	?>
-	<div class="fb-recommendations-bar" data-href="<?php echo esc_url( ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] )?>"></div>
-	<?php
-}
-
-
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
