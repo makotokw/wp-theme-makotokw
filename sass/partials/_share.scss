@@ -81,21 +81,15 @@
   }
 }
 
-@mixin btn-share-with-entypo-icon($brand-color, $icon-content) {
-  &:before {
-    font-family: EntypoSocialRegular;
-    @extend .entypo-social;
-    content: $icon-content;
-    margin-right: 2px;
-    vertical-align: sub;
-  }
-}
-
 .btn-share-twitter {
   @include btn-share-with-generic-icon($twitter-blue, $gi-var-twitter);
 }
 .btn-share-hatena {
-  @include btn-share-with-entypo-icon($hatena-bookmark-blue, $es-var-hatebu);
+  &:before {
+    content: "B!";
+    font-family: Verdana;
+    font-weight: bold
+  }
 }
 .btn-share-pocket {
   @include btn-share-with-generic-icon($pocket-pink, $gi-var-pocket);
