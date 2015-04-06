@@ -182,7 +182,7 @@ function makotokw_itunes_affiliate_script() {
 function makotokw_breadcrumbs() {
 	global $wp_query;
 
-	if ( ! is_home() ) {
+	if ( ! is_home() && ! is_404() ) {
 		$divider = '&nbsp;<i class="fa fa-chevron-right"></i>&nbsp;';
 		?>
 		<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="breadcrumb">
@@ -210,8 +210,6 @@ function makotokw_breadcrumbs() {
 			<?php endif ?>
 		<?php elseif ( is_search() ) : ?>
 			<span class="breadcrumb-last"><?php _e( 'Search Results', 'makotokw' ) ?></span>
-		<?php elseif ( is_404() ) : ?>
-			<span class="breadcrumb-last"><?php _e( '404 Not Found', 'makotokw' ) ?></span>
 		<?php elseif ( is_single() ) : $category = get_the_category(); ?>
 			<?php if ( is_array( $category ) && count( $category ) > 0 ) : $category_id = get_cat_ID( $category[0]->cat_name ); ?>
 				<a href="/categories/" itemprop="url"><span itemprop="title"><?php _e( 'Categories', 'makotokw' ) ?></span></a><?php echo $divider ?>

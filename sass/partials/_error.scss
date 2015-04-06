@@ -3,51 +3,26 @@
 .no-results,
 .error404 {
   .page-header {
-    background-color: $white;
     border-bottom: none;
   }
 
-  .page-wrapper {
-    background-color: lighten(desaturate($clouds, 2%), 4%);
-  }
-
   .page-title {
-    line-height: 0.6;
     font-size: 24px;
     margin: 0;
     position: relative;
-    text-align: center;
-    width: auto;
-  }
-
-  .page-content {
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-}
-
-.no-results {
-  .page-title {
-    padding: 100px;
   }
 }
 
 .error404 {
-
-  .page-title {
-    padding: 300px;
-    width: 900px;
-    &:before {
-      font-family: Genericons;
-      content: $gi-var-404;
-      color: $errorpage-bg-icon;
-      font-size: 900px;
-      line-height: 0.6;
-      overflow: hidden;
-      position: absolute;
-      left: -24px;
-      top: 48px;
-    }
+  .page-content {
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 
+  .page-title {
+    padding: 50px 200px;
+    width: 900px;
+    text-align: center;
+    width: auto;
+  }
 }
