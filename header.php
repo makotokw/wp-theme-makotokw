@@ -50,11 +50,8 @@
 			</div>
 			<div class="sub-nav">
 				<div class="socials">
-					<a href="<?php echo get_feed_link() ?>" title="RSS">
-						<span class="fa-stack fa-lg">
-							<i class="fa fa-circle fa-stack-2x"></i>
-							<i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-						</span>
+					<a href="<?php echo get_feed_link() ?>" class="btn btn-default btn-circle btn-rss" title="RSS">
+						<i class="icon fa fa-rss"></i>
 					</a>
 				</div>
 				<?php get_search_form(); ?>

@@ -115,7 +115,7 @@ function makotokw_pagination( $pages = '', $range = 3 ) {
 	if ( empty($paged) ) {
 		$paged = 1;
 	}
-	if ( $pages == '' ) {
+	if ( '' == $pages ) {
 		global $wp_query;
 		$pages = $wp_query->max_num_pages;
 		if ( ! $pages ) {
@@ -225,7 +225,7 @@ function makotokw_breadcrumbs() {
 				array_push( $ancestors, $post->ID );
 				?>
 				<?php foreach ( $ancestors as $ancestor ) : ?>
-					<?php if ( $ancestor != end( $ancestors ) ) : ?>
+					<?php if ( end( $ancestors ) != $ancestor ) : ?>
 						<a href="<?php echo get_permalink( $ancestor ) ?>" itemprop="url">
 							<span itemprop="title"><?php echo strip_tags( apply_filters( 'single_post_title', get_the_title( $ancestor ) ) ) ?></span>
 						</a>
@@ -262,7 +262,7 @@ function makotokw_breadcrumbs_category_parents( $id, $separator = '/', $visited 
  */
 function makotokw_posted_on() {
 	printf(
-		__( '<time class="published time time-icon" datetime="%1$s">%2$s</time>', 'makotokw' ),
+		__( '<time class="published time datetime="%1$s">%2$s</time>', 'makotokw' ),
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_post_time( THEME_DATE_FORMAT ) )
 	);
@@ -320,28 +320,28 @@ function makotokw_share_buttons() {
 	<div class="share-buttons">
 		<ul>
 			<li class="share-twitter">
-				<a rel="nofollow" data-url="<?php echo $permalink; ?>" class="btn btn-default btn-share btn-share-twitter" href="https://twitter.com/intent/tweet?original_referer=<?php echo rawurlencode( $permalink ) ?>&text=<?php echo rawurlencode( $title ) ?>&tw_p=tweetbutton&url=<?php echo urlencode( $permalink )?>&via=<?php echo urlencode( WP_THEME_AUTHOR_TWITTER )?>" target="_blank">
-					<span class="share-title">Twitter</span>
+				<a rel="nofollow" data-url="<?php echo $permalink; ?>" class="btn btn-default btn-circle btn-share btn-share-twitter" href="https://twitter.com/intent/tweet?original_referer=<?php echo rawurlencode( $permalink ) ?>&text=<?php echo rawurlencode( $title ) ?>&tw_p=tweetbutton&url=<?php echo urlencode( $permalink )?>&via=<?php echo urlencode( WP_THEME_AUTHOR_TWITTER )?>" target="_blank">
+					<i class="icon icon-default icon-share-twitter"></i>
 				</a>
 			</li>
 			<li class="share-hatena">
-				<a rel="nofollow" class="btn btn-default btn-share btn-share-hatena" href="http://b.hatena.ne.jp/entry/<?php echo $permalink_schemeless ?>" target="_blank">
-					<span class="share-title">はてブ</span>
+				<a rel="nofollow" class="btn btn-default btn-circle btn-share btn-share-hatena" href="http://b.hatena.ne.jp/entry/<?php echo $permalink_schemeless ?>" target="_blank">
+					<i class="icon icon-default icon-share-hatena"></i>
 				</a>
 			</li>
 			<li class="share-pocket">
-				<a rel="nofollow" class="btn btn-default btn-share btn-share-pocket" href="https://getpocket.com/save/?url=<?php echo rawurlencode( $permalink ) ?>&title=<?php echo rawurlencode( $title ) ?>" target="_blank">
-					<span class="share-title">Pocket</span>
+				<a rel="nofollow" class="btn btn-default btn-circle btn-share btn-share-pocket" href="https://getpocket.com/save/?url=<?php echo rawurlencode( $permalink ) ?>&title=<?php echo rawurlencode( $title ) ?>" target="_blank">
+					<i class="icon icon-default icon-share-pocket"></i>
 				</a>
 			</li>
 			<li class="share-googleplus">
-				<a rel="nofollow" class="btn btn-default btn-share btn-share-googleplus" href="https://plus.google.com/share?url=<?php echo rawurlencode( $permalink ) ?>" target="_blank">
-					<span class="share-title">Google</span>
+				<a rel="nofollow" class="btn btn-default btn-circle btn-share btn-share-googleplus" href="https://plus.google.com/share?url=<?php echo rawurlencode( $permalink ) ?>" target="_blank">
+					<i class="icon icon-default icon-share-googleplus"></i>
 				</a>
 			</li>
 			<li class="share-facebook">
-				<a rel="nofollow" class="btn btn-default btn-share btn-share-facebook" href="//www.facebook.com/sharer.php?u=<?php echo rawurlencode( $permalink ) ?>&t=<?php echo rawurlencode( $title ) ?>" target="_blank">
-					<span class="share-title">Facebook</span>
+				<a rel="nofollow" class="btn btn-default btn-circle btn-share btn-share-facebook" href="//www.facebook.com/sharer.php?u=<?php echo rawurlencode( $permalink ) ?>&t=<?php echo rawurlencode( $title ) ?>" target="_blank">
+					<i class="icon icon-default icon-share-facebook"></i>
 				</a>
 			</li>
 		</ul>

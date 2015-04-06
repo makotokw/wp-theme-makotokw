@@ -57,6 +57,7 @@ $section-page-alternate-background-color: lighten($gray-lighter, 4%);
 
 .section-page-category {
 
+  border-top: 1px solid $block-default-divider;
   background-color: $section-page-alternate-background-color;
 
   .list-category {
@@ -67,10 +68,18 @@ $section-page-alternate-background-color: lighten($gray-lighter, 4%);
       display: inline;
       a {
         @extend .btn;
-        @extend .btn-primary;
+        background-color: $white;
+        border: 1px solid $button-default-border;
+        color: $button-default-text;
+        border-radius: 2px;
         display: inline-block;
         margin: 5px;
         float: none;
+
+        &:hover {
+          border-color: $md-light-blue-600;
+          color: $md-light-blue-600;
+        }
       }
     }
 
@@ -85,7 +94,7 @@ $section-page-alternate-background-color: lighten($gray-lighter, 4%);
 .section-page-about {
 
   color: $white;
-  background-color: $footer-default-bg;
+  background-color: $md-cyan-600;
 
   a {
     color: $md-cyan-a100;

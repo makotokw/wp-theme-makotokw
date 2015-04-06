@@ -31,19 +31,19 @@
 							'href': 'http://twitter.com/search?q=' + encodedPermalink,
 							'target': '_blank'
 						});
-						$shareThis.find('.share-twitter .share-title').append($count);
+						$shareThis.find('.share-twitter .btn').append($count);
 					}
 				});
 			$.ajax({url: 'http://api.b.st-hatena.com/entry.count?url=' + encodedPermalink, dataType: 'jsonp'})
 				.done(function (data) {
 					var $count = $('<span/>').addClass('share-count').text(toInt(data));
-					$shareThis.find('.share-hatena .share-title').append($count);
+					$shareThis.find('.share-hatena .btn').append($count);
 				});
 			$.ajax({url: 'https://graph.facebook.com/?id=' + encodedPermalink, dataType: 'jsonp'})
 				.done(function (data) {
 					if (data) {
 						var $count = $('<span/>').addClass('share-count').text(toInt(data.shares));
-						$shareThis.find('.share-facebook .share-title').append($count);
+						$shareThis.find('.share-facebook .btn').append($count);
 					}
 				});
 
@@ -52,9 +52,9 @@
 					.done(function (data) {
 						if (!data) return;
 						var $countPocket = $('<span/>').addClass('share-count').text(toInt(data.pocket));
-						$shareThis.find('.share-pocket .share-title').append($countPocket);
+						$shareThis.find('.share-pocket .btn').append($countPocket);
 						var $countGooglePlus = $('<span/>').addClass('share-count').text(toInt(data.google));
-						$shareThis.find('.share-googleplus .share-title').append($countGooglePlus);
+						$shareThis.find('.share-googleplus .btn').append($countGooglePlus);
 					});
 			}
 

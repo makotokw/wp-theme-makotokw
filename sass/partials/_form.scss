@@ -15,14 +15,14 @@ input[type="tel"],
 input[type="color"],
 .uneditable-input {
   padding: 7px 0 7px 6px;
-  border: 2px solid $clouds;
+  border: $site-border-width solid $form-default-border;
   text-indent: 1px;
-  border-radius: 6px;
+  border-radius: $border-radius-large;
   box-shadow: none;
-  @include placeholder($clouds);
+  @include placeholder($form-default-placeholder);
 
   &:focus {
-    border-color: $blue;
+    border-color: $form-default-border-over;
     outline: 0;
     outline: thin dotted \9; /* IE6-9 */
     box-shadow: none;

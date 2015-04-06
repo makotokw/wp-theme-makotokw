@@ -27,7 +27,6 @@
 }
 
 .time {
-  color: $site-date-text;
   font-style: normal;
   font-weight: 400;
   text-transform: uppercase;
@@ -39,6 +38,10 @@
     content: $fa-var-calendar;
     margin-right: 3px;
   }
+}
+
+.icon {
+  font-style: normal;
 }
 
 .list-unstyled {

@@ -10,9 +10,6 @@
 .post-summary {
   .entry-title {
     font-size: 26px;
-    a {
-      color: $site-default-link;
-    }
   }
   .entry-summary {
     p {
@@ -40,7 +37,7 @@
   a {
     color: $entry-title-text;
     &:hover {
-      color: $site-default-link-over;
+      color: $entry-title-text-over;
     }
   }
 
@@ -50,8 +47,8 @@
 
   .cat-links,
   .tag-links {
+    font-size: $font-size-small;
     color: $site-neutral-color;
-    text-transform: uppercase;
     a {
       color: $site-neutral-link;
 
@@ -70,6 +67,7 @@
 
   .entry-date {
     .time {
+      font-size: $font-size-small;
       color: $site-neutral-color;
     }
   }
@@ -77,7 +75,7 @@
   .entry-title {
     font-weight: 700;
     color: $entry-title-text;
-    margin: 0 0 5px 0;
+    margin: 0;
   }
 }
 
@@ -214,7 +212,7 @@ object {
 }
 
 .section-mini {
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid $block-default-divider;
 
   .section-title {
     float: left;
@@ -291,13 +289,5 @@ object {
     .share-buttons {
       float: right;
     }
-    .btn-share {
-      min-width: 0;
-      width: auto;
-      .share-title {
-        display: none;
-      }
-    }
-
   }
 }

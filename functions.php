@@ -126,7 +126,9 @@ function makotokw_scripts() {
 		wp_enqueue_script( 'jquery-migrate' );
 	}
 
-	wp_enqueue_style( 'makotokw-fonts', esc_url_raw( makotokw_fonts_url() ), array(), null );
+	if ( $font_url = makotokw_fonts_url() ) {
+		wp_enqueue_style( 'makotokw-fonts', esc_url_raw( $font_url ), array(), null );
+	}
 	wp_enqueue_style( 'makotokw-style', get_stylesheet_uri(), array(), THEME_STYLE_CSS_REV );
 
 	// Loads the Internet Explorer specific stylesheet.
@@ -162,9 +164,13 @@ if ( ! is_admin() ) {
 function makotokw_fonts_url() {
 
 	$font_families = array(
-		'Lato:300,400,700,300italic,400italic,700italic',
-		'Slackey',
+//		'Lato:300,400,700,300italic,400italic,700italic',
 	);
+
+	if ( empty($font_families) ) {
+		return false;
+	}
+
 	$query_args    = array(
 		'family' => implode( '|', $font_families ),
 		'subset' => 'latin,latin-ext',

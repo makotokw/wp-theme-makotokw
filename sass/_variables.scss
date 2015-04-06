@@ -95,7 +95,7 @@ $qiita-border: darken(adjust-hue($qiita-green, -10), 5%);
 $evernote-bg: lighten(desaturate($evernote-green, 20%), 52%);
 $evernote-border: darken(adjust-hue($evernote-green, -10), 5%);
 
-$font-family-sans-serif: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans-serif: Helvetica, Arial, sans-serif;
 $font-family-sans-serif-ja: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 $font-family-serif: Georgia, "Times New Roman", Times, serif;
 $font-family-monospace: Monaco, Menlo, Consolas, "Courier New", monospace;
@@ -113,14 +113,14 @@ $border-radius-base: 4px;
 $border-radius-large: 6px;
 $border-radius-small: 3px;
 
-$site-border-width: 2px;
+$site-border-width: 1px;
 $site-border-left-width: 5px;
 
 $site-default-text: $gray-darker;
 $site-default-bg: $white;
 $site-neutral-color: $silver;
 $site-accent-color: saturate($blue, 10%);
-$site-dark-accent-color: lighten($blue-dark, 10%);
+$site-dark-accent-color: $md-blue-grey-900;
 $site-default-border: $brand-default-border;
 
 $site-default-link: $blue;
@@ -132,31 +132,42 @@ $site-accent-link-over: darken($site-accent-link, 10%);
 $site-inverse-link-text: $silver;
 $site-inverse-link-over: darken($site-inverse-link-text, 10%);
 
-$button-default-text: $site-default-text;
+// form
+$form-default-border: $md-grey-200;
+$form-default-border-over: $md-grey-400;
+$form-default-placeholder: $md-grey-200;
+
+// button
+$button-default-text: $md-grey-500;
+$button-default-text-over: $md-grey-800;
 $button-default-bg: $white;
-$button-default-bg-over: $clouds;
-$button-default-border: $site-default-border;
+$button-default-bg-over: $white;
+$button-default-border: $form-default-border;
+$button-default-border-over: $form-default-border-over;
 
-$form-default-placeholder: $gray;
-
+// navi
 $navi-default-bg: $site-default-bg;
 
-$footer-default-text: $white;
-$footer-default-bg: $blue;
-$footer-default-link: $md-cyan-50;
-$footer-default-link-over: $md-cyan-100;
+// footer color
+$footer-default-text: $md-blue-grey-400;
+$footer-default-bg: $white;
+$footer-default-link: $footer-default-text;
+$footer-default-link-over: $md-grey-900;
 
+// error
 $errorpage-bg: #f5f5f5;
 $errorpage-bg-icon: #ddd;
 
-$site-date-text: #767676;
-$entry-title-text: $blue-dark;
-$entry-date-text: $site-date-text;
+// misc
+$site-logo-text: $md-blue-grey-900;
+$site-logo-text-over: $md-light-blue-600;
+$entry-title-text: $md-blue-grey-900;
+$entry-title-text-over: $md-light-blue-600;
 $caption-text: #767676;
-$comment-date-text: #767676;
 
 $block-default-bg: #f7f9fa;
 $block-default-text: #34495e;
+$block-default-divider: rgba(0,0,0,0.05);
 $block-default-border: #e9ecef;
 $block-border-width: $site-border-width;
 $block-border-radius: 6px;
@@ -164,16 +175,6 @@ $block-padding: 24px;
 
 $fa-font-path: 'components/font-awesome/fonts';
 $generic-font-path: 'fonts/genericicons';
-
-// Media queries breakpoints
-//$desktop-max-width: 984px;
-//$ipad-max-width: 767px;
-//$tablet-max-width: 643px;
-//$mobile-max-width: 359px;
-//
-//$site-max-width: 1600px;
-//$site-main-max-width: 980px;
-//$site-cotent-max-width: 940px;
 
 $screen-xs: 480px;
 $screen-xs-min: $screen-xs;

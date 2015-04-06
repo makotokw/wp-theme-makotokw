@@ -3,8 +3,11 @@
 
 .site {
   box-sizing: content-box;
-  border-top: 10px solid $footer-default-bg;
   width: 100%;
+}
+
+.site-main {
+  margin-top: 20px;
 }
 
 .site-content-area {

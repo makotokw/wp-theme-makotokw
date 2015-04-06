@@ -18,17 +18,7 @@ get_header(); ?>
 		<div class="container">
 			<ul class="list-entries list-entries-recent">
 				<?php while ( have_posts() ) : the_post(); ?>
-					<li class="post-summary">
-						<div class="entry-header">
-							<span class="entry-title"><a href="<?php the_permalink(); ?>"
-														 title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'makotokw' ), the_title_attribute( 'echo=0' ) ) ); ?>"
-														 rel="bookmark"><?php the_title(); ?></a></span>
-							<span class="entry-date"><?php makotokw_posted_on(); ?></span>
-							<span class="cat-links"><i
-									class="fa fa-folder"></i> <?php makotokw_the_category_slug( ', ' ); ?></span>
-							<span class="tag-links"><?php makotokw_the_tag_links(); ?></span>
-						</div>
-					</li>
+					<?php get_template_part( 'content', get_post_format() ); ?>
 				<?php endwhile; ?>
 			</ul>
 			<?php makotokw_pagination(); ?>

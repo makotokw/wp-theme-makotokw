@@ -1,14 +1,7 @@
 
 .site-header {
-  padding: 10px 0 10px 0;
+  padding: 15px 0 5px 0;
   @include clearfix;
-
-  a {
-    color: $site-accent-link;
-    &:hover {
-      color: $site-accent-link-over;
-    }
-  }
 
   .site-info {
     float: left;
@@ -16,16 +9,37 @@
 
     .site-title {
       margin: 0;
-      font-family: 'Slackey';
-      font-size: 52px;
+      //font-size: 52px;
+      font-weight: 700;
+      a {
+        color: $site-logo-text;
+        &:hover {
+          color: $site-logo-text-over;
+        }
+      }
     }
     .site-description {
       margin: 0;
       color: $site-neutral-color;
-      font-size: 12px;
+      font-size: $font-size-mini;
       font-style: italic;
     }
   }
+
+  //.btn-rss {
+  //  border-color: $md-orange-200;
+  //  background-color: $white;
+  //  .icon {
+  //    color: $md-orange-200;
+  //  }
+  //  &:hover {
+  //    border-color: $md-orange-400;
+  //    background-color: $white;
+  //    .icon {
+  //      color: $md-orange-400;
+  //    }
+  //  }
+  //}
 
   .sub-nav {
     float: right;
@@ -33,8 +47,6 @@
 
     .socials {
       float: left;
-      margin-right: 5px;
-      line-height: 40px;
     }
 
     .search-form {

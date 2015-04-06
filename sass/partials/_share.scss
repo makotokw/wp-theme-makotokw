@@ -39,30 +39,27 @@
   }
 }
 .btn-share {
-  font-size: 12px;
+  position: relative;
   font-weight: normal;
-  line-height: 23px;
-  padding: 4px 16px 4px 16px;
-  min-width: 100px;
   margin: 0 10px 10px 0;
 
-  &:hover {
-    background-color: $button-default-bg-over;
+  .icon {
+    line-height: 40px;
   }
 
   .share-count {
-    background-color: $pink;
+    position: absolute;
+    left: 22px;
+    top: -8px;
+    background-color: $md-pink-300;
     color: $white;
     border-radius: 50%;
-    display: inline-block;
     text-align: center;
-    font-size: .85em;
-    font-weight: blod;
-    margin-left: 8px;
-    padding: 4px;
-    min-height: 18px;
-    min-width: 18px;
-    line-height: 1;
+    font-size: .65em;
+    font-weight: bold;
+    min-height: 20px;
+    min-width: 20px;
+    line-height: 20px;
   }
   .share-count-link {
     &:hover {
@@ -75,28 +72,28 @@
   &:before {
     font-family: Genericons;
     content: $icon-content;
-    margin-right: 2px;
-    font-size: 1.2em;
-    vertical-align: sub;
   }
 }
 
-.btn-share-twitter {
+.icon-share-twitter {
   @include btn-share-with-generic-icon($twitter-blue, $gi-var-twitter);
 }
-.btn-share-hatena {
+.icon-share-hatena {
   &:before {
     content: "B!";
     font-family: Verdana;
-    font-weight: bold
+    font-weight: bold;
+  }
+  .btn-circle &:before {
+    top: -1px;
   }
 }
-.btn-share-pocket {
+.icon-share-pocket {
   @include btn-share-with-generic-icon($pocket-pink, $gi-var-pocket);
 }
-.btn-share-googleplus {
+.icon-share-googleplus {
   @include btn-share-with-generic-icon($google-plus-red, $gi-var-googleplus-alt);
 }
-.btn-share-facebook {
+.icon-share-facebook {
   @include btn-share-with-generic-icon($facebook-blue, $gi-var-facebook-alt);
 }

@@ -3,7 +3,17 @@
   background-color: $footer-default-bg;
   color: $footer-default-text;
   text-align: center;
-  padding: 10px 0;
+
+
+  .container {
+    border-top: 1px solid $block-default-divider;
+    padding: 10px 0 25px;
+  }
+
+  .home & .container {
+    border-top: none;
+  }
+
 
   a {
     color: $footer-default-link;
@@ -45,6 +55,8 @@
     }
   }
 }
+
+
 
 #wpstats {
   display: block;

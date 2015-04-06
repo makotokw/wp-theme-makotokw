@@ -4,16 +4,17 @@
 .breadcrumb {
   display: block;
 
+  font-size: $font-size-mini;
+  letter-spacing: 1px;
+  color: $site-neutral-color;
+
   .fa-chevron-right {
-    padding-right: 5px;
-    padding-left: 5px;
     color: $site-neutral-color;
   }
 
   a {
-    padding: 10px 10px 10px 10px;
+    color: $site-neutral-color;
   }
   .breadcrumb-last {
-    margin-left: 5px;
   }
 }

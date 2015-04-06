@@ -2,11 +2,18 @@
 
   .search-form-fieldset {
     position: relative;
-    border: $site-border-width solid $clouds;
+    border: $site-border-width solid $form-default-border;
     background: $white;
     border-radius: 27px;
     margin: 0;
-    padding: 8px 8px 8px 40px;
+    padding: 4px 8px 5px 40px;
+
+    &:hover, &:active {
+      border-color: $form-default-border-over;
+      outline: 0;
+      outline: thin dotted \9; /* IE6-9 */
+      box-shadow: none;
+    }
   }
 
   .fa-search {
@@ -16,7 +23,7 @@
     top: 3px;
     color: $site-neutral-color;
     position: absolute;
-    padding: 7px 8px 8px 8px;
+    padding: 5px 5px 5px 10px;
   }
 
   .search-form-text {
@@ -42,11 +49,10 @@
     cursor: pointer;
     text-align: center;
     padding-top: 10px;
-    color: white;
+    color: $white;
     background: transparent;
     z-index: 10;
     position: absolute;
-    border:0;
     vertical-align: top;
   }
 

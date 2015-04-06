@@ -121,18 +121,11 @@
       overflow: hidden;
       margin: 0 auto;
       width: 260px;
-
-      .socials,
-      .search-form {
-        display: inline-block;
-        float: none;
-
-      }
-      .search-form {
-
-      }
-
     }
+  }
+
+  .site-navi {
+    text-align: center;
   }
 
   .site-footer {
@@ -215,12 +208,6 @@
       .searchform {
         float: right;
       }
-    }
-  }
-
-  .breadcrumb {
-    a {
-      padding: 5px 5px 5px 5px;
     }
   }
 
