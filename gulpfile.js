@@ -40,6 +40,7 @@ gulp.task('jscompress', function () {
 		'js/skip-link-focus-fix.js',
 		'js/script.js'
 	])
+		.pipe(plugins.plumber())
 		.pipe(plugins.sourcemaps.init())
 		.pipe(plugins.concat('style.js'))
 		.pipe(plugins.uglify({output: {'beautify': true}}))
@@ -50,6 +51,7 @@ gulp.task('jscompress', function () {
 
 gulp.task('sass', function () {
 	gulp.src('sass/*.scss')
+		.pipe(plugins.plumber())
 		.pipe(plugins.sourcemaps.init())
 		.pipe(plugins.sass({indentedSyntax: false}))
 		.pipe(plugins.pleeease({
