@@ -37,22 +37,6 @@ $section-page-alternate-background-color: lighten($gray-lighter, 4%);
   font-weight: 400;
 }
 .section-page-entry {
-
-  .list-entries {
-    list-style: none;
-    padding-left: 0;
-
-    .post-summary {
-      margin-bottom: 15px;
-    }
-
-    .entry-header {
-      .entry-title {
-        line-height: 1.4;
-        display: block;
-      }
-    }
-  }
 }
 
 .section-page-category {

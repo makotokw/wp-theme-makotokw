@@ -5,20 +5,20 @@ var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
+var del = require('del');
 
 gulp.task('clean', function (cb) {
-	var del = require('del');
 	del(['components'], cb);
 });
 
-gulp.task('makepot', plugins.shell.task([
-	'xgettext --from-code=UTF-8 -k__ -k_e -L PHP -o ./languages/messages.pot ./*.php ./*/*.php --package-name=makotokw --package-version=1.0 --msgid-bugs-address=makoto.kw@gmail.com',
-	'msgmerge --update ./languages/ja.po ./languages/messages.pot --backup=off'
-]));
-
-gulp.task('make-languages-po', plugins.shell.task([
-	'msgfmt -o ./languages/ja.mo ./languages/ja.po'
-]));
+gulp.task('clean:map', function (cb) {
+	del(['*.map'], function (err, deletedFiles) {
+		if (deletedFiles.length > 0) {
+			plugins.util.log('Files deleted:', deletedFiles.join(', '));
+		}
+		cb();
+	});
+});
 
 gulp.task('violations', ['phpcs', 'jshint']);
 
@@ -34,35 +34,58 @@ gulp.task('jshint', function () {
 		.pipe(plugins.if(!browserSync.active, plugins.jshint.reporter('fail')));
 });
 
-gulp.task('jscompress', function () {
+gulp.task('makepot', plugins.shell.task([
+	'xgettext --from-code=UTF-8 -k__ -k_e -L PHP -o ./languages/messages.pot ./*.php ./*/*.php --package-name=makotokw --package-version=1.0 --msgid-bugs-address=makoto.kw@gmail.com',
+	'msgmerge --update ./languages/ja.po ./languages/messages.pot --backup=off'
+]));
+
+gulp.task('make-languages-po', plugins.shell.task([
+	'msgfmt -o ./languages/ja.mo ./languages/ja.po'
+]));
+
+function js(env) {
 	gulp.src([
 		'components/google-code-prettify/js/prettify.js',
 		'js/skip-link-focus-fix.js',
 		'js/script.js'
 	])
 		.pipe(plugins.plumber())
-		.pipe(plugins.sourcemaps.init())
+		.pipe(plugins.if(env == 'development', plugins.sourcemaps.init()))
 		.pipe(plugins.concat('style.js'))
-		.pipe(plugins.uglify({output: {'beautify': true}}))
-		.pipe(plugins.sourcemaps.write('.'))
+		.pipe(plugins.uglify({output: {beautify: true}}))
+		.pipe(plugins.if(env == 'development', plugins.sourcemaps.write('.')))
 		.pipe(gulp.dest('.'))
 		.pipe(reload({stream: true, once: true}));
+}
+
+gulp.task('js:dev', function () {
+	js('development');
+});
+
+gulp.task('js', function () {
+	js('production');
+});
+
+function sass(env) {
+	plugins.rubySass('sass', {
+		loadPath: ['components'],
+		lineNumbers: env == 'development'
+	})
+		.pipe(plugins.plumber())
+		.pipe(plugins.autoprefixer({
+			browsers: ['last 2 versions'],
+			cascade: false
+		}))
+		.pipe(gulp.dest('.'))
+		.pipe(reload({stream: true, once: true}));
+}
+
+gulp.task('sass:dev', function () {
+	sass('development');
 });
 
 gulp.task('sass', function () {
-	gulp.src('sass/*.scss')
-		.pipe(plugins.plumber())
-		.pipe(plugins.sourcemaps.init())
-		.pipe(plugins.sass({indentedSyntax: false}))
-		.pipe(plugins.pleeease({
-			autoprefixer: {
-				browsers: ['last 2 versions']
-			},
-			minifier: false
-		}))
-		.pipe(plugins.sourcemaps.write('.'))
-		.pipe(gulp.dest('.'))
-		.pipe(reload({stream: true, once: true}));
+	sass('production');
 });
 
 gulp.task('browser-sync', function () {
@@ -85,13 +108,13 @@ gulp.task('bower', function () {
 
 gulp.task('default',
 	[
-		'jscompress',
-		'sass',
+		'js:dev',
+		'sass:dev',
 		'browser-sync'
 	],
 	function () {
-		gulp.watch("js/*.js", ['jshint', 'jscompress']);
-		gulp.watch("sass/**/*.scss", ['sass']);
+		gulp.watch("js/*.js", ['jshint', 'js:dev']);
+		gulp.watch("sass/**/*.scss", ['sass:dev']);
 		gulp.watch("**/*.php", ['phpcs', 'bs-reload']);
 	}
 );
@@ -99,6 +122,8 @@ gulp.task('default',
 gulp.task('build', [
 	'clean',
 	'bower',
-	'sass'
+	'sass',
+	'js',
+	'clean:map'
 ], function () {
 });

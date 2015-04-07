@@ -16,11 +16,9 @@ get_header(); ?>
 <main role="main">
 	<section class="section-page section-page-entry section-page-first">
 		<div class="container">
-			<ul class="list-entries list-entries-recent">
-				<?php while ( have_posts() ) : the_post(); ?>
-					<?php get_template_part( 'content', get_post_format() ); ?>
-				<?php endwhile; ?>
-			</ul>
+			<?php while ( have_posts() ) : the_post(); ?>
+				<?php get_template_part( 'content', get_post_format() ); ?>
+			<?php endwhile; ?>
 			<?php makotokw_pagination(); ?>
 		</div>
 	</section>

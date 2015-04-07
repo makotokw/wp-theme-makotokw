@@ -5,17 +5,14 @@
 .post-summary,
 .post-single {
   word-wrap: break-word;
-}
-
-.post-summary {
   .entry-title {
     font-size: 26px;
   }
-  .entry-summary {
-    p {
-      color: $site-dark-accent-color;
-    }
-  }
+}
+
+.post-summary {
+  padding: 35px 0 35px;
+  border-bottom: $site-border-width solid $block-default-divider;
 }
 
 .site-content {
@@ -50,12 +47,15 @@
     font-size: $font-size-small;
     color: $site-neutral-color;
     a {
-      color: $site-neutral-link;
-
+      color: $site-default-link;
       &:hover {
-        color: $site-neutral-link-over;
+        color: $site-default-link-over;
       }
     }
+  }
+
+  .cat-links {
+    text-transform: capitalize;
   }
 
   .tag-links {
@@ -284,8 +284,6 @@ object {
 // -----------------------------------------------
 .archive {
   .post-summary {
-    margin: 20px 0 10px;
-
     .share-buttons {
       float: right;
     }

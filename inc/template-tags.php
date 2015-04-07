@@ -436,15 +436,12 @@ function makotokw_the_category_slug( $separator = '', $post_id = false ) {
 
 	$rel = (is_object( $wp_rewrite ) && $wp_rewrite->using_permalinks()) ? 'rel="category tag"' : 'rel="category"';
 
-	$the_list = '';
-	$i       = 0;
+	$i = 0;
 	foreach ( $categories as $category ) {
 		if ( 0 < $i ) {
-			$the_list .= $separator;
+			echo esc_html( $separator );
 		}
-		?>
-		<a href="<?php echo esc_url( get_category_link( $category->term_id ) ) ?>" title="<?php echo esc_attr( sprintf( __( 'View all posts in %s', 'makotokw' ), $category->name ) ) ?>" <?php echo $rel ?>><?php echo esc_html( $category->slug ) ?></a>
-		<?php
+		?><a href="<?php echo esc_url( get_category_link( $category->term_id ) ) ?>" title="<?php echo esc_attr( sprintf( __( 'View all posts in %s', 'makotokw' ), $category->name ) ) ?>" <?php echo $rel ?>><?php echo esc_html( $category->slug ) ?></a><?php
 		++$i;
 	}
 }

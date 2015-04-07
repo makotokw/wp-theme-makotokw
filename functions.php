@@ -164,7 +164,7 @@ if ( ! is_admin() ) {
 function makotokw_fonts_url() {
 
 	$font_families = array(
-//		'Lato:300,400,700,300italic,400italic,700italic',
+		//'Lato:300,400,700,300italic,400italic,700italic',
 	);
 
 	if ( empty($font_families) ) {
