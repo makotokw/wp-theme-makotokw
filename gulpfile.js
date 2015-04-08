@@ -99,9 +99,10 @@ gulp.task('bs-reload', function () {
 	browserSync.reload();
 });
 
-gulp.task('bower', function () {
+gulp.task('bower:install', function () {
 	var bower = require('main-bower-files');
-	return gulp.src(bower(), {base: './bower_components'})
+	plugins.shell.task(['bower install']);
+	gulp.src(bower(), {base: './bower_components'})
 		.pipe(plugins.bowerNormalize({bowerJson: './bower.json'}))
 		.pipe(gulp.dest('./components/'));
 });
