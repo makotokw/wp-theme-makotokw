@@ -7,7 +7,7 @@ WordPress theme for [kwLog](http://blog.makotokw.com).
 ![Screenshot](https://raw.githubusercontent.com/makotokw/wp-theme-makotokw/makotokw2014/screenshot.png)
 
  * Created by [_s](http://underscores.me)
- * Inspired [Twenty Thirteen](http://twentythirteendemo.wordpress.com/), [Twenty Eleven](http://wordpress.org/extend/themes/twentyeleven) and [Octopress](http://octopress.org/)
+ * Inspired [Twenty Fifteen](https://twentyfifteendemo.wordpress.com/), [ghost](http://blog.ghost.org/) and [medium](https://medium.com/)
  * Include [Font Awesome](http://fortawesome.github.io/Font-Awesome/) Icons
  * Include [Genericons](http://genericons.com/)
  * Include [google-code-prettify](http://code.google.com/p/google-code-prettify/)
@@ -20,8 +20,6 @@ WordPress theme for [kwLog](http://blog.makotokw.com).
 * [PukiWiki for WordPress](http://wordpress.org/extend/plugins/pukiwiki-for-wordpress/) Plugin
 * [Twitter Card](https://dev.twitter.com/docs/cards)
 * [Facebook Open Graph](http://developers.facebook.com/docs/opengraph/) Protocol
-* [Facebook Recommendations Bar](https://developers.facebook.com/docs/reference/plugins/recommendationsbar/)
-* [Zenback](http://zenback.jp/) Widget
 
 ## Limitation
 
@@ -38,9 +36,9 @@ So, please use a reference of one implementation for WordPress theme.
 
 ```
 cd /path/to/wordpress/wp-content/themes
-git clone https://github.com/makotokw/wp-theme-makotokw.git makotokw2014
-cd makotokw2014
-git checkout -b makotokw2014 origin/makotokw2014
+git clone https://github.com/makotokw/wp-theme-makotokw.git makotokw2015
+cd makotokw2015
+git checkout makotokw2015
 cp -p config.php.sample config.php
 ```
 
@@ -48,26 +46,24 @@ cp -p config.php.sample config.php
 
 ### Requirements
 
-* [Grunt](http://gruntjs.com/)
-* [Bower](http://bower.io/)
-* [Compass](http://compass-style.org/)
+* Node.JS, [Gulp](http://gruntjs.com/) and [Bower](http://bower.io/)
+* Ruby and [Sass](http://sass-lang.com/)
 
 ### Setup
 
 ```
-cd /path/to/wordpress/wp-content/themes/makotokw2014
-gem install compass
-npm install -g grunt-cli bower
+cd /path/to/wordpress/wp-content/themes/makotokw2015
+gem install sass
+npm install -g gulp bower
 npm install
 bower install
-grunt bower:install
 ```
 
 ## Build
 
 ```
-cd /path/to/wordpress/wp-content/themes/makotokw2014
-grunt build
+cd /path/to/wordpress/wp-content/themes/makotokw2015
+gulp
 ```
 
 ### phpcs
@@ -75,9 +71,8 @@ grunt build
 https://github.com/squizlabs/PHP_CodeSniffer
 https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
 
-
 ```
-phpcs --standard=build/phpcs.xml *.php ./**/*.php
+gulp phpcs
 ```
 
 ## License
