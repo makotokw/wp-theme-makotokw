@@ -9,6 +9,10 @@
   font-weight: bold;
   font-size: 16px;
   border-radius: 999em;
+
+  .icon {
+    color: rgba(0,0,0,0.3);
+  }
 }
 
 .btn-default {
@@ -44,7 +48,6 @@
 
   .icon {
     line-height: 100%;
-    color: rgba(0,0,0,0.3);
   }
   .icon-default {
     &:before {

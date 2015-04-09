@@ -43,8 +43,26 @@
   font-weight: normal;
   margin: 0 10px 10px 0;
 
-  .icon {
-    line-height: 40px;
+  &.btn-square {
+    padding: 4px 8px;
+    min-width: 100px;
+    text-align: center;
+    font-size: 12px;
+    .share-title {
+    }
+    .icon {
+    }
+  }
+
+  &.btn-circle {
+    .share-title {
+      display: none;
+    }
+    .icon {
+      text-align: center;
+      line-height: 42px;
+      margin-left: 7px;
+    }
   }
 
   .share-count {
