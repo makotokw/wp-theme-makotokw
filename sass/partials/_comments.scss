@@ -59,8 +59,7 @@
     .comment-content {
       float: right;
       width: 80%;
-      width: -webkit-calc(100% - 64px);
-      width:         calc(100% - 64px);
+      width: calc(100% - 64px);
     }
   }
 
