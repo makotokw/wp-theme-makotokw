@@ -1,6 +1,6 @@
 
 .site-header {
-  padding: 15px 0 5px 0;
+  padding: 20px 0;
   @include clearfix;
 
   .site-info {
@@ -60,3 +60,6 @@
   }
 }
 
+.site-navi {
+  margin: 0 0 20px;
+}

@@ -8,6 +8,7 @@
 .pagination {
   display: block;
   @include clearfix;
+  border-top: $site-border-width solid $block-default-divider;
   padding: 20px 0;
 
   ul {

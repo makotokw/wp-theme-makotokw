@@ -138,12 +138,15 @@ $form-default-border-over: $md-grey-400;
 $form-default-placeholder: $md-grey-200;
 
 // button
+$button-default-border-width: 1px;
 $button-default-text: $md-grey-500;
 $button-default-text-over: $md-grey-800;
 $button-default-bg: $white;
 $button-default-bg-over: $white;
 $button-default-border: $form-default-border;
 $button-default-border-over: $form-default-border-over;
+$button-disable-text:  $md-grey-200;
+$button-disable-border: $md-grey-100;
 
 // navi
 $navi-default-bg: $site-default-bg;

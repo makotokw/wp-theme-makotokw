@@ -13,6 +13,12 @@
 .post-summary {
   padding: 35px 0 35px;
   border-bottom: $site-border-width solid $block-default-divider;
+  .post-summaries >&:first-child {
+    padding: 0 0 35px;
+  }
+  .post-summaries &:last-child {
+    border-bottom: none;
+  }
 }
 
 .site-content {
@@ -38,10 +44,6 @@
     }
   }
 
-  span {
-    margin-right: 5px;
-  }
-
   .cat-links,
   .tag-links {
     font-size: $font-size-small;
@@ -59,10 +61,6 @@
   }
 
   .tag-links {
-    margin-left: 5px;
-    a {
-      margin-right: 10px;
-    }
   }
 
   .entry-date {
@@ -119,6 +117,10 @@
 
 .btn-more-link {
   float: right;
+}
+
+.text-more-link {
+  font-size: $font-size-small;
 }
 
 // Media
@@ -191,18 +193,13 @@ object {
 
 .section-default {
   .section-title {
-    color: $site-dark-accent-color;
-    margin: 10px 0;
-    border-bottom: 5px solid $site-dark-accent-color;
+    color: $site-neutral-color;
+    border-bottom: $site-border-width solid $block-default-divider;
+    padding-bottom: 3px;
     &:before {
       font-family: FontAwesome;
-      background-color: $site-dark-accent-color;
-      color: #fff;
-      margin: 0 10px 0 0;
-      padding: 5px 10px;
-      text-align: center;
-      vertical-align: middle;
-      width: 36px;
+      color: $site-neutral-color;
+      margin-right: 5px;
     }
   }
 }

@@ -14,10 +14,11 @@ get_header(); ?>
 			<div class="container">
 				<?php if ( have_posts() ) : ?>
 
+					<?php if ( ! is_category() && ! is_tag() ) : ?>
 					<header class="page-header">
 						<h1 class="page-title">
 							<?php if ( is_category() ) : ?>
-								<i class="fa fa-folder"></i> <?php echo sprintf( __( 'Category Archives: %s', 'makotokw' ), '<span>' . single_cat_title( '', false ) . '</span>' ); ?>
+								<i class="fa fa-folder-o"></i> <?php echo sprintf( __( 'Category Archives: %s', 'makotokw' ), '<span>' . single_cat_title( '', false ) . '</span>' ); ?>
 							<?php elseif ( is_tag() ) : ?>
 								<i class="fa fa-tag"></i> <?php echo sprintf( __( 'Tag Archives: %s', 'makotokw' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?>
 							<?php elseif ( is_day() ) : ?>
@@ -46,19 +47,22 @@ get_header(); ?>
 							<?php endif; ?>
 						<?php endif; ?>
 					</header><!-- .page-header -->
+					<?php endif; ?>
 
-					<?php /* Start the Loop */ ?>
-					<?php while ( have_posts() ) : the_post(); ?>
+					<div class="post-summaries">
+						<?php /* Start the Loop */ ?>
+						<?php while ( have_posts() ) : the_post(); ?>
 
-						<?php
-						/* Include the Post-Format-specific template for the content.
-						 * If you want to overload this in a child theme then include a file
-						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-						 */
-						get_template_part( 'content', get_post_format() );
-						?>
+							<?php
+							/* Include the Post-Format-specific template for the content.
+							 * If you want to overload this in a child theme then include a file
+							 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+							 */
+							get_template_part( 'content', get_post_format() );
+							?>
 
-					<?php endwhile; ?>
+						<?php endwhile; ?>
+					</div>
 
 					<?php makotokw_pagination(); ?>
 

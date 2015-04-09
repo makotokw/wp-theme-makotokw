@@ -472,16 +472,16 @@ function makotokw_the_category_and_tag() {
 	<?php endif; // End if categories ?>
 	<?php
 	/* translators: used between list items, there is a space after the comma */
-	$tags_list = get_the_tag_list( '', ' <i class="fa fa-tag"></i>' );
+	$tags_list = get_the_tag_list( '', ', ' );
 	if ( $tags_list ) :?>
 		<span class="tag-links">
-				<?php printf( '<i class="fa fa-tag"></i> %1$s', $tags_list ); ?>
-			</span>
+			<?php printf( ', %1$s', $tags_list ); ?>
+		</span>
 	<?php endif; // End if $tags_list
 	printf( '<span class="author vcard"><span class="fn">%1$s</span></span>', get_the_author() );
 }
 
-function makotokw_the_tag_links( $prefix = '<i class="fa fa-tag"></i>' ) {
+function makotokw_the_tag_links( $prefix = ', ' ) {
 	/* translators: used between list items, there is a space after the comma */
 	$tags_list = get_the_tag_list( '', $prefix );
 	if ( $tags_list ) {

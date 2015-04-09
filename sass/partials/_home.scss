@@ -117,47 +117,51 @@ $section-page-alternate-background-color: lighten($gray-lighter, 4%);
   list-style: none;
 
   .list-archives-year {
+    display: block;
+    margin: 20px auto;
   }
 
   .list-archives-item-year {
-    display: block;
-    margin: 10px auto;
+    @include clearfix();
+    margin: 20px auto;
     > a {
       @extend .btn;
-      @extend .btn-primary;
-      margin-bottom: 5px;
-      float: none;
+      @extend .btn-default;
+      &:hover {
+        border-color: $md-light-blue-600;
+        color: $md-light-blue-600;
+      }
     }
   }
 
   .list-archives-month {
-    display: inline;
-    padding-left: 5px;
-    padding-right: 5px;
   }
 
   .list-archives-item-month {
-    display: inline-block;
-    padding: 5px;
+    margin-left: 10px;
     a {
-      @extend %btn-circle;
-      margin: 0;
+      @extend .btn;
+      @extend .btn-default;
+      @include circle(38px);
+      &:hover {
+        border-color: $md-light-blue-600;
+        color: $md-light-blue-600;
+      }
     }
   }
 
   .list-archives-item-month-no-items {
+    margin-left: 10px;
     span {
-      @extend %btn-circle;
-      margin: 0;
-      background-color: $site-neutral-link;
-      &:hover {
-        background-color: $site-neutral-link;
-      }
+      @extend .btn;
+      @include circle(38px);
+      background: $button-default-bg;
+      color: $button-disable-text;
+      border: $button-default-border-width solid $button-disable-border;
     }
   }
   .list-archives-item-month-no-items.list-archives-item-month-no-items-future {
     span {
-      background-color: lighten($site-neutral-link, 15%);
     }
   }
 }
