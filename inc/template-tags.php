@@ -6,6 +6,46 @@
  *
  * @package makotokw
  */
+
+function makotokw_page_header() {
+	?>
+	<header class="page-header">
+		<h1 class="page-title">
+			<?php if ( is_category() ) : ?>
+				<?php printf( __( 'Category Archives: %s', 'makotokw' ), '<span>' . single_cat_title( '', false ) . '</span>' ); ?>
+			<?php elseif ( is_tag() ) : ?>
+				<?php printf( __( 'Tag Archives: %s', 'makotokw' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?>
+			<?php elseif ( is_day() ) : ?>
+				<?php printf( __( 'Daily Archives: %s', 'makotokw' ), '<span>' . get_the_date() . '</span>' ); ?>
+			<?php elseif ( is_month() ) : ?>
+				<?php printf( __( 'Monthly Archives: %s', 'makotokw' ), '<span>' . get_the_date( 'F Y' ) . '</span>' ); ?>
+			<?php elseif ( is_year() ) : ?>
+				<?php printf( __( 'Yearly Archives: %s', 'makotokw' ), '<span>' . get_the_date( 'Y' ) . '</span>' ); ?>
+			<?php elseif ( is_tax( 'mylist' ) ) : ?>
+				<?php printf( __( '%s', 'makotokw' ), '<span>' . single_term_title( '', false ) . '</span>' ); ?>
+			<?php elseif ( is_tax( 'blogs' ) ) : ?>
+				<?php printf( __( 'Blog Archives: %s', 'makotokw' ), '<span>' . single_term_title( '', false ) . '</span>' ); ?>
+			<?php elseif ( is_tax( 'portfolios' ) ) : ?>
+				<?php printf( __( 'Portfolio Archives: %s', 'makotokw' ), '<span>' . single_term_title( '', false ) . '</span>' ); ?>
+			<?php elseif ( is_search() ) : ?>
+				<?php printf( __( 'Search Results for: %s', 'makotokw' ), '<span>' . get_search_query() . '</span>' ); ?>
+			<?php else : ?>
+				<?php echo _( 'Archives', 'makotokw' ); ?>
+			<?php endif; ?>
+		</h1>
+		<?php if ( is_category() ) : $category_description = category_description(); ?>
+			<?php if ( !empty($category_description) ) : ?>
+				<?php echo apply_filters( 'category_archive_meta', '<div class="taxonomy-description">' . $category_description . '</div>' ); ?>
+			<?php endif; ?>
+		<?php elseif ( is_tag() ) : $tag_description = tag_description(); ?>
+			<?php if ( !empty($tag_description) ) : ?>
+				<?php echo apply_filters( 'tag_archive_meta', '<div class="taxonomy-description">' . $tag_description . '</div>' ); ?>
+			<?php endif; ?>
+		<?php endif; ?>
+	</header><!-- .page-header -->
+	<?php
+}
+
 /**
  * Display navigation to next/previous pages when applicable
  */
@@ -463,26 +503,22 @@ function makotokw_section_category_and_tag( $title = 'Tag' ) {
 }
 
 function makotokw_the_category_and_tag() {
-	/* translators: used between list items, there is a space after the comma */
-	$categories_list = get_the_category_list( ' <i class="fa fa-folder"></i> ' );
+	$categories_list = get_the_category_list( ', ' );
 	if ( $categories_list && makotokw_categorized_blog() ) :?>
-		<span class="cat-links">
-			<?php printf( '<i class="fa fa-folder"></i> %1$s', $categories_list ); ?>
+		<span class="entry-categories">
+			<?php printf( '%1$s', $categories_list ); ?>
 		</span>
 	<?php endif; // End if categories ?>
 	<?php
-	/* translators: used between list items, there is a space after the comma */
 	$tags_list = get_the_tag_list( '', ', ' );
 	if ( $tags_list ) :?>
-		<span class="tag-links">
+		<span class="entry-tags">
 			<?php printf( ', %1$s', $tags_list ); ?>
 		</span>
 	<?php endif; // End if $tags_list
-	printf( '<span class="author vcard"><span class="fn">%1$s</span></span>', get_the_author() );
 }
 
 function makotokw_the_tag_links( $prefix = ', ' ) {
-	/* translators: used between list items, there is a space after the comma */
 	$tags_list = get_the_tag_list( '', $prefix );
 	if ( $tags_list ) {
 		printf( $prefix . ' %1$s', $tags_list );

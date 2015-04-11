@@ -142,7 +142,7 @@ $section-page-alternate-background-color: lighten($gray-lighter, 4%);
     a {
       @extend .btn;
       @extend .btn-default;
-      @include circle(38px);
+      @include circle(42px);
       &:hover {
         border-color: $md-light-blue-600;
         color: $md-light-blue-600;
@@ -154,7 +154,7 @@ $section-page-alternate-background-color: lighten($gray-lighter, 4%);
     margin-left: 10px;
     span {
       @extend .btn;
-      @include circle(38px);
+      @include circle(42px);
       background: $button-default-bg;
       color: $button-disable-text;
       border: $button-default-border-width solid $button-disable-border;

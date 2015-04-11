@@ -116,10 +116,11 @@ $border-radius-small: 3px;
 $site-border-width: 1px;
 $site-border-left-width: 5px;
 
-$site-default-text: $gray-darker;
+$site-default-text: $md-grey-800;
+$site-header-text: $md-grey-900;
 $site-default-bg: $white;
-$site-neutral-color: $silver;
-$site-accent-color: saturate($blue, 10%);
+$site-neutral-color: $md-grey-400;
+$site-accent-color: $md-light-blue-400;
 $site-dark-accent-color: $md-blue-grey-900;
 $site-default-border: $brand-default-border;
 

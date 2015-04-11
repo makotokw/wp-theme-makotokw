@@ -2,26 +2,36 @@
 /**
  * @package makotokw
  */
-$is_summary = is_home() || is_year() || is_month() || is_search();
+$post_type = get_post_type();
+$is_detail_page = is_single() || is_page();
+$only_excerpts = is_home() || is_year() || is_month() || is_search();
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'post-summary' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( $is_detail_page ? 'post-single' : 'post-summary' ); ?>>
 	<header class="entry-header">
-		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'makotokw' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
-		<?php if ( 'post' == get_post_type() ) : ?>
-			<span class="entry-date"><?php makotokw_posted_on(); ?></span>
-			<span class="cat-links"><?php makotokw_the_category_slug( ', ' ); ?></span><span class="tag-links"><?php makotokw_the_tag_links(); ?></span>
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+		<h1 class="entry-title">
+			<?php if ( $is_detail_page ) : ?>
+				<?php the_title(); ?>
+			<?php else : ?>
+				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'makotokw' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
+			<?php endif ?>
+		</h1>
+		<section class="entry-meta">
+			<?php if ( 'post' == $post_type ) : ?>
+				<span class="entry-date"><?php makotokw_posted_on(); ?></span>
+				<span class="cat-links"><?php makotokw_the_category_slug( ', ' ); ?></span><span class="tag-links"><?php makotokw_the_tag_links(); ?></span>
+			<?php endif; ?>
+		</section>
+	</header>
 
-	<?php if ( $is_summary ) : // Only display Excerpts for Search ?>
+	<?php if ( $only_excerpts ) : ?>
 		<div class="entry-summary">
 			<p><?php echo makotokw_post_summary( $post->post_content ); ?></p>
 			<a class="text-more-link" href="<?php the_permalink() ?>">続きを読む</a>
-		</div><!-- .entry-summary -->
+		</div>
 	<?php else : ?>
 		<div class="entry-content">
-			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'makotokw' ) ); ?>
+			<?php the_content(); ?>
 			<?php
 			wp_link_pages(
 				array(
@@ -29,15 +39,34 @@ $is_summary = is_home() || is_year() || is_month() || is_search();
 					'after'  => '</div>',
 				)
 			); ?>
-		</div><!-- .entry-content -->
+		</div>
 	<?php endif; ?>
 
-	<footer class="entry-meta">
-		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
-			<?php printf( '<span class="author vcard"><span class="fn">%1$s</span></span>', get_the_author() ); ?>
-		<?php endif; // End if 'post' == get_post_type() ?>
-		<?php if ( ! $is_summary ) : ?>
-		<?php makotokw_share_buttons(); ?>
+	<footer class="entry-footer">
+		<section class="entry-meta">
+			<?php makotokw_author(); ?>
+		</section>
+		<?php if ( ! is_preview() && ! $only_excerpts ) : ?>
+			<?php if ( $is_detail_page ) : ?>
+				<?php makotokw_share_this(); ?>
+				<?php else : ?>
+				<?php makotokw_share_buttons(); ?>
+			<?php endif ?>
 		<?php endif; ?>
-	</footer><!-- .entry-meta -->
-</article><!-- #post-## -->
+		<?php if ( $is_detail_page ) : ?>
+			<?php if ( 'post' == $post_type ) : ?>
+				<?php makotokw_list_nav(); ?>
+				<?php makotokw_section_category_and_tag( 'Tag' ); ?>
+				<?php makotokw_related_portfolio(); ?>
+				<?php makotokw_related_posts(); ?>
+				<?php makotokw_content_nav( 'nav-below' ); ?>
+			<?php else : ?>
+				<div class="section section-mini section-last-updated">
+					<h2 class="section-title"><?php _e( 'Last Updated', 'makotokw' ); ?></h2>
+					<div class="section-content"><?php makotokw_updated_on(); ?></div>
+				</div>
+				<?php makotokw_related_posts(); ?>
+			<?php endif ?>
+		<?php endif; ?>
+	</footer>
+</article><!-- #post-<?php the_ID(); ?> -->

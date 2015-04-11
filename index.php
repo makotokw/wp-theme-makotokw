@@ -13,27 +13,24 @@
 
 get_header(); ?>
 
-<div class="site-content-area">
-	<main class="site-content" role="main">
-
-	<?php if ( have_posts() ) : ?>
-
-		<?php /* Start the Loop */ ?>
-		<?php while ( have_posts() ) : the_post(); ?>
-
-			<?php get_template_part( 'content', get_post_format() ); ?>
-
-		<?php endwhile; ?>
-
-		<?php makotokw_pagination(); ?>
-
-	<?php else : ?>
-
-		<?php get_template_part( 'no-results', 'index' ); ?>
-
-	<?php endif; ?>
-
-	</main>
-</div>
+	<div class="site-content-area">
+		<main class="site-content" role="main">
+			<div class="container">
+				<?php if ( have_posts() ) : ?>
+					<?php if ( ! is_category() && ! is_tag() ) : ?>
+						<?php makotokw_page_header(); ?>
+					<?php endif; ?>
+					<div class="post-summaries">
+						<?php while ( have_posts() ) : the_post(); ?>
+							<?php get_template_part( 'content' ); ?>
+						<?php endwhile; ?>
+					</div>
+					<?php makotokw_pagination(); ?>
+				<?php else : ?>
+					<?php get_template_part( 'no-results' ); ?>
+				<?php endif; ?>
+			</div>
+		</main>
+	</div>
 
 <?php get_footer(); ?>
