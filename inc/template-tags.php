@@ -360,7 +360,7 @@ function makotokw_share_buttons() {
 	<div class="share-buttons">
 		<ul>
 			<li class="share-twitter">
-				<a rel="nofollow" data-url="<?php echo $permalink; ?>" class="btn btn-default btn-square btn-share btn-share-twitter" href="https://twitter.com/intent/tweet?original_referer=<?php echo rawurlencode( $permalink ) ?>&text=<?php echo rawurlencode( $title ) ?>&tw_p=tweetbutton&url=<?php echo urlencode( $permalink )?>&via=<?php echo urlencode( WP_THEME_AUTHOR_TWITTER )?>" target="_blank">
+				<a rel="nofollow" data-url="<?php echo $permalink; ?>" class="btn btn-default btn-circle btn-share btn-share-twitter" href="https://twitter.com/intent/tweet?original_referer=<?php echo rawurlencode( $permalink ) ?>&text=<?php echo rawurlencode( $title ) ?>&tw_p=tweetbutton&url=<?php echo urlencode( $permalink )?>&via=<?php echo urlencode( WP_THEME_AUTHOR_TWITTER )?>" target="_blank">
 					<i class="icon icon-default icon-share-twitter"></i>
 					<span class="share-title">Twitter</span>
 				</a>

@@ -138,11 +138,12 @@ $section-page-alternate-background-color: lighten($gray-lighter, 4%);
   }
 
   .list-archives-item-month {
-    margin-left: 10px;
     a {
       @extend .btn;
       @extend .btn-default;
       @include circle(42px);
+      margin-left: 10px;
+      margin-bottom: 5px;
       &:hover {
         border-color: $md-light-blue-600;
         color: $md-light-blue-600;
@@ -151,10 +152,11 @@ $section-page-alternate-background-color: lighten($gray-lighter, 4%);
   }
 
   .list-archives-item-month-no-items {
-    margin-left: 10px;
     span {
       @extend .btn;
       @include circle(42px);
+      margin-left: 10px;
+      margin-bottom: 5px;
       background: $button-default-bg;
       color: $button-disable-text;
       border: $button-default-border-width solid $button-disable-border;
