@@ -114,9 +114,10 @@ gulp.task('default',
 		'browser-sync'
 	],
 	function () {
-		gulp.watch("js/*.js", ['jshint', 'js:dev']);
-		gulp.watch("sass/**/*.scss", ['sass:dev']);
-		gulp.watch("**/*.php", ['phpcs', 'bs-reload']);
+		gulp.watch('js/*.js', ['jshint', 'js:dev']);
+		gulp.watch('sass/**/*.scss', ['sass:dev']);
+		gulp.watch('**/*.php', ['phpcs', 'bs-reload']);
+		gulp.watch('languages/*.mo', ['bs-reload']);
 	}
 );
 
