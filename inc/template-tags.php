@@ -34,11 +34,11 @@ function makotokw_page_header() {
 			<?php endif; ?>
 		</h1>
 		<?php if ( is_category() ) : $category_description = category_description(); ?>
-			<?php if ( !empty($category_description) ) : ?>
+			<?php if ( ! empty($category_description) ) : ?>
 				<?php echo apply_filters( 'category_archive_meta', '<div class="taxonomy-description">' . $category_description . '</div>' ); ?>
 			<?php endif; ?>
 		<?php elseif ( is_tag() ) : $tag_description = tag_description(); ?>
-			<?php if ( !empty($tag_description) ) : ?>
+			<?php if ( ! empty($tag_description) ) : ?>
 				<?php echo apply_filters( 'tag_archive_meta', '<div class="taxonomy-description">' . $tag_description . '</div>' ); ?>
 			<?php endif; ?>
 		<?php endif; ?>

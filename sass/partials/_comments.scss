@@ -44,6 +44,7 @@
 .comment-small {
   font-size: 14px;
   line-height: 1;
+  font-style: normal;
 }
 
 .comment {
@@ -75,26 +76,21 @@
       border-radius: 50%;
       display: block;
       margin-bottom: 10px;
-      padding: 2px;
-      border: 1px solid $site-default-border;
     }
   }
   .comment-metadata {
-    cite,
-    time,
-    a {
-      @extend .comment-small;
-    }
-    cite {
-      display: block;
-      a {
-        color: $site-default-text;
-      }
-    }
-
     .fn,
     .comment-time {
+      @extend .comment-small;
+      margin-right: .3em;
       display: inline-block;
+
+    }
+    .fn {
+      color: $site-accent-color;
+    }
+    .comment-time {
+      color: $site-neutral-color;
     }
   }
 
@@ -144,13 +140,6 @@
       .avatar {
       }
     }
-    .fn:before {
-      font-family: FontAwesome;
-      content: $fa-var-pencil;
-      vertical-align: text-top;
-      color: $site-default-link;
-      margin-right: 5px;
-    }
   }
 }
 
@@ -171,10 +160,7 @@
 }
 
 .navigation-comment {
-  a {
-    @extend %pagenation-page;
-    float: none;
-  }
+  @include clearfix();
 }
 
 .comment-form-comment {
