@@ -32,6 +32,7 @@
 }
 
 .entry-title {
+  font-family: $font-family-sans-serif-ja;
   .post-single & {
     font-size: 40px;
   }
@@ -52,27 +53,12 @@
 .entry-meta {
   font-size: $font-size-mini;
   color: $site-neutral-color;
-  a {
-    color: $site-default-link;
-    &:hover {
-      color: $site-default-link-over;
-    }
-  }
+
   .cat-links,
   .tag-links {
     text-transform: capitalize;
   }
-}
 
-.entry-header {
-  position: relative;
-
-  .post-single & {
-    margin: 20px 0;
-  }
-}
-
-.entry-meta {
   .portfolio-posts-area {
     .entry-date {
       margin: 0 4px;
@@ -82,6 +68,33 @@
   .date {
     display: none;
   }
+}
+
+.entry-header {
+  position: relative;
+
+  .entry-meta {
+    margin: 5px;
+
+    .cat-links,
+    .tag-links {
+      a {
+        color: $site-neutral-color;
+        &:hover {
+          color: $site-default-link-over;
+        }
+      }
+    }
+  }
+
+  .post-single & {
+    margin: 20px 0;
+  }
+}
+
+.entry-content,
+.entry-summary {
+  font-family: $font-family-sans-serif-ja;
 }
 
 .entry-content {

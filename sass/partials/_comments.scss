@@ -100,9 +100,11 @@
 
   .comment-content {
     @include block-white(4px);
+    font-family: $font-family-sans-serif-ja;
+    font-size: $font-size-base * 0.9;
     line-height: $line-height-large;
     overflow-x: auto;
-    color: lighten($site-default-text, 10%);
+    color: $site-default-text;
     a {
       word-wrap: break-word;
     }

@@ -6,7 +6,7 @@
     background: $white;
     border-radius: 27px;
     margin: 0;
-    padding: 4px 8px 5px 40px;
+    padding: 4px 8px 4px 40px;
 
     &:hover, &:active {
       border-color: $form-default-border-over;
@@ -27,6 +27,7 @@
   }
 
   .search-form-text {
+    font-size: 14px;
     padding: 0;
     border: none;
     transition: width 400ms ease, background 400ms ease;
