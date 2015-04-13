@@ -1,60 +1,24 @@
-# Copyright (C) 2015 makoto_kw
-# This file is distributed under the GNU General Public License v2 or later.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: makotokw 1.0\n"
 "Report-Msgid-Bugs-To: makoto.kw@gmail.com\n"
-"POT-Creation-Date: 2015-02-22 08:02:56+00:00\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"POT-Creation-Date: 2015-04-14 01:24+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"X-Generator: grunt-wp-i18n 0.5.0\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: 404.php:15
-msgid "Not Found"
-msgstr ""
-
-#: 404.php:23
-msgid "It looks like nothing was found at this location. Maybe try a search?"
-msgstr ""
-
-#: archive.php:20
-msgid "Category Archives: %s"
-msgstr ""
-
-#: archive.php:22
-msgid "Tag Archives: %s"
-msgstr ""
-
-#: archive.php:24
-msgid "Daily Archives: %s"
-msgstr ""
-
-#: archive.php:26
-msgid "Monthly Archives: %s"
-msgstr ""
-
-#: archive.php:28
-msgid "Yearly Archives: %s"
-msgstr ""
-
-#: archive.php:30
-msgid "%s"
-msgstr ""
-
-#: archive.php:32
-msgid "Blog Archives: %s"
-msgstr ""
-
-#: archive.php:34
-msgid "Portfolio Archives: %s"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "Archives"
+msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
 #: comments.php:46
@@ -73,39 +37,41 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: content-page.php:19 content-single.php:20 content.php:29
-msgid "Pages:"
-msgstr ""
-
-#: content-page.php:28 content-single.php:29
-msgid "Last Updated"
-msgstr ""
-
-#: content.php:10 home.php:24
+#: content.php:16
+#, php-format
 msgid "Permalink to %s"
 msgstr ""
 
-#: content.php:25
-msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+#: content.php:30
+msgid "Continue reading"
 msgstr ""
 
-#: footer.php:27
+#: content.php:38
+msgid "Pages:"
+msgstr ""
+
+#: content.php:65
+msgid "Last Updated"
+msgstr ""
+
+#: footer.php:22
+#, php-format
 msgid "Powered by %s"
 msgstr ""
 
-#: footer.php:28
+#: footer.php:23
 msgid "Semantic Personal Publishing Platform"
 msgstr ""
 
-#: functions.php:63
+#: functions.php:67
 msgid "Site Info Menu"
 msgstr ""
 
-#: functions.php:64
+#: functions.php:68
 msgid "Portfolio Menu"
 msgstr ""
 
-#: functions.php:97
+#: functions.php:101
 msgid "Sidebar"
 msgstr ""
 
@@ -113,8 +79,38 @@ msgstr ""
 msgid "Uncategorized"
 msgstr ""
 
+#: no-results.php:13
+msgid "Nothing Found"
+msgstr ""
+
+#: no-results.php:18
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: no-results.php:20
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: no-results.php:23
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: searchform.php:10
+msgid "Search"
+msgstr ""
+
+#: searchform.php:11
+msgid "Search the site"
+msgstr ""
+
 #: inc/comments.php:26
-#. translators: 1: date, 2: time
+#, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
@@ -127,6 +123,7 @@ msgid "Your comment is awaiting moderation."
 msgstr ""
 
 #: inc/extras.php:73
+#, php-format
 msgid "Page %s"
 msgstr ""
 
@@ -162,7 +159,7 @@ msgstr ""
 msgid "New Mylist Name"
 msgstr ""
 
-#. Template Name of the plugin/theme
+#: inc/taxonomy.php:55
 msgid "Portfolios"
 msgstr ""
 
@@ -170,156 +167,126 @@ msgstr ""
 msgid "Blogs"
 msgstr ""
 
-#: inc/template-tags.php:34
-msgid "Post navigation"
+#: inc/template-tags.php:15
+#, php-format
+msgid "Category Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:54
-msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+#: inc/template-tags.php:17
+#, php-format
+msgid "Tag Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:58
-msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+#: inc/template-tags.php:19
+#, php-format
+msgid "Daily Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:129
-msgid "First"
+#: inc/template-tags.php:21
+#, php-format
+msgid "Monthly Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:132
-msgid "Previous"
+#: inc/template-tags.php:23
+#, php-format
+msgid "Yearly Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:144
-msgid "Next"
+#: inc/template-tags.php:25
+#, php-format
+msgid "%s"
 msgstr ""
 
-#: inc/template-tags.php:147
-msgid "Last"
+#: inc/template-tags.php:27
+#, php-format
+msgid "Blog Archives: %s"
 msgstr ""
 
-#. Template Name of the plugin/theme
-msgid "Categories"
+#: inc/template-tags.php:29
+#, php-format
+msgid "Portfolio Archives: %s"
 msgstr ""
 
-#. Template Name of the plugin/theme
-msgid "Tags"
-msgstr ""
-
-#: inc/template-tags.php:200
-msgid "Mylist"
-msgstr ""
-
-#: inc/template-tags.php:203
-msgid "Blog"
-msgstr ""
-
-#: inc/template-tags.php:206
-msgid "Portfolio"
-msgstr ""
-
-#: inc/template-tags.php:212
-msgid "Search Results"
-msgstr ""
-
-#: inc/template-tags.php:214
-msgid "404 Not Found"
-msgstr ""
-
-#: inc/template-tags.php:257 inc/template-tags.php:484
-msgid "View all posts in %s"
-msgstr ""
-
-#: inc/template-tags.php:303
-msgid "<time class=\"published time time-icon\" datetime=\"%1$s\">%2$s</time>"
-msgstr ""
-
-#: inc/template-tags.php:312
-msgid "<time class=\"updated\" datetime=\"%1$s\">%2$s</time>"
-msgstr ""
-
-#: inc/template-tags.php:393
-msgid "Share This"
-msgstr ""
-
-#: inc/template-tags.php:406
-msgid "About"
-msgstr ""
-
-#: no-results.php:13
-msgid "Nothing Found"
-msgstr ""
-
-#: no-results.php:18
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-
-#: no-results.php:20
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
-msgstr ""
-
-#: no-results.php:23
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
-msgstr ""
-
-#: search.php:15
+#: inc/template-tags.php:31
+#, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
-#: searchform.php:11
-msgid "Search the site"
+#: inc/template-tags.php:33 inc/template-tags.php:249
+msgid "Archives"
 msgstr ""
 
-#. Theme Name of the plugin/theme
-msgid "makotokw2014"
+#: inc/template-tags.php:74
+msgid "Post navigation"
 msgstr ""
 
-#. Theme URI of the plugin/theme
-msgid "https://github.com/makotokw/wp-theme-makotokw/tree/makotokw2014"
+#: inc/template-tags.php:94
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-#. Description of the plugin/theme
-msgid "2014 theme for kwLog."
+#: inc/template-tags.php:98
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#. Author of the plugin/theme
-msgid "makoto_kw"
+#: inc/template-tags.php:169
+msgid "First"
 msgstr ""
 
-#. Author URI of the plugin/theme
-msgid "http://makotokw.com/"
+#: inc/template-tags.php:172
+msgid "Previous"
 msgstr ""
 
-#. Template Name of the plugin/theme
-msgid "Archive"
+#: inc/template-tags.php:184
+msgid "Next"
 msgstr ""
 
-#. Template Name of the plugin/theme
-msgid "Memos"
+#: inc/template-tags.php:187
+msgid "Last"
 msgstr ""
 
-#: comments.php:34
-msgctxt "comments title"
-msgid "1 Comment"
-msgid_plural "%1$s Comments"
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/taxonomy.php:38
-msgctxt "taxonomy general name"
-msgid "Mylists"
+#: inc/template-tags.php:231 inc/template-tags.php:255
+msgid "Categories"
 msgstr ""
 
-#: inc/taxonomy.php:39
-msgctxt "taxonomy singular name"
+#: inc/template-tags.php:237
+msgid "Tags"
+msgstr ""
+
+#: inc/template-tags.php:240
 msgid "Mylist"
 msgstr ""
 
-#: searchform.php:10
-msgctxt "assistive text"
-msgid "Search"
+#: inc/template-tags.php:243
+msgid "Blog"
+msgstr ""
+
+#: inc/template-tags.php:246
+msgid "Portfolio"
+msgstr ""
+
+#: inc/template-tags.php:252
+msgid "Search Results"
+msgstr ""
+
+#: inc/template-tags.php:295 inc/template-tags.php:489
+#, php-format
+msgid "View all posts in %s"
+msgstr ""
+
+#: inc/template-tags.php:305
+#, php-format
+msgid "<time class=\"published time datetime=\"%1$s\">%2$s</time>"
+msgstr ""
+
+#: inc/template-tags.php:314
+#, php-format
+msgid "<time class=\"updated\" datetime=\"%1$s\">%2$s</time>"
+msgstr ""
+
+#: inc/template-tags.php:400
+msgid "Share This"
+msgstr ""
+
+#: inc/template-tags.php:413
+msgid "About"
 msgstr ""
