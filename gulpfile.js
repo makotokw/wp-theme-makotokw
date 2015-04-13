@@ -46,7 +46,6 @@ gulp.task('make-languages-po', plugins.shell.task([
 function js(env) {
 	gulp.src([
 		'components/google-code-prettify/js/prettify.js',
-		'js/skip-link-focus-fix.js',
 		'js/script.js'
 	])
 		.pipe(plugins.plumber())
