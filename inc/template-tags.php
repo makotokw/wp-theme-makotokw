@@ -7,45 +7,6 @@
  * @package makotokw
  */
 
-function makotokw_page_header() {
-	?>
-	<header class="page-header">
-		<h1 class="page-title">
-			<?php if ( is_category() ) : ?>
-				<?php printf( __( 'Category Archives: %s', 'makotokw' ), '<span>' . single_cat_title( '', false ) . '</span>' ); ?>
-			<?php elseif ( is_tag() ) : ?>
-				<?php printf( __( 'Tag Archives: %s', 'makotokw' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?>
-			<?php elseif ( is_day() ) : ?>
-				<?php printf( __( 'Daily Archives: %s', 'makotokw' ), '<span>' . get_the_date() . '</span>' ); ?>
-			<?php elseif ( is_month() ) : ?>
-				<?php printf( __( 'Monthly Archives: %s', 'makotokw' ), '<span>' . get_the_date( 'F Y' ) . '</span>' ); ?>
-			<?php elseif ( is_year() ) : ?>
-				<?php printf( __( 'Yearly Archives: %s', 'makotokw' ), '<span>' . get_the_date( 'Y' ) . '</span>' ); ?>
-			<?php elseif ( is_tax( 'mylist' ) ) : ?>
-				<?php printf( __( '%s', 'makotokw' ), '<span>' . single_term_title( '', false ) . '</span>' ); ?>
-			<?php elseif ( is_tax( 'blogs' ) ) : ?>
-				<?php printf( __( 'Blog Archives: %s', 'makotokw' ), '<span>' . single_term_title( '', false ) . '</span>' ); ?>
-			<?php elseif ( is_tax( 'portfolios' ) ) : ?>
-				<?php printf( __( 'Portfolio Archives: %s', 'makotokw' ), '<span>' . single_term_title( '', false ) . '</span>' ); ?>
-			<?php elseif ( is_search() ) : ?>
-				<?php printf( __( 'Search Results for: %s', 'makotokw' ), '<span>' . get_search_query() . '</span>' ); ?>
-			<?php else : ?>
-				<?php echo _( 'Archives', 'makotokw' ); ?>
-			<?php endif; ?>
-		</h1>
-		<?php if ( is_category() ) : $category_description = category_description(); ?>
-			<?php if ( ! empty($category_description) ) : ?>
-				<?php echo apply_filters( 'category_archive_meta', '<div class="taxonomy-description">' . $category_description . '</div>' ); ?>
-			<?php endif; ?>
-		<?php elseif ( is_tag() ) : $tag_description = tag_description(); ?>
-			<?php if ( ! empty($tag_description) ) : ?>
-				<?php echo apply_filters( 'tag_archive_meta', '<div class="taxonomy-description">' . $tag_description . '</div>' ); ?>
-			<?php endif; ?>
-		<?php endif; ?>
-	</header><!-- .page-header -->
-	<?php
-}
-
 /**
  * Display navigation to next/previous pages when applicable
  */
@@ -223,7 +184,7 @@ function makotokw_breadcrumbs() {
 	global $wp_query;
 
 	if ( ! is_home() && ! is_404() ) {
-		$divider = '&nbsp;<i class="fa fa-chevron-right"></i>&nbsp;';
+		$divider = '&nbsp;/&nbsp;';
 		?>
 		<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="breadcrumb">
 		<a href="<?php echo esc_url( home_url( '/' ) ) ?>"><i class="fa fa-home"></i></a><?php echo $divider ?>
@@ -234,22 +195,31 @@ function makotokw_breadcrumbs() {
 			<?php endif; ?>
 			<span itemprop="title"><?php echo single_cat_title( '', false ) ?></span>
 		<?php elseif ( is_tag() ) :?>
-			<a href="/tags/" itemprop="url"><span itemprop="title"><?php _e( 'Tags', 'makotokw' ) ?></a><?php echo $divider ?>
+			<a href="/tags/" itemprop="url"><span itemprop="title"><?php _e( 'Tags', 'makotokw' ) ?></span></a><?php echo $divider ?>
 			<span class="breadcrumb-last"><?php echo single_tag_title( '', false ) ?></span>
 		<?php elseif ( is_mylist() ) : ?>
 			<span class="breadcrumb-last"><?php _e( 'Mylist', 'makotokw' ) ?></span>
+		<?php elseif ( is_tax( 'blogs' ) ) : ?>
+			<span itemprop="title"><?php _e( 'Blog', 'makotokw' ) ?></span><?php echo $divider ?>
+			<span itemprop="title"><?php echo single_cat_title( '', false ) ?></span>
+		<?php elseif ( is_tax( 'portfolios' ) ) : ?>
+			<span itemprop="title"><?php _e( 'Portfolio', 'makotokw' ) ?></span><?php echo $divider ?>
+			<span itemprop="title"><?php echo single_cat_title( '', false ) ?></span>
 		<?php elseif ( is_archive() ) : ?>
-			<?php if ( is_tax( 'blogs' ) ) : ?>
-				<span itemprop="title"><?php _e( 'Blog', 'makotokw' ) ?></span><?php echo $divider ?>
-				<span itemprop="title"><?php echo single_cat_title( '', false ) ?></span>
-			<?php elseif ( is_tax( 'portfolios' ) ) : ?>
-				<span itemprop="title"><?php _e( 'Portfolio', 'makotokw' ) ?></span><?php echo $divider ?>
-				<span itemprop="title"><?php echo single_cat_title( '', false ) ?></span>
+			<?php if ( is_day() ) : ?>
+				<a href="/archives/" itemprop="url"><span itemprop="title"><?php _e( 'Archives', 'makotokw' ) ?></span></a><?php echo $divider ?>
+				<span class="breadcrumb-last"><?php echo get_the_date() ?></span>
+			<?php elseif ( is_month() ) : ?>
+				<a href="/archives/" itemprop="url"><span itemprop="title"><?php _e( 'Archives', 'makotokw' ) ?></span></a><?php echo $divider ?>
+				<span class="breadcrumb-last"><?php echo get_the_date( 'Y年M' ) ?></span>
+			<?php elseif ( is_year() ) : ?>
+				<a href="/archives/" itemprop="url"><span itemprop="title"><?php _e( 'Archives', 'makotokw' ) ?></span></a><?php echo $divider ?>
+				<span class="breadcrumb-last"><?php echo get_the_date( 'Y年' ) ?></span>
 			<?php else : ?>
 				<span class="breadcrumb-last"><?php _e( 'Archives', 'makotokw' ) ?></span>
 			<?php endif ?>
 		<?php elseif ( is_search() ) : ?>
-			<span class="breadcrumb-last"><?php _e( 'Search Results', 'makotokw' ) ?></span>
+			<span class="breadcrumb-last"><?php _e( 'Search Results', 'makotokw' ) ?>: <?php echo get_search_query() ?></span>
 		<?php elseif ( is_single() ) : $category = get_the_category(); ?>
 			<?php if ( is_array( $category ) && count( $category ) > 0 ) : $category_id = get_cat_ID( $category[0]->cat_name ); ?>
 				<a href="/categories/" itemprop="url"><span itemprop="title"><?php _e( 'Categories', 'makotokw' ) ?></span></a><?php echo $divider ?>
@@ -308,7 +278,6 @@ function makotokw_posted_on() {
 	);
 }
 
-
 function makotokw_updated_on() {
 	printf(
 		__( '<time class="updated" datetime="%1$s">%2$s</time>', 'makotokw' ),
@@ -319,7 +288,7 @@ function makotokw_updated_on() {
 
 function makotokw_the_content_more_link( $link ) {
 	if ( preg_match( '/href="([^"]+)"/', $link, $match ) ) {
-		return '<a class="btn btn-default btn-more-link" href="' . $match[1] . '">続きを読む</a>';
+		return '<a class="text-more-link" href="' . $match[1] . '">' . __( 'Continue reading', 'makotokw' )  . '</a>';
 	}
 	return $link;
 }
@@ -470,23 +439,59 @@ function makotokw_tag_cloud( $args = array() ) {
 	}
 }
 
-function makotokw_the_category_slug( $separator = '', $post_id = false ) {
-
-	global $wp_rewrite;
+function makotokw_the_category_slug( $before = '', $separator = '', $post_id = false ) {
 	$categories = get_the_category( $post_id );
 
 	if ( empty($categories) ) {
 		return;
 	}
 
-	$rel = (is_object( $wp_rewrite ) && $wp_rewrite->using_permalinks()) ? 'rel="category tag"' : 'rel="category"';
+	echo esc_html( $before );
 
 	$i = 0;
 	foreach ( $categories as $category ) {
 		if ( 0 < $i ) {
 			echo esc_html( $separator );
 		}
-		?><a href="<?php echo esc_url( get_category_link( $category->term_id ) ) ?>" title="<?php echo esc_attr( sprintf( __( 'View all posts in %s', 'makotokw' ), $category->name ) ) ?>" <?php echo $rel ?>><?php echo esc_html( $category->slug ) ?></a><?php
+		?><a href="<?php echo esc_url( get_category_link( $category->term_id ) ) ?>" title="<?php echo esc_attr( sprintf( __( 'View all posts in %s', 'makotokw' ), $category->name ) ) ?>" rel="category tag"><?php echo esc_html( $category->slug ) ?></a><?php
+		++$i;
+	}
+}
+
+function makotokw_the_tags_slug( $before = '', $separator = '', $post_id = false ) {
+	$tags = get_the_tags( $post_id );
+
+	if ( empty($tags) ) {
+		return;
+	}
+
+	echo esc_html( $before );
+
+	$i = 0;
+	foreach ( $tags as $tag ) {
+		if ( 0 < $i ) {
+			echo esc_html( $separator );
+		}
+		?><a href="<?php echo esc_url( get_category_link( $tag->term_id ) ) ?>" title="<?php echo esc_attr( sprintf( __( 'View all posts in %s', 'makotokw' ), $tag->name ) ) ?>" rel="tag"><?php echo esc_html( $tag->slug ) ?></a><?php
+		++$i;
+	}
+}
+
+function makotokw_the_terms_slug( $before = '', $separator = '', $post_id = false ) {
+	$terms = get_the_terms( $post_id, 'portfolios' );
+
+	if ( empty($terms) ) {
+		return;
+	}
+
+	echo esc_html( $before );
+
+	$i = 0;
+	foreach ( $terms as $term ) {
+		if ( 0 < $i ) {
+			echo esc_html( $separator );
+		}
+		?><a href="<?php echo esc_url( get_term_link( $term ) ) ?>" title="<?php echo esc_attr( sprintf( __( 'View all posts in %s', 'makotokw' ), $term->name ) ) ?>" rel="tag"><?php echo esc_html( $term->slug ) ?></a><?php
 		++$i;
 	}
 }

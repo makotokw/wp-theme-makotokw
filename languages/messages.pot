@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: makotokw 1.0\n"
 "Report-Msgid-Bugs-To: makoto.kw@gmail.com\n"
-"POT-Creation-Date: 2015-04-14 01:24+0900\n"
+"POT-Creation-Date: 2015-04-15 01:01+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,15 +25,15 @@ msgstr ""
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:49
+#: comments.php:47
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: comments.php:50
+#: comments.php:48
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: comments.php:56
+#: comments.php:54
 msgid "Comments are closed."
 msgstr ""
 
@@ -64,7 +64,7 @@ msgid "Semantic Personal Publishing Platform"
 msgstr ""
 
 #: functions.php:67
-msgid "Site Info Menu"
+msgid "Site Menu"
 msgstr ""
 
 #: functions.php:68

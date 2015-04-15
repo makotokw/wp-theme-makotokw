@@ -58,13 +58,12 @@
 			</div>
 		</div>
 	</header>
-		<?php if ( ! is_home() ) : ?>
+	<?php if ( ! is_home() ) : ?>
 	<nav class="site-navi">
 		<div class="container">
 			<?php makotokw_breadcrumbs(); ?>
 		</div>
 	</nav>
-		<?php endif ?>
-
+	<?php endif ?>
 	<div id="main" class="site-main">
 

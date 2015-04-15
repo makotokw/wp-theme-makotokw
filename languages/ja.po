@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: makoto.kw@gmail.com\n"
-"POT-Creation-Date: 2015-04-14 01:24+0900\n"
+"POT-Creation-Date: 2015-04-15 01:01+0900\n"
 "PO-Revision-Date: 2013-04-28 18:46+0900\n"
 "Last-Translator: Makoto Kawasaki <makoto.kw@gmail.com>\n"
 "Language-Team: Japanese\n"
@@ -25,15 +25,15 @@ msgstr ""
 msgid "Comment navigation"
 msgstr "コメントナビゲーション"
 
-#: comments.php:49
+#: comments.php:47
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: comments.php:50
+#: comments.php:48
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: comments.php:56
+#: comments.php:54
 msgid "Comments are closed."
 msgstr "コメントは停止中です。"
 
@@ -64,12 +64,12 @@ msgid "Semantic Personal Publishing Platform"
 msgstr ""
 
 #: functions.php:67
-msgid "Site Info Menu"
-msgstr ""
+msgid "Site Menu"
+msgstr "サイトメニュー"
 
 #: functions.php:68
 msgid "Portfolio Menu"
-msgstr ""
+msgstr "ポートフォリオメニュー
 
 #: functions.php:101
 msgid "Sidebar"
@@ -263,11 +263,11 @@ msgstr "マイリスト"
 
 #: inc/template-tags.php:243
 msgid "Blog"
-msgstr ""
+msgstr "ブログ"
 
 #: inc/template-tags.php:246
 msgid "Portfolio"
-msgstr ""
+msgstr "ポートフォリオ"
 
 #: inc/template-tags.php:252
 msgid "Search Results"
@@ -295,4 +295,3 @@ msgstr ""
 #: inc/template-tags.php:413
 msgid "About"
 msgstr ""
-

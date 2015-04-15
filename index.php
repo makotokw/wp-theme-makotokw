@@ -17,9 +17,6 @@ get_header(); ?>
 		<main class="site-content" role="main">
 			<div class="container">
 				<?php if ( have_posts() ) : ?>
-					<?php if ( ! is_category() && ! is_tag() ) : ?>
-						<?php makotokw_page_header(); ?>
-					<?php endif; ?>
 					<div class="post-summaries">
 						<?php while ( have_posts() ) : the_post(); ?>
 							<?php get_template_part( 'content' ); ?>
