@@ -219,13 +219,12 @@ q:after {
 }
 
 blockquote {
-  padding: $block-padding;
-  color: $brand-default-text;
-  background-color: $brand-default-bg;
+  margin: $block-margin 0;
+  padding: 0 $block-padding;
+  color: $block-quote-text;
   border-left: $site-border-left-width solid $brand-default-border;
   font-style: italic;
   font-weight: 300;
-  min-height: 100px;
 
   cite,
   small {
@@ -233,11 +232,6 @@ blockquote {
   }
   blockquote {
     margin-right: 0;
-  }
-  &:before {
-    @include block-awesome-icon(2em);
-    @extend .fa-quote-left:before;
-    color: $brand-default-border;
   }
 }
 

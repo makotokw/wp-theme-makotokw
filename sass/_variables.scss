@@ -51,18 +51,8 @@ $silver: #BDC3C7;
 $concrete: #95A5A6;
 $asbestos: #7F8C8D;
 
-// Bland colors
-$amazon-orange: #e47911;
-$twitter-blue: #55acee;
-$facebook-blue: #3b5998;
-$hatena-bookmark-blue: #5279e7;
-$zenback-green: #7fc527;
-$qiita-green: #59bb0c;
-$evernote-green: #5fb336;
-$google-plus-red: #dd4b39;
-$pocket-pink: #d3505a;
-
-@import "partials/materialcolors";
+@import "lib/blandcolors";
+@import "lib/materialcolors";
 
 $brand-primary: #428bca;
 $brand-success: #5cb85c;
@@ -114,7 +104,7 @@ $border-radius-large: 6px;
 $border-radius-small: 3px;
 
 $site-border-width: 1px;
-$site-border-left-width: 5px;
+$site-border-left-width: .6em;
 
 $site-default-text: $md-grey-800;
 $site-header-text: $md-grey-900;
@@ -175,7 +165,9 @@ $block-default-divider: rgba(0,0,0,0.05);
 $block-default-border: #e9ecef;
 $block-border-width: $site-border-width;
 $block-border-radius: 6px;
-$block-padding: 24px;
+$block-margin: 1.6em;
+$block-padding: 1.6em;
+$block-quote-text: $md-grey-700;
 
 $fa-font-path: 'components/font-awesome/fonts';
 $generic-font-path: 'fonts/genericicons';
