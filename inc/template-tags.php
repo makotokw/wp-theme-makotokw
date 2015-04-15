@@ -496,17 +496,6 @@ function makotokw_the_terms_slug( $taxonomy, $before = '', $separator = '', $pos
 	}
 }
 
-function makotokw_section_category_and_tag( $title = 'Tag' ) {
-	?>
-	<section class="section section-mini section-category-tag">
-		<h2 class="section-title"><?php echo esc_html( $title ) ?></h2>
-		<div class="section-content">
-			<?php makotokw_the_category_and_tag(); ?></a>
-		</div>
-	</section>
-	<?php
-}
-
 function makotokw_the_category_and_tag() {
 	$categories_list = get_the_category_list( ', ' );
 	if ( $categories_list && makotokw_categorized_blog() ) :?>
@@ -521,6 +510,13 @@ function makotokw_the_category_and_tag() {
 			<?php printf( ', %1$s', $tags_list ); ?>
 		</span>
 	<?php endif; // End if $tags_list
+
+	$term_list = get_the_term_list( false, 'portfolios', '', ', ');
+	if ( $term_list ) :?>
+		<span class="entry-portfolios">
+			<?php printf( ', %1$s', $term_list ); ?>
+		</span>
+	<?php endif; // End if $term_list
 }
 
 function makotokw_the_tag_links( $prefix = ', ' ) {
@@ -528,6 +524,17 @@ function makotokw_the_tag_links( $prefix = ', ' ) {
 	if ( $tags_list ) {
 		printf( $prefix . ' %1$s', $tags_list );
 	}
+}
+
+function makotokw_section_category_and_tag( $title = 'Tag' ) {
+	?>
+	<section class="section section-mini section-category-tag">
+		<h2 class="section-title"><?php echo esc_html( $title ) ?></h2>
+		<div class="section-content">
+			<?php makotokw_the_category_and_tag(); ?></a>
+		</div>
+	</section>
+	<?php
 }
 
 /**
