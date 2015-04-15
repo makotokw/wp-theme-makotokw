@@ -19,7 +19,7 @@ $only_excerpts = is_home() || is_year() || is_month() || is_search();
 		<section class="entry-meta">
 			<?php if ( 'post' == $post_type ) : ?>
 				<span class="entry-date"><?php makotokw_posted_on(); ?></span>
-				<span class="cat-links"><?php makotokw_the_category_slug( ', ' ); ?></span><span class="tag-links"><?php makotokw_the_tag_links(); ?></span>
+				<span class="tag-links"><?php makotokw_the_category_slug( '', ', ' ); ?><?php makotokw_the_tags_slug( ', ', ', ' ); ?><?php makotokw_the_terms_slug( 'portfolios', ', ', ', ' ) ?></span>
 			<?php endif; ?>
 		</section>
 	</header>

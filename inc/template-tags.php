@@ -477,8 +477,8 @@ function makotokw_the_tags_slug( $before = '', $separator = '', $post_id = false
 	}
 }
 
-function makotokw_the_terms_slug( $before = '', $separator = '', $post_id = false ) {
-	$terms = get_the_terms( $post_id, 'portfolios' );
+function makotokw_the_terms_slug( $taxonomy, $before = '', $separator = '', $post_id = false ) {
+	$terms = get_the_terms( $post_id, $taxonomy );
 
 	if ( empty($terms) ) {
 		return;
