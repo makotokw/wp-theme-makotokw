@@ -51,7 +51,7 @@ $silver: #BDC3C7;
 $concrete: #95A5A6;
 $asbestos: #7F8C8D;
 
-@import "lib/blandcolors";
+@import "lib/brandcolors";
 @import "lib/materialcolors";
 
 $brand-primary: #428bca;
@@ -77,13 +77,6 @@ $state-success-border: darken(adjust-hue($state-success-bg, -10), 5%);
 $state-info-text: #3a87ad;
 $state-info-bg: lighten(#d9edf7, 7%);
 $state-info-border: darken(adjust-hue($state-info-bg, -10), 7%);
-
-$github-bg: #f9f9fb;
-$github-border: #ddd;
-$qiita-bg: lighten(desaturate($qiita-green, 20%), 58%);
-$qiita-border: darken(adjust-hue($qiita-green, -10), 5%);
-$evernote-bg: lighten(desaturate($evernote-green, 20%), 52%);
-$evernote-border: darken(adjust-hue($evernote-green, -10), 5%);
 
 $font-family-sans-serif: Helvetica, Arial, sans-serif;
 $font-family-sans-serif-ja: '游ゴシック', YuGothic, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
@@ -159,10 +152,11 @@ $entry-title-text: $md-blue-grey-900;
 $entry-title-text-over: $md-light-blue-600;
 $caption-text: #767676;
 
-$block-default-bg: #f7f9fa;
-$block-default-text: #34495e;
+$block-default-bg: $white;
+$block-default-text: $md-blue-grey-700;
+$block-default-icon: $md-blue-grey-400;
 $block-default-divider: rgba(0,0,0,0.05);
-$block-default-border: #e9ecef;
+$block-default-border: rgba(0,0,0,0.1);
 $block-border-width: $site-border-width;
 $block-border-radius: 6px;
 $block-margin: 1.6em;

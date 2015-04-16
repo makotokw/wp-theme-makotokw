@@ -101,10 +101,7 @@
   line-height: $line-height-large;
 
   img {
-    padding: 4px;
-    background-color: $white;
-    border: 1px solid $site-default-border;
-    border-radius: $border-radius-base;
+    margin: $block-margin auto;
   }
 }
 
