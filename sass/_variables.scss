@@ -89,8 +89,13 @@ $font-size-large: $font-size-base * 1.25; // ~18px
 $font-size-small: $font-size-base * 0.85; // ~12px
 $font-size-mini: $font-size-base * 0.75; // ~11px
 
-$line-height-base:        1.7;
-$line-height-large:       2.0;
+$entry-title-font-size: 40px;
+$entry-content-font-size: 17px;
+$entry-list-title-font-size: 22px;
+$entry-list-content-font-size: 16px;
+
+$line-height-base: 1.7;
+$line-height-large: 2.0;
 
 $border-radius-base: 4px;
 $border-radius-large: 6px;

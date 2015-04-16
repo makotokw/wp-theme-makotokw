@@ -37,11 +37,13 @@
 // Unless desktop
 @media (max-width: $container-desktop) {
 
-  .page-title {
-    font-size: 22px;
-  }
   .entry-title {
-    font-size: 22px;
+    .post-single & {
+      font-size: $entry-list-title-font-size;
+    }
+  }
+  .page-title {
+    font-size: $entry-list-title-font-size;
   }
   .entry-content {
     overflow-x: auto;
