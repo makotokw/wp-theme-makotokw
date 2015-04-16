@@ -184,7 +184,7 @@ function makotokw_breadcrumbs() {
 	global $wp_query;
 
 	if ( ! is_home() && ! is_404() ) {
-		$divider = '&nbsp;/&nbsp;';
+		$divider = '&nbsp;<i class="fa fa-angle-right"></i>&nbsp;';
 		?>
 		<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="breadcrumb">
 		<a href="<?php echo esc_url( home_url( '/' ) ) ?>"><i class="fa fa-home"></i></a><?php echo $divider ?>
