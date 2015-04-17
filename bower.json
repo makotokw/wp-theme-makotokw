@@ -9,16 +9,25 @@
   "dependencies": {
     "google-code-prettify": "~1.0.0",
     "font-awesome": "~4.3",
-    "html5shiv": "~3.7"
+    "html5shiv": "~3.7",
+    "normalize.css": "~3.0.3"
   },
   "overrides": {
     "google-code-prettify": {
-      "main": ["src/prettify.*"]
+      "main": [
+        "src/prettify.*"
+      ]
     },
     "font-awesome": {
-      "main": ["scss/_*.scss", "fonts/*.*"],
+      "main": [
+        "scss/_*.scss",
+        "fonts/*.*"
+      ],
       "normalize": {
-        "fonts": ["*.otf", "*-webfont.*"]
+        "fonts": [
+          "*.otf",
+          "*-webfont.*"
+        ]
       }
     }
   }

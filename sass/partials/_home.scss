@@ -87,6 +87,10 @@ $section-page-alternate-background-color: lighten($gray-lighter, 4%);
     }
   }
 
+  .col-md-6 {
+    box-sizing: border-box;
+  }
+
   .list-history {
     list-style: none;
     padding-left: 0;
