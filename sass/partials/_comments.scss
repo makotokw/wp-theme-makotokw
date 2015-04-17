@@ -95,7 +95,8 @@
   }
 
   .comment-content {
-    @include block-white(4px);
+    border: $site-border-width solid $block-default-border;
+    padding: $block-padding;
     font-family: $font-family-sans-serif-ja;
     font-size: $font-size-base * 0.9;
     line-height: $line-height-large;
@@ -116,11 +117,6 @@
     display: block;
     width: 100%;
     @extend .comment-small;
-    &:before {
-      font-family: FontAwesome;
-      content: $fa-var-exclamation-triangle;
-      margin-right: 5px;
-    }
   }
 }
 
@@ -138,7 +134,11 @@
   > .comment-body {
     .comment-author {
       .avatar {
+        border: $site-border-width solid $site-accent-color;
+        padding: 2px;
       }
+    }
+    .comment-content {
     }
   }
 }
