@@ -3,4 +3,9 @@
   table {
     @extend .table-bordered;
   }
+
+  .wp-gfm-toc-content {
+    border-radius: 0;
+    border: $site-border-width solid $block-default-divider;
+  }
 }
