@@ -40,7 +40,7 @@
 .note-ins {
   @extend .note;
   color: $state-warning-text;
-  border-color: $state-warning-border;
+  border: none;
   background-color: $state-warning-bg;
 }
 
