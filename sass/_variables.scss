@@ -108,18 +108,14 @@ $site-default-text: $md-grey-800;
 $site-header-text: $md-grey-900;
 $site-default-bg: $white;
 $site-neutral-color: $md-grey-400;
-$site-accent-color: $md-light-blue-400;
-$site-dark-accent-color: $md-blue-grey-900;
+$site-accent-color: $blue-light;
+$site-dark-accent-color: $blue-dark;
 $site-default-border: $brand-default-border;
 
-$site-default-link: $md-light-blue-400;
+$site-default-link: $site-accent-color;
 $site-default-link-over: darken($site-default-link, 10%);
-$site-neutral-link: $silver;
+$site-neutral-link: $site-neutral-color;
 $site-neutral-link-over: darken($site-neutral-link, 10%);
-$site-accent-link: darken($blue, 20%);
-$site-accent-link-over: darken($site-accent-link, 10%);
-$site-inverse-link-text: $silver;
-$site-inverse-link-over: darken($site-inverse-link-text, 10%);
 
 // form
 $form-default-border: $md-grey-200;
@@ -152,9 +148,9 @@ $errorpage-bg-icon: #ddd;
 
 // misc
 $site-logo-text: $md-blue-grey-900;
-$site-logo-text-over: $md-light-blue-600;
+$site-logo-text-over: $site-default-link-over;
 $entry-title-text: $md-blue-grey-900;
-$entry-title-text-over: $md-light-blue-600;
+$entry-title-text-over: $site-default-link-over;
 $caption-text: #767676;
 
 $block-default-bg: $white;

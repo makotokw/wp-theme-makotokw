@@ -56,11 +56,6 @@
   font-size: $font-size-small;
   color: $site-neutral-color;
 
-  .cat-links,
-  .tag-links {
-    text-transform: capitalize;
-  }
-
   .portfolio-posts-area {
     .entry-date {
       margin: 0 4px;
@@ -76,10 +71,12 @@
   position: relative;
 
   .entry-meta {
-    margin: 5px;
+    margin: 4px 0;
+    font-family: Verdana, Arial;
+    font-weight: 400;
 
-    .cat-links,
     .tag-links {
+      text-transform: capitalize;
       a {
         color: $site-neutral-color;
         &:hover {
@@ -248,9 +245,9 @@ object {
       list-style: none;
       &:before {
         font-family: FontAwesome;
-        content: $fa-var-chevron-circle-right; // fa-chevron-circle-right
+        content: $fa-var-angle-right;
         vertical-align: middle;
-        color: $site-default-link;
+        color: $site-neutral-color;
         margin-right: 5px;
       }
     }

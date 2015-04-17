@@ -26,10 +26,10 @@
 }
 
 .btn-primary {
-  background-color: $site-accent-link;
+  background-color: $brand-primary;
   color: $white;
   &:hover {
-    background-color: $site-accent-link-over;
+    background-color: darken($brand-primary, 10%);
     color: $white;
   }
 }

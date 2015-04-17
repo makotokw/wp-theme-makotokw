@@ -3,18 +3,16 @@
 ----------------------------------------------- */
 .breadcrumb {
   display: block;
-
+  font-family: $font-family-sans-serif-ja;
   font-size: $font-size-mini;
-  letter-spacing: 1px;
   color: $site-neutral-color;
-
   .fa-chevron-right {
     color: $site-neutral-color;
   }
-
   a {
     color: $site-neutral-color;
   }
   .breadcrumb-last {
+    font-weight: bold;
   }
 }

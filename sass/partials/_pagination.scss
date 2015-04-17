@@ -24,10 +24,10 @@
       .page {
         @extend %pagenation-page;
         color: $white;
-        background-color: darken($site-accent-link, 10%);
+        background-color: $site-dark-accent-color;
         &:hover {
           color: $white;
-          background-color: darken($site-accent-link, 10%);
+          background-color: $site-dark-accent-color;
         }
       }
     }
