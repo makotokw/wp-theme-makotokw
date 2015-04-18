@@ -45,6 +45,7 @@ gulp.task('make-languages-po', plugins.shell.task([
 
 function js(env) {
 	gulp.src([
+		'components/modernizr/js/modernizr.js',
 		'components/google-code-prettify/js/prettify.js',
 		'js/script.js'
 	])
