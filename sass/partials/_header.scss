@@ -9,14 +9,20 @@
 
     .site-title {
       margin: 0;
-      //font-size: 52px;
-      font-weight: 700;
       a {
         color: $site-logo-text;
         &:hover {
           color: $site-logo-text-over;
+          path {
+            fill: $site-default-link-over;
+          }
         }
       }
+    }
+    .site-logo {
+      width: 190px;
+      height: 40px;
+      margin-bottom: 5px;
     }
     .site-description {
       margin: 0;
@@ -26,21 +32,6 @@
       font-weight: 300;
     }
   }
-
-  //.btn-rss {
-  //  border-color: $md-orange-200;
-  //  background-color: $white;
-  //  .icon {
-  //    color: $md-orange-200;
-  //  }
-  //  &:hover {
-  //    border-color: $md-orange-400;
-  //    background-color: $white;
-  //    .icon {
-  //      color: $md-orange-400;
-  //    }
-  //  }
-  //}
 
   .sub-nav {
     float: right;

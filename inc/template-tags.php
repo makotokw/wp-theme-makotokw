@@ -497,24 +497,24 @@ function makotokw_the_terms_slug( $taxonomy, $before = '', $separator = '', $pos
 }
 
 function makotokw_the_category_and_tag() {
-	$categories_list = get_the_category_list( ', ' );
+	$categories_list = get_the_category_list( '&nbsp;' );
 	if ( $categories_list && makotokw_categorized_blog() ) :?>
 		<span class="entry-categories">
 			<?php printf( '%1$s', $categories_list ); ?>
 		</span>
 	<?php endif; // End if categories ?>
 	<?php
-	$tags_list = get_the_tag_list( '', ', ' );
+	$tags_list = get_the_tag_list( '', '&nbsp;' );
 	if ( $tags_list ) :?>
 		<span class="entry-tags">
-			<?php printf( ', %1$s', $tags_list ); ?>
+			<?php printf( '&nbsp;&nbsp;%1$s', $tags_list ); ?>
 		</span>
 	<?php endif; // End if $tags_list
 
-	$term_list = get_the_term_list( false, 'portfolios', '', ', ' );
+	$term_list = get_the_term_list( false, 'portfolios', '', '&nbsp;' );
 	if ( $term_list ) :?>
 		<span class="entry-portfolios">
-			<?php printf( ', %1$s', $term_list ); ?>
+			<?php printf( '&nbsp;&nbsp;%1$s', $term_list ); ?>
 		</span>
 	<?php endif; // End if $term_list
 }
