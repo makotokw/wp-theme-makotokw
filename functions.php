@@ -131,10 +131,6 @@ function makotokw_scripts() {
 	}
 	wp_enqueue_style( 'makotokw-style', get_stylesheet_uri(), array(), THEME_STYLE_CSS_REV );
 
-	// Loads the Internet Explorer specific stylesheet.
-	wp_enqueue_style( 'makotokw-ie', get_template_directory_uri() . '/ie.css', array( 'makotokw-style' ), '20130428' );
-	$wp_styles->add_data( 'makotokw-ie', 'conditional', 'lt IE 9' );
-
 	wp_register_script( 'makotokw-script', get_template_directory_uri() . '/style.js', array( 'jquery' ), THEME_STYLE_SCRIPT_REV, true );
 	wp_localize_script( 'makotokw-script', 'makotokw', array( 'counter_api' => WP_THEME_COUNT_API ) );
 	wp_enqueue_script( 'makotokw-script' );
