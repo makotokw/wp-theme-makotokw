@@ -3,8 +3,7 @@ makotokw theme for WordPress
 
 WordPress theme for [kwLog](http://blog.makotokw.com).
 
-
-![Screenshot](https://raw.githubusercontent.com/makotokw/wp-theme-makotokw/makotokw2014/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/makotokw/wp-theme-makotokw/makotokw2015/screenshot.png)
 
  * Created by [_s](http://underscores.me)
  * Inspired [Twenty Fifteen](https://twentyfifteendemo.wordpress.com/), [ghost](http://blog.ghost.org/) and [medium](https://medium.com/)
