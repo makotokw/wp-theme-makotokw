@@ -48,6 +48,7 @@ cp -p config.php.sample config.php
 
 * Node.JS, [Gulp](http://gruntjs.com/) and [Bower](http://bower.io/)
 * Ruby and [Sass](http://sass-lang.com/)
+* gettext, [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) and [WordPress-Coding-Standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards)
 
 ### Setup
 
@@ -56,23 +57,14 @@ cd /path/to/wordpress/wp-content/themes/makotokw2015
 gem install sass
 npm install -g gulp bower
 npm install
-bower install
 ```
 
 ## Build
 
 ```
 cd /path/to/wordpress/wp-content/themes/makotokw2015
-gulp
-```
-
-### phpcs
-
-https://github.com/squizlabs/PHP_CodeSniffer
-https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
-
-```
-gulp phpcs
+gulp bower:install
+gulp build
 ```
 
 ## License

@@ -5,8 +5,8 @@
  * @package makotokw
  */
 
-define( 'THEME_STYLE_CSS_REV', '2014091923' );
-define( 'THEME_STYLE_SCRIPT_REV', '2014071209' );
+define( 'THEME_STYLE_CSS_REV', '2015042002' );
+define( 'THEME_STYLE_SCRIPT_REV', '2015042002' );
 define( 'THEME_DATE_FORMAT', 'Y/m/d' );
 
 if ( ! isset( $content_width ) ) {

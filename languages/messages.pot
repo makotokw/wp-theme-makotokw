@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: makotokw 1.0\n"
 "Report-Msgid-Bugs-To: makoto.kw@gmail.com\n"
-"POT-Creation-Date: 2015-04-15 01:01+0900\n"
+"POT-Creation-Date: 2015-04-20 03:18+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,23 +17,19 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: 404.php:15
+#: 404.php:14
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
 #: comments.php:46
-msgid "Comment navigation"
-msgstr ""
-
-#: comments.php:47
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: comments.php:48
+#: comments.php:47
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: comments.php:54
+#: comments.php:53
 msgid "Comments are closed."
 msgstr ""
 
@@ -42,7 +38,7 @@ msgstr ""
 msgid "Permalink to %s"
 msgstr ""
 
-#: content.php:30
+#: content.php:30 inc/template-tags.php:289
 msgid "Continue reading"
 msgstr ""
 
@@ -102,10 +98,6 @@ msgid ""
 msgstr ""
 
 #: searchform.php:10
-msgid "Search"
-msgstr ""
-
-#: searchform.php:11
 msgid "Search the site"
 msgstr ""
 
@@ -167,126 +159,79 @@ msgstr ""
 msgid "Blogs"
 msgstr ""
 
-#: inc/template-tags.php:15
-#, php-format
-msgid "Category Archives: %s"
-msgstr ""
-
-#: inc/template-tags.php:17
-#, php-format
-msgid "Tag Archives: %s"
-msgstr ""
-
-#: inc/template-tags.php:19
-#, php-format
-msgid "Daily Archives: %s"
-msgstr ""
-
-#: inc/template-tags.php:21
-#, php-format
-msgid "Monthly Archives: %s"
-msgstr ""
-
-#: inc/template-tags.php:23
-#, php-format
-msgid "Yearly Archives: %s"
-msgstr ""
-
-#: inc/template-tags.php:25
-#, php-format
-msgid "%s"
-msgstr ""
-
-#: inc/template-tags.php:27
-#, php-format
-msgid "Blog Archives: %s"
-msgstr ""
-
-#: inc/template-tags.php:29
-#, php-format
-msgid "Portfolio Archives: %s"
-msgstr ""
-
-#: inc/template-tags.php:31
-#, php-format
-msgid "Search Results for: %s"
-msgstr ""
-
-#: inc/template-tags.php:33 inc/template-tags.php:249
-msgid "Archives"
-msgstr ""
-
-#: inc/template-tags.php:74
-msgid "Post navigation"
-msgstr ""
-
-#: inc/template-tags.php:94
+#: inc/template-tags.php:51
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-#: inc/template-tags.php:98
+#: inc/template-tags.php:55
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: inc/template-tags.php:169
+#: inc/template-tags.php:126
 msgid "First"
 msgstr ""
 
-#: inc/template-tags.php:172
+#: inc/template-tags.php:129
 msgid "Previous"
 msgstr ""
 
-#: inc/template-tags.php:184
+#: inc/template-tags.php:141
 msgid "Next"
 msgstr ""
 
-#: inc/template-tags.php:187
+#: inc/template-tags.php:144
 msgid "Last"
 msgstr ""
 
-#: inc/template-tags.php:231 inc/template-tags.php:255
+#: inc/template-tags.php:190 inc/template-tags.php:223
 msgid "Categories"
 msgstr ""
 
-#: inc/template-tags.php:237
+#: inc/template-tags.php:196
 msgid "Tags"
 msgstr ""
 
-#: inc/template-tags.php:240
+#: inc/template-tags.php:199
 msgid "Mylist"
 msgstr ""
 
-#: inc/template-tags.php:243
+#: inc/template-tags.php:201
 msgid "Blog"
 msgstr ""
 
-#: inc/template-tags.php:246
+#: inc/template-tags.php:204
 msgid "Portfolio"
 msgstr ""
 
-#: inc/template-tags.php:252
+#: inc/template-tags.php:208 inc/template-tags.php:211
+#: inc/template-tags.php:214 inc/template-tags.php:217
+msgid "Archives"
+msgstr ""
+
+#: inc/template-tags.php:220
 msgid "Search Results"
 msgstr ""
 
-#: inc/template-tags.php:295 inc/template-tags.php:489
+#: inc/template-tags.php:263 inc/template-tags.php:454
+#: inc/template-tags.php:473 inc/template-tags.php:492
 #, php-format
 msgid "View all posts in %s"
 msgstr ""
 
-#: inc/template-tags.php:305
+#: inc/template-tags.php:273
 #, php-format
 msgid "<time class=\"published time datetime=\"%1$s\">%2$s</time>"
 msgstr ""
 
-#: inc/template-tags.php:314
+#: inc/template-tags.php:281
 #, php-format
 msgid "<time class=\"updated\" datetime=\"%1$s\">%2$s</time>"
 msgstr ""
 
-#: inc/template-tags.php:400
+#: inc/template-tags.php:367
 msgid "Share This"
 msgstr ""
 
-#: inc/template-tags.php:413
+#: inc/template-tags.php:380
 msgid "About"
 msgstr ""

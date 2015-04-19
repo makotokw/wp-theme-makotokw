@@ -7,17 +7,16 @@ var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var del = require('del');
 
-gulp.task('clean', function (cb) {
+gulp.task('clean:components', function (cb) {
 	del(['components'], cb);
 });
 
-gulp.task('clean:map', function (cb) {
-	del(['*.map'], function (err, deletedFiles) {
-		if (deletedFiles.length > 0) {
-			plugins.util.log('Files deleted:', deletedFiles.join(', '));
-		}
-		cb();
-	});
+gulp.task('bower:install', ['clean:components'], function () {
+	var bower = require('main-bower-files');
+	plugins.shell.task(['bower install']);
+	gulp.src(bower(), {base: './bower_components'})
+		.pipe(plugins.bowerNormalize({bowerJson: './bower.json'}))
+		.pipe(gulp.dest('./components/'));
 });
 
 gulp.task('violations', ['phpcs', 'jshint']);
@@ -42,6 +41,15 @@ gulp.task('makepot', plugins.shell.task([
 gulp.task('make-languages-po', plugins.shell.task([
 	'msgfmt -o ./languages/ja.mo ./languages/ja.po'
 ]));
+
+gulp.task('clean:map', function (cb) {
+	del(['*.map'], function (err, deletedFiles) {
+		if (deletedFiles.length > 0) {
+			plugins.util.log('Files deleted:', deletedFiles.join(', '));
+		}
+		cb();
+	});
+});
 
 function js(env) {
 	gulp.src([
@@ -99,20 +107,7 @@ gulp.task('bs-reload', function () {
 	browserSync.reload();
 });
 
-gulp.task('bower:install', function () {
-	var bower = require('main-bower-files');
-	plugins.shell.task(['bower install']);
-	gulp.src(bower(), {base: './bower_components'})
-		.pipe(plugins.bowerNormalize({bowerJson: './bower.json'}))
-		.pipe(gulp.dest('./components/'));
-});
-
-gulp.task('default',
-	[
-		'js:dev',
-		'sass:dev',
-		'browser-sync'
-	],
+gulp.task('default', ['js:dev', 'sass:dev', 'browser-sync'],
 	function () {
 		gulp.watch('js/*.js', ['jshint', 'js:dev']);
 		gulp.watch('sass/**/*.scss', ['sass:dev']);
@@ -121,11 +116,4 @@ gulp.task('default',
 	}
 );
 
-gulp.task('build', [
-	'clean',
-	'bower',
-	'sass',
-	'js',
-	'clean:map'
-], function () {
-});
+gulp.task('build', ['js', 'sass', 'clean:map']);
