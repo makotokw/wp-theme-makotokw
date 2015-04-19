@@ -32,10 +32,7 @@ function makotokw_content_nav( $nav_id ) {
 
 	?>
 	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo esc_attr( $nav_class ); ?>">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'makotokw' ); ?></h1>
-
 		<?php if ( is_single() ) : // navigation links for single posts ?>
-
 			<?php if ( get_next_post_link() ) : ?>
 				<div class="section section-mini">
 					<h2 class="section-title">Newer post</h2>
@@ -48,7 +45,6 @@ function makotokw_content_nav( $nav_id ) {
 					<div class="section-content"><?php previous_post_link( '%link', '%title' ); ?></div>
 				</div>
 			<?php endif; ?>
-
 		<?php elseif ( $wp_query->max_num_pages > 1 && (is_home() || is_archive() || is_search()) ) : // navigation links for home, archive, and search pages ?>
 			<div class="nav-links">
 				<?php if ( get_next_posts_link() ) : ?>

@@ -43,9 +43,9 @@ $only_excerpts = is_home() || is_year() || is_month() || is_search();
 	<?php endif; ?>
 
 	<footer class="entry-footer">
-		<section class="entry-meta">
+		<div class="entry-meta">
 			<?php makotokw_author(); ?>
-		</section>
+		</div>
 		<?php if ( ! is_preview() && ! $only_excerpts ) : ?>
 			<?php if ( $is_detail_page ) : ?>
 				<?php makotokw_share_this(); ?>
