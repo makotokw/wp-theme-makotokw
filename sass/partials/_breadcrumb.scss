@@ -6,11 +6,12 @@
   font-family: $font-family-sans-serif-ja;
   font-size: $font-size-mini;
   color: $site-neutral-color;
-  .fa-chevron-right {
-    color: $site-neutral-color;
-  }
+
   a {
     color: $site-neutral-color;
+    &:hover {
+      color: $site-default-link-over;
+    }
   }
   .breadcrumb-last {
     font-weight: bold;
