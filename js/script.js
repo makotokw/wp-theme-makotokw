@@ -1,19 +1,6 @@
 /*global makotokw, jQuery*/
 (function($){
-	var isAdmin = false,
-		ua = navigator.userAgent,
-		isIE = ua.match(/msie/i),
-		isIE7 = isIE && ua.match(/msie 7\./i),
-		isIE8 = isIE && ua.match(/msie 8\./i);
-	if (isIE) {
-		if (isIE7) {
-			$("html").addClass("ie ie7");
-		} else if (isIE8) {
-			$("html").addClass("ie ie8");
-		} else {
-			$("html").addClass("ie");
-		}
-	}
+	var isAdmin = false;
 
 	function updateShareCount() {
 		var $shareThis = $('#shareThis');
@@ -73,14 +60,13 @@
 		}
 	}
 
-	var $main = $('#main'),
-		$footerMargin = $('#footerMargin');
+	var $footerMargin = $('#footerMargin');
 
 	function stickyFooter() {
 		var windowHeight = $(window).height();
 		var docHeight = $(document.body).height() - $footerMargin.height();
 		var diff = windowHeight - docHeight;
-		if ( isAdmin ) {
+		if (isAdmin) {
 			diff -= 32;
 		}
 		if (diff <= 0) {
@@ -94,11 +80,10 @@
 		.scroll(stickyFooter)
 		.resize(stickyFooter);
 
-
 	$('#siteLogo').each(function() {
+		var $img = $(this);
 		if (Modernizr.svg) {
-			var $img = $(this),
-				id = $img.attr('id'),
+			var id = $img.attr('id'),
 				cls = $img.attr('class');
 
 			$.get($img.attr('src'), function (data) {
@@ -114,7 +99,7 @@
 				$img.replaceWith($svg);
 			}, 'xml');
 		} else {
-			$(this).attr('src', $(this).attr('src').replace(/\.svg/gi, '.png'));
+			$img.attr('src', $img.attr('src').replace(/\.svg/gi, '.png'));
 		}
 	});
 

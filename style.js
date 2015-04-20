@@ -48,7 +48,7 @@ window.Modernizr = function(e, t, n) {
     }
     var d, f, p = "2.8.3", h = {}, m = !0, g = t.documentElement, v = "modernizr", y = t.createElement(v), b = y.style, x = t.createElement("input"), w = ":)", C = {}.toString, S = " -webkit- -moz- -o- -ms- ".split(" "), E = "Webkit Moz O ms", k = E.split(" "), N = E.toLowerCase().split(" "), T = {
         svg: "http://www.w3.org/2000/svg"
-    }, P = {}, _ = {}, L = {}, A = [], $ = A.slice, R = function(e, n, r, a) {
+    }, P = {}, _ = {}, L = {}, $ = [], A = $.slice, R = function(e, n, r, a) {
         var o, i, s, l, c = t.createElement("div"), u = t.body, d = u || t.createElement("body");
         if (parseInt(r, 10)) for (;r--; ) s = t.createElement("div"), s.id = a ? a[r] : v + (r + 1), 
         c.appendChild(s);
@@ -90,14 +90,14 @@ window.Modernizr = function(e, t, n) {
     }, Function.prototype.bind || (Function.prototype.bind = function(e) {
         var t = this;
         if ("function" != typeof t) throw new TypeError();
-        var n = $.call(arguments, 1), r = function() {
+        var n = A.call(arguments, 1), r = function() {
             if (this instanceof r) {
                 var a = function() {};
                 a.prototype = t.prototype;
-                var o = new a(), i = t.apply(o, n.concat($.call(arguments)));
+                var o = new a(), i = t.apply(o, n.concat(A.call(arguments)));
                 return Object(i) === i ? i : o;
             }
-            return t.apply(e, n.concat($.call(arguments)));
+            return t.apply(e, n.concat(A.call(arguments)));
         };
         return r;
     }), P.flexbox = function() {
@@ -222,7 +222,7 @@ window.Modernizr = function(e, t, n) {
     }, P.svgclippaths = function() {
         return !!t.createElementNS && /SVGClipPath/.test(C.call(t.createElementNS(T.svg, "clipPath")));
     };
-    for (var O in P) f(P, O) && (d = O.toLowerCase(), h[d] = P[O](), A.push((h[d] ? "" : "no-") + d));
+    for (var O in P) f(P, O) && (d = O.toLowerCase(), h[d] = P[O](), $.push((h[d] ? "" : "no-") + d));
     return h.input || u(), h.addTest = function(e, t) {
         if ("object" == typeof e) for (var r in e) f(e, r) && h.addTest(r, e[r]); else {
             if (e = e.toLowerCase(), h[e] !== n) return h;
@@ -300,7 +300,7 @@ window.Modernizr = function(e, t, n) {
         return s([ e ]);
     }, h.testAllProps = c, h.testStyles = R, h.prefixed = function(e, t, n) {
         return t ? c(e, t, n) : c(e, "pfx");
-    }, g.className = g.className.replace(/(^|\s)no-js(\s|$)/, "$1$2") + (m ? " js " + A.join(" ") : ""), 
+    }, g.className = g.className.replace(/(^|\s)no-js(\s|$)/, "$1$2") + (m ? " js " + $.join(" ") : ""), 
     h;
 }(this, this.document);
 
@@ -474,21 +474,21 @@ var prettyPrintOne, prettyPrint;
         t.push(e.tripleQuotedStrings ? [ _, /^(?:\'\'\'(?:[^\'\\]|\\[\s\S]|\'{1,2}(?=[^\']))*(?:\'\'\'|$)|\"\"\"(?:[^\"\\]|\\[\s\S]|\"{1,2}(?=[^\"]))*(?:\"\"\"|$)|\'(?:[^\\\']|\\[\s\S])*(?:\'|$)|\"(?:[^\\\"]|\\[\s\S])*(?:\"|$))/, null, "'\"" ] : e.multiLineStrings ? [ _, /^(?:\'(?:[^\\\']|\\[\s\S])*(?:\'|$)|\"(?:[^\\\"]|\\[\s\S])*(?:\"|$)|\`(?:[^\\\`]|\\[\s\S])*(?:\`|$))/, null, "'\"`" ] : [ _, /^(?:\'(?:[^\\\'\r\n]|\\.)*(?:\'|$)|\"(?:[^\\\"\r\n]|\\.)*(?:\"|$))/, null, "\"'" ]), 
         e.verbatimStrings && n.push([ _, /^@\"(?:[^\"]|\"\")*(?:\"|$)/, null ]);
         var r = e.hashComments;
-        r && (e.cStyleComments ? (t.push(r > 1 ? [ A, /^#(?:##(?:[^#]|#(?!##))*(?:###|$)|.*)/, null, "#" ] : [ A, /^#(?:(?:define|e(?:l|nd)if|else|error|ifn?def|include|line|pragma|undef|warning)\b|[^\r\n]*)/, null, "#" ]), 
-        n.push([ _, /^<(?:(?:(?:\.\.\/)*|\/?)(?:[\w-]+(?:\/[\w-]+)+)?[\w-]+\.h(?:h|pp|\+\+)?|[a-z]\w*)>/, null ])) : t.push([ A, /^#[^\r\n]*/, null, "#" ])), 
-        e.cStyleComments && (n.push([ A, /^\/\/[^\r\n]*/, null ]), n.push([ A, /^\/\*[\s\S]*?(?:\*\/|$)/, null ]));
+        r && (e.cStyleComments ? (t.push(r > 1 ? [ $, /^#(?:##(?:[^#]|#(?!##))*(?:###|$)|.*)/, null, "#" ] : [ $, /^#(?:(?:define|e(?:l|nd)if|else|error|ifn?def|include|line|pragma|undef|warning)\b|[^\r\n]*)/, null, "#" ]), 
+        n.push([ _, /^<(?:(?:(?:\.\.\/)*|\/?)(?:[\w-]+(?:\/[\w-]+)+)?[\w-]+\.h(?:h|pp|\+\+)?|[a-z]\w*)>/, null ])) : t.push([ $, /^#[^\r\n]*/, null, "#" ])), 
+        e.cStyleComments && (n.push([ $, /^\/\/[^\r\n]*/, null ]), n.push([ $, /^\/\*[\s\S]*?(?:\*\/|$)/, null ]));
         var o = e.regexLiterals;
         if (o) {
             var i = o > 1 ? "" : "\n\r", s = i ? "." : "[\\S\\s]", l = "/(?=[^/*" + i + "])(?:[^/\\x5B\\x5C" + i + "]|\\x5C" + s + "|\\x5B(?:[^\\x5C\\x5D" + i + "]|\\x5C" + s + ")*(?:\\x5D|$))+/";
             n.push([ "lang-regex", RegExp("^" + V + "(" + l + ")") ]);
         }
         var c = e.types;
-        c && n.push([ $, c ]);
+        c && n.push([ A, c ]);
         var u = ("" + e.keywords).replace(/^ | $/g, "");
         u.length && n.push([ L, new RegExp("^(?:" + u.replace(/[\s,]+/g, "|") + ")\\b"), null ]), 
         t.push([ I, /^\s+/, null, " \r\n	 " ]);
         var d = "^.[^\\s\\w.$@'\"`/\\\\]*";
-        return e.regexLiterals && (d += "(?!s*/)"), n.push([ R, /^@[a-z_$][a-z_$@0-9]*/i, null ], [ $, /^(?:[@_]?[A-Z]+[a-z][A-Za-z_$@0-9]*|\w+_t\b)/, null ], [ I, /^[a-z_$][a-z_$@0-9]*/i, null ], [ R, new RegExp("^(?:0x[a-f0-9]+|(?:\\d(?:_\\d+)*\\d*(?:\\.\\d*)?|\\.\\d\\+)(?:e[+\\-]?\\d+)?)[a-z]*", "i"), null, "0123456789" ], [ I, /^\\[\s\S]?/, null ], [ j, new RegExp(d), null ]), 
+        return e.regexLiterals && (d += "(?!s*/)"), n.push([ R, /^@[a-z_$][a-z_$@0-9]*/i, null ], [ A, /^(?:[@_]?[A-Z]+[a-z][A-Za-z_$@0-9]*|\w+_t\b)/, null ], [ I, /^[a-z_$][a-z_$@0-9]*/i, null ], [ R, new RegExp("^(?:0x[a-f0-9]+|(?:\\d(?:_\\d+)*\\d*(?:\\.\\d*)?|\\.\\d\\+)(?:e[+\\-]?\\d+)?)[a-z]*", "i"), null, "0123456789" ], [ I, /^\\[\s\S]?/, null ], [ j, new RegExp(d), null ]), 
         a(t, n);
     }
     function i(e, t, n) {
@@ -630,7 +630,7 @@ var prettyPrintOne, prettyPrint;
                         }
                         var L;
                         if (w.test(n.tagName)) L = 1; else {
-                            var A = n.currentStyle, $ = s.defaultView, R = A ? A.whiteSpace : $ && $.getComputedStyle ? $.getComputedStyle(n, null).getPropertyValue("white-space") : 0;
+                            var $ = n.currentStyle, A = s.defaultView, R = $ ? $.whiteSpace : A && A.getComputedStyle ? A.getComputedStyle(n, null).getPropertyValue("white-space") : 0;
                             L = R && "pre" === R.substring(0, 3);
                         }
                         var j = o.linenums;
@@ -657,14 +657,14 @@ var prettyPrintOne, prettyPrint;
         var g, v = 0, y = /\blang(?:uage)?-([\w.]+)(?!\S)/, b = /\bprettyprint\b/, x = /\bprettyprinted\b/, w = /pre|xmp/i, C = /^code$/i, S = /^(?:pre|code|xmp)$/i, E = {};
         a();
     }
-    var p = window, h = [ "break,continue,do,else,for,if,return,while" ], m = [ h, "auto,case,char,const,default,double,enum,extern,float,goto,inline,int,long,register,short,signed,sizeof,static,struct,switch,typedef,union,unsigned,void,volatile" ], g = [ m, "catch,class,delete,false,import,new,operator,private,protected,public,this,throw,true,try,typeof" ], v = [ g, "alignof,align_union,asm,axiom,bool,concept,concept_map,const_cast,constexpr,decltype,delegate,dynamic_cast,explicit,export,friend,generic,late_check,mutable,namespace,nullptr,property,reinterpret_cast,static_assert,static_cast,template,typeid,typename,using,virtual,where" ], y = [ g, "abstract,assert,boolean,byte,extends,final,finally,implements,import,instanceof,interface,null,native,package,strictfp,super,synchronized,throws,transient" ], b = [ y, "as,base,by,checked,decimal,delegate,descending,dynamic,event,fixed,foreach,from,group,implicit,in,internal,into,is,let,lock,object,out,override,orderby,params,partial,readonly,ref,sbyte,sealed,stackalloc,string,select,uint,ulong,unchecked,unsafe,ushort,var,virtual,where" ], x = "all,and,by,catch,class,else,extends,false,finally,for,if,in,is,isnt,loop,new,no,not,null,of,off,on,or,return,super,then,throw,true,try,unless,until,when,while,yes", w = [ g, "debugger,eval,export,function,get,null,set,undefined,var,with,Infinity,NaN" ], C = "caller,delete,die,do,dump,elsif,eval,exit,foreach,for,goto,if,import,last,local,my,next,no,our,print,package,redo,require,sub,undef,unless,until,use,wantarray,while,BEGIN,END", S = [ h, "and,as,assert,class,def,del,elif,except,exec,finally,from,global,import,in,is,lambda,nonlocal,not,or,pass,print,raise,try,with,yield,False,True,None" ], E = [ h, "alias,and,begin,case,class,def,defined,elsif,end,ensure,false,in,module,next,nil,not,or,redo,rescue,retry,self,super,then,true,undef,unless,until,when,yield,BEGIN,END" ], k = [ h, "as,assert,const,copy,drop,enum,extern,fail,false,fn,impl,let,log,loop,match,mod,move,mut,priv,pub,pure,ref,self,static,struct,true,trait,type,unsafe,use" ], N = [ h, "case,done,elif,esac,eval,fi,function,in,local,set,then,until" ], T = [ v, b, w, C, S, E, N ], P = /^(DIR|FILE|vector|(de|priority_)?queue|list|stack|(const_)?iterator|(multi)?(set|map)|bitset|u?(int|float)\d*)\b/, _ = "str", L = "kwd", A = "com", $ = "typ", R = "lit", j = "pun", I = "pln", M = "tag", O = "dec", D = "src", z = "atn", B = "atv", F = "nocode", V = "(?:^^\\.?|[+-]|[!=]=?=?|\\#|%=?|&&?=?|\\(|\\*=?|[+\\-]=|->|\\/=?|::?|<<?=?|>>?>?=?|,|;|\\?|@|\\[|~|{|\\^\\^?=?|\\|\\|?=?|break|case|continue|delete|do|else|finally|instanceof|return|throw|try|typeof)\\s*", U = /\S/, H = o({
+    var p = window, h = [ "break,continue,do,else,for,if,return,while" ], m = [ h, "auto,case,char,const,default,double,enum,extern,float,goto,inline,int,long,register,short,signed,sizeof,static,struct,switch,typedef,union,unsigned,void,volatile" ], g = [ m, "catch,class,delete,false,import,new,operator,private,protected,public,this,throw,true,try,typeof" ], v = [ g, "alignof,align_union,asm,axiom,bool,concept,concept_map,const_cast,constexpr,decltype,delegate,dynamic_cast,explicit,export,friend,generic,late_check,mutable,namespace,nullptr,property,reinterpret_cast,static_assert,static_cast,template,typeid,typename,using,virtual,where" ], y = [ g, "abstract,assert,boolean,byte,extends,final,finally,implements,import,instanceof,interface,null,native,package,strictfp,super,synchronized,throws,transient" ], b = [ y, "as,base,by,checked,decimal,delegate,descending,dynamic,event,fixed,foreach,from,group,implicit,in,internal,into,is,let,lock,object,out,override,orderby,params,partial,readonly,ref,sbyte,sealed,stackalloc,string,select,uint,ulong,unchecked,unsafe,ushort,var,virtual,where" ], x = "all,and,by,catch,class,else,extends,false,finally,for,if,in,is,isnt,loop,new,no,not,null,of,off,on,or,return,super,then,throw,true,try,unless,until,when,while,yes", w = [ g, "debugger,eval,export,function,get,null,set,undefined,var,with,Infinity,NaN" ], C = "caller,delete,die,do,dump,elsif,eval,exit,foreach,for,goto,if,import,last,local,my,next,no,our,print,package,redo,require,sub,undef,unless,until,use,wantarray,while,BEGIN,END", S = [ h, "and,as,assert,class,def,del,elif,except,exec,finally,from,global,import,in,is,lambda,nonlocal,not,or,pass,print,raise,try,with,yield,False,True,None" ], E = [ h, "alias,and,begin,case,class,def,defined,elsif,end,ensure,false,in,module,next,nil,not,or,redo,rescue,retry,self,super,then,true,undef,unless,until,when,yield,BEGIN,END" ], k = [ h, "as,assert,const,copy,drop,enum,extern,fail,false,fn,impl,let,log,loop,match,mod,move,mut,priv,pub,pure,ref,self,static,struct,true,trait,type,unsafe,use" ], N = [ h, "case,done,elif,esac,eval,fi,function,in,local,set,then,until" ], T = [ v, b, w, C, S, E, N ], P = /^(DIR|FILE|vector|(de|priority_)?queue|list|stack|(const_)?iterator|(multi)?(set|map)|bitset|u?(int|float)\d*)\b/, _ = "str", L = "kwd", $ = "com", A = "typ", R = "lit", j = "pun", I = "pln", M = "tag", O = "dec", D = "src", z = "atn", B = "atv", F = "nocode", V = "(?:^^\\.?|[+-]|[!=]=?=?|\\#|%=?|&&?=?|\\(|\\*=?|[+\\-]=|->|\\/=?|::?|<<?=?|>>?>?=?|,|;|\\?|@|\\[|~|{|\\^\\^?=?|\\|\\|?=?|break|case|continue|delete|do|else|finally|instanceof|return|throw|try|typeof)\\s*", U = /\S/, H = o({
         keywords: T,
         hashComments: !0,
         cStyleComments: !0,
         multiLineStrings: !0,
         regexLiterals: !0
     }), G = {};
-    l(H, [ "default-code" ]), l(a([], [ [ I, /^[^<?]+/ ], [ O, /^<!\w[^>]*(?:>|$)/ ], [ A, /^<\!--[\s\S]*?(?:-\->|$)/ ], [ "lang-", /^<\?([\s\S]+?)(?:\?>|$)/ ], [ "lang-", /^<%([\s\S]+?)(?:%>|$)/ ], [ j, /^(?:<[%?]|[%?]>)/ ], [ "lang-", /^<xmp\b[^>]*>([\s\S]+?)<\/xmp\b[^>]*>/i ], [ "lang-js", /^<script\b[^>]*>([\s\S]*?)(<\/script\b[^>]*>)/i ], [ "lang-css", /^<style\b[^>]*>([\s\S]*?)(<\/style\b[^>]*>)/i ], [ "lang-in.tag", /^(<\/?[a-z][^<>]*>)/i ] ]), [ "default-markup", "htm", "html", "mxml", "xhtml", "xml", "xsl" ]), 
+    l(H, [ "default-code" ]), l(a([], [ [ I, /^[^<?]+/ ], [ O, /^<!\w[^>]*(?:>|$)/ ], [ $, /^<\!--[\s\S]*?(?:-\->|$)/ ], [ "lang-", /^<\?([\s\S]+?)(?:\?>|$)/ ], [ "lang-", /^<%([\s\S]+?)(?:%>|$)/ ], [ j, /^(?:<[%?]|[%?]>)/ ], [ "lang-", /^<xmp\b[^>]*>([\s\S]+?)<\/xmp\b[^>]*>/i ], [ "lang-js", /^<script\b[^>]*>([\s\S]*?)(<\/script\b[^>]*>)/i ], [ "lang-css", /^<style\b[^>]*>([\s\S]*?)(<\/style\b[^>]*>)/i ], [ "lang-in.tag", /^(<\/?[a-z][^<>]*>)/i ] ]), [ "default-markup", "htm", "html", "mxml", "xhtml", "xml", "xsl" ]), 
     l(a([ [ I, /^[\s]+/, null, " 	\r\n" ], [ B, /^(?:\"[^\"]*\"?|\'[^\']*\'?)/, null, "\"'" ] ], [ [ M, /^^<\/?[a-z](?:[\w.:-]*\w)?|\/?>$/i ], [ z, /^(?!style[\s=]|on)[a-z](?:[\w:-]*\w)?/i ], [ "lang-uq.val", /^=\s*([^>\'\"\s]*(?:[^>\'\"\s\/]|\/(?=\s)))/ ], [ j, /^[=<>\/]+/ ], [ "lang-js", /^on\w+\s*=\s*\"([^\"]+)\"/i ], [ "lang-js", /^on\w+\s*=\s*\'([^\']+)\'/i ], [ "lang-js", /^on\w+\s*=\s*([^\"\'>\s]+)/i ], [ "lang-css", /^style\s*=\s*\"([^\"]+)\"/i ], [ "lang-css", /^style\s*=\s*\'([^\']+)\'/i ], [ "lang-css", /^style\s*=\s*([^\"\'>\s]+)/i ] ]), [ "in.tag" ]), 
     l(a([], [ [ B, /^[\s\S]+/ ] ]), [ "uq.val" ]), l(o({
         keywords: v,
@@ -723,7 +723,7 @@ var prettyPrintOne, prettyPrint;
         sourceDecorator: o,
         PR_ATTRIB_NAME: z,
         PR_ATTRIB_VALUE: B,
-        PR_COMMENT: A,
+        PR_COMMENT: $,
         PR_DECLARATION: O,
         PR_KEYWORD: L,
         PR_LITERAL: R,
@@ -733,7 +733,7 @@ var prettyPrintOne, prettyPrint;
         PR_SOURCE: D,
         PR_STRING: _,
         PR_TAG: M,
-        PR_TYPE: $,
+        PR_TYPE: A,
         prettyPrintOne: IN_GLOBAL_SCOPE ? p.prettyPrintOne = d : prettyPrintOne = d,
         prettyPrint: prettyPrint = IN_GLOBAL_SCOPE ? p.prettyPrint = f : prettyPrint = f
     };
@@ -791,21 +791,20 @@ var prettyPrintOne, prettyPrint;
         });
     }
     function r() {
-        var t = e(window).height(), n = e(document.body).height() - c.height(), r = t - n;
-        a && (r -= 32), 0 >= r && (r = 1), c.height(r);
+        var t = e(window).height(), n = e(document.body).height() - o.height(), r = t - n;
+        a && (r -= 32), 0 >= r && (r = 1), o.height(r);
     }
-    var a = !1, o = navigator.userAgent, i = o.match(/msie/i), s = i && o.match(/msie 7\./i), l = i && o.match(/msie 8\./i);
-    i && e("html").addClass(s ? "ie ie7" : l ? "ie ie8" : "ie");
-    var c = (e("#main"), e("#footerMargin"));
+    var a = !1, o = e("#footerMargin");
     e(window).on("sticky", r).scroll(r).resize(r), e("#siteLogo").each(function() {
+        var t = e(this);
         if (Modernizr.svg) {
-            var t = e(this), n = t.attr("id"), r = t.attr("class");
+            var n = t.attr("id"), r = t.attr("class");
             e.get(t.attr("src"), function(a) {
                 var o = e(a).find("svg");
                 "undefined" != typeof n && o.attr("id", n), "undefined" != typeof r && o.attr("class", r + " replaced-svg"), 
                 o = o.removeAttr("xmlns:a"), t.replaceWith(o);
             }, "xml");
-        } else e(this).attr("src", e(this).attr("src").replace(/\.svg/gi, ".png"));
+        } else t.attr("src", t.attr("src").replace(/\.svg/gi, ".png"));
     }), e(document).ready(function() {
         e.isFunction(prettyPrint) && prettyPrint(), a = e("#wpadminbar").length > 0, n(), 
         r();

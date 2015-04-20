@@ -6,7 +6,7 @@
  */
 
 define( 'THEME_STYLE_CSS_REV', '2015042002' );
-define( 'THEME_STYLE_SCRIPT_REV', '2015042002' );
+define( 'THEME_STYLE_SCRIPT_REV', '2015042013' );
 define( 'THEME_DATE_FORMAT', 'Y/m/d' );
 
 if ( ! isset( $content_width ) ) {
@@ -126,21 +126,11 @@ function makotokw_scripts() {
 		wp_enqueue_script( 'jquery-migrate' );
 	}
 
-	if ( $font_url = makotokw_fonts_url() ) {
-		wp_enqueue_style( 'makotokw-fonts', esc_url_raw( $font_url ), array(), null );
-	}
 	wp_enqueue_style( 'makotokw-style', get_stylesheet_uri(), array(), THEME_STYLE_CSS_REV );
 
 	wp_register_script( 'makotokw-script', get_template_directory_uri() . '/style.js', array( 'jquery' ), THEME_STYLE_SCRIPT_REV, true );
 	wp_localize_script( 'makotokw-script', 'makotokw', array( 'counter_api' => WP_THEME_COUNT_API ) );
 	wp_enqueue_script( 'makotokw-script' );
-
-	/*
-	// JetpackComment should work without comment-reply
-	if (is_singular() && comments_open() && get_option('thread_comments')) {
-		wp_enqueue_script('comment-reply');
-	}
-	*/
 
 	if ( is_singular() && wp_attachment_is_image() ) {
 		wp_enqueue_script( 'makotokw-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202', true );
@@ -153,29 +143,7 @@ if ( ! is_admin() ) {
 	function makotokw_remove_style_id( $link ) {
 		return preg_replace( "/id='(?:gfm|thickbox|amazonjs|makotokw).*-css'/", '', $link );
 	}
-
 	add_filter( 'style_loader_tag', 'makotokw_remove_style_id' );
-}
-
-function makotokw_fonts_url() {
-
-	$font_families = array(
-		//'Lato:300,400,700,300italic,400italic,700italic',
-	);
-
-	if ( empty($font_families) ) {
-		return false;
-	}
-
-	$query_args    = array(
-		'family' => implode( '|', $font_families ),
-		'subset' => 'latin,latin-ext',
-	);
-
-	$protocol  = is_ssl() ? 'https' : 'http';
-	$fonts_url = add_query_arg( $query_args, $protocol . '://fonts.googleapis.com/css' );
-
-	return $fonts_url;
 }
 
 function makotokw_quicktags()
