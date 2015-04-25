@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: makotokw 1.0\n"
 "Report-Msgid-Bugs-To: makoto.kw@gmail.com\n"
-"POT-Creation-Date: 2015-04-20 03:18+0900\n"
+"POT-Creation-Date: 2015-04-25 11:08+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,11 +67,7 @@ msgstr ""
 msgid "Portfolio Menu"
 msgstr ""
 
-#: functions.php:101
-msgid "Sidebar"
-msgstr ""
-
-#: header-ogp.php:67
+#: meta-ogp.php:67
 msgid "Uncategorized"
 msgstr ""
 
@@ -123,39 +119,39 @@ msgstr ""
 msgid "Related Posts"
 msgstr ""
 
-#: inc/taxonomy.php:32
+#: inc/taxonomy.php:35
 msgid "Mylists"
 msgstr ""
 
-#: inc/taxonomy.php:40
+#: inc/taxonomy.php:43
 msgid "Search Mylists"
 msgstr ""
 
-#: inc/taxonomy.php:41
+#: inc/taxonomy.php:44
 msgid "All Mylists"
 msgstr ""
 
-#: inc/taxonomy.php:42
+#: inc/taxonomy.php:45
 msgid "Edit Mylist"
 msgstr ""
 
-#: inc/taxonomy.php:43
+#: inc/taxonomy.php:46
 msgid "Update Mylist"
 msgstr ""
 
-#: inc/taxonomy.php:44
+#: inc/taxonomy.php:47
 msgid "Add New Mylist"
 msgstr ""
 
-#: inc/taxonomy.php:45
+#: inc/taxonomy.php:48
 msgid "New Mylist Name"
 msgstr ""
 
-#: inc/taxonomy.php:55
+#: inc/taxonomy.php:58
 msgid "Portfolios"
 msgstr ""
 
-#: inc/taxonomy.php:81
+#: inc/taxonomy.php:84
 msgid "Blogs"
 msgstr ""
 
@@ -208,6 +204,14 @@ msgstr ""
 msgid "Archives"
 msgstr ""
 
+#: inc/template-tags.php:212
+msgid "Y/M"
+msgstr ""
+
+#: inc/template-tags.php:215
+msgid "Y"
+msgstr ""
+
 #: inc/template-tags.php:220
 msgid "Search Results"
 msgstr ""
@@ -226,6 +230,26 @@ msgstr ""
 #: inc/template-tags.php:281
 #, php-format
 msgid "<time class=\"updated\" datetime=\"%1$s\">%2$s</time>"
+msgstr ""
+
+#: inc/template-tags.php:332
+msgid "Twitter"
+msgstr ""
+
+#: inc/template-tags.php:338
+msgid "Hatena Bookmark"
+msgstr ""
+
+#: inc/template-tags.php:344
+msgid "Pocket"
+msgstr ""
+
+#: inc/template-tags.php:350
+msgid "Google"
+msgstr ""
+
+#: inc/template-tags.php:356
+msgid "Facebook"
 msgstr ""
 
 #: inc/template-tags.php:367

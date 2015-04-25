@@ -5,6 +5,9 @@
 
 add_action( 'init', 'makotokw_taxonomy_init', 0 );
 
+/**
+ * taxonomy for kwLog
+ */
 function makotokw_taxonomy_init() {
 
 	// labels

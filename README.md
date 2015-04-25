@@ -24,6 +24,7 @@ WordPress theme for [kwLog](http://blog.makotokw.com).
 
 * Tested on PHP 5.5 **ONLY** by makotokw for kwLog
  * Some styles are **depend on** posts on kwLog
+ * **Used** ``register_taxonomy()`` for kwLog
  * **No** sidebar, **No** widgets
  * **Unsupported** post formats
  * **Not** implement for Comment Form (I use Jetpack Comment)

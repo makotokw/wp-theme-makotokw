@@ -209,10 +209,10 @@ function makotokw_breadcrumbs() {
 				<span class="breadcrumb-last" itemprop="title"><?php echo get_the_date() ?></span>
 			<?php elseif ( is_month() ) : ?>
 				<a href="/archives/" itemprop="url"><span itemprop="title"><?php _e( 'Archives', 'makotokw' ) ?></span></a><?php echo $divider ?>
-				<span class="breadcrumb-last" itemprop="title"><?php echo get_the_date( 'Y年M' ) ?></span>
+				<span class="breadcrumb-last" itemprop="title"><?php echo get_the_date( __( 'Y/M', 'makotokw' ) ) ?></span>
 			<?php elseif ( is_year() ) : ?>
 				<a href="/archives/" itemprop="url"><span itemprop="title"><?php _e( 'Archives', 'makotokw' ) ?></span></a><?php echo $divider ?>
-				<span class="breadcrumb-last" itemprop="title"><?php echo get_the_date( 'Y年' ) ?></span>
+				<span class="breadcrumb-last" itemprop="title"><?php echo get_the_date( __( 'Y', 'makotokw' ) ) ?></span>
 			<?php else : ?>
 				<span class="breadcrumb-last" itemprop="title"><?php _e( 'Archives', 'makotokw' ) ?></span>
 			<?php endif ?>
@@ -329,31 +329,31 @@ function makotokw_share_buttons() {
 			<li class="share-twitter">
 				<a rel="nofollow" data-url="<?php echo $permalink; ?>" class="btn btn-default btn-circle btn-share btn-share-twitter" href="https://twitter.com/intent/tweet?original_referer=<?php echo rawurlencode( $permalink ) ?>&text=<?php echo rawurlencode( $title ) ?>&tw_p=tweetbutton&url=<?php echo urlencode( $permalink )?>&via=<?php echo urlencode( WP_THEME_AUTHOR_TWITTER )?>" target="_blank">
 					<i class="icon icon-default icon-share-twitter"></i>
-					<span class="share-title">Twitter</span>
+					<span class="share-title"><?php _e( 'Twitter', 'makotokw' ); ?></span>
 				</a>
 			</li>
 			<li class="share-hatena">
 				<a rel="nofollow" class="btn btn-default btn-circle btn-share btn-share-hatena" href="http://b.hatena.ne.jp/entry/<?php echo $permalink_schemeless ?>" target="_blank">
 					<i class="icon icon-default icon-share-hatena"></i>
-					<span class="share-title">はてブ</span>
+					<span class="share-title"><?php _e( 'Hatena Bookmark', 'makotokw' ); ?></span>
 				</a>
 			</li>
 			<li class="share-pocket">
 				<a rel="nofollow" class="btn btn-default btn-circle btn-share btn-share-pocket" href="https://getpocket.com/save/?url=<?php echo rawurlencode( $permalink ) ?>&title=<?php echo rawurlencode( $title ) ?>" target="_blank">
 					<i class="icon icon-default icon-share-pocket"></i>
-					<span class="share-title">Pocket</span>
+					<span class="share-title"><?php _e( 'Pocket', 'makotokw' ); ?></span>
 				</a>
 			</li>
 			<li class="share-googleplus">
 				<a rel="nofollow" class="btn btn-default btn-circle btn-share btn-share-googleplus" href="https://plus.google.com/share?url=<?php echo rawurlencode( $permalink ) ?>" target="_blank">
 					<i class="icon icon-default icon-share-googleplus"></i>
-					<span class="share-title">Google</span>
+					<span class="share-title"><?php _e( 'Google', 'makotokw' ); ?></span>
 				</a>
 			</li>
 			<li class="share-facebook">
 				<a rel="nofollow" class="btn btn-default btn-circle btn-share btn-share-facebook" href="//www.facebook.com/sharer.php?u=<?php echo rawurlencode( $permalink ) ?>&t=<?php echo rawurlencode( $title ) ?>" target="_blank">
 					<i class="icon icon-default icon-share-facebook"></i>
-					<span class="share-title">Facebook</span>
+					<span class="share-title"><?php _e( 'Facebook', 'makotokw' ); ?></span>
 				</a>
 			</li>
 		</ul>

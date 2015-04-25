@@ -72,7 +72,7 @@
 
   .entry-meta {
     margin: 4px 0;
-    font-family: Verdana, Arial;
+    font-family: Verdana, Arial, serif;
     font-weight: 400;
 
     .tag-links {
@@ -116,6 +116,13 @@
 
 .text-more-link {
   font-size: $font-size-small;
+}
+
+// Sticky (Featured) Content
+// -----------------------------------------------
+
+.sticky {
+  border: $site-default-border solid $site-border-width;
 }
 
 // Media

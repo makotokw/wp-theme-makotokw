@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: makoto.kw@gmail.com\n"
-"POT-Creation-Date: 2015-04-20 03:18+0900\n"
+"POT-Creation-Date: 2015-04-25 11:08+0900\n"
 "PO-Revision-Date: 2013-04-28 18:46+0900\n"
 "Last-Translator: Makoto Kawasaki <makoto.kw@gmail.com>\n"
 "Language-Team: Japanese\n"
@@ -67,11 +67,7 @@ msgstr "サイトメニュー"
 msgid "Portfolio Menu"
 msgstr "ポートフォリオメニュー"
 
-#: functions.php:101
-msgid "Sidebar"
-msgstr ""
-
-#: header-ogp.php:67
+#: meta-ogp.php:67
 msgid "Uncategorized"
 msgstr ""
 
@@ -127,39 +123,39 @@ msgstr ""
 msgid "Related Posts"
 msgstr ""
 
-#: inc/taxonomy.php:32
+#: inc/taxonomy.php:35
 msgid "Mylists"
 msgstr "マイリスト"
 
-#: inc/taxonomy.php:40
+#: inc/taxonomy.php:43
 msgid "Search Mylists"
 msgstr "マイリストの検索"
 
-#: inc/taxonomy.php:41
+#: inc/taxonomy.php:44
 msgid "All Mylists"
 msgstr "すべてのマイリスト"
 
-#: inc/taxonomy.php:42
+#: inc/taxonomy.php:45
 msgid "Edit Mylist"
 msgstr "マイリストの編集"
 
-#: inc/taxonomy.php:43
+#: inc/taxonomy.php:46
 msgid "Update Mylist"
 msgstr "マイリストの更新"
 
-#: inc/taxonomy.php:44
+#: inc/taxonomy.php:47
 msgid "Add New Mylist"
 msgstr "マイリストの新規作成"
 
-#: inc/taxonomy.php:45
+#: inc/taxonomy.php:48
 msgid "New Mylist Name"
 msgstr "マイリスト名"
 
-#: inc/taxonomy.php:55
+#: inc/taxonomy.php:58
 msgid "Portfolios"
 msgstr "ポートフォリオ"
 
-#: inc/taxonomy.php:81
+#: inc/taxonomy.php:84
 msgid "Blogs"
 msgstr "ブログシステム"
 
@@ -212,6 +208,14 @@ msgstr "ポートフォリオ"
 msgid "Archives"
 msgstr "アーカイブ"
 
+#: inc/template-tags.php:212
+msgid "Y/M"
+msgstr "Y年M"
+
+#: inc/template-tags.php:215
+msgid "Y"
+msgstr "Y年"
+
 #: inc/template-tags.php:220
 msgid "Search Results"
 msgstr "検索結果"
@@ -232,6 +236,26 @@ msgstr ""
 msgid "<time class=\"updated\" datetime=\"%1$s\">%2$s</time>"
 msgstr ""
 
+#: inc/template-tags.php:332
+msgid "Twitter"
+msgstr ""
+
+#: inc/template-tags.php:338
+msgid "Hatena Bookmark"
+msgstr "はてブ"
+
+#: inc/template-tags.php:344
+msgid "Pocket"
+msgstr ""
+
+#: inc/template-tags.php:350
+msgid "Google"
+msgstr ""
+
+#: inc/template-tags.php:356
+msgid "Facebook"
+msgstr ""
+
 #: inc/template-tags.php:367
 msgid "Share This"
 msgstr ""
@@ -239,4 +263,3 @@ msgstr ""
 #: inc/template-tags.php:380
 msgid "About"
 msgstr ""
-

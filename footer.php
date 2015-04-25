@@ -22,7 +22,7 @@
 								__( 'Powered by %s', 'makotokw' ),
 								'<a href="http://wordpress.org/" title="' . esc_attr( __( 'Semantic Personal Publishing Platform', 'makotokw' ) ) . '">WordPress</a>'
 							) ?>
-							&nbsp;<a href="https://github.com/makotokw/wp-theme-makotokw" class="theme">makotokw themne</a>.
+							&nbsp;<a href="https://github.com/makotokw/wp-theme-makotokw" class="theme">makotokw theme</a>.
 						</div>
 					</div>
 				</div>
