@@ -10,10 +10,9 @@ var del = require('del');
 gulp.task('clean:components', function (cb) {
 	del(['components'], cb);
 });
-
-gulp.task('bower:install', ['clean:components'], function () {
+gulp.task('bower:install', plugins.shell.task(['bower install']));
+gulp.task('bower:normalize', ['clean:components', 'bower:install'], function () {
 	var bower = require('main-bower-files');
-	plugins.shell.task(['bower install']);
 	gulp.src(bower(), {base: './bower_components'})
 		.pipe(plugins.bowerNormalize({bowerJson: './bower.json'}))
 		.pipe(gulp.dest('./components/'));
