@@ -84,7 +84,7 @@ function makotokw_list_nav() {
 
 			<div class="section-content">
 				<?php if ( ! is_wp_error( $mylist_link ) ) : ?>
-					<i class="fa fa-list-alt"></i> <a href="<?php echo $mylist_link ?>"><?php echo $mylist->name ?></a>
+					<a href="<?php echo $mylist_link ?>"><?php echo $mylist->name ?></a>
 				<?php endif ?>
 				<ul>
 					<?php if ( $first_post ) : ?>
@@ -196,7 +196,8 @@ function makotokw_breadcrumbs() {
 			<a href="/tags/" itemprop="url"><span itemprop="title"><?php _e( 'Tags', 'makotokw' ) ?></span></a><?php echo $divider ?>
 			<span class="breadcrumb-last" itemprop="title"><?php echo single_tag_title( '', false ) ?></span>
 		<?php elseif ( is_mylist() ) : ?>
-			<span class="breadcrumb-last" itemprop="title"><?php _e( 'Mylist', 'makotokw' ) ?></span>
+			<span itemprop="title"><?php _e( 'Mylist', 'makotokw' ) ?></span><?php echo $divider ?>
+			<span class="breadcrumb-last" itemprop="title"><?php echo single_cat_title( '', false ) ?></span>
 		<?php elseif ( is_tax( 'blogs' ) ) : ?>
 			<span itemprop="title"><?php _e( 'Blog', 'makotokw' ) ?></span><?php echo $divider ?>
 			<span class="breadcrumb-last" itemprop="title"><?php echo single_cat_title( '', false ) ?></span>
