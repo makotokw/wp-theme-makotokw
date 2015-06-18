@@ -98,7 +98,7 @@ gulp.task('sass', function () {
 gulp.task('browser-sync', function () {
 	browserSync({
 		port: 8086,
-		proxy: "localhost:8085"
+		proxy: "127.0.0.1:8085"
 	});
 });
 
