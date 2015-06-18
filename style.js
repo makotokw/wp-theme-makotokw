@@ -165,7 +165,7 @@ window.Modernizr = function(e, t, n) {
         return !!c("transform");
     }, P.csstransforms3d = function() {
         var e = !!c("perspective");
-        return e && "webkitPerspective" in g.style && R("@media (transform-3d),(-webkit-transform-3d){#modernizr{left:9px;position:absolute;height:3px;}}", function(t) {
+        return e && "webkitPerspective" in g.style && R("@media (transform-3d),(-webkit-transform-3d){#modernizr{left:9px;position:absolute;height:3px;}}", function(t, n) {
             e = 9 === t.offsetLeft && 3 === t.offsetHeight;
         }), e;
     }, P.csstransitions = function() {
@@ -600,7 +600,7 @@ var prettyPrintOne, prettyPrint;
             return o.getElementsByTagName(e);
         }
         function a() {
-            for (var t = p.PR_SHOULD_USE_CONTINUATION ? m.now() + 250 : 1/0; v < c.length && m.now() < t; v++) {
+            for (var t = p.PR_SHOULD_USE_CONTINUATION ? m.now() + 250 : 1 / 0; v < c.length && m.now() < t; v++) {
                 for (var n = c[v], o = E, l = n; l = l.previousSibling; ) {
                     var d = l.nodeType, f = (7 === d || 8 === d) && l.nodeValue;
                     if (f ? !/^\??prettify\b/.test(f) : 3 !== d || /\S/.test(l.nodeValue)) break;

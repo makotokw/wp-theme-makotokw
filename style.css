@@ -8,7 +8,7 @@
  * Version: 1.0
  * License: GNU General Public License v2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
- * Tags: one-column, flexible-width, microformats, translation-ready
+ * Tags: one-column, responsive-layout, microformats, translation-ready
  * Text Domain: makotokw
  *
  * This theme, like WordPress, is licensed under the GPL.
@@ -572,7 +572,7 @@ li > ol {
 .fa-envelope-o:before {
   content: ""; }
 
-.fa-heart:before, .site-footer .site-info .copyrights .poweredby .theme:before {
+.fa-heart:before {
   content: ""; }
 
 .fa-star:before {
@@ -3339,10 +3339,10 @@ input[type="color"],
   font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   font-size: 12px;
   color: #bdbdbd; }
-  .breadcrumb .fa-chevron-right {
-    color: #bdbdbd; }
   .breadcrumb a {
     color: #bdbdbd; }
+    .breadcrumb a:hover {
+      color: #1794a9; }
   .breadcrumb .breadcrumb-last {
     font-weight: bold; }
 
@@ -3503,7 +3503,7 @@ input[type="color"],
   position: relative; }
   .entry-header .entry-meta {
     margin: 4px 0;
-    font-family: Verdana, Arial;
+    font-family: Verdana, Arial, serif;
     font-weight: 400; }
     .entry-header .entry-meta .tag-links {
       text-transform: capitalize; }
@@ -3512,7 +3512,7 @@ input[type="color"],
         .entry-header .entry-meta .tag-links a:hover {
           color: #1794a9; }
   .post-single .entry-header {
-    margin: 20px 0; }
+    margin: 15px 0 0 0; }
 
 .entry-content,
 .entry-summary {
@@ -3547,6 +3547,9 @@ input[type="color"],
 
 .text-more-link {
   font-size: 13.6px; }
+
+.sticky {
+  border: #ddd solid 1px; }
 
 .alignleft {
   float: left; }
@@ -3622,6 +3625,9 @@ object {
   padding: 0 0 0 10px; }
   .section-mylist ul li {
     list-style: none; }
+  .section-mylist ul .fa {
+    color: #bdbdbd;
+    margin-right: 10px; }
 
 .section-related-posts ul {
   list-style: none;
@@ -3907,11 +3913,12 @@ object {
       float: left; }
     .site-footer .site-info .copyrights .poweredby {
       float: right; }
-      .site-footer .site-info .copyrights .poweredby .theme:before {
-        font-family: FontAwesome;
-        color: hotpink;
-        margin-right: 2px;
-        font-size: .5em; }
+      .site-footer .site-info .copyrights .poweredby .fa-heart {
+        margin: 0 2px;
+        font-size: .5em;
+        color: hotpink; }
+      .site-footer .site-info .copyrights .poweredby .fa-github-alt {
+        margin: 0 2px; }
 
 #wpstats {
   display: block;
