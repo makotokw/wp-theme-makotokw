@@ -8,7 +8,6 @@ WordPress theme for [kwLog](http://blog.makotokw.com).
  * Created by [_s](http://underscores.me)
  * Inspired [Twenty Fifteen](https://twentyfifteendemo.wordpress.com/), [ghost](http://blog.ghost.org/) and [medium](https://medium.com/)
  * Include [Font Awesome](http://fortawesome.github.io/Font-Awesome/) Icons
- * Include [Genericons](http://genericons.com/)
  * Include [google-code-prettify](http://code.google.com/p/google-code-prettify/)
 
 ## Work With

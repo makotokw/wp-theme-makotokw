@@ -86,15 +86,15 @@
   }
 }
 
-@mixin btn-share-with-generic-icon($brand-color, $icon-content) {
+@mixin btn-share-with-fontawesome-icon($brand-color, $icon-content) {
   &:before {
-    font-family: Genericons;
+    font-family: FontAwesome;
     content: $icon-content;
   }
 }
 
 .icon-share-twitter {
-  @include btn-share-with-generic-icon($twitter-blue, $gi-var-twitter);
+  @include btn-share-with-fontawesome-icon($twitter-blue, $fa-var-twitter);
 }
 .icon-share-hatena {
   &:before {
@@ -107,11 +107,11 @@
   }
 }
 .icon-share-pocket {
-  @include btn-share-with-generic-icon($pocket-pink, $gi-var-pocket);
+  @include btn-share-with-fontawesome-icon($pocket-pink, $fa-var-get-pocket);
 }
 .icon-share-googleplus {
-  @include btn-share-with-generic-icon($google-plus-red, $gi-var-googleplus-alt);
+  @include btn-share-with-fontawesome-icon($google-plus-red, $fa-var-google-plus);
 }
 .icon-share-facebook {
-  @include btn-share-with-generic-icon($facebook-blue, $gi-var-facebook-alt);
+  @include btn-share-with-fontawesome-icon($facebook-blue, $fa-var-facebook);
 }
