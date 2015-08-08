@@ -75,6 +75,12 @@ function makotokw_setup() {
 	remove_action( 'wp_head', 'wlwmanifest_link' );
 	remove_action( 'wp_head', 'wp_generator' );
 
+	/**
+	 * Removed Emoji feature WordPress 4.2
+	 */
+	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+	remove_action( 'wp_print_styles', 'print_emoji_styles' );
+
 	// Tospy may use shortlink
 	//remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
 
@@ -96,8 +102,6 @@ add_action( 'after_setup_theme', 'makotokw_setup' );
  * Enqueue scripts and styles
  */
 function makotokw_scripts() {
-	global $wp_styles;
-
 	// move jQuery to footer
 	if ( ! is_admin() ) {
 		wp_deregister_script( 'jquery-core' );
@@ -121,6 +125,20 @@ function makotokw_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'makotokw_scripts' );
 
+/**
+ * deregister styles
+ */
+function makotokw_deregister_styles()    {
+	wp_deregister_style( 'dashicons' );
+}
+
+if ( ! is_admin_bar_showing() ) {
+	add_action( 'wp_print_styles', 'makotokw_deregister_styles', 100 );
+}
+
+/**
+ * add elementId to style to concat it by PageSpeed
+ */
 if ( ! is_admin() ) {
 	function makotokw_remove_style_id( $link ) {
 		return preg_replace( "/id='(?:gfm|thickbox|amazonjs|makotokw).*-css'/", '', $link );
@@ -128,6 +146,9 @@ if ( ! is_admin() ) {
 	add_filter( 'style_loader_tag', 'makotokw_remove_style_id' );
 }
 
+/**
+ * Custom QTags
+ */
 function makotokw_quicktags()
 	// http://wordpress.stackexchange.com/questions/37849/add-custom-shortcode-button-to-editor
 	/* Add custom Quicktag buttons to the editor Wordpress ver. 3.3 and above only
@@ -146,14 +167,14 @@ function makotokw_quicktags()
 
 		(function ($) {
 			if (typeof(QTags) != 'undefined') {
-				_datetime = (function () {
+				var datetime = (function () {
 					var now = new Date(), zeroise;
 					zeroise = function (number) {
 						var str = number.toString();
 						if (str.length < 2)
 							str = "0" + str;
 						return str;
-					}
+					};
 					return now.getUTCFullYear() + '-' +
 						zeroise(now.getUTCMonth() + 1) + '-' +
 						zeroise(now.getUTCDate()) + 'T' +
@@ -166,7 +187,7 @@ function makotokw_quicktags()
 				$.each(['h2', 'h3', 'h4', 'h5', 'p'], function (i, e) {
 					QTags.addButton(e, e, '<' + e + '>', '</' + e + '>');
 				});
-				QTags.addButton('ins_block', 'ins_block', '<ins class="note-ins" datetime="' + _datetime + '">', '</ins>');
+				QTags.addButton('ins_block', 'ins_block', '<ins class="note-ins" datetime="' + datetime + '">', '</ins>');
 				QTags.addButton('AA', 'aa', '<span class="aa">', '</span>');
 				QTags.addButton('big', 'big', '<span class="big">', '</span>');
 
