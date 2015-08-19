@@ -3664,8 +3664,7 @@ input[type="color"],
   color: #bdbdbd; }
   .entry-meta .portfolio-posts-area .entry-date {
     margin: 0 4px; }
-  .entry-meta .entry-author,
-  .entry-meta .date {
+  .entry-meta .entry-author {
     display: none; }
 
 .entry-header {

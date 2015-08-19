@@ -271,7 +271,7 @@ function makotokw_breadcrumbs_category_parents( $id, $separator = '/', $visited 
  */
 function makotokw_posted_on() {
 	printf(
-		__( '<time class="published time datetime="%1$s">%2$s</time>', 'makotokw' ),
+		__( '<time class="published updated time" datetime="%1$s">%2$s</time>', 'makotokw' ),
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_post_time( THEME_DATE_FORMAT ) )
 	);
@@ -279,7 +279,7 @@ function makotokw_posted_on() {
 
 function makotokw_updated_on() {
 	printf(
-		__( '<time class="updated" datetime="%1$s">%2$s</time>', 'makotokw' ),
+		__( '<time class="updated time" datetime="%1$s">%2$s</time>', 'makotokw' ),
 		esc_attr( get_the_modified_date( 'c' ) ),
 		esc_html( get_the_modified_time( THEME_DATE_FORMAT ) )
 	);
