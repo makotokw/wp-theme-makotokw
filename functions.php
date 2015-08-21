@@ -69,6 +69,7 @@ function makotokw_setup() {
 		)
 	);
 
+	remove_filter( 'wp_head', 'rel_canonical' );
 	remove_action( 'wp_head', 'feed_links', 2 );
 	remove_action( 'wp_head', 'feed_links_extra', 3 );
 	remove_action( 'wp_head', 'rsd_link' );

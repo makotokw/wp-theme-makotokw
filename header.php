@@ -22,6 +22,9 @@
 <link rel="apple-touch-icon" sizes="120x120" href="<?php echo get_template_directory_uri(); ?>/images/touch-icon-iphone-retina.png">
 <link rel="apple-touch-icon" sizes="152x152" href="<?php echo get_template_directory_uri(); ?>/images/touch-icon-ipad-retina.png">
 <link rel="profile" href="http://gmpg.org/xfn/11"/>
+	<?php if ( is_singular() ) : ?>
+<link rel="canonical" href="<?php the_permalink(); ?>" />
+	<?php endif ?>
 <link rel="alternate" type="<?php echo feed_content_type() ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) )?>" href="<?php echo get_feed_link() ?>" />
 <?php if ( true === WP_THEME_OGP ) : ?><?php get_template_part( 'meta-ogp' ); ?><?php endif ?>
 <?php // @codingStandardsIgnoreStart ?>
