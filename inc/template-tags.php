@@ -306,8 +306,7 @@ function makotokw_post_summary( $content, $length = 50, $trimmarker = '...' ) {
 	return mb_strimwidth( strip_tags( strip_shortcodes( $content ) ), 0, 128 ) . '...';
 }
 
-function makotokw_share_permalink()
-{
+function makotokw_share_permalink() {
 	$permalink = get_permalink();
 	if ( true === WP_THEME_DEBUG ) {
 		$permalink = str_replace( home_url(), WP_THEME_PRODUCTION_URL, $permalink );

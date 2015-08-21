@@ -21,7 +21,7 @@ gulp.task('bower:normalize', ['clean:components', 'bower:install'], function () 
 gulp.task('violations', ['phpcs', 'jshint']);
 
 gulp.task('phpcs', plugins.shell.task(
-	['phpcs --report-width=1024 --standard=build/phpcs.xml *.php ./**/*.php'],
+	'phpcs --report-width=1024 --standard=build/phpcs.xml *.php ./**/*.php',
 	{ignoreErrors: true}
 ));
 

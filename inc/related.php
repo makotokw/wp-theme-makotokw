@@ -110,7 +110,7 @@ function makotokw_related_portfolio() {
 					'terms' => $portfolio->term_id,
 					'operator' => 'IN',
 				),
-			)
+			),
 		);
 
 		$rq = new WP_Query( $query_arg );

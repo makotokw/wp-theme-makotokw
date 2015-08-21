@@ -16,11 +16,13 @@ if ( ! isset( $content_width ) ) {
 /*
  * Load Jetpack compatibility file.
  */
+/** @noinspection PhpIncludeInspection */
 require(get_template_directory() . '/inc/jetpack.php');
 
 /*
  * Custom Taxonomy
  */
+/** @noinspection PhpIncludeInspection */
 require(get_template_directory() . '/inc/taxonomy.php');
 
 /**
@@ -31,14 +33,19 @@ require(get_template_directory() . '/inc/taxonomy.php');
  * support post thumbnails.
  */
 function makotokw_setup() {
+	/** @noinspection PhpIncludeInspection */
 	require(get_template_directory() . '/config.php');
 
 	/**
 	 * Custom template tags for this theme.
 	 */
+	/** @noinspection PhpIncludeInspection */
 	require(get_template_directory() . '/inc/template-tags.php');
+	/** @noinspection PhpIncludeInspection */
 	require(get_template_directory() . '/inc/related.php');
+	/** @noinspection PhpIncludeInspection */
 	require(get_template_directory() . '/inc/comments.php');
+	/** @noinspection PhpIncludeInspection */
 	require(get_template_directory() . '/inc/extras.php');
 
 	/**
@@ -129,7 +136,7 @@ add_action( 'wp_enqueue_scripts', 'makotokw_scripts' );
 /**
  * deregister styles
  */
-function makotokw_deregister_styles()    {
+function makotokw_deregister_styles() {
 	wp_deregister_style( 'dashicons' );
 }
 
@@ -150,7 +157,7 @@ if ( ! is_admin() ) {
 /**
  * Custom QTags
  */
-function makotokw_quicktags()
+function makotokw_quicktags() {
 	// http://wordpress.stackexchange.com/questions/37849/add-custom-shortcode-button-to-editor
 	/* Add custom Quicktag buttons to the editor Wordpress ver. 3.3 and above only
 	 *
@@ -162,7 +169,7 @@ function makotokw_quicktags()
 	 * - Access key, accesskey="" attribute for the button (optional)
 	 * - Title, title="" attribute (optional)
 	 * - Priority/position on bar, 1-9 = first, 11-19 = second, 21-29 = third, etc. (optional)
-	 */ {
+	 */
 	?>
 	<script type="text/javascript">
 

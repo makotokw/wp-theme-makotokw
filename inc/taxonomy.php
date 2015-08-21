@@ -72,7 +72,7 @@ function makotokw_taxonomy_init() {
 				'separate_items_with_commas' => '',
 				'add_or_remove_items' => '',
 				'choose_from_most_used' => '',
-			)
+			),
 		)
 	);
 
@@ -98,7 +98,7 @@ function makotokw_taxonomy_init() {
 				'separate_items_with_commas' => '',
 				'add_or_remove_items' => '',
 				'choose_from_most_used' => '',
-			)
+			),
 		)
 	);
 
