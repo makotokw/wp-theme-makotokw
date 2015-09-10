@@ -48,11 +48,6 @@ if ( post_password_required() ) {
 			</nav><!-- #comment-nav-before -->
 		<?php endif; // check for comment navigation ?>
 
-
-		<?php if ( ! comments_open() && get_comments_number() ) : ?>
-			<p class="no-comments"><?php _e( 'Comments are closed.', 'makotokw' ); ?></p>
-		<?php endif; ?>
-
 	<?php endif; // have_comments() ?>
 
 	<?php comment_form( array( 'format' => 'html5' ) ); ?>
