@@ -25,7 +25,6 @@ function makotokw_body_classes( $classes ) {
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
 	}
-
 	return $classes;
 }
 

@@ -144,6 +144,12 @@ if ( ! is_admin_bar_showing() ) {
 	add_action( 'wp_print_styles', 'makotokw_deregister_styles', 100 );
 }
 
+function makotokw_is_old_post( $post = null ) {
+	$post = get_post( $post );
+	// only within 1 year
+	return get_post_time( 'U', false, $post ) < strtotime( '-1 year' );
+}
+
 /**
  * add elementId to style to concat it by PageSpeed
  */
@@ -172,7 +178,6 @@ function makotokw_quicktags() {
 	 */
 	?>
 	<script type="text/javascript">
-
 		(function ($) {
 			if (typeof(QTags) != 'undefined') {
 				var datetime = (function () {

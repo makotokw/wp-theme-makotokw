@@ -53,3 +53,20 @@ function makotokw_comment( $comment, $args, $depth ) {
 		<!-- #comment-## -->
 	<?php
 } // ends check for makotokw_comment()
+
+/**
+ * @param $open
+ * @param $post_id
+ * @return bool
+ */
+function makotokw_comments_open( $open, $post_id ) {
+	$post = get_post( $post_id );
+	if ( $post->post_type != 'page' ) {
+		if ( makotokw_is_old_post( $post ) ) {
+			$open = false;
+		}
+	}
+	return $open;
+}
+
+add_filter( 'comments_open', 'makotokw_comments_open', 10, 2 );

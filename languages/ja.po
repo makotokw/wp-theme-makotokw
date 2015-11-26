@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: makoto.kw@gmail.com\n"
-"POT-Creation-Date: 2015-04-25 11:08+0900\n"
+"POT-Creation-Date: 2015-11-27 00:57+0900\n"
 "PO-Revision-Date: 2013-04-28 18:46+0900\n"
 "Last-Translator: Makoto Kawasaki <makoto.kw@gmail.com>\n"
 "Language-Team: Japanese\n"
@@ -29,24 +29,29 @@ msgstr ""
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: comments.php:53
-msgid "Comments are closed."
-msgstr "コメントは停止中です。"
-
 #: content.php:16
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
 
-#: content.php:30 inc/template-tags.php:289
+#: content.php:30 inc/template-tags.php:290
 msgid "Continue reading"
 msgstr "続きを読む"
 
-#: content.php:38
+#: content.php:39
+msgid "This post was published <strong>1</strong> year ago."
+msgstr "この記事は公開から <strong>1</strong> 年以上が経過しています。"
+
+#: content.php:41
+#, php-format
+msgid "This post was published <strong>%d</strong> year ago."
+msgstr "この記事は公開から <strong>%d</strong> 年以上が経過しています。"
+
+#: content.php:54
 msgid "Pages:"
 msgstr ""
 
-#: content.php:65
+#: content.php:81
 msgid "Last Updated"
 msgstr ""
 
@@ -59,11 +64,11 @@ msgstr ""
 msgid "Semantic Personal Publishing Platform"
 msgstr ""
 
-#: functions.php:67
+#: functions.php:74
 msgid "Site Menu"
 msgstr "サイトメニュー"
 
-#: functions.php:68
+#: functions.php:75
 msgid "Portfolio Menu"
 msgstr "ポートフォリオメニュー"
 
@@ -114,7 +119,7 @@ msgstr "編集"
 msgid "Your comment is awaiting moderation."
 msgstr "コメントは承認待ちです。"
 
-#: inc/extras.php:73
+#: inc/extras.php:72
 #, php-format
 msgid "Page %s"
 msgstr ""
@@ -183,7 +188,7 @@ msgstr ""
 msgid "Last"
 msgstr ""
 
-#: inc/template-tags.php:190 inc/template-tags.php:223
+#: inc/template-tags.php:190 inc/template-tags.php:224
 msgid "Categories"
 msgstr "カテゴリ"
 
@@ -195,45 +200,45 @@ msgstr "タグ"
 msgid "Mylist"
 msgstr "マイリスト"
 
-#: inc/template-tags.php:201
+#: inc/template-tags.php:202
 msgid "Blog"
 msgstr "ブログ"
 
-#: inc/template-tags.php:204
+#: inc/template-tags.php:205
 msgid "Portfolio"
 msgstr "ポートフォリオ"
 
-#: inc/template-tags.php:208 inc/template-tags.php:211
-#: inc/template-tags.php:214 inc/template-tags.php:217
+#: inc/template-tags.php:209 inc/template-tags.php:212
+#: inc/template-tags.php:215 inc/template-tags.php:218
 msgid "Archives"
 msgstr "アーカイブ"
 
-#: inc/template-tags.php:212
+#: inc/template-tags.php:213
 msgid "Y/M"
 msgstr "Y年M"
 
-#: inc/template-tags.php:215
+#: inc/template-tags.php:216
 msgid "Y"
 msgstr "Y年"
 
-#: inc/template-tags.php:220
+#: inc/template-tags.php:221
 msgid "Search Results"
 msgstr "検索結果"
 
-#: inc/template-tags.php:263 inc/template-tags.php:454
+#: inc/template-tags.php:264 inc/template-tags.php:454
 #: inc/template-tags.php:473 inc/template-tags.php:492
 #, php-format
 msgid "View all posts in %s"
 msgstr ""
 
-#: inc/template-tags.php:273
+#: inc/template-tags.php:274
 #, php-format
-msgid "<time class=\"published time datetime=\"%1$s\">%2$s</time>"
+msgid "<time class=\"published updated time\" datetime=\"%1$s\">%2$s</time>"
 msgstr ""
 
-#: inc/template-tags.php:281
+#: inc/template-tags.php:282
 #, php-format
-msgid "<time class=\"updated\" datetime=\"%1$s\">%2$s</time>"
+msgid "<time class=\"updated time\" datetime=\"%1$s\">%2$s</time>"
 msgstr ""
 
 #: inc/template-tags.php:332
@@ -263,3 +268,7 @@ msgstr ""
 #: inc/template-tags.php:380
 msgid "About"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Comments are closed"
+#~ msgstr "コメントは停止中です。"

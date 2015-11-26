@@ -30,6 +30,21 @@ $only_excerpts = is_home() || is_year() || is_month() || is_search();
 			<a class="text-more-link" href="<?php the_permalink() ?>"><?php _e( 'Continue reading', 'makotokw' ); ?></a>
 		</div>
 	<?php else : ?>
+
+		<?php if ( ! is_page() && makotokw_is_old_post() ) : ?>
+			<?php $post_time = date_create( get_the_date( 'c' ) ); $interval = $post_time->diff( date_create() ); ?>
+			<?php if ( 1 <= $interval->y ) : ?>
+			<aside class="alert alert-warning">
+				<i class="fa fa-clock-o"></i>
+				<?php if ( 1 == $interval->y ) : ?>
+					<?php _e( 'This post was published <strong>1</strong> year ago.', 'makotokw' )?>
+				<?php else : ?>
+					<?php echo sprintf( __( 'This post was published <strong>%d</strong> year ago.', 'makotokw' ), $interval->y )?>
+				<?php endif ?>
+			</aside>
+			<?php endif ?>
+		<?php endif ?>
+
 		<div class="entry-content">
 			<?php the_content(); ?>
 			<?php
