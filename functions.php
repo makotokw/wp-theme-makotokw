@@ -120,6 +120,7 @@ function makotokw_scripts() {
 		wp_enqueue_script( 'jquery-migrate' );
 	}
 
+	wp_enqueue_style( 'makotokw-fonts', esc_url_raw( makotokw_fonts_url() ), array(), null );
 	wp_enqueue_style( 'makotokw-style', get_stylesheet_uri(), array(), THEME_STYLE_CSS_REV );
 
 	wp_register_script( 'makotokw-script', get_template_directory_uri() . '/style.js', array( 'jquery' ), THEME_STYLE_SCRIPT_REV, true );
@@ -158,6 +159,22 @@ if ( ! is_admin() ) {
 		return preg_replace( "/id='(?:gfm|thickbox|amazonjs|makotokw).*-css'/", '', $link );
 	}
 	add_filter( 'style_loader_tag', 'makotokw_remove_style_id' );
+}
+
+function makotokw_fonts_url() {
+	$fonts_url = '';
+
+	$fonts[] = 'Montserrat:400,700';
+	$fonts[] = 'Lato:300,400,700,300italic,400italic,700italic';
+
+	if ( $fonts ) {
+		$fonts_url = add_query_arg(  array(
+				'family' => implode( '|', $fonts ),
+				'subset' => 'latin,latin-ext',
+		), 'https://fonts.googleapis.com/css' );
+	}
+
+	return $fonts_url;
 }
 
 /**

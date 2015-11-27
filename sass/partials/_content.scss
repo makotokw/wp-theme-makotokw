@@ -32,7 +32,6 @@
 }
 
 .entry-title {
-  font-family: $font-family-sans-serif-ja;
   font-size: $entry-list-title-font-size;
   line-height: 1.3;
   .post-single & {
@@ -72,7 +71,6 @@
 
   .entry-meta {
     margin: 4px 0;
-    font-family: Verdana, Arial, serif;
     font-weight: 400;
 
     .tag-links {
@@ -93,7 +91,7 @@
 
 .entry-content,
 .entry-summary {
-  font-family: $font-family-sans-serif-ja;
+  font-family: $font-family-content;
   font-size: $entry-list-content-font-size;
   .post-single & {
     font-size: $entry-content-font-size;
@@ -101,6 +99,9 @@
   }
   img {
     margin: $block-margin auto;
+  }
+  h1,h2,h3,h4,h5,h6 {
+    font-family: $font-family-base;
   }
 }
 

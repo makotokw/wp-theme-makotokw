@@ -45,8 +45,18 @@
   .page-title {
     font-size: $entry-list-title-font-size;
   }
-  .entry-content {
-    overflow-x: auto;
+
+  .section-page {
+    padding: 10px;
+  }
+
+  .entry-content,
+  .entry-summary {
+    font-size: $entry-list-content-font-size * 0.9;
+    .post-single & {
+      font-size: $entry-list-content-font-size;
+      line-height: $line-height-large * 0.9;
+    }
   }
 
   .related-posts {
@@ -86,6 +96,20 @@
   var,
   samp {
     font-size: 14px;
+  }
+
+  .site-footer {
+    .site-info {
+      .copyrights {
+        .credit,
+        .poweredby {
+          font-size: $font-size-mini;
+          float: none;
+          display: block;
+          text-align: center;
+        }
+      }
+    }
   }
 }
 
@@ -129,19 +153,6 @@
 
   .site-navi {
     text-align: center;
-  }
-
-  .site-footer {
-    .site-info {
-      .copyrights {
-        .credit,
-        .poweredby {
-          float: none;
-          display: block;
-          text-align: center;
-        }
-      }
-    }
   }
 
   blockquote {
@@ -225,6 +236,13 @@
       .credit {
         display: block;
       }
+    }
+  }
+
+  .comment-form {
+    input,
+    textarea {
+      width: 95%;
     }
   }
 }
