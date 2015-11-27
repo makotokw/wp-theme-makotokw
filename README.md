@@ -35,9 +35,9 @@ So, please use a reference of one implementation for WordPress theme.
 
 ```
 cd /path/to/wordpress/wp-content/themes
-git clone https://github.com/makotokw/wp-theme-makotokw.git makotokw2015
-cd makotokw2015
-git checkout makotokw2015
+git clone https://github.com/makotokw/wp-theme-makotokw.git makotokw2016
+cd makotokw2016
+git checkout makotokw2016
 cp -p config.php.sample config.php
 ```
 
