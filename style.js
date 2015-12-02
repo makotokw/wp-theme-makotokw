@@ -26,8 +26,8 @@ window.Modernizr = function(e, t, n) {
         return !1;
     }
     function c(e, t, n) {
-        var r = e.charAt(0).toUpperCase() + e.slice(1), a = (e + " " + k.join(r + " ") + r).split(" ");
-        return o(t, "string") || o(t, "undefined") ? s(a, t) : (a = (e + " " + N.join(r + " ") + r).split(" "), 
+        var r = e.charAt(0).toUpperCase() + e.slice(1), a = (e + " " + N.join(r + " ") + r).split(" ");
+        return o(t, "string") || o(t, "undefined") ? s(a, t) : (a = (e + " " + k.join(r + " ") + r).split(" "), 
         l(a, t, n));
     }
     function u() {
@@ -46,7 +46,7 @@ window.Modernizr = function(e, t, n) {
             return _;
         }("search tel url email datetime date month week time datetime-local number range color".split(" "));
     }
-    var d, f, p = "2.8.3", h = {}, m = !0, g = t.documentElement, v = "modernizr", y = t.createElement(v), b = y.style, x = t.createElement("input"), w = ":)", C = {}.toString, S = " -webkit- -moz- -o- -ms- ".split(" "), E = "Webkit Moz O ms", k = E.split(" "), N = E.toLowerCase().split(" "), T = {
+    var d, f, p = "2.8.3", h = {}, m = !0, g = t.documentElement, v = "modernizr", y = t.createElement(v), b = y.style, x = t.createElement("input"), w = ":)", C = {}.toString, S = " -webkit- -moz- -o- -ms- ".split(" "), E = "Webkit Moz O ms", N = E.split(" "), k = E.toLowerCase().split(" "), T = {
         svg: "http://www.w3.org/2000/svg"
     }, P = {}, _ = {}, L = {}, $ = [], A = $.slice, R = function(e, n, r, a) {
         var o, i, s, l, c = t.createElement("div"), u = t.body, d = u || t.createElement("body");
@@ -295,7 +295,7 @@ window.Modernizr = function(e, t, n) {
             createDocumentFragment: i
         };
         e.html5 = y, l(t);
-    }(this, t), h._version = p, h._prefixes = S, h._domPrefixes = N, h._cssomPrefixes = k, 
+    }(this, t), h._version = p, h._prefixes = S, h._domPrefixes = k, h._cssomPrefixes = N, 
     h.mq = j, h.hasEvent = I, h.testProp = function(e) {
         return s([ e ]);
     }, h.testAllProps = c, h.testStyles = R, h.prefixed = function(e, t, n) {
@@ -459,10 +459,10 @@ var prettyPrintOne, prettyPrint;
                 }
                 var C = d;
                 if (d += v.length, g) {
-                    var S = b[1], E = v.indexOf(S), k = E + S.length;
-                    b[2] && (k = v.length - b[2].length, E = k - S.length);
-                    var N = y.substring(5);
-                    n(l + C, v.substring(0, E), s, u), n(l + C + E, S, c(N, S), u), n(l + C + k, v.substring(k), s, u);
+                    var S = b[1], E = v.indexOf(S), N = E + S.length;
+                    b[2] && (N = v.length - b[2].length, E = N - S.length);
+                    var k = y.substring(5);
+                    n(l + C, v.substring(0, E), s, u), n(l + C + E, S, c(k, S), u), n(l + C + N, v.substring(N), s, u);
                 } else u.push(l + C, y);
             }
             e.decorations = u;
@@ -555,9 +555,9 @@ var prettyPrintOne, prettyPrint;
                     t && (b = b.replace(n, "\r")), C.nodeValue = b;
                     var S = C.ownerDocument, E = S.createElement("span");
                     E.className = c[d + 1];
-                    var k = C.parentNode;
-                    k.replaceChild(E, C), E.appendChild(C), x > o && (i[l + 1] = C = S.createTextNode(r.substring(g, x)), 
-                    k.insertBefore(C, E.nextSibling));
+                    var N = C.parentNode;
+                    N.replaceChild(E, C), E.appendChild(C), x > o && (i[l + 1] = C = S.createTextNode(r.substring(g, x)), 
+                    N.insertBefore(C, E.nextSibling));
                 }
                 o = g, o >= x && (l += 2), o >= w && (d += 2);
             }
@@ -613,14 +613,14 @@ var prettyPrintOne, prettyPrint;
                 }
                 var h = n.className;
                 if ((o !== E || b.test(h)) && !x.test(h)) {
-                    for (var k = !1, N = n.parentNode; N; N = N.parentNode) {
-                        var T = N.tagName;
-                        if (S.test(T) && N.className && b.test(N.className)) {
-                            k = !0;
+                    for (var N = !1, k = n.parentNode; k; k = k.parentNode) {
+                        var T = k.tagName;
+                        if (S.test(T) && k.className && b.test(k.className)) {
+                            N = !0;
                             break;
                         }
                     }
-                    if (!k) {
+                    if (!N) {
                         n.className += " prettyprinted";
                         var P = o.lang;
                         if (!P) {
@@ -657,7 +657,7 @@ var prettyPrintOne, prettyPrint;
         var g, v = 0, y = /\blang(?:uage)?-([\w.]+)(?!\S)/, b = /\bprettyprint\b/, x = /\bprettyprinted\b/, w = /pre|xmp/i, C = /^code$/i, S = /^(?:pre|code|xmp)$/i, E = {};
         a();
     }
-    var p = window, h = [ "break,continue,do,else,for,if,return,while" ], m = [ h, "auto,case,char,const,default,double,enum,extern,float,goto,inline,int,long,register,short,signed,sizeof,static,struct,switch,typedef,union,unsigned,void,volatile" ], g = [ m, "catch,class,delete,false,import,new,operator,private,protected,public,this,throw,true,try,typeof" ], v = [ g, "alignof,align_union,asm,axiom,bool,concept,concept_map,const_cast,constexpr,decltype,delegate,dynamic_cast,explicit,export,friend,generic,late_check,mutable,namespace,nullptr,property,reinterpret_cast,static_assert,static_cast,template,typeid,typename,using,virtual,where" ], y = [ g, "abstract,assert,boolean,byte,extends,final,finally,implements,import,instanceof,interface,null,native,package,strictfp,super,synchronized,throws,transient" ], b = [ y, "as,base,by,checked,decimal,delegate,descending,dynamic,event,fixed,foreach,from,group,implicit,in,internal,into,is,let,lock,object,out,override,orderby,params,partial,readonly,ref,sbyte,sealed,stackalloc,string,select,uint,ulong,unchecked,unsafe,ushort,var,virtual,where" ], x = "all,and,by,catch,class,else,extends,false,finally,for,if,in,is,isnt,loop,new,no,not,null,of,off,on,or,return,super,then,throw,true,try,unless,until,when,while,yes", w = [ g, "debugger,eval,export,function,get,null,set,undefined,var,with,Infinity,NaN" ], C = "caller,delete,die,do,dump,elsif,eval,exit,foreach,for,goto,if,import,last,local,my,next,no,our,print,package,redo,require,sub,undef,unless,until,use,wantarray,while,BEGIN,END", S = [ h, "and,as,assert,class,def,del,elif,except,exec,finally,from,global,import,in,is,lambda,nonlocal,not,or,pass,print,raise,try,with,yield,False,True,None" ], E = [ h, "alias,and,begin,case,class,def,defined,elsif,end,ensure,false,in,module,next,nil,not,or,redo,rescue,retry,self,super,then,true,undef,unless,until,when,yield,BEGIN,END" ], k = [ h, "as,assert,const,copy,drop,enum,extern,fail,false,fn,impl,let,log,loop,match,mod,move,mut,priv,pub,pure,ref,self,static,struct,true,trait,type,unsafe,use" ], N = [ h, "case,done,elif,esac,eval,fi,function,in,local,set,then,until" ], T = [ v, b, w, C, S, E, N ], P = /^(DIR|FILE|vector|(de|priority_)?queue|list|stack|(const_)?iterator|(multi)?(set|map)|bitset|u?(int|float)\d*)\b/, _ = "str", L = "kwd", $ = "com", A = "typ", R = "lit", j = "pun", I = "pln", M = "tag", O = "dec", D = "src", z = "atn", B = "atv", F = "nocode", V = "(?:^^\\.?|[+-]|[!=]=?=?|\\#|%=?|&&?=?|\\(|\\*=?|[+\\-]=|->|\\/=?|::?|<<?=?|>>?>?=?|,|;|\\?|@|\\[|~|{|\\^\\^?=?|\\|\\|?=?|break|case|continue|delete|do|else|finally|instanceof|return|throw|try|typeof)\\s*", U = /\S/, H = o({
+    var p = window, h = [ "break,continue,do,else,for,if,return,while" ], m = [ h, "auto,case,char,const,default,double,enum,extern,float,goto,inline,int,long,register,short,signed,sizeof,static,struct,switch,typedef,union,unsigned,void,volatile" ], g = [ m, "catch,class,delete,false,import,new,operator,private,protected,public,this,throw,true,try,typeof" ], v = [ g, "alignof,align_union,asm,axiom,bool,concept,concept_map,const_cast,constexpr,decltype,delegate,dynamic_cast,explicit,export,friend,generic,late_check,mutable,namespace,nullptr,property,reinterpret_cast,static_assert,static_cast,template,typeid,typename,using,virtual,where" ], y = [ g, "abstract,assert,boolean,byte,extends,final,finally,implements,import,instanceof,interface,null,native,package,strictfp,super,synchronized,throws,transient" ], b = [ y, "as,base,by,checked,decimal,delegate,descending,dynamic,event,fixed,foreach,from,group,implicit,in,internal,into,is,let,lock,object,out,override,orderby,params,partial,readonly,ref,sbyte,sealed,stackalloc,string,select,uint,ulong,unchecked,unsafe,ushort,var,virtual,where" ], x = "all,and,by,catch,class,else,extends,false,finally,for,if,in,is,isnt,loop,new,no,not,null,of,off,on,or,return,super,then,throw,true,try,unless,until,when,while,yes", w = [ g, "debugger,eval,export,function,get,null,set,undefined,var,with,Infinity,NaN" ], C = "caller,delete,die,do,dump,elsif,eval,exit,foreach,for,goto,if,import,last,local,my,next,no,our,print,package,redo,require,sub,undef,unless,until,use,wantarray,while,BEGIN,END", S = [ h, "and,as,assert,class,def,del,elif,except,exec,finally,from,global,import,in,is,lambda,nonlocal,not,or,pass,print,raise,try,with,yield,False,True,None" ], E = [ h, "alias,and,begin,case,class,def,defined,elsif,end,ensure,false,in,module,next,nil,not,or,redo,rescue,retry,self,super,then,true,undef,unless,until,when,yield,BEGIN,END" ], N = [ h, "as,assert,const,copy,drop,enum,extern,fail,false,fn,impl,let,log,loop,match,mod,move,mut,priv,pub,pure,ref,self,static,struct,true,trait,type,unsafe,use" ], k = [ h, "case,done,elif,esac,eval,fi,function,in,local,set,then,until" ], T = [ v, b, w, C, S, E, k ], P = /^(DIR|FILE|vector|(de|priority_)?queue|list|stack|(const_)?iterator|(multi)?(set|map)|bitset|u?(int|float)\d*)\b/, _ = "str", L = "kwd", $ = "com", A = "typ", R = "lit", j = "pun", I = "pln", M = "tag", O = "dec", D = "src", z = "atn", B = "atv", F = "nocode", V = "(?:^^\\.?|[+-]|[!=]=?=?|\\#|%=?|&&?=?|\\(|\\*=?|[+\\-]=|->|\\/=?|::?|<<?=?|>>?>?=?|,|;|\\?|@|\\[|~|{|\\^\\^?=?|\\|\\|?=?|break|case|continue|delete|do|else|finally|instanceof|return|throw|try|typeof)\\s*", U = /\S/, H = o({
         keywords: T,
         hashComments: !0,
         cStyleComments: !0,
@@ -683,7 +683,7 @@ var prettyPrintOne, prettyPrint;
         keywords: y,
         cStyleComments: !0
     }), [ "java" ]), l(o({
-        keywords: N,
+        keywords: k,
         hashComments: !0,
         multiLineStrings: !0
     }), [ "bash", "bsh", "csh", "sh" ]), l(o({
@@ -713,7 +713,7 @@ var prettyPrintOne, prettyPrint;
         tripleQuotedStrings: !0,
         regexLiterals: !0
     }), [ "coffee" ]), l(o({
-        keywords: k,
+        keywords: N,
         cStyleComments: !0,
         multilineStrings: !0
     }), [ "rc", "rs", "rust" ]), l(a([], [ [ _, /^[\s\S]+/ ] ]), [ "regex" ]);
@@ -748,17 +748,6 @@ var prettyPrintOne, prettyPrint;
         }
         var n = e("#shareThis"), r = n.data("url"), o = encodeURIComponent(r);
         a && (e.ajax({
-            url: "http://urls.api.twitter.com/1/urls/count.json?url=" + o,
-            dataType: "jsonp"
-        }).done(function(r) {
-            if (r) {
-                var a = e("<a/>").addClass("share-count share-count-link").text(t(r.count));
-                a.attr({
-                    href: "http://twitter.com/search?q=" + o,
-                    target: "_blank"
-                }), n.find(".share-twitter .btn").append(a);
-            }
-        }), e.ajax({
             url: "http://api.b.st-hatena.com/entry.count?url=" + o,
             dataType: "jsonp"
         }).done(function(r) {

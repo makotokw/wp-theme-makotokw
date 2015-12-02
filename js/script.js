@@ -10,17 +10,6 @@
 			return (isNaN(i)) ? 0 : i;
 		}
 		if (isAdmin) {
-			$.ajax({url: 'http://urls.api.twitter.com/1/urls/count.json?url=' + encodedPermalink, dataType: 'jsonp'})
-				.done(function (data) {
-					if (data) {
-						var $count = $('<a/>').addClass('share-count share-count-link').text(toInt(data.count));
-						$count.attr({
-							'href': 'http://twitter.com/search?q=' + encodedPermalink,
-							'target': '_blank'
-						});
-						$shareThis.find('.share-twitter .btn').append($count);
-					}
-				});
 			$.ajax({url: 'http://api.b.st-hatena.com/entry.count?url=' + encodedPermalink, dataType: 'jsonp'})
 				.done(function (data) {
 					var $count = $('<span/>').addClass('share-count').text(toInt(data));
