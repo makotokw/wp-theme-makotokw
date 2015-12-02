@@ -1,10 +1,10 @@
 @charset "UTF-8";
 /*!
- * Theme Name: makotokw2015
- * Theme URI: https://github.com/makotokw/wp-theme-makotokw/tree/makotokw2015
+ * Theme Name: makotokw2016
+ * Theme URI: https://github.com/makotokw/wp-theme-makotokw/tree/makotokw2016
  * Author: makoto_kw
  * Author URI: http://makotokw.com/
- * Description: 2015 theme for kwLog.
+ * Description: 2016 theme for kwLog.
  * Version: 1.0
  * License: GNU General Public License v2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -65,7 +65,7 @@ input,
 select,
 textarea {
   color: #424242;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", Meiryo, メイリオ, YuGothic, "Yu Gothic", 游ゴシック, sans-serif;
   font-size: 16px;
   line-height: 1.7; }
 
@@ -412,8 +412,8 @@ li > ol {
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url("components/font-awesome/fonts/fontawesome-webfont.eot?v=4.4.0");
-  src: url("components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.4.0") format("embedded-opentype"), url("components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.4.0") format("woff2"), url("components/font-awesome/fonts/fontawesome-webfont.woff?v=4.4.0") format("woff"), url("components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.4.0") format("truetype"), url("components/font-awesome/fonts/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular") format("svg");
+  src: url("components/font-awesome/fonts/fontawesome-webfont.eot?v=4.5.0");
+  src: url("components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.5.0") format("embedded-opentype"), url("components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.5.0") format("woff2"), url("components/font-awesome/fonts/fontawesome-webfont.woff?v=4.5.0") format("woff"), url("components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.5.0") format("truetype"), url("components/font-awesome/fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal; }
 .fa {
@@ -2414,6 +2414,66 @@ li > ol {
 .fa-fonticons:before {
   content: ""; }
 
+.fa-reddit-alien:before {
+  content: ""; }
+
+.fa-edge:before {
+  content: ""; }
+
+.fa-credit-card-alt:before {
+  content: ""; }
+
+.fa-codiepie:before {
+  content: ""; }
+
+.fa-modx:before {
+  content: ""; }
+
+.fa-fort-awesome:before {
+  content: ""; }
+
+.fa-usb:before {
+  content: ""; }
+
+.fa-product-hunt:before {
+  content: ""; }
+
+.fa-mixcloud:before {
+  content: ""; }
+
+.fa-scribd:before {
+  content: ""; }
+
+.fa-pause-circle:before {
+  content: ""; }
+
+.fa-pause-circle-o:before {
+  content: ""; }
+
+.fa-stop-circle:before {
+  content: ""; }
+
+.fa-stop-circle-o:before {
+  content: ""; }
+
+.fa-shopping-bag:before {
+  content: ""; }
+
+.fa-shopping-basket:before {
+  content: ""; }
+
+.fa-hashtag:before {
+  content: ""; }
+
+.fa-bluetooth:before {
+  content: ""; }
+
+.fa-bluetooth-b:before {
+  content: ""; }
+
+.fa-percent:before {
+  content: ""; }
+
 @media screen {
   .prettyprint .str {
     color: #dd1144; }
@@ -3505,7 +3565,6 @@ input[type="color"],
 ----------------------------------------------- */
 .breadcrumb {
   display: block;
-  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   font-size: 12px;
   color: #bdbdbd; }
   .breadcrumb a {
@@ -3645,7 +3704,6 @@ input[type="color"],
     color: #263238; }
 
 .entry-title {
-  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   font-size: 25px;
   line-height: 1.3;
   font-weight: 700;
@@ -3671,7 +3729,6 @@ input[type="color"],
   position: relative; }
   .entry-header .entry-meta {
     margin: 4px 0;
-    font-family: Verdana, Arial, serif;
     font-weight: 400; }
     .entry-header .entry-meta .tag-links {
       text-transform: capitalize; }
@@ -3684,7 +3741,7 @@ input[type="color"],
 
 .entry-content,
 .entry-summary {
-  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-family: Lato, "Helvetica Neue", Helvetica, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", Meiryo, メイリオ, YuGothic, "Yu Gothic", 游ゴシック, sans-serif;
   font-size: 16px; }
   .post-single .entry-content, .post-single
   .entry-summary {
@@ -3693,6 +3750,14 @@ input[type="color"],
   .entry-content img,
   .entry-summary img {
     margin: 1.6em auto; }
+  .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6,
+  .entry-summary h1,
+  .entry-summary h2,
+  .entry-summary h3,
+  .entry-summary h4,
+  .entry-summary h5,
+  .entry-summary h6 {
+    font-family: Montserrat, "Helvetica Neue", Helvetica, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", Meiryo, メイリオ, YuGothic, "Yu Gothic", 游ゴシック, sans-serif; }
 
 .entry-header,
 .entry-content,
@@ -3863,7 +3928,6 @@ object {
     display: none; }
   .btn-share.btn-circle .icon, .pagination ul .current .btn-share.page .icon, .pagination a.btn-share .icon {
     text-align: center;
-    line-height: 41px;
     margin-left: 7px; }
   .btn-share .share-count {
     position: absolute;
@@ -3969,7 +4033,7 @@ object {
   .comment-body .comment-content {
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 1.6em;
-    font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    font-family: Lato, "Helvetica Neue", Helvetica, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", Meiryo, メイリオ, YuGothic, "Yu Gothic", 游ゴシック, sans-serif;
     font-size: 14.4px;
     line-height: 2;
     overflow-x: auto;
@@ -4468,8 +4532,16 @@ object {
   .page-title {
     font-size: 25px; }
 
-  .entry-content {
-    overflow-x: auto; }
+  .section-page {
+    padding: 10px; }
+
+  .entry-content,
+  .entry-summary {
+    font-size: 14.4px; }
+    .post-single .entry-content, .post-single
+    .entry-summary {
+      font-size: 16px;
+      line-height: 1.8; }
 
   .related-posts .related-post {
     padding: 10px; }
@@ -4498,7 +4570,14 @@ object {
   tt,
   var,
   samp {
-    font-size: 14px; } }
+    font-size: 14px; }
+
+  .site-footer .site-info .copyrights .credit,
+  .site-footer .site-info .copyrights .poweredby {
+    font-size: 12px;
+    float: none;
+    display: block;
+    text-align: center; } }
 @media (max-width: 750px) {
   .entry-content img.alignleft,
   .entry-content .wp-caption.alignleft {
@@ -4522,12 +4601,6 @@ object {
     width: 260px; }
 
   .site-navi {
-    text-align: center; }
-
-  .site-footer .site-info .copyrights .credit,
-  .site-footer .site-info .copyrights .poweredby {
-    float: none;
-    display: block;
     text-align: center; }
 
   blockquote {
@@ -4574,7 +4647,11 @@ object {
     float: none; }
 
   .site-footer .site-info .credit {
-    display: block; } }
+    display: block; }
+
+  .comment-form input,
+  .comment-form textarea {
+    width: 95%; } }
 @media print {
   body {
     background: none !important;
