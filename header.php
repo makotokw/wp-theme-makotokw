@@ -15,7 +15,7 @@
 	<?php if ( is_archive() || is_search() ) : ?>
 <meta name="robots" content="noindex,follow" />
 	<?php endif ?>
-<title><?php wp_title( '|', true, 'right' ); ?></title>
+<title><?php wp_title( ' - ', true, 'right' ); ?></title>
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/images/touch-icon-iphone.png">
 <link rel="apple-touch-icon" sizes="76x76" href="<?php echo get_template_directory_uri(); ?>/images/touch-icon-ipad.png">
