@@ -75,11 +75,12 @@ gulp.task('js', function () {
 });
 
 function sass(env) {
-	var isDebug = env == 'development';
-	return plugins.rubySass('./sass/', {
+	var isDebug = env === 'development';
+	return plugins.rubySass('sass/*.scss', {
 		verbose: isDebug,
 		loadPath: ['components'],
-		lineNumbers: isDebug
+		lineNumbers: isDebug,
+		force: !isDebug
 	})
 		.pipe(plugins.plumber())
 		.pipe(plugins.autoprefixer({
@@ -91,11 +92,11 @@ function sass(env) {
 }
 
 gulp.task('sass:dev', function () {
-	sass('development');
+	return sass('development');
 });
 
 gulp.task('sass', function () {
-	sass('production');
+	return sass('production');
 });
 
 gulp.task('browser-sync', function () {
