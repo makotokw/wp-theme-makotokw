@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: makotokw 1.0\n"
 "Report-Msgid-Bugs-To: makoto.kw@gmail.com\n"
-"POT-Creation-Date: 2015-11-27 00:57+0900\n"
+"POT-Creation-Date: 2015-12-23 23:13+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,24 +34,24 @@ msgstr ""
 msgid "Permalink to %s"
 msgstr ""
 
-#: content.php:30 inc/template-tags.php:290
+#: content.php:27
+msgid "(<span class=\"entry-date-warning-y\">1</span> year ago)"
+msgstr ""
+
+#: content.php:29
+#, php-format
+msgid "(<span class=\"entry-date-warning-y\">%d</span> years ago)"
+msgstr ""
+
+#: content.php:42 inc/template-tags.php:290
 msgid "Continue reading"
 msgstr ""
 
-#: content.php:39
-msgid "This post was published <strong>1</strong> year ago."
-msgstr ""
-
-#: content.php:41
-#, php-format
-msgid "This post was published <strong>%d</strong> year ago."
-msgstr ""
-
-#: content.php:54
+#: content.php:50
 msgid "Pages:"
 msgstr ""
 
-#: content.php:81
+#: content.php:77
 msgid "Last Updated"
 msgstr ""
 

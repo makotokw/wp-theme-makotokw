@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: makoto.kw@gmail.com\n"
-"POT-Creation-Date: 2015-11-27 00:57+0900\n"
+"POT-Creation-Date: 2015-12-23 23:13+0900\n"
 "PO-Revision-Date: 2013-04-28 18:46+0900\n"
 "Last-Translator: Makoto Kawasaki <makoto.kw@gmail.com>\n"
 "Language-Team: Japanese\n"
@@ -34,24 +34,24 @@ msgstr ""
 msgid "Permalink to %s"
 msgstr ""
 
-#: content.php:30 inc/template-tags.php:290
+#: content.php:27
+msgid "(<span class=\"entry-date-warning-y\">1</span> year ago)"
+msgstr "(<span class=\"entry-date-warning-y\">1</span>年前)"
+
+#: content.php:29
+#, php-format
+msgid "(<span class=\"entry-date-warning-y\">%d</span> years ago)"
+msgstr "(<span class=\"entry-date-warning-y\">%d</span>年前)"
+
+#: content.php:42 inc/template-tags.php:290
 msgid "Continue reading"
 msgstr "続きを読む"
 
-#: content.php:39
-msgid "This post was published <strong>1</strong> year ago."
-msgstr "この記事は公開から <strong>1</strong> 年以上が経過しています。"
-
-#: content.php:41
-#, php-format
-msgid "This post was published <strong>%d</strong> year ago."
-msgstr "この記事は公開から <strong>%d</strong> 年以上が経過しています。"
-
-#: content.php:54
+#: content.php:50
 msgid "Pages:"
 msgstr ""
 
-#: content.php:81
+#: content.php:77
 msgid "Last Updated"
 msgstr ""
 
@@ -269,6 +269,3 @@ msgstr ""
 msgid "About"
 msgstr ""
 
-#, fuzzy
-#~ msgid "Comments are closed"
-#~ msgstr "コメントは停止中です。"

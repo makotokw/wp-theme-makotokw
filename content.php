@@ -19,6 +19,18 @@ $only_excerpts = is_home() || is_year() || is_month() || is_search();
 		<section class="entry-meta">
 			<?php if ( 'post' == $post_type ) : ?>
 				<span class="entry-date date updated"><?php makotokw_posted_on(); ?></span>
+				<?php if ( makotokw_is_old_post() ) : ?>
+					<?php $post_time = date_create( get_the_date( 'c' ) ); $interval = $post_time->diff( date_create() ); ?>
+					<?php if ( 1 <= $interval->y ) : ?>
+						<span class="entry-date-warning">
+							<?php if ( 1 == $interval->y ) : ?>
+								<?php _e( '(<span class="entry-date-warning-y">1</span> year ago)', 'makotokw' )?>
+							<?php else : ?>
+								<?php echo sprintf( __( '(<span class="entry-date-warning-y">%d</span> years ago)', 'makotokw' ), $interval->y )?>
+							<?php endif ?>
+						</span>
+					<?php endif ?>
+				<?php endif ?>
 				<span class="tag-links"><?php makotokw_the_category_slug( '', ', ' ); ?><?php makotokw_the_tags_slug( ', ', ', ' ); ?><?php makotokw_the_terms_slug( 'portfolios', ', ', ', ' ) ?></span>
 			<?php endif; ?>
 		</section>
@@ -30,21 +42,6 @@ $only_excerpts = is_home() || is_year() || is_month() || is_search();
 			<a class="text-more-link" href="<?php the_permalink() ?>"><?php _e( 'Continue reading', 'makotokw' ); ?></a>
 		</div>
 	<?php else : ?>
-
-		<?php if ( ! is_page() && makotokw_is_old_post() ) : ?>
-			<?php $post_time = date_create( get_the_date( 'c' ) ); $interval = $post_time->diff( date_create() ); ?>
-			<?php if ( 1 <= $interval->y ) : ?>
-			<aside class="alert alert-warning">
-				<i class="fa fa-clock-o"></i>
-				<?php if ( 1 == $interval->y ) : ?>
-					<?php _e( 'This post was published <strong>1</strong> year ago.', 'makotokw' )?>
-				<?php else : ?>
-					<?php echo sprintf( __( 'This post was published <strong>%d</strong> year ago.', 'makotokw' ), $interval->y )?>
-				<?php endif ?>
-			</aside>
-			<?php endif ?>
-		<?php endif ?>
-
 		<div class="entry-content">
 			<?php the_content(); ?>
 			<?php
