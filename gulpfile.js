@@ -7,14 +7,15 @@ var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var del = require('del');
 
-gulp.task('clean:components', function (cb) {
-	del(['components'], cb);
+gulp.task('clean:components', function () {
+	return del(['components']);
 });
 gulp.task('bower:install', plugins.shell.task(['bower install']));
 gulp.task('bower:normalize', ['clean:components', 'bower:install'], function () {
-	var bower = require('main-bower-files');
-	gulp.src(bower(), {base: './bower_components'})
-		.pipe(plugins.bowerNormalize({bowerJson: './bower.json'}))
+	var mainBowerFiles = require('main-bower-files');
+	var bowerNormalizer = require('gulp-bower-normalize');
+	gulp.src(mainBowerFiles(), {base: './bower_components'})
+		.pipe(bowerNormalizer({bowerJson: './bower.json'}))
 		.pipe(gulp.dest('./components/'));
 });
 
@@ -74,9 +75,11 @@ gulp.task('js', function () {
 });
 
 function sass(env) {
-	plugins.rubySass('sass', {
+	var isDebug = env == 'development';
+	return plugins.rubySass('./sass/', {
+		verbose: isDebug,
 		loadPath: ['components'],
-		lineNumbers: env == 'development'
+		lineNumbers: isDebug
 	})
 		.pipe(plugins.plumber())
 		.pipe(plugins.autoprefixer({

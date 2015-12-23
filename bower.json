@@ -7,11 +7,11 @@
     "bower_components"
   ],
   "dependencies": {
-    "google-code-prettify": "~1.0.0",
+    "google-code-prettify": "~1.0",
     "font-awesome": "~4.5",
     "html5shiv": "~3.7",
-    "normalize.css": "~3.0.3",
-    "modernizr": "~2.8.3"
+    "normalize.css": "~3.0",
+    "modernizr": "~2.8"
   },
   "overrides": {
     "google-code-prettify": {
