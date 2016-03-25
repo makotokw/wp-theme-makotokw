@@ -1,6 +1,5 @@
 (function ($) {
-	$.amazonjs.addTemplate(function(partial){
-		return {
-	};
-});
+	$.amazonjs.addTemplate(function (partial) {
+		return {};
+	});
 })(jQuery);
