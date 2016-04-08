@@ -61,12 +61,7 @@ function makotokw_comment( $comment, $args, $depth ) {
  */
 function makotokw_comments_open( $open, $post_id ) {
 	$post = get_post( $post_id );
-	if ( $post->post_type != 'page' ) {
-		if ( makotokw_is_old_post( $post ) ) {
-			$open = false;
-		}
-	}
-	return $open;
+	return makotokw_is_comment_form_showing( $post );
 }
 
 add_filter( 'comments_open', 'makotokw_comments_open', 10, 2 );

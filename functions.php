@@ -17,13 +17,13 @@ if ( ! isset( $content_width ) ) {
  * Load Jetpack compatibility file.
  */
 /** @noinspection PhpIncludeInspection */
-require(get_template_directory() . '/inc/jetpack.php');
+require( get_template_directory() . '/inc/jetpack.php' );
 
 /*
  * Custom Taxonomy
  */
 /** @noinspection PhpIncludeInspection */
-require(get_template_directory() . '/inc/taxonomy.php');
+require( get_template_directory() . '/inc/taxonomy.php' );
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -34,19 +34,19 @@ require(get_template_directory() . '/inc/taxonomy.php');
  */
 function makotokw_setup() {
 	/** @noinspection PhpIncludeInspection */
-	require(get_template_directory() . '/config.php');
+	require( get_template_directory() . '/config.php' );
 
 	/**
 	 * Custom template tags for this theme.
 	 */
 	/** @noinspection PhpIncludeInspection */
-	require(get_template_directory() . '/inc/template-tags.php');
+	require( get_template_directory() . '/inc/template-tags.php' );
 	/** @noinspection PhpIncludeInspection */
-	require(get_template_directory() . '/inc/related.php');
+	require( get_template_directory() . '/inc/related.php' );
 	/** @noinspection PhpIncludeInspection */
-	require(get_template_directory() . '/inc/comments.php');
+	require( get_template_directory() . '/inc/comments.php' );
 	/** @noinspection PhpIncludeInspection */
-	require(get_template_directory() . '/inc/extras.php');
+	require( get_template_directory() . '/inc/extras.php' );
 
 	/**
 	 * Make theme available for translation
@@ -152,6 +152,18 @@ function makotokw_is_old_post( $post = null ) {
 }
 
 /**
+ * @param null $post
+ * @return bool
+ */
+function makotokw_is_comment_form_showing( $post = null ) {
+	$post = get_post( $post );
+	if ( 'page' != $post->post_type ) {
+		return get_post_time( 'U', false, $post ) > strtotime( '-2 months' );
+	}
+	return true;
+}
+
+/**
  * add elementId to style to concat it by PageSpeed
  */
 if ( ! is_admin() ) {
@@ -168,10 +180,13 @@ function makotokw_fonts_url() {
 	$fonts[] = 'Lato:300,400,700,300italic,400italic,700italic';
 
 	if ( $fonts ) {
-		$fonts_url = add_query_arg(  array(
+		$fonts_url = add_query_arg(
+			array(
 				'family' => implode( '|', $fonts ),
 				'subset' => 'latin,latin-ext',
-		), 'https://fonts.googleapis.com/css' );
+				),
+			'https://fonts.googleapis.com/css'
+		);
 	}
 
 	return $fonts_url;
