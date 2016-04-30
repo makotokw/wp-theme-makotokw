@@ -4338,10 +4338,6 @@ object {
 .pukiwiki_content a.anchor_super {
   visibility: collapse; }
 
-.twitter-tweet-rendered {
-  border: 1px solid rgba(0, 0, 0, 0.1) !important;
-  box-shadow: none !important; }
-
 .section-page {
   *zoom: 1;
   padding: 20px; }
