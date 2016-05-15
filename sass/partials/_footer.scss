@@ -1,9 +1,7 @@
-
 .site-footer {
   background-color: $footer-default-bg;
   color: $footer-default-text;
   text-align: center;
-
 
   .container {
     border-top: 1px solid $block-default-divider;
@@ -13,7 +11,6 @@
   .home & .container {
     border-top: none;
   }
-
 
   a {
     color: $footer-default-link;
@@ -45,7 +42,7 @@
         .fa-heart {
           margin: 0 2px;
           font-size: .5em;
-          color: hotpink;
+          color: $heart-red;
         }
         .fa-github-alt {
           margin: 0 2px;
@@ -54,8 +51,6 @@
     }
   }
 }
-
-
 
 #wpstats {
   display: block;

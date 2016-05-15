@@ -4148,7 +4148,7 @@ object {
       .site-footer .site-info .copyrights .poweredby .fa-heart {
         margin: 0 2px;
         font-size: .5em;
-        color: hotpink; }
+        color: #BE1931; }
       .site-footer .site-info .copyrights .poweredby .fa-github-alt {
         margin: 0 2px; }
 
@@ -4254,8 +4254,6 @@ object {
   background-color: #fff;
   color: #455a64;
   border-left: 0.6em solid rgba(0, 0, 0, 0.1); }
-  .note .syntaxhighlighter, .note-ins .syntaxhighlighter, .note-link .syntaxhighlighter, .note-comment .syntaxhighlighter, .enclosure .syntaxhighlighter, .enclosure-github .syntaxhighlighter, .enclosure-qiita .syntaxhighlighter, .enclosure-evernote .syntaxhighlighter {
-    width: auto; }
   .note:before, .note-ins:before, .note-link:before, .note-comment:before, .enclosure:before, .enclosure-github:before, .enclosure-qiita:before, .enclosure-evernote:before {
     float: left;
     margin-right: 20px;

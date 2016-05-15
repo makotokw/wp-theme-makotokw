@@ -19,10 +19,6 @@
   color: $block-default-text;
   border-left: $site-border-left-width solid $block-default-border;
 
-  .syntaxhighlighter {
-    width: auto;
-  }
-
   &:before {
     @include block-awesome-icon(2em);
     margin-right: .4em;
