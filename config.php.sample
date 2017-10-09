@@ -3,7 +3,7 @@
  * @package makotokw
  */
 define( 'WP_THEME_DEBUG', ARCADIA_WP_DEBUG === true );
-define( 'WP_THEME_PRODUCTION_URL', 'http://example.com' );
+define( 'WP_THEME_PRODUCTION_URL', 'https://example.com' );
 define( 'WP_THEME_GOOGLE_ANALYTICS_ACCOUNT', 'UA-xxxxxx-1' );
 define( 'WP_THEME_GOOGLE_ANALYTICS_DOMAIN', 'example.com' );
 define( 'WP_THEME_ITUNES_AFFILIATE_ID', false );

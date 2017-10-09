@@ -10,6 +10,7 @@
 			return (isNaN(i)) ? 0 : i;
 		}
 		if (isAdmin) {
+			// http://developer.hatena.ne.jp/ja/documents/bookmark/apis/getcount
 			$.ajax({url: 'http://api.b.st-hatena.com/entry.count?url=' + encodedPermalink, dataType: 'jsonp'})
 				.done(function (data) {
 					var $count = $('<span/>').addClass('share-count').text(toInt(data));
@@ -83,7 +84,7 @@
 				if (typeof cls !== 'undefined') {
 					$svg.attr('class', cls + ' replaced-svg');
 				}
-				// Remove any invalid XML tags as per http://validator.w3.org
+				// Remove any invalid XML tags as per https://validator.w3.org/
 				$svg = $svg.removeAttr('xmlns:a');
 				$img.replaceWith($svg);
 			}, 'xml');

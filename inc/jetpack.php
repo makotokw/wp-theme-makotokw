@@ -1,14 +1,14 @@
 <?php
 /**
  * Jetpack Compatibility File
- * See: http://jetpack.me/
+ * See: https://jetpack.com/
  *
  * @package makotokw
  */
 
 /**
  * Add theme support for Infinite Scroll.
- * See: http://jetpack.me/support/infinite-scroll/
+ * See: https://jetpack.com/support/infinite-scroll/
  */
 function makotokw_infinite_scroll_setup() {
 	add_theme_support(

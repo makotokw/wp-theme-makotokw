@@ -170,7 +170,7 @@ function makotokw_itunes_affiliate_script() {
 	}
 	?>
 	<!--[if gt IE 9]><!-->
-	<script type='text/javascript'>var _merchantSettings=_merchantSettings || [];_merchantSettings.push(['AT', '<?php echo WP_THEME_ITUNES_AFFILIATE_ID ?>']);(function(){var autolink=document.createElement('script');autolink.type='text/javascript';autolink.async=true; autolink.src= ('https:' == document.location.protocol) ? 'https://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js' : 'http://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(autolink, s);})();</script>
+	<script type='text/javascript'>var _merchantSettings=_merchantSettings || [];_merchantSettings.push(['AT', '<?php echo WP_THEME_ITUNES_AFFILIATE_ID ?>']);(function(){var autolink=document.createElement('script');autolink.type='text/javascript';autolink.async=true; autolink.src='https://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(autolink, s);})();</script>
 	<!--<![endif]-->
 	<?php
 }
@@ -184,7 +184,7 @@ function makotokw_breadcrumbs() {
 	if ( ! is_home() && ! is_404() ) {
 		$divider = '&nbsp;<i class="fa fa-angle-right"></i>&nbsp;';
 		?>
-		<div itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="breadcrumb">
+		<div itemscope itemtype="https://schema.org/Breadcrumb" class="breadcrumb">
 		<a href="<?php echo esc_url( home_url( '/' ) ) ?>"><i class="fa fa-home"></i></a><?php echo $divider ?>
 		<?php if ( is_category() ) : $term = $wp_query->get_queried_object(); ?>
 			<a href="/categories/" itemprop="url"><span itemprop="title"><?php _e( 'Categories', 'makotokw' ) ?></span></a><?php echo $divider ?>
@@ -317,7 +317,7 @@ function makotokw_share_permalink() {
 function makotokw_share_buttons() {
 	// twitter: https://about.twitter.com/resources/buttons#tweet
 	// hatena: http://b.hatena.ne.jp/guide/bbutton
-	// pocket: http://getpocket.com/publisher/button
+	// pocket: https://getpocket.com/publisher/button
 	// google+: https://developers.google.com/+/web/+1button/
 
 	$title     = get_the_title();
@@ -333,7 +333,7 @@ function makotokw_share_buttons() {
 				</a>
 			</li>
 			<li class="share-hatena">
-				<a rel="nofollow" class="btn btn-default btn-circle btn-share btn-share-hatena" href="http://b.hatena.ne.jp/entry/<?php echo $permalink_schemeless ?>" target="_blank">
+				<a rel="nofollow" class="btn btn-default btn-circle btn-share btn-share-hatena" href="https://b.hatena.ne.jp/entry/<?php echo $permalink_schemeless ?>" target="_blank">
 					<i class="icon icon-default icon-share-hatena"></i>
 					<span class="share-title"><?php _e( 'Hatena Bookmark', 'makotokw' ); ?></span>
 				</a>
@@ -379,7 +379,7 @@ function makotokw_about_me() {
 	<div class="section section-mini section-about-me">
 		<h2 class="section-title"><?php _e( 'About', 'makotokw' ); ?></h2>
 		<div class="section-content">
-			<div itemprop="author copyrightHolder editor" itemscope itemtype="http://data-vocabulary.org/Person">
+			<div itemprop="author copyrightHolder editor" itemscope itemtype="https://schema.org/Person">
 			<?php echo str_replace( '<img ', '<img itemprop="image" ', get_avatar( get_the_author_meta( 'user_email' ), '48', '', get_the_author() ) ) ?>
 			</div>
 		</div>

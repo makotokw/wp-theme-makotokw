@@ -196,7 +196,7 @@ function makotokw_fonts_url() {
  * Custom QTags
  */
 function makotokw_quicktags() {
-	// http://wordpress.stackexchange.com/questions/37849/add-custom-shortcode-button-to-editor
+	// https://wordpress.stackexchange.com/questions/37849/add-custom-shortcode-button-to-editor
 	/* Add custom Quicktag buttons to the editor Wordpress ver. 3.3 and above only
 	 *
 	 * Params for this are:

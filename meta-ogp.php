@@ -10,7 +10,7 @@
 define( 'WP_OGP_POST_DESCRIPTION_KEY', 'description' );
 
 // size of Feature Image
-// http://codex.wordpress.org/Post_Thumbnails
+// https://codex.wordpress.org/Post_Thumbnails
 define( 'WP_OGP_POST_IMAGE_SIZE', 'medium' );
 
 // default Image Url
@@ -20,7 +20,7 @@ define( 'WP_OGP_DEFAULT_IMG', get_template_directory_uri() . '/images/ogp_defaul
 define( 'WP_OGP_LOCALE', WP_THEME_OGP_LOCALE );
 
 // Facebook AppId and username
-// http://developers.facebook.com/docs/opengraphprotocol/
+// https://developers.facebook.com/docs/sharing/opengraph
 //define( 'WP_OGP_FB_APPID', 'your-appid' );
 //define( 'WP_OGP_FB_ADMINS', 'your-admins' );
 define( 'WP_OGP_FB_APPID', WP_THEME_OGP_FB_APPID );
