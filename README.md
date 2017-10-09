@@ -3,7 +3,7 @@ makotokw theme for WordPress
 
 WordPress theme for [kwLog](http://blog.makotokw.com).
 
-![Screenshot](https://raw.githubusercontent.com/makotokw/wp-theme-makotokw/makotokw2015/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/makotokw/wp-theme-makotokw/makotokw2018/screenshot.png)
 
  * Created by [_s](http://underscores.me)
  * Inspired [Twenty Fifteen](https://twentyfifteendemo.wordpress.com/), [ghost](http://blog.ghost.org/) and [medium](https://medium.com/)
@@ -19,7 +19,7 @@ WordPress theme for [kwLog](http://blog.makotokw.com).
 
 ## Limitation
 
-* Tested on PHP 5.5 **ONLY** by makotokw for kwLog
+* Tested on PHP 7.0 **ONLY** by makotokw for kwLog
  * Some styles are **depend on** posts on kwLog
  * **Used** ``register_taxonomy()`` for kwLog
  * **No** sidebar, **No** widgets
@@ -33,9 +33,8 @@ So, please use a reference of one implementation for WordPress theme.
 
 ```
 cd /path/to/wordpress/wp-content/themes
-git clone https://github.com/makotokw/wp-theme-makotokw.git makotokw2016
-cd makotokw2016
-git checkout makotokw2016
+git clone https://github.com/makotokw/wp-theme-makotokw.git makotokw2018
+cd makotokw2018
 cp -p config.php.sample config.php
 ```
 
@@ -50,7 +49,7 @@ cp -p config.php.sample config.php
 ### Setup
 
 ```
-cd /path/to/wordpress/wp-content/themes/makotokw2015
+cd /path/to/wordpress/wp-content/themes/makotokw2018
 gem install sass
 npm install -g gulp bower
 npm install
@@ -59,7 +58,7 @@ npm install
 ## Build
 
 ```
-cd /path/to/wordpress/wp-content/themes/makotokw2015
+cd /path/to/wordpress/wp-content/themes/makotokw2018
 gulp bower:install
 gulp build
 ```
