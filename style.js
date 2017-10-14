@@ -14,7 +14,7 @@ window.Modernizr = function(e, t, n) {
     function s(e, t) {
         for (var r in e) {
             var a = e[r];
-            if (!i(a, "-") && b[a] !== n) return "pfx" == t ? a : !0;
+            if (!i(a, "-") && b[a] !== n) return "pfx" != t || a;
         }
         return !1;
     }
@@ -32,12 +32,12 @@ window.Modernizr = function(e, t, n) {
     }
     function u() {
         m.input = function(n) {
-            for (var r = 0, a = n.length; a > r; r++) L[n[r]] = !!(n[r] in x);
+            for (var r = 0, a = n.length; r < a; r++) L[n[r]] = !!(n[r] in x);
             return L.list && (L.list = !(!t.createElement("datalist") || !e.HTMLDataListElement)), 
             L;
         }("autocomplete autofocus list placeholder max min multiple pattern required step".split(" ")), 
         m.inputtypes = function(e) {
-            for (var r, a, o, i = 0, s = e.length; s > i; i++) x.setAttribute("type", a = e[i]), 
+            for (var r, a, o, i = 0, s = e.length; i < s; i++) x.setAttribute("type", a = e[i]), 
             r = "text" !== x.type, r && (x.value = w, x.style.cssText = "position:absolute;visibility:hidden;", 
             /^range$/.test(a) && x.style.WebkitAppearance !== n ? (g.appendChild(x), o = t.defaultView, 
             r = o.getComputedStyle && "textfield" !== o.getComputedStyle(x, null).WebkitAppearance && 0 !== x.offsetHeight, 
@@ -253,7 +253,7 @@ window.Modernizr = function(e, t, n) {
         function i(e, n) {
             if (e || (e = t), u) return e.createDocumentFragment();
             n = n || a(e);
-            for (var o = n.frag.cloneNode(), i = 0, s = r(), l = s.length; l > i; i++) o.createElement(s[i]);
+            for (var o = n.frag.cloneNode(), i = 0, s = r(), l = s.length; i < l; i++) o.createElement(s[i]);
             return o;
         }
         function s(e, t) {
@@ -316,23 +316,23 @@ var prettyPrintOne, prettyPrint;
             var t = e.charCodeAt(0);
             if (92 !== t) return t;
             var n = e.charAt(1);
-            return t = d[n], t ? t : n >= "0" && "7" >= n ? parseInt(e.substring(1), 8) : "u" === n || "x" === n ? parseInt(e.substring(2), 16) : e.charCodeAt(1);
+            return t = d[n], t ? t : "0" <= n && n <= "7" ? parseInt(e.substring(1), 8) : "u" === n || "x" === n ? parseInt(e.substring(2), 16) : e.charCodeAt(1);
         }
         function n(e) {
-            if (32 > e) return (16 > e ? "\\x0" : "\\x") + e.toString(16);
+            if (e < 32) return (e < 16 ? "\\x0" : "\\x") + e.toString(16);
             var t = String.fromCharCode(e);
             return "\\" === t || "-" === t || "]" === t || "^" === t ? "\\" + t : t;
         }
         function r(e) {
             var r = e.substring(1, e.length - 1).match(new RegExp("\\\\u[0-9A-Fa-f]{4}|\\\\x[0-9A-Fa-f]{2}|\\\\[0-3][0-7]{0,2}|\\\\[0-7]{1,2}|\\\\[\\s\\S]|-|[^-\\\\]", "g")), a = [], o = "^" === r[0], i = [ "[" ];
             o && i.push("^");
-            for (var s = o ? 1 : 0, l = r.length; l > s; ++s) {
+            for (var s = o ? 1 : 0, l = r.length; s < l; ++s) {
                 var c = r[s];
                 if (/\\[bdsw]/i.test(c)) i.push(c); else {
                     var u, d = t(c);
-                    l > s + 2 && "-" === r[s + 1] ? (u = t(r[s + 2]), s += 2) : u = d, a.push([ d, u ]), 
-                    65 > u || d > 122 || (65 > u || d > 90 || a.push([ 32 | Math.max(65, d), 32 | Math.min(u, 90) ]), 
-                    97 > u || d > 122 || a.push([ -33 & Math.max(97, d), -33 & Math.min(u, 122) ]));
+                    s + 2 < l && "-" === r[s + 1] ? (u = t(r[s + 2]), s += 2) : u = d, a.push([ d, u ]), 
+                    u < 65 || d > 122 || (u < 65 || d > 90 || a.push([ 32 | Math.max(65, d), 32 | Math.min(u, 90) ]), 
+                    u < 97 || d > 122 || a.push([ Math.max(97, d) & -33, Math.min(u, 122) & -33 ]));
                 }
             }
             a.sort(function(e, t) {
@@ -349,32 +349,32 @@ var prettyPrintOne, prettyPrint;
             return i.push("]"), i.join("");
         }
         function a(e) {
-            for (var t = e.source.match(new RegExp("(?:\\[(?:[^\\x5C\\x5D]|\\\\[\\s\\S])*\\]|\\\\u[A-Fa-f0-9]{4}|\\\\x[A-Fa-f0-9]{2}|\\\\[0-9]+|\\\\[^ux0-9]|\\(\\?[:!=]|[\\(\\)\\^]|[^\\x5B\\x5C\\(\\)\\^]+)", "g")), a = t.length, s = [], l = 0, c = 0; a > l; ++l) {
+            for (var t = e.source.match(new RegExp("(?:\\[(?:[^\\x5C\\x5D]|\\\\[\\s\\S])*\\]|\\\\u[A-Fa-f0-9]{4}|\\\\x[A-Fa-f0-9]{2}|\\\\[0-9]+|\\\\[^ux0-9]|\\(\\?[:!=]|[\\(\\)\\^]|[^\\x5B\\x5C\\(\\)\\^]+)", "g")), a = t.length, s = [], l = 0, c = 0; l < a; ++l) {
                 var u = t[l];
                 if ("(" === u) ++c; else if ("\\" === u.charAt(0)) {
                     var d = +u.substring(1);
-                    d && (c >= d ? s[d] = -1 : t[l] = n(d));
+                    d && (d <= c ? s[d] = -1 : t[l] = n(d));
                 }
             }
             for (var l = 1; l < s.length; ++l) -1 === s[l] && (s[l] = ++o);
-            for (var l = 0, c = 0; a > l; ++l) {
+            for (var l = 0, c = 0; l < a; ++l) {
                 var u = t[l];
                 if ("(" === u) ++c, s[c] || (t[l] = "(?:"); else if ("\\" === u.charAt(0)) {
                     var d = +u.substring(1);
-                    d && c >= d && (t[l] = "\\" + s[d]);
+                    d && d <= c && (t[l] = "\\" + s[d]);
                 }
             }
-            for (var l = 0; a > l; ++l) "^" === t[l] && "^" !== t[l + 1] && (t[l] = "");
-            if (e.ignoreCase && i) for (var l = 0; a > l; ++l) {
+            for (var l = 0; l < a; ++l) "^" === t[l] && "^" !== t[l + 1] && (t[l] = "");
+            if (e.ignoreCase && i) for (var l = 0; l < a; ++l) {
                 var u = t[l], f = u.charAt(0);
                 u.length >= 2 && "[" === f ? t[l] = r(u) : "\\" !== f && (t[l] = u.replace(/[a-zA-Z]/g, function(e) {
                     var t = e.charCodeAt(0);
-                    return "[" + String.fromCharCode(-33 & t, 32 | t) + "]";
+                    return "[" + String.fromCharCode(t & -33, 32 | t) + "]";
                 }));
             }
             return t.join("");
         }
-        for (var o = 0, i = !1, s = !1, l = 0, c = e.length; c > l; ++l) {
+        for (var o = 0, i = !1, s = !1, l = 0, c = e.length; l < c; ++l) {
             var u = e[l];
             if (u.ignoreCase) s = !0; else if (/[a-z]/i.test(u.source.replace(/\\u[0-9a-f]{4}|\\x[0-9a-f]{2}|\\[^ux]/gi, ""))) {
                 i = !0, s = !1;
@@ -388,7 +388,7 @@ var prettyPrintOne, prettyPrint;
             v: 11,
             f: 12,
             r: 13
-        }, f = [], l = 0, c = e.length; c > l; ++l) {
+        }, f = [], l = 0, c = e.length; l < c; ++l) {
             var u = e[l];
             if (u.global || u.multiline) throw new Error("" + u);
             f.push("(?:" + a(u) + ")");
@@ -402,7 +402,7 @@ var prettyPrintOne, prettyPrint;
                 if (r.test(e.className)) return;
                 for (var c = e.firstChild; c; c = c.nextSibling) n(c);
                 var u = e.nodeName.toLowerCase();
-                ("br" === u || "li" === u) && (a[s] = "\n", i[s << 1] = o++, i[s++ << 1 | 1] = e);
+                "br" !== u && "li" !== u || (a[s] = "\n", i[s << 1] = o++, i[s++ << 1 | 1] = e);
             } else if (3 == l || 4 == l) {
                 var d = e.nodeValue;
                 d.length && (d = t ? d.replace(/\r\n?/g, "\n") : d.replace(/[ \t\r\n]+/g, " "), 
@@ -434,7 +434,7 @@ var prettyPrintOne, prettyPrint;
     function a(t, r) {
         var a, o = {};
         !function() {
-            for (var n = t.concat(r), i = [], s = {}, l = 0, c = n.length; c > l; ++l) {
+            for (var n = t.concat(r), i = [], s = {}, l = 0, c = n.length; l < c; ++l) {
                 var u = n[l], d = u[3];
                 if (d) for (var f = d.length; --f >= 0; ) o[d.charAt(f)] = u;
                 var p = u[1], m = "" + p;
@@ -443,12 +443,12 @@ var prettyPrintOne, prettyPrint;
             i.push(/[\0-\uffff]/), a = e(i);
         }();
         var i = r.length, s = function(e) {
-            for (var t = e.sourceCode, l = e.basePos, u = [ l, O ], d = 0, f = t.match(a) || [], p = {}, m = 0, h = f.length; h > m; ++m) {
+            for (var t = e.sourceCode, l = e.basePos, u = [ l, O ], d = 0, f = t.match(a) || [], p = {}, m = 0, h = f.length; m < h; ++m) {
                 var g, v = f[m], y = p[v], b = void 0;
                 if ("string" == typeof y) g = !1; else {
                     var x = o[v.charAt(0)];
                     if (x) b = v.match(x[1]), y = x[0]; else {
-                        for (var w = 0; i > w; ++w) if (x = r[w], b = v.match(x[1])) {
+                        for (var w = 0; w < i; ++w) if (x = r[w], b = v.match(x[1])) {
                             y = x[0];
                             break;
                         }
@@ -486,7 +486,7 @@ var prettyPrintOne, prettyPrint;
         c && n.push([ A, c ]);
         var u = ("" + e.keywords).replace(/^ | $/g, "");
         u.length && n.push([ L, new RegExp("^(?:" + u.replace(/[\s,]+/g, "|") + ")\\b"), null ]), 
-        t.push([ O, /^\s+/, null, " \r\n	 " ]);
+        t.push([ O, /^\s+/, null, " \r\n\t " ]);
         var d = "^.[^\\s\\w.$@'\"`/\\\\]*";
         return e.regexLiterals && (d += "(?!s*/)"), n.push([ R, /^@[a-z_$][a-z_$@0-9]*/i, null ], [ A, /^(?:[@_]?[A-Z]+[a-z][A-Za-z_$@0-9]*|\w+_t\b)/, null ], [ O, /^[a-z_$][a-z_$@0-9]*/i, null ], [ R, new RegExp("^(?:0x[a-f0-9]+|(?:\\d(?:_\\d+)*\\d*(?:\\.\\d*)?|\\.\\d\\+)(?:e[+\\-]?\\d+)?)[a-z]*", "i"), null, "0123456789" ], [ O, /^\\[\s\S]?/, null ], [ M, new RegExp(d), null ]), 
         a(t, n);
@@ -529,7 +529,7 @@ var prettyPrintOne, prettyPrint;
         t === (0 | t) && c[0].setAttribute("value", t);
         var d = s.createElement("ol");
         d.className = "linenums";
-        for (var f = Math.max(0, t - 1 | 0) || 0, u = 0, p = c.length; p > u; ++u) l = c[u], 
+        for (var f = Math.max(0, t - 1 | 0) || 0, u = 0, p = c.length; u < p; ++u) l = c[u], 
         l.className = "L" + (u + f) % 10, l.firstChild || l.appendChild(s.createTextNode(" ")), 
         d.appendChild(l);
         e.appendChild(d);
@@ -540,23 +540,23 @@ var prettyPrintOne, prettyPrint;
         var n = /\n/g, r = e.sourceCode, a = r.length, o = 0, i = e.spans, s = i.length, l = 0, c = e.decorations, u = c.length, d = 0;
         c[u] = a;
         var f, p;
-        for (p = f = 0; u > p; ) c[p] !== c[p + 2] ? (c[f++] = c[p++], c[f++] = c[p++]) : p += 2;
-        for (u = f, p = f = 0; u > p; ) {
-            for (var m = c[p], h = c[p + 1], g = p + 2; u >= g + 2 && c[g + 1] === h; ) g += 2;
+        for (p = f = 0; p < u; ) c[p] !== c[p + 2] ? (c[f++] = c[p++], c[f++] = c[p++]) : p += 2;
+        for (u = f, p = f = 0; p < u; ) {
+            for (var m = c[p], h = c[p + 1], g = p + 2; g + 2 <= u && c[g + 1] === h; ) g += 2;
             c[f++] = m, c[f++] = h, p = g;
         }
         u = c.length = f;
         var v, y = e.sourceNode;
         y && (v = y.style.display, y.style.display = "none");
         try {
-            for (;s > l; ) {
+            for (;l < s; ) {
                 var b, x = (i[l], i[l + 2] || a), w = c[d + 2] || a, g = Math.min(x, w), S = i[l + 1];
                 if (1 !== S.nodeType && (b = r.substring(o, g))) {
                     t && (b = b.replace(n, "\r")), S.nodeValue = b;
                     var C = S.ownerDocument, E = C.createElement("span");
                     E.className = c[d + 1];
                     var N = S.parentNode;
-                    N.replaceChild(E, S), E.appendChild(S), x > o && (i[l + 1] = S = C.createTextNode(r.substring(g, x)), 
+                    N.replaceChild(E, S), E.appendChild(S), o < x && (i[l + 1] = S = C.createTextNode(r.substring(g, x)), 
                     N.insertBefore(S, E.nextSibling));
                 }
                 o = g, o >= x && (l += 2), o >= w && (d += 2);
@@ -634,7 +634,7 @@ var prettyPrintOne, prettyPrint;
                             L = R && "pre" === R.substring(0, 3);
                         }
                         var M = o.linenums;
-                        (M = "true" === M || +M) || (M = m.match(/\blinenums\b(?::(\d+))?/), M = M ? M[1] && M[1].length ? +M[1] : !0 : !1), 
+                        (M = "true" === M || +M) || (M = m.match(/\blinenums\b(?::(\d+))?/), M = !!M && (!M[1] || !M[1].length || +M[1])), 
                         M && i(n, M, L), g = {
                             langExtension: T,
                             sourceNode: n,
@@ -646,7 +646,7 @@ var prettyPrintOne, prettyPrint;
             }
             v < c.length ? setTimeout(a, 250) : "function" == typeof e && e();
         }
-        for (var o = t || document.body, s = o.ownerDocument || document, l = [ n("pre"), n("code"), n("xmp") ], c = [], d = 0; d < l.length; ++d) for (var f = 0, m = l[d].length; m > f; ++f) c.push(l[d][f]);
+        for (var o = t || document.body, s = o.ownerDocument || document, l = [ n("pre"), n("code"), n("xmp") ], c = [], d = 0; d < l.length; ++d) for (var f = 0, m = l[d].length; f < m; ++f) c.push(l[d][f]);
         l = null;
         var h = Date;
         h.now || (h = {
@@ -665,7 +665,7 @@ var prettyPrintOne, prettyPrint;
         regexLiterals: !0
     }), G = {};
     l(U, [ "default-code" ]), l(a([], [ [ O, /^[^<?]+/ ], [ I, /^<!\w[^>]*(?:>|$)/ ], [ $, /^<\!--[\s\S]*?(?:-\->|$)/ ], [ "lang-", /^<\?([\s\S]+?)(?:\?>|$)/ ], [ "lang-", /^<%([\s\S]+?)(?:%>|$)/ ], [ M, /^(?:<[%?]|[%?]>)/ ], [ "lang-", /^<xmp\b[^>]*>([\s\S]+?)<\/xmp\b[^>]*>/i ], [ "lang-js", /^<script\b[^>]*>([\s\S]*?)(<\/script\b[^>]*>)/i ], [ "lang-css", /^<style\b[^>]*>([\s\S]*?)(<\/style\b[^>]*>)/i ], [ "lang-in.tag", /^(<\/?[a-z][^<>]*>)/i ] ]), [ "default-markup", "htm", "html", "mxml", "xhtml", "xml", "xsl" ]), 
-    l(a([ [ O, /^[\s]+/, null, " 	\r\n" ], [ B, /^(?:\"[^\"]*\"?|\'[^\']*\'?)/, null, "\"'" ] ], [ [ D, /^^<\/?[a-z](?:[\w.:-]*\w)?|\/?>$/i ], [ z, /^(?!style[\s=]|on)[a-z](?:[\w:-]*\w)?/i ], [ "lang-uq.val", /^=\s*([^>\'\"\s]*(?:[^>\'\"\s\/]|\/(?=\s)))/ ], [ M, /^[=<>\/]+/ ], [ "lang-js", /^on\w+\s*=\s*\"([^\"]+)\"/i ], [ "lang-js", /^on\w+\s*=\s*\'([^\']+)\'/i ], [ "lang-js", /^on\w+\s*=\s*([^\"\'>\s]+)/i ], [ "lang-css", /^style\s*=\s*\"([^\"]+)\"/i ], [ "lang-css", /^style\s*=\s*\'([^\']+)\'/i ], [ "lang-css", /^style\s*=\s*([^\"\'>\s]+)/i ] ]), [ "in.tag" ]), 
+    l(a([ [ O, /^[\s]+/, null, " \t\r\n" ], [ B, /^(?:\"[^\"]*\"?|\'[^\']*\'?)/, null, "\"'" ] ], [ [ D, /^^<\/?[a-z](?:[\w.:-]*\w)?|\/?>$/i ], [ z, /^(?!style[\s=]|on)[a-z](?:[\w:-]*\w)?/i ], [ "lang-uq.val", /^=\s*([^>\'\"\s]*(?:[^>\'\"\s\/]|\/(?=\s)))/ ], [ M, /^[=<>\/]+/ ], [ "lang-js", /^on\w+\s*=\s*\"([^\"]+)\"/i ], [ "lang-js", /^on\w+\s*=\s*\'([^\']+)\'/i ], [ "lang-js", /^on\w+\s*=\s*([^\"\'>\s]+)/i ], [ "lang-css", /^style\s*=\s*\"([^\"]+)\"/i ], [ "lang-css", /^style\s*=\s*\'([^\']+)\'/i ], [ "lang-css", /^style\s*=\s*([^\"\'>\s]+)/i ] ]), [ "in.tag" ]), 
     l(a([], [ [ B, /^[\s\S]+/ ] ]), [ "uq.val" ]), l(o({
         keywords: v,
         hashComments: !0,
@@ -743,7 +743,7 @@ var prettyPrintOne, prettyPrint;
 }(), function(e) {
     function t() {
         var t = e(window).height(), a = e(document.body).height() - r.height(), o = t - a;
-        n && (o -= 32), 0 >= o && (o = 1), r.height(o);
+        n && (o -= 32), o <= 0 && (o = 1), r.height(o);
     }
     var n = !1, r = e("#footerMargin");
     e(window).on("sticky", t).scroll(t).resize(t), e("#siteLogo").each(function() {

@@ -1,21 +1,21 @@
 makotokw theme for WordPress
 ===
 
-WordPress theme for [kwLog](http://blog.makotokw.com).
+WordPress theme for [kwLog](https://blog.makotokw.com).
 
 ![Screenshot](https://raw.githubusercontent.com/makotokw/wp-theme-makotokw/makotokw2018/screenshot.png)
 
  * Created by [_s](http://underscores.me)
- * Inspired [Twenty Fifteen](https://twentyfifteendemo.wordpress.com/), [ghost](http://blog.ghost.org/) and [medium](https://medium.com/)
+ * Inspired [Twenty Fifteen](https://twentyfifteendemo.wordpress.com/), [ghost](https://blog.ghost.org/) and [medium](https://medium.com/)
  * Include [Font Awesome](http://fortawesome.github.io/Font-Awesome/) Icons
- * Include [google-code-prettify](http://code.google.com/p/google-code-prettify/)
+ * Include [google-code-prettify](https://github.com/google/code-prettify)
 
 ## Work With
 
-* [AmazonJS](http://wordpress.org/extend/plugins/amazonjs/) Plugin
+* [AmazonJS](https://wordpress.org/plugins/amazonjs/) Plugin
 * [GitHub Flavored Markdown for WordPress](https://github.com/makotokw/wp-gfm) Plugin
 * [Twitter Card](https://dev.twitter.com/docs/cards)
-* [Facebook Open Graph](http://developers.facebook.com/docs/opengraph/) Protocol
+* [Facebook Open Graph](https://developers.facebook.com/docs/sharing/opengraph) Protocol
 
 ## Limitation
 
@@ -42,7 +42,7 @@ cp -p config.php.sample config.php
 
 ### Requirements
 
-* Node.JS, [Gulp](http://gruntjs.com/) and [Bower](http://bower.io/)
+* Node.JS, [Gulp](https://gruntjs.com/) and [Bower](https://bower.io/)
 * Ruby and [Sass](http://sass-lang.com/)
 * gettext, [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) and [WordPress-Coding-Standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards)
 

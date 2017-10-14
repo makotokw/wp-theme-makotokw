@@ -23,5 +23,5 @@ function makotokw_infinite_scroll_setup() {
 add_action( 'after_setup_theme', 'makotokw_infinite_scroll_setup' );
 
 // Disable OGP in jetpack
-// http://wordpress.org/support/topic/plugin-jetpack-cant-disable-opengraph
+// https://wordpress.org/support/topic/plugin-jetpack-cant-disable-opengraph/
 add_filter( 'jetpack_enable_opengraph', '__return_false', 99 );
