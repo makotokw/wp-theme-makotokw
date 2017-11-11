@@ -31,7 +31,7 @@ if ( post_password_required() ) {
 		<h2 class="section-title section-comments-title">
 			<?php
 			printf(
-				_nx( '1 Comment', '%1$s Comments', get_comments_number(), 'comments title', 'makotokw' ),
+				_nx( '%1$s Comment', '%1$s Comments', get_comments_number(), 'comments title', 'makotokw' ),
 				number_format_i18n( get_comments_number() )
 			);
 			?>

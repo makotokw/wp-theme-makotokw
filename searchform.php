@@ -5,6 +5,7 @@
  * @package makotokw
  */
 ?>
+<!--suppress HtmlUnknownAttribute -->
 <form method="get" id="searchform" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search" _lpchecked="1">
 	<fieldset class="search-form-fieldset">
 		<input type="text" class="search-form-text" name="s" value="<?php echo esc_attr( get_search_query() ); ?>" placeholder="<?php _e( 'Search the site', 'makotokw' ); ?>"/>

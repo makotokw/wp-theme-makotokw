@@ -18,8 +18,11 @@ get_header(); ?>
 			<div class="container">
 				<?php if ( have_posts() ) : ?>
 					<div class="post-summaries">
-						<?php while ( have_posts() ) : the_post(); ?>
-							<?php get_template_part( 'content' ); ?>
+						<?php while ( have_posts() ) : ?>
+							<?php
+								the_post();
+								get_template_part( 'content' );
+							?>
 						<?php endwhile; ?>
 					</div>
 					<?php makotokw_pagination(); ?>

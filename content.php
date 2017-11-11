@@ -20,18 +20,21 @@ $only_excerpts = is_home() || is_year() || is_month() || is_search();
 			<?php if ( 'post' == $post_type ) : ?>
 				<span class="entry-date date updated"><?php makotokw_posted_on(); ?></span>
 				<?php if ( makotokw_is_old_post() ) : ?>
-					<?php $post_time = date_create( get_the_date( 'c' ) ); $interval = $post_time->diff( date_create() ); ?>
+					<?php
+						$post_time = date_create( get_the_date( 'c' ) );
+						$interval = $post_time->diff( date_create() );
+					?>
 					<?php if ( 1 <= $interval->y ) : ?>
 						<span class="entry-date-warning">
 							<?php if ( 1 == $interval->y ) : ?>
-								<?php _e( '(<span class="entry-date-warning-y">1</span> year ago)', 'makotokw' )?>
+								<?php _e( '(<span class="entry-date-warning-y">1</span> year ago)', 'makotokw' ); ?>
 							<?php else : ?>
-								<?php echo sprintf( __( '(<span class="entry-date-warning-y">%d</span> years ago)', 'makotokw' ), $interval->y )?>
+								<?php echo sprintf( __( '(<span class="entry-date-warning-y">%d</span> years ago)', 'makotokw' ), $interval->y ); ?>
 							<?php endif ?>
 						</span>
 					<?php endif ?>
 				<?php endif ?>
-				<span class="tag-links"><?php makotokw_the_category_slug( '', ', ' ); ?><?php makotokw_the_tags_slug( ', ', ', ' ); ?><?php makotokw_the_terms_slug( 'portfolios', ', ', ', ' ) ?></span>
+				<span class="tag-links"><?php makotokw_the_category_slug( '', ', ' ); ?><?php makotokw_the_tags_slug( ', ', ', ' ); ?><?php makotokw_the_terms_slug( 'portfolios', ', ', ', ' ); ?></span>
 			<?php endif; ?>
 		</section>
 	</header>
@@ -39,18 +42,19 @@ $only_excerpts = is_home() || is_year() || is_month() || is_search();
 	<?php if ( $only_excerpts ) : ?>
 		<div class="entry-summary">
 			<p><?php echo makotokw_post_summary( $post->post_content ); ?></p>
-			<a class="text-more-link" href="<?php the_permalink() ?>"><?php _e( 'Continue reading', 'makotokw' ); ?></a>
+			<a class="text-more-link" href="<?php the_permalink(); ?>"><?php _e( 'Continue reading', 'makotokw' ); ?></a>
 		</div>
 	<?php else : ?>
 		<div class="entry-content">
 			<?php the_content(); ?>
 			<?php
-			wp_link_pages(
-				array(
-					'before' => '<div class="page-links">' . __( 'Pages:', 'makotokw' ),
-					'after'  => '</div>',
-				)
-			); ?>
+				wp_link_pages(
+					array(
+						'before' => '<div class="page-links">' . __( 'Pages:', 'makotokw' ),
+						'after'  => '</div>',
+					)
+				);
+			?>
 		</div>
 	<?php endif; ?>
 

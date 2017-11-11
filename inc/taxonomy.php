@@ -112,7 +112,7 @@ function is_mylist() {
 
 function get_mylist( $post ) {
 	$mylists = get_the_terms( $post->ID, 'mylist' );
-	if ( ! empty($mylists) ) {
+	if ( ! empty( $mylists ) ) {
 		return array_shift( $mylists );
 	}
 	return null;
@@ -130,7 +130,7 @@ function get_mylist( $post ) {
 function get_first_post_on_mylist( $post ) {
 	if ( $mylist = get_mylist( $post ) ) {
 		$mylist_slug = $mylist->slug;
-		if ( ! empty($mylist_slug) ) {
+		if ( ! empty( $mylist_slug ) ) {
 			$q = new WP_Query(
 				array(
 					'mylist' => $mylist_slug,
@@ -149,7 +149,7 @@ function get_first_post_on_mylist( $post ) {
 function get_adjacent_post_on_mylist( $post, $previous = true ) {
 	if ( $mylist = get_mylist( $post ) ) {
 		$mylist_slug = $mylist->slug;
-		if ( ! empty($mylist_slug) ) {
+		if ( ! empty( $mylist_slug ) ) {
 			$date_query_compare = $previous ? 'before' : 'after';
 			$order = $previous ? 'DESC' : 'ASC';
 			$q = new WP_Query(

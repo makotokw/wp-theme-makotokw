@@ -39,7 +39,7 @@ function makotokw_enhanced_image_navigation( $url, $id ) {
 	}
 
 	$image = get_post( $id );
-	if ( ! empty($image->post_parent) && $image->post_parent != $id ) {
+	if ( ! empty( $image->post_parent ) && $image->post_parent != $id ) {
 		$url .= '#main';
 	}
 
@@ -63,7 +63,7 @@ function makotokw_wp_title( $title, $sep ) {
 
 	// Add the blog description for the home/front page.
 	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && (is_home() || is_front_page()) ) {
+	if ( $site_description && ( is_home() || is_front_page() ) ) {
 		$title .= " $sep $site_description";
 	}
 

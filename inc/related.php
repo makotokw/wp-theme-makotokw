@@ -16,9 +16,9 @@ function makotokw_related_posts( $arg = array() ) {
 	$max_count = $arg['max_count'];
 
 	// find by portfolio
-	unset($portfolio);
+	unset( $portfolio );
 	$terms = get_the_terms( $cur_post->ID, 'portfolios' );
-	if ( ! is_wp_error( $terms ) && ! empty($terms) ) {
+	if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
 		$portfolio = array_shift( $terms );
 
 		$query_arg = array(
@@ -37,14 +37,14 @@ function makotokw_related_posts( $arg = array() ) {
 
 	// find by featured tags
 	if ( defined( 'WP_THEME_FEATURED_TAG' ) ) {
-		$featuredTagSlugs = explode( ',', WP_THEME_FEATURED_TAG );
+		$featured_tag_slugs = explode( ',', WP_THEME_FEATURED_TAG );
 		if ( ! $rq || ! $rq->have_posts() ) {
 			$tags = get_the_tags( $cur_post->ID );
 			if ( is_array( $tags ) && count( $tags ) ) {
 				$tags = array_filter(
 					$tags,
-					function ( $t ) use ( $featuredTagSlugs ) {
-						return in_array( $t->slug, $featuredTagSlugs );
+					function ( $t ) use ( $featured_tag_slugs ) {
+						return in_array( $t->slug, $featured_tag_slugs );
 					}
 				);
 				if ( count( $tags ) > 0 ) {
@@ -76,32 +76,35 @@ function makotokw_related_posts( $arg = array() ) {
 		}
 	}
 
-	if ( $rq && $rq->have_posts() ) : $count = 0;?>
+	if ( $rq && $rq->have_posts() ) : ?>
+		<?php $count = 0; ?>
 		<aside class="section section-mini section-related-posts">
 			<h2 class="section-title"><?php _e( 'Related Posts', 'makotokw' ); ?></h2>
 			<div class="section-content">
 				<ul>
-					<?php while ( $rq->have_posts() ) : $rq->the_post(); ?>
+					<?php while ( $rq->have_posts() ) : ?>
+						<?php $rq->the_post(); ?>
 						<?php if ( $post->ID != $cur_post->ID && $count < $max_count ) : ?>
-							<li><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></li>
+							<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
 						<?php endif ?>
 					<?php endwhile ?>
 				</ul>
 			</div>
 		</aside>
-	<?php endif;
+	<?php endif; ?>
+	<?php
 	wp_reset_postdata();
 }
 
 function makotokw_related_portfolio() {
 	global $post;
-	unset($portfolio);
+	unset( $portfolio );
 	$terms = get_the_terms( $post->ID, 'portfolios' );
-	if ( ! is_wp_error( $terms ) && ! empty($terms) ) {
+	if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
 		$portfolio = array_shift( $terms );
 	}
 
-	if ( isset($portfolio) ) {
+	if ( isset( $portfolio ) ) {
 		$query_arg = array(
 			'post_type' => 'page',
 			'tax_query' => array(
@@ -115,11 +118,11 @@ function makotokw_related_portfolio() {
 
 		$rq = new WP_Query( $query_arg );
 		if ( $rq->have_posts() ) {
-			$rq->the_post(); ?>
+			$rq->the_post();
+			?>
 			<section class="section section-mini section-portfolio">
 				<h2 class="section-title">Related Software</h2>
-
-				<div class="section-content"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></div>
+				<div class="section-content"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
 			</section>
 		<?php
 		}

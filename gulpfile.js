@@ -22,7 +22,7 @@ gulp.task('bower:normalize', ['clean:components', 'bower:install'], function () 
 gulp.task('violations', ['phpcs', 'jshint']);
 
 gulp.task('phpcs', plugins.shell.task(
-	'phpcs --report-width=1024 --standard=build/phpcs.xml *.php ./**/*.php',
+	'phpcs --colors -s --report-width=1024 --standard=build/phpcs.xml *.php ./**/*.php',
 	{ignoreErrors: true}
 ));
 
@@ -58,10 +58,10 @@ function js(env) {
 		'js/script.js'
 	])
 		.pipe(plugins.plumber())
-		.pipe(plugins.if(env == 'development', plugins.sourcemaps.init()))
+		.pipe(plugins.if(env === 'development', plugins.sourcemaps.init()))
 		.pipe(plugins.concat('style.js'))
 		.pipe(plugins.uglify({output: {beautify: true}}))
-		.pipe(plugins.if(env == 'development', plugins.sourcemaps.write('.')))
+		.pipe(plugins.if(env === 'development', plugins.sourcemaps.write('.')))
 		.pipe(gulp.dest('.'))
 		.pipe(reload({stream: true, once: true}));
 }
@@ -102,7 +102,7 @@ gulp.task('sass', function () {
 gulp.task('browser-sync', function () {
 	browserSync({
 		port: 8086,
-		proxy: "127.0.0.1:8085"
+		proxy: 'http://blog.int.makotokw.com'
 	});
 });
 

@@ -184,7 +184,7 @@ function makotokw_fonts_url() {
 			array(
 				'family' => implode( '|', $fonts ),
 				'subset' => 'latin,latin-ext',
-				),
+			),
 			'https://fonts.googleapis.com/css'
 		);
 	}
@@ -197,7 +197,7 @@ function makotokw_fonts_url() {
  */
 function makotokw_quicktags() {
 	// https://wordpress.stackexchange.com/questions/37849/add-custom-shortcode-button-to-editor
-	/* Add custom Quicktag buttons to the editor Wordpress ver. 3.3 and above only
+	/* Add custom Quicktag buttons to the editor WordPress ver. 3.3 and above only
 	 *
 	 * Params for this are:
 	 * - Button HTML ID (required)
@@ -211,7 +211,7 @@ function makotokw_quicktags() {
 	?>
 	<script type="text/javascript">
 		(function ($) {
-			if (typeof(QTags) != 'undefined') {
+			if (typeof(QTags) !== 'undefined') {
 				var datetime = (function () {
 					var now = new Date(), zeroise;
 					zeroise = function (number) {
@@ -237,7 +237,7 @@ function makotokw_quicktags() {
 				QTags.addButton('big', 'big', '<span class="big">', '</span>');
 
 				$.each(['', 'github', 'qiita', 'evernote'], function (i, t) {
-					var cls = (t == '') ? 'enclosure' : 'enclosure-' + t;
+					var cls = (t === '') ? 'enclosure' : 'enclosure-' + t;
 					QTags.addButton(cls, cls, '<div class="' + cls + '">', '</div>');
 				});
 				$.each(['comment', 'ins', 'link'], function (i, t) {
