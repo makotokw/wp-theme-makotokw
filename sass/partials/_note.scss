@@ -43,14 +43,14 @@
 .note-link {
   @extend .note;
   &:before {
-    @extend .fa-bookmark:before;
+    content: $fa-var-comment-o;
   }
 }
 
 .note-comment {
   @extend .note;
   &:before {
-    @extend .fa-comment-o:before;
+    content: $fa-var-comment-o;
   }
 }
 

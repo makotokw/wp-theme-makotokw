@@ -8,9 +8,9 @@
   ],
   "dependencies": {
     "google-code-prettify": "~1.0",
-    "font-awesome": "~4.5",
+    "font-awesome": "~4.7",
     "html5shiv": "~3.7",
-    "normalize.css": "~3.0",
+    "normalize.css": "~7.0",
     "modernizr": "~2.8"
   },
   "overrides": {
