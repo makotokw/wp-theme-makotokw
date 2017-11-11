@@ -6,6 +6,10 @@
   font-size: $font-size-mini;
   color: $site-neutral-color;
 
+  .archive & {
+    margin-bottom: 20px;
+  }
+
   a {
     color: $site-neutral-color;
     &:hover {
@@ -16,3 +20,4 @@
     font-weight: bold;
   }
 }
+

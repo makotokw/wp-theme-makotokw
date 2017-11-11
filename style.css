@@ -65,7 +65,7 @@ input,
 select,
 textarea {
   color: #424242;
-  font-family: Montserrat, "Helvetica Neue", Helvetica, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", Meiryo, メイリオ, YuGothic, "Yu Gothic", 游ゴシック, sans-serif;
+  font-family: Montserrat, "Helvetica Neue", Helvetica, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Original Yu Gothic", "Yu Gothic", YuGothic, Verdana, Meiryo, "M+ 1p", sans-serif, sans-serif;
   font-size: 16px;
   line-height: 1.7; }
 
@@ -409,8 +409,8 @@ li > ol {
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url("components/font-awesome/fonts/fontawesome-webfont.eot?v=4.5.0");
-  src: url("components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.5.0") format("embedded-opentype"), url("components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.5.0") format("woff2"), url("components/font-awesome/fonts/fontawesome-webfont.woff?v=4.5.0") format("woff"), url("components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.5.0") format("truetype"), url("components/font-awesome/fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular") format("svg");
+  src: url("components/font-awesome/fonts/fontawesome-webfont.eot?v=4.7.0");
+  src: url("components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("components/font-awesome/fonts/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("components/font-awesome/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal; }
 .fa {
@@ -498,23 +498,23 @@ li > ol {
   100% {
     transform: rotate(359deg); } }
 .fa-rotate-90 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
   transform: rotate(90deg); }
 
 .fa-rotate-180 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
   transform: rotate(180deg); }
 
 .fa-rotate-270 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
   transform: rotate(270deg); }
 
 .fa-flip-horizontal {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
   transform: scale(-1, 1); }
 
 .fa-flip-vertical {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
   transform: scale(1, -1); }
 
 :root .fa-rotate-90,
@@ -682,7 +682,7 @@ li > ol {
 .fa-book:before {
   content: ""; }
 
-.fa-bookmark:before, .note-link:before {
+.fa-bookmark:before {
   content: ""; }
 
 .fa-print:before {
@@ -1185,7 +1185,7 @@ li > ol {
 .fa-tachometer:before {
   content: ""; }
 
-.fa-comment-o:before, .note-comment:before {
+.fa-comment-o:before {
   content: ""; }
 
 .fa-comments-o:before {
@@ -1752,7 +1752,7 @@ li > ol {
 .fa-digg:before {
   content: ""; }
 
-.fa-pied-piper:before {
+.fa-pied-piper-pp:before {
   content: ""; }
 
 .fa-pied-piper-alt:before {
@@ -1878,6 +1878,7 @@ li > ol {
   content: ""; }
 
 .fa-ra:before,
+.fa-resistance:before,
 .fa-rebel:before {
   content: ""; }
 
@@ -2200,6 +2201,7 @@ li > ol {
   content: ""; }
 
 .fa-battery-4:before,
+.fa-battery:before,
 .fa-battery-full:before {
   content: ""; }
 
@@ -2453,6 +2455,236 @@ li > ol {
 .fa-percent:before {
   content: ""; }
 
+.fa-gitlab:before {
+  content: ""; }
+
+.fa-wpbeginner:before {
+  content: ""; }
+
+.fa-wpforms:before {
+  content: ""; }
+
+.fa-envira:before {
+  content: ""; }
+
+.fa-universal-access:before {
+  content: ""; }
+
+.fa-wheelchair-alt:before {
+  content: ""; }
+
+.fa-question-circle-o:before {
+  content: ""; }
+
+.fa-blind:before {
+  content: ""; }
+
+.fa-audio-description:before {
+  content: ""; }
+
+.fa-volume-control-phone:before {
+  content: ""; }
+
+.fa-braille:before {
+  content: ""; }
+
+.fa-assistive-listening-systems:before {
+  content: ""; }
+
+.fa-asl-interpreting:before,
+.fa-american-sign-language-interpreting:before {
+  content: ""; }
+
+.fa-deafness:before,
+.fa-hard-of-hearing:before,
+.fa-deaf:before {
+  content: ""; }
+
+.fa-glide:before {
+  content: ""; }
+
+.fa-glide-g:before {
+  content: ""; }
+
+.fa-signing:before,
+.fa-sign-language:before {
+  content: ""; }
+
+.fa-low-vision:before {
+  content: ""; }
+
+.fa-viadeo:before {
+  content: ""; }
+
+.fa-viadeo-square:before {
+  content: ""; }
+
+.fa-snapchat:before {
+  content: ""; }
+
+.fa-snapchat-ghost:before {
+  content: ""; }
+
+.fa-snapchat-square:before {
+  content: ""; }
+
+.fa-pied-piper:before {
+  content: ""; }
+
+.fa-first-order:before {
+  content: ""; }
+
+.fa-yoast:before {
+  content: ""; }
+
+.fa-themeisle:before {
+  content: ""; }
+
+.fa-google-plus-circle:before,
+.fa-google-plus-official:before {
+  content: ""; }
+
+.fa-fa:before,
+.fa-font-awesome:before {
+  content: ""; }
+
+.fa-handshake-o:before {
+  content: ""; }
+
+.fa-envelope-open:before {
+  content: ""; }
+
+.fa-envelope-open-o:before {
+  content: ""; }
+
+.fa-linode:before {
+  content: ""; }
+
+.fa-address-book:before {
+  content: ""; }
+
+.fa-address-book-o:before {
+  content: ""; }
+
+.fa-vcard:before,
+.fa-address-card:before {
+  content: ""; }
+
+.fa-vcard-o:before,
+.fa-address-card-o:before {
+  content: ""; }
+
+.fa-user-circle:before {
+  content: ""; }
+
+.fa-user-circle-o:before {
+  content: ""; }
+
+.fa-user-o:before {
+  content: ""; }
+
+.fa-id-badge:before {
+  content: ""; }
+
+.fa-drivers-license:before,
+.fa-id-card:before {
+  content: ""; }
+
+.fa-drivers-license-o:before,
+.fa-id-card-o:before {
+  content: ""; }
+
+.fa-quora:before {
+  content: ""; }
+
+.fa-free-code-camp:before {
+  content: ""; }
+
+.fa-telegram:before {
+  content: ""; }
+
+.fa-thermometer-4:before,
+.fa-thermometer:before,
+.fa-thermometer-full:before {
+  content: ""; }
+
+.fa-thermometer-3:before,
+.fa-thermometer-three-quarters:before {
+  content: ""; }
+
+.fa-thermometer-2:before,
+.fa-thermometer-half:before {
+  content: ""; }
+
+.fa-thermometer-1:before,
+.fa-thermometer-quarter:before {
+  content: ""; }
+
+.fa-thermometer-0:before,
+.fa-thermometer-empty:before {
+  content: ""; }
+
+.fa-shower:before {
+  content: ""; }
+
+.fa-bathtub:before,
+.fa-s15:before,
+.fa-bath:before {
+  content: ""; }
+
+.fa-podcast:before {
+  content: ""; }
+
+.fa-window-maximize:before {
+  content: ""; }
+
+.fa-window-minimize:before {
+  content: ""; }
+
+.fa-window-restore:before {
+  content: ""; }
+
+.fa-times-rectangle:before,
+.fa-window-close:before {
+  content: ""; }
+
+.fa-times-rectangle-o:before,
+.fa-window-close-o:before {
+  content: ""; }
+
+.fa-bandcamp:before {
+  content: ""; }
+
+.fa-grav:before {
+  content: ""; }
+
+.fa-etsy:before {
+  content: ""; }
+
+.fa-imdb:before {
+  content: ""; }
+
+.fa-ravelry:before {
+  content: ""; }
+
+.fa-eercast:before {
+  content: ""; }
+
+.fa-microchip:before {
+  content: ""; }
+
+.fa-snowflake-o:before {
+  content: ""; }
+
+.fa-superpowers:before {
+  content: ""; }
+
+.fa-wpexplorer:before {
+  content: ""; }
+
+.fa-meetup:before {
+  content: ""; }
+
 @media screen {
   .prettyprint .str {
     color: #dd1144; }
@@ -2544,6 +2776,26 @@ li > ol {
 .prettyprint li.L9 {
   list-style: none; }
 
+@font-face {
+  font-family: "Original Yu Gothic";
+  src: local("Yu Gothic");
+  font-weight: 300; }
+@font-face {
+  font-family: "Original Yu Gothic";
+  src: local("Yu Gothic");
+  font-weight: 500; }
+@font-face {
+  font-family: "Original Yu Gothic";
+  src: local("Yu Gothic");
+  font-weight: bold; }
+@font-face {
+  font-family: "Helvetica Neue";
+  src: local("Helvetica Neue Regular");
+  font-weight: 100; }
+@font-face {
+  font-family: "Helvetica Neue";
+  src: local("Helvetica Neue Regular");
+  font-weight: 200; }
 /* =Global
 ----------------------------------------------- */
 .hr, .comment-list > .comment:after, .comment-list > .pingback:after,
@@ -3546,6 +3798,8 @@ input[type="color"],
   display: block;
   font-size: 12px;
   color: #bdbdbd; }
+  .archive .breadcrumb {
+    margin-bottom: 20px; }
   .breadcrumb a {
     color: #bdbdbd; }
     .breadcrumb a:hover {
@@ -3580,9 +3834,6 @@ input[type="color"],
   box-sizing: content-box;
   width: 100%; }
 
-.site-main {
-  margin-top: 20px; }
-
 .site-content-area {
   margin: 0 auto;
   position: relative; }
@@ -3591,46 +3842,64 @@ input[type="color"],
   margin: 0 auto; }
 
 .site-header {
-  padding: 20px 0;
-  *zoom: 1; }
+  position: relative;
+  padding: 35px 0;
+  margin-bottom: 15px;
+  *zoom: 1;
+  text-align: center;
+  background-color: #2C3E50;
+  background: linear-gradient(rgba(44, 62, 80, 0.4), rgba(44, 62, 80, 0.4)), 50% url("./images/bg_header.jpg");
+  background-size: cover; }
+  .home .site-header {
+    margin-bottom: 35px; }
   .site-header:before, .site-header:after {
     content: "";
     display: table; }
   .site-header:after {
     clear: both; }
   .site-header .site-info {
-    float: left;
-    width: auto; }
+    padding: 35px 0; }
     .site-header .site-info .site-title {
+      display: inline-block;
+      color: #fff;
       margin: 0; }
       .site-header .site-info .site-title a {
-        color: #263238; }
-        .site-header .site-info .site-title a:hover {
-          color: #1794a9; }
-          .site-header .site-info .site-title a:hover path {
-            fill: #1794a9; }
+        color: #fff; }
     .site-header .site-info .site-logo {
       width: 190px;
-      height: 40px;
-      margin-bottom: 5px; }
+      height: 40px; }
+      .site-header .site-info .site-logo path {
+        fill: #fff; }
+    .site-header .site-info .site-archives-title {
+      margin: 0;
+      color: #eeeeee;
+      font-size: 12px;
+      font-weight: 300; }
+      .site-header .site-info .site-archives-title span {
+        color: #fff;
+        font-weight: bold; }
     .site-header .site-info .site-description {
       margin: 0;
-      color: #bdbdbd;
+      color: #eeeeee;
       font-size: 12px;
       font-style: italic;
       font-weight: 300; }
-  .site-header .sub-nav {
-    float: right;
-    padding-top: 10px; }
-    .site-header .sub-nav .socials {
-      float: left; }
-    .site-header .sub-nav .search-form {
-      float: left; }
-      .site-header .sub-nav .search-form .search-form-text {
-        width: 150px; }
 
-.site-navi {
-  margin: 0 0 20px; }
+.single .site-header {
+  position: absolute;
+  background: transparent;
+  top: 0;
+  width: 100%; }
+.single .entry-header {
+  margin-bottom: 15px;
+  padding: 60px 0;
+  color: #fff;
+  text-align: center;
+  background-color: #2C3E50;
+  background: linear-gradient(rgba(44, 62, 80, 0.4), rgba(44, 62, 80, 0.4)), 50% url("./images/bg_header.jpg");
+  background-size: cover; }
+  .single .entry-header .entry-title {
+    color: #fff; }
 
 /* =Navigation
 ----------------------------------------------- */
@@ -3715,11 +3984,9 @@ input[type="color"],
         color: #bdbdbd; }
         .entry-header .entry-meta .tag-links a:hover {
           color: #1794a9; }
-  .post-single .entry-header {
-    margin: 15px 0 0 0; }
 
 .entry-content, .entry-summary {
-  font-family: Lato, "Helvetica Neue", Helvetica, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", Meiryo, メイリオ, YuGothic, "Yu Gothic", 游ゴシック, sans-serif;
+  font-family: Lato, "Helvetica Neue", Helvetica, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Original Yu Gothic", "Yu Gothic", YuGothic, Verdana, Meiryo, "M+ 1p", sans-serif, sans-serif;
   font-size: 16px; }
   .post-single .entry-content,
   .post-single .entry-summary {
@@ -3728,7 +3995,7 @@ input[type="color"],
   .entry-content img, .entry-summary img {
     margin: 1.6em auto; }
   .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6, .entry-summary h1, .entry-summary h2, .entry-summary h3, .entry-summary h4, .entry-summary h5, .entry-summary h6 {
-    font-family: Montserrat, "Helvetica Neue", Helvetica, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", Meiryo, メイリオ, YuGothic, "Yu Gothic", 游ゴシック, sans-serif; }
+    font-family: Montserrat, "Helvetica Neue", Helvetica, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Original Yu Gothic", "Yu Gothic", YuGothic, Verdana, Meiryo, "M+ 1p", sans-serif, sans-serif; }
 
 .entry-header,
 .entry-content,
@@ -4004,7 +4271,7 @@ object {
   .comment-body .comment-content {
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 1.6em;
-    font-family: Lato, "Helvetica Neue", Helvetica, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", Meiryo, メイリオ, YuGothic, "Yu Gothic", 游ゴシック, sans-serif;
+    font-family: Lato, "Helvetica Neue", Helvetica, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Original Yu Gothic", "Yu Gothic", YuGothic, Verdana, Meiryo, "M+ 1p", sans-serif, sans-serif;
     font-size: 14.4px;
     line-height: 2;
     overflow-x: auto;
@@ -4084,18 +4351,17 @@ object {
   display: none; }
 
 .site-footer {
-  background-color: #fff;
-  color: #78909c;
+  background-color: #2C3E50;
+  color: #fff;
   text-align: center; }
   .site-footer .container {
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
     padding: 10px 0 25px; }
   .home .site-footer .container {
     border-top: none; }
   .site-footer a {
-    color: #78909c; }
+    color: #fff; }
     .site-footer a:hover {
-      color: #212121; }
+      color: #fff; }
   .site-footer .site-info .copyrights {
     *zoom: 1;
     padding-bottom: 12px;
@@ -4241,6 +4507,12 @@ object {
   color: #c09853;
   border: none;
   background-color: #fefaef; }
+
+.note-link:before {
+  content: ""; }
+
+.note-comment:before {
+  content: ""; }
 
 .enclosure:before, .enclosure-github:before, .enclosure-qiita:before, .enclosure-evernote:before {
   content: ""; }

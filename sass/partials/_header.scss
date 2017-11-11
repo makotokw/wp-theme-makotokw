@@ -1,57 +1,71 @@
-
 .site-header {
-  padding: 20px 0;
+  position: relative;
+  padding: 35px 0;
+  margin-bottom: 15px;
+  .home & {
+    margin-bottom: 35px;
+  }
+
   @include clearfix;
+  text-align: center;
+  background-color: $blue-dark;
+  background: linear-gradient(rgba($blue-dark, .4), rgba($blue-dark, .4)), 50% url('./images/bg_header.jpg');
+  background-size: cover;
 
   .site-info {
-    float: left;
-    width: auto;
-
+    padding: 35px 0;
     .site-title {
+      display: inline-block;
+      color: $white;
       margin: 0;
       a {
-        color: $site-logo-text;
-        &:hover {
-          color: $site-logo-text-over;
-          path {
-            fill: $site-default-link-over;
-          }
-        }
+        color: $white;
       }
     }
     .site-logo {
+      path {
+        fill: $white;
+      }
       width: 190px;
       height: 40px;
-      margin-bottom: 5px;
+    }
+    .site-archives-title {
+      margin: 0;
+      color: $md-grey-200;
+      font-size: $font-size-mini;
+      font-weight: 300;
+      span {
+        color: $white;
+        font-weight: bold;
+      }
     }
     .site-description {
       margin: 0;
-      color: $site-neutral-color;
+      color: $md-grey-200;
       font-size: $font-size-mini;
       font-style: italic;
       font-weight: 300;
     }
   }
-
-  .sub-nav {
-    float: right;
-    padding-top: 10px;
-
-    .socials {
-      float: left;
-    }
-
-    .search-form {
-      float: left;
-
-      .search-form-text {
-        width: 150px;
-      }
-
-    }
-  }
 }
 
-.site-navi {
-  margin: 0 0 20px;
+.single {
+  .site-header {
+    position: absolute;
+    background: transparent;
+    top: 0;
+    width: 100%;
+  }
+  .entry-header {
+    margin-bottom: 15px;
+    padding: 60px 0;
+    color: $white;
+    text-align: center;
+    background-color: $blue-dark;
+    background: linear-gradient(rgba($blue-dark, .4), rgba($blue-dark, .4)), 50% url('./images/bg_header.jpg');
+    background-size: cover;
+    .entry-title {
+      color: $white;
+    }
+  }
 }

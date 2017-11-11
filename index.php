@@ -16,6 +16,9 @@ get_header(); ?>
 	<div class="site-content-area">
 		<main class="site-content" role="main">
 			<div class="container">
+				<?php if ( is_archive() ) : ?>
+					<?php makotokw_breadcrumbs(); ?>
+				<?php endif ?>
 				<?php if ( have_posts() ) : ?>
 					<div class="post-summaries">
 						<?php while ( have_posts() ) : ?>

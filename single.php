@@ -9,18 +9,17 @@ get_header(); ?>
 
 	<div class="site-content-area">
 		<main class="site-content" role="main">
-			<div class="container">
-				<?php while ( have_posts() ) : ?>
-					<?php
+			<?php while ( have_posts() ) : ?>
+				<?php
 					the_post();
 					get_template_part( 'content' );
-					// If comments are open or we have at least one comment, load up the comment template
-					if ( comments_open() || '0' != get_comments_number() ) {
-						comments_template();
-					}
-					?>
-				<?php endwhile; // end of the loop. ?>
-			</div>
+				?>
+				<?php if ( comments_open() || '0' != get_comments_number() ) : ?>
+					<div class="container">
+						<?php comments_template(); ?>
+					</div>
+				<?php endif ?>
+			<?php endwhile; // end of the loop. ?>
 		</main>
 	</div>
 

@@ -10,8 +10,8 @@
 		<div id="footerMargin"></div>
 		</div><!-- #main -->
 		<footer id="colophon" class="site-footer" role="contentinfo">
-			<div class="container">
-				<div class="site-info">
+			<div class="site-info">
+				<div class="container">
 					<div class="copyrights">
 						<div class="credit">
 							<?php do_action( 'makotokw_credits' ); ?>

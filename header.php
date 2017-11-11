@@ -17,7 +17,7 @@
 	<?php endif ?>
 <title><?php wp_title( ' - ', true, 'right' ); ?></title>
 <?php if ( is_front_page() && ! is_archive() ) : ?>
-	<meta name="description" content="<?php echo esc_attr( makotokw_get_meta_description() )?>" />
+	<meta name="description" content="<?php echo esc_attr( makotokw_get_meta_description() ); ?>" />
 <?php endif ?>
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/images/touch-icon-iphone.png">
@@ -27,8 +27,10 @@
 	<?php if ( is_singular() ) : ?>
 <link rel="canonical" href="<?php the_permalink(); ?>" />
 	<?php endif ?>
-<link rel="alternate" type="<?php echo feed_content_type() ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) )?>" href="<?php echo get_feed_link() ?>" />
-<?php if ( true === WP_THEME_OGP ) : ?><?php get_template_part( 'meta-ogp' ); ?><?php endif ?>
+<link rel="alternate" type="<?php echo feed_content_type(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" href="<?php echo get_feed_link(); ?>" />
+<?php if ( true === WP_THEME_OGP ) : ?>
+<?php get_template_part( 'meta-ogp' ); ?>
+<?php endif ?>
 <?php // @codingStandardsIgnoreStart ?>
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/components/js/html5shiv/html5shiv.js" type="text/javascript"></script>
@@ -41,27 +43,36 @@
 <?php do_action( 'makotekw_after_body' ); ?>
 <div id="page" class="hfeed site">
 	<header id="masthead" class="site-header" role="banner">
-		<div class="container">
-			<div class="site-info">
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img id="siteLogo" src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="<?php bloginfo( 'name' ); ?>"  width="190" height="40" class="site-logo" /></a></h1>
+		<div class="site-info">
+			<h1 class="site-title">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+					<img id="siteLogo" src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="<?php bloginfo( 'name' ); ?>"  width="190" height="40" class="site-logo" />
+				</a>
+			</h1>
+			<?php if ( is_home() ) : ?>
 				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-			</div>
-			<div class="sub-nav">
-				<div class="socials">
-					<a href="<?php echo get_feed_link() ?>" class="btn btn-default btn-circle btn-rss" title="RSS">
-						<i class="icon fa fa-rss"></i>
-					</a>
-				</div>
-				<?php get_search_form(); ?>
-			</div>
+			<?php elseif ( is_archive() ) : ?>
+				<h2 class="site-archives-title">
+					<?php if ( is_category() ) : ?>
+						<?php echo sprintf( __( 'Category Archives: %s', 'makotokw' ), '<span>' . single_cat_title( '', false ) . '</span>' ); ?>
+					<?php elseif ( is_tag() ) : ?>
+						<?php echo sprintf( __( 'Tag Archives: %s', 'makotokw' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?>
+					<?php elseif ( is_day() ) : ?>
+						<?php echo sprintf( __( 'Daily Archives: %s', 'makotokw' ), '<span>' . get_the_date() . '</span>' ); ?>
+					<?php elseif ( is_month() ) : ?>
+						<?php echo sprintf( __( 'Monthly Archives: %s', 'makotokw' ), '<span>' . get_the_date( 'F Y' ) . '</span>' ); ?>
+					<?php elseif ( is_year() ) : ?>
+						<?php echo sprintf( __( 'Yearly Archives: %s', 'makotokw' ), '<span>' . get_the_date( 'Y' ) . '</span>' ); ?>
+					<?php elseif ( is_tax( 'blogs' ) ) : ?>
+						<?php echo sprintf( __( 'Blog Archives: %s', 'makotokw' ), '<span>' . single_term_title( '', false ) . '</span>' ); ?>
+					<?php elseif ( is_tax( 'portfolios' ) ) : ?>
+						<?php echo sprintf( __( 'Portfolio Archives: %s', 'makotokw' ), '<span>' . single_term_title( '', false ) . '</span>' ); ?>
+					<?php else : ?>
+						<?php echo __( 'Archives', 'makotokw' ); ?>
+					<?php endif; ?>
+				</h2>
+			<?php endif ?>
 		</div>
 	</header>
-	<?php if ( ! is_home() ) : ?>
-	<nav class="site-navi">
-		<div class="container">
-			<?php makotokw_breadcrumbs(); ?>
-		</div>
-	</nav>
-	<?php endif ?>
 	<div id="main" class="site-main">
 
