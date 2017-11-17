@@ -3,8 +3,12 @@
 ----------------------------------------------- */
 .breadcrumb {
   display: block;
-  font-size: $font-size-mini;
+  font-size: $font-size-small;
   color: $site-neutral-color;
+
+  .fa {
+    font-size: $font-size-base;
+  }
 
   .archive & {
     margin-bottom: 20px;

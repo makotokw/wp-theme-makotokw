@@ -106,6 +106,28 @@ function makotokw_setup() {
 
 add_action( 'after_setup_theme', 'makotokw_setup' );
 
+function makotokw_move_admin_bar() {
+	if ( ! is_admin_bar_showing() ) {
+		return;
+	}
+	?>
+<style type="text/css" media="screen">
+	html { margin-top: 0 !important; margin-bottom: 32px !important; }
+	* html body { margin-top: 0 !important; margin-bottom: 32px !important; }
+	@media screen and ( max-width: 782px ) {
+		html { margin-top: 0 !important; margin-bottom: 46px !important; }
+		* html body { margin-top: 0 !important; margin-bottom: 46px !important; }
+	}
+	#wpadminbar { top: auto !important; bottom: 0; }
+	@media screen and (max-width: 600px) {
+		#wpadminbar { position: fixed; }
+	}
+</style>
+	<?php
+}
+
+add_action( 'wp_head', 'makotokw_move_admin_bar', 99 );
+
 /**
  * Enqueue scripts and styles
  */

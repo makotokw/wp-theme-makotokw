@@ -3796,8 +3796,10 @@ input[type="color"],
 ----------------------------------------------- */
 .breadcrumb {
   display: block;
-  font-size: 12px;
+  font-size: 13.6px;
   color: #bdbdbd; }
+  .breadcrumb .fa {
+    font-size: 16px; }
   .archive .breadcrumb {
     margin-bottom: 20px; }
   .breadcrumb a {
@@ -3862,6 +3864,7 @@ input[type="color"],
     .site-header .site-info .site-title {
       display: inline-block;
       color: #fff;
+      line-height: 40px;
       margin: 0; }
       .site-header .site-info .site-title a {
         color: #fff; }
@@ -3887,12 +3890,28 @@ input[type="color"],
 
 .single .site-header {
   position: absolute;
-  background: transparent;
+  background: #2C3E50;
   top: 0;
-  width: 100%; }
+  width: 100%;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  height: 55px;
+  max-height: 55px;
+  line-height: 55px; }
+  .single .site-header .site-title {
+    line-height: 55px; }
+  .single .site-header .site-info {
+    margin: 0 0 0 4px;
+    padding: 0; }
+    .single .site-header .site-info .site-logo {
+      width: 120px;
+      height: 55px; }
+      .single .site-header .site-info .site-logo path {
+        fill: #fff; }
 .single .entry-header {
   margin-bottom: 15px;
-  padding: 60px 0;
+  padding: 115px 0 60px 0;
   color: #fff;
   text-align: center;
   background-color: #2C3E50;
@@ -3901,6 +3920,18 @@ input[type="color"],
   .single .entry-header .entry-title {
     color: #fff; }
 
+@media (max-width: 930px) {
+  .single .site-header {
+    height: 48px;
+    max-height: 48px;
+    line-height: 48px; }
+    .single .site-header .site-title {
+      line-height: 48px; }
+    .single .site-header .site-info .site-logo {
+      width: 110px;
+      height: 48px; }
+  .single .entry-header {
+    padding: 108px 0 60px 0; } }
 /* =Navigation
 ----------------------------------------------- */
 .navigation-paging {
@@ -4355,7 +4386,7 @@ object {
   color: #fff;
   text-align: center; }
   .site-footer .container {
-    padding: 10px 0 25px; }
+    padding: 10px 0; }
   .home .site-footer .container {
     border-top: none; }
   .site-footer a {

@@ -1,3 +1,6 @@
+$site-logo-width: 190px;
+$site-logo-height: 40px;
+
 .site-header {
   position: relative;
   padding: 35px 0;
@@ -17,6 +20,7 @@
     .site-title {
       display: inline-block;
       color: $white;
+      line-height: $site-logo-height;
       margin: 0;
       a {
         color: $white;
@@ -26,8 +30,8 @@
       path {
         fill: $white;
       }
-      width: 190px;
-      height: 40px;
+      width: $site-logo-width;
+      height: $site-logo-height;
     }
     .site-archives-title {
       margin: 0;
@@ -49,16 +53,43 @@
   }
 }
 
+$single-site-header-height: 55px;
+$single-site-header-height-mobile: 48px;
+
 .single {
   .site-header {
     position: absolute;
-    background: transparent;
+    //background: transparent;
+    //background: rgba(255, 255, 255, 0.5);
+    //background: rgba($blue-dark, .5);
+    background: $blue-dark;
     top: 0;
     width: 100%;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    height: $single-site-header-height;
+    max-height: $single-site-header-height;
+    line-height: $single-site-header-height;
+    .site-title {
+      line-height: $single-site-header-height;
+    }
+    .site-info {
+      margin: 0 0 0 4px;
+      padding: 0;
+      //text-align: left;
+      .site-logo {
+        path {
+          fill: $white;
+        }
+        width: 120px;
+        height: $single-site-header-height;
+      }
+    }
   }
   .entry-header {
     margin-bottom: 15px;
-    padding: 60px 0;
+    padding: (60px + $single-site-header-height) 0 60px 0;
     color: $white;
     text-align: center;
     background-color: $blue-dark;
@@ -66,6 +97,29 @@
     background-size: cover;
     .entry-title {
       color: $white;
+    }
+  }
+}
+
+// Unless desktop
+@media (max-width: $container-desktop) {
+  .single {
+    .site-header {
+      height: $single-site-header-height-mobile;
+      max-height: $single-site-header-height-mobile;
+      line-height: $single-site-header-height-mobile;
+      .site-title {
+        line-height: $single-site-header-height-mobile;
+      }
+      .site-info {
+        .site-logo {
+          width: 110px;
+          height: $single-site-header-height-mobile;
+        }
+      }
+    }
+    .entry-header {
+      padding: (60px + $single-site-header-height-mobile) 0 60px 0;
     }
   }
 }
