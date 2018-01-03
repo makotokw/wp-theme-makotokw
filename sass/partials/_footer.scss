@@ -18,34 +18,32 @@
     }
   }
 
-  .site-info {
-    .copyrights {
-      @include clearfix;
-      padding-bottom: 12px;
-      padding-top: 12px;
+  .copyrights {
+    @include clearfix;
+    padding-bottom: 12px;
+    padding-top: 12px;
 
-      .credit,
-      .poweredby {
-        font-size: $font-size-small;
-        font-weight: 300;
-        display: inline;
-        margin: 0 4px;
-        padding: 0;
-      }
-      .credit {
-        float: left;
-      }
-      .poweredby {
-        float: right;
+    .credit,
+    .poweredby {
+      font-size: $font-size-small;
+      font-weight: 300;
+      display: inline;
+      margin: 0 4px;
+      padding: 0;
+    }
+    .credit {
+      float: left;
+    }
+    .poweredby {
+      float: right;
 
-        .fa-heart {
-          margin: 0 2px;
-          font-size: .5em;
-          color: $heart-red;
-        }
-        .fa-github-alt {
-          margin: 0 2px;
-        }
+      .fa-heart {
+        margin: 0 2px;
+        font-size: .5em;
+        color: $heart-red;
+      }
+      .fa-github-alt {
+        margin: 0 2px;
       }
     }
   }

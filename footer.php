@@ -7,24 +7,24 @@
  * @package makotokw
  */
 ?>
+			</main>
+		</div>
 		<div id="footerMargin"></div>
 		</div><!-- #main -->
-		<footer id="colophon" class="site-footer" role="contentinfo">
-			<div class="site-info">
-				<div class="container">
-					<div class="copyrights">
-						<div class="credit">
-							<?php do_action( 'makotokw_credits' ); ?>
-						</div>
-						<div class="poweredby">
-							<?php
-								printf(
-									__( 'Powered by %s', 'makotokw' ),
-									'<a href="https://wordpress.org/" title="' . esc_attr( __( 'Semantic Personal Publishing Platform', 'makotokw' ) ) . '">WordPress</a>'
-								);
-							?>
-							<i class="fa fa-heart"></i><a href="https://github.com/makotokw/wp-theme-makotokw">makotokw theme<i class="fa fa-github-alt"></i></a>.
-						</div>
+		<footer class="site-footer" role="contentinfo">
+			<div class="container">
+				<div class="copyrights">
+					<div class="credit">
+						<?php do_action( 'makotokw_credits' ); ?>
+					</div>
+					<div class="poweredby">
+						<?php
+							printf(
+								__( 'Powered by %s', 'makotokw' ),
+								'<a href="https://wordpress.org/" title="' . esc_attr( __( 'Semantic Personal Publishing Platform', 'makotokw' ) ) . '">WordPress</a>'
+							);
+						?>
+						<i class="fa fa-heart"></i><a href="https://github.com/makotokw/wp-theme-makotokw">makotokw theme<i class="fa fa-github-alt"></i></a>.
 					</div>
 				</div>
 			</div>

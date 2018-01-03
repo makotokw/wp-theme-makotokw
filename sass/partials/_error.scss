@@ -1,28 +1,15 @@
-
-
-.no-results,
-.error404 {
-  .page-header {
-    border-bottom: none;
-  }
-
-  .page-title {
-    font-size: 24px;
-    margin: 0;
-    position: relative;
-  }
-}
-
-.error404 {
-  .page-content {
+// for no-results.php and 404.php
+.errorPage {
+  .errorPage-content {
     padding-top: 40px;
     padding-bottom: 40px;
   }
 
-  .page-title {
+  .errorPage-title {
+    font-size: 24px;
+    margin: 0;
+    position: relative;
     padding: 50px 200px;
-    width: 900px;
     text-align: center;
-    width: auto;
   }
 }

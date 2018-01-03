@@ -41,38 +41,15 @@
 </head>
 <body <?php body_class(); ?>>
 <?php do_action( 'makotekw_after_body' ); ?>
-<div id="page" class="hfeed site">
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-info">
-			<h1 class="site-title">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-					<img id="siteLogo" src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="<?php bloginfo( 'name' ); ?>"  width="190" height="40" class="site-logo" />
-				</a>
-			</h1>
-			<?php if ( is_home() ) : ?>
-				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-			<?php elseif ( is_archive() ) : ?>
-				<h2 class="site-archives-title">
-					<?php if ( is_category() ) : ?>
-						<?php echo sprintf( __( 'Category Archives: %s', 'makotokw' ), '<span>' . single_cat_title( '', false ) . '</span>' ); ?>
-					<?php elseif ( is_tag() ) : ?>
-						<?php echo sprintf( __( 'Tag Archives: %s', 'makotokw' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?>
-					<?php elseif ( is_day() ) : ?>
-						<?php echo sprintf( __( 'Daily Archives: %s', 'makotokw' ), '<span>' . get_the_date() . '</span>' ); ?>
-					<?php elseif ( is_month() ) : ?>
-						<?php echo sprintf( __( 'Monthly Archives: %s', 'makotokw' ), '<span>' . get_the_date( 'F Y' ) . '</span>' ); ?>
-					<?php elseif ( is_year() ) : ?>
-						<?php echo sprintf( __( 'Yearly Archives: %s', 'makotokw' ), '<span>' . get_the_date( 'Y' ) . '</span>' ); ?>
-					<?php elseif ( is_tax( 'blogs' ) ) : ?>
-						<?php echo sprintf( __( 'Blog Archives: %s', 'makotokw' ), '<span>' . single_term_title( '', false ) . '</span>' ); ?>
-					<?php elseif ( is_tax( 'portfolios' ) ) : ?>
-						<?php echo sprintf( __( 'Portfolio Archives: %s', 'makotokw' ), '<span>' . single_term_title( '', false ) . '</span>' ); ?>
-					<?php else : ?>
-						<?php echo __( 'Archives', 'makotokw' ); ?>
-					<?php endif; ?>
-				</h2>
-			<?php endif ?>
-		</div>
+<div class="site">
+	<header id="siteHeader" class="site-header" role="banner">
+		<nav>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+				Home
+			</a>
+		</nav>
 	</header>
-	<div id="main" class="site-main">
+	<div class="site-main">
+		<div class="site-content-area ">
+			<main class="site-content" role="main">
 

@@ -12,7 +12,4 @@ include __DIR__ . '/header.php'; ?>
 		<?php makotokw_tag_cloud( array( 'number' => '' ) ); ?>
 	</div>
 </article>
-</div>
-</section>
-
 <?php include __DIR__ . '/footer.php'; ?>

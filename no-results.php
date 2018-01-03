@@ -8,12 +8,12 @@
  */
 ?>
 
-<article id="post-0" class="post no-results not-found">
-	<header class="page-header">
-		<h1 class="page-title"><?php _e( 'Nothing Found', 'makotokw' ); ?></h1>
+<section class="errorPage">
+	<header class="errorPage-header">
+		<h1 class="errorPage-title"><?php _e( 'Nothing Found', 'makotokw' ); ?></h1>
 	</header>
-	<div class="page-wrapper">
-		<div class="page-content">
+	<div class="errorPage-wrapper">
+		<div class="errorPage-content">
 			<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 				<p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'makotokw' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
 			<?php elseif ( is_search() ) : ?>
@@ -25,4 +25,4 @@
 			<?php endif; ?>
 		</div>
 	</div>
-</article>
+</section>

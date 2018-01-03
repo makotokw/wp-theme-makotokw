@@ -100,6 +100,7 @@
       prettyPrint();
     }
     isAdmin = ($('#wpadminbar').length > 0);
+    $('#siteHeader').headroom();
     // avoid seeing ShareCount
     //lazyLoadShareCount();
     stickyFooter();

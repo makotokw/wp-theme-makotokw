@@ -7,12 +7,13 @@
 
 get_header(); ?>
 
-	<div class="site-content-area ">
-		<main class="site-content site-content-error404" role="main">
+
 			<div class="container">
-				<header class="page-header">
-					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'makotokw' ); ?></h1>
-				</header>
+				<div class="errorPage">
+					<header class="errorPage-header">
+						<h1 class="errorPage-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'makotokw' ); ?></h1>
+					</header>
+				</div>
 			</div>
 		</main>
 	</div>

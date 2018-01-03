@@ -11,7 +11,8 @@ gulp.task('clean:components', function () {
   return del(['components']);
 });
 gulp.task('bower:install', plugins.shell.task(['bower install']));
-gulp.task('bower:normalize', ['clean:components', 'bower:install'], function () {
+gulp.task('bower:reinstall', ['clean:components', 'bower install']);
+gulp.task('bower:normalize', ['bower:reinstall'], function () {
   var mainBowerFiles = require('main-bower-files');
   var bowerNormalizer = require('gulp-bower-normalize');
   gulp.src(mainBowerFiles(), {base: './bower_components'})
@@ -55,7 +56,8 @@ function js(env) {
   gulp.src([
     'components/modernizr/js/modernizr.js',
     'components/google-code-prettify/js/prettify.js',
-    'js/script.js'
+    'js/vendor/*/*.js',
+    'js/main.js'
   ])
     .pipe(plugins.plumber())
     .pipe(plugins.if(env === 'development', plugins.sourcemaps.init()))

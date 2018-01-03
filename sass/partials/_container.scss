@@ -1,13 +1,28 @@
 // Container
 // -----------------------------------------------
 
+
+// .site
+//   .site-header
+//   .site-main
+//     -> CONTENT
+//   .site-footer
+
 .site {
   box-sizing: content-box;
+  margin: 0;
   width: 100%;
 }
 
 .site-main {
+  margin: 0;
 }
+
+// [CONTENT]
+// .site-content-area
+//   .site-content
+//     .site-content-header
+//     [ENTRY]
 
 .site-content-area {
   margin: 0 auto;

@@ -3834,7 +3834,11 @@ input[type="color"],
 
 .site {
   box-sizing: content-box;
+  margin: 0;
   width: 100%; }
+
+.site-main {
+  margin: 0; }
 
 .site-content-area {
   margin: 0 auto;
@@ -3844,6 +3848,37 @@ input[type="color"],
   margin: 0 auto; }
 
 .site-header {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 55px;
+  max-height: 55px;
+  line-height: 55px;
+  background: rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(44, 62, 80, 0.3);
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  left: 0;
+  top: 0;
+  transition-duration: .5s;
+  will-change: transform;
+  transition: transform 200ms linear; }
+  .site-header a {
+    color: #2C3E50; }
+    .site-header a:hover {
+      color: #3e5871; }
+
+.headroom--pinned {
+  transform: translateY(0%); }
+
+.headroom--unpinned {
+  transform: translateY(-100%); }
+
+.headroom--not-top {
+  background: #fff; }
+
+.site-content-header {
   position: relative;
   padding: 35px 0;
   margin-bottom: 15px;
@@ -3852,63 +3887,42 @@ input[type="color"],
   background-color: #2C3E50;
   background: linear-gradient(rgba(44, 62, 80, 0.4), rgba(44, 62, 80, 0.4)), 50% url("./images/bg_header.jpg");
   background-size: cover; }
-  .home .site-header {
-    margin-bottom: 35px; }
-  .site-header:before, .site-header:after {
+  .site-content-header:before, .site-content-header:after {
     content: "";
     display: table; }
-  .site-header:after {
+  .site-content-header:after {
     clear: both; }
-  .site-header .site-info {
-    padding: 35px 0; }
-    .site-header .site-info .site-title {
-      display: inline-block;
+  .site-content-header .blog-title {
+    display: inline-block;
+    color: #fff;
+    line-height: 40px;
+    margin: 0; }
+    .site-content-header .blog-title a {
+      color: #fff; }
+  .site-content-header .blog-logo {
+    width: 190px;
+    height: 40px; }
+    .site-content-header .blog-logo path {
+      fill: #fff; }
+  .site-content-header .blog-description {
+    margin: 0;
+    color: #eeeeee;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 300; }
+  .site-content-header .archives-title {
+    margin: 0;
+    color: #eeeeee;
+    font-size: 12px;
+    font-weight: 300; }
+    .site-content-header .archives-title span {
       color: #fff;
-      line-height: 40px;
-      margin: 0; }
-      .site-header .site-info .site-title a {
-        color: #fff; }
-    .site-header .site-info .site-logo {
-      width: 190px;
-      height: 40px; }
-      .site-header .site-info .site-logo path {
-        fill: #fff; }
-    .site-header .site-info .site-archives-title {
-      margin: 0;
-      color: #eeeeee;
-      font-size: 12px;
-      font-weight: 300; }
-      .site-header .site-info .site-archives-title span {
-        color: #fff;
-        font-weight: bold; }
-    .site-header .site-info .site-description {
-      margin: 0;
-      color: #eeeeee;
-      font-size: 12px;
-      font-style: italic;
-      font-weight: 300; }
+      font-weight: bold; }
 
-.single .site-header {
-  position: absolute;
-  background: #2C3E50;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-  margin: 0;
-  padding: 0;
-  height: 55px;
-  max-height: 55px;
-  line-height: 55px; }
-  .single .site-header .site-title {
-    line-height: 55px; }
-  .single .site-header .site-info {
-    margin: 0 0 0 4px;
-    padding: 0; }
-    .single .site-header .site-info .site-logo {
-      width: 120px;
-      height: 55px; }
-      .single .site-header .site-info .site-logo path {
-        fill: #fff; }
+.site-content-header {
+  margin-bottom: 15px;
+  padding: 115px 0 60px 0; }
+
 .single .entry-header {
   margin-bottom: 15px;
   padding: 115px 0 60px 0;
@@ -3921,15 +3935,11 @@ input[type="color"],
     color: #fff; }
 
 @media (max-width: 930px) {
-  .single .site-header {
+  .site-header {
     height: 48px;
     max-height: 48px;
     line-height: 48px; }
-    .single .site-header .site-title {
-      line-height: 48px; }
-    .single .site-header .site-info .site-logo {
-      width: 110px;
-      height: 48px; }
+
   .single .entry-header {
     padding: 108px 0 60px 0; } }
 /* =Navigation
@@ -3973,14 +3983,6 @@ input[type="color"],
     padding: 0 0 35px; }
   .post-summaries .post-summary:last-child {
     border-bottom: none; }
-
-.site-content .page-header {
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
-  .site-content .page-header .page-title {
-    margin: 0;
-    color: #263238; }
 
 .entry-title {
   font-size: 25px;
@@ -4393,54 +4395,46 @@ object {
     color: #fff; }
     .site-footer a:hover {
       color: #fff; }
-  .site-footer .site-info .copyrights {
+  .site-footer .copyrights {
     *zoom: 1;
     padding-bottom: 12px;
     padding-top: 12px; }
-    .site-footer .site-info .copyrights:before, .site-footer .site-info .copyrights:after {
+    .site-footer .copyrights:before, .site-footer .copyrights:after {
       content: "";
       display: table; }
-    .site-footer .site-info .copyrights:after {
+    .site-footer .copyrights:after {
       clear: both; }
-    .site-footer .site-info .copyrights .credit,
-    .site-footer .site-info .copyrights .poweredby {
+    .site-footer .copyrights .credit,
+    .site-footer .copyrights .poweredby {
       font-size: 13.6px;
       font-weight: 300;
       display: inline;
       margin: 0 4px;
       padding: 0; }
-    .site-footer .site-info .copyrights .credit {
+    .site-footer .copyrights .credit {
       float: left; }
-    .site-footer .site-info .copyrights .poweredby {
+    .site-footer .copyrights .poweredby {
       float: right; }
-      .site-footer .site-info .copyrights .poweredby .fa-heart {
+      .site-footer .copyrights .poweredby .fa-heart {
         margin: 0 2px;
         font-size: .5em;
         color: #BE1931; }
-      .site-footer .site-info .copyrights .poweredby .fa-github-alt {
+      .site-footer .copyrights .poweredby .fa-github-alt {
         margin: 0 2px; }
 
 #wpstats {
   display: block;
   margin: -10px auto 0; }
 
-.no-results .page-header,
-.error404 .page-header {
-  border-bottom: none; }
-.no-results .page-title,
-.error404 .page-title {
-  font-size: 24px;
-  margin: 0;
-  position: relative; }
-
-.error404 .page-content {
+.errorPage .errorPage-content {
   padding-top: 40px;
   padding-bottom: 40px; }
-.error404 .page-title {
+.errorPage .errorPage-title {
+  font-size: 24px;
+  margin: 0;
+  position: relative;
   padding: 50px 200px;
-  width: 900px;
-  text-align: center;
-  width: auto; }
+  text-align: center; }
 
 /* = Alert styling
 -------------------------------------------------------------- */
@@ -4791,7 +4785,7 @@ object {
       left: 7px;
       top: 28px; } }
 @media (min-width: 930px) {
-  .site-header .search-form .search-form-text:focus {
+  .site-content-header .search-form .search-form-text:focus {
     width: 230px; } }
 @media (max-width: 930px) {
   .post-single .entry-title {
@@ -4839,8 +4833,8 @@ object {
   samp {
     font-size: 14px; }
 
-  .site-footer .site-info .copyrights .credit,
-  .site-footer .site-info .copyrights .poweredby {
+  .site-footer .copyrights .credit,
+  .site-footer .copyrights .poweredby {
     font-size: 12px;
     float: none;
     display: block;
@@ -4853,22 +4847,13 @@ object {
   .entry-content .wp-caption.alignright {
     margin-right: 0; } }
 @media (max-width: 750px) {
-  .site-header .site-info {
+  .home-header {
     float: none;
     width: 100%;
     text-align: center; }
-    .site-header .site-info .site-logo {
+    .home-header .blog-logo {
       width: 142px;
       height: 30px; }
-  .site-header .sub-nav {
-    float: none;
-    clear: both;
-    overflow: hidden;
-    margin: 0 auto;
-    width: 260px; }
-
-  .site-navi {
-    text-align: center; }
 
   blockquote {
     margin: 16px 0; }
@@ -4900,20 +4885,14 @@ object {
     .error404 .page-title:before {
       content: normal; } }
 @media (max-width: 390px) {
-  .site-header .site-info {
+  .home-header {
     float: none;
     text-align: center; }
-  .site-header .sub-nav {
-    float: none; }
-    .site-header .sub-nav .social {
-      float: left; }
-    .site-header .sub-nav .searchform {
-      float: right; }
 
   .entry-content .align-right {
     float: none; }
 
-  .site-footer .site-info .credit {
+  .site-footer .credit {
     display: block; }
 
   .comment-form input,
@@ -4925,10 +4904,10 @@ object {
     color: #000;
     font-size: 10pt; }
 
-  .site-title {
+  .blog-title {
     font-size: 21pt; }
 
-  .site-description {
+  .blog-description {
     font-size: 10pt; }
 
   .search-form,
