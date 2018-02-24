@@ -43,10 +43,15 @@
 <?php do_action( 'makotekw_after_body' ); ?>
 <div class="site">
 	<header id="siteHeader" class="site-header" role="banner">
-		<nav class="container">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="site-header-logo">
-				<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>
-			</a>
+		<nav class="site-header-nav">
+			<div class="site-header-menu1">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="site-header-logo">
+					<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>
+				</a>
+			</div>
+			<div class="site-header-menu2">
+				<i class="fa fa-search"></i>
+			</div>
 		</nav>
 	</header>
 	<div class="site-main">

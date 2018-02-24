@@ -13,6 +13,8 @@
 
 get_header(); ?>
 
+<div class="container">
+
 <header class="site-content-header">
 	<h2 class="archives-title">
 		<?php if ( is_category() ) : ?>
@@ -22,9 +24,9 @@ get_header(); ?>
 		<?php elseif ( is_day() ) : ?>
 			<?php echo sprintf( __( 'Daily Archives: %s', 'makotokw' ), '<span>' . get_the_date() . '</span>' ); ?>
 		<?php elseif ( is_month() ) : ?>
-			<?php echo sprintf( __( 'Monthly Archives: %s', 'makotokw' ), '<span>' . get_the_date( 'F Y' ) . '</span>' ); ?>
+			<?php echo sprintf( __( 'Monthly Archives: %s', 'makotokw' ), '<span>' . get_the_date( __( 'Y/M', 'makotokw' ) ) . '</span>' ); ?>
 		<?php elseif ( is_year() ) : ?>
-			<?php echo sprintf( __( 'Yearly Archives: %s', 'makotokw' ), '<span>' . get_the_date( 'Y' ) . '</span>' ); ?>
+			<?php echo sprintf( __( 'Yearly Archives: %s', 'makotokw' ), '<span>' . get_the_date( __( 'Y', 'makotokw' ) ) . '</span>' ); ?>
 		<?php elseif ( is_tax( 'blogs' ) ) : ?>
 			<?php echo sprintf( __( 'Blog Archives: %s', 'makotokw' ), '<span>' . single_term_title( '', false ) . '</span>' ); ?>
 		<?php elseif ( is_tax( 'portfolios' ) ) : ?>
@@ -37,9 +39,7 @@ get_header(); ?>
 	</h2>
 </header>
 <?php if ( is_archive() ) : ?>
-	<div class="container">
-		<?php makotokw_breadcrumbs(); ?>
-	</div>
+	<?php makotokw_breadcrumbs(); ?>
 <?php endif ?>
 <?php if ( have_posts() ) : ?>
 	<div class="post-summaries">
@@ -50,11 +50,10 @@ get_header(); ?>
 			?>
 		<?php endwhile; ?>
 	</div>
-	<div class="container">
-		<?php makotokw_pagination(); ?>
-	</div>
+	<?php makotokw_pagination(); ?>
 <?php else : ?>
 	<?php get_template_part( 'no-results' ); ?>
 <?php endif; ?>
+</div>
 
 <?php get_footer(); ?>

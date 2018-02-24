@@ -43,11 +43,26 @@ $site-header-link-over-color: lighten($site-header-link-color, 10%);
   background: $site-header-background-color;
 }
 
+.site-header-nav
+{
+  padding: 0 15px;
+  display: flex;
+  .site-header-menu1
+  {
+    flex: 1 1 auto;
+  }
+  .site-header-menu2
+  {
+    flex: 0 0 auto;
+  }
+}
+
 .site-content-header {
-  padding: 15px 0;
+  padding: 15px 0 0;
   text-align: center;
   .archives-title {
     font-weight: 300;
+    margin: 0;
     span {
       font-weight: bold;
     }
@@ -56,7 +71,7 @@ $site-header-link-over-color: lighten($site-header-link-color, 10%);
 
 .single, .page {
   .entry-header {
-    padding: 15px 0;
+    padding: 15px 0 0;
     text-align: center;
     .entry-title {
       margin: 0 0 10px;

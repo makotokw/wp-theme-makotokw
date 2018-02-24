@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: makoto.kw@gmail.com\n"
-"POT-Creation-Date: 2015-12-23 23:13+0900\n"
+"POT-Creation-Date: 2018-02-24 13:25+0900\n"
 "PO-Revision-Date: 2013-04-28 18:46+0900\n"
 "Last-Translator: Makoto Kawasaki <makoto.kw@gmail.com>\n"
 "Language-Team: Japanese\n"
@@ -21,46 +21,46 @@ msgstr ""
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: comments.php:46
+#: comments.php:44
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: comments.php:47
+#: comments.php:45
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: content.php:16
+#: content.php:17
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
 
-#: content.php:27
+#: content.php:31
 msgid "(<span class=\"entry-date-warning-y\">1</span> year ago)"
 msgstr "(<span class=\"entry-date-warning-y\">1</span>年前)"
 
-#: content.php:29
+#: content.php:33
 #, php-format
 msgid "(<span class=\"entry-date-warning-y\">%d</span> years ago)"
 msgstr "(<span class=\"entry-date-warning-y\">%d</span>年前)"
 
-#: content.php:42 inc/template-tags.php:290
+#: content.php:48 inc/template-tags.php:290
 msgid "Continue reading"
 msgstr "続きを読む"
 
-#: content.php:50
+#: content.php:59
 msgid "Pages:"
 msgstr ""
 
-#: content.php:77
+#: content.php:86
 msgid "Last Updated"
 msgstr ""
 
-#: footer.php:22
+#: footer.php:23
 #, php-format
 msgid "Powered by %s"
 msgstr ""
 
-#: footer.php:23
+#: footer.php:24
 msgid "Semantic Personal Publishing Platform"
 msgstr ""
 
@@ -71,6 +71,50 @@ msgstr "サイトメニュー"
 #: functions.php:75
 msgid "Portfolio Menu"
 msgstr "ポートフォリオメニュー"
+
+#: index.php:19
+#, php-format
+msgid "Category Archives: %s"
+msgstr "%sの記事一覧"
+
+#: index.php:21
+#, php-format
+msgid "Tag Archives: %s"
+msgstr "%sの記事一覧"
+
+#: index.php:23
+#, php-format
+msgid "Daily Archives: %s"
+msgstr "%sの記事一覧"
+
+#: index.php:25
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr "%sの記事一覧"
+
+#: index.php:27
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr "%sの記事一覧"
+
+#: index.php:29
+#, php-format
+msgid "Blog Archives: %s"
+msgstr "アーカイブ"
+
+#: index.php:31
+#, php-format
+msgid "Portfolio Archives: %s"
+msgstr "%sの記事一覧"
+
+#: index.php:33
+msgid "Search"
+msgstr ""
+
+#: index.php:35 inc/template-tags.php:206 inc/template-tags.php:209
+#: inc/template-tags.php:212 inc/template-tags.php:215
+msgid "Archives"
+msgstr "アーカイブ"
 
 #: meta-ogp.php:67
 msgid "Uncategorized"
@@ -102,20 +146,20 @@ msgid ""
 "searching can help."
 msgstr "お探しのコンテンツを見つけられませんでした。検索をお試しください。"
 
-#: searchform.php:10
+#: searchform.php:11
 msgid "Search the site"
 msgstr ""
 
-#: inc/comments.php:26
+#: inc/comments.php:31
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s %2$"
 
-#: inc/comments.php:28
+#: inc/comments.php:34
 msgid "Edit"
 msgstr "編集"
 
-#: inc/comments.php:34
+#: inc/comments.php:40
 msgid "Your comment is awaiting moderation."
 msgstr "コメントは承認待ちです。"
 
@@ -124,7 +168,7 @@ msgstr "コメントは承認待ちです。"
 msgid "Page %s"
 msgstr ""
 
-#: inc/related.php:81
+#: inc/related.php:82
 msgid "Related Posts"
 msgstr ""
 
@@ -188,45 +232,40 @@ msgstr ""
 msgid "Last"
 msgstr ""
 
-#: inc/template-tags.php:190 inc/template-tags.php:224
+#: inc/template-tags.php:187 inc/template-tags.php:223
 msgid "Categories"
 msgstr "カテゴリ"
 
-#: inc/template-tags.php:196
+#: inc/template-tags.php:193
 msgid "Tags"
 msgstr "タグ"
 
-#: inc/template-tags.php:199
+#: inc/template-tags.php:196
 msgid "Mylist"
 msgstr "マイリスト"
 
-#: inc/template-tags.php:202
+#: inc/template-tags.php:199
 msgid "Blog"
 msgstr "ブログ"
 
-#: inc/template-tags.php:205
+#: inc/template-tags.php:202
 msgid "Portfolio"
 msgstr "ポートフォリオ"
 
-#: inc/template-tags.php:209 inc/template-tags.php:212
-#: inc/template-tags.php:215 inc/template-tags.php:218
-msgid "Archives"
-msgstr "アーカイブ"
-
-#: inc/template-tags.php:213
+#: inc/template-tags.php:210
 msgid "Y/M"
 msgstr "Y年M"
 
-#: inc/template-tags.php:216
+#: inc/template-tags.php:213
 msgid "Y"
 msgstr "Y年"
 
-#: inc/template-tags.php:221
+#: inc/template-tags.php:218
 msgid "Search Results"
 msgstr "検索結果"
 
-#: inc/template-tags.php:264 inc/template-tags.php:454
-#: inc/template-tags.php:473 inc/template-tags.php:492
+#: inc/template-tags.php:264 inc/template-tags.php:455
+#: inc/template-tags.php:478 inc/template-tags.php:499
 #, php-format
 msgid "View all posts in %s"
 msgstr ""
@@ -268,4 +307,3 @@ msgstr ""
 #: inc/template-tags.php:380
 msgid "About"
 msgstr ""
-

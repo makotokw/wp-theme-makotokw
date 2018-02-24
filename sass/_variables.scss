@@ -27,6 +27,7 @@ $turquoise: #1ABC9C;
 $green-sea: #16A085;
 $emerald: #2ECC71;
 $nephritis: #27AE60;
+$little-boy-blue: #6CA0DC;
 $peter-river: #3498DB;
 $belize-hole: #2980B9;
 $amethyst: #9B59B6;
@@ -35,6 +36,7 @@ $mykonos-blue: #005b88;
 $monaco-blue: #344c80;
 $wet-asphalt: #34495E;
 $midnight-blue: #2C3E50;
+$sailor-blue: #0E3A53;
 $sun-flower: #F1C40F;
 $orange: #F39C12;
 $carrot: #E67E22;
@@ -42,7 +44,6 @@ $pumpkin: #D35400;
 $alizarin: #E74C3C;
 $pomegranate: #C0392B;
 $salmon-pink: #f3a68c;
-$github-orange: #D26911;
 $koi: #d25c3f;
 $samba: #a82b38;
 $vivacious: #a92a5c;
@@ -51,11 +52,17 @@ $silver: #BDC3C7;
 $concrete: #95A5A6;
 $asbestos: #7F8C8D;
 
+
+
 // others
+$github-orange: #D26911;
+$monstersinc-blue: #007CC4;
 $heart-red: #BE1931;
 
 @import "lib/brandcolors";
 @import "lib/materialcolors";
+
+// Layout color ----------------------------
 
 $brand-primary: #428bca;
 $brand-success: #5cb85c;
@@ -63,12 +70,12 @@ $brand-warning: #f0ad4e;
 $brand-danger: #d9534f;
 $brand-info: #5bc0de;
 
-$brand-primary-text: $blue-dark;
+$brand-primary-text: $md-grey-800;
 $brand-default-text: #444;
 $brand-default-bg: #f9f9fb;
 $brand-default-border: #ddd;
 $brand-invert-text: #fff;
-$brand-invert-bg: $blue-dark;
+$brand-invert-bg: $md-grey-800;
 
 $state-warning-text: #c09853;
 $state-warning-bg: #fefaef;
@@ -82,6 +89,28 @@ $state-success-border: darken(adjust-hue($state-success-bg, -10), 5%);
 $state-info-text: #3a87ad;
 $state-info-bg: lighten(#d9edf7, 7%);
 $state-info-border: darken(adjust-hue($state-info-bg, -10), 7%);
+
+$site-default-text: $md-grey-800;
+$site-header-text: $md-grey-900;
+$site-default-bg: $white;
+$site-neutral-color: $md-grey-500;
+$site-accent-color: $monstersinc-blue;
+$site-dark-accent-color: $blue-dark;
+$site-default-border: $brand-default-border;
+
+$site-default-link: $site-accent-color;
+$site-default-link-over: darken($site-default-link, 10%);
+$site-neutral-link: $site-neutral-color;
+$site-neutral-link-over: darken($site-neutral-link, 10%);
+
+$navi-default-bg: $site-default-bg;
+
+$footer-default-text: $brand-invert-text;
+$footer-default-bg: $brand-invert-bg;
+$footer-default-link: $brand-invert-text;
+$footer-default-link-over: $brand-invert-text;
+
+// ----------------------------
 
 $font-family-sans-serif-ja: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Original Yu Gothic", "Yu Gothic", YuGothic, Verdana, Meiryo, "M+ 1p", sans-serif;
 //$font-family-sans-serif-ja: 'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro', Meiryo, メイリオ, YuGothic, 'Yu Gothic', 游ゴシック;
@@ -98,8 +127,10 @@ $font-size-small: $font-size-base * 0.85; // ~12px
 $font-size-mini: $font-size-base * 0.75; // ~11px
 
 $entry-title-font-size: 36px;
-$entry-content-font-size: 17px;
+$entry-title-small-font-size: 22px;
+$entry-content-font-size: 16px;
 $entry-list-title-font-size: 25px;
+$entry-list-title-small-font-size: 20px;
 $entry-list-content-font-size: 16px;
 
 $line-height-base: 1.7;
@@ -112,27 +143,14 @@ $border-radius-small: 3px;
 $site-border-width: 1px;
 $site-border-left-width: .6em;
 
-$site-default-text: $md-grey-800;
-$site-header-text: $md-grey-900;
-$site-default-bg: $white;
-$site-neutral-color: $md-grey-400;
-$site-accent-color: $blue-light;
-$site-dark-accent-color: $blue-dark;
-$site-default-border: $brand-default-border;
-
-$site-default-link: $site-accent-color;
-$site-default-link-over: darken($site-default-link, 10%);
-$site-neutral-link: $site-neutral-color;
-$site-neutral-link-over: darken($site-neutral-link, 10%);
-
 // form
-$form-default-border: $md-grey-200;
+$form-default-border: $md-grey-300;
 $form-default-border-over: $md-grey-400;
-$form-default-placeholder: $md-grey-200;
+$form-default-placeholder: $md-grey-300;
 
 // button
 $button-default-border-width: 1px;
-$button-default-text: $md-grey-500;
+$button-default-text: $md-grey-600;
 $button-default-text-over: $md-grey-800;
 $button-default-bg: $white;
 $button-default-bg-over: $white;
@@ -140,15 +158,6 @@ $button-default-border: $form-default-border;
 $button-default-border-over: $form-default-border-over;
 $button-disable-text:  $md-grey-200;
 $button-disable-border: $md-grey-100;
-
-// navi
-$navi-default-bg: $site-default-bg;
-
-// footer color
-$footer-default-text: $brand-invert-text;
-$footer-default-bg: $brand-invert-bg;
-$footer-default-link: $brand-invert-text;
-$footer-default-link-over: $brand-invert-text;
 
 // error
 $errorpage-bg: #f5f5f5;

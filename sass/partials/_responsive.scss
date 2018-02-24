@@ -38,12 +38,16 @@
 @media (max-width: $container-desktop) {
 
   .entry-title {
+    font-size: $entry-list-title-small-font-size;
     .post-single & {
-      font-size: $entry-list-title-font-size;
+      font-size: $entry-title-small-font-size;
     }
   }
+  .archives-title {
+    font-size: $entry-title-small-font-size;
+  }
   .page-title {
-    font-size: $entry-list-title-font-size;
+    font-size: $entry-title-small-font-size;
   }
 
   .section-page {
@@ -80,6 +84,13 @@
     margin: 8px 0;
   }
 
+  menu,
+  ol,
+  ul {
+    margin: 10px 0;
+    padding: 0 0 0 20px;
+  }
+
   code,
   kbd,
   pre,
@@ -87,6 +98,10 @@
   var,
   samp {
     font-size: 14px;
+  }
+
+  .post-summary {
+    padding: 15px 0;
   }
 
   .site-footer {

@@ -39,7 +39,7 @@ gulp.task('makepot', plugins.shell.task([
   'msgmerge --update ./languages/ja.po ./languages/messages.pot --backup=off'
 ]));
 
-gulp.task('make-languages-po', plugins.shell.task([
+gulp.task('make-languages-mo', plugins.shell.task([
   'msgfmt -o ./languages/ja.mo ./languages/ja.po'
 ]));
 

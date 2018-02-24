@@ -547,7 +547,8 @@ function makotokw_section_category_and_tag( $title = 'Tag' ) {
  * Returns true if a blog has more than 1 category
  */
 function makotokw_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
+	$all_the_cool_cats = get_transient( 'all_the_cool_cats' );
+	if ( false === $all_the_cool_cats ) {
 		// Create an array of all the categories that are attached to posts
 		$all_the_cool_cats = get_categories(
 			array(
