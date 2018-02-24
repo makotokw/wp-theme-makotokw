@@ -44,79 +44,22 @@ $site-header-link-over-color: lighten($site-header-link-color, 10%);
 }
 
 .site-content-header {
-  position: relative;
-  padding: 35px 0;
-  margin-bottom: 15px;
-
-  @include clearfix;
+  padding: 15px 0;
   text-align: center;
-  background-color: $blue-dark;
-  background: linear-gradient(rgba($blue-dark, .4), rgba($blue-dark, .4)), 50% url('./images/bg_header.jpg');
-  background-size: cover;
-
-  .blog-title {
-    display: inline-block;
-    color: $white;
-    line-height: $site-logo-height;
-    margin: 0 0 10px;
-    a {
-      color: $white;
-    }
-  }
-  .blog-logo {
-    path {
-      fill: $white;
-    }
-    width: $site-logo-width;
-    height: $site-logo-height;
-  }
-
-  .blog-description {
-    margin: 0;
-    color: $md-grey-200;
-    font-size: $font-size-mini;
-    font-style: italic;
-    font-weight: 300;
-  }
-
   .archives-title {
-    margin: 0;
-    color: $white;
-    font-size: $font-size-base;
     font-weight: 300;
     span {
-      color: $white;
       font-weight: bold;
     }
   }
 }
 
-
-.site-content-header {
-  margin-bottom: 15px;
-  padding: (60px + $site-header-height) 0 60px 0;
-}
-
 .single, .page {
   .entry-header {
-    margin-bottom: 15px;
-    padding: (60px + $site-header-height) 0 60px 0;
-    color: $white;
+    padding: 15px 0;
     text-align: center;
-    background-color: $blue-dark;
-    background: linear-gradient(rgba($blue-dark, .4), rgba($blue-dark, .4)), 50% url('./images/bg_header.jpg');
-    background-size: cover;
     .entry-title {
-      color: $white;
       margin: 0 0 10px;
-    }
-    .entry-meta {
-      color: $white;
-      .tag-links {
-        a {
-          color: $white;
-        }
-      }
     }
   }
 }
@@ -127,10 +70,5 @@ $site-header-link-over-color: lighten($site-header-link-color, 10%);
     height: $site-header-height-mobile;
     max-height: $site-header-height-mobile;
     line-height: $site-header-height-mobile;
-  }
-  .single, .page {
-    .entry-header {
-      padding: (60px + $site-header-height-mobile) 0 60px 0;
-    }
   }
 }

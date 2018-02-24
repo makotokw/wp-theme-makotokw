@@ -14,11 +14,6 @@
 get_header(); ?>
 
 <header class="site-content-header">
-	<h1 class="blog-title">
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-			<img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="<?php bloginfo( 'name' ); ?>"  width="190" height="40" class="site-logo" />
-		</a>
-	</h1>
 	<h2 class="archives-title">
 		<?php if ( is_category() ) : ?>
 			<?php echo sprintf( __( 'Category Archives: %s', 'makotokw' ), '<span>' . single_cat_title( '', false ) . '</span>' ); ?>
