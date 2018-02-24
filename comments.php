@@ -22,9 +22,7 @@ if ( post_password_required() ) {
 }
 ?>
 
-<aside id="comments" class="section section-default section-comment">
-
-	<?php // You can start editing here -- including this comment! ?>
+<aside id="comments" class="section section-mini section-comment">
 
 	<?php if ( have_comments() ) : ?>
 

@@ -171,7 +171,7 @@ object {
 
 .section {
   margin: 15px 0 0 0;
-  padding: 15px 0 0 0;
+  padding: 0;
   .section-title {
     text-transform: uppercase;
   }
@@ -192,23 +192,28 @@ object {
 
 .section-mini {
   border-top: 1px solid $block-default-divider;
+  @include clearfix;
 
-  .section-title {
-    float: left;
-    width: 15.625%;
+  .section-title,
+  .comment-reply-title {
     color: $site-neutral-color;
     font-weight: 400;
     text-transform: uppercase;
     font-size: $font-size-base;
     margin: 5px 0;
   }
+}
+
+.section-2col {
+  .section-title {
+    float: left;
+    width: 15.625%;
+  }
   .section-content {
     width: 82.125%;
     float: right;
     margin: 5px 0;
-
   }
-  @include clearfix;
 }
 
 // Mylist

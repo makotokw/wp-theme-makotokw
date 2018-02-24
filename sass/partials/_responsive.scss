@@ -134,7 +134,7 @@
     margin: 16px 0;
   }
 
-  .section-mini {
+  .section-2col {
     .section-title {
       float: none;
       width: auto;
@@ -142,20 +142,20 @@
     .section-content {
       width: auto;
       float: none;
-      margin-left: 10px;
+      margin-left: 15px;
     }
   }
 
   .comment {
     .comment-body {
-
       .comment-metadata {
         margin-top: 10px;
       }
       .comment-awaiting-moderation,
       .comment-content {
         float: none;
-        width: 100%;
+        clear: both;
+        width: auto;
         padding: 12px;
       }
     }

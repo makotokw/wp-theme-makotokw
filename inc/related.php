@@ -78,7 +78,7 @@ function makotokw_related_posts( $arg = array() ) {
 
 	if ( $rq && $rq->have_posts() ) : ?>
 		<?php $count = 0; ?>
-		<aside class="section section-mini section-related-posts">
+		<aside class="section section-mini section-2col section-related-posts">
 			<h2 class="section-title"><?php _e( 'Related Posts', 'makotokw' ); ?></h2>
 			<div class="section-content">
 				<ul>
@@ -120,7 +120,7 @@ function makotokw_related_portfolio() {
 		if ( $rq->have_posts() ) {
 			$rq->the_post();
 			?>
-			<section class="section section-mini section-portfolio">
+			<section class="section section-mini section-2col section-portfolio">
 				<h2 class="section-title">Related Software</h2>
 				<div class="section-content"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
 			</section>

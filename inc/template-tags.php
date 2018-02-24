@@ -34,13 +34,13 @@ function makotokw_content_nav( $nav_id ) {
 	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo esc_attr( $nav_class ); ?>">
 		<?php if ( is_single() ) : // navigation links for single posts ?>
 			<?php if ( get_next_post_link() ) : ?>
-				<div class="section section-mini">
+				<div class="section section-mini section-2col">
 					<h2 class="section-title">Newer post</h2>
 					<div class="section-content"><?php next_post_link( '%link', '%title' ); ?></div>
 				</div>
 			<?php endif; ?>
 			<?php if ( get_previous_post_link() ) : ?>
-				<div class="section section-mini">
+				<div class="section section-mini section-2col">
 					<h2 class="section-title">Older post</h2>
 					<div class="section-content"><?php previous_post_link( '%link', '%title' ); ?></div>
 				</div>
@@ -363,7 +363,7 @@ function makotokw_share_buttons() {
 
 function makotokw_share_this() {
 	?>
-	<div id="shareThis" class="section section-mini section-share-this" data-url="<?php echo makotokw_share_permalink(); ?>">
+	<div id="shareThis" class="section section-mini section-2col section-share-this" data-url="<?php echo makotokw_share_permalink(); ?>">
 		<h2 class="section-title"><?php _e( 'Share This', 'makotokw' ); ?></h2>
 		<div class="section-content">
 			<div class="share-content">
@@ -376,7 +376,7 @@ function makotokw_share_this() {
 
 function makotokw_about_me() {
 	?>
-	<div class="section section-mini section-about-me">
+	<div class="section section-mini section-2col section-about-me">
 		<h2 class="section-title"><?php _e( 'About', 'makotokw' ); ?></h2>
 		<div class="section-content">
 			<div itemprop="author copyrightHolder editor" itemscope itemtype="https://schema.org/Person">
@@ -534,7 +534,7 @@ function makotokw_the_tag_links( $prefix = ', ' ) {
 
 function makotokw_section_category_and_tag( $title = 'Tag' ) {
 	?>
-	<section class="section section-mini section-category-tag">
+	<section class="section section-mini section-2col section-category-tag">
 		<h2 class="section-title"><?php echo esc_html( $title ); ?></h2>
 		<div class="section-content">
 			<?php makotokw_the_category_and_tag(); ?></a>

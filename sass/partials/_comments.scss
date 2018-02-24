@@ -9,15 +9,11 @@
 // --------------------------------------------------------------
 
 .section-comment {
-  .section-title {
-    &:before {
-      content: $fa-var-comments-o;
-    }
-  }
 }
 
 .comment-list {
   list-style-type: none;
+  margin: 0;
   padding: 0;
 
   .children {
@@ -67,7 +63,7 @@
 }
 
 .comment-body {
-  padding: 24px 0;
+  padding: 15px 0;
   position: relative;
   @include clearfix;
 
@@ -139,27 +135,29 @@
       }
     }
     .comment-content {
+      border: $site-border-width solid $site-accent-color;
     }
   }
 }
 
 .section-comment {
+  .section-comments-title {
+    float: none;
+    width: auto;
+  }
   .comment-respond {
-    @extend .section;
-    @extend .section-default;
     @include clearfix;
     margin: 0;
-    padding: 15px 0;
+    padding: 0;
     .comment-reply-title {
       @extend .section-title;
-      &:before {
-        content: $fa-var-comment-o;
-      }
     }
   }
 }
 
 .navigation-comment {
+  border-bottom: 1px solid $block-default-divider;
+  padding: 15px 0;
   @include clearfix();
 }
 

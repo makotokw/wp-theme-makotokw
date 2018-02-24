@@ -82,7 +82,7 @@ $only_excerpts = is_home() || is_year() || is_month() || is_search();
 					<?php makotokw_related_posts(); ?>
 					<?php makotokw_content_nav( 'nav-below' ); ?>
 				<?php else : ?>
-					<div class="section section-mini section-last-updated">
+					<div class="section section-mini section-2col section-last-updated">
 						<h2 class="section-title"><?php _e( 'Last Updated', 'makotokw' ); ?></h2>
 						<div class="section-content"><?php makotokw_updated_on(); ?></div>
 					</div>
