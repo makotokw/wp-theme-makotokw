@@ -50,15 +50,6 @@
     padding: 10px;
   }
 
-  .entry-content,
-  .entry-summary {
-    font-size: $entry-list-content-font-size * 0.9;
-    .post-single & {
-      font-size: $entry-list-content-font-size;
-      line-height: $line-height-large * 0.9;
-    }
-  }
-
   .related-posts {
     .related-post {
       padding: 10px;
@@ -171,7 +162,7 @@
   }
   .comment-body {
     .comment-content {
-      font-size: $font-size-small;
+      font-size: $font-size-base;
     }
   }
   .comment-list {

@@ -43,9 +43,9 @@
 <?php do_action( 'makotekw_after_body' ); ?>
 <div class="site">
 	<header id="siteHeader" class="site-header" role="banner">
-		<nav>
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-				Home
+		<nav class="container">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="site-header-logo">
+				<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>
 			</a>
 		</nav>
 	</header>

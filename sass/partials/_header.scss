@@ -58,7 +58,7 @@ $site-header-link-over-color: lighten($site-header-link-color, 10%);
     display: inline-block;
     color: $white;
     line-height: $site-logo-height;
-    margin: 0;
+    margin: 0 0 10px;
     a {
       color: $white;
     }
@@ -81,8 +81,8 @@ $site-header-link-over-color: lighten($site-header-link-color, 10%);
 
   .archives-title {
     margin: 0;
-    color: $md-grey-200;
-    font-size: $font-size-mini;
+    color: $white;
+    font-size: $font-size-base;
     font-weight: 300;
     span {
       color: $white;
@@ -97,7 +97,7 @@ $site-header-link-over-color: lighten($site-header-link-color, 10%);
   padding: (60px + $site-header-height) 0 60px 0;
 }
 
-.single {
+.single, .page {
   .entry-header {
     margin-bottom: 15px;
     padding: (60px + $site-header-height) 0 60px 0;
@@ -108,10 +108,18 @@ $site-header-link-over-color: lighten($site-header-link-color, 10%);
     background-size: cover;
     .entry-title {
       color: $white;
+      margin: 0 0 10px;
+    }
+    .entry-meta {
+      color: $white;
+      .tag-links {
+        a {
+          color: $white;
+        }
+      }
     }
   }
 }
-
 
 // Unless desktop
 @media (max-width: $container-desktop) {
@@ -120,7 +128,7 @@ $site-header-link-over-color: lighten($site-header-link-color, 10%);
     max-height: $site-header-height-mobile;
     line-height: $site-header-height-mobile;
   }
-  .single {
+  .single, .page {
     .entry-header {
       padding: (60px + $site-header-height-mobile) 0 60px 0;
     }

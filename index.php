@@ -41,23 +41,25 @@ get_header(); ?>
 		<?php endif; ?>
 	</h2>
 </header>
-<div class="container">
-	<?php if ( is_archive() ) : ?>
+<?php if ( is_archive() ) : ?>
+	<div class="container">
 		<?php makotokw_breadcrumbs(); ?>
-	<?php endif ?>
-	<?php if ( have_posts() ) : ?>
-		<div class="post-summaries">
-			<?php while ( have_posts() ) : ?>
-				<?php
-					the_post();
-					get_template_part( 'content' );
-				?>
-			<?php endwhile; ?>
-		</div>
+	</div>
+<?php endif ?>
+<?php if ( have_posts() ) : ?>
+	<div class="post-summaries">
+		<?php while ( have_posts() ) : ?>
+			<?php
+				the_post();
+				get_template_part( 'content' );
+			?>
+		<?php endwhile; ?>
+	</div>
+	<div class="container">
 		<?php makotokw_pagination(); ?>
-	<?php else : ?>
-		<?php get_template_part( 'no-results' ); ?>
-	<?php endif; ?>
-</div>
+	</div>
+<?php else : ?>
+	<?php get_template_part( 'no-results' ); ?>
+<?php endif; ?>
 
 <?php get_footer(); ?>

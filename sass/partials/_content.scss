@@ -39,7 +39,7 @@
 }
 
 .entry-meta {
-  font-size: $font-size-small;
+  font-size: $font-size-base;
   color: $site-neutral-color;
 
   .portfolio-posts-area {
@@ -78,7 +78,7 @@
   font-size: $entry-list-content-font-size;
   .post-single & {
     font-size: $entry-content-font-size;
-    line-height: $line-height-large;
+    line-height: $line-height-base;
   }
   img {
     margin: $block-margin auto;
@@ -99,7 +99,7 @@
 }
 
 .text-more-link {
-  font-size: $font-size-small;
+  font-size: $font-size-base;
 }
 
 // Sticky (Featured) Content
@@ -128,7 +128,7 @@
 
 %content-caption {
   color: $caption-text;
-  font-size: $font-size-small;
+  font-size: $font-size-base;
 }
 
 .wp-caption {
@@ -199,7 +199,7 @@ object {
     color: $site-neutral-color;
     font-weight: 400;
     text-transform: uppercase;
-    font-size: $font-size-small;
+    font-size: $font-size-base;
     margin: 5px 0;
   }
   .section-content {
