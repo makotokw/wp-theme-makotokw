@@ -54,24 +54,6 @@
 
   var $footerMargin = $('#footerMargin');
 
-  function stickyFooter() {
-    var windowHeight = $(window).height();
-    var docHeight = $(document.body).height() - $footerMargin.height();
-    var diff = windowHeight - docHeight;
-    if (isAdmin) {
-      diff -= 32;
-    }
-    if (diff <= 0) {
-      diff = 1;
-    }
-    $footerMargin.height(diff);
-  }
-
-  $(window)
-    .on('sticky', stickyFooter)
-    .scroll(stickyFooter)
-    .resize(stickyFooter);
-
   $('#siteLogo').each(function () {
     var $img = $(this);
     if (Modernizr.svg) {
@@ -95,10 +77,75 @@
     }
   });
 
+
+
   $(document).ready(function () {
     if ($.isFunction(prettyPrint)) {
       prettyPrint();
     }
+
+
+    var $siteProgress = $('#siteProgress');
+    var lastWindowHeight = 0,
+      lastDocumentHeight = 0;
+    var updating = false;
+
+    cacheLastWindowSize();
+
+    $(window)
+      .on('sticky', stickyFooter)
+      .scroll(onScroll)
+      .resize(onResize);
+
+    function updateProgressBar() {
+      var progressMax = lastDocumentHeight - lastWindowHeight;
+      $siteProgress.attr('max', progressMax);
+      $siteProgress.attr('value', window.scrollY);
+    }
+
+    function update() {
+      updateProgressBar();
+      updating = false;
+    }
+
+    function cacheLastWindowSize() {
+      lastWindowHeight = $(window).height();
+      lastDocumentHeight = $(document.body).height();
+    }
+
+    function onScroll() {
+      stickyFooter();
+      requestUpdate();
+    }
+
+    function onResize() {
+      cacheLastWindowSize();
+      stickyFooter();
+      requestUpdate();
+    }
+
+    function stickyFooter() {
+      var windowHeight = $(window).height();
+      var docHeight = lastDocumentHeight - $footerMargin.height();
+      var diff = windowHeight - docHeight;
+      if (isAdmin) {
+        diff -= 32;
+      }
+      if (diff <= 0) {
+        diff = 1;
+      }
+      $footerMargin.height(diff);
+    }
+
+    function requestUpdate() {
+      if (!updating) {
+        updating = true;
+        if (Modernizr.requestanimationframe) {
+          requestAnimationFrame(update);
+        }
+      }
+    }
+
     isAdmin = ($('#wpadminbar').length > 0);
     $('#siteHeader').headroom();
     // avoid seeing ShareCount

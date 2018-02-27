@@ -53,6 +53,11 @@
 				<i class="fa fa-search"></i>
 			</div>
 		</nav>
+		<progress id="siteProgress" class="progress site-progress" value="0">
+			<div class="progress-container">
+				<span class="progress-bar"></span>
+			</div>
+		</progress>
 	</header>
 	<div class="site-main">
 		<div class="site-content-area ">
