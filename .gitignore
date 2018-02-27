@@ -31,3 +31,4 @@ bower_components
 ### Composer ###
 composer.phar
 vendor/
+!js/vendor/
