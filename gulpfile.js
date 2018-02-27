@@ -52,9 +52,27 @@ gulp.task('clean:map', function (cb) {
   });
 });
 
+// Modernizr
+gulp.task('modernizr', function () {
+  return gulp.src([
+    './sass/**/*.scss',
+    './components/**/*.js',
+    './js/**/*.js',
+    '!./js/vendor/modernizr/modernizr.js'
+  ])
+    // https://github.com/Modernizr/customizr#config-file
+    .pipe(plugins.modernizr({
+      classPrefix: 'has-',
+      enableClasses: true,
+      options: [
+        'setClasses'
+      ]
+    }))
+    .pipe(gulp.dest('./js/vendor/modernizr'));
+});
+
 function js(env) {
   gulp.src([
-    'components/modernizr/js/modernizr.js',
     'components/google-code-prettify/js/prettify.js',
     'js/vendor/*/*.js',
     'js/main.js'
@@ -68,11 +86,11 @@ function js(env) {
     .pipe(reload({stream: true, once: true}));
 }
 
-gulp.task('js:dev', function () {
+gulp.task('js:dev', ['modernizr'], function () {
   js('development');
 });
 
-gulp.task('js', function () {
+gulp.task('js', ['modernizr'], function () {
   js('production');
 });
 
