@@ -12,21 +12,24 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-	<?php if ( is_archive() || is_search() ) : ?>
+<?php if ( is_archive() || is_search() ) : ?>
 <meta name="robots" content="noindex,follow" />
-	<?php endif ?>
+<?php endif ?>
 <title><?php wp_title( ' - ', true, 'right' ); ?></title>
 <?php if ( is_front_page() && ! is_archive() ) : ?>
-	<meta name="description" content="<?php echo esc_attr( makotokw_get_meta_description() ); ?>" />
+<meta name="description" content="<?php echo esc_attr( makotokw_get_meta_description() ); ?>" />
 <?php endif ?>
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/images/touch-icon-iphone.png">
 <link rel="apple-touch-icon" sizes="76x76" href="<?php echo get_template_directory_uri(); ?>/images/touch-icon-ipad.png">
 <link rel="apple-touch-icon" sizes="120x120" href="<?php echo get_template_directory_uri(); ?>/images/touch-icon-iphone-retina.png">
 <link rel="apple-touch-icon" sizes="152x152" href="<?php echo get_template_directory_uri(); ?>/images/touch-icon-ipad-retina.png">
-	<?php if ( is_singular() ) : ?>
+<?php if ( is_home() ) : ?>
+<link rel="alternate" hreflang="<?php echo get_bloginfo( 'language' ); ?>" href="<?php echo home_url(); ?>">
+<?php elseif ( is_singular() ) : ?>
+<link rel="alternate" hreflang="<?php echo get_bloginfo( 'language' ); ?>" href="<?php the_permalink(); ?>">
 <link rel="canonical" href="<?php the_permalink(); ?>" />
-	<?php endif ?>
+<?php endif ?>
 <link rel="alternate" type="<?php echo feed_content_type(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" href="<?php echo get_feed_link(); ?>" />
 <?php if ( true === WP_THEME_OGP ) : ?>
 <?php get_template_part( 'meta-ogp' ); ?>
