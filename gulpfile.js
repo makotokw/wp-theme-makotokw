@@ -100,13 +100,15 @@ function sass(env) {
     verbose: isDebug,
     loadPath: ['components'],
     lineNumbers: isDebug,
-    force: !isDebug
+    force: !isDebug,
+    sourcemap: isDebug
   })
     .pipe(plugins.plumber())
     .pipe(plugins.autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
     }))
+    .pipe(plugins.if(isDebug, plugins.sourcemaps.write('.')))
     .pipe(gulp.dest('.'))
     .pipe(reload({stream: true, once: true}));
 }
