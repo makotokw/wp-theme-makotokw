@@ -105,10 +105,11 @@ $site-neutral-link-over: darken($site-neutral-link, 10%);
 
 $navi-default-bg: $site-default-bg;
 
-$footer-default-text: $brand-invert-text;
-$footer-default-bg: $brand-invert-bg;
-$footer-default-link: $brand-invert-text;
-$footer-default-link-over: $brand-invert-text;
+$footer-default-text: $md-grey-600;
+$footer-default-bg: $md-grey-50;
+$footer-default-link: $site-accent-color;
+$footer-default-link-over: $site-accent-color;
+$footer-border-color: $brand-default-border;
 
 // ----------------------------
 
