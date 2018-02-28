@@ -190,6 +190,7 @@ object {
 }
 
 .section-mini {
+  margin: 8px 0 0 0;
   border-top: 1px solid $block-default-divider;
   @include clearfix;
 
@@ -199,9 +200,11 @@ object {
     font-weight: 400;
     text-transform: uppercase;
     font-size: $font-size-base;
-    margin: 5px 0;
+    margin: 8px 0;
   }
 }
+
+
 
 .section-2col {
   .section-title {
@@ -209,8 +212,8 @@ object {
     width: 15.625%;
   }
   .section-content {
-    width: 82.125%;
     float: right;
+    width: 82.125%;
     margin: 5px 0;
   }
 }

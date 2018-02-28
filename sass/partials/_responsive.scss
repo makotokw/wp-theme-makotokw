@@ -22,16 +22,6 @@
 
 // Desktop devices
 @media (min-width: $container-desktop) {
-
-  .site-content-header {
-    .search-form {
-      .search-form-text {
-        &:focus {
-          width: 230px;
-        }
-      }
-    }
-  }
 }
 
 // Unless desktop
@@ -117,6 +107,26 @@
   }
 }
 
+// over Tablet
+@media (min-width: $container-tablet) {
+  .section-2col {
+    &.section-share-this {
+      .section-title {
+        margin-top: 19px;
+      }
+    }
+  }
+  .site-content-header {
+    .search-form {
+      .search-form-text {
+        &:focus {
+          width: 230px;
+        }
+      }
+    }
+  }
+}
+
 // Collapse oversized image and pulled images after iPad breakpoint.
 @media (max-width: $container-tablet) {
   .entry-content {
@@ -155,8 +165,8 @@
       width: auto;
     }
     .section-content {
-      width: auto;
       float: none;
+      width: auto;
       margin-left: 15px;
     }
   }
@@ -191,6 +201,23 @@
       padding: 20px;
       &:before {
         content: normal;
+      }
+    }
+  }
+}
+
+// over Mobile
+@media (min-width: $container-mobile) {
+  .section-2col {
+    &.section-share-this {
+      .section-title {
+        margin-top: 19px;
+        float: left;
+        width: 40%;
+      }
+      .section-content {
+        float: right;
+        width: auto;
       }
     }
   }

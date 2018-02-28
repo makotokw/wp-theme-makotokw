@@ -15,15 +15,17 @@ add_action( 'makotekw_after_body', 'makotekw_home_after_body' );
 get_header();
 ?>
 <section class="section-page section-page-entry section-page-first">
-	<div class="post-summaries">
-		<?php while ( have_posts() ) : ?>
-			<?php
-				the_post();
-				get_template_part( 'content', get_post_format() );
-			?>
-		<?php endwhile; ?>
+	<div class="container">
+		<div class="post-summaries">
+			<?php while ( have_posts() ) : ?>
+				<?php
+					the_post();
+					get_template_part( 'content', get_post_format() );
+				?>
+			<?php endwhile; ?>
+		</div>
+		<?php makotokw_pagination(); ?>
 	</div>
-	<?php makotokw_pagination(); ?>
 </section>
 
 <section class="section-page section-page-category">
