@@ -2,9 +2,9 @@
 /**
  * @subpackage makotokw
  * Template Name: Categories
+ * /categories/
  */
 include __DIR__ . '/header.php'; ?>
-
 <article class="hentry">
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
@@ -22,5 +22,4 @@ include __DIR__ . '/header.php'; ?>
 		</ul>
 	</div>
 </article>
-
 <?php include __DIR__ . '/footer.php'; ?>

@@ -2,6 +2,7 @@
 /**
  * @subpackage makotokw
  * Template Name: Memos
+ * /memo/
  */
 include __DIR__ . '/header.php'; ?>
 <article class="hentry">
