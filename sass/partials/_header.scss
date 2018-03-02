@@ -32,6 +32,12 @@ $site-header-link-over-color: lighten($site-header-link-color, 10%);
   transition-duration: .5s;
   will-change: transform;
   transition: transform 200ms linear;
+
+  @include smaller-than-desktop-screen{
+    height: $site-header-height-mobile;
+    max-height: $site-header-height-mobile;
+    line-height: $site-header-height-mobile;
+  }
 }
 .headroom--pinned {
   transform: translateY(0%);
@@ -122,14 +128,5 @@ $site-header-link-over-color: lighten($site-header-link-color, 10%);
     .entry-title {
       margin: 0 0 10px;
     }
-  }
-}
-
-// Unless desktop
-@media (max-width: $container-desktop) {
-  .site-header {
-    height: $site-header-height-mobile;
-    max-height: $site-header-height-mobile;
-    line-height: $site-header-height-mobile;
   }
 }

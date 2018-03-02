@@ -292,30 +292,3 @@
   }
 }
 
-// ======================================
-// responsive
-// ======================================
-
-@mixin desktopScreen() {
-  @media screen and (min-width: $screen-sm-min) {
-    @content;
-  }
-}
-
-@mixin unlessDesktopScreen() {
-  @media screen and (max-width: $screen-xs-max) {
-    @content;
-  }
-}
-
-@mixin mobileScreen() {
-  @media screen and (max-width: $screen-xs-min) {
-    @content;
-  }
-}
-
-@mixin unlessMobileScreen() {
-  @media screen and (min-width: $screen-xs-min) {
-    @content;
-  }
-}

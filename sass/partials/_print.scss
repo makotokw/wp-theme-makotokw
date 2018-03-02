@@ -1,0 +1,62 @@
+@media print {
+  body {
+    background: none !important;
+    color: #000;
+    font-size: 10pt;
+  }
+
+  .blog-title {
+    font-size: 21pt;
+  }
+  .blog-description {
+    font-size: 10pt;
+  }
+
+  .search-form,
+  .author-avatar,
+  .site-footer,
+  .edit-link,
+  .widget-area,
+  .comment-edit-link,
+  .section-comment .reply,
+  .comments-link,
+  .zenback-widget-area,
+  #respond,
+  .navigation-post,
+  .navigation-paging,
+  .navigation-comment,
+  .pagination,
+  .comment-author,
+  .comment-awaiting-moderation {
+    display: none;
+  }
+
+  .page-title,
+  .entry-title {
+    font-size: 21pt;
+  }
+
+  .entry-meta,
+  .entry-meta a {
+    color: #444;
+    font-size: 10pt;
+  }
+
+  .entry-content {
+    img.alignleft,
+    .wp-caption.alignleft {
+      margin-left: 0;
+    }
+    img.alignright,
+    .wp-caption.alignright {
+      margin-right: 0;
+    }
+  }
+
+  .comment-body .comment-metadata,
+  .comment-body .comment-awaiting-moderation,
+  .comment-body .comment-content {
+    width: 100%;
+    float: none;
+  }
+}

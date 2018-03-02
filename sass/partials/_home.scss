@@ -25,6 +25,10 @@ $section-page-alternate-background-color: lighten($gray-lighter, 4%);
     font-weight: 700;
     text-transform: uppercase;
   }
+
+  @include smaller-than-desktop-screen {
+    padding: 10px;
+  }
 }
 
 .section-page-first {
@@ -152,6 +156,11 @@ $section-page-alternate-background-color: lighten($gray-lighter, 4%);
         color: $md-light-blue-600;
       }
     }
+
+    @include desktop-or-bigger-screen{
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
 
   .list-archives-item-month-no-items {
@@ -171,12 +180,3 @@ $section-page-alternate-background-color: lighten($gray-lighter, 4%);
   }
 }
 
-// Desktop devices
-@media (min-width: $container-desktop) {
-  .list-archives {
-    .list-archives-item-month {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-  }
-}

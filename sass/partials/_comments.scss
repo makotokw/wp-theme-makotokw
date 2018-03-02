@@ -1,4 +1,3 @@
-
 .zenback-widget-area,
 .section-comment,
 .pingbacks-area {
@@ -20,6 +19,10 @@
     list-style-type: none;
     padding: 0;
     margin-left: 20px;
+
+    @include smaller-than-desktop-screen {
+      margin-left: 10px;
+    }
   }
 
   & > .comment:after,
@@ -55,11 +58,12 @@
     .comment-awaiting-moderation,
     .comment-content {
       float: right;
+      //noinspection CssOverwrittenProperties
       width: 80%;
+      //noinspection CssOverwrittenProperties
       width: calc(100% - 64px);
     }
   }
-
 }
 
 .comment-body {
@@ -114,12 +118,29 @@
     width: 100%;
     @extend .comment-small;
   }
+
+  @include smaller-than-desktop-screen {
+    .comment-metadata {
+      margin-top: 10px;
+    }
+    .comment-awaiting-moderation,
+    .comment-content {
+      float: none;
+      clear: both;
+      width: auto;
+      padding: 12px;
+    }
+    .comment-content {
+      font-size: $font-size-base;
+    }
+  }
 }
 
 .comment-reply-link,
 .comment-reply-login {
   @extend .comment-small;
   &:before {
+    //noinspection CssNoGenericFontName
     font-family: FontAwesome;
     content: $fa-var-reply;
     margin-right: 5px;
@@ -164,5 +185,15 @@
 .comment-form-comment {
   textarea {
     width: 100%;
+  }
+}
+
+// comment-form without JetPack
+.comment-form {
+  @include smaller-than-tablet-screen {
+    input,
+    textarea {
+      width: 95%;
+    }
   }
 }

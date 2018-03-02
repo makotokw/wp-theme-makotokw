@@ -47,6 +47,16 @@
         margin: 0 2px;
       }
     }
+
+    @include smaller-than-desktop-screen {
+      .credit,
+      .poweredby {
+        font-size: $font-size-mini;
+        float: none;
+        display: block;
+        text-align: center;
+      }
+    }
   }
 }
 

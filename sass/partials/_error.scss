@@ -13,3 +13,34 @@
     text-align: center;
   }
 }
+
+@include smaller-than-desktop-screen {
+  .error404 {
+    .page-title {
+      padding: 20px;
+      &:before {
+        content: normal;
+      }
+    }
+  }
+}
+
+@media (max-width: 1069px) {
+  .error404 {
+    .page-header {
+      margin-left: auto;
+      max-width: 604px;
+      width: 100%;
+    }
+    .page-title {
+      font-size: 20px;
+      padding: 180px;
+      width: 604px;
+      &:before {
+        font-size: 554px;
+        left: 7px;
+        top: 28px;
+      }
+    }
+  }
+}

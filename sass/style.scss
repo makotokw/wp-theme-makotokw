@@ -15,7 +15,8 @@
  * Use it to make something cool, have fun, and share what you've learned with others.
 */
 @import "variables";
-@import "mixins";
+@import "mixins/utils";
+@import "mixins/responsive";
 @import "partials/normalize";
 @import "lib/font-awesome";
 @import "lib/prettify";
@@ -45,3 +46,4 @@
 @import "partials/archives";
 @import "partials/tags";
 @import "partials/responsive";
+@import "partials/print";

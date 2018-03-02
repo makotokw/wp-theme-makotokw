@@ -1,0 +1,28 @@
+// responsive
+@mixin smaller-than-mobile-screen() {
+  @media screen and (max-width: $screen-xs - 1) {
+    @content;
+  }
+}
+
+@mixin smaller-than-tablet-screen() {
+  @media screen and (max-width: $screen-sm - 1) {
+    @content;
+  }
+}
+
+@mixin smaller-than-desktop-screen() {
+  @media screen and (max-width: $screen-md - 1) {
+    @content;
+  }
+}
+
+@mixin desktop-or-bigger-screen() {
+  @media screen and (min-width: $screen-md) {
+    @content;
+  }
+}
+
+
+
+

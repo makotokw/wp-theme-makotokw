@@ -1,5 +1,5 @@
 @import "variables";
-@import "mixins";
+@import "mixins/utils";
 
 .amazonjs_item {
 //  @include block-white($blockBorderRadius);
@@ -30,7 +30,4 @@
   .amazonjs_review {
     font-size: .9em;
   }
-}
-
-@media (min-width: $screen-sm-min) {
 }

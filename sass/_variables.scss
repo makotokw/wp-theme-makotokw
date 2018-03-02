@@ -1,5 +1,8 @@
 @charset "utf-8";
 
+@import "lib/brandcolors";
+@import "lib/materialcolors";
+
 // Grays colors
 $black: #000;
 $gray-darker: #333;
@@ -52,15 +55,10 @@ $silver: #BDC3C7;
 $concrete: #95A5A6;
 $asbestos: #7F8C8D;
 
-
-
 // others
 $github-orange: #D26911;
 $monstersinc-blue: #007CC4;
 $heart-red: #BE1931;
-
-@import "lib/brandcolors";
-@import "lib/materialcolors";
 
 // Layout color ----------------------------
 
@@ -204,16 +202,12 @@ $generic-font-path: 'fonts/genericicons';
 
 $screen-xs: 480px;
 $screen-xs-min: $screen-xs;
-$screen-phone: $screen-xs-min;
 $screen-sm: 768px;
 $screen-sm-min: $screen-sm;
-$screen-tablet: $screen-sm-min;
 $screen-md: 992px;
 $screen-md-min: $screen-md;
-$screen-desktop: $screen-md-min;
 $screen-lg: 1200px;
 $screen-lg-min: $screen-lg;
-$screen-lg-desktop: $screen-lg-min;
 $screen-xs-max: ($screen-sm-min - 1);
 $screen-sm-max: ($screen-md-min - 1);
 $screen-md-max: ($screen-lg-min - 1);
@@ -223,10 +217,7 @@ $grid-columns: 12;
 $grid-gutter-width: 30px;
 $grid-float-breakpoint: $screen-sm-min;
 
-$container-mobile: ((360px + $grid-gutter-width));
-$container-tablet: ((720px + $grid-gutter-width));
-$container-sm: $container-tablet;
-$container-desktop: ((900px + $grid-gutter-width));
-$container-md: $container-desktop;
-$container-large-desktop: ((940px + $grid-gutter-width));
-$container-lg: $container-large-desktop;
+$container-xs: ((360px + $grid-gutter-width));
+$container-sm: ((720px + $grid-gutter-width));
+$container-md: ((900px + $grid-gutter-width));
+$container-lg: ((940px + $grid-gutter-width));
