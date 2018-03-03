@@ -26,7 +26,8 @@
     "gulp-uglify": "^1.5.1",
     "gulp-util": "^3.0.7",
     "jshint-stylish": "^2.1.0",
-    "main-bower-files": "^2.11.0"
+    "main-bower-files": "^2.11.0",
+    "node-notifier": "^5.2.1"
   },
   "dependencies": {}
 }

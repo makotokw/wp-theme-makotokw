@@ -6,6 +6,7 @@ var plugins = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var del = require('del');
+var notifier = require('node-notifier');
 
 gulp.task('clean:components', function () {
   return del(['components']);
@@ -97,18 +98,25 @@ gulp.task('js', ['modernizr'], function () {
 function sass(env) {
   var isDebug = env === 'development';
   return plugins.rubySass('sass/*.scss', {
-    verbose: isDebug,
-    loadPath: ['components'],
-    lineNumbers: isDebug,
-    force: !isDebug,
-    sourcemap: isDebug
-  })
+      verbose: isDebug,
+      loadPath: ['components'],
+      lineNumbers: isDebug,
+      force: !isDebug,
+      sourcemap: isDebug,
+      emitCompileError: true
+    })
+    .on('error', function (err) {
+      notifier.notify({
+        message: err.message,
+        title: err.plugin
+      });
+    })
     .pipe(plugins.plumber())
     .pipe(plugins.autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
     }))
-    .pipe(plugins.if(isDebug, plugins.sourcemaps.write('.')))
+    .pipe(plugins.if(isDebug, plugins.sourcemaps.write()))
     .pipe(gulp.dest('.'))
     .pipe(reload({stream: true, once: true}));
 }
