@@ -1,8 +1,21 @@
+
 .archives-title {
   font-size: $entry-title-font-size;
   line-height: 1;
 
   @include smaller-than-desktop-screen {
     font-size: $entry-title-small-font-size;
+  }
+}
+
+.site-content-header {
+  padding: 20px 0 0;
+  text-align: center;
+  .archives-title {
+    font-weight: 300;
+    margin: 0;
+    span {
+      font-weight: bold;
+    }
   }
 }

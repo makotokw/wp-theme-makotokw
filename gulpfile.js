@@ -65,6 +65,9 @@ gulp.task('modernizr', function () {
     .pipe(plugins.modernizr({
       classPrefix: 'has-',
       enableClasses: true,
+      tests: [
+        'svg'
+      ],
       options: [
         'setClasses'
       ]

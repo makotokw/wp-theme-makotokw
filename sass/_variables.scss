@@ -2,6 +2,7 @@
 
 @import "lib/brandcolors";
 @import "lib/materialcolors";
+$fa-font-path: 'components/font-awesome/fonts';
 
 // Grays colors
 $black: #000;
@@ -196,8 +197,6 @@ $block-border-radius: 6px;
 $block-margin: 1.6em;
 $block-padding: 1.6em;
 $block-quote-text: $md-grey-700;
-
-$fa-font-path: 'components/font-awesome/fonts';
 
 $screen-xs: 480px;
 $screen-xs-min: $screen-xs;

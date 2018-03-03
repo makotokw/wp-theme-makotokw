@@ -54,30 +54,28 @@
 
   var $footerMargin = $('#footerMargin');
 
-  $('#siteLogo').each(function () {
-    var $img = $(this);
-    if (Modernizr.svg) {
-      var id = $img.attr('id'),
-        cls = $img.attr('class');
-
-      $.get($img.attr('src'), function (data) {
-        var $svg = $(data).find('svg');
-        if (typeof id !== 'undefined') {
-          $svg.attr('id', id);
-        }
-        if (typeof cls !== 'undefined') {
-          $svg.attr('class', cls + ' replaced-svg');
-        }
-        // Remove any invalid XML tags as per https://validator.w3.org/
-        $svg = $svg.removeAttr('xmlns:a');
-        $img.replaceWith($svg);
-      }, 'xml');
-    } else {
-      $img.attr('src', $img.attr('src').replace(/\.svg/gi, '.png'));
-    }
-  });
-
-
+  // $('#siteLogo').each(function () {
+  //   var $img = $(this);
+  //   if (Modernizr.svg) {
+  //     var id = $img.attr('id'),
+  //       cls = $img.attr('class');
+  //
+  //     $.get($img.attr('src'), function (data) {
+  //       var $svg = $(data).find('svg');
+  //       if (typeof id !== 'undefined') {
+  //         $svg.attr('id', id);
+  //       }
+  //       if (typeof cls !== 'undefined') {
+  //         $svg.attr('class', cls + ' replaced-svg');
+  //       }
+  //       // Remove any invalid XML tags as per https://validator.w3.org/
+  //       $svg = $svg.removeAttr('xmlns:a');
+  //       $img.replaceWith($svg);
+  //     }, 'xml');
+  //   } else {
+  //     $img.attr('src', $img.attr('src').replace(/\.svg/gi, '.png'));
+  //   }
+  // });
 
   $(document).ready(function () {
     if ($.isFunction(prettyPrint)) {
@@ -90,19 +88,22 @@
     var updating = false;
 
     cacheLastWindowSize();
+    initHeader();
 
     $(window)
       .on('sticky', stickyFooter)
       .scroll(onScroll)
       .resize(onResize);
 
-    var $searchForm = $('#siteHeaderSearchForm');
-    $('#siteHeaderSearchTrigger').on('click', function(){
-      $searchForm.toggleClass('is-active');
-      if ($searchForm.hasClass('is-active')) {
-        $('#siteHeaderSearchText').focus();
-      }
-    });
+    function initHeader() {
+      var $searchForm = $('#siteHeaderSearchForm');
+      $('#siteHeaderSearchTrigger').on('click', function(){
+        $searchForm.toggleClass('is-active');
+        if ($searchForm.hasClass('is-active')) {
+          $('#siteHeaderSearchText').focus();
+        }
+      });
+    }
 
     function updateProgressBar() {
       var progressMax = lastDocumentHeight - lastWindowHeight;

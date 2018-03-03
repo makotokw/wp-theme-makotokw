@@ -1,7 +1,9 @@
-$site-logo-width: 190px;
-$site-logo-height: 40px;
+$site-logo-image-width: 190px;
+$site-logo-image-height: 40px;
 
 $site-header-height: 55px;
+$site-logo-height: 28px;
+$site-logo-height-mobile: 20px;
 $site-header-height-mobile: 48px;
 $site-header-background-color: $white;
 $site-header-border-color: $blue-dark;
@@ -33,82 +35,71 @@ $site-header-link-over-color: lighten($site-header-link-color, 10%);
   will-change: transform;
   transition: transform 200ms linear;
 
-  @include smaller-than-desktop-screen{
+  @include smaller-than-desktop-screen {
     height: $site-header-height-mobile;
     max-height: $site-header-height-mobile;
     line-height: $site-header-height-mobile;
   }
 }
+
+.site-header-logo {
+  .site-header-logo-svg {
+    fill: $site-header-link-color;
+    margin-top: ($site-header-height - $site-logo-height) / 2;
+    width: $site-logo-image-width * ($site-logo-height / $site-logo-image-height);
+    height: $site-logo-height;
+    .site-header-logo-svg-eve {
+      fill: $monstersinc-blue;
+    }
+    @include smaller-than-desktop-screen {
+      margin-top: ($site-header-height-mobile - $site-logo-height-mobile) / 2;
+      width: $site-logo-image-width * ($site-logo-height-mobile / $site-logo-image-height);
+      height: $site-logo-height-mobile;
+    }
+  }
+  &:hover {
+    .site-header-logo-svg {
+      fill: $site-header-link-over-color;
+      .site-header-logo-svg-eve {
+        fill: $monstersinc-blue;
+      }
+    }
+  }
+}
+
 .headroom--pinned {
   transform: translateY(0%);
 }
+
 .headroom--unpinned {
   transform: translateY(-95%);
 }
+
 .headroom--not-top {
   background: $site-header-background-color;
 }
 
-.progress {
-  width: 100%;
-  height: 2px;
-  border: none;
-  color: $site-accent-color;
-  background: transparent;
-  appearance: none;
-  &::-ms-fill {
-    background-color: $site-accent-color;
-    // Remove right-hand border of value bar from IE10+/Edge
-    border: none;
+// text-logo
+.has-no-svg {
+  .site-header-logo-text {
+    font-weight: bold;
+    display: block !important;
   }
-  &::-moz-progress-bar {
-    background-color: $site-accent-color
-  }
-  &::-webkit-progress-value {
-    background-color: $site-accent-color
-  }
-  &::-webkit-progress-bar {
-    background-color: $brand-default-border
-  }
-
-  .progress-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: transparent;
-  }
-  .progress-bar {
-    display: block;
-    width: 50%;
-    height: inherit;
-    background-color: $site-accent-color;
+  .site-header-logo-svg {
+    display: none !important;
   }
 }
 
-.site-progress {
-  position: absolute;
-  right: 0;
-  bottom: -1px;
-  left: 0;
-}
-
-.site-header-nav
-{
+.site-header-nav {
   // for scrollbar
   padding: 0 20px 0 15px;
   display: flex;
-  .site-header-menu1
-  {
+  .site-header-menu1 {
     flex: 1 1 auto;
   }
-  .site-header-menu2
-  {
+  .site-header-menu2 {
     flex: 0 0 auto;
   }
-
   .search-form {
     .search-form-text {
       border: none;
@@ -137,24 +128,48 @@ $site-header-link-over-color: lighten($site-header-link-color, 10%);
   }
 }
 
-.site-content-header {
-  padding: 20px 0 0;
-  text-align: center;
-  .archives-title {
-    font-weight: 300;
-    margin: 0;
-    span {
-      font-weight: bold;
-    }
+// progress
+.progress {
+  width: 100%;
+  height: 2px;
+  border: none;
+  color: $site-accent-color;
+  background: transparent;
+  appearance: none;
+  &::-ms-fill {
+    background-color: $site-accent-color;
+    // Remove right-hand border of value bar from IE10+/Edge
+    border: none;
+  }
+  &::-moz-progress-bar {
+    background-color: $site-accent-color
+  }
+  &::-webkit-progress-value {
+    background-color: $site-accent-color
+  }
+  &::-webkit-progress-bar {
+    background-color: $brand-default-border
+  }
+  .progress-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+  }
+  .progress-bar {
+    display: block;
+    width: 50%;
+    height: inherit;
+    background-color: $site-accent-color;
   }
 }
 
-.single, .page {
-  .entry-header {
-    padding: 20px 0 0;
-    text-align: center;
-    .entry-title {
-      margin: 0 0 10px;
-    }
-  }
+.site-progress {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
 }
