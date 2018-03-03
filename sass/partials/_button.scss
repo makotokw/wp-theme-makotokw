@@ -41,6 +41,10 @@
 .btn-circle {
   @include circle(38px);
 
+  @include smaller-than-tablet-screen {
+    @include circle(30px);
+  }
+
   .icon {
     line-height: 100%;
   }

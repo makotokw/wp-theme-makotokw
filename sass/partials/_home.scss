@@ -10,15 +10,16 @@ $section-page-alternate-background-color: lighten($gray-lighter, 4%);
 
 .section-page {
   @include clearfix;
-  padding: 20px;
-
-  .container {
-  }
 
   .section-title {
     font-size: 50px;
     line-height: 50px;
     margin-bottom: 40px;
+    @include smaller-than-tablet-screen {
+      font-size: 30px;
+      line-height: 30px;
+      margin-bottom: 20px;
+    }
   }
 
   h2, h3 {
@@ -26,24 +27,16 @@ $section-page-alternate-background-color: lighten($gray-lighter, 4%);
     text-transform: uppercase;
   }
 
-  @include smaller-than-desktop-screen {
-    padding: 10px;
-  }
+
 }
 
 .section-page-first {
 }
 
-%time-label {
-  padding: 8px;
-  margin-right: 5px;
-  font-weight: 400;
-}
 .section-page-entry {
 }
 
 .section-page-category {
-
   border-top: 1px solid $block-default-divider;
   background-color: $section-page-alternate-background-color;
 
@@ -79,7 +72,6 @@ $section-page-alternate-background-color: lighten($gray-lighter, 4%);
 }
 
 .section-page-about {
-
   color: $white;
   background-color: $md-cyan-600;
 
@@ -105,12 +97,17 @@ $section-page-alternate-background-color: lighten($gray-lighter, 4%);
     }
 
     time {
-      @extend %time-label;
       background-color: darken($blue, 10%);
+      margin-right: 5px;
+      font-weight: 400;
       padding: 0;
       width: 120px;
       display: inline-block;
       text-align: center;
+      @include smaller-than-tablet-screen {
+        padding: 0 5px;
+        width: auto;
+      }
     }
   }
 }
@@ -138,7 +135,11 @@ $section-page-alternate-background-color: lighten($gray-lighter, 4%);
         border-color: $md-light-blue-600;
         color: $md-light-blue-600;
       }
+      @include smaller-than-tablet-screen {
+        padding: 10px 6px;
+      }
     }
+
   }
 
   .list-archives-month {
@@ -174,6 +175,23 @@ $section-page-alternate-background-color: lighten($gray-lighter, 4%);
       border: $button-default-border-width solid $button-disable-border;
     }
   }
+
+  @include smaller-than-tablet-screen {
+    .list-archives-item-month {
+      a {
+        @include circle(35px);
+        margin-left: 0;
+      }
+    }
+    .list-archives-item-month-no-items {
+      span {
+        @include circle(35px);
+        margin-left: 0;
+      }
+    }
+  }
+
+
   .list-archives-item-month-no-items.list-archives-item-month-no-items-future {
     span {
     }

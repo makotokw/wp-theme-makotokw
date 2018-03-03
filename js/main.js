@@ -108,7 +108,7 @@
     function updateProgressBar() {
       var progressMax = lastDocumentHeight - lastWindowHeight;
       $siteProgress.attr('max', progressMax);
-      $siteProgress.attr('value', window.scrollY);
+      $siteProgress.val(window.scrollY);
     }
 
     function update() {
