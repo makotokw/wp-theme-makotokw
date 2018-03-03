@@ -112,8 +112,7 @@ $footer-border-color: $brand-default-border;
 
 // ----------------------------
 
-$font-family-sans-serif-ja: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Original Yu Gothic", "Yu Gothic", YuGothic, Verdana, Meiryo, "M+ 1p", sans-serif;
-//$font-family-sans-serif-ja: 'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro', Meiryo, メイリオ, YuGothic, 'Yu Gothic', 游ゴシック;
+$font-family-sans-serif-ja: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', 'Hiragino Kaku Gothic ProN W3', 'Hiragino Kaku Gothic Pro', 'Original Yu Gothic', 'Yu Gothic', YuGothic, Verdana, Meiryo, 'M+ 1p', sans-serif;
 $font-family-sans-serif: Montserrat, 'Helvetica Neue', Helvetica, $font-family-sans-serif-ja, sans-serif;
 $font-family-sans-serif2: Lato, 'Helvetica Neue', Helvetica, $font-family-sans-serif-ja, sans-serif;
 $font-family-serif: Georgia, 'Times New Roman', Times, serif;
@@ -128,7 +127,7 @@ $font-size-mini: $font-size-base * 0.75; // ~11px
 
 $entry-title-font-size: 36px;
 $entry-title-small-font-size: 22px;
-$entry-content-font-size: 16px;
+$entry-content-font-size: 17px;
 $entry-list-title-font-size: 25px;
 $entry-list-title-small-font-size: 20px;
 $entry-list-content-font-size: 16px;
