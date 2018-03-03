@@ -1,35 +1,5 @@
 .search-form {
-
-  .search-form-fieldset {
-    position: relative;
-    border: $site-border-width solid $form-default-border;
-    background: $white;
-    border-radius: 27px;
-    margin: 0;
-    padding: 4px 8px 4px 40px;
-
-    &:hover, &:active {
-      border-color: $form-default-border-over;
-      outline: 0;
-      outline: thin dotted \9; /* IE6-9 */
-      box-shadow: none;
-    }
-  }
-
-  .fa-search {
-    font-size: 20px;
-    border-radius: 27px;
-    left: 3px;
-    top: 3px;
-    color: rgba(0,0,0,0.44);
-    position: absolute;
-    padding: 5px 5px 5px 10px;
-  }
-
   .search-form-text {
-    font-size: 14px;
-    padding: 0;
-    border: none;
     transition: width 400ms ease, background 400ms ease;
     color: $site-neutral-color;
     &:focus {
@@ -38,23 +8,4 @@
       color: $site-default-text;
     }
   }
-
-  .search-form-submit {
-    left: 3px;
-    top: 3px;
-    padding: 8px 0;
-    float: right;
-    border: 0;
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
-    text-align: center;
-    padding-top: 10px;
-    color: $white;
-    background: transparent;
-    z-index: 10;
-    position: absolute;
-    vertical-align: top;
-  }
-
 }

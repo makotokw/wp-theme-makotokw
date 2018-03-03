@@ -6,10 +6,12 @@
  */
 ?>
 <!--suppress HtmlUnknownAttribute -->
-<form method="get" id="searchform" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search" _lpchecked="1">
-	<fieldset class="search-form-fieldset">
-		<input type="text" class="search-form-text" name="s" value="<?php echo esc_attr( get_search_query() ); ?>" placeholder="<?php _e( 'Search the site', 'makotokw' ); ?>"/>
-		<input id="search-image" class="search-form-submit" type="submit" value=""/>
+<form method="get" id="searchform" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
+	<input type="text" class="search-form-text" name="s" value="<?php echo esc_attr( get_search_query() ); ?>" placeholder="<?php _e( 'Search the site', 'makotokw' ); ?>"/>
+	<button type="submit" class="btn btn-default btn-search">
 		<i class="fa fa-search"></i>
-	</fieldset>
+		<span class="screen-reader-text">
+			<?php echo _x( 'Search', 'submit button', 'makotokw' ); ?>
+		</span>
+	</button>
 </form>

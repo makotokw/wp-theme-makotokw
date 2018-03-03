@@ -84,7 +84,6 @@
       prettyPrint();
     }
 
-
     var $siteProgress = $('#siteProgress');
     var lastWindowHeight = 0,
       lastDocumentHeight = 0;
@@ -96,6 +95,14 @@
       .on('sticky', stickyFooter)
       .scroll(onScroll)
       .resize(onResize);
+
+    var $searchForm = $('#siteHeaderSearchForm');
+    $('#siteHeaderSearchTrigger').on('click', function(){
+      $searchForm.toggleClass('is-active');
+      if ($searchForm.hasClass('is-active')) {
+        $('#siteHeaderSearchText').focus();
+      }
+    });
 
     function updateProgressBar() {
       var progressMax = lastDocumentHeight - lastWindowHeight;

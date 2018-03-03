@@ -53,7 +53,10 @@
 				</a>
 			</div>
 			<div class="site-header-menu2">
-				<i class="fa fa-search"></i>
+				<form method="get" id="siteHeaderSearchForm" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
+					<input type="text" id="siteHeaderSearchText" class="search-form-text" name="s" value="<?php echo esc_attr( get_search_query() ); ?>" placeholder="<?php _e( 'Search the site', 'makotokw' ); ?>"/>
+					<a id="siteHeaderSearchTrigger" class="search-form-trigger"></a>
+				</form>
 			</div>
 		</nav>
 		<progress id="siteProgress" class="progress site-progress" value="0">

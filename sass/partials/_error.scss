@@ -1,16 +1,37 @@
 // for no-results.php and 404.php
 .errorPage {
-  .errorPage-content {
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-
   .errorPage-title {
     font-size: 24px;
     margin: 0;
     position: relative;
     padding: 50px 0;
     text-align: center;
+    box-sizing : border-box;
+    @include smaller-than-tablet-screen {
+      padding: 15px 0;
+    }
+  }
+  .errorPage-content {
+  }
+  .search-form {
+    @include clearfix;
+    .search-form-text {
+      border-radius: 0;
+      font-size: $font-size-base;
+      line-height: 1;
+      padding: 12px 15px;
+      float: left;
+      width: 80%;
+    }
+    @include smaller-than-tablet-screen {
+      .search-form-text, .btn-search {
+        box-sizing : border-box;
+        margin: 0 0 5px 0;
+        width: 100%;
+        float: none;
+        display: block;
+      }
+    }
   }
 }
 

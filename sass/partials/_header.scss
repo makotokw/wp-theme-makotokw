@@ -97,7 +97,8 @@ $site-header-link-over-color: lighten($site-header-link-color, 10%);
 
 .site-header-nav
 {
-  padding: 0 15px;
+  // for scrollbar
+  padding: 0 20px 0 15px;
   display: flex;
   .site-header-menu1
   {
@@ -106,6 +107,33 @@ $site-header-link-over-color: lighten($site-header-link-color, 10%);
   .site-header-menu2
   {
     flex: 0 0 auto;
+  }
+
+  .search-form {
+    .search-form-text {
+      border: none;
+      display: none;
+      @include smaller-than-tablet-screen {
+        width: 160px;
+      }
+    }
+    .search-form-trigger {
+      &:before {
+        //noinspection CssNoGenericFontName
+        font-family: FontAwesome;
+        content: $fa-var-search;
+      }
+    }
+    &.is-active {
+      .search-form-text {
+        display: inline-block;
+      }
+      .search-form-trigger {
+        &:before {
+          content: $fa-var-times;
+        }
+      }
+    }
   }
 }
 
