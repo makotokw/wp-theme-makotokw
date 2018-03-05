@@ -221,9 +221,13 @@ function makotokw_breadcrumbs() {
 			<?php if ( is_array( $category ) && count( $category ) > 0 ) : ?>
 				<?php $category_id = get_cat_ID( $category[0]->cat_name ); ?>
 				<a href="/categories/" itemprop="url"><span itemprop="title"><?php _e( 'Categories', 'makotokw' ); ?></span></a><?php echo $divider; ?>
-				<?php echo makotokw_breadcrumbs_category_parents( $category_id, $divider ); ?>
+				<?php
+				$breadcrumbs_category = makotokw_breadcrumbs_category_parents( $category_id, $divider );
+				if ( strpos( $breadcrumbs_category, $divider ) !== false ) {
+					echo substr( $breadcrumbs_category, 0, -strlen( $divider ) );
+				}
+				?>
 			<?php endif ?>
-			<span class="breadcrumb-last" itemprop="title"><?php echo the_title( '', '', false ); ?></span>
 		<?php elseif ( is_page() ) : ?>
 			<?php $post = $wp_query->get_queried_object(); ?>
 			<?php if ( 0 == $post->post_parent ) : ?>
@@ -231,7 +235,6 @@ function makotokw_breadcrumbs() {
 			<?php else : ?>
 				<?php
 					$ancestors = array_reverse( get_post_ancestors( $post->ID ) );
-					array_push( $ancestors, $post->ID );
 				?>
 				<?php foreach ( $ancestors as $ancestor ) : ?>
 					<?php if ( end( $ancestors ) != $ancestor ) : ?>
@@ -240,7 +243,9 @@ function makotokw_breadcrumbs() {
 						</a>
 						<?php echo $divider; ?>
 					<?php else : ?>
-						<span class="breadcrumb-last" itemprop="title"><?php echo strip_tags( apply_filters( 'single_post_title', get_the_title( $ancestor ) ) ); ?></span>
+						<a href="<?php echo get_permalink( $ancestor ); ?>" itemprop="url">
+							<span itemprop="title"><?php echo strip_tags( apply_filters( 'single_post_title', get_the_title( $ancestor ) ) ); ?></span>
+						</a>
 					<?php endif ?>
 				<?php endforeach ?>
 			<?php endif ?>

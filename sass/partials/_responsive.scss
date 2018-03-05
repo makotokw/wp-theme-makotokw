@@ -47,6 +47,12 @@
     padding: 0 0 0 0.6em;
     border-left: 0.4em solid #ddd;
   }
+
+  table {
+    table-layout: fixed;
+    word-break: break-all;
+    word-wrap: break-word;
+  }
 }
 
 .desktop-hide {

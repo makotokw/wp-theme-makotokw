@@ -1,10 +1,15 @@
 @import "variables";
 @import "mixins/utils";
+@import "mixins/responsive";
 
 .amazonjs_item {
 //  @include block-white($blockBorderRadius);
   border-color: lighten(desaturate($amazon-orange, 20%), 40%);
   border-width: 0;
+
+  @include smaller-than-tablet-screen {
+    padding: 5px 0 15px 0;
+  }
 
   .amazonjs_image {
     img {
