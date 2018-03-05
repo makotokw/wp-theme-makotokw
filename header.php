@@ -12,12 +12,14 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<?php if ( is_archive() || is_search() ) : ?>
+<meta name="format-detection" content="telephone=no" />
+<?php if ( is_archive() || is_search() || is_404() ) : ?>
 <meta name="robots" content="noindex,follow" />
 <?php endif ?>
 <title><?php wp_title( ' - ', true, 'right' ); ?></title>
-<?php if ( is_front_page() && ! is_archive() ) : ?>
-<meta name="description" content="<?php echo esc_attr( makotokw_get_meta_description() ); ?>" />
+<?php $meta_description = makotokw_get_meta_description(); ?>
+<?php if ( $meta_description ) : ?>
+<meta name="description" content="<?php echo esc_attr( $meta_description ); ?>" />
 <?php endif ?>
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/images/touch-icon-iphone.png">

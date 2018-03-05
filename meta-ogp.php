@@ -48,7 +48,8 @@ function ogp_post_description() {
 
 function ogp_post_image() {
 	$image = null;
-	if ( $image_id = get_post_thumbnail_id() ) {
+	$image_id = get_post_thumbnail_id();
+	if ( $image_id ) {
 		$image = wp_get_attachment_image_src( $image_id, WP_OGP_POST_IMAGE_SIZE );
 	}
 	if ( empty( $image ) ) {
@@ -85,9 +86,8 @@ function ogp_post_tag() {
 
 ?>
 	<?php if ( is_single() || is_page() ) : ?>
-		<?php while ( have_posts() ) : ?>
+		<?php if ( have_posts() ) : ?>
 			<?php the_post(); ?>
-
 <meta property="og:title" content="<?php the_title(); ?>"/>
 <meta property="og:type" content="article"/>
 			<?php if ( $og_image = ogp_post_image() ) : ?>
@@ -128,7 +128,8 @@ function ogp_post_tag() {
 			<?php if ( defined( 'WP_OGP_TWITTER_DOMAIN' ) ) : ?>
 <meta property="twitter:domain" content="<?php echo WP_OGP_TWITTER_DOMAIN; ?>"/>
 			<?php endif ?>
-		<?php endwhile; ?>
+		<?php endif; ?>
+		<?php rewind_posts(); ?>
 	<?php else : ?>
 <meta property="og:title" content="<?php wp_title( '|', true, 'right' ); ?>"/>
 		<?php if ( is_front_page() || is_404() ) : ?>

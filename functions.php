@@ -5,8 +5,8 @@
  * @package makotokw
  */
 
-define( 'THEME_STYLE_CSS_REV', '2015042002' );
-define( 'THEME_STYLE_SCRIPT_REV', '2015042013' );
+define( 'THEME_STYLE_CSS_REV', '2018030500' );
+define( 'THEME_STYLE_SCRIPT_REV', '2018030500' );
 define( 'THEME_DATE_FORMAT', 'Y/m/d' );
 
 if ( ! isset( $content_width ) ) {
@@ -127,6 +127,24 @@ function makotokw_move_admin_bar() {
 }
 
 add_action( 'wp_head', 'makotokw_move_admin_bar', 99 );
+
+function makotokw_get_meta_description() {
+	$description = '';
+	if ( is_home() ) {
+		$description = get_bloginfo( 'description' );
+	} else if ( is_single() ) {
+		if ( have_posts() ) {
+			the_post();
+			$description = get_the_excerpt();
+			rewind_posts();
+		}
+	} else if ( is_archive() ) {
+		$description = get_the_archive_description();
+	}
+	return $description;
+}
+
+add_action( 'makotokw_get_meta_description', 'makotokw_get_meta_description' );
 
 /**
  * Enqueue scripts and styles
