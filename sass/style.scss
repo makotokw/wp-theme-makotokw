@@ -34,6 +34,7 @@
 @import "partials/content";
 @import "partials/share";
 @import "partials/comments";
+@import "partials/categories";
 @import "partials/footer";
 @import "partials/error";
 @import "partials/alert";
@@ -41,8 +42,11 @@
 @import "partials/syntaxhighlight";
 @import "partials/markdown";
 @import "partials/pukiwiki";
-@import "partials/home";
 @import "partials/archives";
-@import "partials/tags";
+@import "pages/home";
+@import "pages/help";
+@import "pages/archives";
+@import "pages/categories";
+@import "pages/tags";
 @import "partials/responsive";
 @import "partials/print";

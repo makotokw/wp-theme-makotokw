@@ -10,9 +10,9 @@ include __DIR__ . '/header.php'; ?>
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 	</header>
 	<div class="entry-content">
-		<ul>
-			<?php wp_get_archives( 'show_post_count=true' ); ?>
-		</ul>
+		<section class="archive-page">
+			<?php makotokw_inline_archives(); ?>
+		</section>
 	</div>
 </article>
 <?php include __DIR__ . '/footer.php'; ?>

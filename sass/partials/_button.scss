@@ -38,6 +38,13 @@
   border-radius: 2px;
 }
 
+%btn-circle {
+  @extend .btn;
+  @extend .btn-primary;
+  border-radius: 20px;
+  float: none;
+}
+
 .btn-circle {
   @include circle(38px);
 
@@ -55,6 +62,10 @@
       line-height: 0;
       position: relative;
       top: 1px;
+      @include smaller-than-tablet-screen {
+        margin-right: 6px;
+        font-size: 14px;
+      }
     }
   }
 }

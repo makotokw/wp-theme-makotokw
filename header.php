@@ -13,7 +13,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="format-detection" content="telephone=no" />
-<?php if ( is_archive() || is_search() || is_404() ) : ?>
+<?php if ( is_archive() || is_search() || is_404() || is_page_template( 'page-templates/help.php' ) ) : ?>
 <meta name="robots" content="noindex,follow" />
 <?php endif ?>
 <title><?php wp_title( ' - ', true, 'right' ); ?></title>

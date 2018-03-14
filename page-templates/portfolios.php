@@ -13,10 +13,11 @@ include __DIR__ . '/header.php'; ?>
 		<?php
 		wp_nav_menu(
 			array(
-				'theme_location'  => 'portfolio',
+				'theme_location' => 'portfolio',
 				'container_class' => 'portfolio-list',
-				'link_before'     => '',
-				'link_after'      => '',
+				'link_before' => '',
+				'link_after' => '',
+				'fallback_cb' => false,
 			)
 		);
 		?>

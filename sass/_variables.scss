@@ -96,6 +96,7 @@ $site-neutral-color: $md-grey-500;
 $site-accent-color: $monstersinc-blue;
 $site-dark-accent-color: $blue-dark;
 $site-default-border: $brand-default-border;
+$site-progress-border: $blue-dark;
 
 $site-default-link: $site-accent-color;
 $site-default-link-over: darken($site-default-link, 10%);
@@ -134,6 +135,7 @@ $entry-list-content-font-size: 16px;
 
 $line-height-base: 1.7;
 $line-height-large: 2.0;
+$line-height-small: 1.5;
 
 $border-radius-base: 4px;
 $border-radius-large: 6px;

@@ -14,6 +14,7 @@ function makotekw_home_after_body() {
 add_action( 'makotekw_after_body', 'makotekw_home_after_body' );
 get_header();
 ?>
+
 <section class="section-page section-page-entry section-page-first">
 	<div class="container">
 		<div class="post-summaries">
@@ -30,40 +31,11 @@ get_header();
 
 <section class="section-page section-page-category">
 	<div class="container">
-		<ul class="list-category">
-			<?php
-				wp_list_categories(
-					array(
-						'title_li'   => '',
-						'show_count' => false,
-					)
-				);
-			?>
+
+		<ul class="list-categories">
+			<?php makotokw_list_categories(); ?>
 		</ul>
 	</div>
 </section>
-
-<?php
-	$page_posts = new WP_Query();
-$page_posts->query( 'pagename=about' );
-?>
-<section class="section-page section-page-about">
-	<div class="container">
-		<h2 class="section-title">About</h2>
-		<?php if ( $page_posts->have_posts() ) : ?>
-			<?php
-				$page_posts->the_post();
-				the_content();
-			?>
-		<?php endif ?>
-	</div>
-</section>
-
-<section class="section-page section-page-archive">
-	<div class="container">
-		<?php makotokw_inline_archives(); ?>
-	</div>
-</section>
-
 
 <?php get_footer(); ?>

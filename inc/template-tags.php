@@ -271,6 +271,18 @@ function makotokw_breadcrumbs_category_parents( $id, $separator = '/', $visited 
 	return $chain;
 }
 
+function makotokw_list_categories() {
+	$list = wp_list_categories(
+		array(
+			'title_li'   => '',
+			'hide_title_if_empty' => true,
+			'show_count' => true,
+			'echo' => false,
+		)
+	);
+	echo preg_replace( '/\(([\d]+)\)/', '<span class="cat-item-entry-count">$1</span>', $list );
+}
+
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
