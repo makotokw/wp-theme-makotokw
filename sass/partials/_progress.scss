@@ -1,0 +1,38 @@
+// progress
+.progress {
+  width: 100%;
+  height: 2px;
+  border: none;
+  color: $site-progress-border;
+  background: transparent;
+  appearance: none;
+  &::-ms-fill {
+    background-color: $site-progress-border;
+    // Remove right-hand border of value bar from IE10+/Edge
+    border: none;
+  }
+  &::-moz-progress-bar {
+    background-color: $site-progress-border
+  }
+  &::-webkit-progress-value {
+    background-color: $site-progress-border
+  }
+  &::-webkit-progress-bar {
+    background-color: $brand-default-border
+  }
+  .progress-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+  }
+  .progress-bar {
+    display: block;
+    width: 50%;
+    height: inherit;
+    background-color: $site-progress-border;
+  }
+}
