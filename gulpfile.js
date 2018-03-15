@@ -133,9 +133,15 @@ gulp.task('sass', function () {
 });
 
 gulp.task('browser-sync', function () {
+  // https://browsersync.io/docs/options
   browserSync({
     port: 8086,
-    proxy: 'http://blog.int.makotokw.com'
+    proxy: 'http://blog.int.makotokw.com',
+    ghostMode: {
+      clicks: true,
+      forms: true,
+      scroll: true
+    }
   });
 });
 

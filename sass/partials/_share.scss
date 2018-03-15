@@ -89,6 +89,7 @@
   &:before {
     font-family: FontAwesome;
     content: $icon-content;
+    font-size: 14px;
   }
 }
 
@@ -100,9 +101,6 @@
     content: "B!";
     font-family: Verdana;
     font-weight: bold;
-  }
-  .btn-circle &:before {
-    top: -1px;
   }
 }
 .icon-share-pocket {

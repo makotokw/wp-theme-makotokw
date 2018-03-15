@@ -93,7 +93,7 @@ $site-default-text: $md-grey-800;
 $site-header-text: $md-grey-900;
 $site-default-bg: $white;
 $site-neutral-color: $md-grey-500;
-$site-accent-color: $monstersinc-blue;
+$site-accent-color: $blue-light;
 $site-dark-accent-color: $blue-dark;
 $site-default-border: $brand-default-border;
 $site-progress-border: $blue-dark;
@@ -127,11 +127,16 @@ $font-size-small: $font-size-base * 0.85; // ~12px
 $font-size-mini: $font-size-base * 0.75; // ~11px
 
 $entry-title-font-size: 36px;
-$entry-title-small-font-size: 22px;
+$entry-title-small-font-size: 25px;
 $entry-content-font-size: 17px;
 $entry-list-title-font-size: 25px;
 $entry-list-title-small-font-size: 20px;
 $entry-list-content-font-size: 16px;
+
+$entry-h2-font-size: 22px;
+$entry-h3-font-size: 20px;
+$entry-h4-font-size: 18px;
+$entry-h5-font-size: 17px;
 
 $line-height-base: 1.7;
 $line-height-large: 2.0;

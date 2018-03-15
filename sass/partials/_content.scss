@@ -66,8 +66,9 @@
   position: relative;
 
   .entry-meta {
-    margin: 4px 0;
+    margin: 8px 0 0;
     font-weight: 400;
+    line-height: $line-height-small;
 
     .tag-links {
       text-transform: capitalize;
@@ -100,6 +101,33 @@
   }
   h1,h2,h3,h4,h5,h6 {
     font-family: $font-family-base;
+  }
+  .post-single & {
+    h2 {
+      font-size: $entry-h2-font-size;
+      margin: 1em 0;
+      padding: 0.8em 1.2em 0.7em;
+      border-radius: $border-radius-base;
+      background: $site-accent-color;
+      color: $white;
+      box-shadow: 0 0 30px rgba($site-dark-accent-color, 0.25) inset;
+    }
+    h3 {
+      font-size: $entry-h3-font-size;
+      border-left: .4em solid $site-accent-color;
+      padding: .7em 0 .7em .8em;
+      margin: .5em 0;
+    }
+    h4 {
+      font-size: $entry-h4-font-size;
+    }
+    h5 {
+      font-size: $entry-h5-font-size;
+    }
+  }
+
+  blockquote {
+    line-height: $line-height-small;
   }
 
   @include smaller-than-desktop-screen {
@@ -237,7 +265,7 @@ object {
     font-weight: 400;
     text-transform: uppercase;
     font-size: $font-size-base;
-    margin: 8px 0;
+    margin: 8px 0 4px 0;
   }
 }
 
@@ -265,7 +293,6 @@ object {
   @include smaller-than-desktop-screen {
     &.section-share-this {
       .section-title {
-        margin-top: 19px;
         float: left;
         width: 40%;
       }
@@ -299,6 +326,13 @@ object {
 // Related Posts
 // -----------------------------------------------
 .section-related-posts {
+  &.section-2col {
+    @include smaller-than-desktop-screen {
+      .section-content {
+        margin-left: 5px;
+      }
+    }
+  }
   ul {
     list-style: none;
     margin: 0;
