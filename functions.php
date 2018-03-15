@@ -72,6 +72,7 @@ function makotokw_setup() {
 	register_nav_menus(
 		array(
 			'site-info' => __( 'Site Menu', 'makotokw' ),
+			'footer' => __( 'Footer Menu', 'makotokw' ),
 			'portfolio' => __( 'Portfolio Menu', 'makotokw' ),
 		)
 	);
@@ -132,13 +133,13 @@ function makotokw_get_meta_description() {
 	$description = '';
 	if ( is_home() ) {
 		$description = get_bloginfo( 'description' );
-	} else if ( is_single() ) {
+	} elseif ( is_single() ) {
 		if ( have_posts() ) {
 			the_post();
 			$description = get_the_excerpt();
 			rewind_posts();
 		}
-	} else if ( is_archive() ) {
+	} elseif ( is_archive() ) {
 		$description = get_the_archive_description();
 	}
 	return $description;

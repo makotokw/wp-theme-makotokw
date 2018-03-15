@@ -9,7 +9,7 @@ include __DIR__ . '/header.php'; ?>
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 	</header>
-	<div class="entry-content">
+	<div class="help-content">
 		<?php the_content(); ?>
 	</div>
 </article>

@@ -13,6 +13,17 @@
 		</div><!-- #main -->
 		<footer class="site-footer" role="contentinfo">
 			<div class="container">
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'footer',
+						'container_class' => 'site-footer-nav',
+						'link_before' => '',
+						'link_after' => '',
+						'fallback_cb' => false,
+					)
+				);
+				?>
 				<div class="copyrights">
 					<div class="credit">
 						<?php do_action( 'makotokw_credits' ); ?>
@@ -23,7 +34,8 @@
 								__( 'Powered by %s', 'makotokw' ),
 								'<a href="https://wordpress.org/" title="' . esc_attr( __( 'Semantic Personal Publishing Platform', 'makotokw' ) ) . '">WordPress</a>'
 							);
-						?><i class="fa fa-heart"></i><a href="https://github.com/makotokw/wp-theme-makotokw">makotokw theme.<i class="fa fa-github-alt"></i></a>
+						?>
+						<i class="fa fa-heart"></i><a href="https://github.com/makotokw/wp-theme-makotokw">makotokw theme.<i class="fa fa-github-alt"></i></a>
 					</div>
 				</div>
 			</div>
