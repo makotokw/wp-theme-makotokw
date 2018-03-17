@@ -2,13 +2,10 @@
   border-top: 1px solid $footer-border-color;
   background-color: $footer-default-bg;
   color: $footer-default-text;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  font-size: $font-size-small;
 
   .container {
-    padding: 10px 0;
+    padding: 10px 0 15px;
   }
 
   .home & .container {
@@ -28,7 +25,6 @@
       padding: 0;
       li {
         display: inline;
-        font-size: $font-size-small;
         margin: 0 4px;
       }
     }
@@ -36,19 +32,20 @@
 
   .copyrights {
     @include clearfix;
-    padding-bottom: 12px;
-    padding-top: 12px;
     display: flex;
 
     .credit,
     .poweredby {
-      font-size: $font-size-small;
       font-weight: 300;
       display: inline;
       margin: 0 4px;
       padding: 0;
     }
+    .credit {
+      flex: auto;
+    }
     .poweredby {
+      flex: none;
       .fa-heart {
         margin: 0 2px;
         font-size: .5em;
@@ -58,12 +55,20 @@
         margin: 0 2px;
       }
     }
+  }
 
-    @include smaller-than-desktop-screen {
+  @include smaller-than-tablet-screen {
+    .container {
+      padding: 5px 0 10px;
+    }
+    font-size: $font-size-mini;
+    .site-footer-nav {
+      text-align: center;
+    }
+    .copyrights {
+      display: block;
       .credit,
       .poweredby {
-        font-size: $font-size-mini;
-        float: none;
         display: block;
         text-align: center;
       }
