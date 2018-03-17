@@ -88,6 +88,8 @@
   }
 }
 
+$entry-header-color: $site-accent-color;
+
 .entry-content,
 .entry-summary {
   font-family: $font-family-content;
@@ -105,24 +107,41 @@
   .post-single & {
     h2 {
       font-size: $entry-h2-font-size;
-      margin: 1em 0;
-      padding: 0.8em 1.2em 0.7em;
-      border-radius: $border-radius-base;
-      background: $site-accent-color;
-      color: $white;
-      box-shadow: 0 0 30px rgba($site-dark-accent-color, 0.25) inset;
+      margin: 1em -.5em;
+      padding: .7em 1em;
+      //border: 1px solid $entry-header-color;
+      border-left: .4em solid $entry-header-color;
+      background-color: #f5fafd;
+      //border-radius: $border-radius-base;
+      //background: $entry-header-color;
+      //color: $white;
+      //box-shadow: 0 0 45px rgba($site-dark-accent-color, 0.25) inset;
     }
     h3 {
       font-size: $entry-h3-font-size;
-      border-left: .4em solid $site-accent-color;
-      padding: .7em 0 .7em .8em;
-      margin: .5em 0;
+      border-bottom: .2em solid $entry-header-color;
+      margin: .5em 0 .5em -.25em;
+      padding: .4em .2em;
     }
     h4 {
       font-size: $entry-h4-font-size;
+      border-bottom: .1em solid $entry-header-color;
+      padding: .4em .2em;
     }
     h5 {
       font-size: $entry-h5-font-size;
+    }
+    @include smaller-than-desktop-screen {
+      h2 {
+        font-size: $entry-h2-small-font-size;
+        padding: .7em .5em;
+      }
+      h3 {
+        padding: .4em 0;
+      }
+      h4 {
+        padding: .4em 0;
+      }
     }
   }
 
