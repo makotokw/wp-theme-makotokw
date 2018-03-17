@@ -85,7 +85,7 @@ function makotokw_related_posts( $arg = array() ) {
 					<?php while ( $rq->have_posts() ) : ?>
 						<?php $rq->the_post(); ?>
 						<?php if ( $post->ID != $cur_post->ID && $count < $max_count ) : ?>
-							<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+							<li><i class="fas fa-angle-right"></i> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
 						<?php endif ?>
 					<?php endwhile ?>
 				</ul>

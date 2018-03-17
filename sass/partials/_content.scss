@@ -358,13 +358,8 @@ object {
     padding: 0;
     li {
       list-style: none;
-      &:before {
-        //noinspection CssNoGenericFontName
-        font-family: FontAwesome;
-        content: $fa-var-angle-right;
-        vertical-align: middle;
+      .fa-angle-right {
         color: $site-neutral-color;
-        margin-right: 10px;
       }
     }
   }

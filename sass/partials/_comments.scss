@@ -86,6 +86,7 @@
       display: inline-block;
 
     }
+    .edit-link,
     .fn {
       color: $site-accent-color;
     }
@@ -139,12 +140,6 @@
 .comment-reply-link,
 .comment-reply-login {
   @extend .comment-small;
-  &:before {
-    //noinspection CssNoGenericFontName
-    font-family: FontAwesome;
-    content: $fa-var-reply;
-    margin-right: 5px;
-  }
 }
 
 .bypostauthor {

@@ -88,15 +88,15 @@ function makotokw_list_nav() {
 				<?php endif ?>
 				<ul>
 					<?php if ( $first_post ) : ?>
-						<li><i class="fa fa-angle-double-left"></i>&nbsp;<a
+						<li><i class="fas fa-angle-double-left"></i>&nbsp;<a
 								href="<?php echo get_permalink( $first_post ); ?>"
 								rel="prev"><?php echo get_the_title( $first_post ); ?></a></li>
 					<?php endif ?>
 					<?php if ( $prev_post ) : ?>
-						<li><i class="fa fa-angle-left"></i>&nbsp;<a href="<?php echo get_permalink( $prev_post ); ?>" rel="prev"><?php echo get_the_title( $prev_post ); ?></a></li>
+						<li><i class="fas fa-angle-left"></i>&nbsp;<a href="<?php echo get_permalink( $prev_post ); ?>" rel="prev"><?php echo get_the_title( $prev_post ); ?></a></li>
 					<?php endif ?>
 					<?php if ( $next_post ) : ?>
-						<li><i class="fa fa-angle-right"></i>&nbsp;<a href="<?php echo get_permalink( $next_post ); ?>" rel="prev"><?php echo get_the_title( $next_post ); ?></a></li>
+						<li><i class="fas fa-angle-right"></i>&nbsp;<a href="<?php echo get_permalink( $next_post ); ?>" rel="prev"><?php echo get_the_title( $next_post ); ?></a></li>
 					<?php endif ?>
 				</ul>
 			</div>
@@ -178,10 +178,10 @@ function makotokw_breadcrumbs() {
 	global $wp_query;
 
 	if ( ! is_home() && ! is_404() ) {
-		$divider = '&nbsp;<i class="fa fa-angle-right"></i>&nbsp;';
+		$divider = '&nbsp;<i class="fas fa-angle-right"></i>&nbsp;';
 		?>
 		<div itemscope itemtype="https://schema.org/Breadcrumb" class="breadcrumb">
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fa fa-home"></i></a><?php echo $divider; ?>
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fas fa-home"></i></a><?php echo $divider; ?>
 		<?php if ( is_category() ) : ?>
 			<?php $term = $wp_query->get_queried_object(); ?>
 			<a href="/categories/" itemprop="url"><span itemprop="title"><?php _e( 'Categories', 'makotokw' ); ?></span></a><?php echo $divider; ?>
@@ -345,31 +345,31 @@ function makotokw_share_buttons() {
 		<ul>
 			<li class="share-twitter">
 				<a rel="nofollow" data-url="<?php echo $permalink; ?>" class="btn btn-default btn-circle btn-share btn-share-twitter" href="https://twitter.com/intent/tweet?original_referer=<?php echo rawurlencode( $permalink ); ?>&text=<?php echo rawurlencode( $title ); ?>&tw_p=tweetbutton&url=<?php echo urlencode( $permalink ); ?>&via=<?php echo urlencode( WP_THEME_AUTHOR_TWITTER ); ?>" target="_blank">
-					<i class="icon icon-default icon-share-twitter"></i>
+					<i class="fab fa-twitter"></i>
 					<span class="share-title"><?php _e( 'Twitter', 'makotokw' ); ?></span>
 				</a>
 			</li>
 			<li class="share-hatena">
 				<a rel="nofollow" class="btn btn-default btn-circle btn-share btn-share-hatena" href="https://b.hatena.ne.jp/entry/<?php echo $permalink_schemeless; ?>" target="_blank">
-					<i class="icon icon-default icon-share-hatena"></i>
+					<i class="icon-share-hatena">B!</i>
 					<span class="share-title"><?php _e( 'Hatena Bookmark', 'makotokw' ); ?></span>
 				</a>
 			</li>
 			<li class="share-pocket">
 				<a rel="nofollow" class="btn btn-default btn-circle btn-share btn-share-pocket" href="https://getpocket.com/save/?url=<?php echo rawurlencode( $permalink ); ?>&title=<?php echo rawurlencode( $title ); ?>" target="_blank">
-					<i class="icon icon-default icon-share-pocket"></i>
+					<i class="fab fa-get-pocket"></i>
 					<span class="share-title"><?php _e( 'Pocket', 'makotokw' ); ?></span>
 				</a>
 			</li>
 			<li class="share-googleplus">
 				<a rel="nofollow" class="btn btn-default btn-circle btn-share btn-share-googleplus" href="https://plus.google.com/share?url=<?php echo rawurlencode( $permalink ); ?>" target="_blank">
-					<i class="icon icon-default icon-share-googleplus"></i>
+					<i class="fab fa-google"></i>
 					<span class="share-title"><?php _e( 'Google', 'makotokw' ); ?></span>
 				</a>
 			</li>
 			<li class="share-facebook">
 				<a rel="nofollow" class="btn btn-default btn-circle btn-share btn-share-facebook" href="//www.facebook.com/sharer.php?u=<?php echo rawurlencode( $permalink ); ?>&t=<?php echo rawurlencode( $title ); ?>" target="_blank">
-					<i class="icon icon-default icon-share-facebook"></i>
+					<i class="fab fa-facebook-f"></i>
 					<span class="share-title"><?php _e( 'Facebook', 'makotokw' ); ?></span>
 				</a>
 			</li>

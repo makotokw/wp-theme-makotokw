@@ -159,6 +159,24 @@
     // avoid seeing ShareCount
     //lazyLoadShareCount();
     stickyFooter();
+
+    if (window.FontAwesome) {
+      $('.enclosure-github').each(function () {
+        $(this).prepend(
+          FontAwesome.icon(FontAwesome.findIconDefinition({prefix: 'fab', iconName: 'github-alt'})).html
+        );
+      });
+      $('.enclosure,.enclosure-qiita,.enclosure-qiita,.note-link').each(function () {
+        $(this).prepend(
+          FontAwesome.icon(FontAwesome.findIconDefinition({prefix: 'fas', iconName: 'bookmark'})).html
+        );
+      });
+      $('.note-comment').each(function () {
+        $(this).prepend(
+          FontAwesome.icon(FontAwesome.findIconDefinition({prefix: 'fas', iconName: 'comment'})).html
+        );
+      });
+    }
   });
 
 })(jQuery);

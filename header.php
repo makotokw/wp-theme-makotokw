@@ -67,7 +67,10 @@
 			<div class="site-header-menu2">
 				<form method="get" id="siteHeaderSearchForm" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
 					<input type="text" id="siteHeaderSearchText" class="search-form-text" name="s" value="<?php echo esc_attr( get_search_query() ); ?>" placeholder="<?php _e( 'Search the site', 'makotokw' ); ?>"/>
-					<a id="siteHeaderSearchTrigger" class="search-form-trigger"></a>
+					<a id="siteHeaderSearchTrigger" class="search-form-trigger">
+						<i class="fas fa-search"></i>
+						<i class="fas fa-times" style="display: none"></i>
+					</a>
 				</form>
 			</div>
 		</nav>

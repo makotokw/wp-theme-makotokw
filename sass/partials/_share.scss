@@ -85,30 +85,7 @@
   }
 }
 
-@mixin btn-share-with-fontawesome-icon($brand-color, $icon-content) {
-  &:before {
-    font-family: FontAwesome;
-    content: $icon-content;
-    font-size: 14px;
-  }
-}
-
-.icon-share-twitter {
-  @include btn-share-with-fontawesome-icon($twitter-blue, $fa-var-twitter);
-}
 .icon-share-hatena {
-  &:before {
-    content: "B!";
-    font-family: Verdana;
-    font-weight: bold;
-  }
-}
-.icon-share-pocket {
-  @include btn-share-with-fontawesome-icon($pocket-pink, $fa-var-get-pocket);
-}
-.icon-share-googleplus {
-  @include btn-share-with-fontawesome-icon($google-plus-red, $fa-var-google-plus);
-}
-.icon-share-facebook {
-  @include btn-share-with-fontawesome-icon($facebook-blue, $fa-var-facebook);
+  font-style: normal;
+  font-weight: bold;
 }

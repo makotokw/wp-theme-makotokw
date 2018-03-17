@@ -9,7 +9,7 @@
 <form method="get" id="searchform" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
 	<input type="text" class="search-form-text" name="s" value="<?php echo esc_attr( get_search_query() ); ?>" placeholder="<?php _e( 'Search the site', 'makotokw' ); ?>"/>
 	<button type="submit" class="btn btn-default btn-search">
-		<i class="fa fa-search"></i>
+		<i class="fas fa-search"></i>
 		<span class="screen-reader-text">
 			<?php echo _x( 'Search', 'submit button', 'makotokw' ); ?>
 		</span>

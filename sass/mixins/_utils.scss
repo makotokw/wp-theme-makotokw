@@ -35,15 +35,6 @@
   box-shadow: none;
 }
 
-@mixin block-awesome-icon($font-size) {
-  float: left;
-  margin-right: 20px;
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-  font: normal $font-size FontAwesome;
-  vertical-align: text-bottom;
-}
-
 @mixin background-2x ($image, $width, $height) {
   background: url('./images/' + $image + '.png') no-repeat;
   width: $width;

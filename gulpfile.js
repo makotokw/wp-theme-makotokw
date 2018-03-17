@@ -12,12 +12,20 @@ gulp.task('clean:components', function () {
   return del(['components']);
 });
 gulp.task('bower:install', plugins.shell.task(['bower install']));
-gulp.task('bower:reinstall', ['clean:components', 'bower install']);
+gulp.task('bower:reinstall', ['clean:components', 'bower:install']);
 gulp.task('bower:normalize', ['bower:reinstall'], function () {
   var mainBowerFiles = require('main-bower-files');
   var bowerNormalizer = require('gulp-bower-normalize');
   gulp.src(mainBowerFiles(), {base: './bower_components'})
     .pipe(bowerNormalizer({bowerJson: './bower.json'}))
+    .pipe(plugins.rename(function (path) {
+      if (path.dirname === 'font-awesome/css') {
+        // for sass import
+        path.dirname = 'font-awesome/scss';
+        path.basename = '_' + path.basename;
+        path.extname = '.scss';
+      }
+    }))
     .pipe(gulp.dest('./components/'));
 });
 
@@ -78,6 +86,7 @@ gulp.task('modernizr', function () {
 function js(env) {
   gulp.src([
     'components/google-code-prettify/js/prettify.js',
+    'components/font-awesome/js/fontawesome-all.js',
     'js/vendor/*/*.js',
     'js/main.js'
   ])
@@ -137,6 +146,7 @@ gulp.task('browser-sync', function () {
   browserSync({
     port: 8086,
     proxy: 'http://blog.int.makotokw.com',
+    notify: false,
     ghostMode: {
       clicks: true,
       forms: true,

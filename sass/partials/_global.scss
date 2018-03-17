@@ -32,14 +32,6 @@
   text-transform: uppercase;
 }
 
-.time-icon {
-  &:before {
-    font-family: FontAwesome;
-    content: $fa-var-calendar;
-    margin-right: 3px;
-  }
-}
-
 .icon {
   font-style: normal;
 }

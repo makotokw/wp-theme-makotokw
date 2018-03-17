@@ -108,20 +108,16 @@ $site-header-link-over-color: lighten($site-header-link-color, 10%);
         width: 160px;
       }
     }
-    .search-form-trigger {
-      &:before {
-        //noinspection CssNoGenericFontName
-        font-family: FontAwesome;
-        content: $fa-var-search;
-      }
-    }
     &.is-active {
       .search-form-text {
         display: inline-block;
       }
       .search-form-trigger {
-        &:before {
-          content: $fa-var-times;
+        .fa-search {
+          display: none;
+        }
+        .fa-times {
+          display: inline-block !important;
         }
       }
     }

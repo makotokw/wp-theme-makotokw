@@ -1,15 +1,16 @@
 /* = Note styling
 -------------------------------------------------------------- */
 
-@mixin note-variant($color) {
-  background-color: $color;
-  &[href] {
-    &:hover,
-    &:focus {
-      background-color: darken($color, 10%);
-    }
-  }
-}
+/*
+<div class="note">note</div>
+<div class="note-ins">note-ins</div>
+<div class="note-link">note-link</div>
+<div class="note-comment">note-comment</div>
+<div class="enclosure">enclosure</div>
+<div class="enclosure-github">enclosure-github</div>
+<div class="enclosure-qiita">enclosure-qiita</div>
+<div class="enclosure-evernote">enclosure-evernote</div>
+*/
 
 %base-note {
   display: block;
@@ -17,13 +18,17 @@
   padding: $block-padding;
   background-color: $block-default-bg;
   color: $block-default-text;
-  border-left: $site-border-left-width solid $block-default-border;
+  border: 2px solid $site-accent-color;
+  border-left: $site-border-left-width solid $site-accent-color;
 
-  &:before {
-    @include block-awesome-icon(2em);
-    margin-right: .4em;
-    color: $block-default-icon;
+  svg {
+    float: left;
+    width: $font-size-base * 2 !important;
+    height: $font-size-base * 2 !important;
+    margin-right: 10px;
+    color: $site-accent-color;
   }
+
   &:after {
     clear: both;
   }
@@ -40,42 +45,16 @@
   background-color: $state-warning-bg;
 }
 
-.note-link {
-  @extend .note;
-  &:before {
-    content: $fa-var-comment-o;
-  }
-}
-
+.note-link,
 .note-comment {
   @extend .note;
-  &:before {
-    content: $fa-var-comment-o;
-  }
 }
 
 .enclosure {
   @extend %base-note;
-  &:before {
-    content: $fa-var-file-o;
-  }
 }
-.enclosure-github {
-  @extend .enclosure;
-  &:before {
-    content: $fa-var-github-alt;
-  }
-}
-.enclosure-qiita {
-  @extend .enclosure;
-  &:before {
-    content: $fa-var-search;
-  }
-}
+.enclosure-github,
+.enclosure-qiita,
 .enclosure-evernote {
   @extend .enclosure;
-  &:before {
-    content: $fa-var-file-o;
-  }
 }
-
