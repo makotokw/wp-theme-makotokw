@@ -11,7 +11,7 @@ include __DIR__ . '/header.php'; ?>
 	</header>
 	<div class="entry-content">
 		<ul class="list-categories">
-			<?php makotokw_list_categories(); ?>
+			<?php makotokw_list_categories( true ); ?>
 		</ul>
 	</div>
 </article>

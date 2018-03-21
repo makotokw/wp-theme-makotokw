@@ -175,6 +175,7 @@ function makotokw_itunes_affiliate_script() {
  * @see http://gilbert.pellegrom.me/how-to-breadcrumbs-in-wordpress/
  */
 function makotokw_breadcrumbs() {
+	/** @var WP_Query $wp_query */
 	global $wp_query;
 
 	if ( ! is_home() && ! is_404() ) {
@@ -271,15 +272,20 @@ function makotokw_breadcrumbs_category_parents( $id, $separator = '/', $visited 
 	return $chain;
 }
 
-function makotokw_list_categories() {
-	$list = wp_list_categories(
-		array(
-			'title_li'   => '',
-			'hide_title_if_empty' => true,
-			'show_count' => true,
-			'echo' => false,
-		)
+/**
+ * @param bool $all
+ */
+function makotokw_list_categories( $all = false ) {
+	$opt = array(
+		'title_li' => '',
+		'hide_title_if_empty' => true,
+		'show_count' => true,
+		'echo' => false,
 	);
+	if ( ! $all ) {
+		$opt['exclude'] = WP_THEME_EXCLUDE_CATEGORY;
+	}
+	$list = wp_list_categories( $opt );
 	echo preg_replace( '/\(([\d]+)\)/', '<span class="cat-item-entry-count">$1</span>', $list );
 }
 
@@ -431,7 +437,6 @@ function makotokw_tag_cloud( $args = array() ) {
 	);
 
 	if ( count( $tags ) ) {
-
 		echo '<ul class="tags-cloud">';
 		foreach ( $tags as $tag ) {
 			$rank = 0;

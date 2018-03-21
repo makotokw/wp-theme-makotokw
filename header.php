@@ -13,8 +13,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="format-detection" content="telephone=no" />
-<?php if ( is_archive() || is_search() || is_404() || is_page_template( 'page-templates/help.php' ) ) : ?>
+<?php if ( makotokw_is_noindex() ) : ?>
 <meta name="robots" content="noindex,follow" />
+<?php else : ?>
+<meta name="robots" content="index" />
 <?php endif ?>
 <title><?php wp_title( ' - ', true, 'right' ); ?></title>
 <?php $meta_description = makotokw_get_meta_description(); ?>

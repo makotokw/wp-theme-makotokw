@@ -186,6 +186,31 @@ if ( ! is_admin_bar_showing() ) {
 	add_action( 'wp_print_styles', 'makotokw_deregister_styles', 100 );
 }
 
+function makotokw_is_noindex() {
+	/** @var WP_Query $wp_query */
+	global $wp_query;
+	if ( $wp_query ) {
+		if ( $wp_query->is_archive() ) {
+			if ( $wp_query->is_category() ) {
+				$category_id = $wp_query->get_queried_object_id();
+				if ( in_array( $category_id, wp_parse_id_list( WP_THEME_EXCLUDE_CATEGORY ) ) ) {
+					return true;
+				}
+				$paged = $wp_query->get( 'paged', 1 );
+				// old pages should be noindexes
+				return $paged > 3;
+			} else if ( is_mylist() ) {
+				return false;
+			}
+			return true;
+		}
+		if ( $wp_query->is_search() || $wp_query->is_404() || is_page_template( 'page-templates/help.php' ) ) {
+			return true;
+		}
+	}
+	return false;
+}
+
 function makotokw_is_old_post( $post = null ) {
 	$post = get_post( $post );
 	// only within 1 year
