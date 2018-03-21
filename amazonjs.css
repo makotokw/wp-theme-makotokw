@@ -1,6 +1,9 @@
 .amazonjs_item {
   border-color: #f5e0cc;
   border-width: 0; }
+  @media screen and (max-width: 767px) {
+    .amazonjs_item {
+      padding: 5px 0 15px 0; } }
   .amazonjs_item .amazonjs_image img {
     box-shadow: none;
     border: none; }

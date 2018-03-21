@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: makoto.kw@gmail.com\n"
-"POT-Creation-Date: 2018-02-24 13:25+0900\n"
+"POT-Creation-Date: 2018-03-21 10:47+0900\n"
 "PO-Revision-Date: 2013-04-28 18:46+0900\n"
 "Last-Translator: Makoto Kawasaki <makoto.kw@gmail.com>\n"
 "Language-Team: Japanese\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: 404.php:14
+#: 404.php:12
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
@@ -29,38 +29,38 @@ msgstr ""
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: content.php:17
+#: content.php:16
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
 
-#: content.php:31
+#: content.php:30
 msgid "(<span class=\"entry-date-warning-y\">1</span> year ago)"
 msgstr "(<span class=\"entry-date-warning-y\">1</span>年前)"
 
-#: content.php:33
+#: content.php:32
 #, php-format
 msgid "(<span class=\"entry-date-warning-y\">%d</span> years ago)"
 msgstr "(<span class=\"entry-date-warning-y\">%d</span>年前)"
 
-#: content.php:48 inc/template-tags.php:290
+#: content.php:44 inc/template-tags.php:313
 msgid "Continue reading"
 msgstr "続きを読む"
 
-#: content.php:59
+#: content.php:55
 msgid "Pages:"
 msgstr ""
 
-#: content.php:86
+#: content.php:82
 msgid "Last Updated"
 msgstr ""
 
-#: footer.php:23
+#: footer.php:34
 #, php-format
 msgid "Powered by %s"
 msgstr ""
 
-#: footer.php:24
+#: footer.php:35
 msgid "Semantic Personal Publishing Platform"
 msgstr ""
 
@@ -69,54 +69,70 @@ msgid "Site Menu"
 msgstr "サイトメニュー"
 
 #: functions.php:75
+msgid "Footer Menu"
+msgstr "フッターメニュー"
+
+#: functions.php:76
 msgid "Portfolio Menu"
 msgstr "ポートフォリオメニュー"
 
-#: index.php:19
+#: header.php:71 searchform.php:10
+msgid "Search the site"
+msgstr ""
+
+#: index.php:21
 #, php-format
 msgid "Category Archives: %s"
 msgstr "%sの記事一覧"
 
-#: index.php:21
+#: index.php:23
 #, php-format
 msgid "Tag Archives: %s"
 msgstr "%sの記事一覧"
 
-#: index.php:23
+#: index.php:25
 #, php-format
 msgid "Daily Archives: %s"
 msgstr "%sの記事一覧"
 
-#: index.php:25
+#: index.php:27
 #, php-format
 msgid "Monthly Archives: %s"
 msgstr "%sの記事一覧"
 
-#: index.php:27
+#: index.php:27 inc/template-tags.php:211
+msgid "Y/M"
+msgstr "Y年M"
+
+#: index.php:29
 #, php-format
 msgid "Yearly Archives: %s"
 msgstr "%sの記事一覧"
 
-#: index.php:29
+#: index.php:29 inc/template-tags.php:214
+msgid "Y"
+msgstr "Y年"
+
+#: index.php:31
 #, php-format
 msgid "Blog Archives: %s"
 msgstr "アーカイブ"
 
-#: index.php:31
+#: index.php:33
 #, php-format
 msgid "Portfolio Archives: %s"
 msgstr "%sの記事一覧"
 
-#: index.php:33
+#: index.php:35
 msgid "Search"
 msgstr ""
 
-#: index.php:35 inc/template-tags.php:206 inc/template-tags.php:209
-#: inc/template-tags.php:212 inc/template-tags.php:215
+#: index.php:37 inc/template-tags.php:207 inc/template-tags.php:210
+#: inc/template-tags.php:213 inc/template-tags.php:216
 msgid "Archives"
-msgstr "アーカイブ"
+msgstr "アーカイブス"
 
-#: meta-ogp.php:67
+#: meta-ogp.php:68
 msgid "Uncategorized"
 msgstr ""
 
@@ -146,20 +162,12 @@ msgid ""
 "searching can help."
 msgstr "お探しのコンテンツを見つけられませんでした。検索をお試しください。"
 
-#: searchform.php:11
-msgid "Search the site"
-msgstr ""
-
 #: inc/comments.php:31
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s %2$"
 
-#: inc/comments.php:34
-msgid "Edit"
-msgstr "編集"
-
-#: inc/comments.php:40
+#: inc/comments.php:53
 msgid "Your comment is awaiting moderation."
 msgstr "コメントは承認待ちです。"
 
@@ -176,35 +184,11 @@ msgstr ""
 msgid "Mylists"
 msgstr "マイリスト"
 
-#: inc/taxonomy.php:43
-msgid "Search Mylists"
-msgstr "マイリストの検索"
-
-#: inc/taxonomy.php:44
-msgid "All Mylists"
-msgstr "すべてのマイリスト"
-
-#: inc/taxonomy.php:45
-msgid "Edit Mylist"
-msgstr "マイリストの編集"
-
-#: inc/taxonomy.php:46
-msgid "Update Mylist"
-msgstr "マイリストの更新"
-
-#: inc/taxonomy.php:47
-msgid "Add New Mylist"
-msgstr "マイリストの新規作成"
-
-#: inc/taxonomy.php:48
-msgid "New Mylist Name"
-msgstr "マイリスト名"
-
-#: inc/taxonomy.php:58
+#: inc/taxonomy.php:62
 msgid "Portfolios"
 msgstr "ポートフォリオ"
 
-#: inc/taxonomy.php:84
+#: inc/taxonomy.php:88
 msgid "Blogs"
 msgstr "ブログシステム"
 
@@ -232,78 +216,70 @@ msgstr ""
 msgid "Last"
 msgstr ""
 
-#: inc/template-tags.php:187 inc/template-tags.php:223
+#: inc/template-tags.php:188 inc/template-tags.php:224
 msgid "Categories"
 msgstr "カテゴリ"
 
-#: inc/template-tags.php:193
+#: inc/template-tags.php:194
 msgid "Tags"
 msgstr "タグ"
 
-#: inc/template-tags.php:196
+#: inc/template-tags.php:197
 msgid "Mylist"
 msgstr "マイリスト"
 
-#: inc/template-tags.php:199
+#: inc/template-tags.php:200
 msgid "Blog"
 msgstr "ブログ"
 
-#: inc/template-tags.php:202
+#: inc/template-tags.php:203
 msgid "Portfolio"
 msgstr "ポートフォリオ"
 
-#: inc/template-tags.php:210
-msgid "Y/M"
-msgstr "Y年M"
-
-#: inc/template-tags.php:213
-msgid "Y"
-msgstr "Y年"
-
-#: inc/template-tags.php:218
+#: inc/template-tags.php:219
 msgid "Search Results"
 msgstr "検索結果"
 
-#: inc/template-tags.php:264 inc/template-tags.php:455
-#: inc/template-tags.php:478 inc/template-tags.php:499
+#: inc/template-tags.php:270 inc/template-tags.php:477
+#: inc/template-tags.php:500 inc/template-tags.php:521
 #, php-format
 msgid "View all posts in %s"
 msgstr ""
 
-#: inc/template-tags.php:274
+#: inc/template-tags.php:297
 #, php-format
 msgid "<time class=\"published updated time\" datetime=\"%1$s\">%2$s</time>"
 msgstr ""
 
-#: inc/template-tags.php:282
+#: inc/template-tags.php:305
 #, php-format
 msgid "<time class=\"updated time\" datetime=\"%1$s\">%2$s</time>"
 msgstr ""
 
-#: inc/template-tags.php:332
+#: inc/template-tags.php:355
 msgid "Twitter"
 msgstr ""
 
-#: inc/template-tags.php:338
+#: inc/template-tags.php:361
 msgid "Hatena Bookmark"
 msgstr "はてブ"
 
-#: inc/template-tags.php:344
+#: inc/template-tags.php:367
 msgid "Pocket"
 msgstr ""
 
-#: inc/template-tags.php:350
+#: inc/template-tags.php:373
 msgid "Google"
 msgstr ""
 
-#: inc/template-tags.php:356
+#: inc/template-tags.php:379
 msgid "Facebook"
 msgstr ""
 
-#: inc/template-tags.php:367
+#: inc/template-tags.php:390
 msgid "Share This"
 msgstr ""
 
-#: inc/template-tags.php:380
+#: inc/template-tags.php:403
 msgid "About"
 msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: makotokw 1.0\n"
 "Report-Msgid-Bugs-To: makoto.kw@gmail.com\n"
-"POT-Creation-Date: 2018-02-24 13:26+0900\n"
+"POT-Creation-Date: 2018-03-21 10:47+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: 404.php:14
+#: 404.php:12
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
@@ -29,38 +29,38 @@ msgstr ""
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: content.php:17
+#: content.php:16
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
 
-#: content.php:31
+#: content.php:30
 msgid "(<span class=\"entry-date-warning-y\">1</span> year ago)"
 msgstr ""
 
-#: content.php:33
+#: content.php:32
 #, php-format
 msgid "(<span class=\"entry-date-warning-y\">%d</span> years ago)"
 msgstr ""
 
-#: content.php:48 inc/template-tags.php:290
+#: content.php:44 inc/template-tags.php:313
 msgid "Continue reading"
 msgstr ""
 
-#: content.php:59
+#: content.php:55
 msgid "Pages:"
 msgstr ""
 
-#: content.php:86
+#: content.php:82
 msgid "Last Updated"
 msgstr ""
 
-#: footer.php:23
+#: footer.php:34
 #, php-format
 msgid "Powered by %s"
 msgstr ""
 
-#: footer.php:24
+#: footer.php:35
 msgid "Semantic Personal Publishing Platform"
 msgstr ""
 
@@ -69,54 +69,70 @@ msgid "Site Menu"
 msgstr ""
 
 #: functions.php:75
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:76
 msgid "Portfolio Menu"
 msgstr ""
 
-#: index.php:19
-#, php-format
-msgid "Category Archives: %s"
+#: header.php:71 searchform.php:10
+msgid "Search the site"
 msgstr ""
 
 #: index.php:21
 #, php-format
-msgid "Tag Archives: %s"
+msgid "Category Archives: %s"
 msgstr ""
 
 #: index.php:23
 #, php-format
-msgid "Daily Archives: %s"
+msgid "Tag Archives: %s"
 msgstr ""
 
 #: index.php:25
 #, php-format
-msgid "Monthly Archives: %s"
+msgid "Daily Archives: %s"
 msgstr ""
 
 #: index.php:27
 #, php-format
-msgid "Yearly Archives: %s"
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: index.php:27 inc/template-tags.php:211
+msgid "Y/M"
 msgstr ""
 
 #: index.php:29
 #, php-format
-msgid "Blog Archives: %s"
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: index.php:29 inc/template-tags.php:214
+msgid "Y"
 msgstr ""
 
 #: index.php:31
 #, php-format
-msgid "Portfolio Archives: %s"
+msgid "Blog Archives: %s"
 msgstr ""
 
 #: index.php:33
+#, php-format
+msgid "Portfolio Archives: %s"
+msgstr ""
+
+#: index.php:35
 msgid "Search"
 msgstr ""
 
-#: index.php:35 inc/template-tags.php:206 inc/template-tags.php:209
-#: inc/template-tags.php:212 inc/template-tags.php:215
+#: index.php:37 inc/template-tags.php:207 inc/template-tags.php:210
+#: inc/template-tags.php:213 inc/template-tags.php:216
 msgid "Archives"
 msgstr ""
 
-#: meta-ogp.php:67
+#: meta-ogp.php:68
 msgid "Uncategorized"
 msgstr ""
 
@@ -142,20 +158,12 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: searchform.php:11
-msgid "Search the site"
-msgstr ""
-
 #: inc/comments.php:31
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: inc/comments.php:34
-msgid "Edit"
-msgstr ""
-
-#: inc/comments.php:40
+#: inc/comments.php:53
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
@@ -172,35 +180,11 @@ msgstr ""
 msgid "Mylists"
 msgstr ""
 
-#: inc/taxonomy.php:43
-msgid "Search Mylists"
-msgstr ""
-
-#: inc/taxonomy.php:44
-msgid "All Mylists"
-msgstr ""
-
-#: inc/taxonomy.php:45
-msgid "Edit Mylist"
-msgstr ""
-
-#: inc/taxonomy.php:46
-msgid "Update Mylist"
-msgstr ""
-
-#: inc/taxonomy.php:47
-msgid "Add New Mylist"
-msgstr ""
-
-#: inc/taxonomy.php:48
-msgid "New Mylist Name"
-msgstr ""
-
-#: inc/taxonomy.php:58
+#: inc/taxonomy.php:62
 msgid "Portfolios"
 msgstr ""
 
-#: inc/taxonomy.php:84
+#: inc/taxonomy.php:88
 msgid "Blogs"
 msgstr ""
 
@@ -228,78 +212,70 @@ msgstr ""
 msgid "Last"
 msgstr ""
 
-#: inc/template-tags.php:187 inc/template-tags.php:223
+#: inc/template-tags.php:188 inc/template-tags.php:224
 msgid "Categories"
 msgstr ""
 
-#: inc/template-tags.php:193
+#: inc/template-tags.php:194
 msgid "Tags"
 msgstr ""
 
-#: inc/template-tags.php:196
+#: inc/template-tags.php:197
 msgid "Mylist"
 msgstr ""
 
-#: inc/template-tags.php:199
+#: inc/template-tags.php:200
 msgid "Blog"
 msgstr ""
 
-#: inc/template-tags.php:202
+#: inc/template-tags.php:203
 msgid "Portfolio"
 msgstr ""
 
-#: inc/template-tags.php:210
-msgid "Y/M"
-msgstr ""
-
-#: inc/template-tags.php:213
-msgid "Y"
-msgstr ""
-
-#: inc/template-tags.php:218
+#: inc/template-tags.php:219
 msgid "Search Results"
 msgstr ""
 
-#: inc/template-tags.php:264 inc/template-tags.php:455
-#: inc/template-tags.php:478 inc/template-tags.php:499
+#: inc/template-tags.php:270 inc/template-tags.php:477
+#: inc/template-tags.php:500 inc/template-tags.php:521
 #, php-format
 msgid "View all posts in %s"
 msgstr ""
 
-#: inc/template-tags.php:274
+#: inc/template-tags.php:297
 #, php-format
 msgid "<time class=\"published updated time\" datetime=\"%1$s\">%2$s</time>"
 msgstr ""
 
-#: inc/template-tags.php:282
+#: inc/template-tags.php:305
 #, php-format
 msgid "<time class=\"updated time\" datetime=\"%1$s\">%2$s</time>"
 msgstr ""
 
-#: inc/template-tags.php:332
+#: inc/template-tags.php:355
 msgid "Twitter"
 msgstr ""
 
-#: inc/template-tags.php:338
+#: inc/template-tags.php:361
 msgid "Hatena Bookmark"
 msgstr ""
 
-#: inc/template-tags.php:344
+#: inc/template-tags.php:367
 msgid "Pocket"
 msgstr ""
 
-#: inc/template-tags.php:350
+#: inc/template-tags.php:373
 msgid "Google"
 msgstr ""
 
-#: inc/template-tags.php:356
+#: inc/template-tags.php:379
 msgid "Facebook"
 msgstr ""
 
-#: inc/template-tags.php:367
+#: inc/template-tags.php:390
 msgid "Share This"
 msgstr ""
 
-#: inc/template-tags.php:380
+#: inc/template-tags.php:403
 msgid "About"
 msgstr ""
