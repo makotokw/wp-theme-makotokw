@@ -8,6 +8,8 @@ var reload = browserSync.reload;
 var del = require('del');
 var notifier = require('node-notifier');
 
+const wpRoot = '../../../';
+
 gulp.task('clean:components', function () {
   return del(['components']);
 });
@@ -43,12 +45,12 @@ gulp.task('jshint', function () {
     .pipe(plugins.if(!browserSync.active, plugins.jshint.reporter('fail')));
 });
 
-gulp.task('makepot', plugins.shell.task([
+gulp.task('make-languages-pot-1st', plugins.shell.task([
   'xgettext --from-code=UTF-8 -k__ -k_e -L PHP -o ./languages/messages.pot ./*.php ./*/*.php --package-name=makotokw --package-version=1.0 --msgid-bugs-address=makoto.kw@gmail.com',
   'msgmerge --update ./languages/ja.po ./languages/messages.pot --backup=off'
 ]));
 
-gulp.task('make-languages-mo', plugins.shell.task([
+gulp.task('make-languages-mo-2nd', plugins.shell.task([
   'msgfmt -o ./languages/ja.mo ./languages/ja.po'
 ]));
 
@@ -142,16 +144,23 @@ gulp.task('sass', function () {
 });
 
 gulp.task('browser-sync', function () {
-  // https://browsersync.io/docs/options
-  browserSync({
-    port: 8086,
-    proxy: 'http://blog.int.makotokw.com',
-    notify: false,
-    ghostMode: {
-      clicks: true,
-      forms: true,
-      scroll: true
-    }
+  plugins.connectPhp.server({
+    port: 8087,
+    hostname: '0.0.0.0',
+    base: wpRoot,
+    router: wpRoot + 'router.php'
+  }, function () {
+    // https://browsersync.io/docs/options
+    browserSync({
+      port: 8086,
+      proxy: 'localhost:8087',
+      notify: false,
+      ghostMode: {
+        clicks: true,
+        forms: true,
+        scroll: true
+      }
+    });
   });
 });
 
