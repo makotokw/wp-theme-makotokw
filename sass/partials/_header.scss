@@ -6,9 +6,9 @@ $site-logo-height: 28px;
 $site-logo-height-mobile: 20px;
 $site-header-height-mobile: 48px;
 $site-header-background-color: $white;
-$site-header-border-color: $blue-dark;
-$site-header-link-color: $blue-dark;
-$site-header-link-over-color: lighten($site-header-link-color, 10%);
+$site-header-border-color: $md-grey-900;
+$site-header-link-color: $md-grey-900;
+$site-header-link-over-color: $md-grey-900;
 
 .site-header {
   width: 100%;
@@ -57,10 +57,16 @@ $site-header-link-over-color: lighten($site-header-link-color, 10%);
       height: $site-logo-height-mobile;
     }
   }
+  .site-header-logo-svg-log {
+    fill: $site-accent-color;
+  }
   &:hover {
     .site-header-logo-svg {
-      fill: $site-header-link-over-color;
+      fill: $monstersinc-blue;
       .site-header-logo-svg-eve {
+        fill: $monstersinc-blue;
+      }
+      .site-header-logo-svg-log {
         fill: $monstersinc-blue;
       }
     }

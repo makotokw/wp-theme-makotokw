@@ -14,6 +14,13 @@ $query->is_archive   = true;
 $GLOBALS['wp_query'] = $query;
 ?>
 <?php include __DIR__ . '/header.php'; ?>
+
+<header class="site-content-header">
+	<h2 class="archives-title">
+		<?php echo sprintf( __( 'Archives of %s', 'makotokw' ), '<span>' . get_bloginfo( 'name' ) . '</span>' ); ?>
+	</h2>
+</header>
+
 	<?php if ( $query->have_posts() ) : ?>
 		<div class="post-summaries">
 			<?php while ( $query->have_posts() ) : ?>

@@ -18,45 +18,28 @@
         margin-bottom: 15px;
       }
     }
-  }
-}
 
-.section-page-about {
-  color: $white;
-  background-color: $md-cyan-600;
+    .list-history {
+      list-style: none;
+      padding-left: 0;
 
-  a {
-    color: $md-cyan-a100;
-    &:hover {
-      color: $md-cyan-a200;
-    }
-  }
+      li {
+        padding: 5px 0;
+        margin: 0;
+        line-height: 2;
+      }
 
-  .col-md-6 {
-    box-sizing: border-box;
-  }
-
-  .list-history {
-    list-style: none;
-    padding-left: 0;
-
-    li {
-      padding: 5px 0;
-      margin: 0;
-      line-height: 2;
-    }
-
-    time {
-      background-color: darken($blue, 10%);
-      margin-right: 5px;
-      font-weight: 400;
-      padding: 0;
-      width: 120px;
-      display: inline-block;
-      text-align: center;
-      @include smaller-than-tablet-screen {
-        padding: 0 5px;
-        width: auto;
+      time {
+        border: 1px solid $site-default-border;
+        margin-right: 5px;
+        padding: 0;
+        width: 120px;
+        display: inline-block;
+        text-align: center;
+        @include smaller-than-tablet-screen {
+          padding: 0 5px;
+          width: auto;
+        }
       }
     }
   }

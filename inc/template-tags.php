@@ -350,31 +350,31 @@ function makotokw_share_buttons() {
 	<div class="share-buttons">
 		<ul>
 			<li class="share-twitter">
-				<a rel="nofollow" data-url="<?php echo $permalink; ?>" class="btn btn-default btn-circle btn-share btn-share-twitter" href="https://twitter.com/intent/tweet?original_referer=<?php echo rawurlencode( $permalink ); ?>&text=<?php echo rawurlencode( $title ); ?>&tw_p=tweetbutton&url=<?php echo urlencode( $permalink ); ?>&via=<?php echo urlencode( WP_THEME_AUTHOR_TWITTER ); ?>" target="_blank">
+				<a rel="nofollow noopener" data-url="<?php echo $permalink; ?>" class="btn btn-default btn-circle btn-share btn-share-twitter" href="https://twitter.com/intent/tweet?original_referer=<?php echo rawurlencode( $permalink ); ?>&text=<?php echo rawurlencode( $title ); ?>&tw_p=tweetbutton&url=<?php echo urlencode( $permalink ); ?>&via=<?php echo urlencode( WP_THEME_AUTHOR_TWITTER ); ?>" target="_blank" title="Share by Twitter">
 					<i class="fab fa-twitter"></i>
 					<span class="share-title"><?php _e( 'Twitter', 'makotokw' ); ?></span>
 				</a>
 			</li>
 			<li class="share-hatena">
-				<a rel="nofollow" class="btn btn-default btn-circle btn-share btn-share-hatena" href="https://b.hatena.ne.jp/entry/<?php echo $permalink_schemeless; ?>" target="_blank">
+				<a rel="nofollow noopener" class="btn btn-default btn-circle btn-share btn-share-hatena" href="https://b.hatena.ne.jp/entry/<?php echo $permalink_schemeless; ?>" target="_blank" title="Share by Hatena">
 					<i class="icon-share-hatena">B!</i>
 					<span class="share-title"><?php _e( 'Hatena Bookmark', 'makotokw' ); ?></span>
 				</a>
 			</li>
 			<li class="share-pocket">
-				<a rel="nofollow" class="btn btn-default btn-circle btn-share btn-share-pocket" href="https://getpocket.com/save/?url=<?php echo rawurlencode( $permalink ); ?>&title=<?php echo rawurlencode( $title ); ?>" target="_blank">
+				<a rel="nofollow noopener" class="btn btn-default btn-circle btn-share btn-share-pocket" href="https://getpocket.com/save/?url=<?php echo rawurlencode( $permalink ); ?>&title=<?php echo rawurlencode( $title ); ?>" target="_blank" title="Share by Pocket">
 					<i class="fab fa-get-pocket"></i>
 					<span class="share-title"><?php _e( 'Pocket', 'makotokw' ); ?></span>
 				</a>
 			</li>
 			<li class="share-googleplus">
-				<a rel="nofollow" class="btn btn-default btn-circle btn-share btn-share-googleplus" href="https://plus.google.com/share?url=<?php echo rawurlencode( $permalink ); ?>" target="_blank">
+				<a rel="nofollow noopener" class="btn btn-default btn-circle btn-share btn-share-googleplus" href="https://plus.google.com/share?url=<?php echo rawurlencode( $permalink ); ?>" target="_blank" title="Share by Google">
 					<i class="fab fa-google"></i>
 					<span class="share-title"><?php _e( 'Google', 'makotokw' ); ?></span>
 				</a>
 			</li>
 			<li class="share-facebook">
-				<a rel="nofollow" class="btn btn-default btn-circle btn-share btn-share-facebook" href="//www.facebook.com/sharer.php?u=<?php echo rawurlencode( $permalink ); ?>&t=<?php echo rawurlencode( $title ); ?>" target="_blank">
+				<a rel="nofollow noopener" class="btn btn-default btn-circle btn-share btn-share-facebook" href="//www.facebook.com/sharer.php?u=<?php echo rawurlencode( $permalink ); ?>&t=<?php echo rawurlencode( $title ); ?>" target="_blank" title="Share by Facebook">
 					<i class="fab fa-facebook-f"></i>
 					<span class="share-title"><?php _e( 'Facebook', 'makotokw' ); ?></span>
 				</a>

@@ -94,9 +94,9 @@ $site-header-text: $md-grey-900;
 $site-default-bg: $white;
 $site-neutral-color: $md-grey-500;
 $site-accent-color: $blue-light;
-$site-dark-accent-color: $blue-dark;
+$site-dark-accent-color: $md-grey-800;
 $site-default-border: $brand-default-border;
-$site-progress-border: $blue-dark;
+$site-progress-border: $site-accent-color;
 
 $site-default-link: $site-accent-color;
 $site-default-link-over: darken($site-default-link, 10%);
