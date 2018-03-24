@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: makotokw 1.0\n"
 "Report-Msgid-Bugs-To: makoto.kw@gmail.com\n"
-"POT-Creation-Date: 2018-03-21 10:47+0900\n"
+"POT-Creation-Date: 2018-03-24 12:31+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,11 +47,23 @@ msgstr ""
 msgid "Continue reading"
 msgstr ""
 
-#: content.php:55
+#: content.php:59
 msgid "Pages:"
 msgstr ""
 
+#: content.php:80
+msgid "Tag"
+msgstr ""
+
+#: content.php:81
+msgid "Related Software"
+msgstr ""
+
 #: content.php:82
+msgid "Related Posts"
+msgstr ""
+
+#: content.php:86
 msgid "Last Updated"
 msgstr ""
 
@@ -76,7 +88,7 @@ msgstr ""
 msgid "Portfolio Menu"
 msgstr ""
 
-#: header.php:71 searchform.php:10
+#: header.php:74 searchform.php:10
 msgid "Search the site"
 msgstr ""
 
@@ -172,10 +184,6 @@ msgstr ""
 msgid "Page %s"
 msgstr ""
 
-#: inc/related.php:82
-msgid "Related Posts"
-msgstr ""
-
 #: inc/taxonomy.php:35
 msgid "Mylists"
 msgstr ""
@@ -186,6 +194,14 @@ msgstr ""
 
 #: inc/taxonomy.php:88
 msgid "Blogs"
+msgstr ""
+
+#: inc/template-tags.php:38
+msgid "Newer post"
+msgstr ""
+
+#: inc/template-tags.php:44
+msgid "Older post"
 msgstr ""
 
 #: inc/template-tags.php:51
@@ -236,8 +252,8 @@ msgstr ""
 msgid "Search Results"
 msgstr ""
 
-#: inc/template-tags.php:270 inc/template-tags.php:477
-#: inc/template-tags.php:500 inc/template-tags.php:521
+#: inc/template-tags.php:270 inc/template-tags.php:476
+#: inc/template-tags.php:499 inc/template-tags.php:520
 #, php-format
 msgid "View all posts in %s"
 msgstr ""
@@ -272,10 +288,11 @@ msgstr ""
 msgid "Facebook"
 msgstr ""
 
-#: inc/template-tags.php:390
-msgid "Share This"
+#: inc/template-tags.php:402
+msgid "About"
 msgstr ""
 
-#: inc/template-tags.php:403
-msgid "About"
+#: page-templates/archive.php:20
+#, php-format
+msgid "Archives of %s"
 msgstr ""

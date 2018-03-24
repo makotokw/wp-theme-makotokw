@@ -160,6 +160,8 @@
     //lazyLoadShareCount();
     stickyFooter();
 
+    $('#jp-relatedposts').insertBefore($('#shareThis'));
+
     if (window.FontAwesome) {
       $('.enclosure-github').each(function () {
         $(this).prepend(

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: makoto.kw@gmail.com\n"
-"POT-Creation-Date: 2018-03-21 10:47+0900\n"
+"POT-Creation-Date: 2018-03-24 12:31+0900\n"
 "PO-Revision-Date: 2013-04-28 18:46+0900\n"
 "Last-Translator: Makoto Kawasaki <makoto.kw@gmail.com>\n"
 "Language-Team: Japanese\n"
@@ -47,11 +47,23 @@ msgstr "(<span class=\"entry-date-warning-y\">%d</span>年前)"
 msgid "Continue reading"
 msgstr "続きを読む"
 
-#: content.php:55
+#: content.php:59
 msgid "Pages:"
 msgstr ""
 
+#: content.php:80
+msgid "Tag"
+msgstr "タグ"
+
+#: content.php:81
+msgid "Related Software"
+msgstr "関連ソフト"
+
 #: content.php:82
+msgid "Related Posts"
+msgstr "関連記事"
+
+#: content.php:86
 msgid "Last Updated"
 msgstr ""
 
@@ -76,7 +88,7 @@ msgstr "フッターメニュー"
 msgid "Portfolio Menu"
 msgstr "ポートフォリオメニュー"
 
-#: header.php:71 searchform.php:10
+#: header.php:74 searchform.php:10
 msgid "Search the site"
 msgstr ""
 
@@ -176,10 +188,6 @@ msgstr "コメントは承認待ちです。"
 msgid "Page %s"
 msgstr ""
 
-#: inc/related.php:82
-msgid "Related Posts"
-msgstr ""
-
 #: inc/taxonomy.php:35
 msgid "Mylists"
 msgstr "マイリスト"
@@ -191,6 +199,14 @@ msgstr "ポートフォリオ"
 #: inc/taxonomy.php:88
 msgid "Blogs"
 msgstr "ブログシステム"
+
+#: inc/template-tags.php:38
+msgid "Newer post"
+msgstr "次の記事"
+
+#: inc/template-tags.php:44
+msgid "Older post"
+msgstr "前の記事"
 
 #: inc/template-tags.php:51
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
@@ -240,8 +256,8 @@ msgstr "ポートフォリオ"
 msgid "Search Results"
 msgstr "検索結果"
 
-#: inc/template-tags.php:270 inc/template-tags.php:477
-#: inc/template-tags.php:500 inc/template-tags.php:521
+#: inc/template-tags.php:270 inc/template-tags.php:476
+#: inc/template-tags.php:499 inc/template-tags.php:520
 #, php-format
 msgid "View all posts in %s"
 msgstr ""
@@ -276,10 +292,11 @@ msgstr ""
 msgid "Facebook"
 msgstr ""
 
-#: inc/template-tags.php:390
-msgid "Share This"
-msgstr ""
-
-#: inc/template-tags.php:403
+#: inc/template-tags.php:402
 msgid "About"
 msgstr ""
+
+#: page-templates/archive.php:20
+#, php-format
+msgid "Archives of %s"
+msgstr "%sの記事一覧"

@@ -273,18 +273,23 @@ object {
   }
 }
 
+%content-section-mini-title {
+  color: $md-grey-500;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: $font-size-base;
+  margin: 8px 0 4px 0;
+}
+
 .section-mini {
   margin: 8px 0 0 0;
+  padding: 0;
   border-top: 1px solid $block-default-divider;
   @include clearfix;
 
   .section-title,
   .comment-reply-title {
-    color: $site-neutral-color;
-    font-weight: 400;
-    text-transform: uppercase;
-    font-size: $font-size-base;
-    margin: 8px 0 4px 0;
+    @extend %content-section-mini-title;
   }
 }
 
@@ -309,24 +314,17 @@ object {
       margin-left: 15px;
     }
   }
-  @include smaller-than-desktop-screen {
-    &.section-share-this {
-      .section-title {
-        float: left;
-        width: 40%;
-      }
-      .section-content {
-        float: right;
-        width: auto;
-      }
-    }
-  }
+}
+
+// Share This
+// -----------------------------------------------
+.section-share-this {
+  padding-top: 8px;
 }
 
 // Mylist
 // -----------------------------------------------
 .section-mylist {
-
   ul {
     list-style: none;
     margin: 0;
@@ -368,6 +366,31 @@ object {
   @include smaller-than-desktop-screen {
     .related-post {
       padding: 10px;
+    }
+  }
+}
+
+// JetPack Related Posts
+// -----------------------------------------------
+.entry-footer {
+  #jp-relatedposts {
+    margin: 8px 0 0 0;
+    padding: 0;
+    .jp-relatedposts-headline {
+      border-bottom: 4px solid $block-default-divider;
+      display: block;
+      float: none;
+
+      em {
+        @extend %content-section-mini-title;
+        color: $md-grey-700;
+        margin: 8px 0;
+        display: block;
+        &:before {
+          border: none !important;
+          margin: 0 !important;
+        }
+      }
     }
   }
 }

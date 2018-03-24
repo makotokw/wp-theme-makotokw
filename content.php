@@ -49,6 +49,10 @@ $only_excerpts = is_home() || is_year() || is_month() || is_search() || is_archi
 				<?php makotokw_breadcrumbs(); ?>
 			<?php endif ?>
 			<?php the_content(); ?>
+			<?php if ( JETPACK_DEV_DEBUG === true ) : ?>
+				<div id="jp-relatedposts" class="jp-relatedposts" style="display: block;">
+				</div>
+			<?php endif ?>
 			<?php
 				wp_link_pages(
 					array(
@@ -73,9 +77,9 @@ $only_excerpts = is_home() || is_year() || is_month() || is_search() || is_archi
 		<?php if ( $is_detail_page ) : ?>
 			<?php if ( 'post' == $post_type ) : ?>
 				<?php makotokw_list_nav(); ?>
-				<?php makotokw_section_category_and_tag( 'Tag' ); ?>
-				<?php makotokw_related_portfolio(); ?>
-				<?php makotokw_related_posts(); ?>
+				<?php makotokw_section_category_and_tag( __( 'Tag', 'makotokw' ) ); ?>
+				<?php makotokw_related_portfolio( __( 'Related Software', 'makotokw' ) ); ?>
+				<?php makotokw_related_posts( __( 'Related Posts', 'makotokw' ) ); ?>
 				<?php makotokw_content_nav( 'nav-below' ); ?>
 			<?php else : ?>
 				<div class="section section-mini section-2col section-last-updated">

@@ -35,13 +35,13 @@ function makotokw_content_nav( $nav_id ) {
 		<?php if ( is_single() ) : // navigation links for single posts ?>
 			<?php if ( get_next_post_link() ) : ?>
 				<div class="section section-mini section-2col">
-					<h2 class="section-title">Newer post</h2>
+					<h2 class="section-title"><?php _e( 'Newer post', 'makotokw' ); ?></h2>
 					<div class="section-content"><?php next_post_link( '%link', '%title' ); ?></div>
 				</div>
 			<?php endif; ?>
 			<?php if ( get_previous_post_link() ) : ?>
 				<div class="section section-mini section-2col">
-					<h2 class="section-title">Older post</h2>
+					<h2 class="section-title"><?php _e( 'Older post', 'makotokw' ); ?></h2>
 					<div class="section-content"><?php previous_post_link( '%link', '%title' ); ?></div>
 				</div>
 			<?php endif; ?>
@@ -386,8 +386,7 @@ function makotokw_share_buttons() {
 
 function makotokw_share_this() {
 	?>
-	<div id="shareThis" class="section section-mini section-2col section-share-this" data-url="<?php echo makotokw_share_permalink(); ?>">
-		<h2 class="section-title"><?php _e( 'Share This', 'makotokw' ); ?></h2>
+	<div id="shareThis" class="section section-mini section-share-this" data-url="<?php echo makotokw_share_permalink(); ?>">
 		<div class="section-content">
 			<div class="share-content">
 				<?php makotokw_share_buttons(); ?>

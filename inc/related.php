@@ -1,5 +1,5 @@
 <?php
-function makotokw_related_posts( $arg = array() ) {
+function makotokw_related_posts( $title = 'Related Software', $arg = array() ) {
 	global $post;
 
 	$rq = false;
@@ -79,7 +79,7 @@ function makotokw_related_posts( $arg = array() ) {
 	if ( $rq && $rq->have_posts() ) : ?>
 		<?php $count = 0; ?>
 		<aside class="section section-mini section-2col section-related-posts">
-			<h2 class="section-title"><?php _e( 'Related Posts', 'makotokw' ); ?></h2>
+			<h2 class="section-title"><?php echo esc_html( $title ); ?></h2>
 			<div class="section-content">
 				<ul>
 					<?php while ( $rq->have_posts() ) : ?>
@@ -96,7 +96,7 @@ function makotokw_related_posts( $arg = array() ) {
 	wp_reset_postdata();
 }
 
-function makotokw_related_portfolio() {
+function makotokw_related_portfolio( $title = 'Related Software' ) {
 	global $post;
 	unset( $portfolio );
 	$terms = get_the_terms( $post->ID, 'portfolios' );
@@ -121,7 +121,7 @@ function makotokw_related_portfolio() {
 			$rq->the_post();
 			?>
 			<section class="section section-mini section-2col section-portfolio">
-				<h2 class="section-title">Related Software</h2>
+				<h2 class="section-title"><?php echo esc_html( $title ); ?></h2>
 				<div class="section-content"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
 			</section>
 		<?php
