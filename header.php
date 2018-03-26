@@ -54,7 +54,7 @@
 <div class="site">
 	<header id="siteHeader" class="site-header" role="banner">
 		<nav class="site-header-nav">
-			<div class="site-header-menu1">
+			<div class="site-header-nav-item1">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="site-header-logo">
 					<span class="site-header-logo-text" style="display: none">
 						<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>
@@ -69,7 +69,19 @@
 </svg>
 				</a>
 			</div>
-			<div class="site-header-menu2">
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'header',
+					'container_class' => 'site-header-nav-item2',
+					'menu_class' => 'header-menu',
+					'link_before' => '',
+					'link_after' => '',
+					'fallback_cb' => false,
+				)
+			);
+			?>
+			<div class="site-header-nav-item3">
 				<form method="get" id="siteHeaderSearchForm" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
 					<input type="text" id="siteHeaderSearchText" class="search-form-text" name="s" value="<?php echo esc_attr( get_search_query() ); ?>" placeholder="<?php _e( 'Search the site', 'makotokw' ); ?>"/>
 					<a id="siteHeaderSearchTrigger" class="search-form-trigger">

@@ -1,28 +1,24 @@
 $site-logo-image-width: 190px;
 $site-logo-image-height: 40px;
 
-$site-header-height: 55px;
+$header-height: 55px;
 $site-logo-height: 28px;
 $site-logo-height-mobile: 20px;
-$site-header-height-mobile: 48px;
-$site-header-background-color: $white;
-$site-header-border-color: $md-grey-900;
-$site-header-link-color: $md-grey-900;
-$site-header-link-over-color: $md-grey-900;
+$header-height-mobile: 48px;
 
 .site-header {
   width: 100%;
   margin: 0;
   padding: 0;
-  height: $site-header-height;
-  max-height: $site-header-height;
-  line-height: $site-header-height;
-  background: rgba($site-header-background-color, 0.5);
-  border-bottom: 1px solid rgba($site-header-border-color, 0.3);
+  height: $header-height;
+  max-height: $header-height;
+  line-height: $header-height;
+  background: rgba($header-background-color, 0.5);
+  border-bottom: 1px solid rgba($header-border-color, 0.3);
   a {
-    color: $site-header-link-color;
+    color: $header-link-color;
     &:hover {
-      color: $site-header-link-over-color;
+      color: $header-link-over-color;
     }
   }
   position: fixed;
@@ -36,38 +32,35 @@ $site-header-link-over-color: $md-grey-900;
   transition: transform 200ms linear;
 
   @include smaller-than-desktop-screen {
-    height: $site-header-height-mobile;
-    max-height: $site-header-height-mobile;
-    line-height: $site-header-height-mobile;
+    height: $header-height-mobile;
+    max-height: $header-height-mobile;
+    line-height: $header-height-mobile;
   }
 }
 
 .site-header-logo {
   .site-header-logo-svg {
-    fill: $site-header-link-color;
-    margin-top: ($site-header-height - $site-logo-height) / 2;
+    fill: $header-link-color;
+    margin-top: ($header-height - $site-logo-height) / 2;
     width: $site-logo-image-width * ($site-logo-height / $site-logo-image-height);
     height: $site-logo-height;
     .site-header-logo-svg-eve {
       fill: $monstersinc-blue;
     }
     @include smaller-than-desktop-screen {
-      margin-top: ($site-header-height-mobile - $site-logo-height-mobile) / 2;
+      margin-top: ($header-height-mobile - $site-logo-height-mobile) / 2;
       width: $site-logo-image-width * ($site-logo-height-mobile / $site-logo-image-height);
       height: $site-logo-height-mobile;
     }
   }
   .site-header-logo-svg-log {
-    fill: $site-accent-color;
+    fill: $header-accent-color;
   }
   &:hover {
     .site-header-logo-svg {
       fill: $monstersinc-blue;
       .site-header-logo-svg-eve {
-        fill: $monstersinc-blue;
-      }
-      .site-header-logo-svg-log {
-        fill: $monstersinc-blue;
+        fill: $header-accent-color;
       }
     }
   }
@@ -82,7 +75,7 @@ $site-header-link-over-color: $md-grey-900;
 }
 
 .headroom--not-top {
-  background: $site-header-background-color;
+  background: $header-background-color;
 }
 
 // text-logo
@@ -100,11 +93,45 @@ $site-header-link-over-color: $md-grey-900;
   // for scrollbar
   padding: 0 20px 0 15px;
   display: flex;
-  .site-header-menu1 {
-    flex: 1 1 auto;
-  }
-  .site-header-menu2 {
+  .site-header-nav-item1 {
     flex: 0 0 auto;
+  }
+  .site-header-nav-item2 {
+    flex: 1 0 auto;
+  }
+  .site-header-nav-item3 {
+    flex: 0 1 auto;
+  }
+  .header-menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0 10px !important;
+    padding: 0 !important;
+    li {
+      margin: 0 4px;
+      a {
+        font-size: $font-size-small;
+        border: 1px solid $header-accent-color;
+        color: $header-accent-color;
+        border-radius: 4px;
+        padding: 8px 16px;
+        &:hover {
+          border: 1px solid $monstersinc-blue;
+          color: $monstersinc-blue;
+        }
+      }
+    }
+    @include smaller-than-desktop-screen {
+      li {
+        a {
+          padding: 6px 12px;
+        }
+      }
+    }
+    @include smaller-than-tablet-screen {
+      display: none;
+    }
   }
   .search-form {
     .search-form-text {

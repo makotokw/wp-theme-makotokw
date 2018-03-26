@@ -90,20 +90,27 @@ $state-info-bg: lighten(#d9edf7, 7%);
 $state-info-border: darken(adjust-hue($state-info-bg, -10), 7%);
 
 $site-default-text: $md-grey-800;
+// for h1-h5
 $site-header-text: $md-grey-900;
 $site-default-bg: $white;
 $site-neutral-color: $md-grey-500;
 $site-accent-color: $blue-light;
 $site-dark-accent-color: $md-grey-800;
 $site-default-border: $brand-default-border;
-$site-progress-border: $site-accent-color;
 
-$site-default-link: $site-accent-color;
+$site-default-link: $blue;
 $site-default-link-over: darken($site-default-link, 10%);
 $site-neutral-link: $site-neutral-color;
 $site-neutral-link-over: darken($site-neutral-link, 10%);
 
 $navi-default-bg: $site-default-bg;
+
+$header-background-color: $white;
+$header-border-color: $md-grey-900;
+$header-link-color: $md-grey-900;
+$header-link-over-color: $md-grey-900;
+$header-accent-color: $blue;
+$site-progress-border: $header-accent-color;
 
 $footer-default-text: $md-grey-600;
 $footer-default-bg: $md-grey-50;
