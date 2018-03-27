@@ -161,7 +161,11 @@ function makotokw_scripts() {
 		wp_enqueue_script( 'jquery-migrate' );
 	}
 
-	wp_enqueue_style( 'makotokw-fonts', esc_url_raw( makotokw_fonts_url() ), array(), null );
+	$fonts_urls = makotokw_fonts_urls();
+	for ( $fi = 0; $fi < count( $fonts_urls ); $fi++ ) {
+		wp_enqueue_style( 'makotokw-fonts' . $fi, esc_url_raw( $fonts_urls[ $fi ] ), array(), null );
+	}
+
 	wp_enqueue_style( 'makotokw-style', get_stylesheet_uri(), array(), THEME_STYLE_CSS_REV );
 
 	wp_register_script( 'makotokw-script', get_template_directory_uri() . '/style.js', array( 'jquery' ), THEME_STYLE_SCRIPT_REV, true );
@@ -239,13 +243,12 @@ if ( ! is_admin() ) {
 	add_filter( 'style_loader_tag', 'makotokw_remove_style_id' );
 }
 
-function makotokw_fonts_url() {
-	$fonts_url = '';
+function makotokw_fonts_urls() {
+	$urls = array();
 
-	$fonts[] = 'Montserrat:400,700';
-	$fonts[] = 'Lato:300,400,700,300italic,400italic,700italic';
-
-	if ( $fonts ) {
+	$fonts = array();
+	$fonts[] = 'Quicksand:300,400,700,400italic,700italic';
+	if ( ! empty( $fonts ) ) {
 		$fonts_url = add_query_arg(
 			array(
 				'family' => implode( '|', $fonts ),
@@ -253,9 +256,10 @@ function makotokw_fonts_url() {
 			),
 			'https://fonts.googleapis.com/css'
 		);
+		$urls[] = $fonts_url;
 	}
 
-	return $fonts_url;
+	return $urls;
 }
 
 /**
