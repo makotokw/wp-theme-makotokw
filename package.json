@@ -7,11 +7,11 @@
     "url": "https://github.com/makotokw/wp-theme-makotokw"
   },
   "devDependencies": {
+    "autoprefixer": "^8.2.0",
     "browser-sync": "^2.23.6",
     "customizr": "github:modernizr/customizr#develop",
     "del": "^2.2.0",
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^3.1.0",
+    "gulp": "^3.9.1",
     "gulp-bower-normalize": "^1.1.1",
     "gulp-concat": "^2.6.0",
     "gulp-connect-php": "^1.0.3",
@@ -21,6 +21,7 @@
     "gulp-load-plugins": "^1.1.0",
     "gulp-modernizr": "^2.0.0",
     "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^7.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-ruby-sass": "^2.1.0",
     "gulp-shell": "^0.5.1",
@@ -29,7 +30,8 @@
     "gulp-util": "^3.0.7",
     "jshint-stylish": "^2.1.0",
     "main-bower-files": "^2.13.1",
-    "node-notifier": "^5.2.1"
+    "node-notifier": "^5.2.1",
+    "postcss": "^6.0.21"
   },
   "dependencies": {}
 }

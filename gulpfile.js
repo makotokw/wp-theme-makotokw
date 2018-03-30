@@ -126,10 +126,12 @@ function sass(env) {
       });
     })
     .pipe(plugins.plumber())
-    .pipe(plugins.autoprefixer({
-      browsers: ['last 2 versions'],
-      cascade: false
-    }))
+    .pipe(plugins.postcss([
+      require('autoprefixer')({
+        browsers: ['last 2 versions'],
+        cascade: false
+      })
+    ]))
     .pipe(plugins.if(isDebug, plugins.sourcemaps.write()))
     .pipe(gulp.dest('.'))
     .pipe(reload({stream: true, once: true}));
