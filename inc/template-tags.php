@@ -67,7 +67,6 @@ function makotokw_list_nav() {
 	global $post;
 
 	if ( $mylist = get_mylist( $post ) ) {
-
 		$first_post = get_first_post_on_mylist( $post );
 		$prev_post  = get_adjacent_post_on_mylist( $post, true );
 		$next_post  = get_adjacent_post_on_mylist( $post, false );
@@ -148,14 +147,54 @@ function makotokw_pagination( $pages = '', $range = 3 ) {
 	}
 }
 
+/**
+ * @return bool|string
+ * @see https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference?hl=ja#contentGroup
+ */
+function makotokw_get_category_content_group() {
+	/** @var WP_Query $wp_query */
+	global $wp_query;
+	$cat = null;
+	if ( is_single() ) {
+
+		$cats = get_the_category();
+		if ( ! empty( $cats ) ) {
+			$cat = $cats[0];
+		}
+	} elseif ( is_category() ) {
+		$cat = $wp_query->get_queried_object();
+	}
+	if ( $cat ) {
+		if ( $cat->category_parent ) {
+			return rtrim( get_category_parents( $cat->term_id, false, '/', true ), '/' );
+		}
+		return $cat->slug;
+	}
+	return false;
+}
+
 function makotokw_google_analytics() {
 	if ( true === WP_THEME_DEBUG || false === WP_THEME_GOOGLE_ANALYTICS_ACCOUNT ) {
 		return;
 	}
+	if ( is_user_logged_in() ) {
+		return;
+	}
+	$content_group1 = makotokw_get_category_content_group();
 	?>
-	<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-		ga('create', '<?php echo WP_THEME_GOOGLE_ANALYTICS_ACCOUNT; ?>', '<?php echo WP_THEME_GOOGLE_ANALYTICS_DOMAIN; ?>');
-		ga('send', 'pageview');
+	<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo WP_THEME_GOOGLE_ANALYTICS_ACCOUNT; ?>"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', '<?php echo WP_THEME_GOOGLE_ANALYTICS_ACCOUNT; ?>', {
+			'linker': {
+				'domains': ['<?php echo WP_THEME_GOOGLE_ANALYTICS_DOMAIN; ?>']
+			}
+		});
+		<?php if ( $content_group1 ) : ?>
+		gtag('set', {'content_group1': '<?php echo $content_group1; ?>'});
+		<?php endif ?>
 	</script>
 	<?php
 }
