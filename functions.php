@@ -203,7 +203,7 @@ function makotokw_is_noindex() {
 				$paged = $wp_query->get( 'paged', 1 );
 				// old pages should be noindexes
 				return $paged > 3;
-			} else if ( is_mylist() ) {
+			} elseif ( is_mylist() ) {
 				return false;
 			}
 			return true;
