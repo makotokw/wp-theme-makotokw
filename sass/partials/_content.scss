@@ -99,6 +99,7 @@ $entry-header-color: $site-accent-color;
     line-height: $line-height-base;
   }
   img {
+    display: block;
     margin: $block-margin auto;
   }
   h1,h2,h3,h4,h5,h6 {
@@ -228,14 +229,6 @@ $entry-header-color: $site-accent-color;
 .comment-content img,
 .widget img {
   max-width: 100%;
-}
-
-.entry-content img,
-.entry-summary img,
-.comment-content img[height],
-img[class*="align"],
-img[class*="wp-image-"],
-img[class*="attachment-"] {
 }
 
 img.size-full,
