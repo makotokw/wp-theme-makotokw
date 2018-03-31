@@ -2578,10 +2578,12 @@ object {
 .comment-form-comment textarea {
   width: 100%; }
 
-@media screen and (max-width: 767px) {
-  .comment-form input,
-  .comment-form textarea {
-    width: 95%; } }
+.comment-form {
+  margin-top: 8px; }
+  @media screen and (max-width: 767px) {
+    .comment-form input,
+    .comment-form textarea {
+      width: 95%; } }
 
 .list-categories {
   list-style: none;
@@ -2617,44 +2619,50 @@ object {
     padding: 0; }
 
 .site-author {
+  color: #fff;
+  background-color: #2ba6cb;
+  margin: 16px 0 0; }
+
+.site-author-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   color: #fff;
-  background-color: #2ba6cb;
-  padding: 8px; }
-  .site-author .site-author-img {
+  padding: 8px;
+  background-color: #2ba6cb; }
+  .site-author-content .site-author-img {
     -webkit-box-flex: 0;
-    -ms-flex: 0 1 150px;
-    flex: 0 1 150px;
+    -ms-flex: 0 1 100px;
+    flex: 0 1 100px;
     -ms-flex-item-align: center;
     align-self: center;
-    width: 150px;
-    height: 150px;
-    border-radius: 150px; }
-    @media screen and (max-width: 991px) {
-      .site-author .site-author-img {
-        -webkit-box-flex: 0;
-        -ms-flex: 0 1 90px;
-        flex: 0 1 90px;
-        width: 90px;
-        height: 90px;
-        border-radius: 90px; } }
-  .site-author .site-author-profile {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px; }
+  .site-author-content .site-author-profile {
     -webkit-box-flex: 1;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
-    padding-left: 8px; }
-  .site-author a {
+    padding-left: 16px;
+    line-height: 1.5; }
+  .site-author-content a {
     color: #84ffff; }
-    .site-author a:hover {
+    .site-author-content a:hover {
       color: #18ffff; }
   @media screen and (max-width: 767px) {
-    .site-author {
+    .site-author-content {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
       -ms-flex-direction: column;
-      flex-direction: column; } }
+      flex-direction: column; }
+      .site-author-content .site-author-img {
+        margin-top: 16px;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 1 75px;
+        flex: 0 1 75px;
+        width: 75px;
+        height: 75px;
+        border-radius: 75px; } }
 
 .site-footer {
   border-top: 1px solid #ddd;

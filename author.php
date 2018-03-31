@@ -6,7 +6,7 @@ $page_posts->query( 'pagename=author&post_status=private' );
 	<?php $page_posts->the_post(); ?>
 	<section class="site-author">
 		<div class="container">
-			<div class="site-author">
+			<div class="site-author-content">
 				<img class="site-author-img" src="<?php echo WP_THEME_AUTHOR_GRAVATOR_IMAGE; ?>?size=300" />
 				<div class="site-author-profile">
 					<?php the_content(); ?>

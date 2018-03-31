@@ -69,18 +69,20 @@
 </svg>
 				</a>
 			</div>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'header',
-					'container_class' => 'site-header-nav-item2',
-					'menu_class' => 'header-menu',
-					'link_before' => '',
-					'link_after' => '',
-					'fallback_cb' => false,
-				)
-			);
-			?>
+			<div class="site-header-nav-item2">
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'header',
+						'container_class' => 'header-menu-container',
+						'menu_class' => 'header-menu',
+						'link_before' => '',
+						'link_after' => '',
+						'fallback_cb' => false,
+					)
+				);
+				?>
+			</div>
 			<div class="site-header-nav-item3">
 				<form method="get" id="siteHeaderSearchForm" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
 					<input type="text" id="siteHeaderSearchText" class="search-form-text" name="s" value="<?php echo esc_attr( get_search_query() ); ?>" placeholder="<?php _e( 'Search the site', 'makotokw' ); ?>"/>

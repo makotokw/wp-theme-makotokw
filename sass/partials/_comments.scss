@@ -184,6 +184,7 @@
 
 // comment-form without JetPack
 .comment-form {
+  margin-top: 8px;
   @include smaller-than-tablet-screen {
     input,
     textarea {
