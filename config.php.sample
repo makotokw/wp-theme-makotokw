@@ -12,10 +12,11 @@ define( 'WP_THEME_AUTHOR_GITHUB', 'username' );
 define( 'WP_THEME_AUTHOR_GRAVATOR_IMAGE', 'https://ja.gravatar.com/userimage/xxx/xxx.jpg' );
 define( 'WP_THEME_EXCLUDE_CATEGORY', '' );
 define( 'WP_THEME_MEMO_POST_ID', -1 );
+define( 'WP_THEME_FEATURED_TAG', 'slug1,slug2' );
 define( 'WP_THEME_OGP', true );
 define( 'WP_THEME_OGP_LOCALE', 'ja_JP' );
 define( 'WP_THEME_OGP_FB_APPID', 'xxxxxxxx' );
-define( 'WP_THEME_OGP_FB_ADMINS', 'username.kw' );
+define( 'WP_THEME_OGP_FB_ADMINS', 'username' );
 define( 'WP_THEME_COUNT_API', '' );
 
 function makotokw_credits() {

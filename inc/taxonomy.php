@@ -110,6 +110,46 @@ function makotokw_taxonomy_init() {
 	flush_rewrite_rules();
 }
 
+/**
+ * feature taxonomy by post
+ * @param $post
+ * @return array
+ */
+function makotokw_get_featured_taxonomy( $post ) {
+	$taxonomies = array();
+
+	// 1. find first portfolio
+	$terms = get_the_terms( $post->ID, 'portfolios' );
+	if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
+		$taxonomies[] = array_shift( $terms );
+	}
+
+	// 2. find featured tag
+	if ( defined( 'WP_THEME_FEATURED_TAG' ) ) {
+		$featured_tag_slugs = explode( ',', WP_THEME_FEATURED_TAG );
+		$tags = get_the_tags( $post->ID );
+		if ( is_array( $tags ) && count( $tags ) ) {
+			$tags = array_filter(
+				$tags,
+				function ( $t ) use ( $featured_tag_slugs ) {
+					return in_array( $t->slug, $featured_tag_slugs );
+				}
+			);
+			if ( ! empty( $tags ) ) {
+				$taxonomies[] = array_shift( $tags );
+			}
+		}
+	}
+
+	// 3. find first category
+	$categories = get_the_category( $post->ID );
+	if ( ! empty( $categories ) ) {
+		$taxonomies[] = array_shift( $categories );
+	}
+
+	return $taxonomies;
+}
+
 function is_mylist() {
 	return is_tax( 'mylist' );
 }
@@ -132,7 +172,8 @@ function get_mylist( $post ) {
 //add_action('pre_get_posts', 'mylist_pre_get_posts');
 
 function get_first_post_on_mylist( $post ) {
-	if ( $mylist = get_mylist( $post ) ) {
+	$mylist = get_mylist( $post );
+	if ( $mylist ) {
 		$mylist_slug = $mylist->slug;
 		if ( ! empty( $mylist_slug ) ) {
 			$q = new WP_Query(
@@ -143,7 +184,7 @@ function get_first_post_on_mylist( $post ) {
 				)
 			);
 			if ( $q->have_posts() ) {
-				return $adjacent_post = $q->next_post();
+				return $q->next_post();
 			}
 		}
 	}
@@ -151,7 +192,8 @@ function get_first_post_on_mylist( $post ) {
 }
 
 function get_adjacent_post_on_mylist( $post, $previous = true ) {
-	if ( $mylist = get_mylist( $post ) ) {
+	$mylist = get_mylist( $post );
+	if ( $mylist ) {
 		$mylist_slug = $mylist->slug;
 		if ( ! empty( $mylist_slug ) ) {
 			$date_query_compare = $previous ? 'before' : 'after';
@@ -165,7 +207,7 @@ function get_adjacent_post_on_mylist( $post, $previous = true ) {
 				)
 			);
 			if ( $q->have_posts() ) {
-				return $adjacent_post = $q->next_post();
+				return $q->next_post();
 			}
 		}
 	}
