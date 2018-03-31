@@ -2882,7 +2882,7 @@ var prettyPrintOne, prettyPrint;
         }
         function s() {
             var e = c(window).height(), v = o - h.height(), t = e - v;
-            l && (t -= 32), t <= 0 && (t = 1), h.height(t);
+            l && (t -= 32), t <= 0 ? (h.hide(), h.height(1)) : (h.show(), h.height(t));
         }
         function r() {
             f || (f = !0, Modernizr.requestanimationframe && requestAnimationFrame(t));
@@ -2890,7 +2890,8 @@ var prettyPrintOne, prettyPrint;
         c.isFunction(prettyPrint) && prettyPrint();
         var i = c("#siteProgress"), m = 0, o = 0, f = !1;
         z(), e(), c(window).on("sticky", s).scroll(a).resize(n), l = c("#wpadminbar").length > 0, 
-        c("#siteHeader").headroom(), s(), window.FontAwesome && (c(".enclosure-github").each(function() {
+        c("#siteHeader").headroom(), s(), c("#jp-relatedposts").insertBefore(c("#shareThis")), 
+        window.FontAwesome && (c(".enclosure-github").each(function() {
             c(this).prepend(FontAwesome.icon(FontAwesome.findIconDefinition({
                 prefix: "fab",
                 iconName: "github-alt"

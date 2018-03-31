@@ -5,6 +5,7 @@
     .amazonjs_item {
       padding: 5px 0 15px 0; } }
   .amazonjs_item .amazonjs_image img {
+    -webkit-box-shadow: none;
     box-shadow: none;
     border: none; }
   .amazonjs_item .amazonjs_info h4 {
