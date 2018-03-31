@@ -9,6 +9,7 @@ define( 'WP_THEME_GOOGLE_ANALYTICS_DOMAIN', 'example.com' );
 define( 'WP_THEME_ITUNES_AFFILIATE_ID', false );
 define( 'WP_THEME_AUTHOR_TWITTER', 'username' );
 define( 'WP_THEME_AUTHOR_GITHUB', 'username' );
+define( 'WP_THEME_AUTHOR_GRAVATOR_IMAGE', 'https://ja.gravatar.com/userimage/xxx/xxx.jpg' );
 define( 'WP_THEME_EXCLUDE_CATEGORY', '' );
 define( 'WP_THEME_MEMO_POST_ID', -1 );
 define( 'WP_THEME_OGP', true );

@@ -54,29 +54,6 @@
 
   var $footerMargin = $('#footerMargin');
 
-  // $('#siteLogo').each(function () {
-  //   var $img = $(this);
-  //   if (Modernizr.svg) {
-  //     var id = $img.attr('id'),
-  //       cls = $img.attr('class');
-  //
-  //     $.get($img.attr('src'), function (data) {
-  //       var $svg = $(data).find('svg');
-  //       if (typeof id !== 'undefined') {
-  //         $svg.attr('id', id);
-  //       }
-  //       if (typeof cls !== 'undefined') {
-  //         $svg.attr('class', cls + ' replaced-svg');
-  //       }
-  //       // Remove any invalid XML tags as per https://validator.w3.org/
-  //       $svg = $svg.removeAttr('xmlns:a');
-  //       $img.replaceWith($svg);
-  //     }, 'xml');
-  //   } else {
-  //     $img.attr('src', $img.attr('src').replace(/\.svg/gi, '.png'));
-  //   }
-  // });
-
   $(document).ready(function () {
     if ($.isFunction(prettyPrint)) {
       prettyPrint();
@@ -140,9 +117,12 @@
         diff -= 32;
       }
       if (diff <= 0) {
-        diff = 1;
+        $footerMargin.hide();
+        $footerMargin.height(1);
+      } else {
+        $footerMargin.show();
+        $footerMargin.height(diff);
       }
-      $footerMargin.height(diff);
     }
 
     function requestUpdate() {
