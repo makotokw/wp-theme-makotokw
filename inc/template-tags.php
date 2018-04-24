@@ -188,13 +188,13 @@ function makotokw_google_analytics() {
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
 		gtag('config', '<?php echo WP_THEME_GOOGLE_ANALYTICS_ACCOUNT; ?>', {
+			<?php if ( $content_group1 ) : ?>
+			'content_group1' : '<?php echo $content_group1; ?>',
+			<?php endif ?>
 			'linker': {
 				'domains': ['<?php echo WP_THEME_GOOGLE_ANALYTICS_DOMAIN; ?>']
 			}
 		});
-		<?php if ( $content_group1 ) : ?>
-		gtag('set', {'content_group1': '<?php echo $content_group1; ?>'});
-		<?php endif ?>
 	</script>
 	<?php
 }
