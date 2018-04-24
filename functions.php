@@ -5,7 +5,7 @@
  * @package makotokw
  */
 
-define( 'THEME_STYLE_CSS_REV', '201803311316' );
+define( 'THEME_STYLE_CSS_REV', '201804240905' );
 define( 'THEME_STYLE_SCRIPT_REV', '201803311316' );
 define( 'THEME_DATE_FORMAT', 'Y/m/d' );
 

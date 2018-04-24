@@ -108,15 +108,12 @@ $entry-header-color: $site-accent-color;
   .post-single & {
     h2 {
       font-size: $entry-h2-font-size;
-      margin: 1em -.5em;
-      padding: .7em .7em;
-      //border: 1px solid $entry-header-color;
-      border-left: .4em solid $entry-header-color;
-      background-color: #f5fafd;
+      margin: 1em -15px;
+      padding: .7em 1em;
+      //border: 2px solid $entry-header-color;
       //border-radius: $border-radius-base;
-      //background: $entry-header-color;
-      //color: $white;
-      //box-shadow: 0 0 45px rgba($site-dark-accent-color, 0.25) inset;
+      border-left: .5em solid $entry-header-color;
+      //background-color: #f5fafd;
     }
     h3 {
       font-size: $entry-h3-font-size;
@@ -135,7 +132,7 @@ $entry-header-color: $site-accent-color;
     @include smaller-than-desktop-screen {
       h2 {
         font-size: $entry-h2-small-font-size;
-        padding: .7em .5em;
+        padding: .7em .7em;
       }
       h3 {
         padding: .4em 0;
