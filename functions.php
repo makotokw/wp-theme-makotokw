@@ -134,12 +134,6 @@ function makotokw_get_meta_description() {
 	$description = '';
 	if ( is_home() ) {
 		$description = get_bloginfo( 'description' );
-	} elseif ( is_single() ) {
-		if ( have_posts() ) {
-			the_post();
-			$description = get_the_excerpt();
-			rewind_posts();
-		}
 	} elseif ( is_archive() ) {
 		$description = get_the_archive_description();
 	}
