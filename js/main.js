@@ -140,7 +140,10 @@
     //lazyLoadShareCount();
     stickyFooter();
 
-    $('#jp-relatedposts').insertBefore($('#shareThis'));
+    var $jetPackRelatedPosts = $('#jp-relatedposts'), $shareThis = $('#shareThis');
+    if ($shareThis.length > 0) {
+      $jetPackRelatedPosts.insertBefore($shareThis);
+    }
 
     if (window.FontAwesome) {
       $('.enclosure-github').each(function () {

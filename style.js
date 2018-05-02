@@ -2890,8 +2890,9 @@ var prettyPrintOne, prettyPrint;
         c.isFunction(prettyPrint) && prettyPrint();
         var i = c("#siteProgress"), m = 0, o = 0, f = !1;
         z(), e(), c(window).on("sticky", s).scroll(a).resize(n), l = c("#wpadminbar").length > 0, 
-        c("#siteHeader").headroom(), s(), c("#jp-relatedposts").insertBefore(c("#shareThis")), 
-        window.FontAwesome && (c(".enclosure-github").each(function() {
+        c("#siteHeader").headroom(), s();
+        var M = c("#jp-relatedposts"), H = c("#shareThis");
+        H.length > 0 && M.insertBefore(H), window.FontAwesome && (c(".enclosure-github").each(function() {
             c(this).prepend(FontAwesome.icon(FontAwesome.findIconDefinition({
                 prefix: "fab",
                 iconName: "github-alt"

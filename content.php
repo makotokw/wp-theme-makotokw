@@ -67,7 +67,7 @@ $only_excerpts = is_home() || is_year() || is_month() || is_search() || is_archi
 		<div class="entry-meta">
 			<?php makotokw_author(); ?>
 		</div>
-		<?php if ( ! is_preview() && ! $only_excerpts ) : ?>
+		<?php if ( ! $only_excerpts ) : ?>
 			<?php if ( $is_detail_page ) : ?>
 				<?php makotokw_share_this(); ?>
 				<?php else : ?>
