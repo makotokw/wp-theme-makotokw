@@ -220,7 +220,7 @@ function makotokw_breadcrumbs() {
 	if ( ! is_home() && ! is_404() ) {
 		$divider = '&nbsp;<i class="fas fa-angle-right"></i>&nbsp;';
 		?>
-		<div itemscope itemtype="https://schema.org/Breadcrumb" class="breadcrumb">
+		<div itemscope itemtype="http://schema.org/Breadcrumb" class="breadcrumb">
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fas fa-home"></i></a><?php echo $divider; ?>
 		<?php if ( is_category() ) : ?>
 			<?php $term = $wp_query->get_queried_object(); ?>
@@ -440,7 +440,7 @@ function makotokw_about_me() {
 	<div class="section section-mini section-2col section-about-me">
 		<h2 class="section-title"><?php _e( 'About', 'makotokw' ); ?></h2>
 		<div class="section-content">
-			<div itemprop="author copyrightHolder editor" itemscope itemtype="https://schema.org/Person">
+			<div itemprop="author copyrightHolder editor" itemscope itemtype="http://schema.org/Person">
 			<?php echo str_replace( '<img ', '<img itemprop="image" ', get_avatar( get_the_author_meta( 'user_email' ), '48', '', get_the_author() ) ); ?>
 			</div>
 		</div>
@@ -597,7 +597,7 @@ function makotokw_section_category_and_tag( $title = 'Tag' ) {
 	<section class="section section-mini section-2col section-category-tag">
 		<h2 class="section-title"><?php echo esc_html( $title ); ?></h2>
 		<div class="section-content">
-			<?php makotokw_the_category_and_tag(); ?></a>
+			<?php makotokw_the_category_and_tag(); ?>
 		</div>
 	</section>
 	<?php

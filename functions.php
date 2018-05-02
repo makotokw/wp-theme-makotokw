@@ -112,7 +112,8 @@ function makotokw_move_admin_bar() {
 		return;
 	}
 	?>
-<style type="text/css" media="screen">
+	<!--suppress CssUnusedSymbol -->
+	<style type="text/css" media="screen">
 	html { margin-top: 0 !important; margin-bottom: 32px !important; }
 	* html body { margin-top: 0 !important; margin-bottom: 32px !important; }
 	@media screen and ( max-width: 782px ) {
@@ -237,15 +238,21 @@ function makotokw_is_comment_form_showing( $post = null ) {
  * add elementId to style to concat it by PageSpeed
  */
 if ( ! is_admin() ) {
+	/**
+	 * @param $link
+	 * @return null|string|string[]
+	 */
 	function makotokw_remove_style_id( $link ) {
 		return preg_replace( "/id='(?:gfm|thickbox|amazonjs|makotokw).*-css'/", '', $link );
 	}
 	add_filter( 'style_loader_tag', 'makotokw_remove_style_id' );
 }
 
+/**
+ * @return array
+ */
 function makotokw_fonts_urls() {
 	$urls = array();
-
 	$fonts = array();
 	$fonts[] = 'Quicksand:300,400,700,400italic,700italic';
 	if ( ! empty( $fonts ) ) {

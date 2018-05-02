@@ -71,6 +71,7 @@ gulp.task('modernizr', function () {
     './js/**/*.js',
     '!./js/vendor/modernizr/modernizr.js'
   ])
+    // https://github.com/rejas/gulp-modernizr
     // https://github.com/Modernizr/customizr#config-file
     .pipe(plugins.modernizr({
       classPrefix: 'has-',
