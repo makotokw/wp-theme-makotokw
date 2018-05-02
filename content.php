@@ -21,7 +21,7 @@ $only_excerpts = is_home() || is_year() || is_month() || is_search() || is_archi
 				<span class="entry-date date updated"><?php makotokw_posted_on(); ?></span>
 				<?php if ( makotokw_is_old_post() ) : ?>
 					<?php
-						$post_time = date_create( get_the_date( 'c' ) );
+						$post_time = date_create( get_the_date( DATE_ISO8601 ) );
 						$interval = $post_time->diff( date_create() );
 					?>
 					<?php if ( 1 <= $interval->y ) : ?>

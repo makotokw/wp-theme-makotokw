@@ -332,18 +332,22 @@ function makotokw_list_categories( $all = false ) {
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function makotokw_posted_on() {
+	$time = makotokw_get_the_updated_date();
+	if ( ! $time ) {
+		$time = get_post_time( DATE_ISO8601, false, null, true );
+	}
 	printf(
 		__( '<time class="published updated time" datetime="%1$s">%2$s</time>', 'makotokw' ),
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_post_time( THEME_DATE_FORMAT ) )
+		esc_attr( $time ),
+		esc_html( get_post_time( THEME_DATE_FORMAT, false, null, true ) )
 	);
 }
 
 function makotokw_updated_on() {
 	printf(
 		__( '<time class="updated time" datetime="%1$s">%2$s</time>', 'makotokw' ),
-		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_the_modified_time( THEME_DATE_FORMAT ) )
+		esc_attr( get_post_modified_time( DATE_ISO8601, false, null, true ) ),
+		esc_html( get_post_modified_time( THEME_DATE_FORMAT, false, null, true ) )
 	);
 }
 

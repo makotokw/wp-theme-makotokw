@@ -265,8 +265,18 @@ function makotokw_fonts_urls() {
 		);
 		$urls[] = $fonts_url;
 	}
-
 	return $urls;
+}
+
+function makotokw_get_the_updated_date( $format = DATE_ISO8601 ) {
+	$values = get_post_custom_values( 'makotokw_updatedat' );
+	if ( $values ) {
+		$time = strtotime( $values[0] );
+		if ( $time ) {
+			return date_i18n( $format, $time );
+		}
+	}
+	return false;
 }
 
 /**

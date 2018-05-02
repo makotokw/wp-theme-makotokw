@@ -101,8 +101,8 @@ function ogp_post_tag() {
 			<?php else : ?>
 <meta property="og:description" content="<?php bloginfo( 'description' ); ?>"/>
 			<?php endif ?>
-<meta property="article:published_time" content="<?php echo get_post_time( 'c' ); ?>"/>
-<meta property="article:modified_time" content="<?php echo get_the_modified_time( 'c' ); ?>"/>
+<meta property="article:published_time" content="<?php echo get_post_time( DATE_ISO8601, false, null, true ); ?>"/>
+<meta property="article:modified_time" content="<?php echo get_post_modified_time( DATE_ISO8601, false, null, true ); ?>"/>
 			<?php if ( $og_section = ogp_post_section() ) : ?>
 <meta property="article:section" content="<?php echo esc_attr( $og_section ); ?>"/>
 			<?php endif ?>
