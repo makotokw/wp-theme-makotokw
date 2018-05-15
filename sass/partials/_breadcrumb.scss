@@ -7,6 +7,7 @@
   font-size: $font-size-base;
   color: $site-neutral-color;
   line-height: $line-height-small;
+  font-weight: 700;
 
   .fa {
     font-size: $font-size-base;
@@ -23,7 +24,7 @@
     }
   }
   .breadcrumb-last {
-    font-weight: bold;
+    font-weight: 700;
   }
 }
 

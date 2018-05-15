@@ -67,8 +67,12 @@
 
   .entry-meta {
     margin: 8px 0 0;
-    font-weight: 400;
+    font-weight: 700;
     line-height: $line-height-small;
+
+    .time {
+      font-weight: 700;
+    }
 
     .tag-links {
       text-transform: capitalize;

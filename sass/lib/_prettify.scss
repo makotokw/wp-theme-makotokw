@@ -77,8 +77,8 @@
 
 @media screen {
   .code-frame {
-    border: $block-border-width solid $block-default-border;
-    background-color: $white;
+    border: none;
+    background-color: $code-default-bg;
     padding: 0;
     padding-top: $block-padding * 1/2;
     padding-left: $block-padding * 1/2;

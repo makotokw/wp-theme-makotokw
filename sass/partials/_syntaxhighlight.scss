@@ -5,14 +5,14 @@
   // Inline code
   code {
     margin: 2px 4px;
-    padding: 2px 4px;
+    padding: 4px 8px;
     color: $brand-primary-text;
-    background-color: $white;
-    border: $site-border-width solid $site-default-border;
+    border: none;
+    background-color: $code-default-bg;
     //white-space: nowrap;
   }
 
-  .code > pre /* CodeRay by GFM plubins */
+  .code > pre /* CodeRay by GFM plugins */
   {
     color: #000;
   }
