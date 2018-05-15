@@ -317,6 +317,8 @@ function makotokw_quicktags() {
 				QTags.addButton('AA', 'aa', '<span class="aa">', '</span>');
 				QTags.addButton('big', 'big', '<span class="big">', '</span>');
 
+				QTags.addButton('figure', 'figure', '<figure>', '<figcaption>Caption</figcaption></figure>');
+
 				$.each(['', 'github', 'qiita', 'evernote'], function (i, t) {
 					var cls = (t === '') ? 'enclosure' : 'enclosure-' + t;
 					QTags.addButton(cls, cls, '<div class="' + cls + '">', '</div>');

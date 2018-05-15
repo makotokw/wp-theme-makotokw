@@ -102,6 +102,19 @@ $entry-header-color: $site-accent-color;
     display: block;
     margin: $block-margin auto;
   }
+  figure {
+    margin: $block-margin auto;
+    img {
+      margin: 0 auto;
+    }
+    figcaption {
+      margin-top: .5em;
+      font-weight: 400;
+      color: $md-grey-700;
+      line-height: $line-height-small;
+      text-align: center;
+    }
+  }
   h1,h2,h3,h4,h5,h6 {
     font-family: $font-family-base;
   }
