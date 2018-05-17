@@ -837,8 +837,8 @@ svg:not(:root).svg-inline--fa {
     color: #060; } }
 @media screen {
   .code-frame {
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+    border: none;
+    background-color: #fafafa;
     padding: 0;
     padding-top: 0.8em;
     padding-left: 0.8em;
@@ -1897,7 +1897,8 @@ input[type="color"],
   text-align: center;
   font-size: 16px;
   color: #9e9e9e;
-  line-height: 1.5; }
+  line-height: 1.5;
+  font-weight: 700; }
   .breadcrumb .fa {
     font-size: 16px; }
   .archive .breadcrumb {
@@ -1907,7 +1908,7 @@ input[type="color"],
     .breadcrumb a:hover {
       color: #2284a1; }
   .breadcrumb .breadcrumb-last {
-    font-weight: bold; }
+    font-weight: 700; }
 
 .pagination {
   display: block;
@@ -2155,8 +2156,10 @@ input[type="color"],
   position: relative; }
   .entry-header .entry-meta {
     margin: 8px 0 0;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 1.5; }
+    .entry-header .entry-meta .time {
+      font-weight: 700; }
     .entry-header .entry-meta .tag-links {
       text-transform: capitalize; }
       .entry-header .entry-meta .tag-links a {
@@ -2177,6 +2180,16 @@ input[type="color"],
   .entry-content img, .entry-summary img {
     display: block;
     margin: 1.6em auto; }
+  .entry-content figure, .entry-summary figure {
+    margin: 1.6em auto; }
+    .entry-content figure img, .entry-summary figure img {
+      margin: 0 auto; }
+    .entry-content figure figcaption, .entry-summary figure figcaption {
+      margin-top: .5em;
+      font-weight: 400;
+      color: #616161;
+      line-height: 1.5;
+      text-align: center; }
   .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6, .entry-summary h1, .entry-summary h2, .entry-summary h3, .entry-summary h4, .entry-summary h5, .entry-summary h6 {
     font-family: Quicksand, "Helvetica Neue", Helvetica, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic ProN W3", "Hiragino Kaku Gothic Pro", "Original Yu Gothic", "Yu Gothic", YuGothic, Verdana, Meiryo, "M+ 1p", sans-serif, sans-serif; }
   .post-single .entry-content h2, .post-single .entry-summary h2 {
@@ -2901,10 +2914,10 @@ object {
 .page-content code,
 .comment-content code {
   margin: 2px 4px;
-  padding: 2px 4px;
+  padding: 4px 8px;
   color: #424242;
-  background-color: #fff;
-  border: 1px solid #ddd; }
+  border: none;
+  background-color: #fafafa; }
 .entry-content .code > pre,
 .page-content .code > pre,
 .comment-content .code > pre {

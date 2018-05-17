@@ -2515,168 +2515,7 @@ var prettyPrintOne, prettyPrint;
             c(l);
         }
     }), e(Y);
-}(), function(c, l) {
-    "use strict";
-    "function" == typeof define && define.amd ? define([], l) : "object" == typeof exports ? module.exports = l() : c.Headroom = l();
-}(this, function() {
-    "use strict";
-    function c(c) {
-        this.callback = c, this.ticking = !1;
-    }
-    function l(c) {
-        return c && "undefined" != typeof window && (c === window || c.nodeType);
-    }
-    function h(c) {
-        if (arguments.length <= 0) throw new Error("Missing arguments in extend function");
-        var e, v, t = c || {};
-        for (v = 1; v < arguments.length; v++) {
-            var z = arguments[v] || {};
-            for (e in z) "object" != typeof t[e] || l(t[e]) ? t[e] = t[e] || z[e] : t[e] = h(t[e], z[e]);
-        }
-        return t;
-    }
-    function e(c) {
-        return c === Object(c) ? c : {
-            down: c,
-            up: c
-        };
-    }
-    function v(c, l) {
-        l = h(l, v.options), this.lastKnownScrollY = 0, this.elem = c, this.tolerance = e(l.tolerance), 
-        this.classes = l.classes, this.offset = l.offset, this.scroller = l.scroller, this.initialised = !1, 
-        this.onPin = l.onPin, this.onUnpin = l.onUnpin, this.onTop = l.onTop, this.onNotTop = l.onNotTop, 
-        this.onBottom = l.onBottom, this.onNotBottom = l.onNotBottom;
-    }
-    var t = {
-        bind: !!function() {}.bind,
-        classList: "classList" in document.documentElement,
-        rAF: !!(window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame)
-    };
-    return window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame, 
-    c.prototype = {
-        constructor: c,
-        update: function() {
-            this.callback && this.callback(), this.ticking = !1;
-        },
-        requestTick: function() {
-            this.ticking || (requestAnimationFrame(this.rafCallback || (this.rafCallback = this.update.bind(this))), 
-            this.ticking = !0);
-        },
-        handleEvent: function() {
-            this.requestTick();
-        }
-    }, v.prototype = {
-        constructor: v,
-        init: function() {
-            if (v.cutsTheMustard) return this.debouncer = new c(this.update.bind(this)), this.elem.classList.add(this.classes.initial), 
-            setTimeout(this.attachEvent.bind(this), 100), this;
-        },
-        destroy: function() {
-            var c = this.classes;
-            this.initialised = !1, this.elem.classList.remove(c.unpinned, c.pinned, c.top, c.notTop, c.initial), 
-            this.scroller.removeEventListener("scroll", this.debouncer, !1);
-        },
-        attachEvent: function() {
-            this.initialised || (this.lastKnownScrollY = this.getScrollY(), this.initialised = !0, 
-            this.scroller.addEventListener("scroll", this.debouncer, !1), this.debouncer.handleEvent());
-        },
-        unpin: function() {
-            var c = this.elem.classList, l = this.classes;
-            !c.contains(l.pinned) && c.contains(l.unpinned) || (c.add(l.unpinned), c.remove(l.pinned), 
-            this.onUnpin && this.onUnpin.call(this));
-        },
-        pin: function() {
-            var c = this.elem.classList, l = this.classes;
-            c.contains(l.unpinned) && (c.remove(l.unpinned), c.add(l.pinned), this.onPin && this.onPin.call(this));
-        },
-        top: function() {
-            var c = this.elem.classList, l = this.classes;
-            c.contains(l.top) || (c.add(l.top), c.remove(l.notTop), this.onTop && this.onTop.call(this));
-        },
-        notTop: function() {
-            var c = this.elem.classList, l = this.classes;
-            c.contains(l.notTop) || (c.add(l.notTop), c.remove(l.top), this.onNotTop && this.onNotTop.call(this));
-        },
-        bottom: function() {
-            var c = this.elem.classList, l = this.classes;
-            c.contains(l.bottom) || (c.add(l.bottom), c.remove(l.notBottom), this.onBottom && this.onBottom.call(this));
-        },
-        notBottom: function() {
-            var c = this.elem.classList, l = this.classes;
-            c.contains(l.notBottom) || (c.add(l.notBottom), c.remove(l.bottom), this.onNotBottom && this.onNotBottom.call(this));
-        },
-        getScrollY: function() {
-            return void 0 !== this.scroller.pageYOffset ? this.scroller.pageYOffset : void 0 !== this.scroller.scrollTop ? this.scroller.scrollTop : (document.documentElement || document.body.parentNode || document.body).scrollTop;
-        },
-        getViewportHeight: function() {
-            return window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-        },
-        getElementPhysicalHeight: function(c) {
-            return Math.max(c.offsetHeight, c.clientHeight);
-        },
-        getScrollerPhysicalHeight: function() {
-            return this.scroller === window || this.scroller === document.body ? this.getViewportHeight() : this.getElementPhysicalHeight(this.scroller);
-        },
-        getDocumentHeight: function() {
-            var c = document.body, l = document.documentElement;
-            return Math.max(c.scrollHeight, l.scrollHeight, c.offsetHeight, l.offsetHeight, c.clientHeight, l.clientHeight);
-        },
-        getElementHeight: function(c) {
-            return Math.max(c.scrollHeight, c.offsetHeight, c.clientHeight);
-        },
-        getScrollerHeight: function() {
-            return this.scroller === window || this.scroller === document.body ? this.getDocumentHeight() : this.getElementHeight(this.scroller);
-        },
-        isOutOfBounds: function(c) {
-            var l = c < 0, h = c + this.getScrollerPhysicalHeight() > this.getScrollerHeight();
-            return l || h;
-        },
-        toleranceExceeded: function(c, l) {
-            return Math.abs(c - this.lastKnownScrollY) >= this.tolerance[l];
-        },
-        shouldUnpin: function(c, l) {
-            var h = c > this.lastKnownScrollY, e = c >= this.offset;
-            return h && e && l;
-        },
-        shouldPin: function(c, l) {
-            var h = c < this.lastKnownScrollY, e = c <= this.offset;
-            return h && l || e;
-        },
-        update: function() {
-            var c = this.getScrollY(), l = c > this.lastKnownScrollY ? "down" : "up", h = this.toleranceExceeded(c, l);
-            this.isOutOfBounds(c) || (c <= this.offset ? this.top() : this.notTop(), c + this.getViewportHeight() >= this.getScrollerHeight() ? this.bottom() : this.notBottom(), 
-            this.shouldUnpin(c, h) ? this.unpin() : this.shouldPin(c, h) && this.pin(), this.lastKnownScrollY = c);
-        }
-    }, v.options = {
-        tolerance: {
-            up: 0,
-            down: 0
-        },
-        offset: 0,
-        scroller: window,
-        classes: {
-            pinned: "headroom--pinned",
-            unpinned: "headroom--unpinned",
-            top: "headroom--top",
-            notTop: "headroom--not-top",
-            bottom: "headroom--bottom",
-            notBottom: "headroom--not-bottom",
-            initial: "headroom"
-        }
-    }, v.cutsTheMustard = "undefined" != typeof t && t.rAF && t.bind && t.classList, 
-    v;
-}), function(c) {
-    c && (c.fn.headroom = function(l) {
-        return this.each(function() {
-            var h = c(this), e = h.data("headroom"), v = "object" == typeof l && l;
-            v = c.extend(!0, {}, Headroom.options, v), e || (e = new Headroom(this, v), e.init(), 
-            h.data("headroom", e)), "string" == typeof l && (e[l](), "destroy" === l && h.removeData("headroom"));
-        });
-    }, c("[data-headroom]").each(function() {
-        var l = c(this);
-        l.headroom(l.data());
-    }));
-}(window.Zepto || window.jQuery), function(c, l, h) {
+}(), function(c, l, h) {
     function e(c, l) {
         return typeof c === l;
     }
@@ -2855,7 +2694,168 @@ var prettyPrintOne, prettyPrint;
     }), v(), t(L), delete d.addTest, delete d.addAsyncTest;
     for (var N = 0; N < C._q.length; N++) C._q[N]();
     c.Modernizr = C;
-}(window, document), function(c) {
+}(window, document), function(c, l) {
+    "use strict";
+    "function" == typeof define && define.amd ? define([], l) : "object" == typeof exports ? module.exports = l() : c.Headroom = l();
+}(this, function() {
+    "use strict";
+    function c(c) {
+        this.callback = c, this.ticking = !1;
+    }
+    function l(c) {
+        return c && "undefined" != typeof window && (c === window || c.nodeType);
+    }
+    function h(c) {
+        if (arguments.length <= 0) throw new Error("Missing arguments in extend function");
+        var e, v, t = c || {};
+        for (v = 1; v < arguments.length; v++) {
+            var z = arguments[v] || {};
+            for (e in z) "object" != typeof t[e] || l(t[e]) ? t[e] = t[e] || z[e] : t[e] = h(t[e], z[e]);
+        }
+        return t;
+    }
+    function e(c) {
+        return c === Object(c) ? c : {
+            down: c,
+            up: c
+        };
+    }
+    function v(c, l) {
+        l = h(l, v.options), this.lastKnownScrollY = 0, this.elem = c, this.tolerance = e(l.tolerance), 
+        this.classes = l.classes, this.offset = l.offset, this.scroller = l.scroller, this.initialised = !1, 
+        this.onPin = l.onPin, this.onUnpin = l.onUnpin, this.onTop = l.onTop, this.onNotTop = l.onNotTop, 
+        this.onBottom = l.onBottom, this.onNotBottom = l.onNotBottom;
+    }
+    var t = {
+        bind: !!function() {}.bind,
+        classList: "classList" in document.documentElement,
+        rAF: !!(window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame)
+    };
+    return window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame, 
+    c.prototype = {
+        constructor: c,
+        update: function() {
+            this.callback && this.callback(), this.ticking = !1;
+        },
+        requestTick: function() {
+            this.ticking || (requestAnimationFrame(this.rafCallback || (this.rafCallback = this.update.bind(this))), 
+            this.ticking = !0);
+        },
+        handleEvent: function() {
+            this.requestTick();
+        }
+    }, v.prototype = {
+        constructor: v,
+        init: function() {
+            if (v.cutsTheMustard) return this.debouncer = new c(this.update.bind(this)), this.elem.classList.add(this.classes.initial), 
+            setTimeout(this.attachEvent.bind(this), 100), this;
+        },
+        destroy: function() {
+            var c = this.classes;
+            this.initialised = !1, this.elem.classList.remove(c.unpinned, c.pinned, c.top, c.notTop, c.initial), 
+            this.scroller.removeEventListener("scroll", this.debouncer, !1);
+        },
+        attachEvent: function() {
+            this.initialised || (this.lastKnownScrollY = this.getScrollY(), this.initialised = !0, 
+            this.scroller.addEventListener("scroll", this.debouncer, !1), this.debouncer.handleEvent());
+        },
+        unpin: function() {
+            var c = this.elem.classList, l = this.classes;
+            !c.contains(l.pinned) && c.contains(l.unpinned) || (c.add(l.unpinned), c.remove(l.pinned), 
+            this.onUnpin && this.onUnpin.call(this));
+        },
+        pin: function() {
+            var c = this.elem.classList, l = this.classes;
+            c.contains(l.unpinned) && (c.remove(l.unpinned), c.add(l.pinned), this.onPin && this.onPin.call(this));
+        },
+        top: function() {
+            var c = this.elem.classList, l = this.classes;
+            c.contains(l.top) || (c.add(l.top), c.remove(l.notTop), this.onTop && this.onTop.call(this));
+        },
+        notTop: function() {
+            var c = this.elem.classList, l = this.classes;
+            c.contains(l.notTop) || (c.add(l.notTop), c.remove(l.top), this.onNotTop && this.onNotTop.call(this));
+        },
+        bottom: function() {
+            var c = this.elem.classList, l = this.classes;
+            c.contains(l.bottom) || (c.add(l.bottom), c.remove(l.notBottom), this.onBottom && this.onBottom.call(this));
+        },
+        notBottom: function() {
+            var c = this.elem.classList, l = this.classes;
+            c.contains(l.notBottom) || (c.add(l.notBottom), c.remove(l.bottom), this.onNotBottom && this.onNotBottom.call(this));
+        },
+        getScrollY: function() {
+            return void 0 !== this.scroller.pageYOffset ? this.scroller.pageYOffset : void 0 !== this.scroller.scrollTop ? this.scroller.scrollTop : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+        },
+        getViewportHeight: function() {
+            return window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        },
+        getElementPhysicalHeight: function(c) {
+            return Math.max(c.offsetHeight, c.clientHeight);
+        },
+        getScrollerPhysicalHeight: function() {
+            return this.scroller === window || this.scroller === document.body ? this.getViewportHeight() : this.getElementPhysicalHeight(this.scroller);
+        },
+        getDocumentHeight: function() {
+            var c = document.body, l = document.documentElement;
+            return Math.max(c.scrollHeight, l.scrollHeight, c.offsetHeight, l.offsetHeight, c.clientHeight, l.clientHeight);
+        },
+        getElementHeight: function(c) {
+            return Math.max(c.scrollHeight, c.offsetHeight, c.clientHeight);
+        },
+        getScrollerHeight: function() {
+            return this.scroller === window || this.scroller === document.body ? this.getDocumentHeight() : this.getElementHeight(this.scroller);
+        },
+        isOutOfBounds: function(c) {
+            var l = c < 0, h = c + this.getScrollerPhysicalHeight() > this.getScrollerHeight();
+            return l || h;
+        },
+        toleranceExceeded: function(c, l) {
+            return Math.abs(c - this.lastKnownScrollY) >= this.tolerance[l];
+        },
+        shouldUnpin: function(c, l) {
+            var h = c > this.lastKnownScrollY, e = c >= this.offset;
+            return h && e && l;
+        },
+        shouldPin: function(c, l) {
+            var h = c < this.lastKnownScrollY, e = c <= this.offset;
+            return h && l || e;
+        },
+        update: function() {
+            var c = this.getScrollY(), l = c > this.lastKnownScrollY ? "down" : "up", h = this.toleranceExceeded(c, l);
+            this.isOutOfBounds(c) || (c <= this.offset ? this.top() : this.notTop(), c + this.getViewportHeight() >= this.getScrollerHeight() ? this.bottom() : this.notBottom(), 
+            this.shouldUnpin(c, h) ? this.unpin() : this.shouldPin(c, h) && this.pin(), this.lastKnownScrollY = c);
+        }
+    }, v.options = {
+        tolerance: {
+            up: 0,
+            down: 0
+        },
+        offset: 0,
+        scroller: window,
+        classes: {
+            pinned: "headroom--pinned",
+            unpinned: "headroom--unpinned",
+            top: "headroom--top",
+            notTop: "headroom--not-top",
+            bottom: "headroom--bottom",
+            notBottom: "headroom--not-bottom",
+            initial: "headroom"
+        }
+    }, v.cutsTheMustard = "undefined" != typeof t && t.rAF && t.bind && t.classList, 
+    v;
+}), function(c) {
+    c && (c.fn.headroom = function(l) {
+        return this.each(function() {
+            var h = c(this), e = h.data("headroom"), v = "object" == typeof l && l;
+            v = c.extend(!0, {}, Headroom.options, v), e || (e = new Headroom(this, v), e.init(), 
+            h.data("headroom", e)), "string" == typeof l && (e[l](), "destroy" === l && h.removeData("headroom"));
+        });
+    }, c("[data-headroom]").each(function() {
+        var l = c(this);
+        l.headroom(l.data());
+    }));
+}(window.Zepto || window.jQuery), function(c) {
     var l = !1, h = c("#footerMargin");
     c(document).ready(function() {
         function e() {
