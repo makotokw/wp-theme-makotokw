@@ -8,7 +8,7 @@ var reload = browserSync.reload;
 var del = require('del');
 var notifier = require('node-notifier');
 
-const wpRoot = '../../../';
+var wpRoot = '../../../';
 
 gulp.task('clean:components', function () {
   return del(['components']);

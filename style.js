@@ -142,7 +142,7 @@ var prettyPrintOne, prettyPrint;
                 if ("string" == typeof u) H = !1; else {
                     var C = t[V.charAt(0)];
                     if (C) d = V.match(C[1]), u = C[0]; else {
-                        for (var L = 0; L < z; ++L) if (C = e[L], d = V.match(C[1])) {
+                        for (var p = 0; p < z; ++p) if (C = e[p], d = V.match(C[1])) {
                             u = C[0];
                             break;
                         }
@@ -151,13 +151,13 @@ var prettyPrintOne, prettyPrint;
                     H = u.length >= 5 && "lang-" === u.substring(0, 5), !H || d && "string" == typeof d[1] || (H = !1, 
                     u = j), H || (o[V] = u);
                 }
-                var p = i;
+                var L = i;
                 if (i += V.length, H) {
                     var g = d[1], b = V.indexOf(g), y = b + g.length;
                     d[2] && (y = V.length - d[2].length, b = y - g.length);
                     var w = u.substring(5);
-                    h(n + p, V.substring(0, b), a, r), h(n + p + b, g, s(w, g), r), h(n + p + y, V.substring(y), a, r);
-                } else r.push(n + p, u);
+                    h(n + L, V.substring(0, b), a, r), h(n + L + b, g, s(w, g), r), h(n + L + y, V.substring(y), a, r);
+                } else r.push(n + L, u);
             }
             c.decorations = r;
         };
@@ -182,7 +182,7 @@ var prettyPrintOne, prettyPrint;
         r.length && h.push([ A, new RegExp("^(?:" + r.replace(/[\s,]+/g, "|") + ")\\b"), null ]), 
         l.push([ P, /^\s+/, null, " \r\n\t " ]);
         var i = "^.[^\\s\\w.$@'\"`/\\\\]*";
-        return c.regexLiterals && (i += "(?!s*/)"), h.push([ O, /^@[a-z_$][a-z_$@0-9]*/i, null ], [ E, /^(?:[@_]?[A-Z]+[a-z][A-Za-z_$@0-9]*|\w+_t\b)/, null ], [ P, /^[a-z_$][a-z_$@0-9]*/i, null ], [ O, new RegExp("^(?:0x[a-f0-9]+|(?:\\d(?:_\\d+)*\\d*(?:\\.\\d*)?|\\.\\d\\+)(?:e[+\\-]?\\d+)?)[a-z]*", "i"), null, "0123456789" ], [ P, /^\\[\s\S]?/, null ], [ T, new RegExp(i), null ]), 
+        return c.regexLiterals && (i += "(?!s*/)"), h.push([ T, /^@[a-z_$][a-z_$@0-9]*/i, null ], [ E, /^(?:[@_]?[A-Z]+[a-z][A-Za-z_$@0-9]*|\w+_t\b)/, null ], [ P, /^[a-z_$][a-z_$@0-9]*/i, null ], [ T, new RegExp("^(?:0x[a-f0-9]+|(?:\\d(?:_\\d+)*\\d*(?:\\.\\d*)?|\\.\\d\\+)(?:e[+\\-]?\\d+)?)[a-z]*", "i"), null, "0123456789" ], [ P, /^\\[\s\S]?/, null ], [ O, new RegExp(i), null ]), 
         v(l, h);
     }
     function z(c, l, h) {
@@ -244,16 +244,16 @@ var prettyPrintOne, prettyPrint;
         u && (V = u.style.display, u.style.display = "none");
         try {
             for (;n < a; ) {
-                var d, C = (z[n], z[n + 2] || v), L = s[i + 2] || v, H = Math.min(C, L), p = z[n + 1];
-                if (1 !== p.nodeType && (d = e.substring(t, H))) {
-                    l && (d = d.replace(h, "\r")), p.nodeValue = d;
-                    var g = p.ownerDocument, b = g.createElement("span");
+                var d, C = (z[n], z[n + 2] || v), p = s[i + 2] || v, H = Math.min(C, p), L = z[n + 1];
+                if (1 !== L.nodeType && (d = e.substring(t, H))) {
+                    l && (d = d.replace(h, "\r")), L.nodeValue = d;
+                    var g = L.ownerDocument, b = g.createElement("span");
                     b.className = s[i + 1];
-                    var y = p.parentNode;
-                    y.replaceChild(b, p), b.appendChild(p), t < C && (z[n + 1] = p = g.createTextNode(e.substring(H, C)), 
-                    y.insertBefore(p, b.nextSibling));
+                    var y = L.parentNode;
+                    y.replaceChild(b, L), b.appendChild(L), t < C && (z[n + 1] = L = g.createTextNode(e.substring(H, C)), 
+                    y.insertBefore(L, b.nextSibling));
                 }
-                t = H, t >= C && (n += 2), t >= L && (i += 2);
+                t = H, t >= C && (n += 2), t >= p && (i += 2);
             }
         } finally {
             u && (u.style.display = V);
@@ -320,19 +320,19 @@ var prettyPrintOne, prettyPrint;
                         if (!x) {
                             x = f.match(u);
                             var k;
-                            !x && (k = e(h)) && p.test(k.tagName) && (x = k.className.match(u)), x && (x = x[1]);
+                            !x && (k = e(h)) && L.test(k.tagName) && (x = k.className.match(u)), x && (x = x[1]);
                         }
                         var A;
-                        if (L.test(h.tagName)) A = 1; else {
-                            var N = h.currentStyle, E = a.defaultView, O = N ? N.whiteSpace : E && E.getComputedStyle ? E.getComputedStyle(h, null).getPropertyValue("white-space") : 0;
-                            A = O && "pre" === O.substring(0, 3);
+                        if (p.test(h.tagName)) A = 1; else {
+                            var N = h.currentStyle, E = a.defaultView, T = N ? N.whiteSpace : E && E.getComputedStyle ? E.getComputedStyle(h, null).getPropertyValue("white-space") : 0;
+                            A = T && "pre" === T.substring(0, 3);
                         }
-                        var T = t.linenums;
-                        (T = "true" === T || +T) || (T = f.match(/\blinenums\b(?::(\d+))?/), T = !!T && (!T[1] || !T[1].length || +T[1])), 
-                        T && z(h, T, A), H = {
+                        var O = t.linenums;
+                        (O = "true" === O || +O) || (O = f.match(/\blinenums\b(?::(\d+))?/), O = !!O && (!O[1] || !O[1].length || +O[1])), 
+                        O && z(h, O, A), H = {
                             langExtension: x,
                             sourceNode: h,
-                            numberLines: T,
+                            numberLines: O,
                             pre: A
                         }, r(H);
                     }
@@ -348,18 +348,18 @@ var prettyPrintOne, prettyPrint;
                 return +new Date();
             }
         });
-        var H, V = 0, u = /\blang(?:uage)?-([\w.]+)(?!\S)/, d = /\bprettyprint\b/, C = /\bprettyprinted\b/, L = /pre|xmp/i, p = /^code$/i, g = /^(?:pre|code|xmp)$/i, b = {};
+        var H, V = 0, u = /\blang(?:uage)?-([\w.]+)(?!\S)/, d = /\bprettyprint\b/, C = /\bprettyprinted\b/, p = /pre|xmp/i, L = /^code$/i, g = /^(?:pre|code|xmp)$/i, b = {};
         v();
     }
-    var o = window, f = [ "break,continue,do,else,for,if,return,while" ], M = [ f, "auto,case,char,const,default,double,enum,extern,float,goto,inline,int,long,register,short,signed,sizeof,static,struct,switch,typedef,union,unsigned,void,volatile" ], H = [ M, "catch,class,delete,false,import,new,operator,private,protected,public,this,throw,true,try,typeof" ], V = [ H, "alignof,align_union,asm,axiom,bool,concept,concept_map,const_cast,constexpr,decltype,delegate,dynamic_cast,explicit,export,friend,generic,late_check,mutable,namespace,nullptr,property,reinterpret_cast,static_assert,static_cast,template,typeid,typename,using,virtual,where" ], u = [ H, "abstract,assert,boolean,byte,extends,final,finally,implements,import,instanceof,interface,null,native,package,strictfp,super,synchronized,throws,transient" ], d = [ u, "as,base,by,checked,decimal,delegate,descending,dynamic,event,fixed,foreach,from,group,implicit,in,internal,into,is,let,lock,object,out,override,orderby,params,partial,readonly,ref,sbyte,sealed,stackalloc,string,select,uint,ulong,unchecked,unsafe,ushort,var,virtual,where" ], C = "all,and,by,catch,class,else,extends,false,finally,for,if,in,is,isnt,loop,new,no,not,null,of,off,on,or,return,super,then,throw,true,try,unless,until,when,while,yes", L = [ H, "debugger,eval,export,function,get,null,set,undefined,var,with,Infinity,NaN" ], p = "caller,delete,die,do,dump,elsif,eval,exit,foreach,for,goto,if,import,last,local,my,next,no,our,print,package,redo,require,sub,undef,unless,until,use,wantarray,while,BEGIN,END", g = [ f, "and,as,assert,class,def,del,elif,except,exec,finally,from,global,import,in,is,lambda,nonlocal,not,or,pass,print,raise,try,with,yield,False,True,None" ], b = [ f, "alias,and,begin,case,class,def,defined,elsif,end,ensure,false,in,module,next,nil,not,or,redo,rescue,retry,self,super,then,true,undef,unless,until,when,yield,BEGIN,END" ], y = [ f, "as,assert,const,copy,drop,enum,extern,fail,false,fn,impl,let,log,loop,match,mod,move,mut,priv,pub,pure,ref,self,static,struct,true,trait,type,unsafe,use" ], w = [ f, "case,done,elif,esac,eval,fi,function,in,local,set,then,until" ], S = [ V, d, L, p, g, b, w ], x = /^(DIR|FILE|vector|(de|priority_)?queue|list|stack|(const_)?iterator|(multi)?(set|map)|bitset|u?(int|float)\d*)\b/, k = "str", A = "kwd", N = "com", E = "typ", O = "lit", T = "pun", P = "pln", q = "tag", _ = "dec", j = "src", R = "atn", I = "atv", B = "nocode", F = "(?:^^\\.?|[+-]|[!=]=?=?|\\#|%=?|&&?=?|\\(|\\*=?|[+\\-]=|->|\\/=?|::?|<<?=?|>>?>?=?|,|;|\\?|@|\\[|~|{|\\^\\^?=?|\\|\\|?=?|break|case|continue|delete|do|else|finally|instanceof|return|throw|try|typeof)\\s*", D = /\S/, $ = t({
+    var o = window, f = [ "break,continue,do,else,for,if,return,while" ], M = [ f, "auto,case,char,const,default,double,enum,extern,float,goto,inline,int,long,register,short,signed,sizeof,static,struct,switch,typedef,union,unsigned,void,volatile" ], H = [ M, "catch,class,delete,false,import,new,operator,private,protected,public,this,throw,true,try,typeof" ], V = [ H, "alignof,align_union,asm,axiom,bool,concept,concept_map,const_cast,constexpr,decltype,delegate,dynamic_cast,explicit,export,friend,generic,late_check,mutable,namespace,nullptr,property,reinterpret_cast,static_assert,static_cast,template,typeid,typename,using,virtual,where" ], u = [ H, "abstract,assert,boolean,byte,extends,final,finally,implements,import,instanceof,interface,null,native,package,strictfp,super,synchronized,throws,transient" ], d = [ u, "as,base,by,checked,decimal,delegate,descending,dynamic,event,fixed,foreach,from,group,implicit,in,internal,into,is,let,lock,object,out,override,orderby,params,partial,readonly,ref,sbyte,sealed,stackalloc,string,select,uint,ulong,unchecked,unsafe,ushort,var,virtual,where" ], C = "all,and,by,catch,class,else,extends,false,finally,for,if,in,is,isnt,loop,new,no,not,null,of,off,on,or,return,super,then,throw,true,try,unless,until,when,while,yes", p = [ H, "debugger,eval,export,function,get,null,set,undefined,var,with,Infinity,NaN" ], L = "caller,delete,die,do,dump,elsif,eval,exit,foreach,for,goto,if,import,last,local,my,next,no,our,print,package,redo,require,sub,undef,unless,until,use,wantarray,while,BEGIN,END", g = [ f, "and,as,assert,class,def,del,elif,except,exec,finally,from,global,import,in,is,lambda,nonlocal,not,or,pass,print,raise,try,with,yield,False,True,None" ], b = [ f, "alias,and,begin,case,class,def,defined,elsif,end,ensure,false,in,module,next,nil,not,or,redo,rescue,retry,self,super,then,true,undef,unless,until,when,yield,BEGIN,END" ], y = [ f, "as,assert,const,copy,drop,enum,extern,fail,false,fn,impl,let,log,loop,match,mod,move,mut,priv,pub,pure,ref,self,static,struct,true,trait,type,unsafe,use" ], w = [ f, "case,done,elif,esac,eval,fi,function,in,local,set,then,until" ], S = [ V, d, p, L, g, b, w ], x = /^(DIR|FILE|vector|(de|priority_)?queue|list|stack|(const_)?iterator|(multi)?(set|map)|bitset|u?(int|float)\d*)\b/, k = "str", A = "kwd", N = "com", E = "typ", T = "lit", O = "pun", P = "pln", _ = "tag", q = "dec", j = "src", R = "atn", I = "atv", B = "nocode", F = "(?:^^\\.?|[+-]|[!=]=?=?|\\#|%=?|&&?=?|\\(|\\*=?|[+\\-]=|->|\\/=?|::?|<<?=?|>>?>?=?|,|;|\\?|@|\\[|~|{|\\^\\^?=?|\\|\\|?=?|break|case|continue|delete|do|else|finally|instanceof|return|throw|try|typeof)\\s*", D = /\S/, $ = t({
         keywords: S,
         hashComments: !0,
         cStyleComments: !0,
         multiLineStrings: !0,
         regexLiterals: !0
     }), U = {};
-    n($, [ "default-code" ]), n(v([], [ [ P, /^[^<?]+/ ], [ _, /^<!\w[^>]*(?:>|$)/ ], [ N, /^<\!--[\s\S]*?(?:-\->|$)/ ], [ "lang-", /^<\?([\s\S]+?)(?:\?>|$)/ ], [ "lang-", /^<%([\s\S]+?)(?:%>|$)/ ], [ T, /^(?:<[%?]|[%?]>)/ ], [ "lang-", /^<xmp\b[^>]*>([\s\S]+?)<\/xmp\b[^>]*>/i ], [ "lang-js", /^<script\b[^>]*>([\s\S]*?)(<\/script\b[^>]*>)/i ], [ "lang-css", /^<style\b[^>]*>([\s\S]*?)(<\/style\b[^>]*>)/i ], [ "lang-in.tag", /^(<\/?[a-z][^<>]*>)/i ] ]), [ "default-markup", "htm", "html", "mxml", "xhtml", "xml", "xsl" ]), 
-    n(v([ [ P, /^[\s]+/, null, " \t\r\n" ], [ I, /^(?:\"[^\"]*\"?|\'[^\']*\'?)/, null, "\"'" ] ], [ [ q, /^^<\/?[a-z](?:[\w.:-]*\w)?|\/?>$/i ], [ R, /^(?!style[\s=]|on)[a-z](?:[\w:-]*\w)?/i ], [ "lang-uq.val", /^=\s*([^>\'\"\s]*(?:[^>\'\"\s\/]|\/(?=\s)))/ ], [ T, /^[=<>\/]+/ ], [ "lang-js", /^on\w+\s*=\s*\"([^\"]+)\"/i ], [ "lang-js", /^on\w+\s*=\s*\'([^\']+)\'/i ], [ "lang-js", /^on\w+\s*=\s*([^\"\'>\s]+)/i ], [ "lang-css", /^style\s*=\s*\"([^\"]+)\"/i ], [ "lang-css", /^style\s*=\s*\'([^\']+)\'/i ], [ "lang-css", /^style\s*=\s*([^\"\'>\s]+)/i ] ]), [ "in.tag" ]), 
+    n($, [ "default-code" ]), n(v([], [ [ P, /^[^<?]+/ ], [ q, /^<!\w[^>]*(?:>|$)/ ], [ N, /^<\!--[\s\S]*?(?:-\->|$)/ ], [ "lang-", /^<\?([\s\S]+?)(?:\?>|$)/ ], [ "lang-", /^<%([\s\S]+?)(?:%>|$)/ ], [ O, /^(?:<[%?]|[%?]>)/ ], [ "lang-", /^<xmp\b[^>]*>([\s\S]+?)<\/xmp\b[^>]*>/i ], [ "lang-js", /^<script\b[^>]*>([\s\S]*?)(<\/script\b[^>]*>)/i ], [ "lang-css", /^<style\b[^>]*>([\s\S]*?)(<\/style\b[^>]*>)/i ], [ "lang-in.tag", /^(<\/?[a-z][^<>]*>)/i ] ]), [ "default-markup", "htm", "html", "mxml", "xhtml", "xml", "xsl" ]), 
+    n(v([ [ P, /^[\s]+/, null, " \t\r\n" ], [ I, /^(?:\"[^\"]*\"?|\'[^\']*\'?)/, null, "\"'" ] ], [ [ _, /^^<\/?[a-z](?:[\w.:-]*\w)?|\/?>$/i ], [ R, /^(?!style[\s=]|on)[a-z](?:[\w:-]*\w)?/i ], [ "lang-uq.val", /^=\s*([^>\'\"\s]*(?:[^>\'\"\s\/]|\/(?=\s)))/ ], [ O, /^[=<>\/]+/ ], [ "lang-js", /^on\w+\s*=\s*\"([^\"]+)\"/i ], [ "lang-js", /^on\w+\s*=\s*\'([^\']+)\'/i ], [ "lang-js", /^on\w+\s*=\s*([^\"\'>\s]+)/i ], [ "lang-css", /^style\s*=\s*\"([^\"]+)\"/i ], [ "lang-css", /^style\s*=\s*\'([^\']+)\'/i ], [ "lang-css", /^style\s*=\s*([^\"\'>\s]+)/i ] ]), [ "in.tag" ]), 
     n(v([], [ [ I, /^[\s\S]+/ ] ]), [ "uq.val" ]), n(t({
         keywords: V,
         hashComments: !0,
@@ -386,7 +386,7 @@ var prettyPrintOne, prettyPrint;
         multiLineStrings: !0,
         tripleQuotedStrings: !0
     }), [ "cv", "py", "python" ]), n(t({
-        keywords: p,
+        keywords: L,
         hashComments: !0,
         multiLineStrings: !0,
         regexLiterals: 2
@@ -396,7 +396,7 @@ var prettyPrintOne, prettyPrint;
         multiLineStrings: !0,
         regexLiterals: !0
     }), [ "rb", "ruby" ]), n(t({
-        keywords: L,
+        keywords: p,
         cStyleComments: !0,
         regexLiterals: !0
     }), [ "javascript", "js" ]), n(t({
@@ -418,15 +418,15 @@ var prettyPrintOne, prettyPrint;
         PR_ATTRIB_NAME: R,
         PR_ATTRIB_VALUE: I,
         PR_COMMENT: N,
-        PR_DECLARATION: _,
+        PR_DECLARATION: q,
         PR_KEYWORD: A,
-        PR_LITERAL: O,
+        PR_LITERAL: T,
         PR_NOCODE: B,
         PR_PLAIN: P,
-        PR_PUNCTUATION: T,
+        PR_PUNCTUATION: O,
         PR_SOURCE: j,
         PR_STRING: k,
-        PR_TAG: q,
+        PR_TAG: _,
         PR_TYPE: E,
         prettyPrintOne: IN_GLOBAL_SCOPE ? o.prettyPrintOne = i : prettyPrintOne = i,
         prettyPrint: prettyPrint = IN_GLOBAL_SCOPE ? o.prettyPrint = m : prettyPrint = m
@@ -1558,7 +1558,7 @@ var prettyPrintOne, prettyPrint;
         }
     }
     function t() {
-        return _c++, _c;
+        return qc++, qc;
     }
     function z(c) {
         for (var l = [], h = (c || []).length >>> 0; h--; ) l[h] = c[h];
@@ -1587,7 +1587,7 @@ var prettyPrintOne, prettyPrint;
         }, "");
     }
     function m(c) {
-        return c.size !== qc.size || c.x !== qc.x || c.y !== qc.y || c.rotate !== qc.rotate || c.flipX || c.flipY;
+        return c.size !== _c.size || c.x !== _c.x || c.y !== _c.y || c.rotate !== _c.rotate || c.flipX || c.flipY;
     }
     function o(c) {
         var l = c.transform, h = c.containerWidth, e = c.iconWidth, v = {
@@ -1636,8 +1636,8 @@ var prettyPrintOne, prettyPrint;
             transform: a,
             symbol: n,
             styles: r.styles
-        }), C = e.found && h.found ? Rc(d) : Ic(d), L = C.children, p = C.attributes;
-        return d.children = L, d.attributes = p, n ? Fc(d) : Bc(d);
+        }), C = e.found && h.found ? Rc(d) : Ic(d), p = C.children, L = C.attributes;
+        return d.children = p, d.attributes = L, n ? Fc(d) : Bc(d);
     }
     function H(c) {
         var l = c.content, h = c.width, e = c.height, v = c.transform, t = c.title, z = c.extra, a = c.watchable, n = void 0 !== a && a, s = gc({}, z.attributes, t ? {
@@ -1690,16 +1690,16 @@ var prettyPrintOne, prettyPrint;
             return c;
         }, vl());
     }
-    function L(c, l, h) {
+    function p(c, l, h) {
         if (c && c[l] && c[l][h]) return {
             prefix: l,
             iconName: h,
             icon: c[l][h]
         };
     }
-    function p(c) {
+    function L(c) {
         var l = c.tag, h = c.attributes, e = void 0 === h ? {} : h, v = c.children, t = void 0 === v ? [] : v;
-        return "string" == typeof c ? s(c) : "<" + l + " " + r(e) + ">" + t.map(p).join("") + "</" + l + ">";
+        return "string" == typeof c ? s(c) : "<" + l + " " + r(e) + ">" + t.map(L).join("") + "</" + l + ">";
     }
     function g(c) {
         var l = c.getAttribute ? c.getAttribute(oc) : null;
@@ -1798,7 +1798,7 @@ var prettyPrintOne, prettyPrint;
         } else if (c && l && !xc.showMissingIcons) throw new N("Icon is missing for prefix " + l + " with icon name " + c);
         return h;
     }
-    function O(c, l) {
+    function T(c, l) {
         var h = l.iconName, e = l.title, v = l.prefix, t = l.transform, z = l.symbol, a = l.mask, n = l.extra;
         return [ c, M({
             icons: {
@@ -1815,7 +1815,7 @@ var prettyPrintOne, prettyPrint;
             watchable: !0
         }) ];
     }
-    function T(c, l) {
+    function O(c, l) {
         var h = l.title, e = l.transform, v = l.extra, t = null, z = null;
         if (nc) {
             var a = parseInt(getComputedStyle(c).fontSize, 10), n = c.getBoundingClientRect();
@@ -1833,12 +1833,12 @@ var prettyPrintOne, prettyPrint;
     }
     function P(c) {
         var l = A(c);
-        return ~l.extra.classes.indexOf(yl) ? T(c, l) : O(c, l);
-    }
-    function q(c) {
-        "function" == typeof c.remove ? c.remove() : c && c.parentNode && c.parentNode.removeChild(c);
+        return ~l.extra.classes.indexOf(yl) ? O(c, l) : T(c, l);
     }
     function _(c) {
+        "function" == typeof c.remove ? c.remove() : c && c.parentNode && c.parentNode.removeChild(c);
+    }
+    function q(c) {
         if (ac) {
             var l = Wc.begin("searchPseudoElements");
             w(function() {
@@ -1847,8 +1847,8 @@ var prettyPrintOne, prettyPrint;
                         var h = hc.getComputedStyle(c, l), e = h.getPropertyValue("font-family").match(wl), v = z(c.children), t = v.filter(function(c) {
                             return c.getAttribute(fc) === l;
                         })[0];
-                        if (t && (t.nextSibling && t.nextSibling.textContent.indexOf(fc) > -1 && q(t.nextSibling), 
-                        q(t), t = null), e && !t) {
+                        if (t && (t.nextSibling && t.nextSibling.textContent.indexOf(fc) > -1 && _(t.nextSibling), 
+                        _(t), t = null), e && !t) {
                             var a = h.getPropertyValue("content"), n = ec.createElement("i");
                             n.setAttribute("class", "" + Sl[e[1]]), n.setAttribute(fc, l), n.innerText = 3 === a.length ? a.substr(1, 1) : a, 
                             ":before" === l ? c.insertBefore(n, c.firstChild) : c.appendChild(n);
@@ -1924,7 +1924,7 @@ var prettyPrintOne, prettyPrint;
         }), Object.defineProperty(c, "html", {
             get: function() {
                 return c["abstract"].map(function(c) {
-                    return p(c);
+                    return L(c);
                 });
             }
         }), Object.defineProperty(c, "node", {
@@ -1938,7 +1938,7 @@ var prettyPrintOne, prettyPrint;
     }
     function $(c) {
         var l = c.prefix, h = void 0 === l ? "fa" : l, e = c.iconName;
-        if (e) return L(El.definitions, h, e) || L(Ac.styles, h, e);
+        if (e) return p(El.definitions, h, e) || p(Ac.styles, h, e);
     }
     function U(c) {
         return function(l) {
@@ -1949,11 +1949,11 @@ var prettyPrintOne, prettyPrint;
         };
     }
     function Y() {
-        zc && (hc.FontAwesome || (hc.FontAwesome = Rl), Tc(function() {
+        zc && (hc.FontAwesome || (hc.FontAwesome = Rl), Oc(function() {
             Object.keys(Ac.styles).length > 0 && Il(), xc.observeMutations && "function" == typeof MutationObserver && S({
                 treeCallback: j,
                 nodeCallback: R,
-                pseudoElementsCallback: _
+                pseudoElementsCallback: q
             });
         })), Ac.hooks = gc({}, Ac.hooks, {
             addPack: function(c, l) {
@@ -1983,9 +1983,9 @@ var prettyPrintOne, prettyPrint;
         return c + "x";
     })).concat(uc.map(function(c) {
         return "w-" + c;
-    })), Lc = function(c, l) {
+    })), pc = function(c, l) {
         if (!(c instanceof l)) throw new TypeError("Cannot call a class as a function");
-    }, pc = function() {
+    }, Lc = function() {
         function c(c, l) {
             for (var h = 0; h < l.length; h++) {
                 var e = l[h];
@@ -2027,22 +2027,22 @@ var prettyPrintOne, prettyPrint;
     kc[sc] || (kc[sc] = {}), kc[sc].styles || (kc[sc].styles = {}), kc[sc].hooks || (kc[sc].hooks = {}), 
     kc[sc].shims || (kc[sc].shims = []);
     var Ac = kc[sc], Nc = [], Ec = function Bl() {
-        ec.removeEventListener("DOMContentLoaded", Bl), Oc = 1, Nc.map(function(c) {
+        ec.removeEventListener("DOMContentLoaded", Bl), Tc = 1, Nc.map(function(c) {
             return c();
         });
-    }, Oc = !1;
-    ac && (Oc = (ec.documentElement.doScroll ? /^loaded|^c/ : /^loaded|^i|^c/).test(ec.readyState), 
-    Oc || ec.addEventListener("DOMContentLoaded", Ec));
-    var Tc = function(c) {
-        ac && (Oc ? setTimeout(c, 0) : Nc.push(c));
-    }, Pc = rc, qc = {
+    }, Tc = !1;
+    ac && (Tc = (ec.documentElement.doScroll ? /^loaded|^c/ : /^loaded|^i|^c/).test(ec.readyState), 
+    Tc || ec.addEventListener("DOMContentLoaded", Ec));
+    var Oc = function(c) {
+        ac && (Tc ? setTimeout(c, 0) : Nc.push(c));
+    }, Pc = rc, _c = {
         size: 16,
         x: 0,
         y: 0,
         rotate: 0,
         flipX: !1,
         flipY: !1
-    }, _c = 0, jc = {
+    }, qc = 0, jc = {
         x: 0,
         y: 0,
         width: "100%",
@@ -2210,7 +2210,7 @@ var prettyPrintOne, prettyPrint;
     }, tl = function() {}, zl = {
         replace: function(c) {
             var l = c[0], h = c[1], e = h.map(function(c) {
-                return p(c);
+                return L(c);
             }).join("\n");
             if (l.parentNode && l.outerHTML) l.outerHTML = e + (xc.keepOriginalSource && "svg" !== l.tagName.toLowerCase() ? "<!-- " + l.outerHTML + " -->" : ""); else if (l.parentNode) {
                 var v = document.createElement("span");
@@ -2231,7 +2231,7 @@ var prettyPrintOne, prettyPrint;
             });
             h[0].attributes["class"] = v.toSvg.join(" ");
             var t = h.map(function(c) {
-                return p(c);
+                return L(c);
             }).join("\n");
             l.setAttribute("class", v.toNode.join(" ")), l.setAttribute(oc, ""), l.innerHTML = t;
         }
@@ -2339,7 +2339,7 @@ var prettyPrintOne, prettyPrint;
                 values: "1;0;1;1;0;1;"
             })
         } ]
-    }, Ll = {
+    }, pl = {
         tag: "path",
         attributes: gc({}, Hl, {
             opacity: "1",
@@ -2351,7 +2351,7 @@ var prettyPrintOne, prettyPrint;
                 values: "1;0;0;0;0;1;"
             })
         } ]
-    }, pl = {
+    }, Ll = {
         tag: "path",
         attributes: gc({}, Hl, {
             opacity: "0",
@@ -2365,7 +2365,7 @@ var prettyPrintOne, prettyPrint;
         } ]
     }, gl = {
         tag: "g",
-        children: [ ul, Cl, Ll, pl ]
+        children: [ ul, Cl, pl, Ll ]
     }, bl = Ac.styles, yl = "fa-layers-text", wl = /Font Awesome 5 (Solid|Regular|Light|Brands)/, Sl = {
         Solid: "fas",
         Regular: "far",
@@ -2380,9 +2380,9 @@ var prettyPrintOne, prettyPrint;
         return v;
     }, Al = function() {
         function c() {
-            Lc(this, c), this.definitions = {};
+            pc(this, c), this.definitions = {};
         }
-        return pc(c, [ {
+        return Lc(c, [ {
             key: "add",
             value: function() {
                 for (var c = this, l = arguments.length, h = Array(l), e = 0; e < l; e++) h[e] = arguments[e];
@@ -2408,15 +2408,15 @@ var prettyPrintOne, prettyPrint;
                 }), c;
             }
         } ]), c;
-    }(), Nl = !1, El = new Al(), Ol = function() {
+    }(), Nl = !1, El = new Al(), Tl = function() {
         l(!1), x();
-    }, Tl = {
+    }, Ol = {
         i2svg: function() {
             var c = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
             if (ac) {
                 F();
                 var l = c.node, h = void 0 === l ? ec : l, e = c.callback, v = void 0 === e ? function() {} : e;
-                xc.searchPseudoElements && _(h), j(h, v);
+                xc.searchPseudoElements && q(h), j(h, v);
             }
         },
         css: kl,
@@ -2427,8 +2427,8 @@ var prettyPrintOne, prettyPrint;
         transform: function(c) {
             return il(c);
         }
-    }, ql = U(function(c) {
-        var l = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {}, h = l.transform, e = void 0 === h ? qc : h, v = l.symbol, z = void 0 !== v && v, a = l.mask, n = void 0 === a ? null : a, s = l.title, r = void 0 === s ? null : s, i = l.classes, m = void 0 === i ? [] : i, o = l.attributes, f = void 0 === o ? {} : o, H = l.styles, V = void 0 === H ? {} : H;
+    }, _l = U(function(c) {
+        var l = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {}, h = l.transform, e = void 0 === h ? _c : h, v = l.symbol, z = void 0 !== v && v, a = l.mask, n = void 0 === a ? null : a, s = l.title, r = void 0 === s ? null : s, i = l.classes, m = void 0 === i ? [] : i, o = l.attributes, f = void 0 === o ? {} : o, H = l.styles, V = void 0 === H ? {} : H;
         if (c) {
             var u = c.prefix, d = c.iconName, C = c.icon;
             return D(gc({
@@ -2447,7 +2447,7 @@ var prettyPrintOne, prettyPrint;
                     },
                     prefix: u,
                     iconName: d,
-                    transform: gc({}, qc, e),
+                    transform: gc({}, _c, e),
                     symbol: z,
                     title: r,
                     extra: {
@@ -2458,15 +2458,15 @@ var prettyPrintOne, prettyPrint;
                 });
             });
         }
-    }), _l = function(c) {
-        var l = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {}, h = l.transform, e = void 0 === h ? qc : h, v = l.title, t = void 0 === v ? null : v, z = l.classes, a = void 0 === z ? [] : z, n = l.attributes, s = void 0 === n ? {} : n, r = l.styles, i = void 0 === r ? {} : r;
+    }), ql = function(c) {
+        var l = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {}, h = l.transform, e = void 0 === h ? _c : h, v = l.title, t = void 0 === v ? null : v, z = l.classes, a = void 0 === z ? [] : z, n = l.attributes, s = void 0 === n ? {} : n, r = l.styles, i = void 0 === r ? {} : r;
         return D({
             type: "text",
             content: c
         }, function() {
             return F(), H({
                 content: c,
-                transform: gc({}, qc, e),
+                transform: gc({}, _c, e),
                 title: t,
                 extra: {
                     attributes: s,
@@ -2494,13 +2494,13 @@ var prettyPrintOne, prettyPrint;
             } ];
         });
     }, Rl = {
-        noAuto: Ol,
-        dom: Tl,
+        noAuto: Tl,
+        dom: Ol,
         library: El,
         parse: Pl,
         findIconDefinition: $,
-        icon: ql,
-        text: _l,
+        icon: _l,
+        text: ql,
         layer: jl
     }, Il = function() {
         ac && xc.autoReplaceSvg && Rl.dom.i2svg({
@@ -2515,186 +2515,7 @@ var prettyPrintOne, prettyPrint;
             c(l);
         }
     }), e(Y);
-}(), function(c, l, h) {
-    function e(c, l) {
-        return typeof c === l;
-    }
-    function v() {
-        var c, l, h, v, t, z, a;
-        for (var n in u) if (u.hasOwnProperty(n)) {
-            if (c = [], l = u[n], l.name && (c.push(l.name.toLowerCase()), l.options && l.options.aliases && l.options.aliases.length)) for (h = 0; h < l.options.aliases.length; h++) c.push(l.options.aliases[h].toLowerCase());
-            for (v = e(l.fn, "function") ? l.fn() : l.fn, t = 0; t < c.length; t++) z = c[t], 
-            a = z.split("."), 1 === a.length ? C[a[0]] = v : (!C[a[0]] || C[a[0]] instanceof Boolean || (C[a[0]] = new Boolean(C[a[0]])), 
-            C[a[0]][a[1]] = v), L.push((v ? "" : "no-") + a.join("-"));
-        }
-    }
-    function t(c) {
-        var l = p.className, h = C._config.classPrefix || "";
-        if (g && (l = l.baseVal), C._config.enableJSClass) {
-            var e = new RegExp("(^|\\s)" + h + "no-js(\\s|$)");
-            l = l.replace(e, "$1" + h + "js$2");
-        }
-        C._config.enableClasses && (l += " " + h + c.join(" " + h), g ? p.className.baseVal = l : p.className = l);
-    }
-    function z(c, l) {
-        return !!~("" + c).indexOf(l);
-    }
-    function a() {
-        return "function" != typeof l.createElement ? l.createElement(arguments[0]) : g ? l.createElementNS.call(l, "http://www.w3.org/2000/svg", arguments[0]) : l.createElement.apply(l, arguments);
-    }
-    function n() {
-        var c = l.body;
-        return c || (c = a(g ? "svg" : "body"), c.fake = !0), c;
-    }
-    function s(c, h, e, v) {
-        var t, z, s, r, i = "modernizr", m = a("div"), o = n();
-        if (parseInt(e, 10)) for (;e--; ) s = a("div"), s.id = v ? v[e] : i + (e + 1), m.appendChild(s);
-        return t = a("style"), t.type = "text/css", t.id = "s" + i, (o.fake ? o : m).appendChild(t), 
-        o.appendChild(m), t.styleSheet ? t.styleSheet.cssText = c : t.appendChild(l.createTextNode(c)), 
-        m.id = i, o.fake && (o.style.background = "", o.style.overflow = "hidden", r = p.style.overflow, 
-        p.style.overflow = "hidden", p.appendChild(o)), z = h(m, c), o.fake ? (o.parentNode.removeChild(o), 
-        p.style.overflow = r, p.offsetHeight) : m.parentNode.removeChild(m), !!z;
-    }
-    function r(c) {
-        return c.replace(/([A-Z])/g, function(c, l) {
-            return "-" + l.toLowerCase();
-        }).replace(/^ms-/, "-ms-");
-    }
-    function i(l, h, e) {
-        var v;
-        if ("getComputedStyle" in c) {
-            v = getComputedStyle.call(c, l, h);
-            var t = c.console;
-            if (null !== v) e && (v = v.getPropertyValue(e)); else if (t) {
-                var z = t.error ? "error" : "log";
-                t[z].call(t, "getComputedStyle returning null, its possible modernizr test results are inaccurate");
-            }
-        } else v = !h && l.currentStyle && l.currentStyle[e];
-        return v;
-    }
-    function m(l, e) {
-        var v = l.length;
-        if ("CSS" in c && "supports" in c.CSS) {
-            for (;v--; ) if (c.CSS.supports(r(l[v]), e)) return !0;
-            return !1;
-        }
-        if ("CSSSupportsRule" in c) {
-            for (var t = []; v--; ) t.push("(" + r(l[v]) + ":" + e + ")");
-            return t = t.join(" or "), s("@supports (" + t + ") { #modernizr { position: absolute; } }", function(c) {
-                return "absolute" == i(c, null, "position");
-            });
-        }
-        return h;
-    }
-    function o(c) {
-        return c.replace(/([a-z])-([a-z])/g, function(c, l, h) {
-            return l + h.toUpperCase();
-        }).replace(/^-/, "");
-    }
-    function f(c, l, v, t) {
-        function n() {
-            r && (delete S.style, delete S.modElem);
-        }
-        if (t = !e(t, "undefined") && t, !e(v, "undefined")) {
-            var s = m(c, v);
-            if (!e(s, "undefined")) return s;
-        }
-        for (var r, i, f, M, H, V = [ "modernizr", "tspan", "samp" ]; !S.style && V.length; ) r = !0, 
-        S.modElem = a(V.shift()), S.style = S.modElem.style;
-        for (f = c.length, i = 0; i < f; i++) if (M = c[i], H = S.style[M], z(M, "-") && (M = o(M)), 
-        S.style[M] !== h) {
-            if (t || e(v, "undefined")) return n(), "pfx" != l || M;
-            try {
-                S.style[M] = v;
-            } catch (u) {}
-            if (S.style[M] != H) return n(), "pfx" != l || M;
-        }
-        return n(), !1;
-    }
-    function M(c, l) {
-        return function() {
-            return c.apply(l, arguments);
-        };
-    }
-    function H(c, l, h) {
-        var v;
-        for (var t in c) if (c[t] in l) return h === !1 ? c[t] : (v = l[c[t]], e(v, "function") ? M(v, h || l) : v);
-        return !1;
-    }
-    function V(c, l, h, v, t) {
-        var z = c.charAt(0).toUpperCase() + c.slice(1), a = (c + " " + y.join(z + " ") + z).split(" ");
-        return e(l, "string") || e(l, "undefined") ? f(a, l, v, t) : (a = (c + " " + x.join(z + " ") + z).split(" "), 
-        H(a, l, h));
-    }
-    var u = [], d = {
-        _version: "3.6.0",
-        _config: {
-            classPrefix: "has-",
-            enableClasses: !0,
-            enableJSClass: !0,
-            usePrefixes: !0
-        },
-        _q: [],
-        on: function(c, l) {
-            var h = this;
-            setTimeout(function() {
-                l(h[c]);
-            }, 0);
-        },
-        addTest: function(c, l, h) {
-            u.push({
-                name: c,
-                fn: l,
-                options: h
-            });
-        },
-        addAsyncTest: function(c) {
-            u.push({
-                name: null,
-                fn: c
-            });
-        }
-    }, C = function() {};
-    C.prototype = d, C = new C();
-    var L = [], p = l.documentElement, g = "svg" === p.nodeName.toLowerCase();
-    C.addTest("svg", !!l.createElementNS && !!l.createElementNS("http://www.w3.org/2000/svg", "svg").createSVGRect);
-    var b = "Moz O ms Webkit", y = d._config.usePrefixes ? b.split(" ") : [];
-    d._cssomPrefixes = y;
-    var w = {
-        elem: a("modernizr")
-    };
-    C._q.push(function() {
-        delete w.elem;
-    });
-    var S = {
-        style: w.elem.style
-    };
-    C._q.unshift(function() {
-        delete S.style;
-    });
-    var x = d._config.usePrefixes ? b.toLowerCase().split(" ") : [];
-    d._domPrefixes = x, d.testAllProps = V;
-    var k = function(l) {
-        var e, v = prefixes.length, t = c.CSSRule;
-        if ("undefined" == typeof t) return h;
-        if (!l) return !1;
-        if (l = l.replace(/^@/, ""), e = l.replace(/-/g, "_").toUpperCase() + "_RULE", e in t) return "@" + l;
-        for (var z = 0; z < v; z++) {
-            var a = prefixes[z], n = a.toUpperCase() + "_" + e;
-            if (n in t) return "@-" + a.toLowerCase() + "-" + l;
-        }
-        return !1;
-    };
-    d.atRule = k;
-    var A = d.prefixed = function(c, l, h) {
-        return 0 === c.indexOf("@") ? k(c) : (c.indexOf("-") != -1 && (c = o(c)), l ? V(c, l, h) : V(c, "pfx"));
-    };
-    C.addTest("requestanimationframe", !!A("requestAnimationFrame", c), {
-        aliases: [ "raf" ]
-    }), v(), t(L), delete d.addTest, delete d.addAsyncTest;
-    for (var N = 0; N < C._q.length; N++) C._q[N]();
-    c.Modernizr = C;
-}(window, document), function(c, l) {
+}(), function(c, l) {
     "use strict";
     "function" == typeof define && define.amd ? define([], l) : "object" == typeof exports ? module.exports = l() : c.Headroom = l();
 }(this, function() {
@@ -2855,44 +2676,257 @@ var prettyPrintOne, prettyPrint;
         var l = c(this);
         l.headroom(l.data());
     }));
-}(window.Zepto || window.jQuery), function(c) {
-    var l = !1, h = c("#footerMargin");
+}(window.Zepto || window.jQuery), function(c, l, h) {
+    function e(c, l) {
+        return typeof c === l;
+    }
+    function v() {
+        var c, l, h, v, t, z, a;
+        for (var n in u) if (u.hasOwnProperty(n)) {
+            if (c = [], l = u[n], l.name && (c.push(l.name.toLowerCase()), l.options && l.options.aliases && l.options.aliases.length)) for (h = 0; h < l.options.aliases.length; h++) c.push(l.options.aliases[h].toLowerCase());
+            for (v = e(l.fn, "function") ? l.fn() : l.fn, t = 0; t < c.length; t++) z = c[t], 
+            a = z.split("."), 1 === a.length ? C[a[0]] = v : (!C[a[0]] || C[a[0]] instanceof Boolean || (C[a[0]] = new Boolean(C[a[0]])), 
+            C[a[0]][a[1]] = v), p.push((v ? "" : "no-") + a.join("-"));
+        }
+    }
+    function t(c) {
+        var l = L.className, h = C._config.classPrefix || "";
+        if (g && (l = l.baseVal), C._config.enableJSClass) {
+            var e = new RegExp("(^|\\s)" + h + "no-js(\\s|$)");
+            l = l.replace(e, "$1" + h + "js$2");
+        }
+        C._config.enableClasses && (l += " " + h + c.join(" " + h), g ? L.className.baseVal = l : L.className = l);
+    }
+    function z(c, l) {
+        return !!~("" + c).indexOf(l);
+    }
+    function a() {
+        return "function" != typeof l.createElement ? l.createElement(arguments[0]) : g ? l.createElementNS.call(l, "http://www.w3.org/2000/svg", arguments[0]) : l.createElement.apply(l, arguments);
+    }
+    function n() {
+        var c = l.body;
+        return c || (c = a(g ? "svg" : "body"), c.fake = !0), c;
+    }
+    function s(c, h, e, v) {
+        var t, z, s, r, i = "modernizr", m = a("div"), o = n();
+        if (parseInt(e, 10)) for (;e--; ) s = a("div"), s.id = v ? v[e] : i + (e + 1), m.appendChild(s);
+        return t = a("style"), t.type = "text/css", t.id = "s" + i, (o.fake ? o : m).appendChild(t), 
+        o.appendChild(m), t.styleSheet ? t.styleSheet.cssText = c : t.appendChild(l.createTextNode(c)), 
+        m.id = i, o.fake && (o.style.background = "", o.style.overflow = "hidden", r = L.style.overflow, 
+        L.style.overflow = "hidden", L.appendChild(o)), z = h(m, c), o.fake ? (o.parentNode.removeChild(o), 
+        L.style.overflow = r, L.offsetHeight) : m.parentNode.removeChild(m), !!z;
+    }
+    function r(c) {
+        return c.replace(/([A-Z])/g, function(c, l) {
+            return "-" + l.toLowerCase();
+        }).replace(/^ms-/, "-ms-");
+    }
+    function i(l, h, e) {
+        var v;
+        if ("getComputedStyle" in c) {
+            v = getComputedStyle.call(c, l, h);
+            var t = c.console;
+            if (null !== v) e && (v = v.getPropertyValue(e)); else if (t) {
+                var z = t.error ? "error" : "log";
+                t[z].call(t, "getComputedStyle returning null, its possible modernizr test results are inaccurate");
+            }
+        } else v = !h && l.currentStyle && l.currentStyle[e];
+        return v;
+    }
+    function m(l, e) {
+        var v = l.length;
+        if ("CSS" in c && "supports" in c.CSS) {
+            for (;v--; ) if (c.CSS.supports(r(l[v]), e)) return !0;
+            return !1;
+        }
+        if ("CSSSupportsRule" in c) {
+            for (var t = []; v--; ) t.push("(" + r(l[v]) + ":" + e + ")");
+            return t = t.join(" or "), s("@supports (" + t + ") { #modernizr { position: absolute; } }", function(c) {
+                return "absolute" == i(c, null, "position");
+            });
+        }
+        return h;
+    }
+    function o(c) {
+        return c.replace(/([a-z])-([a-z])/g, function(c, l, h) {
+            return l + h.toUpperCase();
+        }).replace(/^-/, "");
+    }
+    function f(c, l, v, t) {
+        function n() {
+            r && (delete S.style, delete S.modElem);
+        }
+        if (t = !e(t, "undefined") && t, !e(v, "undefined")) {
+            var s = m(c, v);
+            if (!e(s, "undefined")) return s;
+        }
+        for (var r, i, f, M, H, V = [ "modernizr", "tspan", "samp" ]; !S.style && V.length; ) r = !0, 
+        S.modElem = a(V.shift()), S.style = S.modElem.style;
+        for (f = c.length, i = 0; i < f; i++) if (M = c[i], H = S.style[M], z(M, "-") && (M = o(M)), 
+        S.style[M] !== h) {
+            if (t || e(v, "undefined")) return n(), "pfx" != l || M;
+            try {
+                S.style[M] = v;
+            } catch (u) {}
+            if (S.style[M] != H) return n(), "pfx" != l || M;
+        }
+        return n(), !1;
+    }
+    function M(c, l) {
+        return function() {
+            return c.apply(l, arguments);
+        };
+    }
+    function H(c, l, h) {
+        var v;
+        for (var t in c) if (c[t] in l) return h === !1 ? c[t] : (v = l[c[t]], e(v, "function") ? M(v, h || l) : v);
+        return !1;
+    }
+    function V(c, l, h, v, t) {
+        var z = c.charAt(0).toUpperCase() + c.slice(1), a = (c + " " + y.join(z + " ") + z).split(" ");
+        return e(l, "string") || e(l, "undefined") ? f(a, l, v, t) : (a = (c + " " + x.join(z + " ") + z).split(" "), 
+        H(a, l, h));
+    }
+    var u = [], d = {
+        _version: "3.6.0",
+        _config: {
+            classPrefix: "has-",
+            enableClasses: !0,
+            enableJSClass: !0,
+            usePrefixes: !0
+        },
+        _q: [],
+        on: function(c, l) {
+            var h = this;
+            setTimeout(function() {
+                l(h[c]);
+            }, 0);
+        },
+        addTest: function(c, l, h) {
+            u.push({
+                name: c,
+                fn: l,
+                options: h
+            });
+        },
+        addAsyncTest: function(c) {
+            u.push({
+                name: null,
+                fn: c
+            });
+        }
+    }, C = function() {};
+    C.prototype = d, C = new C();
+    var p = [], L = l.documentElement, g = "svg" === L.nodeName.toLowerCase();
+    C.addTest("svg", !!l.createElementNS && !!l.createElementNS("http://www.w3.org/2000/svg", "svg").createSVGRect);
+    var b = "Moz O ms Webkit", y = d._config.usePrefixes ? b.split(" ") : [];
+    d._cssomPrefixes = y;
+    var w = {
+        elem: a("modernizr")
+    };
+    C._q.push(function() {
+        delete w.elem;
+    });
+    var S = {
+        style: w.elem.style
+    };
+    C._q.unshift(function() {
+        delete S.style;
+    });
+    var x = d._config.usePrefixes ? b.toLowerCase().split(" ") : [];
+    d._domPrefixes = x, d.testAllProps = V;
+    var k = function(l) {
+        var e, v = prefixes.length, t = c.CSSRule;
+        if ("undefined" == typeof t) return h;
+        if (!l) return !1;
+        if (l = l.replace(/^@/, ""), e = l.replace(/-/g, "_").toUpperCase() + "_RULE", e in t) return "@" + l;
+        for (var z = 0; z < v; z++) {
+            var a = prefixes[z], n = a.toUpperCase() + "_" + e;
+            if (n in t) return "@-" + a.toLowerCase() + "-" + l;
+        }
+        return !1;
+    };
+    d.atRule = k;
+    var A = d.prefixed = function(c, l, h) {
+        return 0 === c.indexOf("@") ? k(c) : (c.indexOf("-") != -1 && (c = o(c)), l ? V(c, l, h) : V(c, "pfx"));
+    };
+    C.addTest("requestanimationframe", !!A("requestAnimationFrame", c), {
+        aliases: [ "raf" ]
+    }), v(), t(p), delete d.addTest, delete d.addAsyncTest;
+    for (var N = 0; N < C._q.length; N++) C._q[N]();
+    c.Modernizr = C;
+}(window, document), function(c) {
+    function l() {
+        function l(c) {
+            var l = parseInt(c);
+            return isNaN(l) ? 0 : l;
+        }
+        function h(h) {
+            h = l(h);
+            var e = c("<span/>").addClass("share-count").text(h);
+            return h > 0 && e.addClass("share-count-has"), e;
+        }
+        var v = c("#shareThis"), t = v.data("url"), z = encodeURIComponent(t);
+        e && (c.ajax({
+            url: "https://b.hatena.ne.jp/entry.count?url=" + z,
+            dataType: "jsonp"
+        }).done(function(c) {
+            v.find(".share-hatena .btn").append(h(c));
+        }), c.ajax({
+            url: "https://graph.facebook.com/?id=" + z,
+            dataType: "jsonp"
+        }).done(function(c) {
+            c && v.find(".share-facebook .btn").append(h(c.shares));
+        }), makotokw && makotokw.counter_api && makotokw.counter_api.length > 0 && c.ajax({
+            url: makotokw.counter_api + "?url=" + z,
+            dataType: "jsonp"
+        }).done(function(c) {
+            c && (v.find(".share-pocket .btn").append(h(c.pocket)), v.find(".share-googleplus .btn").append(h(c.google)));
+        }));
+    }
+    function h() {
+        var h = c("#shareThis");
+        h.length > 0 && c(window).bind("scroll.shareThis load.shareThis", function() {
+            c(this).scrollTop() + c(this).height() > h.offset().top && (l(), c(this).unbind("scroll.shareThis load.shareThis"));
+        });
+    }
+    var e = !1, v = c("#footerMargin");
     c(document).ready(function() {
-        function e() {
+        function l() {
             var l = c("#siteHeaderSearchForm");
             c("#siteHeaderSearchTrigger").on("click", function() {
                 l.toggleClass("is-active"), l.hasClass("is-active") && c("#siteHeaderSearchText").focus();
             });
         }
-        function v() {
-            var c = o - m;
-            i.attr("max", c), i.val(window.scrollY);
-        }
         function t() {
-            v(), f = !1;
+            var c = f - o;
+            m.attr("max", c), m.val(window.scrollY);
         }
         function z() {
-            m = c(window).height(), o = c(document.body).height();
+            t(), M = !1;
         }
         function a() {
-            s(), r();
+            o = c(window).height(), f = c(document.body).height();
         }
         function n() {
-            z(), s(), r();
+            r(), i();
         }
         function s() {
-            var e = c(window).height(), v = o - h.height(), t = e - v;
-            l && (t -= 32), t <= 0 ? (h.hide(), h.height(1)) : (h.show(), h.height(t));
+            a(), r(), i();
         }
         function r() {
-            f || (f = !0, Modernizr.requestanimationframe && requestAnimationFrame(t));
+            var l = c(window).height(), h = f - v.height(), t = l - h;
+            e && (t -= 32), t <= 0 ? (v.hide(), v.height(1)) : (v.show(), v.height(t));
+        }
+        function i() {
+            M || (M = !0, Modernizr.requestanimationframe && requestAnimationFrame(z));
         }
         c.isFunction(prettyPrint) && prettyPrint();
-        var i = c("#siteProgress"), m = 0, o = 0, f = !1;
-        z(), e(), c(window).on("sticky", s).scroll(a).resize(n), l = c("#wpadminbar").length > 0, 
-        c("#siteHeader").headroom(), s();
-        var M = c("#jp-relatedposts"), H = c("#shareThis");
-        H.length > 0 && M.insertBefore(H), window.FontAwesome && (c(".enclosure-github").each(function() {
+        var m = c("#siteProgress"), o = 0, f = 0, M = !1;
+        a(), l(), c(window).on("sticky", r).scroll(n).resize(s), e = c("#wpadminbar").length > 0, 
+        c("#siteHeader").headroom(), e && h(), r();
+        var H = c("#jp-relatedposts"), V = c("#shareThis");
+        V.length > 0 && H.insertBefore(V), window.FontAwesome && (c(".enclosure-github").each(function() {
             c(this).prepend(FontAwesome.icon(FontAwesome.findIconDefinition({
                 prefix: "fab",
                 iconName: "github-alt"

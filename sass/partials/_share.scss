@@ -74,6 +74,7 @@
     top: -8px;
     background-color: $md-pink-300;
     color: $white;
+    opacity: .5;
     border-radius: 50%;
     text-align: center;
     font-size: .65em;
@@ -81,6 +82,9 @@
     min-height: 20px;
     min-width: 20px;
     line-height: 20px;
+    &.share-count-has {
+      opacity: 1;
+    }
   }
   .share-count-link {
     &:hover {

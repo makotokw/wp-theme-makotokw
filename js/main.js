@@ -12,28 +12,36 @@
     }
 
     if (isAdmin) {
+
+      function createCountElement(shareCount) {
+        shareCount = toInt(shareCount);
+        var $c = $('<span/>').addClass('share-count').text(shareCount);
+        if (shareCount > 0) {
+          $c.addClass('share-count-has');
+        }
+        return $c;
+      }
+
       // http://developer.hatena.ne.jp/ja/documents/bookmark/apis/getcount
-      $.ajax({url: 'http://api.b.st-hatena.com/entry.count?url=' + encodedPermalink, dataType: 'jsonp'})
+      $.ajax({url: 'https://b.hatena.ne.jp/entry.count?url=' + encodedPermalink, dataType: 'jsonp'})
         .done(function (data) {
-          var $count = $('<span/>').addClass('share-count').text(toInt(data));
-          $shareThis.find('.share-hatena .btn').append($count);
+          $shareThis.find('.share-hatena .btn').append(createCountElement(data));
         });
       $.ajax({url: 'https://graph.facebook.com/?id=' + encodedPermalink, dataType: 'jsonp'})
         .done(function (data) {
           if (data) {
-            var $count = $('<span/>').addClass('share-count').text(toInt(data.shares));
-            $shareThis.find('.share-facebook .btn').append($count);
+            $shareThis.find('.share-facebook .btn').append(createCountElement(data.shares));
           }
         });
 
       if (makotokw && makotokw.counter_api && makotokw.counter_api.length > 0) {
         $.ajax({url: makotokw.counter_api + '?url=' + encodedPermalink, dataType: 'jsonp'})
           .done(function (data) {
-            if (!data) return;
-            var $countPocket = $('<span/>').addClass('share-count').text(toInt(data.pocket));
-            $shareThis.find('.share-pocket .btn').append($countPocket);
-            var $countGooglePlus = $('<span/>').addClass('share-count').text(toInt(data.google));
-            $shareThis.find('.share-googleplus .btn').append($countGooglePlus);
+            if (!data) {
+              return;
+            }
+            $shareThis.find('.share-pocket .btn').append(createCountElement(data.pocket));
+            $shareThis.find('.share-googleplus .btn').append(createCountElement(data.google));
           });
       }
 
@@ -42,7 +50,7 @@
 
   function lazyLoadShareCount() {
     var $shareThis = $('#shareThis');
-    if ($shareThis.length > 0 && isAdmin) {
+    if ($shareThis.length > 0) {
       $(window).bind('scroll.shareThis load.shareThis', function () {
         if ($(this).scrollTop() + $(this).height() > $shareThis.offset().top) {
           updateShareCount();
@@ -136,8 +144,10 @@
 
     isAdmin = ($('#wpadminbar').length > 0);
     $('#siteHeader').headroom();
-    // avoid seeing ShareCount
-    //lazyLoadShareCount();
+
+    if (isAdmin) {
+      lazyLoadShareCount();
+    }
     stickyFooter();
 
     var $jetPackRelatedPosts = $('#jp-relatedposts'), $shareThis = $('#shareThis');
