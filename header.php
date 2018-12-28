@@ -38,11 +38,6 @@
 <?php if ( true === WP_THEME_OGP ) : ?>
 <?php get_template_part( 'meta-ogp' ); ?>
 <?php endif ?>
-<?php // @codingStandardsIgnoreStart ?>
-<!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri(); ?>/components/js/html5shiv/html5shiv.js" type="text/javascript"></script>
-<![endif]-->
-<?php // @codingStandardsIgnoreEnd ?>
 <?php wp_head(); ?>
 <?php if ( JETPACK_DEV_DEBUG === true ) : ?>
 <link rel='stylesheet' id='jetpack_css-css' href='/wp-content/plugins/jetpack/css/jetpack.css' type='text/css' media='all'/>

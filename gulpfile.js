@@ -11,7 +11,12 @@ var notifier = require('node-notifier');
 var wpRoot = '../../../';
 
 gulp.task('clean:components', function () {
-  return del(['components']);
+  return del([
+    'components/font-awesome',
+    'components/google-code-prettify',
+    'components/html5shiv',
+    'components/unsemantic'
+  ]);
 });
 gulp.task('bower:install', plugins.shell.task(['bower install']));
 gulp.task('bower:reinstall', ['clean:components', 'bower:install']);
@@ -19,7 +24,7 @@ gulp.task('bower:normalize', ['bower:reinstall'], function () {
   var mainBowerFiles = require('main-bower-files');
   var bowerNormalizer = require('gulp-bower-normalize');
   gulp.src(mainBowerFiles(), {base: './bower_components'})
-    .pipe(bowerNormalizer({bowerJson: './bower.json'}))
+    .pipe(bowerNormalizer({bowerJson: './bower.json', checkPath: true}))
     .pipe(plugins.rename(function (path) {
       if (path.dirname === 'font-awesome/css') {
         // for sass import
@@ -71,8 +76,8 @@ gulp.task('modernizr', function () {
     './js/**/*.js',
     '!./js/vendor/modernizr/modernizr.js'
   ])
-    // https://github.com/rejas/gulp-modernizr
-    // https://github.com/Modernizr/customizr#config-file
+  // https://github.com/rejas/gulp-modernizr
+  // https://github.com/Modernizr/customizr#config-file
     .pipe(plugins.modernizr({
       classPrefix: 'has-',
       enableClasses: true,
@@ -113,13 +118,13 @@ gulp.task('js', ['modernizr'], function () {
 function sass(env) {
   var isDebug = env === 'development';
   return plugins.rubySass('sass/*.scss', {
-      verbose: isDebug,
-      loadPath: ['components'],
-      lineNumbers: isDebug,
-      force: !isDebug,
-      sourcemap: isDebug,
-      emitCompileError: true
-    })
+    verbose: isDebug,
+    loadPath: ['components'],
+    lineNumbers: isDebug,
+    force: !isDebug,
+    sourcemap: isDebug,
+    emitCompileError: true
+  })
     .on('error', function (err) {
       notifier.notify({
         message: err.message,
