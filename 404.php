@@ -6,11 +6,9 @@
  */
 
 get_header(); ?>
-<div class="container">
-	<div class="errorPage">
-		<header class="errorPage-header">
-			<h1 class="errorPage-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'makotokw' ); ?></h1>
-		</header>
-	</div>
+<div class="errorPage">
+	<header class="errorPage-header">
+		<h1 class="errorPage-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'makotokw' ); ?></h1>
+	</header>
 </div>
 <?php get_footer(); ?>

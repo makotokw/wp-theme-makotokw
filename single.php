@@ -6,8 +6,6 @@
  */
 
 get_header(); ?>
-
-<div class="container">
 <?php while ( have_posts() ) : ?>
 	<?php
 		the_post();
@@ -17,6 +15,6 @@ get_header(); ?>
 		<?php comments_template(); ?>
 	<?php endif ?>
 <?php endwhile; // end of the loop. ?>
-</div>
 <?php get_template_part( 'author' ); ?>
-<?php get_footer(); ?>
+<?php
+get_footer();

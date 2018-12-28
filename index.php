@@ -13,8 +13,6 @@
 
 get_header(); ?>
 
-<div class="container">
-
 <header class="site-content-header">
 	<h2 class="archives-title">
 		<?php if ( is_category() ) : ?>
@@ -54,6 +52,5 @@ get_header(); ?>
 <?php else : ?>
 	<?php get_template_part( 'no-results' ); ?>
 <?php endif; ?>
-</div>
 
 <?php get_footer(); ?>

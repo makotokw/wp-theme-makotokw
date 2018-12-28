@@ -16,26 +16,21 @@ get_header();
 ?>
 
 <section class="section-page section-page-entry section-page-first">
-	<div class="container">
-		<div class="post-summaries">
-			<?php while ( have_posts() ) : ?>
-				<?php
-					the_post();
-					get_template_part( 'content', get_post_format() );
-				?>
-			<?php endwhile; ?>
-		</div>
-		<?php makotokw_pagination(); ?>
+	<div class="post-summaries">
+		<?php while ( have_posts() ) : ?>
+			<?php
+				the_post();
+				get_template_part( 'content', get_post_format() );
+			?>
+		<?php endwhile; ?>
 	</div>
+	<?php makotokw_pagination(); ?>
 </section>
 
 <section class="section-page section-page-category">
-	<div class="container">
-
-		<ul class="list-categories">
-			<?php makotokw_list_categories(); ?>
-		</ul>
-	</div>
+	<ul class="list-categories">
+		<?php makotokw_list_categories(); ?>
+	</ul>
 </section>
 
 <?php get_footer(); ?>

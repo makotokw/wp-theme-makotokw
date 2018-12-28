@@ -1,3 +1,2 @@
 <?php
-get_header();?>
-<div class="container">
+get_header();

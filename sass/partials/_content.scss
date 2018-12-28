@@ -4,7 +4,10 @@
 
 .post-summary,
 .post-single {
+  max-width: $site-max-container - $site-max-sidebar - 50;
   word-wrap: break-word;
+  overflow-wrap : break-word;
+  hyphens: auto;
 }
 
 .post-summary {

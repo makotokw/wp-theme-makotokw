@@ -3,15 +3,6 @@
   background-color: $footer-default-bg;
   color: $footer-default-text;
   font-size: $font-size-small;
-
-  .container {
-    padding: 10px 0 15px;
-  }
-
-  .home & .container {
-    border-top: none;
-  }
-
   a {
     color: $footer-default-link;
     &:hover {
@@ -58,9 +49,6 @@
   }
 
   @include smaller-than-tablet-screen {
-    .container {
-      padding: 5px 0 10px;
-    }
     font-size: $font-size-mini;
     .site-footer-nav {
       text-align: center;

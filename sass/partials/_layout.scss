@@ -1,0 +1,47 @@
+// Layout
+// -----------------------------------------------
+
+// .site
+//   .site-header
+//   .site-main
+//     .site-content-area
+//        [CONTENT]
+//     .site-sidebar
+//   .site-footer
+
+.site {
+  box-sizing: content-box;
+  margin: 0;
+  width: 100vw;
+}
+
+.site-main {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  // for sticky header
+  padding: 56px 10px 0 10px;
+  max-width: $site-max-container;
+}
+
+.site-content-area {
+  overflow: hidden;
+  display: contents;
+  margin: 0;
+  position: relative;
+}
+
+.site-sidebar {
+  flex: 0 0 $site-max-sidebar;
+  margin: 0;
+}
+
+// [CONTENT]:
+// .site-content
+//    .site-content-header
+//      [ENTRY]
+
+.site-content {
+  margin: 0 auto;
+}
+

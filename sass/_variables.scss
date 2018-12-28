@@ -92,7 +92,7 @@ $state-info-border: darken(adjust-hue($state-info-bg, -10), 7%);
 $site-default-text: $md-grey-800;
 // for h1-h5
 $site-header-text: $md-grey-900;
-$site-default-bg: $white;
+$site-default-bg: $md-grey-100;
 $site-neutral-color: $md-grey-500;
 $site-accent-color: $blue-light;
 $site-dark-accent-color: $md-grey-800;
@@ -127,7 +127,7 @@ $font-family-monospace: Monaco, Menlo, Consolas, 'Courier New', monospace;
 $font-family-base: $font-family-sans-serif;
 $font-family-content: $font-family-sans-serif;
 
-$font-size-base: 16px;
+$font-size-base: 17px;
 $font-size-large: $font-size-base * 1.25; // ~18px
 $font-size-small: $font-size-base * 0.85; // ~12px
 $font-size-mini: $font-size-base * 0.75; // ~11px
@@ -137,12 +137,12 @@ $entry-title-small-font-size: 25px;
 $entry-content-font-size: 17px;
 $entry-list-title-font-size: 25px;
 $entry-list-title-small-font-size: 20px;
-$entry-list-content-font-size: 16px;
+$entry-list-content-font-size: 17px;
 
 $entry-h2-font-size: 25px;
-$entry-h3-font-size: 19px;
-$entry-h4-font-size: 18px;
-$entry-h5-font-size: 17px;
+$entry-h3-font-size: 20px;
+$entry-h4-font-size: 19px;
+$entry-h5-font-size: 18px;
 $entry-h2-small-font-size: 22px;
 
 $line-height-base: 1.7;
@@ -226,12 +226,5 @@ $screen-xs-max: ($screen-sm-min - 1);
 $screen-sm-max: ($screen-md-min - 1);
 $screen-md-max: ($screen-lg-min - 1);
 
-// Grid system
-$grid-columns: 12;
-$grid-gutter-width: 30px;
-$grid-float-breakpoint: $screen-sm-min;
-
-$container-xs: ((360px + $grid-gutter-width));
-$container-sm: ((720px + $grid-gutter-width));
-$container-md: ((900px + $grid-gutter-width));
-$container-lg: ((940px + $grid-gutter-width));
+$site-max-container: 1200px;
+$site-max-sidebar: 250px;

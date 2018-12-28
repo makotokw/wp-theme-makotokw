@@ -95,6 +95,6 @@
 		</progress>
 	</header>
 	<div class="site-main">
-		<div class="site-content-area ">
+		<div class="site-content-area">
 			<main class="site-content" role="main">
 
