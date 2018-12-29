@@ -9,9 +9,9 @@
     margin-top: 0;
   }
   .widget-title {
-    text-align: center;
+    font-size: $font-size-base;
     margin: 0;
-    padding: 0.5em;
+    padding: 0.5em 1em;
     background: $site-component-header-bg;
     color: $site-component-header-text;
   }

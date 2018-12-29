@@ -2,8 +2,8 @@
 // -----------------------------------------------
 
 
-$header-sticky-height: 60px;
-$header-sticky-height-small: 48px;
+$header-sticky-height: 145px;
+$header-sticky-height-small: 100px;
 
 // .site
 //   .site-header
@@ -49,10 +49,15 @@ $header-sticky-height-small: 48px;
   padding-right: $site-grid-margin;
 }
 
+@include smaller-than-desktop-screen {
+  .site-main {
+    padding: $header-sticky-height-small 0;
+  }
+}
+
 @include smaller-than-tablet-screen {
   .site-main {
     flex-direction: column;
-    padding: $header-sticky-height-small 0;
   }
   .site-content {
     margin: 0 auto;

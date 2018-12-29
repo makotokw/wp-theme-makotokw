@@ -39,8 +39,21 @@
   }
   @include smaller-than-desktop-screen {
     margin-top: 0;
+    .entry-header {
+      padding: 0;
+    }
+    .entry-content {
+      padding: 0;
+    }
   }
+}
 
+.section {
+  margin: 0;
+  padding: $site-grid-margin;
+  @include smaller-than-desktop-screen {
+    padding: 0;
+  }
 }
 
 .post-summary {
@@ -233,6 +246,11 @@ $entry-header-color: $site-accent-color;
 .btn-more-link {
   float: right;
   font-size: $font-size-base;
+  border-radius: 20px;
+  margin-right: -$site-grid-margin;
+  @include smaller-than-desktop-screen {
+    margin-right: 0;
+  }
 }
 
 // Sticky (Featured) Content
@@ -295,8 +313,6 @@ object {
 }
 
 .section {
-  margin: 0;
-  padding: $site-grid-margin;
   .section-title {
     text-transform: uppercase;
   }
@@ -352,7 +368,7 @@ object {
     .section-content {
       float: none;
       width: auto;
-      margin-left: 15px;
+      margin-left: $site-grid-margin-small;
     }
   }
 }
@@ -377,7 +393,7 @@ object {
 
     .fa {
       color: $site-neutral-color;
-      margin-right: 10px;
+      margin-right: $site-grid-margin;
     }
   }
 }
@@ -407,7 +423,7 @@ object {
 .related-posts {
   @include smaller-than-desktop-screen {
     .related-post {
-      padding: 10px;
+      padding: $site-grid-margin-small;
     }
   }
 }

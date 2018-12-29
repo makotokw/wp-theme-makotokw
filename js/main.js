@@ -143,7 +143,10 @@
     }
 
     isAdmin = ($('#wpadminbar').length > 0);
-    $('#siteHeader').headroom();
+    var $header = $('#siteHeader');
+    $header.headroom({
+      offset: $header.height()
+    });
 
     if (isAdmin) {
       lazyLoadShareCount();

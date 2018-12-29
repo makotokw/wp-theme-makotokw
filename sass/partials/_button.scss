@@ -38,13 +38,6 @@
   border-radius: 2px;
 }
 
-%btn-circle {
-  @extend .btn;
-  @extend .btn-primary;
-  border-radius: 20px;
-  float: none;
-}
-
 .btn-circle {
   @include circle(38px);
 
