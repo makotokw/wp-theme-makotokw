@@ -353,7 +353,7 @@ function makotokw_updated_on() {
 
 function makotokw_the_content_more_link( $link ) {
 	if ( preg_match( '/href="([^"]+)"/', $link, $match ) ) {
-		return '<a class="text-more-link" href="' . $match[1] . '">' . __( 'Continue reading', 'makotokw' ) . '</a>';
+		return '<a class="btn btn-primary btn-more-link" href="' . $match[1] . '">' . __( 'Continue reading', 'makotokw' ) . '</a>';
 	}
 	return $link;
 }

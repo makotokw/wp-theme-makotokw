@@ -23,11 +23,13 @@
     .current {
       .page {
         @extend %pagenation-page;
-        color: $white;
-        background-color: $site-dark-accent-color;
+        border-color: $site-component-header-bg;
+        color: $site-component-header-text;
+        background-color: $site-component-header-bg;
         &:hover {
-          color: $white;
-          background-color: $site-dark-accent-color;
+          border-color: $site-component-header-bg;
+          color: $site-component-header-text;
+          background-color: $site-component-header-bg;
         }
       }
     }

@@ -60,10 +60,11 @@ $asbestos: #7F8C8D;
 $github-orange: #D26911;
 $monstersinc-blue: #007CC4;
 $heart-red: #BE1931;
+$dokugaku-blue: $blue;
 
 // Layout color ----------------------------
 
-$brand-primary: #428bca;
+$brand-primary: $dokugaku-blue;
 $brand-success: #5cb85c;
 $brand-warning: #f0ad4e;
 $brand-danger: #d9534f;
@@ -89,16 +90,24 @@ $state-info-text: #3a87ad;
 $state-info-bg: lighten(#d9edf7, 7%);
 $state-info-border: darken(adjust-hue($state-info-bg, -10), 7%);
 
+$site-grid-margin: 15px;
+$site-grid-margin-small: 10px;
+$site-default-bg: $md-grey-100;
+
+// component
+$site-component-header-bg: $dokugaku-blue;
+$site-component-header-text: $white;
+$site-component-content-bg: $white;
+$site-component-content-text: $md-grey-900;
+
 $site-default-text: $md-grey-800;
 // for h1-h5
 $site-header-text: $md-grey-900;
-$site-default-bg: $md-grey-100;
 $site-neutral-color: $md-grey-500;
 $site-accent-color: $blue-light;
-$site-dark-accent-color: $md-grey-800;
 $site-default-border: $brand-default-border;
 
-$site-default-link: $blue;
+$site-default-link: $dokugaku-blue;
 $site-default-link-over: darken($site-default-link, 10%);
 $site-neutral-link: $site-neutral-color;
 $site-neutral-link-over: darken($site-neutral-link, 10%);
@@ -109,7 +118,7 @@ $header-background-color: $white;
 $header-border-color: $md-grey-900;
 $header-link-color: $md-grey-900;
 $header-link-over-color: $md-grey-900;
-$header-accent-color: $blue;
+$header-accent-color: $dokugaku-blue;
 $site-progress-border: $header-accent-color;
 
 $footer-default-text: $md-grey-600;

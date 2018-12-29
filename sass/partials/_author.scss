@@ -2,16 +2,9 @@ $site-author-image-base: 100px;
 $site-author-image-small: 75px;
 
 .site-author {
-  color: $white;
-  background-color: $blue;
-  margin: 16px 0 0;
-}
-
-.site-author-content {
   display: flex;
-  color: $white;
+  flex-direction: column;
   padding: 8px;
-  background-color: $blue;
   .site-author-img {
     flex: 0 1 $site-author-image-base;
     align-self: center;
@@ -19,26 +12,20 @@ $site-author-image-small: 75px;
     height: $site-author-image-base;
     border-radius: $site-author-image-base;
   }
+  .site-author-img {
+    margin-top: 16px;
+    flex: 0 1 $site-author-image-small;
+    width: $site-author-image-small;
+    height: $site-author-image-small;
+    border-radius: $site-author-image-small;
+  }
   .site-author-profile {
     flex: 1 1 auto;
     padding-left: 16px;
     line-height: $line-height-small;
   }
-  a {
-    color: $md-cyan-a100;
-    &:hover {
-      color: $md-cyan-a200;
-    }
-  }
 
-  @include smaller-than-tablet-screen {
-    flex-direction: column;
-    .site-author-img {
-      margin-top: 16px;
-      flex: 0 1 $site-author-image-small;
-      width: $site-author-image-small;
-      height: $site-author-image-small;
-      border-radius: $site-author-image-small;
-    }
+  @include desktop-or-bigger-screen {
+
   }
 }

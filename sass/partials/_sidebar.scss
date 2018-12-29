@@ -1,0 +1,21 @@
+.site-sidebar {
+  padding: 0 $site-grid-margin;
+  .widget {
+    background: $site-component-content-bg;
+    color: $site-component-content-text;
+    margin-top: $site-grid-margin * 2;
+  }
+  & >.widget:first-child {
+    margin-top: 0;
+  }
+  .widget-title {
+    text-align: center;
+    margin: 0;
+    padding: 0.5em;
+    background: $site-component-header-bg;
+    color: $site-component-header-text;
+  }
+  @include smaller-than-tablet-screen {
+    padding: $site-grid-margin-small;
+  }
+}
