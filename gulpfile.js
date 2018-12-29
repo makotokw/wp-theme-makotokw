@@ -26,9 +26,9 @@ gulp.task('bower:normalize', ['bower:reinstall'], function () {
   gulp.src(mainBowerFiles(), {base: './bower_components'})
     .pipe(bowerNormalizer({bowerJson: './bower.json', checkPath: true}))
     .pipe(plugins.rename(function (path) {
-      if (path.dirname === 'font-awesome/css') {
+      if (path.dirname.match(/\/css$/)) {
         // for sass import
-        path.dirname = 'font-awesome/scss';
+        path.dirname = path.dirname.replace(/\/css$/, '/scss');
         path.basename = '_' + path.basename;
         path.extname = '.scss';
       }

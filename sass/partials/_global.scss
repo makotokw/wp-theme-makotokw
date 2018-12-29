@@ -10,16 +10,15 @@
   @include block-white($block-border-radius);
 }
 
+.quote-caption {
+  font-size: 14px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+
 .strike {
   text-decoration: line-through;
-}
-
-.big {
-  @extend big;
-}
-
-.small {
-  @extend small;
 }
 
 .muted {

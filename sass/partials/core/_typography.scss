@@ -1,0 +1,107 @@
+
+body,
+button,
+input,
+select,
+textarea {
+  color: $site-default-text;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+}
+
+body {
+  hyphens: auto;
+  margin: 0;
+  background-color: $site-default-bg;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility
+}
+
+a {
+  color: $site-default-link;
+  transition: all 0.25s linear;
+  text-decoration: none;
+  outline: 0;
+}
+
+a:active,
+a:hover {
+  color: $site-default-link-over;
+}
+
+blockquote {
+  margin: $block-margin 0;
+  padding: 0 $block-padding;
+  color: $block-quote-text;
+  border-left: $site-border-left-width solid $brand-default-border;
+  font-style: italic;
+  font-weight: 300;
+
+  cite,
+  small {
+    @extend .quote-caption;
+  }
+  blockquote {
+    margin-right: 0;
+  }
+}
+
+del {
+  color: #333;
+}
+
+ins {
+  color: $state-warning-text;
+  background-color: $state-warning-bg;
+  text-decoration: none;
+}
+
+::selection {
+  background: $site-accent-color;
+  color: $white;
+  text-shadow: none;
+}
+
+hr {
+  background-color: $block-default-divider;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em;
+}
+
+pre {
+  @include block-white($block-border-radius);
+  margin: 20px 0;
+  overflow: auto;
+  padding: 20px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: $font-family-monospace;
+  font-size: 14px;
+  font-weight: 300;
+  hyphens: none;
+}
+
+// Placeholder text color -- selectors need to be in separate to work.
+:-webkit-input-placeholder {
+  color: $form-default-placeholder;
+  font-style: normal;
+}
+:-moz-placeholder {
+  color: $form-default-placeholder;
+}
+::-moz-placeholder {
+  color: $form-default-placeholder;
+}
+:-ms-input-placeholder {
+  color: $form-default-placeholder;
+}

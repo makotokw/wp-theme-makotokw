@@ -22,9 +22,6 @@
         "svg-with-js/*/*.css",
         "svg-with-js/*/*-all.js"
       ]
-    },
-    "normalize.css": {
-      "main": []
     }
   }
 }
