@@ -15,6 +15,5 @@ get_header(); ?>
 		<?php comments_template(); ?>
 	<?php endif ?>
 <?php endwhile; // end of the loop. ?>
-<?php get_template_part( 'author' ); ?>
 <?php
 get_footer();

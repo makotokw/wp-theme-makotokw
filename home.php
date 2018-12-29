@@ -27,10 +27,4 @@ get_header();
 	<?php makotokw_pagination(); ?>
 </section>
 
-<section class="section-page section-page-category">
-	<ul class="list-categories">
-		<?php makotokw_list_categories(); ?>
-	</ul>
-</section>
-
 <?php get_footer(); ?>
