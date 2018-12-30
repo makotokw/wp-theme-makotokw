@@ -426,19 +426,6 @@ function makotokw_share_this() {
 	<?php
 }
 
-function makotokw_about_me() {
-	?>
-	<div class="section section-mini section-2col section-about-me">
-		<h2 class="section-title"><?php _e( 'About', 'makotokw' ); ?></h2>
-		<div class="section-content">
-			<div itemprop="author copyrightHolder editor" itemscope itemtype="http://schema.org/Person">
-			<?php echo str_replace( '<img ', '<img itemprop="image" ', get_avatar( get_the_author_meta( 'user_email' ), '48', '', get_the_author() ) ); ?>
-			</div>
-		</div>
-	</div>
-	<?php
-}
-
 function makotokw_related_post( $arg = array() ) {
 	global $post;
 	?>
@@ -449,6 +436,30 @@ function makotokw_related_post( $arg = array() ) {
 			<?php echo makotokw_post_summary( $post->post_content ); ?>
 		</p>
 	</div>
+	<?php
+}
+
+function makotokw_archives_title() {
+	?>
+	<?php if ( is_category() ) : ?>
+		<?php echo sprintf( __( 'Category Archives: %s', 'makotokw' ), '<span>' . single_cat_title( '', false ) . '</span>' ); ?>
+	<?php elseif ( is_tag() ) : ?>
+		<?php echo sprintf( __( 'Tag Archives: %s', 'makotokw' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?>
+	<?php elseif ( is_day() ) : ?>
+		<?php echo sprintf( __( 'Daily Archives: %s', 'makotokw' ), '<span>' . get_the_date() . '</span>' ); ?>
+	<?php elseif ( is_month() ) : ?>
+		<?php echo sprintf( __( 'Monthly Archives: %s', 'makotokw' ), '<span>' . get_the_date( __( 'Y/M', 'makotokw' ) ) . '</span>' ); ?>
+	<?php elseif ( is_year() ) : ?>
+		<?php echo sprintf( __( 'Yearly Archives: %s', 'makotokw' ), '<span>' . get_the_date( __( 'Y', 'makotokw' ) ) . '</span>' ); ?>
+	<?php elseif ( is_tax( 'blogs' ) ) : ?>
+		<?php echo sprintf( __( 'Blog Archives: %s', 'makotokw' ), '<span>' . single_term_title( '', false ) . '</span>' ); ?>
+	<?php elseif ( is_tax( 'portfolios' ) ) : ?>
+		<?php echo sprintf( __( 'Portfolio Archives: %s', 'makotokw' ), '<span>' . single_term_title( '', false ) . '</span>' ); ?>
+	<?php elseif ( is_search() ) : ?>
+		<?php echo __( 'Search', 'makotokw' ); ?>
+	<?php else : ?>
+		<?php echo sprintf( __( 'Archives of %s', 'makotokw' ), '<span>' . get_bloginfo( 'name' ) . '</span>' ); ?>
+	<?php endif; ?>
 	<?php
 }
 

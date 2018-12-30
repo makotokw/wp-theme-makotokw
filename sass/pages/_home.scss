@@ -1,12 +1,9 @@
 $section-page-alternate-background-color: lighten($gray-lighter, 4%);
 
 .section-page {
-  @include clearfix;
-}
-
-.section-page-category {
-  border-top: 1px solid $block-default-divider;
-  background-color: $section-page-alternate-background-color;
+  .archives-title {
+    text-align: center;
+  }
 }
 
 

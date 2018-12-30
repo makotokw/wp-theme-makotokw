@@ -59,14 +59,9 @@ $site-logo-height-small: 20px;
   border-bottom: 1px solid $header-border-color;
   position: fixed;
   z-index: 10;
-  right: 0;
-  left: 0;
   top: 0;
-  -webkit-transition-duration: .5s;
-  transition-duration: .5s;
-  will-change: transform;
-  transition: transform 200ms linear;
-
+  left: 0;
+  right: 0;
   a {
     color: $white;
     &:hover {
@@ -150,6 +145,7 @@ $site-logo-height-small: 20px;
     &.is-active {
       .search-form-text {
         display: inline-block;
+        padding: 3px 6px;
       }
       .search-form-trigger {
         .fa-search {

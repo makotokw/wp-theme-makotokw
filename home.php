@@ -15,7 +15,8 @@ add_action( 'makotekw_after_body', 'makotekw_home_after_body' );
 get_header();
 ?>
 
-<section class="section-page section-page-entry section-page-first">
+<section class="section-page archive">
+	<h2 class="archives-title"><?php makotokw_archives_title(); ?></h2>
 	<div class="post-summaries">
 		<?php while ( have_posts() ) : ?>
 			<?php

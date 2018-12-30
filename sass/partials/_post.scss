@@ -156,6 +156,7 @@ $entry-header-color: $site-accent-color;
   img {
     display: block;
     margin: $block-margin auto;
+    box-shadow: $block-shadow;
   }
   figure {
     margin: $block-margin auto;
@@ -469,8 +470,14 @@ object {
 // Archives (Content List)
 // -----------------------------------------------
 .archive {
-  .post-summaries {
-    border-top: 1px solid $site-default-border;
+  .post-summaries, .pagination {
+    padding-left: $site-grid-margin;
+    @include smaller-than-tablet-screen {
+      padding-left: 0;
+    }
+  }
+  .pagination {
+    padding-left: $site-grid-margin;
   }
   .post-summary {
     .share-buttons {

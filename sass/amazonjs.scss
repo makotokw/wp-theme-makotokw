@@ -4,11 +4,13 @@
 
 .amazonjs_item {
 //  @include block-white($blockBorderRadius);
-  border-color: lighten(desaturate($amazon-orange, 20%), 40%);
-  border-width: 0;
+  border-color: $block-default-border;
+  border-width: 1px;
+  box-shadow: $block-shadow;
+  padding: $site-grid-margin 0 $site-grid-margin*1.5;
 
   @include smaller-than-tablet-screen {
-    padding: 5px 0 15px 0;
+    padding: $site-grid-margin-small 0 $site-grid-margin-small*1.5;
   }
 
   .amazonjs_image {
