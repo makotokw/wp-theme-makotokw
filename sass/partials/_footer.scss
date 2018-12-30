@@ -1,6 +1,6 @@
 .site-footer {
-  border-top: 1px solid $footer-border-color;
-  background-color: $footer-default-bg;
+  background: $footer-default-bg;
+  padding: $site-grid-margin;
   color: $footer-default-text;
   font-size: $font-size-small;
   a {
@@ -10,56 +10,36 @@
     }
   }
 
+  @include smaller-than-tablet-screen {
+    padding: $site-grid-margin-small;
+    font-size: $font-size-mini;
+  }
+}
+
+.site-footer-content {
+  max-width: $site-max-container;
+  margin: 0 auto;
+  text-align: center;
+
   .site-footer-nav {
-    text-align: right;
     ul {
       margin: 0;
       padding: 0;
       li {
         display: inline;
         margin: 0 4px;
+        font-weight: 700;
       }
     }
   }
-
-  .copyrights {
-    @include clearfix;
-    display: flex;
-
-    .credit,
-    .poweredby {
-      display: inline;
-      margin: 0 4px;
-      padding: 0;
+  .poweredby {
+    .fa-heart {
+      margin: 0 2px;
+      font-size: .5em;
+      color: $heart-red;
     }
-    .credit {
-      flex: auto;
-    }
-    .poweredby {
-      flex: none;
-      .fa-heart {
-        margin: 0 2px;
-        font-size: .5em;
-        color: $heart-red;
-      }
-      .fa-github-alt {
-        margin: 0 2px;
-      }
-    }
-  }
-
-  @include smaller-than-tablet-screen {
-    font-size: $font-size-mini;
-    .site-footer-nav {
-      text-align: center;
-    }
-    .copyrights {
-      display: block;
-      .credit,
-      .poweredby {
-        display: block;
-        text-align: center;
-      }
+    .fa-github-alt {
+      margin: 0 2px;
     }
   }
 }

@@ -90,6 +90,9 @@ $state-info-text: #3a87ad;
 $state-info-bg: lighten(#d9edf7, 7%);
 $state-info-border: darken(adjust-hue($state-info-bg, -10), 7%);
 
+$site-max-container: 1200px;
+$site-max-sidebar: 250px;
+
 $site-grid-margin: 15px;
 $site-grid-margin-small: 10px;
 $site-default-bg: $md-grey-100;
@@ -114,15 +117,15 @@ $site-neutral-link-over: darken($site-neutral-link, 10%);
 
 $navi-default-bg: $site-default-bg;
 
-$header-background-color: $white;
+$header-background-color: $site-component-header-bg;
 $header-border-color: $md-grey-900;
 $header-link-color: $md-grey-900;
 $header-link-over-color: $md-grey-900;
 $header-accent-color: $dokugaku-blue;
 $site-progress-border: $header-accent-color;
 
-$footer-default-text: $md-grey-600;
-$footer-default-bg: $md-grey-50;
+$footer-default-bg: $site-component-header-bg;
+$footer-default-text: $site-component-header-text;
 $footer-default-link: $footer-default-text;
 $footer-default-link-over: $site-accent-color;
 $footer-border-color: $brand-default-border;
@@ -234,6 +237,3 @@ $screen-lg-min: $screen-lg;
 $screen-xs-max: ($screen-sm-min - 1);
 $screen-sm-max: ($screen-md-min - 1);
 $screen-md-max: ($screen-lg-min - 1);
-
-$site-max-container: 1200px;
-$site-max-sidebar: 250px;

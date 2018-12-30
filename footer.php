@@ -14,19 +14,19 @@
 	<div id="footerMargin">
 	</div>
 	<footer class="site-footer" role="contentinfo">
-		<?php
-		wp_nav_menu(
-			array(
-				'theme_location' => 'footer',
-				'container_class' => 'site-footer-nav',
-				'link_before' => '',
-				'link_after' => '',
-				'fallback_cb' => false,
-			)
-		);
-		?>
-		<div class="copyrights">
-			<div class="credit">
+		<div class="site-footer-content">
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'footer',
+					'container_class' => 'site-footer-nav',
+					'link_before' => '',
+					'link_after' => '',
+					'fallback_cb' => false,
+				)
+			);
+			?>
+			<div class="copyrights">
 				<?php do_action( 'makotokw_credits' ); ?>
 			</div>
 			<div class="poweredby">
