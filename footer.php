@@ -15,28 +15,33 @@
 	</div>
 	<footer class="site-footer" role="contentinfo">
 		<div class="site-footer-content">
+			<div class="site-footer-nav">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fas fa-home"></i> ホーム</a>
+			</div>
 			<?php
 			wp_nav_menu(
 				array(
 					'theme_location' => 'footer',
-					'container_class' => 'site-footer-nav',
+					'container_class' => 'site-footer-help-nav',
 					'link_before' => '',
 					'link_after' => '',
 					'fallback_cb' => false,
 				)
 			);
 			?>
-			<div class="copyrights">
+			<div class="credit">
 				<?php do_action( 'makotokw_credits' ); ?>
-			</div>
-			<div class="poweredby">
-				<?php
-				printf(
-					__( 'Powered by %s', 'makotokw' ),
-					'<a href="https://wordpress.org/" title="' . esc_attr( __( 'Semantic Personal Publishing Platform', 'makotokw' ) ) . '">WordPress</a>'
-				);
-				?>
-				<i class="fas fa-heart"></i><a href="https://github.com/makotokw/wp-theme-makotokw">makotokw theme.<i class="fab fa-github-alt"></i></a>
+				<span class="poweredby">
+					<?php
+					$wp_theme = wp_get_theme();
+					$theme_name = $wp_theme->display('Name');
+					printf(
+						__( 'Powered by %s', 'makotokw' ),
+						'<a href="https://wordpress.org/" title="' . esc_attr( __( 'Semantic Personal Publishing Platform', 'makotokw' ) ) . '">WordPress</a>'
+					);
+					?>
+					<i class="fas fa-heart"></i><a href="https://github.com/makotokw/wp-theme-makotokw/tree/<?php echo $theme_name; ?>"><?php echo $theme_name; ?> theme.<i class="fab fa-github-alt"></i></a>
+				</span>
 			</div>
 		</div>
 	</footer>

@@ -22,6 +22,11 @@
   text-align: center;
 
   .site-footer-nav {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .site-footer-help-nav {
     ul {
       margin: 0;
       padding: 0;
@@ -32,7 +37,7 @@
       }
     }
   }
-  .poweredby {
+  .credit {
     .fa-heart {
       margin: 0 2px;
       font-size: .5em;
@@ -40,6 +45,11 @@
     }
     .fa-github-alt {
       margin: 0 2px;
+    }
+  }
+  @include smaller-than-mobile-screen {
+    .poweredby {
+      display: block;
     }
   }
 }
