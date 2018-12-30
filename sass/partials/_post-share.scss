@@ -2,61 +2,35 @@
   @include clearfix;
 }
 
+$share-icon-size: 20px;
+
 .section-share-this {
 }
 
 .share-item {
-  float: left;
   min-height: 30px;
   margin: 0;
-  padding: 0 10px 0 0;
-  line-height: 18px;
   vertical-align: middle;
-}
-
-.share-item-twitter {
-  width: 96px;
-  height: 30px;
-}
-
-.share-item-pocket {
-  width: 103px;
-  height: 30px;
-}
-
-.share-item-google-plus {
-  width: 71px;
 }
 
 .share-buttons {
   ul {
+    margin: 0;
     padding: 0;
-    margin: 4px 0 4px 0;
     list-style: none;
     display: flex;
     justify-content: center;
-    li {
-      .btn {
-        float: none;
-      }
-    }
   }
 }
 .btn-share {
   position: relative;
   font-weight: normal;
-  margin: 0 10px 10px 0;
+  margin: 0 $site-grid-margin;
+  background: $blue;
+  border-color: $white;
+  color: $white;
 
-  &.btn-square {
-    padding: 4px 16px;
-    min-width: 100px;
-    text-align: center;
-    font-size: 12px;
-    .share-title {
-    }
-    .icon {
-    }
-  }
+  font-size: $share-icon-size;
 
   &.btn-circle {
     .share-title {
@@ -68,13 +42,27 @@
     }
   }
 
+  .share-brand-icon {
+    display: inline-block;
+    vertical-align: -.125em;
+    fill: $white;
+  }
+
+  &:hover {
+    background: $white;
+    border-color: $blue;
+    color: $blue;
+    .share-brand-icon {
+      fill: $blue;
+    }
+  }
+
   .share-count {
     position: absolute;
     left: 22px;
     top: -8px;
     background-color: $md-pink-300;
     color: $white;
-    opacity: .5;
     border-radius: 50%;
     text-align: center;
     font-size: .65em;
@@ -93,7 +81,15 @@
   }
 }
 
-.icon-share-hatena {
-  font-style: normal;
-  font-weight: bold;
+.btn-share-twitter {
+  background: desaturate($twitter-blue, 20%);
+}
+.btn-share-facebook {
+  background: desaturate($facebook-blue, 20%);
+}
+.btn-share-hatena {
+  background: desaturate($hatena-bookmark-blue, 20%);
+}
+.btn-share-pocket {
+  background: desaturate($pocket-pink, 20%);
 }

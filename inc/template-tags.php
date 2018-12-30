@@ -199,17 +199,6 @@ function makotokw_google_analytics() {
 	<?php
 }
 
-function makotokw_itunes_affiliate_script() {
-	if ( false === WP_THEME_ITUNES_AFFILIATE_ID ) {
-		return;
-	}
-	?>
-	<!--[if gt IE 9]><!-->
-	<script type='text/javascript'>var _merchantSettings=_merchantSettings || [];_merchantSettings.push(['AT', '<?php echo WP_THEME_ITUNES_AFFILIATE_ID ?>']);(function(){var autolink=document.createElement('script');autolink.type='text/javascript';autolink.async=true; autolink.src='https://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(autolink, s);})();</script>
-	<!--<![endif]-->
-	<?php
-}
-
 /**
  * @see http://gilbert.pellegrom.me/how-to-breadcrumbs-in-wordpress/
  */
@@ -384,8 +373,6 @@ function makotokw_share_buttons() {
 	// twitter: https://about.twitter.com/resources/buttons#tweet
 	// hatena: http://b.hatena.ne.jp/guide/bbutton
 	// pocket: https://getpocket.com/publisher/button
-	// google+: https://developers.google.com/+/web/+1button/
-
 	$title     = get_the_title();
 	$permalink = makotokw_share_permalink();
 	$permalink_schemeless = preg_replace( '/^https?:\/\//', '', $permalink );
@@ -398,9 +385,21 @@ function makotokw_share_buttons() {
 					<span class="share-title"><?php _e( 'Twitter', 'makotokw' ); ?></span>
 				</a>
 			</li>
+			<li class="share-facebook">
+				<a rel="nofollow noopener" class="btn btn-default btn-circle btn-share btn-share-facebook" href="//www.facebook.com/sharer.php?u=<?php echo rawurlencode( $permalink ); ?>&t=<?php echo rawurlencode( $title ); ?>" target="_blank" title="Share by Facebook">
+					<i class="fab fa-facebook-f"></i>
+					<span class="share-title"><?php _e( 'Facebook', 'makotokw' ); ?></span>
+				</a>
+			</li>
 			<li class="share-hatena">
 				<a rel="nofollow noopener" class="btn btn-default btn-circle btn-share btn-share-hatena" href="https://b.hatena.ne.jp/entry/<?php echo $permalink_schemeless; ?>" target="_blank" title="Share by Hatena">
-					<i class="icon-share-hatena">B!</i>
+					<svg class="share-brand-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+						<g>
+							<path d="M278.2,258.1q-13.6-15.2-37.8-17c14.4-3.9,24.8-9.6,31.4-17.3s9.8-17.8,9.8-30.7A55,55,0,0,0,275,166a48.8,48.8,0,0,0-19.2-18.6c-7.3-4-16-6.9-26.2-8.6s-28.1-2.4-53.7-2.4H113.6V363.6h64.2q38.7,0,55.8-2.6c11.4-1.8,20.9-4.8,28.6-8.9a52.5,52.5,0,0,0,21.9-21.4c5.1-9.2,7.7-19.9,7.7-32.1C291.8,281.7,287.3,268.2,278.2,258.1Zm-107-71.4h13.3q23.1,0,31,5.2c5.3,3.5,7.9,9.5,7.9,18s-2.9,14-8.5,17.4-16.1,5-31.4,5H171.2V186.7Zm52.8,130.3c-6.1,3.7-16.5,5.5-31.1,5.5H171.2V273h22.6c15,0,25.4,1.9,30.9,5.7s8.4,10.4,8.4,20S230.1,313.4,223.9,317.1Z"></path>
+							<path d="M357.6,306.1a28.8,28.8,0,1,0,28.8,28.8A28.8,28.8,0,0,0,357.6,306.1Z"></path>
+							<rect x="332.6" y="136.4" width="50" height="151.52"></rect>
+						</g>
+					</svg>
 					<span class="share-title"><?php _e( 'Hatena Bookmark', 'makotokw' ); ?></span>
 				</a>
 			</li>
@@ -408,18 +407,6 @@ function makotokw_share_buttons() {
 				<a rel="nofollow noopener" class="btn btn-default btn-circle btn-share btn-share-pocket" href="https://getpocket.com/save/?url=<?php echo rawurlencode( $permalink ); ?>&title=<?php echo rawurlencode( $title ); ?>" target="_blank" title="Share by Pocket">
 					<i class="fab fa-get-pocket"></i>
 					<span class="share-title"><?php _e( 'Pocket', 'makotokw' ); ?></span>
-				</a>
-			</li>
-			<li class="share-googleplus">
-				<a rel="nofollow noopener" class="btn btn-default btn-circle btn-share btn-share-googleplus" href="https://plus.google.com/share?url=<?php echo rawurlencode( $permalink ); ?>" target="_blank" title="Share by Google">
-					<i class="fab fa-google"></i>
-					<span class="share-title"><?php _e( 'Google', 'makotokw' ); ?></span>
-				</a>
-			</li>
-			<li class="share-facebook">
-				<a rel="nofollow noopener" class="btn btn-default btn-circle btn-share btn-share-facebook" href="//www.facebook.com/sharer.php?u=<?php echo rawurlencode( $permalink ); ?>&t=<?php echo rawurlencode( $title ); ?>" target="_blank" title="Share by Facebook">
-					<i class="fab fa-facebook-f"></i>
-					<span class="share-title"><?php _e( 'Facebook', 'makotokw' ); ?></span>
 				</a>
 			</li>
 		</ul>

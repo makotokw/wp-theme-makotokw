@@ -1,6 +1,7 @@
 /*global makotokw, jQuery*/
 (function ($) {
   var isAdmin = false;
+  var enabledShareCounter = false;
 
   function updateShareCount() {
     var $shareThis = $('#shareThis');
@@ -11,17 +12,16 @@
       return (isNaN(i)) ? 0 : i;
     }
 
-    if (isAdmin) {
-
-      function createCountElement(shareCount) {
-        shareCount = toInt(shareCount);
-        var $c = $('<span/>').addClass('share-count').text(shareCount);
-        if (shareCount > 0) {
-          $c.addClass('share-count-has');
-        }
-        return $c;
+    function createCountElement(shareCount) {
+      shareCount = toInt(shareCount);
+      var $c = $('<span/>').addClass('share-count').text(shareCount);
+      if (shareCount > 0) {
+        $c.addClass('share-count-has');
       }
+      return $c;
+    }
 
+    if (enabledShareCounter) {
       // http://developer.hatena.ne.jp/ja/documents/bookmark/apis/getcount
       $.ajax({url: 'https://b.hatena.ne.jp/entry.count?url=' + encodedPermalink, dataType: 'jsonp'})
         .done(function (data) {
@@ -63,7 +63,7 @@
   var $footerMargin = $('#footerMargin');
 
   $(document).ready(function () {
-    if ($.isFunction(prettyPrint)) {
+    if (typeof prettyPrint === "function") {
       prettyPrint();
     }
 
@@ -148,7 +148,8 @@
       offset: $header.height()
     });
 
-    if (isAdmin) {
+    enabledShareCounter = isAdmin;
+    if (enabledShareCounter) {
       lazyLoadShareCount();
     }
     stickyFooter();

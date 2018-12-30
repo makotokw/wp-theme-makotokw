@@ -47,8 +47,5 @@
 	</footer>
 </div><!-- .site -->
 <?php wp_footer(); ?>
-<?php if ( false != WP_THEME_ITUNES_AFFILIATE_ID ) : ?>
-	<?php makotokw_itunes_affiliate_script(); ?>
-<?php endif ?>
 </body>
 </html>
