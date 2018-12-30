@@ -1,0 +1,14 @@
+.widget_makotokw_static_post-list {
+  margin: 0;
+  padding: $site-grid-margin;
+  list-style: none;
+  a {
+    color: $brand-default-text;
+    &:hover {
+      color: $site-default-link-over;
+    }
+  }
+  li {
+    margin-bottom: $site-grid-margin/2;
+  }
+}
