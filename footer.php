@@ -34,7 +34,7 @@
 				<span class="poweredby">
 					<?php
 					$wp_theme = wp_get_theme();
-					$theme_name = $wp_theme->display('Name');
+					$theme_name = $wp_theme->display( 'Name' );
 					printf(
 						__( 'Powered by %s', 'makotokw' ),
 						'<a href="https://wordpress.org/" title="' . esc_attr( __( 'Semantic Personal Publishing Platform', 'makotokw' ) ) . '">WordPress</a>'
