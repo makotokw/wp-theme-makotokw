@@ -2,23 +2,17 @@
 
 .list-categories {
   list-style: none;
-  padding: 0;
+  margin: 0;
+  padding: $site-grid-margin;
 
   .cat-item {
-    display: inline;
-
+    margin-bottom: 2px;
+    svg {
+      min-width: 1.5em;
+    }
     a {
-      @extend .btn;
-      background-color: $white;
-      border: 1px solid $button-default-border;
       color: $button-default-text;
-      border-radius: 2px;
-      display: inline-block;
-      margin: 5px 0 5px 5px;
-      float: none;
-
       &:hover {
-        border-color: $md-light-blue-600;
         color: $md-light-blue-600;
       }
     }
@@ -33,13 +27,13 @@
       min-height: 30px;
       min-width: 30px;
       line-height: 30px;
-      margin: 0 10px 0 -15px;
+      margin: 0 10px;
     }
   }
 
   .children {
-    display: inline;
+    //display: inline;
     list-style: none;
-    padding: 0;
+    //padding: 0;
   }
 }

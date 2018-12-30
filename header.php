@@ -68,10 +68,10 @@
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fas fa-home"></i></a>
 			</div>
 			<div class="site-header-nav-item2">
-				<a href="<?php echo esc_url( home_url( '/category/computer/' ) ); ?>"><i class="fas fa-desktop"></i> IT</a>
-				<a href="<?php echo esc_url( home_url( '/category/gadget/' ) ); ?>"><i class="fas fa-mobile-alt"></i> ガジェット</a>
-				<a href="<?php echo esc_url( home_url( '/category/readingbook/' ) ); ?>"><i class="fas fa-book"></i> 読書</a>
-				<a href="<?php echo esc_url( home_url( '/category/stationery/' ) ); ?>"><i class="fas fa-pen-fancy"></i> 文房具</a>
+				<a href="<?php echo esc_url( home_url( '/category/computer/' ) ); ?>"><?php echo makotokw_awesome_icon_by_slug( 'computer' ); ?>IT</a>
+				<a href="<?php echo esc_url( home_url( '/category/gadget/' ) ); ?>"><?php echo makotokw_awesome_icon_by_slug( 'gadget' ); ?>ガジェット</a>
+				<a href="<?php echo esc_url( home_url( '/category/readingbook/' ) ); ?>"><?php echo makotokw_awesome_icon_by_slug( 'readingbook' ); ?>読書</a>
+				<a href="<?php echo esc_url( home_url( '/category/stationery/' ) ); ?>"><?php echo makotokw_awesome_icon_by_slug( 'stationery' ); ?>文房具</a>
 			</div>
 			<div class="site-header-nav-item3">
 				<form method="get" id="siteHeaderSearchForm" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">

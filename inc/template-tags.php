@@ -284,6 +284,12 @@ function makotokw_breadcrumbs() {
 	}
 }
 
+/**
+ * @param $id
+ * @param string $separator
+ * @param array $visited
+ * @return string
+ */
 function makotokw_breadcrumbs_category_parents( $id, $separator = '/', $visited = array() ) {
 	$chain  = '';
 	$parent = get_category( $id );
@@ -301,20 +307,82 @@ function makotokw_breadcrumbs_category_parents( $id, $separator = '/', $visited 
 }
 
 /**
+ * @param string $slug
+ * @return string
+ */
+function makotokw_awesome_icon_by_slug( $slug ) {
+	$icon = '';
+	$icon_class = makotokw_find_awesome_icon_class( $slug );
+	if ( ! empty( $icon_class ) ) {
+		$icon = '<i class="fas fa-' . $icon_class . '"></i> ';
+	}
+	return $icon;
+}
+
+/**
+ * @param string $slug
+ * @param string $default
+ * @return string
+ */
+function makotokw_find_awesome_icon_class( $slug, $default = 'folder' ) {
+	$map = [
+		'interior' => 'couch',
+		'comedy' => 'laugh-beam',
+		'gourmet' => 'utensils',
+		'computer' => 'laptop',
+		'computer/software' => 'laptop-code',
+		'computer/hardware' => 'keyboard',
+		'computer/server' => 'server',
+		'computer/programing' => 'code',
+		'sports' => 'futbol',
+		'lifehack' => 'hat-wizard',
+		'work' => 'building',
+		'politics' => 'landmark',
+		'stationery' => 'pen-fancy',
+		'life' => 'sun',
+		'cinema' => 'film',
+		'art' => 'image',
+		'readingbook' => 'book',
+		'electronics' => 'robot',
+		'music' => 'music',
+		'gadget' => 'mobile-alt',
+		'game' => 'gamepad',
+	];
+
+	if ( array_key_exists( $slug, $map ) ) {
+		return $map[ $slug ];
+	}
+
+	return $default;
+}
+
+/**
  * @param bool $all
  */
-function makotokw_list_categories( $all = false ) {
-	$opt = array(
-		'title_li' => '',
-		'hide_title_if_empty' => true,
-		'show_count' => true,
-		'echo' => false,
+function makotokw_list_categories( $opt = [], $all = false ) {
+	$opt = array_merge(
+		array(
+			'title_li' => '',
+			'hide_title_if_empty' => true,
+			'show_count' => true,
+			'echo' => false,
+		),
+		$opt
 	);
 	if ( ! $all ) {
 		$opt['exclude'] = WP_THEME_EXCLUDE_CATEGORY;
 	}
 	$list = wp_list_categories( $opt );
-	echo preg_replace( '/\(([\d]+)\)/', '<span class="cat-item-entry-count">$1</span>', $list );
+	// replace itemCount text to span element
+	$list = preg_replace( '/\(([\d]+)\)/', '<span class="cat-item-entry-count">$1</span>', $list );
+	$list = preg_replace_callback(
+		'/category\/([^"]+)"\s+\>/',
+		function ( $matches ) {
+			return $matches[0] . makotokw_awesome_icon_by_slug( trim( $matches[1], '/' ) );
+		},
+		$list
+	);
+	echo $list;
 }
 
 /**

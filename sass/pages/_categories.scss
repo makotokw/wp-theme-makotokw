@@ -1,0 +1,39 @@
+.page-template-categories {
+  .entry-content {
+    .list-categories {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      .cat-item {
+        display: inline-block;
+        svg {
+          min-width: inherit;
+        }
+        a {
+          @extend .btn;
+          background-color: $white;
+          border: 1px solid $button-default-border;
+          color: $button-default-text;
+          border-radius: 2px;
+          display: inline-block;
+          margin: 5px 0 5px 5px;
+          float: none;
+
+          &:hover {
+            border-color: $md-light-blue-600;
+            color: $md-light-blue-600;
+          }
+        }
+        > .cat-item-entry-count {
+          margin: 0 10px 0 -15px;
+        }
+      }
+
+      .children {
+        display: inline;
+        list-style: none;
+        padding: 0;
+      }
+    }
+  }
+}

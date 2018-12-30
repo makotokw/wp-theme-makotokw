@@ -1,0 +1,22 @@
+.widget_widget_makotokw_categories {
+  .list-categories {
+    .cat-item {
+      a {
+        color: $brand-default-text;
+        &:hover {
+          color: $site-default-link-over;
+        }
+      }
+    }
+    .children {
+      .cat-item {
+        a {
+          color: lighten($brand-default-text, 10%);
+          &:hover {
+            color: $site-default-link-over;
+          }
+        }
+      }
+    }
+  }
+}
