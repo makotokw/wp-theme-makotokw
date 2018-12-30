@@ -33,7 +33,7 @@ a:hover {
 
 blockquote {
   margin: $block-margin 0;
-  padding: 0 $block-padding;
+  padding: $block-padding/8 $block-padding;
   color: $block-quote-text;
   border-left: $site-border-left-width solid $brand-default-border;
   font-style: italic;

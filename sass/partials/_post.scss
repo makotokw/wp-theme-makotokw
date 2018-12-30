@@ -203,10 +203,15 @@ $entry-header-color: $site-accent-color;
         padding: .7em .7em;
       }
       h3 {
+        font-size: $entry-h3-small-font-size;
         padding: .4em 0;
       }
       h4 {
+        font-size: $entry-h4-small-font-size;
         padding: .4em 0;
+      }
+      h5 {
+        font-size: $entry-h5-small-font-size;
       }
     }
   }
