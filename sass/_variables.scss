@@ -1,7 +1,8 @@
 @charset "utf-8";
 
-@import "lib/brandcolors";
-@import "lib/materialcolors";
+@import "colors/trendcolors";
+@import "colors/brandcolors";
+@import "colors/materialcolors";
 $fa-font-path: 'components/font-awesome/fonts';
 
 // Grays colors
@@ -26,41 +27,67 @@ $pink: #ff6699;
 $pink-love: #ff0084;
 $purple: #8E44AD;
 
-// Trends colors
-$turquoise: #1ABC9C;
-$green-sea: #16A085;
-$emerald: #2ECC71;
-$nephritis: #27AE60;
-$little-boy-blue: #6CA0DC;
-$peter-river: #3498DB;
-$belize-hole: #2980B9;
-$amethyst: #9B59B6;
-$wisteria: #8E44AD;
-$mykonos-blue: #005b88;
-$monaco-blue: #344c80;
-$wet-asphalt: #34495E;
-$midnight-blue: #2C3E50;
-$sailor-blue: #0E3A53;
-$sun-flower: #F1C40F;
-$orange: #F39C12;
-$carrot: #E67E22;
-$pumpkin: #D35400;
-$alizarin: #E74C3C;
-$pomegranate: #C0392B;
-$salmon-pink: #f3a68c;
-$koi: #d25c3f;
-$samba: #a82b38;
-$vivacious: #a92a5c;
-$clouds: #ECF0F1;
-$silver: #BDC3C7;
-$concrete: #95A5A6;
-$asbestos: #7F8C8D;
-
 // others
-$github-orange: #D26911;
-$monstersinc-blue: #007CC4;
 $heart-red: #BE1931;
 $dokugaku-blue: $blue;
+
+// ----------------------------
+
+$site-max-container: 1200px;
+$site-max-sidebar: 250px;
+
+$site-grid-margin: 15px;
+$site-grid-margin-small: 10px;
+
+$border-radius-base: 4px;
+$border-radius-large: 6px;
+$border-radius-small: 3px;
+
+$site-border-width: 1px;
+$site-border-left-width: .6em;
+
+$screen-xs: 480px;
+$screen-xs-min: $screen-xs;
+$screen-sm: 768px;
+$screen-sm-min: $screen-sm;
+$screen-md: 992px;
+$screen-md-min: $screen-md;
+$screen-lg: 1200px;
+$screen-lg-min: $screen-lg;
+$screen-xs-max: ($screen-sm-min - 1);
+$screen-sm-max: ($screen-md-min - 1);
+$screen-md-max: ($screen-lg-min - 1);
+
+// ----------------------------
+
+$font-family-sans-serif-ja: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', 'Hiragino Kaku Gothic ProN W3', 'Hiragino Kaku Gothic Pro', 'Original Yu Gothic', 'Yu Gothic', YuGothic, Verdana, Meiryo, 'M+ 1p', sans-serif;
+$font-family-sans-serif: Quicksand, 'Helvetica Neue', Helvetica, $font-family-sans-serif-ja, sans-serif;
+$font-family-serif: Georgia, 'Times New Roman', Times, serif;
+$font-family-monospace: Monaco, Menlo, Consolas, 'Courier New', monospace;
+$font-family-base: $font-family-sans-serif;
+$font-family-content: $font-family-sans-serif;
+
+$font-size-base: 17px;
+$font-size-large: $font-size-base * 1.25; // ~18px
+$font-size-small: $font-size-base * 0.85; // ~12px
+$font-size-mini: $font-size-base * 0.75; // ~11px
+
+$entry-title-font-size: 36px;
+$entry-title-small-font-size: 25px;
+$entry-content-font-size: 18px;
+$entry-list-title-font-size: 25px;
+$entry-list-title-small-font-size: 20px;
+$entry-list-content-font-size: 17px;
+
+$entry-h2-font-size: 25px;
+$entry-h3-font-size: 20px;
+$entry-h4-font-size: 19px;
+$entry-h5-font-size: 18px;
+$entry-h2-small-font-size: 22px;
+
+$line-height-base: 1.7;
+$line-height-large: 2.0;
+$line-height-small: 1.5;
 
 // Layout color ----------------------------
 
@@ -90,11 +117,6 @@ $state-info-text: #3a87ad;
 $state-info-bg: lighten(#d9edf7, 7%);
 $state-info-border: darken(adjust-hue($state-info-bg, -10), 7%);
 
-$site-max-container: 1200px;
-$site-max-sidebar: 250px;
-
-$site-grid-margin: 15px;
-$site-grid-margin-small: 10px;
 $site-default-bg: $md-grey-100;
 
 // component
@@ -130,44 +152,6 @@ $footer-default-link: $footer-default-text;
 $footer-default-link-over: $site-accent-color;
 $footer-border-color: $brand-default-border;
 
-// ----------------------------
-
-$font-family-sans-serif-ja: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', 'Hiragino Kaku Gothic ProN W3', 'Hiragino Kaku Gothic Pro', 'Original Yu Gothic', 'Yu Gothic', YuGothic, Verdana, Meiryo, 'M+ 1p', sans-serif;
-$font-family-sans-serif: Quicksand, 'Helvetica Neue', Helvetica, $font-family-sans-serif-ja, sans-serif;
-$font-family-serif: Georgia, 'Times New Roman', Times, serif;
-$font-family-monospace: Monaco, Menlo, Consolas, 'Courier New', monospace;
-$font-family-base: $font-family-sans-serif;
-$font-family-content: $font-family-sans-serif;
-
-$font-size-base: 17px;
-$font-size-large: $font-size-base * 1.25; // ~18px
-$font-size-small: $font-size-base * 0.85; // ~12px
-$font-size-mini: $font-size-base * 0.75; // ~11px
-
-$entry-title-font-size: 36px;
-$entry-title-small-font-size: 25px;
-$entry-content-font-size: 18px;
-$entry-list-title-font-size: 25px;
-$entry-list-title-small-font-size: 20px;
-$entry-list-content-font-size: 17px;
-
-$entry-h2-font-size: 25px;
-$entry-h3-font-size: 20px;
-$entry-h4-font-size: 19px;
-$entry-h5-font-size: 18px;
-$entry-h2-small-font-size: 22px;
-
-$line-height-base: 1.7;
-$line-height-large: 2.0;
-$line-height-small: 1.5;
-
-$border-radius-base: 4px;
-$border-radius-large: 6px;
-$border-radius-small: 3px;
-
-$site-border-width: 1px;
-$site-border-left-width: .6em;
-
 // form
 $form-default-border: $md-grey-300;
 $form-default-border-over: $md-grey-400;
@@ -189,7 +173,7 @@ $errorpage-bg: #f5f5f5;
 $errorpage-bg-icon: #ddd;
 
 // alerts
-$alert-padding:               15px;
+$alert-padding:               $site-grid-margin;
 $alert-border-radius:         $border-radius-base;
 $alert-link-font-weight:      bold;
 $alert-success-bg:            $state-success-bg;
@@ -226,14 +210,3 @@ $block-margin: 1.6em;
 $block-padding: 1.6em;
 $block-quote-text: $md-grey-700;
 
-$screen-xs: 480px;
-$screen-xs-min: $screen-xs;
-$screen-sm: 768px;
-$screen-sm-min: $screen-sm;
-$screen-md: 992px;
-$screen-md-min: $screen-md;
-$screen-lg: 1200px;
-$screen-lg-min: $screen-lg;
-$screen-xs-max: ($screen-sm-min - 1);
-$screen-sm-max: ($screen-md-min - 1);
-$screen-md-max: ($screen-lg-min - 1);
