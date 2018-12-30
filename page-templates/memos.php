@@ -4,16 +4,21 @@
  * Template Name: Memos
  * /memo/
  */
-include __DIR__ . '/header.php'; ?>
-<article class="hentry">
-	<header class="entry-header">
-		<h1 class="entry-title"><?php the_title(); ?></h1>
-	</header>
-	<div class="entry-content">
-		<ul class="memo-list">
-			<?php wp_list_pages( array( 'title_li' => false, 'child_of' => WP_THEME_MEMO_POST_ID ) ); ?>
-		</ul>
-	</div>
-</article>
 
-<?php include __DIR__ . '/footer.php'; ?>
+$t_title = get_the_title();
+ob_start();
+?>
+	<ul class="memo-list">
+		<?php
+		wp_list_pages(
+			array(
+				'title_li' => false,
+				'child_of' => WP_THEME_MEMO_POST_ID,
+			)
+		);
+		?>
+	</ul>
+<?php
+$t_contents = ob_get_contents();
+ob_end_clean();
+include __DIR__ . '/inc/simple-page.php';

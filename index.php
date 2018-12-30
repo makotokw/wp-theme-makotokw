@@ -16,7 +16,7 @@ get_header(); ?>
 <header class="site-content-header">
 	<h2 class="archives-title"><?php makotokw_archives_title(); ?></h2>
 </header>
-<?php if ( is_archive() ) : ?>
+<?php if ( is_archive() || is_search() ) : ?>
 	<?php makotokw_breadcrumbs(); ?>
 <?php endif ?>
 <?php if ( have_posts() ) : ?>

@@ -1,6 +1,8 @@
+$author-border-width: 2px;
+
 .section-comment,
 .pingbacks-area {
-  display: block;
+  @include main-block();
 }
 
 // Comments
@@ -40,8 +42,8 @@
 }
 
 .comment-small {
-  font-size: 14px;
-  line-height: 1;
+  font-size: $font-size-small;
+  line-height: $line-height-small;
   font-style: normal;
 }
 
@@ -61,6 +63,11 @@
       width: 80%;
       //noinspection CssOverwrittenProperties
       width: calc(100% - 64px);
+    }
+    .comment-content {
+      @include smaller-than-mobile-screen {
+        width: calc(100% - 32px);
+      }
     }
   }
 }
@@ -98,8 +105,6 @@
     border: $site-border-width solid $block-default-border;
     padding: $block-padding;
     font-family: $font-family-content;
-    font-size: $font-size-base * 0.9;
-    line-height: $line-height-large;
     overflow-x: auto;
     color: $site-default-text;
     a {
@@ -145,12 +150,13 @@
   > .comment-body {
     .comment-author {
       .avatar {
-        border: $site-border-width solid $site-accent-color;
+        border: $author-border-width solid $site-accent-color;
+        background: $site-accent-color;
         padding: 2px;
       }
     }
     .comment-content {
-      border: $site-border-width solid $site-accent-color;
+      border: $author-border-width solid $site-accent-color;
     }
   }
 }

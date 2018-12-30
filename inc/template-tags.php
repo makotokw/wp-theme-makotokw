@@ -48,11 +48,11 @@ function makotokw_content_nav( $nav_id ) {
 		<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 			<div class="nav-links">
 				<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'makotokw' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( '<span class="meta-nav">&larr;</span> ' . __( 'Older posts', 'makotokw' ) ); ?></div>
 				<?php endif; ?>
 
 				<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'makotokw' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts', 'makotokw' ) . ' <span class="meta-nav">&rarr;</span>' ); ?></div>
 				<?php endif; ?>
 
 			</div>
@@ -244,7 +244,7 @@ function makotokw_breadcrumbs() {
 				<span class="breadcrumb-last" itemprop="title"><?php _e( 'Archives', 'makotokw' ); ?></span>
 			<?php endif ?>
 		<?php elseif ( is_search() ) : ?>
-			<span class="breadcrumb-last" itemprop="title"><?php _e( 'Search Results', 'makotokw' ); ?>: <?php echo get_search_query(); ?></span>
+			<span class="breadcrumb-last" itemprop="title"><?php _e( 'Search Results', 'makotokw' ); ?>: <em><?php echo get_search_query(); ?></em></span>
 		<?php elseif ( is_single() ) : ?>
 			<?php $category = get_the_category(); ?>
 			<?php if ( is_array( $category ) && count( $category ) > 0 ) : ?>

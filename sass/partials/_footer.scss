@@ -12,7 +12,6 @@
 
   @include smaller-than-tablet-screen {
     padding: $site-grid-margin-small;
-    font-size: $font-size-mini;
   }
 }
 
@@ -41,7 +40,7 @@
     .fa-heart {
       margin: 0 2px;
       font-size: .5em;
-      color: $heart-red;
+      color: $md-pink-100;
     }
     .fa-github-alt {
       margin: 0 2px;
@@ -50,6 +49,7 @@
   @include smaller-than-mobile-screen {
     .poweredby {
       display: block;
+      font-size: $font-size-mini;
     }
   }
 }

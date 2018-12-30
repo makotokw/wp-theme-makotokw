@@ -4,12 +4,7 @@
 
 .post-summary,
 .post-single {
-  background: $site-component-content-bg;
-  padding: $site-grid-margin;
-  word-break:break-all;
-  word-wrap: break-word;
-  overflow-wrap : break-word;
-  hyphens: auto;
+  @include main-block();
 }
 
 .post-summary {
@@ -31,14 +26,17 @@
 }
 
 .post-single {
+  margin-left: $site-grid-margin-small;
   .entry-header {
-    padding: $site-grid-margin*4 $site-grid-margin*4 0;
+    padding: $site-grid-margin*2 $site-grid-margin*4 0;
   }
   .entry-content {
     padding: $site-grid-margin $site-grid-margin*4 0;
   }
+  @include smaller-than-tablet-screen {
+    margin-left: 0;
+  }
   @include smaller-than-desktop-screen {
-    margin-top: 0;
     .entry-header {
       padding: 0;
     }
@@ -136,9 +134,8 @@
     }
   }
 
-  // centering in single page
+  // centering title in single page
   .single &, .page & {
-    padding: 20px 0 0;
     text-align: center;
   }
 }

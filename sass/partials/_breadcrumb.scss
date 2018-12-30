@@ -13,8 +13,9 @@
     font-size: $font-size-base;
   }
 
-  .archive & {
-    margin-bottom: 20px;
+  .archive &,
+  .search & {
+    margin-bottom: $site-grid-margin;
   }
 
   a {

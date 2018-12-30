@@ -1,0 +1,29 @@
+// for no-results.php and 404.php
+.errorPage {
+  .errorPage-title {
+    font-size: $entry-title-font-size;
+    margin: 0;
+    position: relative;
+    padding: 50px 0;
+    text-align: center;
+    box-sizing : border-box;
+    @include smaller-than-tablet-screen {
+      font-size: $entry-list-title-font-size;
+      padding: 15px 0;
+    }
+  }
+  .errorPage-nav {
+    text-align: center;
+    font-weight: bold;
+  }
+  .errorPage-content {
+  }
+  .search-form {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    .search-form-text {
+      font-size: $font-size-base;
+    }
+  }
+}

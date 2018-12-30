@@ -15,8 +15,10 @@ add_action( 'makotekw_after_body', 'makotekw_home_after_body' );
 get_header();
 ?>
 
-<section class="section-page archive">
+<div class="site-content-header">
 	<h2 class="archives-title"><?php makotokw_archives_title(); ?></h2>
+</div>
+<div class="archive">
 	<div class="post-summaries">
 		<?php while ( have_posts() ) : ?>
 			<?php
@@ -26,6 +28,6 @@ get_header();
 		<?php endwhile; ?>
 	</div>
 	<?php makotokw_pagination(); ?>
-</section>
+</div>
 
 <?php get_footer(); ?>

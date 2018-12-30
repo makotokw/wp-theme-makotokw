@@ -19,6 +19,16 @@
   }
 }
 
+@mixin main-block() {
+  display: block;
+  background: $site-component-content-bg;
+  padding: $site-grid-margin;
+  word-break:break-all;
+  word-wrap: break-word;
+  overflow-wrap : break-word;
+  hyphens: auto;
+}
+
 @mixin block-white ($borderRadious) {
   border: $site-border-width solid $block-default-border;
   border-radius: $borderRadious;

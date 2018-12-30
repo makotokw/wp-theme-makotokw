@@ -7,5 +7,12 @@
   .wp-gfm-toc-content {
     border-radius: 0;
     border: $site-border-width solid $block-default-divider;
+    &.right {
+      @include smaller-than-desktop-screen {
+        margin: $site-grid-margin-small;
+        float: none;
+        display: block;
+      }
+    }
   }
 }
