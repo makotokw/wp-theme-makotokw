@@ -27,7 +27,7 @@
 
     .gutter {
       .line {
-        border-right: 3px solid $dokugaku-blue !important;
+        border-right: 3px solid $site-main-color !important;
         padding-left: 12px;
         color: #BEBEC5;
         line-height: 18px;
@@ -35,8 +35,8 @@
       }
 
       .line.highlighted {
-          background-color: $dokugaku-blue !important;
-          color: white !important;
+          background-color: $site-main-color !important;
+          color: $white !important;
       }
     }
   }

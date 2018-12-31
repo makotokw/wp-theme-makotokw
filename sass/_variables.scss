@@ -24,10 +24,6 @@ $pink: #ff6699;
 $pink-love: #ff0084;
 $purple: #8E44AD;
 
-// Pastel
-$pastelen-blue: pastelen($blue);
-$dokugaku-blue: $blue;
-
 // Layout Size ----------------------------
 
 $site-max-container: 1200px;
@@ -99,41 +95,41 @@ $entry-h5-small-font-size: 19px;
 $block-shadow: 4px 6px 10px -6px rgba(0, 0, 0, .1);
 
 // Layout color ----------------------------
+$site-main-color: pastelen($blue);
+$site-accent-color: $blue-light;
+$site-clickable-color: darken($blue, 10%);
+$site-base-color: #eeeef0;
+
 $site-default-bg: #eeeef0;
 $site-default-border: #ddd;
-$site-progress-border: $md-pink-200;
+$site-progress-border: $site-accent-color;
 
 $site-default-text: $md-grey-800;
 $site-header-text: $md-grey-900;
 $site-neutral-color: $md-grey-500;
-$site-default-link: $dokugaku-blue;
+$site-default-link: darken($site-clickable-color, 10%);
 $site-default-link-over: darken($site-default-link, 10%);
 
-$site-component-header-bg: $pastelen-blue;
+$site-component-header-bg: linear-gradient(to right, $blue-light 0%, pastelen($blue) 100%);
 $site-component-header-text: $white;
 $site-component-content-bg: $white;
 $site-component-content-text: $md-grey-800;
 
-$site-accent-color: $blue-light;
+$header-bg-color: $white;
+$header-banner-color: $blue-dark;
+$header-banner-over-color: $site-default-link-over;
+$header-nav-link-color: $md-grey-800;
+$header-nav-link-over-color: $site-default-link-over;
 
-$header-default-bg: $white;
-$header-banner-bg: linear-gradient(to bottom, $blue 0%, $pastelen-blue 100%);
-$header-banner-color: $pastelen-blue;
-$header-nav-bg: $blue;
-$header-border-color: $md-grey-900;
-$header-link-color: $md-grey-900;
-$header-link-over-color: $md-grey-900;
-$header-accent-color: $dokugaku-blue;
-
-$footer-default-bg: $site-component-header-bg;
-$footer-default-text: $site-component-header-text;
+$footer-default-bg: $md-grey-50;
+$footer-default-text: $md-grey-600;
 $footer-default-link: $footer-default-text;
-$footer-default-link-over: $site-accent-color;
-$footer-border-color: $site-default-border;
+$footer-default-link-over: $site-default-link-over;
 
 // Typography color ----------------------------
 $entry-title-text: $md-blue-grey-900;
 $entry-title-text-over: $site-default-link-over;
+$entry-header-border-color: $site-accent-color;
 $caption-text: #767676;
 $code-default-bg: $md-grey-50;
 $blockquote-text: $md-grey-700;
@@ -147,17 +143,14 @@ $form-default-placeholder: $md-grey-300;
 
 // button
 $button-default-border-width: 1px;
-$button-default-text: $md-grey-600;
-$button-default-text-over: $md-grey-800;
+$button-default-text: $site-default-link;
+$button-default-text-over: $site-default-link-over;
 $button-default-bg: $white;
-$button-default-bg-over: $white;
-$button-default-border: $form-default-border;
-$button-default-border-over: $form-default-border-over;
+$button-default-bg-over: lighten($site-default-link-over, 50%);
+$button-default-border: lighten($site-default-link, 25%);
+$button-default-border-over: $site-default-link-over;
 $button-disable-text: $md-grey-200;
 $button-disable-border: $md-grey-100;
-// button--primary
-$button-primary-bg: $dokugaku-blue;
-$button-primary-text: $white;
 
 // state colors
 $state-warning-text: #c09853;

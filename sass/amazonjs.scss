@@ -11,10 +11,19 @@
   border-color: $block-default-border;
   border-width: 1px;
   box-shadow: $block-shadow;
-  padding: $site-grid-margin 0 $site-grid-margin*1.5;
+  margin: .5em 0 1em 0;
+  padding: $site-grid-margin $site-grid-margin/2;
+
+  a {
+    color: $site-default-link;
+    &:hover {
+      color: $site-default-link-over;
+    }
+  }
 
   @include smaller-than-tablet-screen {
-    padding: $site-grid-margin-small 0 $site-grid-margin-small*1.5;
+    margin: .5em -1*$site-grid-margin 1em -1*$site-grid-margin;
+    padding: $site-grid-margin-small $site-grid-margin-small/2;
   }
 
   .amazonjs_image {
@@ -27,7 +36,7 @@
   .amazonjs_info {
     h4 {
       font-size: 1.2em;
-      font-weight: normal;
+      font-weight: bold;
       text-shadow: none;
     }
 

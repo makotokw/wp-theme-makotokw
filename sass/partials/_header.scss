@@ -12,6 +12,9 @@ $site-logo-height-small: 20px;
 }
 
 .headroom--not-top {
+  &.site-header {
+    background: rgba($header-bg-color, 0.95);
+  }
   .site-header-banner {
     display: none;
   }
@@ -24,7 +27,6 @@ $site-logo-height-small: 20px;
   height: $site-header-banner-height;
   max-height: $site-header-banner-height;
   line-height: $site-header-banner-height;
-  background: $header-banner-bg;
   @include smaller-than-desktop-screen {
     height: $site-header-banner-height-small;
     max-height: $site-header-banner-height-small;
@@ -46,17 +48,19 @@ $site-logo-height-small: 20px;
 }
 
 .site-header {
-  background: $header-default-bg;
-  border-bottom: 1px solid $header-border-color;
+  background: $header-bg-color;
   position: fixed;
   z-index: 10;
   top: 0;
   left: 0;
   right: 0;
+  transition-duration: .5s;
+  will-change: transform;
+  transition: transform 200ms linear;
   a {
-    color: $white;
+    color: $header-nav-link-color;
     &:hover {
-      color: $site-accent-color;
+      color: $header-nav-link-over-color;
     }
   }
 }
@@ -79,7 +83,7 @@ $site-logo-height-small: 20px;
   }
   &:hover {
     .site-header-logo-svg {
-      fill: $monstersinc-blue;
+      fill: $header-banner-over-color;
     }
   }
 }
@@ -96,8 +100,6 @@ $site-logo-height-small: 20px;
 }
 
 .site-header-nav {
-  background: $header-nav-bg;
-  color: $white;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -125,6 +127,7 @@ $site-logo-height-small: 20px;
       display: none;
     }
   }
+
   .search-form {
     .search-form-text {
       border: none;

@@ -25,15 +25,6 @@
   }
 }
 
-.btn-primary {
-  background-color: $button-primary-bg;
-  color: $button-primary-text;
-  &:hover {
-    background-color: darken($button-primary-bg, 10%);
-    color: $button-primary-text;
-  }
-}
-
 .btn-square {
   border-radius: 2px;
 }

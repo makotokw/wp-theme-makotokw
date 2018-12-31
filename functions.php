@@ -71,9 +71,7 @@ function makotokw_setup() {
 	 */
 	register_nav_menus(
 		array(
-			'header' => __( 'Header Menu', 'makotokw' ),
 			'footer' => __( 'Footer Menu', 'makotokw' ),
-			'portfolio' => __( 'Portfolio Menu', 'makotokw' ),
 		)
 	);
 

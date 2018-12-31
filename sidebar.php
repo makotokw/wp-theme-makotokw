@@ -5,8 +5,8 @@
  * @package makotokw
  */
 ?>
-<aside class="site-sidebar" role="complementary" aria-label="<?php esc_attr_e( 'Blog Sidebar', 'makotokw' ); ?>">
-	<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+	<aside class="site-sidebar" role="complementary" aria-label="<?php esc_attr_e( 'Blog Sidebar', 'makotokw' ); ?>">
 		<?php dynamic_sidebar( 'sidebar-1' ); ?>
-	<?php endif ?>
-</aside>
+	</aside>
+<?php endif ?>
