@@ -34,8 +34,8 @@ a:hover {
 blockquote {
   margin: $block-margin 0;
   padding: $block-padding/8 $block-padding;
-  color: $block-quote-text;
-  border-left: $site-border-left-width solid $brand-default-border;
+  color: $blockquote-text;
+  border-left: $site-border-left-width solid $site-default-border;
   font-style: italic;
   font-weight: 300;
 

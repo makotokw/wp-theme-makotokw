@@ -26,11 +26,11 @@
 }
 
 .btn-primary {
-  background-color: $brand-primary;
-  color: $white;
+  background-color: $button-primary-bg;
+  color: $button-primary-text;
   &:hover {
-    background-color: darken($brand-primary, 10%);
-    color: $white;
+    background-color: darken($button-primary-bg, 10%);
+    color: $button-primary-text;
   }
 }
 

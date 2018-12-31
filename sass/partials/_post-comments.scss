@@ -2,7 +2,7 @@ $author-border-width: 2px;
 
 .section-comment,
 .pingbacks-area {
-  @include main-block();
+  @include sentence-block();
 }
 
 // Comments

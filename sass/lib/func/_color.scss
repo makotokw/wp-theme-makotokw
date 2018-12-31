@@ -1,0 +1,4 @@
+// https://gist.github.com/4499991
+@function pastelen($color) {
+  @return adjust_hue(saturate(darken($color, 4), 45), 360);
+}

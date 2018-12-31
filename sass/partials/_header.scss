@@ -1,13 +1,3 @@
-
-$site-header-banner-height: 96px;
-$site-header-banner-height-small: 48px;
-$site-header-nav-height: 48px;
-$site-header-nav-height-small: 48px;
-$site-header-progress-height: 4px;
-
-$site-header-height: $site-header-banner-height + $site-header-nav-height;
-$site-header-height-small: $site-header-banner-height-small + $site-header-nav-height-small;
-
 $site-logo-image-width: 190px;
 $site-logo-image-height: 40px;
 $site-logo-height: 28px;
@@ -34,6 +24,7 @@ $site-logo-height-small: 20px;
   height: $site-header-banner-height;
   max-height: $site-header-banner-height;
   line-height: $site-header-banner-height;
+  background: $header-banner-bg;
   @include smaller-than-desktop-screen {
     height: $site-header-banner-height-small;
     max-height: $site-header-banner-height-small;
@@ -55,7 +46,7 @@ $site-logo-height-small: 20px;
 }
 
 .site-header {
-  background: $header-background-color;
+  background: $header-default-bg;
   border-bottom: 1px solid $header-border-color;
   position: fixed;
   z-index: 10;
@@ -76,7 +67,7 @@ $site-logo-height-small: 20px;
 
 .site-header-logo {
   .site-header-logo-svg {
-    fill: $site-component-header-text;
+    fill: $header-banner-color;
     margin-top: ($site-header-banner-height - $site-logo-height) / 2;
     width: $site-logo-image-width * ($site-logo-height / $site-logo-image-height);
     height: $site-logo-height;
@@ -105,7 +96,7 @@ $site-logo-height-small: 20px;
 }
 
 .site-header-nav {
-  background: $sun-flower;
+  background: $header-nav-bg;
   color: $white;
   display: flex;
   align-items: center;

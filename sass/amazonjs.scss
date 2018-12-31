@@ -1,6 +1,10 @@
+@import "lib/colors/trendcolors";
+@import "lib/colors/brandcolors";
+@import "lib/colors/materialcolors";
+@import "lib/mixins/utils";
+@import "lib/mixins/responsive";
+@import "lib/func/color";
 @import "variables";
-@import "mixins/utils";
-@import "mixins/responsive";
 
 .amazonjs_item {
 //  @include block-white($blockBorderRadius);

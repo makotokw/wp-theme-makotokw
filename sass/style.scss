@@ -14,15 +14,19 @@
  * This theme, like WordPress, is licensed under the GPL.
  * Use it to make something cool, have fun, and share what you've learned with others.
 */
+@import "lib/colors/trendcolors";
+@import "lib/colors/brandcolors";
+@import "lib/colors/materialcolors";
+@import "lib/mixins/utils";
+@import "lib/mixins/responsive";
+@import "lib/func/color";
 @import "variables";
-@import "mixins/utils";
-@import "mixins/responsive";
-@import "lib/normalize";
-@import "lib/font-awesome";
+@import "lib/vendor/normalize";
+@import "lib/vendor/font-awesome";
 @import "partials/core/font";
 @import "partials/core/typography";
 @import "partials/core/form";
-@import "lib/prettify";
+@import "lib/vendor/prettify";
 @import "partials/global";
 @import "partials/layout";
 @import "partials/button";

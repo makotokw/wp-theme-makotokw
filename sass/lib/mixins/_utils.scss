@@ -19,7 +19,7 @@
   }
 }
 
-@mixin main-block() {
+@mixin sentence-block() {
   display: block;
   background: $site-component-content-bg;
   padding: $site-grid-margin;

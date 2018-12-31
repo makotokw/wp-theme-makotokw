@@ -1,10 +1,6 @@
 // Layout
 // -----------------------------------------------
 
-
-$header-sticky-height: 145px;
-$header-sticky-height-small: 100px;
-
 // .site
 //   .site-header
 //   .site-main
@@ -22,7 +18,7 @@ $header-sticky-height-small: 100px;
   display: flex;
   flex-direction: row;
   // for sticky header
-  margin: $header-sticky-height auto 0;
+  margin: $site-header-height auto 0;
   padding: $site-grid-margin*2 $site-grid-margin $site-grid-margin*4 $site-grid-margin;
   max-width: $site-max-container;
 }
@@ -52,7 +48,7 @@ $header-sticky-height-small: 100px;
 
 @include smaller-than-desktop-screen {
   .site-main {
-    margin: $header-sticky-height-small auto 0;
+    margin: $site-header-height-small auto 0;
     padding: $site-grid-margin-small 0 $site-grid-margin-small*2;
   }
 }

@@ -4,7 +4,7 @@
 
 .post-summary,
 .post-single {
-  @include main-block();
+  @include sentence-block();
 }
 
 .post-summary {
@@ -146,9 +146,10 @@ $entry-header-color: $site-accent-color;
 .entry-summary {
   font-family: $font-family-content;
   font-size: $entry-list-content-font-size;
+
   .post-single & {
     font-size: $entry-content-font-size;
-    line-height: $line-height-base;
+    line-height: $entry-content-light-height;
   }
   img {
     display: block;
@@ -171,6 +172,12 @@ $entry-header-color: $site-accent-color;
     font-family: $font-family-base;
   }
   .post-single & {
+    p {
+      margin-bottom: 1.7rem;
+      @include smaller-than-desktop-screen {
+        margin-bottom: .87647rem;
+      }
+    }
     h2 {
       font-size: $entry-h2-font-size;
       margin: 1em;
