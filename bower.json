@@ -8,19 +8,12 @@
   ],
   "dependencies": {
     "google-code-prettify": "~1.0",
-    "font-awesome": "5.5.0",
     "normalize.css": "~8.0"
   },
   "overrides": {
     "google-code-prettify": {
       "main": [
         "src/prettify.*"
-      ]
-    },
-    "font-awesome": {
-      "main": [
-        "svg-with-js/*/*.css",
-        "svg-with-js/*/*-all.js"
       ]
     }
   }

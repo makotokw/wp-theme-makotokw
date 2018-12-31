@@ -94,7 +94,6 @@ gulp.task('modernizr', function () {
 function js(env) {
   gulp.src([
     'components/google-code-prettify/js/prettify.js',
-    'components/font-awesome/js/fontawesome-all.js',
     'js/vendor/*/*.js',
     'js/main.js'
   ])
