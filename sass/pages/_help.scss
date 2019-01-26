@@ -18,29 +18,5 @@
         margin-bottom: 15px;
       }
     }
-
-    .list-history {
-      list-style: none;
-      padding-left: 0;
-
-      li {
-        padding: 5px 0;
-        margin: 0;
-        line-height: 2;
-      }
-
-      time {
-        border: 1px solid $site-default-border;
-        margin-right: 5px;
-        padding: 0;
-        width: 120px;
-        display: inline-block;
-        text-align: center;
-        @include smaller-than-tablet-screen {
-          padding: 0 5px;
-          width: auto;
-        }
-      }
-    }
   }
 }
