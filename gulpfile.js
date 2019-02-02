@@ -19,8 +19,8 @@ gulp.task('clean:components', function () {
   ]);
 });
 gulp.task('bower:install', plugins.shell.task(['bower install']));
-gulp.task('bower:reinstall', ['clean:components', 'bower:install']);
-gulp.task('bower:normalize', ['bower:reinstall'], function () {
+gulp.task('bower:reinstall', gulp.series('clean:components', 'bower:install'));
+gulp.task('bower:normalize', gulp.series('bower:reinstall'), function () {
   var mainBowerFiles = require('main-bower-files');
   var bowerNormalizer = require('gulp-bower-normalize');
   gulp.src(mainBowerFiles(), {base: './bower_components'})
@@ -36,8 +36,6 @@ gulp.task('bower:normalize', ['bower:reinstall'], function () {
     .pipe(gulp.dest('./components/'));
 });
 
-gulp.task('violations', ['phpcs', 'jshint']);
-
 gulp.task('phpcs', plugins.shell.task(
   'phpcs --colors -s --report-width=1024 --standard=build/phpcs.xml *.php ./**/*.php',
   {ignoreErrors: true}
@@ -49,6 +47,8 @@ gulp.task('jshint', function () {
     .pipe(plugins.jshint.reporter('jshint-stylish'))
     .pipe(plugins.if(!browserSync.active, plugins.jshint.reporter('fail')));
 });
+
+gulp.task('checkstyle', gulp.series('phpcs', 'jshint'));
 
 gulp.task('make-languages-pot-1st', plugins.shell.task([
   'xgettext --from-code=UTF-8 -k__ -k_e -L PHP -o ./languages/messages.pot ./*.php ./*/*.php --package-name=makotokw --package-version=1.0 --msgid-bugs-address=makoto.kw@gmail.com',
@@ -106,11 +106,11 @@ function js(env) {
     .pipe(reload({stream: true, once: true}));
 }
 
-gulp.task('js:dev', ['modernizr'], function () {
+gulp.task('js:dev', gulp.series('modernizr'), function () {
   js('development');
 });
 
-gulp.task('js', ['modernizr'], function () {
+gulp.task('js', gulp.series('modernizr'), function () {
   js('production');
 });
 
@@ -175,13 +175,13 @@ gulp.task('bs-reload', function () {
   browserSync.reload();
 });
 
-gulp.task('default', ['js:dev', 'sass:dev', 'browser-sync'],
+gulp.task('default', gulp.series('js:dev', 'sass:dev', 'browser-sync'),
   function () {
-    gulp.watch('js/*.js', ['jshint', 'js:dev']);
-    gulp.watch('sass/**/*.scss', ['sass:dev']);
-    gulp.watch('**/*.php', ['phpcs', 'bs-reload']);
-    gulp.watch('languages/*.mo', ['bs-reload']);
+    gulp.watch('js/*.js', gulp.series('jshint', 'js:dev'));
+    gulp.watch('sass/**/*.scss', gulp.series('sass:dev'));
+    gulp.watch('**/*.php', gulp.series('phpcs', 'bs-reload'));
+    gulp.watch('languages/*.mo', gulp.series('bs-reload'));
   }
 );
 
-gulp.task('build', ['js', 'sass', 'clean:map']);
+gulp.task('build', gulp.series('js', 'sass', 'clean:map'));
