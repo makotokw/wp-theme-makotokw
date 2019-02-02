@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: makotokw 1.0\n"
 "Report-Msgid-Bugs-To: makoto.kw@gmail.com\n"
-"POT-Creation-Date: 2018-12-30 16:46+0900\n"
+"POT-Creation-Date: 2019-02-02 14:50+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,7 +39,7 @@ msgstr ""
 msgid "(<span class=\"entry-date-warning-y\">%d</span> years ago)"
 msgstr ""
 
-#: content.php:44 inc/template-tags.php:345
+#: content.php:44 inc/template-tags.php:413
 msgid "Continue reading"
 msgstr ""
 
@@ -77,26 +77,18 @@ msgid "Semantic Personal Publishing Platform"
 msgstr ""
 
 #: functions.php:74
-msgid "Header Menu"
-msgstr ""
-
-#: functions.php:75
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:76
-msgid "Portfolio Menu"
-msgstr ""
-
-#: functions.php:116
+#: functions.php:114
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:118
+#: functions.php:116
 msgid "Add widgets here to appear in your sidebar."
 msgstr ""
 
-#: header.php:78 searchform.php:10
+#: header.php:79 searchform.php:10
 msgid "Search the site"
 msgstr ""
 
@@ -211,11 +203,11 @@ msgstr ""
 msgid "Archives"
 msgstr ""
 
-#: inc/template-tags.php:239 inc/template-tags.php:451
+#: inc/template-tags.php:239 inc/template-tags.php:519
 msgid "Y/M"
 msgstr ""
 
-#: inc/template-tags.php:242 inc/template-tags.php:453
+#: inc/template-tags.php:242 inc/template-tags.php:521
 msgid "Y"
 msgstr ""
 
@@ -223,78 +215,82 @@ msgstr ""
 msgid "Search Results"
 msgstr ""
 
-#: inc/template-tags.php:298 inc/template-tags.php:517
-#: inc/template-tags.php:540 inc/template-tags.php:561
+#: inc/template-tags.php:304 inc/template-tags.php:587
+#: inc/template-tags.php:610 inc/template-tags.php:631
 #, php-format
 msgid "View all posts in %s"
 msgstr ""
 
-#: inc/template-tags.php:329
+#: inc/template-tags.php:397
 #, php-format
 msgid "<time class=\"published updated time\" datetime=\"%1$s\">%2$s</time>"
 msgstr ""
 
-#: inc/template-tags.php:337
+#: inc/template-tags.php:405
 #, php-format
 msgid "<time class=\"updated time\" datetime=\"%1$s\">%2$s</time>"
 msgstr ""
 
-#: inc/template-tags.php:385
+#: inc/template-tags.php:453
 msgid "Twitter"
 msgstr ""
 
-#: inc/template-tags.php:391
+#: inc/template-tags.php:459
 msgid "Facebook"
 msgstr ""
 
-#: inc/template-tags.php:403
+#: inc/template-tags.php:471
 msgid "Hatena Bookmark"
 msgstr ""
 
-#: inc/template-tags.php:409
+#: inc/template-tags.php:477
 msgid "Pocket"
 msgstr ""
 
-#: inc/template-tags.php:445
+#: inc/template-tags.php:513
 #, php-format
 msgid "Category Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:447
+#: inc/template-tags.php:515
 #, php-format
 msgid "Tag Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:449
+#: inc/template-tags.php:517
 #, php-format
 msgid "Daily Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:451
+#: inc/template-tags.php:519
 #, php-format
 msgid "Monthly Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:453
+#: inc/template-tags.php:521
 #, php-format
 msgid "Yearly Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:455
+#: inc/template-tags.php:523
 #, php-format
 msgid "Blog Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:457
+#: inc/template-tags.php:525
 #, php-format
 msgid "Portfolio Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:459
+#: inc/template-tags.php:527
 msgid "Search"
 msgstr ""
 
-#: inc/template-tags.php:461
+#: inc/template-tags.php:529
+msgid "All posts"
+msgstr ""
+
+#: inc/template-tags.php:531
 #, php-format
 msgid "Archives of %s"
 msgstr ""

@@ -525,6 +525,8 @@ function makotokw_archives_title() {
 		<?php echo sprintf( __( 'Portfolio Archives: %s', 'makotokw' ), '<span>' . single_term_title( '', false ) . '</span>' ); ?>
 	<?php elseif ( is_search() ) : ?>
 		<?php echo __( 'Search', 'makotokw' ); ?>
+	<?php elseif ( is_home() ) : ?>
+		<?php echo __( 'All posts', 'makotokw' ); ?>
 	<?php else : ?>
 		<?php echo sprintf( __( 'Archives of %s', 'makotokw' ), '<span>' . get_bloginfo( 'name' ) . '</span>' ); ?>
 	<?php endif; ?>
