@@ -112,6 +112,7 @@ $site-default-link: darken($site-clickable-color, 10%);
 $site-default-link-over: darken($site-default-link, 10%);
 
 $site-component-header-bg: linear-gradient(to right, $blue-light 0%, pastelen($blue) 100%);
+$site-component-header-bg-radius: 10px;
 $site-component-header-text: $white;
 $site-component-content-bg: $white;
 $site-component-content-text: $md-grey-800;

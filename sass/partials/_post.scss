@@ -4,6 +4,7 @@
 
 .post-summary,
 .post-single {
+  border-radius: $site-component-header-bg-radius;
   @include sentence-block();
 }
 
@@ -260,7 +261,7 @@
 .btn-more-link {
   float: right;
   font-size: $font-size-base;
-  border-radius: 20px;
+  border-radius: $site-component-header-bg-radius;
   margin-right: -$site-grid-margin;
   @include smaller-than-desktop-screen {
     margin-right: 0;
