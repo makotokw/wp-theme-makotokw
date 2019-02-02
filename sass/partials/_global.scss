@@ -142,7 +142,7 @@
 }
 
 .desktop-hide {
-  @include desktop-or-bigger-screen {
+  @include larger-than-desktop-screen {
     display: none !important;
   }
 }

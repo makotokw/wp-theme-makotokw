@@ -44,7 +44,7 @@
 }
 
 
-@include larger-than-normal-desktop-screen {
+@include larger-than-large-desktop-screen {
   .site-main {
     padding: $site-grid-margin*2;
   }

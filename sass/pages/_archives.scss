@@ -40,11 +40,6 @@
           color: $md-light-blue-600;
         }
       }
-
-      @include desktop-or-bigger-screen{
-        padding-left: 10px;
-        padding-right: 10px;
-      }
     }
 
     .list-archives-item-month-no-items {
