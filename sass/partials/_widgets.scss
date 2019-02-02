@@ -15,9 +15,6 @@
     //background: $site-component-header-bg;
     //color: $site-component-header-text;
   }
-  @include smaller-than-tablet-screen {
-    padding: $site-grid-margin-small;
-  }
 }
 
 .widget_makotokw_static_post-list {

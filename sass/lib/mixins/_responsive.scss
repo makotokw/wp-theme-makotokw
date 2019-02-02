@@ -17,12 +17,21 @@
   }
 }
 
+// pc-first default
+@mixin smaller-than-normal-desktop-screen() {
+  @media screen and (max-width: $screen-lg - 1) {
+    @content;
+  }
+}
+
 @mixin desktop-or-bigger-screen() {
   @media screen and (min-width: $screen-md) {
     @content;
   }
 }
 
-
-
-
+@mixin larger-than-normal-desktop-screen() {
+  @media screen and (min-width: $screen-lg) {
+    @content;
+  }
+}

@@ -26,7 +26,11 @@ $purple: #8E44AD;
 
 // Layout Size ----------------------------
 
-$site-max-container: 1200px;
+$site-grid-margin: 20px;
+$site-grid-margin-small: 10px;
+
+$site-max-container: 1200 - 2*$site-grid-margin;
+$site-max-content: 840px;
 $site-max-sidebar: 260px;
 
 $site-header-banner-height: 63px;
@@ -36,9 +40,6 @@ $site-header-nav-height-small: 48px;
 $site-header-progress-height: 4px;
 $site-header-height: $site-header-banner-height + $site-header-nav-height + $site-header-progress-height;
 $site-header-height-small: $site-header-banner-height-small + $site-header-nav-height-small + $site-header-progress-height;
-
-$site-grid-margin: 15px;
-$site-grid-margin-small: 10px;
 
 $border-radius-base: 4px;
 $border-radius-large: 6px;

@@ -26,7 +26,6 @@
 }
 
 .post-single {
-  margin-left: $site-grid-margin-small;
   .entry-header {
     padding: $site-grid-margin*2 $site-grid-margin*4 0;
   }
@@ -481,10 +480,6 @@ object {
 // -----------------------------------------------
 .archive {
   .post-summaries, .pagination {
-    padding-left: $site-grid-margin;
-    @include smaller-than-tablet-screen {
-      padding-left: 0;
-    }
   }
   .pagination {
     padding-left: $site-grid-margin;
