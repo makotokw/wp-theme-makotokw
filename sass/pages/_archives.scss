@@ -54,7 +54,7 @@
       }
     }
 
-    @include smaller-than-tablet-screen {
+    //@include smaller-than-tablet-screen {
       .list-archives-item-month {
         a {
           @include circle(35px);
@@ -67,7 +67,7 @@
           margin-left: 0;
         }
       }
-    }
+    //}
 
 
     .list-archives-item-month-no-items.list-archives-item-month-no-items-future {
