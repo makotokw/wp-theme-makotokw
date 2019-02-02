@@ -7,6 +7,7 @@ var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var del = require('del');
 var notifier = require('node-notifier');
+
 var wpRoot = '../../../';
 
 gulp.task('clean:components', function () {
@@ -132,7 +133,8 @@ function nodeSass(env) {
       })
     ]))
     .pipe(plugins.if(isDebug, plugins.sourcemaps.write()))
-    .pipe(gulp.dest('./css'));
+    .pipe(gulp.dest('.'))
+    .pipe(reload({stream: true, once: true}));
 }
 
 gulp.task('sass:dev', function () {
@@ -164,17 +166,19 @@ gulp.task('browser-sync', function () {
   });
 });
 
-gulp.task('bs-reload', function () {
+gulp.task('bs-reload', function (done) {
   browserSync.reload();
+  done();
 });
 
-gulp.task('default', gulp.series(gulp.parallel('js:dev', 'sass:dev'), 'browser-sync'),
-  function () {
+gulp.task('default', gulp.series(gulp.parallel('js:dev', 'sass:dev'), gulp.parallel('browser-sync',
+  function (done) {
     gulp.watch('js/*.js', gulp.series('jshint', 'js:dev'));
     gulp.watch('sass/**/*.scss', gulp.series('sass:dev'));
     gulp.watch('**/*.php', gulp.series('phpcs', 'bs-reload'));
     gulp.watch('languages/*.mo', gulp.series('bs-reload'));
+    done();
   }
-);
+)));
 
 gulp.task('build', gulp.series(gulp.parallel('js', 'sass'), 'clean:map'));
