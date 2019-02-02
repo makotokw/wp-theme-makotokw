@@ -1,16 +1,25 @@
 .amazonjs_item {
-  border-color: #f5e0cc;
-  border-width: 0; }
+  border-color: rgba(0, 0, 0, 0.1);
+  border-width: 1px;
+  -webkit-box-shadow: 4px 6px 10px -6px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 6px 10px -6px rgba(0, 0, 0, 0.1);
+  margin: .5em 0 1em 0;
+  padding: 20px 10px; }
+  .amazonjs_item a {
+    color: #196177; }
+    .amazonjs_item a:hover {
+      color: #103f4d; }
   @media screen and (max-width: 767px) {
     .amazonjs_item {
-      padding: 5px 0 15px 0; } }
+      margin: 0.5em -20px 1em -20px;
+      padding: 10px 5px; } }
   .amazonjs_item .amazonjs_image img {
     -webkit-box-shadow: none;
     box-shadow: none;
     border: none; }
   .amazonjs_item .amazonjs_info h4 {
     font-size: 1.2em;
-    font-weight: normal;
+    font-weight: bold;
     text-shadow: none; }
   .amazonjs_item .amazonjs_info ul li {
     font-size: 1em; }
