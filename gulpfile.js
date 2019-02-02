@@ -12,18 +12,15 @@ var wpRoot = '../../../';
 
 gulp.task('clean:components', function () {
   return del([
-    'components/font-awesome',
     'components/google-code-prettify',
-    'components/html5shiv',
-    'components/unsemantic'
+    'components/normalize.css'
   ]);
 });
 gulp.task('bower:install', plugins.shell.task(['bower install']));
-gulp.task('bower:reinstall', gulp.series('clean:components', 'bower:install'));
-gulp.task('bower:normalize', gulp.series('bower:reinstall'), function () {
+gulp.task('bower:normalize', function () {
   var mainBowerFiles = require('main-bower-files');
   var bowerNormalizer = require('gulp-bower-normalize');
-  gulp.src(mainBowerFiles(), {base: './bower_components'})
+  return gulp.src(mainBowerFiles(), {base: './bower_components'})
     .pipe(bowerNormalizer({bowerJson: './bower.json', checkPath: true}))
     .pipe(plugins.rename(function (path) {
       if (path.dirname.match(/\/css$/)) {
@@ -35,6 +32,7 @@ gulp.task('bower:normalize', gulp.series('bower:reinstall'), function () {
     }))
     .pipe(gulp.dest('./components/'));
 });
+gulp.task('bower:rebuild', gulp.series('clean:components', 'bower:install', 'bower:normalize'));
 
 gulp.task('phpcs', plugins.shell.task(
   'phpcs --colors -s --report-width=1024 --standard=build/phpcs.xml *.php ./**/*.php',
@@ -59,12 +57,11 @@ gulp.task('make-languages-mo-2nd', plugins.shell.task([
   'msgfmt -o ./languages/ja.mo ./languages/ja.po'
 ]));
 
-gulp.task('clean:map', function (cb) {
-  del(['*.map'], function (err, deletedFiles) {
+gulp.task('clean:map', function () {
+  return del(['*.map'], function (err, deletedFiles) {
     if (deletedFiles.length > 0) {
       plugins.util.log('Files deleted:', deletedFiles.join(', '));
     }
-    cb();
   });
 });
 
@@ -175,7 +172,7 @@ gulp.task('bs-reload', function () {
   browserSync.reload();
 });
 
-gulp.task('default', gulp.series('js:dev', 'sass:dev', 'browser-sync'),
+gulp.task('default', gulp.series(gulp.parallel('js:dev', 'sass:dev'), 'browser-sync'),
   function () {
     gulp.watch('js/*.js', gulp.series('jshint', 'js:dev'));
     gulp.watch('sass/**/*.scss', gulp.series('sass:dev'));
@@ -184,4 +181,4 @@ gulp.task('default', gulp.series('js:dev', 'sass:dev', 'browser-sync'),
   }
 );
 
-gulp.task('build', gulp.series('js', 'sass', 'clean:map'));
+gulp.task('build', gulp.series(gulp.parallel('js', 'sass'), 'clean:map'));
