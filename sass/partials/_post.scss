@@ -4,17 +4,19 @@
 
 .post-summary,
 .post-single {
-  border-radius: $site-component-header-bg-radius;
   @include sentence-block();
 }
 
 .post-summary {
+  border-radius: $site-component-header-bg-radius;
   .entry-header {
     padding: $site-grid-margin*2 $site-grid-margin*2 0;
   }
   .entry-content, .entry-summary {
     padding: $site-grid-margin $site-grid-margin*2 $site-grid-margin*2;
   }
+
+  // 1 column
   @include smaller-than-desktop-screen {
     padding: $site-grid-margin-small;
     .entry-header {
@@ -27,20 +29,49 @@
 }
 
 .post-single {
-  .entry-header {
-    padding: $site-grid-margin*2 $site-grid-margin*4 0;
-  }
-  .entry-content {
-    padding: $site-grid-margin $site-grid-margin*4 0;
-  }
+  border-radius: $site-component-header-bg-radius $site-component-header-bg-radius 0 0;
   .breadcrumb {
-    margin: 0 -5*$site-grid-margin;
     padding: $site-grid-margin/2 0;
     background: $md-grey-50;
   }
+
+  .entry-header {
+    padding: $site-grid-margin*1.5 $site-grid-margin*3 0;
+  }
+  .entry-content {
+    padding: $site-grid-margin $site-grid-margin*3 0;
+  }
+  .breadcrumb {
+    margin: 0 -4*$site-grid-margin;
+  }
+
+  @include larger-than-large-desktop-screen {
+    .entry-header {
+      padding: $site-grid-margin*2 $site-grid-margin*4 0;
+    }
+    .entry-content {
+      padding: $site-grid-margin $site-grid-margin*4 0;
+    }
+    .breadcrumb {
+      margin: 0 -5*$site-grid-margin;
+    }
+  }
+
+  // 1 column
   @include smaller-than-desktop-screen {
     .entry-header {
-      padding: $site-grid-margin-small*2 $site-grid-margin-small/2 $site-grid-margin-small $site-grid-margin-small/2;
+      padding: $site-grid-margin-small*2 $site-grid-margin-small/2;
+    }
+    .entry-content {
+      padding: $site-grid-margin-small $site-grid-margin-small*3 0;
+    }
+    .breadcrumb {
+      margin: 0 -5*$site-grid-margin-small;
+    }
+  }
+  @include smaller-than-tablet-screen {
+    .entry-header {
+      padding: $site-grid-margin-small $site-grid-margin-small/2;
     }
     .entry-content {
       padding: $site-grid-margin-small 0;
@@ -48,9 +79,6 @@
     .breadcrumb {
       margin: 0 -1*$site-grid-margin;
     }
-  }
-  @include smaller-than-tablet-screen {
-    margin-left: 0;
   }
 }
 
@@ -66,7 +94,7 @@
   margin-top: $site-grid-margin * 2;
   box-shadow: 2px 5px 10px -6px rgba(0,0,0,.1);
 
-  @include smaller-than-desktop-screen {
+  @include smaller-than-tablet-screen {
     margin-top: $site-grid-margin-small * 2;
   }
 
@@ -85,7 +113,7 @@
     line-height: 1;
   }
 
-  @include smaller-than-desktop-screen {
+  @include smaller-than-tablet-screen {
     font-size: $entry-list-title-small-font-size;
     .post-single & {
       font-size: $entry-title-small-font-size;
@@ -208,7 +236,7 @@
     h5 {
       font-size: $entry-h5-font-size;
     }
-    @include smaller-than-desktop-screen {
+    @include smaller-than-tablet-screen {
       h2 {
         font-size: $entry-h2-small-font-size;
         padding: .7em .7em;

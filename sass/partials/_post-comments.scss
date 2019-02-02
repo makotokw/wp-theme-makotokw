@@ -1,7 +1,7 @@
 $author-border-width: 2px;
 
-.section-comment,
-.pingbacks-area {
+.section-comment {
+  border-radius: 0 0 $site-component-header-bg-radius $site-component-header-bg-radius;
   @include sentence-block();
 }
 

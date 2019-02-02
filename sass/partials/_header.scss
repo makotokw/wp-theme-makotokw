@@ -27,7 +27,7 @@ $site-logo-height-small: 20px;
   height: $site-header-banner-height;
   max-height: $site-header-banner-height;
   line-height: $site-header-banner-height;
-  @include smaller-than-desktop-screen {
+  @include smaller-than-tablet-screen {
     height: $site-header-banner-height-small;
     max-height: $site-header-banner-height-small;
     line-height: $site-header-banner-height-small;
@@ -37,14 +37,14 @@ $site-logo-height-small: 20px;
   height: $site-header-nav-height;
   max-height: $site-header-nav-height;
   padding: 0 $site-grid-margin*2;
-  @include smaller-than-desktop-screen {
+  @include smaller-than-tablet-screen {
     height: $site-header-nav-height-small;
     max-height: $site-header-nav-height-small;
     padding: 0 $site-grid-margin-small;
   }
-  @include smaller-than-tablet-screen {
-    padding: 0 $site-grid-margin-small/2;
-  }
+  //@include smaller-than-tablet-screen {
+  //  padding: 0 $site-grid-margin-small/2;
+  //}
 }
 
 .site-header {
@@ -75,7 +75,7 @@ $site-logo-height-small: 20px;
     margin-top: ($site-header-banner-height - $site-logo-height) / 2;
     width: $site-logo-image-width * ($site-logo-height / $site-logo-image-height);
     height: $site-logo-height;
-    @include smaller-than-desktop-screen {
+    @include smaller-than-tablet-screen {
       margin-top: ($site-header-banner-height-small - $site-logo-height-small) / 2;
       width: $site-logo-image-width * ($site-logo-height-small / $site-logo-image-height);
       height: $site-logo-height-small;
@@ -114,7 +114,7 @@ $site-logo-height-small: 20px;
     a {
       margin: 0 $site-grid-margin;
     }
-    @include smaller-than-desktop-screen {
+    @include smaller-than-tablet-screen {
       a {
         font-size: $font-size-small;
         margin: 0 $site-grid-margin-small/2;
@@ -123,7 +123,7 @@ $site-logo-height-small: 20px;
   }
   .site-header-nav-item3 {
     flex: 0 1 auto;
-    @include smaller-than-desktop-screen {
+    @include smaller-than-tablet-screen {
       display: none;
     }
   }
