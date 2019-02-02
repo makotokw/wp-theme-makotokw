@@ -9,7 +9,7 @@
   "devDependencies": {
     "autoprefixer": "^9.4.7",
     "browser-sync": "^2.26.3",
-    "customizr": "github:modernizr/customizr#develop",
+    "customizr": "^1.1.0",
     "del": "^3.0.0",
     "gulp": "^4.0.0",
     "gulp-bower-normalize": "^1.1.1",
@@ -18,7 +18,7 @@
     "gulp-if": "^2.0.2",
     "gulp-jshint": "^2.1.0",
     "gulp-load-plugins": "^1.5.0",
-    "gulp-modernizr": "2.0.0",
+    "gulp-modernizr": "^3.1.0",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
