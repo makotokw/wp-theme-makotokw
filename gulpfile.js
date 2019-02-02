@@ -7,7 +7,6 @@ var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var del = require('del');
 var notifier = require('node-notifier');
-
 var wpRoot = '../../../';
 
 gulp.task('clean:components', function () {
@@ -111,22 +110,20 @@ gulp.task('js', gulp.series('modernizr'), function () {
   js('production');
 });
 
-function sass(env) {
+function nodeSass(env) {
+  plugins.sass.compiler = require('node-sass');
   var isDebug = env === 'development';
-  return plugins.rubySass('sass/*.scss', {
-    verbose: isDebug,
-    loadPath: ['components'],
-    lineNumbers: isDebug,
-    force: !isDebug,
-    sourcemap: isDebug,
-    emitCompileError: true
-  })
-    .on('error', function (err) {
-      notifier.notify({
-        message: err.message,
-        title: err.plugin
-      });
-    })
+  return gulp.src('./sass/**/*.scss')
+    .pipe(plugins.sourcemaps.init())
+    // https://github.com/sass/node-sass#options
+    .pipe(plugins.sass({
+      includePaths: ['components'],
+      sourceComments: isDebug,
+    }))
+      .on('error', function (err) {
+        notifier.notify({message: err.message, title: err.plugin});
+      })
+      .on('error', plugins.sass.logError)
     .pipe(plugins.plumber())
     .pipe(plugins.postcss([
       require('autoprefixer')({
@@ -135,16 +132,15 @@ function sass(env) {
       })
     ]))
     .pipe(plugins.if(isDebug, plugins.sourcemaps.write()))
-    .pipe(gulp.dest('.'))
-    .pipe(reload({stream: true, once: true}));
+    .pipe(gulp.dest('./css'));
 }
 
 gulp.task('sass:dev', function () {
-  return sass('development');
+  return nodeSass('development');
 });
 
 gulp.task('sass', function () {
-  return sass('production');
+  return nodeSass('production');
 });
 
 gulp.task('browser-sync', function () {
