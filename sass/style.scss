@@ -34,7 +34,6 @@
 @import "partials/breadcrumb";
 @import "partials/pagination";
 @import "partials/header";
-@import "partials/sidebar";
 @import "partials/post";
 @import "partials/post-share";
 @import "partials/post-comments";
@@ -47,13 +46,11 @@
 @import "partials/markdown";
 @import "partials/pukiwiki";
 @import "partials/archives";
+@import "partials/widgets";
 @import "pages/help";
 @import "pages/about";
 @import "pages/archives";
 @import "pages/categories";
 @import "pages/tags";
 @import "pages/error";
-@import "widgets/categories";
-@import "widgets/statick-post";
-@import "partials/responsive";
 @import "partials/print";

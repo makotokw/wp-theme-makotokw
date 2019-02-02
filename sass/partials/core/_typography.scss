@@ -46,6 +46,12 @@ blockquote {
   blockquote {
     margin-right: 0;
   }
+
+  @include smaller-than-desktop-screen {
+    margin: 10px 0;
+    padding: 0 0 0 0.6em;
+    border-left: 0.4em solid $site-default-border;
+  }
 }
 
 del {
@@ -104,4 +110,39 @@ samp {
 }
 :-ms-input-placeholder {
   color: $form-default-placeholder;
+}
+
+
+// Mobile and Tablet
+@include smaller-than-desktop-screen {
+  h1 {
+    margin: 16px 0;
+  }
+
+  h2 {
+    margin: 12px 0;
+  }
+
+  h3 {
+    margin: 11px 0;
+  }
+
+  h4 {
+    margin: 10px 0;
+  }
+
+  h5 {
+    margin: 9px 0;
+  }
+
+  h6 {
+    margin: 8px 0;
+  }
+
+  menu,
+  ol,
+  ul {
+    margin: 10px 0;
+    padding: 0 0 0 20px;
+  }
 }

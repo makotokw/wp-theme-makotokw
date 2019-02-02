@@ -1,0 +1,65 @@
+.site-sidebar {
+  .widget {
+    background: $site-component-content-bg;
+    color: $site-component-content-text;
+    margin-top: $site-grid-margin * 2;
+  }
+  & >.widget:first-child {
+    margin-top: 0;
+  }
+  .widget-title {
+    font-size: $font-size-base * 1.1;
+    margin: 0;
+    padding: $site-grid-margin $site-grid-margin 0 $site-grid-margin;
+    text-align: center;
+    //background: $site-component-header-bg;
+    //color: $site-component-header-text;
+  }
+  @include smaller-than-tablet-screen {
+    padding: $site-grid-margin-small;
+  }
+}
+
+.widget_makotokw_static_post-list {
+  margin: 0;
+  padding: $site-grid-margin;
+  list-style: none;
+  a {
+    color: $site-default-text;
+    &:hover {
+      color: $site-default-link-over;
+    }
+  }
+  li {
+    margin-bottom: $site-grid-margin/2;
+  }
+}
+
+.widget_widget_makotokw_categories {
+  .list-categories {
+    .cat-item {
+      a {
+        color: $site-default-text;
+        &:hover {
+          color: $site-default-link-over;
+        }
+      }
+    }
+    .children {
+      .cat-item {
+        a {
+          color: lighten($site-default-text, 10%);
+          &:hover {
+            color: $site-default-link-over;
+          }
+        }
+      }
+    }
+  }
+}
+
+.widget_widget_makotokw_profile {
+  .profile-widget {
+    font-size: $font-size-small;
+  }
+}

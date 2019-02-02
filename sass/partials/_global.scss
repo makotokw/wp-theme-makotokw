@@ -141,4 +141,15 @@
   @include clearfix;
 }
 
+.desktop-hide {
+  @include desktop-or-bigger-screen {
+    display: none !important;
+  }
+}
+.desktop-show {
+  @include smaller-than-desktop-screen {
+    display: none !important;
+  }
+}
+
 
