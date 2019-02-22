@@ -144,15 +144,18 @@ $form-default-border-over: $md-grey-400;
 $form-default-placeholder: $md-grey-300;
 
 // button
-$button-default-border-width: 1px;
-$button-default-text: $site-default-link;
-$button-default-text-over: $site-default-link-over;
-$button-default-bg: $white;
-$button-default-bg-over: lighten($site-default-link-over, 50%);
-$button-default-border: lighten($site-default-link, 25%);
-$button-default-border-over: $site-default-link-over;
-$button-disable-text: $md-grey-200;
-$button-disable-border: $md-grey-100;
+$button-contained-bg: $blue;
+$button-contained-bg-over: lighten($button-contained-bg, 10%);
+$button-contained-text: $white;
+$button-contained-disable-bg: $md-grey-200;
+$button-contained-disable-text: $md-grey-400;
+$button-outlined-bg: transparent;
+$button-outlined-bg-over: lighten($blue, 50%);
+$button-outlined-border: $md-grey-400;
+$button-outlined-border-width: 1px;
+$button-outlined-text: $blue;
+$button-outlined-disable-border: $md-grey-300;
+$button-outlined-disable-text: $md-grey-300;
 
 // state colors
 $state-warning-text: #c09853;

@@ -13,7 +13,7 @@
       margin: 20px auto;
       > a {
         @extend .btn;
-        @extend .btn-default;
+        @extend .btn-outlined;
         &:hover {
           border-color: $md-light-blue-600;
           color: $md-light-blue-600;
@@ -31,7 +31,7 @@
     .list-archives-item-month {
       a {
         @extend .btn;
-        @extend .btn-default;
+        @extend .btn-outlined;
         @include circle(42px);
         margin-left: 10px;
         margin-bottom: 5px;
@@ -45,12 +45,11 @@
     .list-archives-item-month-no-items {
       span {
         @extend .btn;
+        @extend .btn-outlined;
+        @extend .btn-disabled;
         @include circle(42px);
         margin-left: 10px;
         margin-bottom: 5px;
-        background: $button-default-bg;
-        color: $button-disable-text;
-        border: $button-default-border-width solid $button-disable-border;
       }
     }
 

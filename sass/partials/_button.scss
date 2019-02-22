@@ -1,4 +1,3 @@
-
 .btn {
   margin: 0 10px 0 0;
   display: inline-block;
@@ -14,19 +13,42 @@
   }
 }
 
-.btn-default {
-  border: 1px solid $button-default-border;
-  background-color: $button-default-bg;
-  color: $button-default-text;
+.btn-contained {
+  border-radius: 6px;
+  background-color: $button-contained-bg;
+  color: $button-contained-text;
   &:hover {
-    border-color: $button-default-border-over;
-    background-color: $button-default-bg-over;
-    color: $button-default-text-over;
+    background-color: $button-contained-bg-over;
+    color: $button-contained-text;
+  }
+  &.btn-disabled {
+    background-color: $button-contained-disable-bg;
+    color: $button-contained-disable-text;
+    &:hover {
+      background-color: $button-contained-disable-bg;
+      color: $button-contained-disable-text;
+    }
   }
 }
 
-.btn-square {
-  border-radius: 2px;
+.btn-outlined {
+  border-radius: 6px;
+  background-color: $button-outlined-bg;
+  border: $button-outlined-border-width solid $button-outlined-border;
+  color: $button-outlined-text;
+  &:hover {
+    background-color: $button-outlined-bg-over;
+    color: $button-outlined-text;
+  }
+  &.btn-disabled {
+    border-color: $button-outlined-disable-border;
+    color: $button-outlined-disable-text;
+    &:hover {
+      background-color: $button-outlined-bg;
+      border-color: $button-outlined-disable-border;
+      color: $button-outlined-disable-text;
+    }
+  }
 }
 
 .btn-circle {
@@ -53,3 +75,4 @@
     }
   }
 }
+

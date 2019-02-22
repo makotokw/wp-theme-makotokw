@@ -11,10 +11,6 @@
       min-width: 1.5em;
     }
     a {
-      color: $button-default-text;
-      &:hover {
-        color: $md-light-blue-600;
-      }
     }
     > .cat-item-entry-count {
       display: inline-block;

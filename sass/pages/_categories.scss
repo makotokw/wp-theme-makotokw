@@ -11,11 +11,7 @@
         }
         a {
           @extend .btn;
-          background-color: $white;
-          border: 1px solid $button-default-border;
-          color: $button-default-text;
-          border-radius: 2px;
-          display: inline-block;
+          @extend .btn-outlined;
           margin: 5px 0 5px 5px;
           float: none;
 
