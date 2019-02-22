@@ -171,6 +171,8 @@ gulp.task('bs-reload', function (done) {
   done();
 });
 
+gulp.task('build', gulp.series(gulp.parallel('js', 'sass'), 'clean:map'));
+
 gulp.task('default', gulp.series(gulp.parallel('js:dev', 'sass:dev'), gulp.parallel('browser-sync',
   function (done) {
     gulp.watch('js/*.js', gulp.series('jshint', 'js:dev'));
@@ -181,4 +183,3 @@ gulp.task('default', gulp.series(gulp.parallel('js:dev', 'sass:dev'), gulp.paral
   }
 )));
 
-gulp.task('build', gulp.series(gulp.parallel('js', 'sass'), 'clean:map'));
