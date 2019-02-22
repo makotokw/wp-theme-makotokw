@@ -94,7 +94,7 @@ $author-border-width: 2px;
     }
     .edit-link,
     .fn {
-      color: $site-clickable-color;
+      color: $site-primary-color;
     }
     .comment-time {
       color: $site-neutral-color;
@@ -150,13 +150,13 @@ $author-border-width: 2px;
   > .comment-body {
     .comment-author {
       .avatar {
-        border: $author-border-width solid $site-accent-color;
-        background: $site-accent-color;
+        border: $author-border-width solid $site-primary-color;
+        background: $site-primary-color;
         padding: 2px;
       }
     }
     .comment-content {
-      border: $author-border-width solid $site-accent-color;
+      border: $author-border-width solid $site-primary-color;
     }
   }
 }

@@ -10,8 +10,9 @@
   }
   .widget-title {
     font-size: $font-size-base * 1.1;
+    background: $site-primary-light-color;
     margin: 0;
-    padding: $site-grid-margin $site-grid-margin 0 $site-grid-margin;
+    padding: $site-grid-margin * 0.7 $site-grid-margin;
     text-align: center;
     //background: $site-component-header-bg;
     //color: $site-component-header-text;
@@ -29,7 +30,16 @@
     }
   }
   li {
-    margin-bottom: $site-grid-margin/2;
+    margin: 0;
+    padding: $site-grid-margin/2 0;
+    border-bottom: 1px solid $site-default-border;
+  }
+  li:first-child {
+    padding-top: 0;
+  }
+  li:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
   }
 }
 

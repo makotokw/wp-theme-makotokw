@@ -23,38 +23,28 @@ $share-icon-size: 20px;
   }
 }
 .btn-share {
+  @extend .btn-circle;
+
   position: relative;
   font-weight: normal;
   margin: 0 $site-grid-margin;
-  background: $site-clickable-color;
+  background: $site-primary-color;
   border-color: $white;
   color: $white;
-
   font-size: $share-icon-size;
 
-  &.btn-circle {
-    .share-title {
-      display: none;
-    }
-    .icon {
-      text-align: center;
-      margin-left: 7px;
-    }
+  .share-title {
+    display: none;
+  }
+  .icon {
+    text-align: center;
+    margin-left: 7px;
   }
 
   .share-brand-icon {
     display: inline-block;
     vertical-align: -.125em;
     fill: $white;
-  }
-
-  &:hover {
-    background: $white;
-    border-color: $site-clickable-color;
-    color: $site-clickable-color;
-    .share-brand-icon {
-      fill: $site-clickable-color;
-    }
   }
 
   .share-count {
@@ -83,13 +73,30 @@ $share-icon-size: 20px;
 
 .btn-share-twitter {
   background: desaturate($twitter-blue, 20%);
+  &:hover {
+    background: lighten($twitter-blue, 10%);
+    color: $white;
+  }
 }
+
 .btn-share-facebook {
   background: desaturate($facebook-blue, 20%);
+  &:hover {
+    background: lighten($facebook-blue, 10%);
+    color: $white;
+  }
 }
 .btn-share-hatena {
   background: desaturate($hatena-bookmark-blue, 20%);
+  &:hover {
+    background: lighten($hatena-bookmark-blue, 10%);
+    color: $white;
+  }
 }
 .btn-share-pocket {
   background: desaturate($pocket-pink, 20%);
+  &:hover {
+    background: lighten($pocket-pink, 10%);
+    color: $white;
+  }
 }

@@ -18,15 +18,15 @@
   padding: $block-padding;
   background-color: $block-default-bg;
   color: $block-default-text;
-  border: 2px solid $site-accent-color;
-  border-left: $site-border-left-width solid $site-accent-color;
+  border: 2px solid $site-primary-color;
+  border-left: $site-border-left-width solid $site-primary-color;
 
   svg {
     float: left;
     width: $font-size-base * 2 !important;
     height: $font-size-base * 2 !important;
     margin-right: 10px;
-    color: $site-accent-color;
+    color: $site-primary-color;
   }
 
   &:after {

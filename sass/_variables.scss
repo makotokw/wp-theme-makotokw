@@ -96,30 +96,30 @@ $entry-h5-small-font-size: 19px;
 $block-shadow: 4px 6px 10px -6px rgba(0, 0, 0, .1);
 
 // Layout color ----------------------------
-$site-main-color: pastelen($blue);
-$site-accent-color: $blue-light;
-$site-clickable-color: darken($blue, 10%);
+$site-primary-color: pastelen($blue);
+$site-primary-dark-color: darken($site-primary-color, 10%);
+$site-primary-light-color: lighten($site-primary-color, 50%);
 $site-base-color: #eeeef0;
 
 $site-default-bg: #eeeef0;
 $site-default-border: #ddd;
-$site-progress-border: $site-accent-color;
+$site-progress-border: $site-primary-color;
 
 $site-default-text: $md-grey-800;
 $site-header-text: $md-grey-900;
 $site-neutral-color: $md-grey-500;
-$site-default-link: darken($site-clickable-color, 10%);
+$site-default-link: darken($site-primary-color, 10%);
 $site-default-link-over: darken($site-default-link, 10%);
 
-$site-component-header-bg: linear-gradient(to right, $blue-light 0%, pastelen($blue) 100%);
+$site-component-header-bg: linear-gradient(to right, $site-primary-light-color 0%, $site-primary-color 100%);
 $site-component-header-bg-radius: 10px;
 $site-component-header-text: $white;
 $site-component-content-bg: $white;
 $site-component-content-text: $md-grey-800;
 
 $header-bg-color: $white;
-$header-banner-color: $blue-dark;
-$header-banner-over-color: $site-default-link-over;
+$header-banner-color: $site-primary-color;
+$header-banner-over-color: darken($site-primary-color, 10%);
 $header-nav-link-color: $md-grey-800;
 $header-nav-link-over-color: $site-default-link-over;
 
@@ -131,7 +131,7 @@ $footer-default-link-over: $site-default-link-over;
 // Typography color ----------------------------
 $entry-title-text: $md-blue-grey-900;
 $entry-title-text-over: $site-default-link-over;
-$entry-header-border-color: $site-accent-color;
+$entry-header-border-color: $site-primary-color;
 $caption-text: #767676;
 $code-default-bg: $md-grey-50;
 $blockquote-text: $md-grey-700;
@@ -144,16 +144,16 @@ $form-default-border-over: $md-grey-400;
 $form-default-placeholder: $md-grey-300;
 
 // button
-$button-contained-bg: $blue;
+$button-contained-bg: $site-primary-color;
 $button-contained-bg-over: lighten($button-contained-bg, 10%);
 $button-contained-text: $white;
 $button-contained-disable-bg: $md-grey-200;
 $button-contained-disable-text: $md-grey-400;
 $button-outlined-bg: transparent;
-$button-outlined-bg-over: lighten($blue, 50%);
+$button-outlined-bg-over: lighten($site-primary-color, 50%);
 $button-outlined-border: $md-grey-400;
 $button-outlined-border-width: 1px;
-$button-outlined-text: $blue;
+$button-outlined-text: $site-primary-color;
 $button-outlined-disable-border: $md-grey-300;
 $button-outlined-disable-text: $md-grey-300;
 
