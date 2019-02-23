@@ -429,6 +429,55 @@ function makotokw_the_post_date() {
 	<?php
 }
 
+/**
+ * .post_thumbnail for list page
+ */
+function makotokw_the_post_thumbnail() {
+	$service = null;
+	$src = null;
+	// find image outside wordpress attachments
+	$content = get_the_content();
+	if ( preg_match( '/https?:\/\/[^\/]+(makotokw|staticflickr)\.com\/[\w\/\._]+\.jpg/', $content, $matches ) ) {
+		$src = $matches[0];
+		$service = $matches[1];
+	} elseif ( preg_match( '/\/images\/[\d]+\/[\w\/\._-]+\.jpg/', $content, $matches ) ) {
+		$src = $matches[0];
+		$service = 'makotokw';
+	}
+
+	if ( 'staticflickr' === $service ) {
+		// https://www.flickr.com/services/api/misc.urls.html
+		// https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}_[mstzb].jpg
+		//	s	small square 75x75
+		//	q	large square 150x150
+		//	t	thumbnail, 100 on longest side
+		//	m	small, 240 on longest side
+		//	n	small, 320 on longest side
+		//	-	medium, 500 on longest side
+		//	z	medium 640, 640 on longest side
+		//	c	medium 800, 800 on longest side
+		//	b	large, 1024 on longest side*
+		//	h	large 1600, 1600 on longest side
+		//	k	large 2048, 2048 on longest side
+		$base = preg_replace( '/(|_[mstzb])\.jpg$/', '', $src );
+		if ( $base && $base !== $src ) {
+			$src = $base . '_q.jpg';
+		}
+	}
+
+	if ( ! $src ) {
+		return;
+	}
+
+	?>
+	<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+		<div class="entry-thumbnail-container entry-thumbnail-<?php echo $service; ?>">
+			<img class="entry-thumbnail-image" src="<?php echo $src; ?>" alt="<?php echo the_title_attribute(); ?>"/>
+		</div>
+	</a>
+	<?php
+}
+
 function makotokw_the_content_more_link( $link ) {
 	if ( preg_match( '/href="([^"]+)"/', $link, $match ) ) {
 		return '<a class="btn btn-contained btn-more-link" href="' . $match[1] . '">' . __( 'Continue reading', 'makotokw' ) . '</a>';

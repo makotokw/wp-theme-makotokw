@@ -19,6 +19,9 @@ $only_excerpts = is_home() || is_year() || is_month() || is_search() || is_archi
 		</section>
 	</header>
 	<?php if ( $only_excerpts ) : ?>
+		<div class="entry-feature-image">
+			<?php makotokw_the_post_thumbnail(); ?>
+		</div>
 		<div class="entry-summary">
 			<p><?php echo makotokw_post_summary( $post->post_content, 180 ); ?></p>
 			<a class="btn btn-contained btn-more-link" href="<?php the_permalink(); ?>"><?php _e( 'Continue reading', 'makotokw' ); ?></a>

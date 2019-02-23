@@ -108,6 +108,18 @@
   }
 }
 
+.entry-feature-image {
+  text-align: center;
+  .entry-thumbnail-container {
+    max-height: 150px;
+    overflow-y: hidden;
+  }
+  .entry-thumbnail-image {
+    margin-top: $site-grid-margin;
+    max-width: 150px;
+  }
+}
+
 .entry-title {
   font-size: $entry-list-title-font-size;
   line-height: 1.3;
