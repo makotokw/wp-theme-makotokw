@@ -180,6 +180,7 @@
 .entry-summary {
   font-family: $font-family-content;
   font-size: $entry-list-content-font-size;
+  line-height: $entry-list-content-light-height;
 
   .post-single & {
     font-size: $entry-content-font-size;

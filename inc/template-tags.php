@@ -417,7 +417,7 @@ function makotokw_the_content_more_link( $link ) {
 
 add_filter( 'the_content_more_link', 'makotokw_the_content_more_link' );
 
-function makotokw_post_summary( $content, $length = 50, $trimmarker = '...' ) {
+function makotokw_post_summary( $content, $length = 128, $trimmarker = '...' ) {
 	if ( class_exists( 'PukiWiki_for_WordPress' ) ) {
 		$pukiwiki = PukiWiki_for_WordPress::getInstance();
 		$content  = $pukiwiki->the_content( $content );
@@ -426,7 +426,7 @@ function makotokw_post_summary( $content, $length = 50, $trimmarker = '...' ) {
 		$gfm     = WP_GFM::get_instance();
 		$content = $gfm->the_content( $content );
 	}
-	return mb_strimwidth( strip_tags( strip_shortcodes( $content ) ), 0, 128 ) . '...';
+	return mb_strimwidth( strip_tags( strip_shortcodes( $content ) ), 0, $length ) . $trimmarker;
 }
 
 function makotokw_share_permalink() {
