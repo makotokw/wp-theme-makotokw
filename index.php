@@ -24,7 +24,7 @@ get_header(); ?>
 		<?php while ( have_posts() ) : ?>
 			<?php
 				the_post();
-				get_template_part( 'template-parts/content' );
+				get_template_part( 'template-parts/content', 'summary' );
 			?>
 		<?php endwhile; ?>
 	</div>

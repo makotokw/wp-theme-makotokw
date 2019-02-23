@@ -88,7 +88,7 @@ function ogp_post_tag() {
 	<?php if ( is_single() || is_page() ) : ?>
 		<?php if ( have_posts() ) : ?>
 			<?php the_post(); ?>
-<meta property="og:title" content="<?php the_title(); ?>"/>
+<meta property="og:title" content="<?php the_title_attribute(); ?>"/>
 <meta property="og:type" content="article"/>
 			<?php if ( $og_image = ogp_post_image() ) : ?>
 <meta property="og:image" content="<?php echo $og_image; ?>"/>
@@ -110,7 +110,7 @@ function ogp_post_tag() {
 <meta property="article:tag" content="<?php echo esc_attr( $og_tag ); ?>"/>
 			<?php endif ?>
 <meta property="twitter:card" content="summary"/>
-<meta property="twitter:title" content="<?php echo mb_strimwidth( get_the_title(), 0, 70, '...' ); ?>"/>
+<meta property="twitter:title" content="<?php echo mb_strimwidth( the_title_attribute(), 0, 70, '...' ); ?>"/>
 			<?php if ( $og_description ) : ?>
 <meta property="twitter:description" content="<?php echo mb_strimwidth( esc_attr( $og_description ), 0, 200 ); ?>"/>
 			<?php endif; ?>

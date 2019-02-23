@@ -7,6 +7,7 @@
   @include sentence-block();
 }
 
+// margin summary
 .post-summary {
   border-radius: $site-component-header-bg-radius;
   .entry-header {
@@ -28,6 +29,23 @@
   }
 }
 
+// margin top summary
+.post-summary {
+  margin-top: $site-grid-margin * 2;
+  box-shadow: 2px 5px 10px -6px rgba(0,0,0,.1);
+
+  @include smaller-than-tablet-screen {
+    margin-top: $site-grid-margin-small * 2;
+  }
+
+  .post-summaries >&:first-child {
+    margin-top: 0;
+  }
+  .post-summaries &:last-child {
+  }
+}
+
+// margin single
 .post-single {
   border-radius: $site-component-header-bg-radius $site-component-header-bg-radius 0 0;
   .breadcrumb {
@@ -87,21 +105,6 @@
   padding: $site-grid-margin;
   @include smaller-than-desktop-screen {
     padding: 0;
-  }
-}
-
-.post-summary {
-  margin-top: $site-grid-margin * 2;
-  box-shadow: 2px 5px 10px -6px rgba(0,0,0,.1);
-
-  @include smaller-than-tablet-screen {
-    margin-top: $site-grid-margin-small * 2;
-  }
-
-  .post-summaries >&:first-child {
-    margin-top: 0;
-  }
-  .post-summaries &:last-child {
   }
 }
 

@@ -408,6 +408,27 @@ function makotokw_updated_on() {
 	);
 }
 
+function makotokw_the_post_date() {
+	?>
+<span class="entry-date date updated"><?php makotokw_posted_on(); ?></span>
+<?php if ( makotokw_is_old_post() ) : ?>
+	<?php
+		$post_time = date_create( get_the_date( DATE_ISO8601 ) );
+		$interval = $post_time->diff( date_create() );
+	?>
+	<?php if ( 1 <= $interval->y ) : ?>
+		<span class="entry-date-warning">
+			<?php if ( 1 == $interval->y ) : ?>
+				<?php _e( '(<span class="entry-date-warning-y">1</span> year ago)', 'makotokw' ); ?>
+			<?php else : ?>
+				<?php echo sprintf( __( '(<span class="entry-date-warning-y">%d</span> years ago)', 'makotokw' ), $interval->y ); ?>
+			<?php endif ?>
+		</span>
+	<?php endif ?>
+<?php endif ?>
+	<?php
+}
+
 function makotokw_the_content_more_link( $link ) {
 	if ( preg_match( '/href="([^"]+)"/', $link, $match ) ) {
 		return '<a class="btn btn-contained btn-more-link" href="' . $match[1] . '">' . __( 'Continue reading', 'makotokw' ) . '</a>';
@@ -429,7 +450,7 @@ function makotokw_post_summary( $content, $length = 128, $trimmarker = '...' ) {
 	return mb_strimwidth( strip_tags( strip_shortcodes( $content ) ), 0, $length ) . $trimmarker;
 }
 
-function makotokw_share_permalink() {
+function makotokw_get_share_permalink() {
 	$permalink = get_permalink();
 	if ( true === WP_THEME_DEBUG ) {
 		$permalink = str_replace( home_url(), WP_THEME_PRODUCTION_URL, $permalink );
@@ -442,7 +463,7 @@ function makotokw_share_buttons() {
 	// hatena: http://b.hatena.ne.jp/guide/bbutton
 	// pocket: https://getpocket.com/publisher/button
 	$title     = get_the_title();
-	$permalink = makotokw_share_permalink();
+	$permalink = makotokw_get_share_permalink();
 	$permalink_schemeless = preg_replace( '/^https?:\/\//', '', $permalink );
 	?>
 	<div class="share-buttons">
