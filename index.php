@@ -24,13 +24,13 @@ get_header(); ?>
 		<?php while ( have_posts() ) : ?>
 			<?php
 				the_post();
-				get_template_part( 'content' );
+				get_template_part( 'template-parts/content' );
 			?>
 		<?php endwhile; ?>
 	</div>
 	<?php makotokw_pagination(); ?>
 <?php else : ?>
-	<?php get_template_part( 'no-results' ); ?>
+	<?php get_template_part( 'template-parts/no-results' ); ?>
 <?php endif; ?>
 
 <?php get_footer(); ?>

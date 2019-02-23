@@ -6,5 +6,5 @@
  */
 
 get_header();
-get_template_part( 'no-results' );
+get_template_part( 'template-parts/no-results' );
 get_footer();
