@@ -527,7 +527,7 @@ function makotokw_share_buttons() {
 
 function makotokw_share_this() {
 	?>
-	<div id="shareThis" class="section section-mini section-share-this" data-url="<?php echo makotokw_share_permalink(); ?>">
+	<div id="shareThis" class="section section-mini section-share-this" data-url="<?php echo makotokw_get_share_permalink(); ?>">
 		<div class="section-content">
 			<div class="share-content">
 				<?php makotokw_share_buttons(); ?>
