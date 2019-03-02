@@ -13,9 +13,11 @@
 
 get_header(); ?>
 
+<?php if ( ! is_home() ) : ?>
 <header class="site-content-header">
 	<h2 class="archives-title"><?php makotokw_archives_title(); ?></h2>
 </header>
+<?php endif ?>
 <?php if ( is_archive() || is_search() ) : ?>
 	<?php makotokw_breadcrumbs(); ?>
 <?php endif ?>
