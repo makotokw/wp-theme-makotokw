@@ -108,18 +108,6 @@
   }
 }
 
-.entry-feature-image {
-  text-align: center;
-  .entry-thumbnail-container {
-    max-height: 150px;
-    overflow-y: hidden;
-  }
-  .entry-thumbnail-image {
-    margin-top: $site-grid-margin;
-    max-width: 150px;
-  }
-}
-
 .entry-title {
   font-size: $entry-list-title-font-size;
   line-height: 1.3;
@@ -188,6 +176,21 @@
   // centering title in single page
   .single &, .page & {
     text-align: center;
+  }
+
+  .post-summary & {
+    display: flex;
+
+    .entry-feature-image {
+      max-width: 150px;
+      max-height: 100px;
+      overflow-y: hidden;
+      margin-right: $site-grid-margin/2;
+
+      img {
+        width: 100%;
+      }
+    }
   }
 }
 

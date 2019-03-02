@@ -5,6 +5,7 @@
     color: $site-component-content-text;
     margin-top: $site-grid-margin * 2;
     font-size: 0.98em;
+    line-height: $line-height-small;
   }
   & >.widget:first-child {
     margin-top: 0;
@@ -15,8 +16,6 @@
     margin: 0;
     padding: $site-grid-margin * 0.7 $site-grid-margin;
     text-align: center;
-    //background: $site-component-header-bg;
-    //color: $site-component-header-text;
   }
 }
 
@@ -39,12 +38,9 @@
       max-width: 75px;
       margin-right: $site-grid-margin/2;
     }
-
     .static-post-image {
       max-width: 75px;
-      border: solid 2px $site-default-border;
     }
-
     .static-post-text {
       font-weight: bold;
     }
@@ -55,7 +51,6 @@
         .static-post-image {
           transform: scale(1.05);
           transition: 0.3s ease-in-out;
-          border-color: $site-default-link-over;
         }
       }
     }

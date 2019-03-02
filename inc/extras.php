@@ -77,17 +77,6 @@ function makotokw_wp_title( $title, $sep ) {
 
 add_filter( 'wp_title', 'makotokw_wp_title', 10, 2 );
 
-/**
- * @param WP_Query $query
- */
-function makotokw_pre_get_posts( $query ) {
-	if ( is_home() ) {
-		$query->set( 'posts_per_page', '10' );
-	}
-}
-
-add_action( 'pre_get_posts', 'makotokw_pre_get_posts' );
-
 function makotokw_template_redirect() {
 	if ( is_page() && ! is_preview() ) {
 		if ( $values = get_post_custom_values( 'makotokw_part_of_home' ) ) {
