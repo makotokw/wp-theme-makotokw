@@ -4,6 +4,7 @@
     background: $site-component-content-bg;
     color: $site-component-content-text;
     margin-top: $site-grid-margin * 2;
+    font-size: 0.98em;
   }
   & >.widget:first-child {
     margin-top: 0;
@@ -33,6 +34,31 @@
     margin: 0;
     padding: $site-grid-margin/2 0;
     border-bottom: 1px solid $site-default-border;
+
+    .static-post-image-container {
+      max-width: 75px;
+      margin-right: $site-grid-margin/2;
+    }
+
+    .static-post-image {
+      max-width: 75px;
+      border: solid 2px $site-default-border;
+    }
+
+    .static-post-text {
+      font-weight: bold;
+    }
+
+    >a {
+      display: flex;
+      &:hover {
+        .static-post-image {
+          transform: scale(1.05);
+          transition: 0.3s ease-in-out;
+          border-color: $site-default-link-over;
+        }
+      }
+    }
   }
   li:first-child {
     padding-top: 0;
