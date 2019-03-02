@@ -2,30 +2,7 @@
 
 $fa-font-path: 'components/font-awesome/fonts';
 
-// Grays colors
-$black: #000;
-$gray-darker: #333;
-$gray-dark: #7b8a8b;
-$gray: #95A5A6;
-$gray-light: #b4bcc2;
-$gray-lighter: #ECF0F1;
-$white: #fff;
-
-// Accent colors
-$blue: #2ba6cb;
-$blue-dark: #2C3E50;
-$blue-light: #1dbbd6;
-$turquoise-blue: #01A3B2;
-$green: #18BC9C;
-$red: #E74C3C;
-$yellow: #e6bb0d;
-$orange: #F39C12;
-$pink: #ff6699;
-$pink-love: #ff0084;
-$purple: #8E44AD;
-
 // Layout Size ----------------------------
-
 $site-grid-margin: 20px;
 $site-grid-margin-small: 10px;
 
@@ -97,10 +74,15 @@ $entry-h5-small-font-size: 19px;
 $block-shadow: 4px 6px 10px -6px rgba(0, 0, 0, .1);
 
 // Layout color ----------------------------
-$site-primary-color: pastelen($blue);
+$site-primary-color: pastelen(#2ba6cb);
 $site-primary-dark-color: darken($site-primary-color, 10%);
 $site-primary-light-color: lighten($site-primary-color, 50%);
+$site-on-primary-text-color: #fff;
+$site-surface-color: #fff;
 $site-base-color: #eeeef0;
+
+$site-badge-color: $md-pink-400;
+$site-on-badge-text-color: #fff;
 
 $site-default-bg: #eeeef0;
 $site-default-border: #ddd;
@@ -114,11 +96,11 @@ $site-default-link-over: darken($site-default-link, 10%);
 
 $site-component-header-bg: linear-gradient(to right, $site-primary-light-color 0%, $site-primary-color 100%);
 $site-component-header-bg-radius: 10px;
-$site-component-header-text: $white;
-$site-component-content-bg: $white;
+$site-component-header-text: $site-on-primary-text-color;
+$site-component-content-bg: $site-surface-color;
 $site-component-content-text: $md-grey-800;
 
-$header-bg-color: $white;
+$header-bg-color: $site-surface-color;
 $header-banner-color: $site-primary-color;
 $header-banner-over-color: darken($site-primary-color, 10%);
 $header-nav-link-color: $md-grey-800;
@@ -147,7 +129,7 @@ $form-default-placeholder: $md-grey-300;
 // button
 $button-contained-bg: $site-primary-color;
 $button-contained-bg-over: lighten($button-contained-bg, 10%);
-$button-contained-text: $white;
+$button-contained-text: $site-on-primary-text-color;
 $button-contained-disable-bg: $md-grey-200;
 $button-contained-disable-text: $md-grey-400;
 $button-outlined-bg: transparent;
@@ -189,7 +171,7 @@ $alert-danger-bg: $state-danger-bg;
 $alert-danger-text: $state-danger-text;
 $alert-danger-border: $state-danger-border;
 
-$block-default-bg: $white;
+$block-default-bg: $site-surface-color;
 $block-default-text: $md-blue-grey-700;
 $block-default-icon: $md-blue-grey-400;
 $block-default-divider: rgba(0, 0, 0, 0.05);

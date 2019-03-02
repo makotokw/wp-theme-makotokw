@@ -25,11 +25,11 @@
         @extend %pagenation-page;
         border-color: $site-primary-color;
         background: $site-primary-color;
-        color: $white;
+        color: $site-on-primary-text-color;
         &:hover {
           border-color: $site-primary-color;
           background: $site-primary-color;
-          color: $white;
+          color: $site-on-primary-text-color;
         }
       }
     }
