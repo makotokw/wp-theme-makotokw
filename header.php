@@ -40,7 +40,7 @@
 <?php endif ?>
 <?php wp_head(); ?>
 <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-<?php if ( JETPACK_DEV_DEBUG === true ) : ?>
+<?php if ( defined( 'JETPACK_DEV_DEBUG' ) && JETPACK_DEV_DEBUG === true ) : ?>
 <link rel='stylesheet' id='jetpack_css-css' href='/wp-content/plugins/jetpack/css/jetpack.css' type='text/css' media='all'/>
 <?php endif ?>
 <?php makotokw_google_analytics(); ?>
