@@ -49,7 +49,7 @@ $only_excerpts = is_home() || is_year() || is_month() || is_search() || is_archi
 				<?php makotokw_breadcrumbs(); ?>
 			<?php endif ?>
 			<?php the_content(); ?>
-			<?php if ( JETPACK_DEV_DEBUG === true ) : ?>
+			<?php if ( defined( 'JETPACK_DEV_DEBUG' ) && JETPACK_DEV_DEBUG === true ) : ?>
 				<div id="jp-relatedposts" class="jp-relatedposts" style="display: block;">
 				</div>
 			<?php endif ?>
