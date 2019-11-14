@@ -44,7 +44,7 @@
 <![endif]-->
 <?php // @codingStandardsIgnoreEnd ?>
 <?php wp_head(); ?>
-<?php if ( JETPACK_DEV_DEBUG === true ) : ?>
+<?php if ( defined( 'JETPACK_DEV_DEBUG' ) && JETPACK_DEV_DEBUG === true ) : ?>
 <link rel='stylesheet' id='jetpack_css-css' href='/wp-content/plugins/jetpack/css/jetpack.css' type='text/css' media='all'/>
 <?php endif ?>
 <?php makotokw_google_analytics(); ?>
