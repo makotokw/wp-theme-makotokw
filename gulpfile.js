@@ -35,7 +35,7 @@ gulp.task('bower:normalize', function () {
 gulp.task('bower:rebuild', gulp.series('clean:components', 'bower:install', 'bower:normalize'));
 
 gulp.task('phpcs', plugins.shell.task(
-  'phpcs --colors -s --report-width=1024 --standard=build/phpcs.xml *.php ./**/*.php',
+  'phpcs --colors -s --report-width=1024 --standard=phpcs.xml *.php ./**/*.php',
   {ignoreErrors: true}
 ));
 
