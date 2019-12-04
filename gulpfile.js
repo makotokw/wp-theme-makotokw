@@ -128,7 +128,6 @@ function nodeSass(env) {
     .pipe(plugins.plumber())
     .pipe(plugins.postcss([
       require('autoprefixer')({
-        browsers: ['last 2 versions'],
         cascade: false
       })
     ]))
