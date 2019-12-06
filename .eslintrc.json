@@ -1,0 +1,24 @@
+{
+  "root": true,
+  "plugins": [],
+  "extends": [
+    "eslint:recommended",
+    "airbnb-base"
+  ],
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jquery": true
+  },
+  "globals": {
+    "makotokw": true,
+    "prettyPrint": true,
+    "FontAwesome": true
+  },
+  "rules": {
+    "func-names": ["error", "never"]
+  }
+}
