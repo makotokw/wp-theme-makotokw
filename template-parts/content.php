@@ -31,7 +31,7 @@ $post_type = get_post_type();
 					'after'  => '</div>',
 				)
 			);
-		?>
+			?>
 	</div>
 	<footer class="entry-footer">
 		<div class="entry-meta">

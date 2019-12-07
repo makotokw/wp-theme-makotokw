@@ -263,8 +263,8 @@ if ( ! is_admin() ) {
  * @return array
  */
 function makotokw_fonts_urls() {
-	$urls = array();
-	$fonts = array();
+	$urls    = array();
+	$fonts   = array();
 	$fonts[] = 'Quicksand:300,400,700,300italic,400italic,700italic';
 	if ( ! empty( $fonts ) ) {
 		$fonts_url = add_query_arg(
@@ -274,7 +274,7 @@ function makotokw_fonts_urls() {
 			),
 			'https://fonts.googleapis.com/css'
 		);
-		$urls[] = $fonts_url;
+		$urls[]    = $fonts_url;
 	}
 	return $urls;
 }

@@ -10,11 +10,11 @@ ob_start();
 <?php
 wp_nav_menu(
 	array(
-		'theme_location' => 'portfolio',
+		'theme_location'  => 'portfolio',
 		'container_class' => 'portfolio-list',
-		'link_before' => '',
-		'link_after' => '',
-		'fallback_cb' => false,
+		'link_before'     => '',
+		'link_after'      => '',
+		'fallback_cb'     => false,
 	)
 );
 ?>

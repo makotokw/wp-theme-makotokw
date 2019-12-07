@@ -11,7 +11,7 @@
  */
 function makotokw_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
-	$is_trackback = ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type );
+	$is_trackback       = ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type );
 	?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 		<article id="comment-<?php comment_ID(); ?>" class="comment-body">
@@ -38,7 +38,7 @@ function makotokw_comment( $comment, $args, $depth ) {
 							array_merge(
 								$args,
 								array(
-									'depth' => $depth,
+									'depth'     => $depth,
 									'max_depth' => $args['max_depth'],
 								)
 							)

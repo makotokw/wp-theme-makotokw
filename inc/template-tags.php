@@ -100,7 +100,7 @@ function makotokw_list_nav() {
 				</ul>
 			</div>
 		</div>
-	<?php
+		<?php
 	}
 }
 
@@ -311,7 +311,7 @@ function makotokw_breadcrumbs_category_parents( $id, $separator = '/', $visited 
  * @return string
  */
 function makotokw_awesome_icon_by_slug( $slug ) {
-	$icon = '';
+	$icon       = '';
 	$icon_class = makotokw_find_awesome_icon_class( $slug );
 	if ( ! empty( $icon_class ) ) {
 		$icon = '<i class="' . $icon_class . '"></i> ';
@@ -325,29 +325,29 @@ function makotokw_awesome_icon_by_slug( $slug ) {
  * @return string
  */
 function makotokw_find_awesome_icon_class( $slug, $default = 'folder' ) {
-	$map = [
-		'interior' => 'fas fa-couch',
-		'comedy' => 'fas fa-laugh-beam',
-		'gourmet' => 'fas fa-utensils',
-		'computer' => 'fas fa-laptop',
-		'computer/software' => 'fas fa-laptop-code',
-		'computer/hardware' => 'fas fa-keyboard',
-		'computer/server' => 'fas fa-server',
+	$map = array(
+		'interior'            => 'fas fa-couch',
+		'comedy'              => 'fas fa-laugh-beam',
+		'gourmet'             => 'fas fa-utensils',
+		'computer'            => 'fas fa-laptop',
+		'computer/software'   => 'fas fa-laptop-code',
+		'computer/hardware'   => 'fas fa-keyboard',
+		'computer/server'     => 'fas fa-server',
 		'computer/programing' => 'fas fa-code',
-		'sports' => 'fas fa-futbol',
-		'lifehack' => 'fas fa-hat-wizard',
-		'work' => 'fas fa-building',
-		'politics' => 'fas fa-landmark',
-		'stationery' => 'fas fa-pen-fancy',
-		'life' => 'fas fa-sun',
-		'cinema' => 'fas fa-film',
-		'art' => 'fas fa-image',
-		'readingbook' => 'fas fa-book',
-		'electronics' => 'fas fa-robot',
-		'music' => 'fas fa-music',
-		'gadget' => 'fas fa-mobile-alt',
-		'game' => 'fas fa-gamepad',
-	];
+		'sports'              => 'fas fa-futbol',
+		'lifehack'            => 'fas fa-hat-wizard',
+		'work'                => 'fas fa-building',
+		'politics'            => 'fas fa-landmark',
+		'stationery'          => 'fas fa-pen-fancy',
+		'life'                => 'fas fa-sun',
+		'cinema'              => 'fas fa-film',
+		'art'                 => 'fas fa-image',
+		'readingbook'         => 'fas fa-book',
+		'electronics'         => 'fas fa-robot',
+		'music'               => 'fas fa-music',
+		'gadget'              => 'fas fa-mobile-alt',
+		'game'                => 'fas fa-gamepad',
+	);
 
 	if ( array_key_exists( $slug, $map ) ) {
 		return $map[ $slug ];
@@ -359,13 +359,13 @@ function makotokw_find_awesome_icon_class( $slug, $default = 'folder' ) {
 /**
  * @param bool $all
  */
-function makotokw_list_categories( $opt = [], $all = false ) {
+function makotokw_list_categories( $opt = array(), $all = false ) {
 	$opt = array_merge(
 		array(
-			'title_li' => '',
+			'title_li'            => '',
 			'hide_title_if_empty' => true,
-			'show_count' => true,
-			'echo' => false,
+			'show_count'          => true,
+			'echo'                => false,
 		),
 		$opt
 	);
@@ -411,12 +411,12 @@ function makotokw_updated_on() {
 function makotokw_the_post_date() {
 	?>
 <span class="entry-date date updated"><?php makotokw_posted_on(); ?></span>
-<?php if ( makotokw_is_old_post() ) : ?>
-	<?php
+	<?php if ( makotokw_is_old_post() ) : ?>
+		<?php
 		$post_time = date_create( get_the_date( DATE_ISO8601 ) );
-		$interval = $post_time->diff( date_create() );
-	?>
-	<?php if ( 1 <= $interval->y ) : ?>
+		$interval  = $post_time->diff( date_create() );
+		?>
+		<?php if ( 1 <= $interval->y ) : ?>
 		<span class="entry-date-warning">
 			<?php if ( 1 == $interval->y ) : ?>
 				<?php _e( '(<span class="entry-date-warning-y">1</span> year ago)', 'makotokw' ); ?>
@@ -425,7 +425,7 @@ function makotokw_the_post_date() {
 			<?php endif ?>
 		</span>
 	<?php endif ?>
-<?php endif ?>
+	<?php endif ?>
 	<?php
 }
 
@@ -434,7 +434,7 @@ function makotokw_the_post_date() {
  * @param string $post_content
  */
 function makotokw_the_post_thumbnail( $post_content = null ) {
-	$src = null;
+	$src     = null;
 	$service = null;
 	if ( class_exists( 'Makotokw\PostUtility' ) ) {
 		$src = Makotokw\PostUtility::find_featured_image_url( $post_content, $service );
@@ -484,8 +484,8 @@ function makotokw_share_buttons() {
 	// twitter: https://about.twitter.com/resources/buttons#tweet
 	// hatena: http://b.hatena.ne.jp/guide/bbutton
 	// pocket: https://getpocket.com/publisher/button
-	$title     = get_the_title();
-	$permalink = makotokw_get_share_permalink();
+	$title                = get_the_title();
+	$permalink            = makotokw_get_share_permalink();
 	$permalink_schemeless = preg_replace( '/^https?:\/\//', '', $permalink );
 	?>
 	<div class="share-buttons">

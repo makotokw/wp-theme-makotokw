@@ -1,6 +1,6 @@
 <?php
 /**
- * mylist for wordpress
+ * mylist for WordPress
  */
 
 add_action( 'init', 'makotokw_taxonomy_init', 0 );
@@ -31,25 +31,25 @@ function makotokw_taxonomy_init() {
 		'mylist',
 		array( 'post' ),
 		array(
-			'hierarchical' => false,
-			'label' => __( 'Mylists', 'makotokw' ),
-			'show_ui' => true,
-			'query_var' => true,
+			'hierarchical'      => false,
+			'label'             => __( 'Mylists', 'makotokw' ),
+			'show_ui'           => true,
+			'query_var'         => true,
 			'show_admin_column' => true,
-			'rewrite' => array( 'slug' => 'mylist' ),
-			'labels' => array(
-				'search_items' => 'mylist',
-				'popular_items' => '',
-				'all_items' => '',
-				'parent_item' => '',
-				'parent_item_colon' => '',
-				'edit_item' => '',
-				'update_item' => '',
-				'add_new_item' => '',
-				'new_item_name' => '',
+			'rewrite'           => array( 'slug' => 'mylist' ),
+			'labels'            => array(
+				'search_items'               => 'mylist',
+				'popular_items'              => '',
+				'all_items'                  => '',
+				'parent_item'                => '',
+				'parent_item_colon'          => '',
+				'edit_item'                  => '',
+				'update_item'                => '',
+				'add_new_item'               => '',
+				'new_item_name'              => '',
 				'separate_items_with_commas' => '',
-				'add_or_remove_items' => '',
-				'choose_from_most_used' => '',
+				'add_or_remove_items'        => '',
+				'choose_from_most_used'      => '',
 			),
 		)
 	);
@@ -58,24 +58,24 @@ function makotokw_taxonomy_init() {
 		'portfolios',
 		array( 'post', 'page' ),
 		array(
-			'hierarchical' => true,
-			'label' => __( 'Portfolios', 'makotokw' ),
-			'show_ui' => true,
-			'query_var' => true,
+			'hierarchical'      => true,
+			'label'             => __( 'Portfolios', 'makotokw' ),
+			'show_ui'           => true,
+			'query_var'         => true,
 			'show_admin_column' => false,
-			'labels' => array(
-				'search_items' => 'portfolio',
-				'popular_items' => '',
-				'all_items' => '',
-				'parent_item' => '',
-				'parent_item_colon' => '',
-				'edit_item' => '',
-				'update_item' => '',
-				'add_new_item' => '',
-				'new_item_name' => '',
+			'labels'            => array(
+				'search_items'               => 'portfolio',
+				'popular_items'              => '',
+				'all_items'                  => '',
+				'parent_item'                => '',
+				'parent_item_colon'          => '',
+				'edit_item'                  => '',
+				'update_item'                => '',
+				'add_new_item'               => '',
+				'new_item_name'              => '',
 				'separate_items_with_commas' => '',
-				'add_or_remove_items' => '',
-				'choose_from_most_used' => '',
+				'add_or_remove_items'        => '',
+				'choose_from_most_used'      => '',
 			),
 		)
 	);
@@ -84,24 +84,24 @@ function makotokw_taxonomy_init() {
 		'blogs',
 		array( 'post' ),
 		array(
-			'hierarchical' => true,
-			'label' => __( 'Blogs', 'makotokw' ),
-			'show_ui' => true,
-			'query_var' => true,
+			'hierarchical'      => true,
+			'label'             => __( 'Blogs', 'makotokw' ),
+			'show_ui'           => true,
+			'query_var'         => true,
 			'show_admin_column' => false,
-			'labels' => array(
-				'search_items' => 'blog',
-				'popular_items' => '',
-				'all_items' => '',
-				'parent_item' => '',
-				'parent_item_colon' => '',
-				'edit_item' => '',
-				'update_item' => '',
-				'add_new_item' => '',
-				'new_item_name' => '',
+			'labels'            => array(
+				'search_items'               => 'blog',
+				'popular_items'              => '',
+				'all_items'                  => '',
+				'parent_item'                => '',
+				'parent_item_colon'          => '',
+				'edit_item'                  => '',
+				'update_item'                => '',
+				'add_new_item'               => '',
+				'new_item_name'              => '',
 				'separate_items_with_commas' => '',
-				'add_or_remove_items' => '',
-				'choose_from_most_used' => '',
+				'add_or_remove_items'        => '',
+				'choose_from_most_used'      => '',
 			),
 		)
 	);
@@ -127,7 +127,7 @@ function makotokw_get_featured_taxonomy( $post ) {
 	// 2. find featured tag
 	if ( defined( 'WP_THEME_FEATURED_TAG' ) ) {
 		$featured_tag_slugs = explode( ',', WP_THEME_FEATURED_TAG );
-		$tags = get_the_tags( $post->ID );
+		$tags               = get_the_tags( $post->ID );
 		if ( is_array( $tags ) && count( $tags ) ) {
 			$tags = array_filter(
 				$tags,
@@ -178,8 +178,8 @@ function get_first_post_on_mylist( $post ) {
 		if ( ! empty( $mylist_slug ) ) {
 			$q = new WP_Query(
 				array(
-					'mylist' => $mylist_slug,
-					'order' => 'ASC',
+					'mylist'         => $mylist_slug,
+					'order'          => 'ASC',
 					'posts_per_page' => 1,
 				)
 			);
@@ -197,12 +197,12 @@ function get_adjacent_post_on_mylist( $post, $previous = true ) {
 		$mylist_slug = $mylist->slug;
 		if ( ! empty( $mylist_slug ) ) {
 			$date_query_compare = $previous ? 'before' : 'after';
-			$order = $previous ? 'DESC' : 'ASC';
-			$q = new WP_Query(
+			$order              = $previous ? 'DESC' : 'ASC';
+			$q                  = new WP_Query(
 				array(
-					'mylist' => $mylist_slug,
-					'date_query' => array( $date_query_compare => $post->post_date ),
-					'order' => $order,
+					'mylist'         => $mylist_slug,
+					'date_query'     => array( $date_query_compare => $post->post_date ),
+					'order'          => $order,
 					'posts_per_page' => 1,
 				)
 			);

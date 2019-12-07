@@ -47,7 +47,7 @@ function ogp_post_description() {
 }
 
 function ogp_post_image() {
-	$image = null;
+	$image    = null;
 	$image_id = get_post_thumbnail_id();
 	if ( $image_id ) {
 		$image = wp_get_attachment_image_src( $image_id, WP_OGP_POST_IMAGE_SIZE );

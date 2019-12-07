@@ -21,24 +21,24 @@
 			<?php
 			wp_nav_menu(
 				array(
-					'theme_location' => 'footer',
+					'theme_location'  => 'footer',
 					'container_class' => 'site-footer-help-nav',
-					'link_before' => '',
-					'link_after' => '',
-					'fallback_cb' => false,
+					'link_before'     => '',
+					'link_after'      => '',
+					'fallback_cb'     => false,
 				)
 			);
 			?>
 			<div class="credit">
 				<?php do_action( 'makotokw_credits' ); ?>
 				<?php
-					$wp_theme = wp_get_theme();
+					$wp_theme   = wp_get_theme();
 					$theme_name = $wp_theme->display( 'Name' );
 					$powered_by = sprintf(
 						__( 'Powered by %s', 'makotokw' ),
 						'<a href="https://wordpress.org/" title="' . esc_attr( __( 'Semantic Personal Publishing Platform', 'makotokw' ) ) . '">WordPress</a>'
 					);
-				?>
+					?>
 				<span class="poweredby">
 					<?php echo $powered_by; ?><i class="fas fa-heart"></i><a href="https://github.com/makotokw/wp-theme-makotokw/tree/<?php echo $theme_name; ?>">makotokw theme.<i class="fab fa-github-alt"></i></a>
 				</span>

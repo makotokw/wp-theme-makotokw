@@ -2,8 +2,8 @@
 /**
  * @package makotokw
  */
-$post_type = get_post_type();
-$featured_image_url = null;
+$post_type              = get_post_type();
+$featured_image_url     = null;
 $featured_image_service = null;
 if ( class_exists( 'Makotokw\PostUtility' ) ) {
 	$featured_image_url = Makotokw\PostUtility::find_featured_image_url( null, $featured_image_service );

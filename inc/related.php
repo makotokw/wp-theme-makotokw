@@ -19,26 +19,26 @@ function makotokw_related_posts( $title = 'Related Software', $arg = array() ) {
 	foreach ( $featured_taxonomies as $taxonomy ) {
 		if ( ! $rq || ! $rq->have_posts() ) {
 			$base_query_arg = array(
-				'post_type' => $arg['post_type'],
+				'post_type'    => $arg['post_type'],
 				'post__not_in' => array( $post->ID ),
-				'tax_query' => array(
+				'tax_query'    => array(
 					array(
 						'taxonomy' => $taxonomy->taxonomy,
-						'terms' => $taxonomy->term_id,
+						'terms'    => $taxonomy->term_id,
 						'operator' => 'IN',
 					),
 				),
-				'showposts' => $arg['max_count'],
+				'showposts'    => $arg['max_count'],
 			);
-			$custom_key = 'makotokw_rating';
-			$rfq = new WP_Query(
+			$custom_key     = 'makotokw_rating';
+			$rfq            = new WP_Query(
 				array_merge(
 					$base_query_arg,
 					array(
-						'meta_key' => $custom_key,
+						'meta_key'     => $custom_key,
 						'meta_compare' => 'EXISTS',
-						'orderby' => 'meta_value_num date',
-						'order' => 'DESC',
+						'orderby'      => 'meta_value_num date',
+						'order'        => 'DESC',
 					)
 				)
 			);
@@ -47,9 +47,9 @@ function makotokw_related_posts( $title = 'Related Software', $arg = array() ) {
 					array_merge(
 						$base_query_arg,
 						array(
-							'meta_key' => $custom_key,
+							'meta_key'     => $custom_key,
 							'meta_compare' => 'NOT EXISTS',
-							'showposts' => $arg['max_count'] - $rfq->post_count,
+							'showposts'    => $arg['max_count'] - $rfq->post_count,
 						)
 					)
 				);
@@ -93,7 +93,7 @@ function makotokw_related_portfolio( $title = 'Related Software' ) {
 			'tax_query' => array(
 				array(
 					'taxonomy' => 'portfolios',
-					'terms' => $portfolio->term_id,
+					'terms'    => $portfolio->term_id,
 					'operator' => 'IN',
 				),
 			),
@@ -107,7 +107,7 @@ function makotokw_related_portfolio( $title = 'Related Software' ) {
 				<h2 class="section-title"><?php echo esc_html( $title ); ?></h2>
 				<div class="section-content"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
 			</section>
-		<?php
+			<?php
 		}
 		wp_reset_postdata();
 	}

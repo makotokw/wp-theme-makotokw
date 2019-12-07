@@ -15,7 +15,7 @@ function makotokw_infinite_scroll_setup() {
 		'infinite-scroll',
 		array(
 			'container' => 'content',
-			'footer' => 'page',
+			'footer'    => 'page',
 		)
 	);
 }

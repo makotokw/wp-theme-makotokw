@@ -35,7 +35,8 @@
   },
   "scripts": {
     "lint:eslint": "eslint src",
-    "lint:phpcs": "vendor/bin/phpcs --colors -s --report-width=1024 --standard=phpcs.xml *.php ./**/*.php",
+    "lint:phpcs": "phpcs --colors -s --report-width=1024 --standard=phpcs.xml *.php ./**/*.php",
+    "phpcbf": "phpcbf --standard=phpcs.xml *.php ./**/*.php",
     "build": "npm-run-all webpack:dev",
     "webpack:dev": "webpack --mode development",
     "webpack:devWatch": "webpack --mode development --watch",
