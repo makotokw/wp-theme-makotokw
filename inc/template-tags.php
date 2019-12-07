@@ -71,7 +71,7 @@ function makotokw_list_nav() {
 		$prev_post  = get_adjacent_post_on_mylist( $post, true );
 		$next_post  = get_adjacent_post_on_mylist( $post, false );
 
-		if ( $first_post->ID == $post->ID || $first_post->ID == $prev_post->ID ) {
+		if ( $first_post->ID === $post->ID || $first_post->ID === $prev_post->ID ) {
 			unset( $first_post );
 		}
 
@@ -111,14 +111,14 @@ function makotokw_pagination( $pages = '', $range = 3 ) {
 	if ( empty( $paged ) ) {
 		$paged = 1;
 	}
-	if ( '' == $pages ) {
+	if ( '' === $pages ) {
 		global $wp_query;
 		$pages = $wp_query->max_num_pages;
 		if ( ! $pages ) {
 			$pages = 1;
 		}
 	}
-	if ( 1 != $pages ) {
+	if ( 1 !== $pages ) {
 		?>
 		<div class="pagination"><ul>
 		<?php if ( $paged > 2 && $paged > $range + 1 && $showitems < $pages ) : ?>
@@ -128,8 +128,8 @@ function makotokw_pagination( $pages = '', $range = 3 ) {
 			<li><a rel="nofollow" href="<?php echo get_pagenum_link( $paged - 1 ); ?>" class="inactive">&lsaquo; <?php __( 'Previous', 'makotokw' ); ?></a></li>
 		<?php endif ?>
 		<?php for ( $i = 1; $i <= $pages; $i++ ) : ?>
-			<?php if ( 1 != $pages && ( ! ( $i >= $paged + $range + 1 || $i <= $paged - $range - 1 ) || $pages <= $showitems ) ) : ?>
-				<?php if ( $paged == $i ) : ?>
+			<?php if ( 1 !== $pages && ( ! ( $i >= $paged + $range + 1 || $i <= $paged - $range - 1 ) || $pages <= $showitems ) ) : ?>
+				<?php if ( $paged === $i ) : ?>
 					<li class="current"><span class="page"><?php echo $i; ?></span></li>
 				<?php else : ?>
 					<li><a rel="nofollow" href="<?php echo get_pagenum_link( $i ); ?>" class="inactive"><?php echo $i; ?></a></li>
@@ -259,14 +259,14 @@ function makotokw_breadcrumbs() {
 			<?php endif ?>
 		<?php elseif ( is_page() ) : ?>
 			<?php $post = $wp_query->get_queried_object(); ?>
-			<?php if ( 0 == $post->post_parent ) : ?>
+			<?php if ( empty( $post->post_parent ) ) : ?>
 				<span class="breadcrumb-last" itemprop="title"><?php echo the_title( '', '', false ); ?></span>
 			<?php else : ?>
 				<?php
 					$ancestors = array_reverse( get_post_ancestors( $post->ID ) );
 				?>
 				<?php foreach ( $ancestors as $ancestor ) : ?>
-					<?php if ( end( $ancestors ) != $ancestor ) : ?>
+					<?php if ( end( $ancestors ) !== $ancestor ) : ?>
 						<a href="<?php echo get_permalink( $ancestor ); ?>" itemprop="url">
 							<span itemprop="title"><?php echo strip_tags( apply_filters( 'single_post_title', get_the_title( $ancestor ) ) ); ?></span>
 						</a>
@@ -296,7 +296,7 @@ function makotokw_breadcrumbs_category_parents( $id, $separator = '/', $visited 
 	if ( is_wp_error( $parent ) ) {
 		return $chain;
 	}
-	if ( $parent->parent && ( $parent->parent != $parent->term_id ) && ! in_array( $parent->parent, $visited ) ) {
+	if ( $parent->parent && ( $parent->parent !== $parent->term_id ) && ! in_array( $parent->parent, $visited, true ) ) {
 		$visited[] = $parent->parent;
 		$chain    .= makotokw_breadcrumbs_category_parents( $parent->parent, $separator, $visited );
 	}
@@ -418,7 +418,7 @@ function makotokw_the_post_date() {
 		?>
 		<?php if ( 1 <= $interval->y ) : ?>
 		<span class="entry-date-warning">
-			<?php if ( 1 == $interval->y ) : ?>
+			<?php if ( 1 === $interval->y ) : ?>
 				<?php _e( '(<span class="entry-date-warning-y">1</span> year ago)', 'makotokw' ); ?>
 			<?php else : ?>
 				<?php echo sprintf( __( '(<span class="entry-date-warning-y">%d</span> years ago)', 'makotokw' ), $interval->y ); ?>
@@ -737,7 +737,9 @@ function makotokw_categorized_blog() {
 		set_transient( 'all_the_cool_cats', $all_the_cool_cats );
 	}
 
-	if ( '1' != $all_the_cool_cats ) {
+	$all_the_cool_cats = intval( $all_the_cool_cats );
+
+	if ( 1 !== $all_the_cool_cats ) {
 		// This blog has more than 1 category so makotokw_categorized_blog should return true
 		return true;
 	} else {
@@ -773,7 +775,7 @@ function makotokw_inline_archives( $args = '' ) {
 		if ( preg_match( '/\/([0-9]{4})\/([0-9]{2})\//', $a, $matches ) ) {
 			$year  = $matches[1];
 			$month = $matches[2];
-			$label = ( empty( $month_format ) ) ? $wp_locale->get_month( $month ) : date( $month_format, mktime( 0, 0, 0, $month, 1, $year ) );
+			$label = ( empty( $month_format ) ) ? $wp_locale->get_month( $month ) : date_i18n( $month_format, mktime( 0, 0, 0, $month, 1, $year ) );
 			$a     = preg_replace( '/(.+<a[^>]+>)([^<]+)(<\/a>.+)/', '${1}' . $label . '$3', $a );
 			if ( ! isset( $years[ $year ] ) ) {
 				$years[ $year ] = array();
@@ -785,7 +787,7 @@ function makotokw_inline_archives( $args = '' ) {
 	<ul class="list-archives list-archives-year">
 	<?php foreach ( $years as $year => $months ) : ?>
 		<?php
-		$label = date( $year_format, mktime( 0, 0, 0, 1, 1, $year ) );
+		$label = date_i18n( $year_format, mktime( 0, 0, 0, 1, 1, $year ) );
 		$url   = '/' . $year . '/'
 		?>
 		<li class="list-archives-item list-archives-item-year">

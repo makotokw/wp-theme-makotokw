@@ -209,7 +209,7 @@ function makotokw_is_noindex() {
 		if ( $wp_query->is_archive() ) {
 			if ( $wp_query->is_category() ) {
 				$category_id = $wp_query->get_queried_object_id();
-				if ( in_array( $category_id, wp_parse_id_list( WP_THEME_EXCLUDE_CATEGORY ) ) ) {
+				if ( in_array( $category_id, wp_parse_id_list( WP_THEME_EXCLUDE_CATEGORY ), true ) ) {
 					return true;
 				}
 				$paged = $wp_query->get( 'paged', 1 );
@@ -239,7 +239,7 @@ function makotokw_is_old_post( $post = null ) {
  */
 function makotokw_is_comment_form_showing( $post = null ) {
 	$post = get_post( $post );
-	if ( 'page' != $post->post_type ) {
+	if ( 'page' !== $post->post_type ) {
 		return get_post_time( 'U', false, $post ) > strtotime( '-2 months' );
 	}
 	return true;

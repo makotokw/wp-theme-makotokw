@@ -132,7 +132,7 @@ function makotokw_get_featured_taxonomy( $post ) {
 			$tags = array_filter(
 				$tags,
 				function ( $t ) use ( $featured_tag_slugs ) {
-					return in_array( $t->slug, $featured_tag_slugs );
+					return in_array( $t->slug, $featured_tag_slugs, true );
 				}
 			);
 			if ( ! empty( $tags ) ) {

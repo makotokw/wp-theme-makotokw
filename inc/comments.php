@@ -11,7 +11,7 @@
  */
 function makotokw_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
-	$is_trackback       = ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type );
+	$is_trackback       = ( 'pingback' === $comment->comment_type || 'trackback' === $comment->comment_type );
 	?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 		<article id="comment-<?php comment_ID(); ?>" class="comment-body">
@@ -49,7 +49,7 @@ function makotokw_comment( $comment, $args, $depth ) {
 			</div>
 			<!-- .comment-meta -->
 			<div class="comment-content">
-				<?php if ( '0' == $comment->comment_approved ) : ?>
+				<?php if ( 0 === intval( $comment->comment_approved ) ) : ?>
 					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'makotokw' ); ?></em>
 				<?php endif; ?>
 				<?php comment_text(); ?>

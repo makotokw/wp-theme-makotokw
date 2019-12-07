@@ -39,7 +39,7 @@ function makotokw_enhanced_image_navigation( $url, $id ) {
 	}
 
 	$image = get_post( $id );
-	if ( ! empty( $image->post_parent ) && $image->post_parent != $id ) {
+	if ( ! empty( $image->post_parent ) && $image->post_parent !== $id ) {
 		$url .= '#main';
 	}
 
@@ -80,7 +80,7 @@ add_filter( 'wp_title', 'makotokw_wp_title', 10, 2 );
 function makotokw_template_redirect() {
 	if ( is_page() && ! is_preview() ) {
 		if ( $values = get_post_custom_values( 'makotokw_part_of_home' ) ) {
-			if ( 1 == $values[0] ) {
+			if ( 1 === intval( $values[0] ) ) {
 				wp_redirect( home_url( '/' ) );
 				exit;
 			}

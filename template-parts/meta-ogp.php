@@ -65,7 +65,7 @@ function ogp_post_image() {
 function ogp_post_section() {
 	$categories = get_the_category();
 	if ( count( $categories ) > 0 ) {
-		if ( __( 'Uncategorized', 'default' ) != $categories[0]->name ) {
+		if ( __( 'Uncategorized', 'default' ) !== $categories[0]->name ) {
 			return $categories[0]->name;
 		}
 	}
