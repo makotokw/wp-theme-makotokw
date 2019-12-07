@@ -1,7 +1,7 @@
 makotokw theme for WordPress
 ===
 
-WordPress theme for [kwLog](https://blog.makotokw.com).
+WordPress theme for [blog.makotokw.com](https://blog.makotokw.com).
 
 ![Screenshot](https://raw.githubusercontent.com/makotokw/wp-theme-makotokw/makotokw2018/screenshot.png)
 
@@ -19,7 +19,7 @@ WordPress theme for [kwLog](https://blog.makotokw.com).
 
 ## Limitation
 
-* Tested on PHP 7.0 **ONLY** by makotokw for kwLog
+* Tested on PHP 7.3 **ONLY** by makotokw for kwLog
  * Some styles are **depend on** posts on kwLog
  * **Used** ``register_taxonomy()`` for kwLog
  * **No** sidebar, **No** widgets
@@ -42,25 +42,15 @@ cp -p config.php.sample config.php
 
 ### Requirements
 
-* Node.JS, [Gulp](https://gruntjs.com/) and [Bower](https://bower.io/)
-* Ruby and [Sass](http://sass-lang.com/)
-* gettext, [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) and [WordPress-Coding-Standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards)
+* [Node.js](https://nodejs.org)
+* [Yarn](https://yarnpkg.com)
 
-### Setup
-
-```
-cd /path/to/wordpress/wp-content/themes/makotokw2018
-gem install sass
-npm install -g gulp bower
-npm install
-```
-
-## Build
+### Build
 
 ```
-cd /path/to/wordpress/wp-content/themes/makotokw2018
-gulp bower:install
-gulp build
+cd /path/to/wordpress/wp-content/themes/dokugaku2020
+yarn install
+yarn run build
 ```
 
 ## License
