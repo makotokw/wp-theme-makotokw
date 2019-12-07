@@ -66,7 +66,8 @@ function makotokw_content_nav( $nav_id ) {
 function makotokw_list_nav() {
 	global $post;
 
-	if ( $mylist = get_mylist( $post ) ) {
+	$mylist = get_mylist( $post );
+	if ( $mylist ) {
 		$first_post = get_first_post_on_mylist( $post );
 		$prev_post  = get_adjacent_post_on_mylist( $post, true );
 		$next_post  = get_adjacent_post_on_mylist( $post, false );

@@ -4,8 +4,5 @@
   <rule ref="WordPress-Core">
     <!-- Only Japanese, nobody translates without author. -->
     <exclude name="WordPress.WP.I18n.MissingTranslatorsComment"/>
-    <!-- Disagree for theme. -->
-    <exclude name="WordPress.CodeAnalysis.AssignmentInCondition.Found"/>
-    <exclude name="Squiz.PHP.DisallowMultipleAssignments.FoundInControlStructure"/>
   </rule>
 </ruleset>

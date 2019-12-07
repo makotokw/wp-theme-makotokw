@@ -174,7 +174,7 @@ function makotokw_scripts() {
 	}
 
 	$fonts_urls = makotokw_fonts_urls();
-	for ( $fi = 0; $fi < count( $fonts_urls ); $fi++ ) {
+	for ( $fi = 0, $flen = count( $fonts_urls ); $flen; $fi++ ) {
 		wp_enqueue_style( 'makotokw-fonts' . $fi, esc_url_raw( $fonts_urls[ $fi ] ), array(), null );
 	}
 

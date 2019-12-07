@@ -79,7 +79,8 @@ add_filter( 'wp_title', 'makotokw_wp_title', 10, 2 );
 
 function makotokw_template_redirect() {
 	if ( is_page() && ! is_preview() ) {
-		if ( $values = get_post_custom_values( 'makotokw_part_of_home' ) ) {
+		$values = get_post_custom_values( 'makotokw_part_of_home' );
+		if ( $values ) {
 			if ( 1 === intval( $values[0] ) ) {
 				wp_redirect( home_url( '/' ) );
 				exit;

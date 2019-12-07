@@ -88,25 +88,31 @@ function ogp_post_tag() {
 	<?php if ( is_single() || is_page() ) : ?>
 		<?php if ( have_posts() ) : ?>
 			<?php the_post(); ?>
+			<?php
+			$og_image       = ogp_post_image();
+			$og_description = ogp_post_description();
+			$og_section     = ogp_post_section();
+			$og_tag         = ogp_post_tag()
+			?>
 <meta property="og:title" content="<?php the_title_attribute(); ?>"/>
 <meta property="og:type" content="article"/>
-			<?php if ( $og_image = ogp_post_image() ) : ?>
+			<?php if ( $og_image ) : ?>
 <meta property="og:image" content="<?php echo $og_image; ?>"/>
 			<?php else : ?>
 <meta property="og:image" content="<?php echo WP_OGP_DEFAULT_IMG; ?>"/>
 			<?php endif ?>
 <meta property="og:url" content="<?php echo esc_url( get_permalink() ); ?>"/>
-			<?php if ( $og_description = ogp_post_description() ) : ?>
+			<?php if ( $og_description ) : ?>
 <meta property="og:description" content="<?php echo esc_attr( $og_description ); ?>"/>
 			<?php else : ?>
 <meta property="og:description" content="<?php bloginfo( 'description' ); ?>"/>
 			<?php endif ?>
 <meta property="article:published_time" content="<?php echo get_post_time( DATE_ISO8601, false, null, true ); ?>"/>
 <meta property="article:modified_time" content="<?php echo get_post_modified_time( DATE_ISO8601, false, null, true ); ?>"/>
-			<?php if ( $og_section = ogp_post_section() ) : ?>
+			<?php if ( $og_section ) : ?>
 <meta property="article:section" content="<?php echo esc_attr( $og_section ); ?>"/>
 			<?php endif ?>
-			<?php if ( $og_tag = ogp_post_tag() ) : ?>
+			<?php if ( $og_tag ) : ?>
 <meta property="article:tag" content="<?php echo esc_attr( $og_tag ); ?>"/>
 			<?php endif ?>
 <meta property="twitter:card" content="summary"/>
