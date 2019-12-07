@@ -12,4 +12,4 @@ $query = new WP_Query( 'post_type=post&offset=' . $offset );
 // hack! for is_home()
 $query->is_archive   = true;
 $GLOBALS['wp_query'] = $query;
-include __DIR__ . '/../index.php';
+require __DIR__ . '/../index.php';

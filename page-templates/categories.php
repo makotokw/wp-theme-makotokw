@@ -14,4 +14,4 @@ ob_start();
 <?php
 $t_contents = ob_get_contents();
 ob_end_clean();
-include __DIR__ . '/inc/simple-page.php';
+require __DIR__ . '/inc/simple-page.php';

@@ -10,4 +10,4 @@
  * @package makotokw
  */
 
-include __DIR__ . '/single.php';
+require __DIR__ . '/single.php';

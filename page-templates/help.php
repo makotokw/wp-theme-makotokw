@@ -3,4 +3,4 @@
  * @subpackage makotokw
  * Template Name: Help
  */
-include __DIR__ . '/inc/simple-post-page.php';
+require __DIR__ . '/inc/simple-post-page.php';
