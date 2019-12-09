@@ -24,10 +24,10 @@
 <meta name="description" content="<?php echo esc_attr( $meta_description ); ?>" />
 <?php endif ?>
 <link rel="shortcut icon" href="/favicon.ico">
-<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/images/touch-icon-iphone.png">
-<link rel="apple-touch-icon" sizes="76x76" href="<?php echo get_template_directory_uri(); ?>/images/touch-icon-ipad.png">
-<link rel="apple-touch-icon" sizes="120x120" href="<?php echo get_template_directory_uri(); ?>/images/touch-icon-iphone-retina.png">
-<link rel="apple-touch-icon" sizes="152x152" href="<?php echo get_template_directory_uri(); ?>/images/touch-icon-ipad-retina.png">
+<link rel="apple-touch-icon" href="<?php echo get_theme_file_uri(); ?>/assets/images/touch-icon-iphone.png">
+<link rel="apple-touch-icon" sizes="76x76" href="<?php echo get_theme_file_uri(); ?>/assets/images/touch-icon-ipad.png">
+<link rel="apple-touch-icon" sizes="120x120" href="<?php echo get_theme_file_uri(); ?>/assets/images/touch-icon-iphone-retina.png">
+<link rel="apple-touch-icon" sizes="152x152" href="<?php echo get_theme_file_uri(); ?>/assets/images/touch-icon-ipad-retina.png">
 <?php if ( is_home() ) : ?>
 <link rel="alternate" hreflang="<?php echo get_bloginfo( 'language' ); ?>" href="<?php echo home_url(); ?>">
 <?php elseif ( is_singular() ) : ?>
@@ -36,7 +36,7 @@
 <?php endif ?>
 <link rel="alternate" type="<?php echo feed_content_type(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" href="<?php echo get_feed_link(); ?>" />
 <?php if ( true === WP_THEME_OGP ) : ?>
-	<?php get_template_part( 'template-parts/meta-ogp' ); ?>
+	<?php get_template_part( 'template-parts/meta', 'ogp' ); ?>
 <?php endif ?>
 <?php wp_head(); ?>
 <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">

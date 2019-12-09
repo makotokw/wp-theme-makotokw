@@ -14,7 +14,7 @@ define( 'WP_OGP_POST_DESCRIPTION_KEY', 'description' );
 define( 'WP_OGP_POST_IMAGE_SIZE', 'medium' );
 
 // default Image Url
-define( 'WP_OGP_DEFAULT_IMG', get_template_directory_uri() . '/images/ogp_default.png' );
+define( 'WP_OGP_DEFAULT_IMG', get_theme_file_uri() . '/assets/images/ogp_default.png' );
 
 // locale
 define( 'WP_OGP_LOCALE', WP_THEME_OGP_LOCALE );

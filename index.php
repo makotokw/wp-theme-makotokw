@@ -32,7 +32,7 @@ get_header(); ?>
 	</div>
 	<?php makotokw_pagination(); ?>
 <?php else : ?>
-	<?php get_template_part( 'template-parts/no-results' ); ?>
+	<?php get_template_part( 'template-parts/content', 'none' ); ?>
 <?php endif; ?>
 
 <?php get_footer(); ?>
