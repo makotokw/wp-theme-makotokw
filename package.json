@@ -2,6 +2,7 @@
   "name": "wp-theme-makotokw",
   "description": "makotokw theme for WordPress",
   "license": "GPL-2.0",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/makotokw/wp-theme-makotokw"

@@ -4,9 +4,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   entry: {
     style: ['./src/styles/style.scss', './src/index.js'],
+    amazonjs: ['./src/styles/amazonjs.scss'],
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'assets'),
     filename: '[name].js',
   },
   module: {
@@ -41,6 +42,10 @@ module.exports = {
   },
   devtool: 'source-map',
   plugins: [
-    new MiniCssExtractPlugin({ filename: '[name].css', ignoreOrder: false }),
+    // https://webpack.js.org/plugins/mini-css-extract-plugin/
+    new MiniCssExtractPlugin({
+      moduleFilename: (chunk) => (chunk.name === 'amazonjs' ? '../[name].css' : '[name].css'),
+      ignoreOrder: false,
+    }),
   ],
 };

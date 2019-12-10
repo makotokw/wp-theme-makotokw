@@ -178,9 +178,9 @@ function makotokw_scripts() {
 		wp_enqueue_style( 'makotokw-fonts' . $fi, esc_url_raw( $fonts_urls[ $fi ] ), array(), null );
 	}
 
-	wp_enqueue_style( 'makotokw-style', get_stylesheet_uri(), array(), THEME_STYLE_CSS_REV );
+	wp_enqueue_style( 'makotokw-style', get_template_directory_uri() . '/assets/style.css', array(), THEME_STYLE_CSS_REV );
 
-	wp_register_script( 'makotokw-script', get_template_directory_uri() . '/style.js', array( 'jquery' ), THEME_STYLE_SCRIPT_REV, true );
+	wp_register_script( 'makotokw-script', get_template_directory_uri() . '/assets/style.js', array( 'jquery' ), THEME_STYLE_SCRIPT_REV, true );
 	wp_localize_script( 'makotokw-script', 'makotokw', array( 'counter_api' => WP_THEME_COUNT_API ) );
 	wp_enqueue_script( 'makotokw-script' );
 

@@ -1,6 +1,4 @@
 # /node_modules/* and /bower_components/* in the project root are ignored by default
 
 # built files
-/dist/
-/style.js
-/amazonjs.js
+/assets/
