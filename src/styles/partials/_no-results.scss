@@ -1,6 +1,6 @@
 // for no-results.php and 404.php
-.errorPage {
-  .errorPage-title {
+.no-results {
+  .page-title {
     font-size: $entry-title-font-size;
     margin: 0;
     position: relative;
@@ -12,11 +12,8 @@
       padding: 15px 0;
     }
   }
-  .errorPage-nav {
+  p {
     text-align: center;
-    font-weight: bold;
-  }
-  .errorPage-content {
   }
   .search-form {
     display: flex;
