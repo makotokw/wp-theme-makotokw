@@ -1,30 +1,9 @@
-/*!
- * Theme Name: dokugaku2020
- * Theme URI: https://github.com/makotokw/wp-theme-makotokw/tree/dokugaku2019
- * Author: makoto_kw
- * Author URI: https://makotokw.com/
- * Description: 2020 theme for kwLog.
- * Version: 1.0
- * License: GNU General Public License v2 or later
- * License URI: http://www.gnu.org/licenses/gpl-2.0.html
- * Tags: one-column, responsive-layout, microformats, translation-ready
- * Text Domain: makotokw
- *
- * This theme, like WordPress, is licensed under the GPL.
- * Use it to make something cool, have fun, and share what you've learned with others.
-*/
-@import "lib/colors/trendcolors";
-@import "lib/colors/brandcolors";
-@import "lib/colors/materialcolors";
-@import "lib/mixins/utils";
-@import "lib/mixins/responsive";
-@import "lib/func/color";
+@import "lib/lib";
 @import "variables";
 @import "~normalize.css/normalize";
-@import "partials/core/font";
-@import "partials/core/typography";
-@import "partials/core/form";
-@import "lib/vendor/prettify";
+@import "partials/font";
+@import "partials/typography";
+@import "partials/form";
 @import "partials/global";
 @import "partials/layout";
 @import "partials/button";
@@ -41,6 +20,7 @@
 @import "partials/footer";
 @import "partials/alert";
 @import "partials/note";
+@import "partials/prettify";
 @import "partials/syntaxhighlight";
 @import "partials/markdown";
 @import "partials/pukiwiki";
