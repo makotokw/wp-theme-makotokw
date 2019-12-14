@@ -42,35 +42,37 @@ $font-family-monospace: Monaco, Menlo, Consolas, 'Courier New', monospace;
 $font-family-base: $font-family-sans-serif;
 $font-family-content: $font-family-sans-serif;
 
-$font-size-base: 17px;
-$font-size-small: $font-size-base * 0.85; // ~12px
-$font-size-mini: $font-size-base * 0.75; // ~11px
+$font-size-base: 1.8rem;
+$font-size-small: 1.6rem;
+$font-size-mini: 1.3rem;
+
+$letter-spacing: -0.015em;
 
 $line-height-base: 1.7;
 $line-height-small: 1.5;
 
-$entry-title-font-size: 30px;
-$entry-title-small-font-size: 25px;
-$entry-content-font-size: 18px;
-$entry-content-light-height: 1.9;
-$entry-list-title-font-size: 25px;
-$entry-list-title-small-font-size: 20px;
-$entry-list-content-font-size: 17px;
+$entry-title-font-size: 3rem;
+$entry-title-small-font-size: 2.5rem;
+$entry-content-font-size: 1.8rem;
+$entry-content-light-height: 1.8;
+$entry-list-title-font-size: 2.5rem;
+$entry-list-title-small-font-size: 2rem;
+$entry-list-content-font-size: 1.7rem;
 $entry-list-content-light-height: 1.7;
 
-$entry-h2-font-size: 26px;
-$entry-h3-font-size: 23px;
-$entry-h4-font-size: 20px;
-$entry-h5-font-size: 19px;
-$entry-h2-small-font-size: 20px;
-$entry-h3-small-font-size: 20px;
-$entry-h4-small-font-size: 19px;
-$entry-h5-small-font-size: 19px;
+$entry-h2-font-size: 2.6rem;
+$entry-h3-font-size: 2.3rem;
+$entry-h4-font-size: 2.1rem;
+$entry-h5-font-size: 1.9rem;
+$entry-h2-small-font-size: 2rem;
+$entry-h3-small-font-size: 2rem;
+$entry-h4-small-font-size: 1.9rem;
+$entry-h5-small-font-size: 1.9rem;
 
 $block-shadow: 4px 6px 10px -6px rgba(0, 0, 0, .1);
 
 // Layout color ----------------------------
-$site-primary-color: pastelen(#2ba6cb);
+$site-primary-color: #2ba6cb;
 $site-primary-dark-color: darken($site-primary-color, 10%);
 $site-primary-light-color: lighten($site-primary-color, 50%);
 $site-on-primary-text-color: #fff;
@@ -84,9 +86,8 @@ $site-default-bg: #eeeef0;
 $site-default-border: #ddd;
 $site-progress-border: $site-primary-color;
 
-$site-default-text: $md-grey-800;
-$site-header-text: $md-grey-900;
-$site-neutral-color: $md-grey-500;
+$site-default-text: $md-blue-grey-600;
+$site-neutral-color: $md-blue-grey-400;
 $site-default-link: darken($site-primary-color, 10%);
 $site-default-link-over: darken($site-default-link, 10%);
 
@@ -94,22 +95,23 @@ $site-component-header-bg: linear-gradient(to right, $site-primary-light-color 0
 $site-component-header-bg-radius: 10px;
 $site-component-header-text: $site-on-primary-text-color;
 $site-component-content-bg: $site-surface-color;
-$site-component-content-text: $md-grey-800;
+$site-component-content-text: $site-default-text;
 
 $header-bg-color: $site-surface-color;
 $header-banner-color: $site-primary-color;
 $header-banner-over-color: darken($site-primary-color, 10%);
-$header-nav-link-color: $md-grey-800;
+$header-nav-link-color: $site-default-text;
 $header-nav-link-over-color: $site-default-link-over;
 
 $footer-default-bg: $md-grey-50;
-$footer-default-text: $md-grey-600;
+$footer-default-text: $site-default-text;
 $footer-default-link: $footer-default-text;
 $footer-default-link-over: $site-default-link-over;
 
 // Typography color ----------------------------
-$entry-title-text: $md-blue-grey-900;
-$entry-title-text-over: $site-default-link-over;
+$entry-title-text: $site-default-text;
+$entry-title-text-over: $site-primary-color;
+$entry-title-text-decoration-over: underline;
 $entry-header-border-color: $site-primary-color;
 $caption-text: #767676;
 $code-default-bg: $md-grey-50;

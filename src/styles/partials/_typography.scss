@@ -1,18 +1,16 @@
-body,
-button,
-input,
-select,
-textarea {
-  color: $site-default-text;
-  font-family: $font-family-base;
-  font-size: $font-size-base;
-  line-height: $line-height-base;
+html {
+  font-size: 62.5%; /* 1rem = 10px */
 }
 
 body {
   hyphens: auto;
   margin: 0;
   background-color: $site-base-color;
+  color: $site-default-text;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  letter-spacing: $letter-spacing;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
   text-rendering: optimizeLegibility
