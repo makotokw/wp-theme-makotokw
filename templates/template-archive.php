@@ -2,6 +2,7 @@
 /**
  * @subpackage makotokw
  * Template Name: Archive
+ * Template Post Type: page
  */
 $paged  = intval( get_query_var( 'paged' ) );
 $offset = 0;

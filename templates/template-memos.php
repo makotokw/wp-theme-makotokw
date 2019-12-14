@@ -2,6 +2,7 @@
 /**
  * @subpackage makotokw
  * Template Name: Memos
+ * Template Post Type: page
  * /memo/
  */
 

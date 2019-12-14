@@ -220,7 +220,7 @@ function makotokw_is_noindex() {
 			}
 			return true;
 		}
-		if ( $wp_query->is_search() || $wp_query->is_404() || is_page_template( 'page-templates/help.php' ) ) {
+		if ( $wp_query->is_search() || $wp_query->is_404() || is_page_template( 'templates/template-help.php' ) ) {
 			return true;
 		}
 	}

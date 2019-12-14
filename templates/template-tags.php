@@ -2,6 +2,7 @@
 /**
  * @subpackage makotokw
  * Template Name: Tags
+ * Template Post Type: page
  * /tags/
  */
 

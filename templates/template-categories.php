@@ -2,6 +2,7 @@
 /**
  * @subpackage makotokw
  * Template Name: Categories
+ * Template Post Type: page
  * /categories/
  */
 

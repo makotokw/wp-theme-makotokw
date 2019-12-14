@@ -2,6 +2,7 @@
 /**
  * @subpackage makotokw
  * Template Name: Archives
+ * Template Post Type: page
  * /archives/
  */
 $t_title = get_the_title();

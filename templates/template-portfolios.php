@@ -2,6 +2,7 @@
 /**
  * @subpackage makotokw
  * Template Name: Portfolios
+ * Template Post Type: page
  * /portfolio/
  */
 $t_title = get_the_title();
