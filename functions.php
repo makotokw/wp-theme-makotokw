@@ -263,9 +263,9 @@ if ( ! is_admin() ) {
  * @return array
  */
 function makotokw_fonts_urls() {
-	$urls    = array();
-	$fonts   = array();
-	$fonts[] = 'Quicksand:300,400,700,300italic,400italic,700italic';
+	$urls  = array();
+	$fonts = array(
+	);
 	if ( ! empty( $fonts ) ) {
 		$fonts_url = add_query_arg(
 			array(

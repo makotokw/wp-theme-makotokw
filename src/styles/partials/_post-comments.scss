@@ -42,8 +42,6 @@ $author-border-width: 2px;
 }
 
 .comment-small {
-  font-size: $font-size-small;
-  line-height: $line-height-small;
   font-style: normal;
 }
 
@@ -104,7 +102,6 @@ $author-border-width: 2px;
   .comment-content {
     border: $site-border-width solid $block-default-border;
     padding: $block-padding;
-    font-family: $font-family-content;
     overflow-x: auto;
     color: $site-default-text;
     a {
@@ -134,9 +131,6 @@ $author-border-width: 2px;
       clear: both;
       width: auto;
       padding: 12px;
-    }
-    .comment-content {
-      font-size: $font-size-base;
     }
   }
 }

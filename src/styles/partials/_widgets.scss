@@ -5,13 +5,11 @@
     color: $site-component-content-text;
     margin-top: $site-grid-margin * 2;
     font-size: 0.98em;
-    line-height: $line-height-small;
   }
   & >.widget:first-child {
     margin-top: 0;
   }
   .widget-title {
-    font-size: $font-size-base * 1.1;
     background: $site-primary-light-color;
     margin: 0;
     padding: $site-grid-margin * 0.7 $site-grid-margin;
@@ -89,6 +87,5 @@
 
 .widget_widget_makotokw_profile {
   .profile-widget {
-    font-size: $font-size-small;
   }
 }

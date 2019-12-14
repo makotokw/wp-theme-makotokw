@@ -116,7 +116,6 @@ $site-logo-height-small: 20px;
     }
     @include smaller-than-tablet-screen {
       a {
-        font-size: $font-size-small;
         margin: 0 $site-grid-margin-small/2;
       }
     }

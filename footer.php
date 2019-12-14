@@ -30,7 +30,7 @@
 			);
 			?>
 			<div class="credit">
-				<?php do_action( 'makotokw_credits' ); ?>
+				<span class="copyright"><?php do_action( 'makotokw_credits' ); ?></span>
 				<?php
 					$wp_theme   = wp_get_theme();
 					$theme_name = $wp_theme->display( 'Name' );

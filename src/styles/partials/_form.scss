@@ -17,7 +17,7 @@ input[type="color"],
   padding: 7px 0 7px 6px;
   border: $site-border-width solid $form-default-border;
   text-indent: 1px;
-  border-radius: $border-radius-large;
+  border-radius: $site-border-radius;
   box-shadow: none;
   @include placeholder($form-default-placeholder);
 

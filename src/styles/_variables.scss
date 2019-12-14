@@ -14,10 +14,7 @@ $site-header-progress-height: 4px;
 $site-header-height: $site-header-banner-height + $site-header-nav-height + $site-header-progress-height;
 $site-header-height-small: $site-header-banner-height-small + $site-header-nav-height-small + $site-header-progress-height;
 
-$border-radius-base: 4px;
-$border-radius-large: 6px;
-$border-radius-small: 3px;
-
+$site-border-radius: 4px;
 $site-border-width: 1px;
 $site-border-left-width: .6em;
 
@@ -36,38 +33,22 @@ $screen-md-max: ($screen-lg-min - 1);
 // ----------------------------
 
 $font-family-sans-serif-ja: -apple-system, BlinkMacSystemFont, 'Hiragino Kaku Gothic ProN', 'Hiragino Kaku Gothic ProN W3', 'Hiragino Kaku Gothic Pro', 'Original Yu Gothic', 'Yu Gothic', YuGothic, Meiryo, 'M+ 1p';
-$font-family-sans-serif: Quicksand, 'Helvetica Neue', Helvetica, $font-family-sans-serif-ja, sans-serif;
-$font-family-serif: Georgia, 'Times New Roman', Times, serif;
+$font-family-sans-serif: 'Helvetica Neue', Helvetica, $font-family-sans-serif-ja, sans-serif;
 $font-family-monospace: Monaco, Menlo, Consolas, 'Courier New', monospace;
-$font-family-base: $font-family-sans-serif;
-$font-family-content: $font-family-sans-serif;
 
 $font-size-base: 1.8rem;
-$font-size-small: 1.6rem;
-$font-size-mini: 1.3rem;
-
 $letter-spacing: -0.015em;
 
-$line-height-base: 1.7;
-$line-height-small: 1.5;
-
-$entry-title-font-size: 3rem;
-$entry-title-small-font-size: 2.5rem;
-$entry-content-font-size: 1.8rem;
-$entry-content-light-height: 1.8;
-$entry-list-title-font-size: 2.5rem;
-$entry-list-title-small-font-size: 2rem;
-$entry-list-content-font-size: 1.7rem;
-$entry-list-content-light-height: 1.7;
-
-$entry-h2-font-size: 2.6rem;
-$entry-h3-font-size: 2.3rem;
-$entry-h4-font-size: 2.1rem;
-$entry-h5-font-size: 1.9rem;
-$entry-h2-small-font-size: 2rem;
-$entry-h3-small-font-size: 2rem;
-$entry-h4-small-font-size: 1.9rem;
-$entry-h5-small-font-size: 1.9rem;
+$heading-size1-font-size: 3rem;
+$heading-size2-font-size: 2.6rem;
+$heading-size3-font-size: 2.3rem;
+$heading-size4-font-size: 2.1rem;
+$heading-size5-font-size: 1.9rem;
+$heading-size1-small-font-size: 2.2rem;
+$heading-size2-small-font-size: 2rem;
+$heading-size3-small-font-size: 2rem;
+$heading-size4-small-font-size: 1.9rem;
+$heading-size5-small-font-size: 1.9rem;
 
 $block-shadow: 4px 6px 10px -6px rgba(0, 0, 0, .1);
 
@@ -154,7 +135,7 @@ $state-info-border: darken(adjust-hue($state-info-bg, -10), 7%);
 
 // alerts
 $alert-padding: $site-grid-margin;
-$alert-border-radius: $border-radius-base;
+$alert-border-radius: $site-border-radius;
 $alert-link-font-weight: bold;
 $alert-success-bg: $state-success-bg;
 $alert-success-text: $state-success-text;

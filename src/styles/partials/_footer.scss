@@ -2,7 +2,6 @@
   background: $footer-default-bg;
   padding: $site-grid-margin;
   color: $footer-default-text;
-  font-size: $font-size-small;
   a {
     color: $footer-default-link;
     &:hover {
@@ -49,7 +48,6 @@
   @include smaller-than-mobile-screen {
     .poweredby {
       display: block;
-      font-size: $font-size-mini;
     }
   }
 }
