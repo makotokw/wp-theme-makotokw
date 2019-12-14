@@ -123,25 +123,25 @@ function makotokw_pagination( $pages = '', $range = 3 ) {
 		?>
 		<div class="pagination"><ul>
 		<?php if ( $paged > 2 && $paged > $range + 1 && $showitems < $pages ) : ?>
-			<li><a rel="nofollow" href="<?php echo get_pagenum_link( 1 ); ?>">&laquo; <?php __( 'First', 'makotokw' ); ?></a></li>
+			<li><a href="<?php echo get_pagenum_link( 1 ); ?>">&laquo; <?php __( 'First', 'makotokw' ); ?></a></li>
 		<?php endif ?>
 		<?php if ( $paged > 1 ) : ?>
-			<li><a rel="nofollow" href="<?php echo get_pagenum_link( $paged - 1 ); ?>" class="inactive">&lsaquo; <?php __( 'Previous', 'makotokw' ); ?></a></li>
+			<li><a href="<?php echo get_pagenum_link( $paged - 1 ); ?>">&lsaquo; <?php __( 'Previous', 'makotokw' ); ?></a></li>
 		<?php endif ?>
 		<?php for ( $i = 1; $i <= $pages; $i++ ) : ?>
 			<?php if ( 1 !== $pages && ( ! ( $i >= $paged + $range + 1 || $i <= $paged - $range - 1 ) || $pages <= $showitems ) ) : ?>
 				<?php if ( $paged === $i ) : ?>
 					<li class="current"><span class="page"><?php echo $i; ?></span></li>
 				<?php else : ?>
-					<li><a rel="nofollow" href="<?php echo get_pagenum_link( $i ); ?>" class="inactive"><?php echo $i; ?></a></li>
+					<li><a href="<?php echo get_pagenum_link( $i ); ?>"><?php echo $i; ?></a></li>
 				<?php endif ?>
 			<?php endif ?>
 		<?php endfor ?>
 		<?php if ( $paged < $pages ) : ?>
-			<li><a rel="nofollow" href="<?php echo get_pagenum_link( $paged + 1 ); ?>" class="inactive"><?php __( 'Next', 'makotokw' ); ?> &rsaquo;</a></li>
+			<li><a href="<?php echo get_pagenum_link( $paged + 1 ); ?>"><?php __( 'Next', 'makotokw' ); ?> &rsaquo;</a></li>
 		<?php endif ?>
 		<?php if ( $paged < $pages - 1 && $paged + $range - 1 < $pages && $showitems < $pages ) : ?>
-			<a rel="nofollow" class="inactive" href="<?php echo get_pagenum_link( $pages ); ?>"><?php __( 'Last', 'makotokw' ); ?> &raquo;</a>
+			<li><a href="<?php echo get_pagenum_link( $pages ); ?>"><?php __( 'Last', 'makotokw' ); ?> &raquo;</a></li>
 		<?php endif ?>
 		</ul></div>
 		<?php
@@ -451,15 +451,6 @@ function makotokw_the_post_thumbnail( $post_content = null ) {
 	</a>
 	<?php
 }
-
-function makotokw_the_content_more_link( $link ) {
-	if ( preg_match( '/href="([^"]+)"/', $link, $match ) ) {
-		return '<a class="btn btn-contained btn-more-link" href="' . $match[1] . '">' . __( 'Continue reading', 'makotokw' ) . '</a>';
-	}
-	return $link;
-}
-
-add_filter( 'the_content_more_link', 'makotokw_the_content_more_link' );
 
 function makotokw_post_summary( $content, $length = 128, $trimmarker = '...' ) {
 	if ( class_exists( 'PukiWiki_for_WordPress' ) ) {

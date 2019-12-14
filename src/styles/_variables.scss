@@ -131,7 +131,7 @@ $button-contained-text: $site-on-primary-text-color;
 $button-contained-disable-bg: $md-grey-200;
 $button-contained-disable-text: $md-grey-400;
 $button-outlined-bg: transparent;
-$button-outlined-bg-over: lighten($site-primary-color, 50%);
+$button-outlined-bg-over: lighten($site-primary-color, 40%);
 $button-outlined-border: $md-grey-400;
 $button-outlined-border-width: 1px;
 $button-outlined-text: $site-primary-color;

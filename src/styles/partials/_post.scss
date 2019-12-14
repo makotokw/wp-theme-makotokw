@@ -131,6 +131,7 @@
     color: $entry-title-text;
     &:hover {
       color: $entry-title-text-over;
+      text-decoration: $entry-title-text-decoration-over;
     }
   }
 }

@@ -34,7 +34,7 @@ if ( class_exists( 'Makotokw\PostUtility' ) ) {
 
 	<div class="entry-summary">
 		<p><?php echo makotokw_post_summary( $post->post_content, 180 ); ?></p>
-		<a class="btn btn-contained btn-more-link" href="<?php the_permalink(); ?>"><?php _e( 'Continue reading', 'makotokw' ); ?></a>
+		<a class="btn btn-text btn-more-link" href="<?php the_permalink(); ?>"><?php _e( 'Continue reading', 'makotokw' ); ?></a>
 	</div>
 	<footer class="entry-footer">
 		<div class="entry-meta">

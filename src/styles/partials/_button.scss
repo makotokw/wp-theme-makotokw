@@ -31,10 +31,10 @@
   }
 }
 
+.btn-text,
 .btn-outlined {
   border-radius: 6px;
   background-color: $button-outlined-bg;
-  border: $button-outlined-border-width solid $button-outlined-border;
   color: $button-outlined-text;
   &:hover {
     background-color: $button-outlined-bg-over;
@@ -49,6 +49,12 @@
       color: $button-outlined-disable-text;
     }
   }
+}
+.btn-text {
+  border: none;
+}
+.btn-outlined {
+  border: $button-outlined-border-width solid $button-outlined-border;
 }
 
 .btn-circle {
