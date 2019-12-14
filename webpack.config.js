@@ -35,7 +35,16 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
+          'resolve-url-loader',
           'sass-loader',
+        ],
+      },
+      {
+        test: /\.woff2$/,
+        use: [
+          {
+            loader: 'file-loader',
+          },
         ],
       },
     ],
