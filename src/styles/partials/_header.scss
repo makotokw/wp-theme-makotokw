@@ -13,7 +13,7 @@ $site-logo-height-small: 20px;
 
 .headroom--not-top {
   &.site-header {
-    background: rgba($header-bg-color, 0.95);
+    background: rgba($header-default-bg, 0.95);
   }
   .site-header-banner {
     display: none;
@@ -48,7 +48,8 @@ $site-logo-height-small: 20px;
 }
 
 .site-header {
-  background: $header-bg-color;
+  background: $header-default-bg;
+  color: $header-default-text;
   position: fixed;
   z-index: 10;
   top: 0;
@@ -58,9 +59,9 @@ $site-logo-height-small: 20px;
   will-change: transform;
   transition: transform 200ms linear;
   a {
-    color: $header-nav-link-color;
+    color: $header-default-link;
     &:hover {
-      color: $header-nav-link-over-color;
+      color: $header-default-link-over;
     }
   }
 }
@@ -71,7 +72,7 @@ $site-logo-height-small: 20px;
 
 .site-header-logo {
   .site-header-logo-svg {
-    fill: $header-banner-color;
+    fill: $header-banner-link;
     margin-top: ($site-header-banner-height - $site-logo-height) / 2;
     width: $site-logo-image-width * ($site-logo-height / $site-logo-image-height);
     height: $site-logo-height;
@@ -83,7 +84,7 @@ $site-logo-height-small: 20px;
   }
   &:hover {
     .site-header-logo-svg {
-      fill: $header-banner-over-color;
+      fill: $header-banner-link-over;
     }
   }
 }

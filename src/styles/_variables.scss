@@ -32,8 +32,11 @@ $screen-md-max: ($screen-lg-min - 1);
 
 // ----------------------------
 
-$font-family-sans-serif-ja: -apple-system, BlinkMacSystemFont, 'Hiragino Kaku Gothic ProN', 'Hiragino Kaku Gothic ProN W3', 'Hiragino Kaku Gothic Pro', 'Original Yu Gothic', 'Yu Gothic', YuGothic, Meiryo, 'M+ 1p';
-$font-family-sans-serif: 'Helvetica Neue', Helvetica, $font-family-sans-serif-ja, sans-serif;
+$font-family-mincho: 'Hiragino Mincho ProN', 'Hiragino Mincho ProN W3', YuMincho, serif;
+$font-family-gothic: 'Hiragino Kaku Gothic ProN', 'Hiragino Kaku Gothic ProN W3', 'Hiragino Kaku Gothic Pro', 'Yu Gothic', YuGothic, Meiryo, 'M+ 1p', sans-serif;
+
+$font-family-serif: 'Helvetica Neue', Helvetica, $font-family-mincho;
+$font-family-sans-serif: 'Helvetica Neue', Helvetica, $font-family-gothic;
 $font-family-monospace: Monaco, Menlo, Consolas, 'Courier New', monospace;
 
 $font-size-base: 1.8rem;
@@ -58,16 +61,16 @@ $site-primary-dark-color: darken($site-primary-color, 10%);
 $site-primary-light-color: lighten($site-primary-color, 50%);
 $site-on-primary-text-color: #fff;
 $site-surface-color: #fff;
-$site-base-color: #eeeef0;
+$site-background-color: #fff;
 
 $site-badge-color: $md-pink-400;
 $site-on-badge-text-color: #fff;
 
-$site-default-bg: #eeeef0;
 $site-default-border: #ddd;
 $site-progress-border: $site-primary-color;
 
-$site-default-text: $md-blue-grey-600;
+$site-default-text: $md-blue-grey-900;
+$site-content-text: $md-blue-grey-700;
 $site-neutral-color: $md-blue-grey-400;
 $site-default-link: darken($site-primary-color, 10%);
 $site-default-link-over: darken($site-default-link, 10%);
@@ -78,11 +81,12 @@ $site-component-header-text: $site-on-primary-text-color;
 $site-component-content-bg: $site-surface-color;
 $site-component-content-text: $site-default-text;
 
-$header-bg-color: $site-surface-color;
-$header-banner-color: $site-primary-color;
-$header-banner-over-color: darken($site-primary-color, 10%);
-$header-nav-link-color: $site-default-text;
-$header-nav-link-over-color: $site-default-link-over;
+$header-default-bg: white;
+$header-default-text: $site-default-text;
+$header-default-link: $site-default-text;
+$header-default-link-over: $site-default-link-over;
+$header-banner-link: $site-primary-color;
+$header-banner-link-over: darken($site-primary-color, 10%);
 
 $footer-default-bg: $md-grey-50;
 $footer-default-text: $site-default-text;

@@ -1,76 +1,47 @@
 // Layout
 // -----------------------------------------------
 
-// .site
-//   .site-header
-//   .site-main
-//     .site-content-area
-//       .site-content
-//     .site-sidebar
-//   .site-footer
-
-.site {
-  box-sizing: content-box;
-  margin: 0;
-  padding: 0;
-}
+ //.site-header
+ //.site-main
+ //     .site-content
+ //     .site-sidebar
+ //#footerMargin
+ //.site-footer
 
 .site-main {
   display: flex;
   flex-direction: row;
-  // for sticky header
-  margin: $site-header-height auto 0;
-  padding: $site-grid-margin;
   max-width: $site-max-container;
-}
-
-.site-content-area {
-  overflow: hidden;
-  display: contents;
-  margin: 0;
-  padding: 0;
-  position: relative;
+  // for sticky header
+  margin: $site-header-height auto 0 auto;
+  // margin for children
+  padding: $site-grid-margin;
 }
 
 .site-content {
+  position: relative;
   margin: 0 auto;
+  // margin for sidebar
   padding: 0 $site-grid-margin 0 0;
-  width: 100%;
+  overflow: hidden;
 }
 
 .site-sidebar {
   flex: 0 0 $site-max-sidebar;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
 }
 
-
-@include larger-than-large-desktop-screen {
-  .site-main {
-    padding: $site-grid-margin*2;
-  }
-  .site-content {
-    margin: 0 auto 0 0;
-    max-width: $site-max-content;
-  }
-}
-
-// 1 column
 @include smaller-than-desktop-screen {
   .site-main {
     flex-direction: column;
-    padding: $site-grid-margin*1.5;
   }
   .site-content {
-    margin: 0 0 $site-grid-margin*1.5 0;
     padding: 0;
   }
   .site-sidebar {
-    margin: 0 0 $site-grid-margin 0;
   }
 }
-
-// 1 column
 @include smaller-than-tablet-screen {
   .site-main {
     // for sticky small header
@@ -78,8 +49,6 @@
     padding: $site-grid-margin-small;
   }
 }
-
-// 1 column
 @include smaller-than-mobile-screen {
   .site-main {
     padding: 0;
