@@ -16,7 +16,6 @@
   text-transform: uppercase;
 }
 
-
 .strike {
   text-decoration: line-through;
 }
@@ -35,14 +34,10 @@
   font-style: normal;
 }
 
-.list-unstyled {
-  padding-left: 0;
-  list-style: none;
-}
-
 // Inline turns list items into inline-block
 .list-inline {
-  @extend .list-unstyled;
+  padding-left: 0;
+  list-style: none;
 
   > li {
     display: inline-block;
@@ -86,7 +81,6 @@
   }
 }
 
-
 .rakuten-afl {
   @include block-white($block-border-radius);
   table {
@@ -101,17 +95,6 @@
     }
   }
   margin-bottom: 20px;
-}
-
-/* Ascii Art */
-.aa {
-  color: $site-default-text !important;
-  font-family: 'Mona','IPAMonaPGothic','IPA モナー Pゴシック','MS PGothic AA','MS PGothic','ＭＳ Ｐゴシック',sans-serif !important;
-  font-size: 16px !important;
-  line-height: 18px !important;
-  p {
-    @extend .aa;
-  }
 }
 
 /* Alignment */
