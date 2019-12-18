@@ -7,7 +7,7 @@
 
 define( 'THEME_STYLE_CSS_REV', '201805261453' );
 define( 'THEME_STYLE_SCRIPT_REV', '201805261503' );
-define( 'THEME_DATE_FORMAT', 'Y/m/d' );
+define( 'THEME_DATE_FORMAT', 'Y-m-d' );
 
 if ( ! isset( $content_width ) ) {
 	$content_width = 750;

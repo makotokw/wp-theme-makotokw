@@ -412,21 +412,6 @@ function makotokw_updated_on() {
 function makotokw_the_post_date() {
 	?>
 <span class="entry-date date updated"><?php makotokw_posted_on(); ?></span>
-	<?php if ( makotokw_is_old_post() ) : ?>
-		<?php
-		$post_time = date_create( get_the_date( DATE_ISO8601 ) );
-		$interval  = $post_time->diff( date_create() );
-		?>
-		<?php if ( 1 <= $interval->y ) : ?>
-		<span class="entry-date-warning">
-			<?php if ( 1 === $interval->y ) : ?>
-				<?php _e( '(<span class="entry-date-warning-y">1</span> year ago)', 'makotokw' ); ?>
-			<?php else : ?>
-				<?php echo sprintf( __( '(<span class="entry-date-warning-y">%d</span> years ago)', 'makotokw' ), $interval->y ); ?>
-			<?php endif ?>
-		</span>
-	<?php endif ?>
-	<?php endif ?>
 	<?php
 }
 
