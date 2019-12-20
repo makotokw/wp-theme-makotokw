@@ -32,11 +32,10 @@ $screen-md-max: ($screen-lg-min - 1);
 
 // ----------------------------
 
-$font-family-mincho: 'Hiragino Mincho ProN', 'Hiragino Mincho ProN W3', YuMincho, serif;
-$font-family-gothic: 'Hiragino Kaku Gothic ProN', 'Hiragino Kaku Gothic ProN W3', 'Hiragino Kaku Gothic Pro', 'Yu Gothic', YuGothic, Meiryo, 'M+ 1p', sans-serif;
+$font-family-mincho: 'Hiragino Mincho ProN', 'Hiragino Mincho ProN W3', YuMincho;
+$font-family-gothic: 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic ProN', 'Hiragino Kaku Gothic ProN W3', 'Hiragino Kaku Gothic Pro', Meiryo, 'M+ 1p';
 
-$font-family-serif: 'Helvetica Neue', Helvetica, $font-family-mincho;
-$font-family-sans-serif: 'Helvetica Neue', Helvetica, $font-family-gothic;
+$font-family-sans-serif: 'Nunito Sans', $font-family-gothic, sans-serif;
 $font-family-monospace: Monaco, Menlo, Consolas, 'Courier New', monospace;
 
 $font-size-base: 1.8rem;
