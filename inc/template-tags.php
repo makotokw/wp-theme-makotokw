@@ -415,6 +415,34 @@ function makotokw_the_post_date() {
 	<?php
 }
 
+function makotokw_the_post_primary_meta() {
+	?>
+	<section class="entry-meta-primary">
+		<?php if ( 'post' === get_post_type() ) : ?>
+			<?php makotokw_the_post_date(); ?>
+			/
+			<span class="tag-links">
+				<?php makotokw_the_category_slug( '', '/' ); ?>
+			</span>
+		<?php endif; ?>
+	</section>
+	<?php
+}
+
+function makotokw_the_post_secondary_meta() {
+	?>
+	<section class="entry-meta-secondary">
+		<?php if ( 'post' === get_post_type() ) : ?>
+			<span class="tag-links">
+				<?php makotokw_the_tags_slug( '<i class="fas fa-tag"></i>', '' ); ?>
+				<?php makotokw_the_terms_slug( 'portfolios', '', '' ); ?>
+			</span>
+		<?php endif; ?>
+	</section>
+	<?php
+}
+
+
 /**
  * .post_thumbnail for list page
  * @param string $post_content
@@ -583,7 +611,7 @@ function makotokw_the_category_slug( $before = '', $separator = '', $post_id = f
 		return;
 	}
 
-	echo esc_html( $before );
+	echo $before;
 
 	$i = 0;
 	foreach ( $categories as $category ) {
@@ -606,7 +634,7 @@ function makotokw_the_tags_slug( $before = '', $separator = '', $post_id = false
 		return;
 	}
 
-	echo esc_html( $before );
+	echo $before;
 
 	$i = 0;
 	foreach ( $tags as $tag ) {
@@ -639,47 +667,6 @@ function makotokw_the_terms_slug( $taxonomy, $before = '', $separator = '', $pos
 		<?php
 		++$i;
 	}
-}
-
-function makotokw_the_category_and_tag() {
-	?>
-	<?php $categories_list = get_the_category_list( '&nbsp;' ); ?>
-	<?php if ( $categories_list && makotokw_categorized_blog() ) : ?>
-		<span class="entry-categories">
-			<?php printf( '%1$s', $categories_list ); ?>
-		</span>
-	<?php endif; ?>
-	<?php $tags_list = get_the_tag_list( '', '&nbsp;' ); ?>
-	<?php if ( $tags_list ) : ?>
-		<span class="entry-tags">
-			<?php printf( '&nbsp;&nbsp;%1$s', $tags_list ); ?>
-		</span>
-	<?php endif; ?>
-	<?php $term_list = get_the_term_list( false, 'portfolios', '', '&nbsp;' ); ?>
-	<?php if ( $term_list ) : ?>
-		<span class="entry-portfolios">
-			<?php printf( '&nbsp;&nbsp;%1$s', $term_list ); ?>
-		</span>
-	<?php endif; ?>
-	<?php
-}
-
-function makotokw_the_tag_links( $prefix = ', ' ) {
-	$tags_list = get_the_tag_list( '', $prefix );
-	if ( $tags_list ) {
-		printf( $prefix . ' %1$s', $tags_list );
-	}
-}
-
-function makotokw_section_category_and_tag( $title = 'Tag' ) {
-	?>
-	<section class="section section-mini section-2col section-category-tag">
-		<h2 class="section-title"><?php echo esc_html( $title ); ?></h2>
-		<div class="section-content">
-			<?php makotokw_the_category_and_tag(); ?>
-		</div>
-	</section>
-	<?php
 }
 
 /**

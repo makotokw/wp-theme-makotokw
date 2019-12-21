@@ -100,7 +100,7 @@
   position: relative;
 
   .entry-title {
-    font-weight: 700;
+    font-weight: 800;
     color: $entry-title-text;
     margin: 0;
 
@@ -111,20 +111,14 @@
         text-decoration: $entry-title-text-decoration-over;
       }
     }
-
-    // centering title on single
-    .single &, .page & {
-      text-align: center;
-    }
   }
 
-  .entry-meta {
+  .entry-meta-primary {
+    font-size: 1.6rem;
     color: $site-neutral-color;
-    display: flex;
-    justify-content: space-between;
-    margin: 8px 0 0;
+    margin-bottom: 1.5rem;
     .tag-links {
-      text-transform: capitalize;
+      text-transform: uppercase;
       a {
         color: $site-neutral-color;
         &:hover {
@@ -134,8 +128,43 @@
     }
   }
 
+  .entry-meta-secondary {
+    font-size: 1.4rem;
+    color: $site-neutral-color;
+    a {
+      color: $site-neutral-color;
+      &:hover {
+        color: $site-default-link-over;
+      }
+    }
+  }
+
+  // centering title on single
+  .single &, .page & {
+    .entry-meta-primary,
+    .entry-title,
+    .entry-meta-secondary {
+      text-align: center;
+    }
+    .entry-meta-primary {
+      margin-bottom: 2rem;
+    }
+    .entry-title {
+      font-size: 5rem;
+    }
+    .entry-meta-secondary {
+      .tag-links > * {
+        margin-top: 2rem;
+      }
+    }
+  }
+
   .post-summary & {
     display: flex;
+
+    .entry-title {
+      font-size: 2rem;
+    }
 
     .entry-feature-image {
       max-width: 150px;
@@ -150,8 +179,10 @@
   }
 
   @include smaller-than-tablet-screen {
-    .entry-title {
-      font-size: $heading-size1-small-font-size;
+    .single &, .page & {
+      .entry-title {
+        font-size: 3rem;
+      }
     }
   }
 }

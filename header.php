@@ -63,15 +63,6 @@
 		</a>
 	</div>
 	<nav class="site-header-nav">
-		<div class="site-header-nav-item1">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fas fa-home"></i></a>
-		</div>
-		<div class="site-header-nav-item2">
-			<a href="<?php echo esc_url( home_url( '/category/computer/' ) ); ?>"><?php echo makotokw_awesome_icon_by_slug( 'computer' ); ?>IT</a>
-			<a href="<?php echo esc_url( home_url( '/category/gadget/' ) ); ?>"><?php echo makotokw_awesome_icon_by_slug( 'gadget' ); ?>ガジェット</a>
-			<a href="<?php echo esc_url( home_url( '/category/readingbook/' ) ); ?>"><?php echo makotokw_awesome_icon_by_slug( 'readingbook' ); ?>読書</a>
-			<a href="<?php echo esc_url( home_url( '/category/stationery/' ) ); ?>"><?php echo makotokw_awesome_icon_by_slug( 'stationery' ); ?>文房具</a>
-		</div>
 		<div class="site-header-nav-item3">
 			<form method="get" id="siteHeaderSearchForm" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
 				<input type="text" id="siteHeaderSearchText" class="search-form-text" name="s" value="<?php echo esc_attr( get_search_query() ); ?>" placeholder="<?php _e( 'Search the site', 'makotokw' ); ?>"/>

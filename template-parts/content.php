@@ -7,15 +7,11 @@ $post_type = get_post_type();
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'post-single' ); ?>>
 	<header class="entry-header">
+		<?php makotokw_the_post_primary_meta(); ?>
 		<h1 class="entry-title">
 			<?php the_title(); ?>
 		</h1>
-		<section class="entry-meta">
-			<?php if ( 'post' === $post_type ) : ?>
-				<?php makotokw_the_post_date(); ?>
-				<span class="tag-links"><?php makotokw_the_category_slug( '', ', ' ); ?><?php makotokw_the_tags_slug( ', ', ', ' ); ?><?php makotokw_the_terms_slug( 'portfolios', ', ', ', ' ); ?></span>
-			<?php endif; ?>
-		</section>
+		<?php makotokw_the_post_secondary_meta(); ?>
 	</header>
 	<div class="entry-content">
 		<?php the_content(); ?>
@@ -39,7 +35,6 @@ $post_type = get_post_type();
 		<?php makotokw_share_this(); ?>
 		<?php if ( 'post' === $post_type ) : ?>
 			<?php makotokw_list_nav(); ?>
-			<?php makotokw_section_category_and_tag( __( 'Tag', 'makotokw' ) ); ?>
 			<?php makotokw_related_portfolio( __( 'Related Software', 'makotokw' ) ); ?>
 			<?php makotokw_related_posts( __( 'Related Posts', 'makotokw' ) ); ?>
 			<?php makotokw_content_nav( 'nav-below' ); ?>
