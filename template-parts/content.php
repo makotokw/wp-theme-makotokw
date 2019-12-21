@@ -16,9 +16,9 @@ $post_type = get_post_type();
 				<span class="tag-links"><?php makotokw_the_category_slug( '', ', ' ); ?><?php makotokw_the_tags_slug( ', ', ', ' ); ?><?php makotokw_the_terms_slug( 'portfolios', ', ', ', ' ); ?></span>
 			<?php endif; ?>
 		</section>
+		<?php makotokw_breadcrumbs(); ?>
 	</header>
 	<div class="entry-content">
-		<?php makotokw_breadcrumbs(); ?>
 		<?php the_content(); ?>
 		<?php if ( JETPACK_DEV_DEBUG === true ) : ?>
 			<div id="jp-relatedposts" class="jp-relatedposts" style="display: block;">

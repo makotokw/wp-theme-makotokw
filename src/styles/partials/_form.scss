@@ -1,3 +1,22 @@
+// Placeholder text color -- selectors need to be in separate to work.
+::-webkit-input-placeholder {
+  color: $form-default-placeholder;
+  font-style: normal;
+}
+
+:-moz-placeholder {
+  color: $form-default-placeholder;
+}
+
+::-moz-placeholder {
+  color: $form-default-placeholder;
+}
+
+:-ms-input-placeholder {
+  color: $form-default-placeholder;
+}
+
+
 textarea,
 input[type="text"],
 input[type="password"],
@@ -19,7 +38,6 @@ input[type="color"],
   text-indent: 1px;
   border-radius: $site-border-radius;
   box-shadow: none;
-  @include placeholder($form-default-placeholder);
 
   &:focus {
     border-color: $form-default-border-over;

@@ -1,3 +1,6 @@
+// Base
+// -----------------------------------------------
+
 html {
   font-size: 62.5%; /* 1rem = 10px */
 }
@@ -15,6 +18,17 @@ body {
   text-rendering: optimizeLegibility
 }
 
+main {
+  display: block;
+}
+
+// Link
+// -----------------------------------------------
+
+path {
+  transition: all 0.15s linear;
+}
+
 a {
   color: $site-default-link;
   transition: all 0.25s linear;
@@ -26,6 +40,189 @@ a:active,
 a:hover {
   color: $site-default-link-over;
 }
+
+// Header
+// -----------------------------------------------
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-feature-settings: "lnum";
+  font-variant-numeric: lining-nums;
+  font-weight: 700;
+  letter-spacing: -0.0415625em;
+  line-height: 1.25;
+  margin: 3.5rem 0 2rem;
+}
+
+h1 {
+  font-size: 3.6rem;
+  font-weight: 800;
+  line-height: 1.138888889;
+}
+
+h2 {
+  font-size: 3.2rem;
+}
+
+h3 {
+  font-size: 2.8rem;
+}
+
+h4 {
+  font-size: 2.4rem;
+}
+
+h5 {
+  font-size: 2.1rem;
+}
+
+h6 {
+  font-size: 1.6rem;
+}
+
+// Paragraph
+// -----------------------------------------------
+
+p {
+  line-height: 1.5;
+  margin: 0 0 1em 0;
+}
+
+em,
+i,
+q,
+dfn {
+  font-style: italic;
+}
+
+em, i, cite {
+  em, i {
+    font-weight: bolder;
+  }
+}
+
+big {
+  font-size: 1.2em;
+}
+
+small {
+  font-size: 0.75em;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+del {
+  color: #333;
+}
+
+ins {
+  color: $state-warning-text;
+  background-color: $state-warning-bg;
+  text-decoration: underline;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+abbr,
+acronym {
+  cursor: help;
+}
+
+address {
+  line-height: 1.5;
+  margin: 0 0 2rem 0;
+}
+
+// Lists
+// -----------------------------------------------
+
+ul,
+ol {
+  margin: 0 0 3rem 3rem;
+}
+
+ul {
+  list-style: disc;
+  ul {
+    list-style: circle;
+    ul {
+      list-style: square;
+    }
+  }
+}
+
+
+ol {
+  list-style: decimal;
+  ol {
+    list-style: lower-alpha;
+    ol {
+      list-style: lower-roman;
+    }
+  }
+}
+
+li {
+  line-height: 1.5;
+  margin: 0.5rem 0 0 2rem;
+
+  & > ul {
+    margin: 1rem 0 0 2rem;
+  }
+  & > ol {
+    margin: 1rem 0 0 2rem;
+  }
+}
+
+dt,
+dd {
+  line-height: 1.5;
+}
+
+dt {
+  font-weight: 700;
+}
+
+dt + dd {
+  margin-top: 0.5rem;
+}
+
+dd + dt {
+  margin-top: 1.5rem;
+}
+
+// Selection
+// -----------------------------------------------
+
+::selection {
+  background: $site-primary-color;
+  color: $site-on-primary-text-color;
+  text-shadow: none;
+}
+
+// Blockquote
+// -----------------------------------------------
 
 blockquote {
   margin: $block-margin 0;
@@ -39,6 +236,7 @@ blockquote {
   small {
     @extend .quote-caption;
   }
+
   blockquote {
     margin-right: 0;
   }
@@ -50,28 +248,19 @@ blockquote {
   }
 }
 
-del {
-  color: #333;
-}
-
-ins {
-  color: $state-warning-text;
-  background-color: $state-warning-bg;
-  text-decoration: none;
-}
-
-::selection {
-  background: $site-primary-color;
-  color: $site-on-primary-text-color;
-  text-shadow: none;
-}
+// Horizontal Rule
+// -----------------------------------------------
 
 hr {
-  background-color: $block-default-divider;
-  border: 0;
-  height: 1px;
-  margin-bottom: 1.5em;
+  border-style: solid;
+  border-width: 0.1rem 0 0 0;
+  border-color: $block-default-divider;
+  margin: 4rem 0;
 }
+
+
+// Code
+// -----------------------------------------------
 
 pre {
   @include block-white($block-border-radius);
@@ -92,23 +281,8 @@ samp {
   hyphens: none;
 }
 
-// Placeholder text color -- selectors need to be in separate to work.
-::-webkit-input-placeholder {
-  color: $form-default-placeholder;
-  font-style: normal;
-}
-:-moz-placeholder {
-  color: $form-default-placeholder;
-}
-::-moz-placeholder {
-  color: $form-default-placeholder;
-}
-:-ms-input-placeholder {
-  color: $form-default-placeholder;
-}
-
-
-// Mobile and Tablet
+// Responsive: Mobile and Tablet
+// -----------------------------------------------
 @include smaller-than-desktop-screen {
   h1 {
     margin: 16px 0;
