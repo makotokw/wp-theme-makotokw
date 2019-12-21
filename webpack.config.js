@@ -1,5 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -40,10 +41,14 @@ module.exports = {
         ],
       },
       {
-        test: /\.woff2$/,
+        // for Font Awesome
+        test: /\.(ttf|eot|woff|woff2|svg)$/,
         use: [
           {
             loader: 'file-loader',
+            options: {
+              outputPath: 'fonts',
+            },
           },
         ],
       },
@@ -55,6 +60,12 @@ module.exports = {
     new MiniCssExtractPlugin({
       moduleFilename: (chunk) => (chunk.name === 'amazonjs' ? '../[name].css' : '[name].css'),
       ignoreOrder: false,
+    }),
+    // https://github.com/johnagan/clean-webpack-plugin
+    new CleanWebpackPlugin({
+      verbose: true,
+      cleanStaleWebpackAssets: false,
+      cleanOnceBeforeBuildPatterns: ['**/*', '!images/**'],
     }),
   ],
 };

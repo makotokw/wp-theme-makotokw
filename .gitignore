@@ -6,6 +6,7 @@
 ### app Build ###
 /assets/*.js
 /assets/*.css
+/assets/fonts/*
 /amazonjs.css
 *.js.map
 *.css.map
