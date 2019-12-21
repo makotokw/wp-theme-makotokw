@@ -3,26 +3,29 @@
 
  //.site-header
  //.site-main
- //     .site-content
- //     .site-sidebar
- //#footerMargin
+ //  ├── .site-content
+ //  └── .site-sidebar
  //.site-footer
+
+.section-inner {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 120rem;
+  width: calc(100% - 8rem);
+}
 
 .site-main {
   display: flex;
   flex-direction: row;
   max-width: $site-max-container;
-  // for sticky header
-  margin: $site-header-height auto 0 auto;
-  // margin for children
-  padding: $site-grid-margin;
+  margin: $site-header-height auto 0 auto; // for sticky header
+  padding: $site-grid-margin;  // margin for children
 }
 
 .site-content {
   position: relative;
   margin: 0 auto;
-  // margin for sidebar
-  padding: 0 $site-grid-margin 0 0;
+  padding: 0 $site-grid-margin 0 0; // margin for sidebar
   overflow: hidden;
 }
 
@@ -44,8 +47,7 @@
 }
 @include smaller-than-tablet-screen {
   .site-main {
-    // for sticky small header
-    margin: $site-header-height-small auto 0;
+    margin: $site-header-height-small auto 0; // for sticky small header
     padding: $site-grid-margin-small;
   }
 }

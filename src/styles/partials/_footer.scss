@@ -1,6 +1,7 @@
 .site-footer {
   background: $footer-default-bg;
-  padding: $site-grid-margin;
+  padding: 4.3rem;
+  font-size: 1.8rem;
   color: $footer-default-text;
   a {
     color: $footer-default-link;
@@ -10,32 +11,36 @@
   }
 
   @include smaller-than-tablet-screen {
-    padding: $site-grid-margin-small;
-  }
-}
-
-.site-footer-content {
-  max-width: $site-max-container;
-  margin: 0 auto;
-  text-align: center;
-
-  .site-footer-nav {
-    font-size: 18px;
-    font-weight: bold;
   }
 
-  .site-footer-help-nav {
-    ul {
-      margin: 0;
-      padding: 0;
-      li {
-        display: inline;
-        margin: 0 4px;
-        font-weight: bold;
+  .footer-navs {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    .site-footer-help-nav {
+      ul {
+        margin: 0;
+        padding: 0;
+        li {
+          display: inline;
+          margin: 0 4px;
+          font-weight: bold;
+        }
       }
     }
   }
-  .credit {
+
+  .footer-credits {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    .copyright {
+      font-weight: 700;
+    }
+    .poweredby {
+      font-weight: 300;
+    }
     .fa-heart {
       margin: 0 2px;
       font-size: .5em;
@@ -43,11 +48,6 @@
     }
     .fa-github-alt {
       margin: 0 2px;
-    }
-  }
-  @include smaller-than-mobile-screen {
-    .poweredby {
-      display: block;
     }
   }
 }

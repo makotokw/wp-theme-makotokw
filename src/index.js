@@ -64,8 +64,6 @@ function lazyLoadShareCount() {
   }
 }
 
-const $footerMargin = $('#footerMargin');
-
 $(document).ready(() => {
   if (typeof prettyPrint === 'function') {
     prettyPrint();
@@ -102,22 +100,6 @@ $(document).ready(() => {
     lastDocumentHeight = $(document.body).height();
   }
 
-  function stickyFooter() {
-    const windowHeight = $(window).height();
-    const docHeight = lastDocumentHeight - $footerMargin.height();
-    let diff = windowHeight - docHeight;
-    if (isAdmin) {
-      diff -= 32;
-    }
-    if (diff <= 0) {
-      $footerMargin.hide();
-      $footerMargin.height(1);
-    } else {
-      $footerMargin.show();
-      $footerMargin.height(diff);
-    }
-  }
-
   function requestUpdate() {
     if (!updating) {
       updating = true;
@@ -128,13 +110,11 @@ $(document).ready(() => {
   }
 
   function onScroll() {
-    stickyFooter();
     requestUpdate();
   }
 
   function onResize() {
     cacheLastWindowSize();
-    stickyFooter();
     requestUpdate();
   }
 
@@ -142,7 +122,6 @@ $(document).ready(() => {
   initHeader();
 
   $(window)
-    .on('sticky', stickyFooter)
     .scroll(onScroll)
     .resize(onResize);
 
@@ -156,7 +135,6 @@ $(document).ready(() => {
   if (enabledShareCounter) {
     lazyLoadShareCount();
   }
-  stickyFooter();
 
   const $jetPackRelatedPosts = $('#jp-relatedposts'); const
     $shareThis = $('#shareThis');
@@ -164,6 +142,7 @@ $(document).ready(() => {
     $jetPackRelatedPosts.insertBefore($shareThis);
   }
 
+  // TODO: FontAwesome js
   if (window.FontAwesome) {
     $('.enclosure-github').each(function () {
       $(this).prepend(

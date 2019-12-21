@@ -10,25 +10,24 @@
 	</main><!-- .site-content -->
 	<?php get_sidebar(); ?>
 </div><!-- .site-main -->
-<div id="footerMargin">
-</div>
 <footer class="site-footer" role="contentinfo">
-	<div class="site-footer-content">
-		<div class="site-footer-nav">
+	<div class="section-inner">
+
+		<div class="footer-navs">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fas fa-home"></i> <?php _e( 'Home', 'makotokw' ); ?></a>
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location'  => 'footer',
+					'container_class' => 'site-footer-help-nav',
+					'link_before'     => '',
+					'link_after'      => '',
+					'fallback_cb'     => false,
+				)
+			);
+			?>
 		</div>
-		<?php
-		wp_nav_menu(
-			array(
-				'theme_location'  => 'footer',
-				'container_class' => 'site-footer-help-nav',
-				'link_before'     => '',
-				'link_after'      => '',
-				'fallback_cb'     => false,
-			)
-		);
-		?>
-		<div class="credit">
+		<div class="footer-credits">
 			<span class="copyright"><?php do_action( 'makotokw_credits' ); ?></span>
 			<?php
 				$wp_theme   = wp_get_theme();
