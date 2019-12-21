@@ -32,11 +32,11 @@ if ( class_exists( 'Makotokw\PostUtility' ) ) {
 		</div>
 	</header>
 
-	<div class="entry-summary">
+	<div class="entry-content">
 		<p><?php echo makotokw_post_summary( $post->post_content, 180 ); ?></p>
-		<a class="btn btn-text btn-more-link" href="<?php the_permalink(); ?>"><?php _e( 'Continue reading', 'makotokw' ); ?></a>
 	</div>
 	<footer class="entry-footer">
+		<a class="btn btn-text btn-more-link" href="<?php the_permalink(); ?>"><?php _e( 'Continue reading', 'makotokw' ); ?></a>
 		<div class="entry-meta">
 			<?php makotokw_author(); ?>
 		</div>

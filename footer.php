@@ -37,7 +37,7 @@
 					'<a href="https://wordpress.org/" title="' . esc_attr( __( 'Semantic Personal Publishing Platform', 'makotokw' ) ) . '">WordPress</a>'
 				);
 				?>
-			<span class="poweredby">
+			<span class="powered-by">
 				<?php echo $powered_by; ?><i class="fas fa-heart"></i><a href="https://github.com/makotokw/wp-theme-makotokw/tree/<?php echo $theme_name; ?>">makotokw theme.<i class="fab fa-github-alt"></i></a>
 			</span>
 		</div>

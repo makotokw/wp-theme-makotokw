@@ -16,6 +16,15 @@
   word-wrap: break-word;
   overflow-wrap : break-word;
   hyphens: auto;
+
+  p {
+    line-height: 1.95;
+  }
+  blockquote {
+    p {
+      line-height: 1.5;
+    }
+  }
 }
 
 @mixin block-white ($borderRadious) {

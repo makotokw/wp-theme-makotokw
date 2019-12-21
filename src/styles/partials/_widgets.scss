@@ -4,7 +4,7 @@
     background: $site-component-content-bg;
     color: $site-component-content-text;
     margin-top: $site-grid-margin * 2;
-    font-size: 0.98em;
+    font-weight: 300;
   }
   & >.widget:first-child {
     margin-top: 0;
@@ -13,6 +13,7 @@
     background: $site-primary-light-color;
     margin: 0;
     padding: $site-grid-margin * 0.7 $site-grid-margin;
+    font-size: 2rem;
     text-align: center;
   }
 }
@@ -40,7 +41,7 @@
       max-width: 75px;
     }
     .static-post-text {
-      font-weight: bold;
+      // title
     }
 
     >a {

@@ -1,16 +1,12 @@
 .site-footer {
   background: $footer-default-bg;
   padding: 4.3rem;
-  font-size: 1.8rem;
   color: $footer-default-text;
   a {
     color: $footer-default-link;
     &:hover {
       color: $footer-default-link-over;
     }
-  }
-
-  @include smaller-than-tablet-screen {
   }
 
   .footer-navs {
@@ -38,7 +34,7 @@
     .copyright {
       font-weight: 700;
     }
-    .poweredby {
+    .powered-by {
       font-weight: 300;
     }
     .fa-heart {
@@ -50,6 +46,14 @@
       margin: 0 2px;
     }
   }
+
+  @include smaller-than-tablet-screen {
+    padding: 3rem 0;
+    .footer-credits {
+      display: block;
+    }
+  }
+
 }
 
 #wpstats {

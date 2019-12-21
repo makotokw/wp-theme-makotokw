@@ -1,6 +1,6 @@
 // Layout Size ----------------------------
-$site-grid-margin: 20px;
-$site-grid-margin-small: 10px;
+$site-grid-margin: 30px;
+$site-grid-margin-small: 15px;
 
 $site-max-container: 1200 - 2*$site-grid-margin;
 $site-max-content: 840px;
@@ -39,18 +39,19 @@ $font-family-sans-serif: 'Nunito Sans', $font-family-gothic, sans-serif;
 $font-family-monospace: Monaco, Menlo, Consolas, 'Courier New', monospace;
 
 $font-size-base: 1.8rem;
-$letter-spacing: -0.015em;
 
 $heading-size1-font-size: 3rem;
 $heading-size2-font-size: 2.6rem;
 $heading-size3-font-size: 2.3rem;
 $heading-size4-font-size: 2.1rem;
 $heading-size5-font-size: 1.9rem;
+$heading-size6-font-size: 1.8rem;
 $heading-size1-small-font-size: 2.2rem;
 $heading-size2-small-font-size: 2rem;
 $heading-size3-small-font-size: 2rem;
 $heading-size4-small-font-size: 1.9rem;
 $heading-size5-small-font-size: 1.9rem;
+$heading-size6-small-font-size: 1.8rem;
 
 $block-shadow: 4px 6px 10px -6px rgba(0, 0, 0, .1);
 

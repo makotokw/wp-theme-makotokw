@@ -16,7 +16,6 @@ $post_type = get_post_type();
 				<span class="tag-links"><?php makotokw_the_category_slug( '', ', ' ); ?><?php makotokw_the_tags_slug( ', ', ', ' ); ?><?php makotokw_the_terms_slug( 'portfolios', ', ', ', ' ); ?></span>
 			<?php endif; ?>
 		</section>
-		<?php makotokw_breadcrumbs(); ?>
 	</header>
 	<div class="entry-content">
 		<?php the_content(); ?>

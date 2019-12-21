@@ -5,8 +5,7 @@
  * @package makotokw
  */
 
-define( 'THEME_STYLE_CSS_REV', '201805261453' );
-define( 'THEME_STYLE_SCRIPT_REV', '201805261503' );
+define( 'THEME_ASSET_REV', '201805261453' );
 define( 'THEME_DATE_FORMAT', 'Y-m-d' );
 
 if ( ! isset( $content_width ) ) {
@@ -178,9 +177,13 @@ function makotokw_scripts() {
 		wp_enqueue_style( 'makotokw-fonts' . $fi, esc_url_raw( $fonts_urls[ $fi ] ), array(), null );
 	}
 
-	wp_enqueue_style( 'makotokw-style', get_template_directory_uri() . '/assets/style.css', array(), THEME_STYLE_CSS_REV );
+	$assets_version = THEME_ASSET_REV;
+	if ( true === WP_THEME_DEBUG ) {
+		$assets_version = gmdate( 'Ymdhi' );
+	}
+	wp_enqueue_style( 'makotokw-style', get_template_directory_uri() . '/assets/style.css', array(), $assets_version );
 
-	wp_register_script( 'makotokw-script', get_template_directory_uri() . '/assets/style.js', array( 'jquery' ), THEME_STYLE_SCRIPT_REV, true );
+	wp_register_script( 'makotokw-script', get_template_directory_uri() . '/assets/style.js', array( 'jquery' ), $assets_version, true );
 	wp_localize_script( 'makotokw-script', 'makotokw', array( 'counter_api' => WP_THEME_COUNT_API ) );
 	wp_enqueue_script( 'makotokw-script' );
 

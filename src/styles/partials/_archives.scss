@@ -1,6 +1,11 @@
-.site-content-header {
-  text-align: center;
-  .archives-title {
-    margin: $site-grid-margin 0;
+.archive {
+  .site-content-header {
+    text-align: center;
+    .archives-title {
+      margin: $site-grid-margin 0;
+    }
+  }
+  .pagination {
+    padding-left: $site-grid-margin;
   }
 }
