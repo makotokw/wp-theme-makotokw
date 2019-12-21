@@ -41,6 +41,9 @@
 				<?php echo $powered_by; ?><i class="fas fa-heart"></i><a href="https://github.com/makotokw/wp-theme-makotokw/tree/<?php echo $theme_name; ?>">makotokw theme.<i class="fab fa-github-alt"></i></a>
 			</span>
 		</div>
+		<a id="toTheTop" class="to-the-top" href="#siteHeader">
+			<i class="fas fa-chevron-up"></i>
+		</a>
 	</div>
 </footer>
 <?php wp_footer(); ?>

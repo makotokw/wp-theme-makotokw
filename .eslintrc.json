@@ -18,6 +18,9 @@
     "prettyPrint": true,
     "FontAwesome": true
   },
+  "settings": {
+    "import/resolver": "webpack"
+  },
   "rules": {
     "func-names": ["error", "never"]
   }

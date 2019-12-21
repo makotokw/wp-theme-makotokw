@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
-    style: ['./src/styles/style.scss', './src/index.js'],
+    style: ['./src/styles/style.scss', './src/scripts/index.js'],
     amazonjs: ['./src/styles/amazonjs.scss'],
   },
   output: {
@@ -88,4 +88,7 @@ module.exports = {
       cleanOnceBeforeBuildPatterns: ['**/*', '!images/**'],
     }),
   ],
+  externals: {
+    jquery: 'jQuery',
+  },
 };

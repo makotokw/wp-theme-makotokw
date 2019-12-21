@@ -47,13 +47,34 @@
     }
   }
 
+  .to-the-top {
+    @include circle(40px);
+    position: fixed;
+    right: $site-grid-margin/2;
+    bottom: $site-grid-margin/2;
+    background-color: $site-primary-color;
+
+    i {
+      color: $site-on-primary-text-color;
+    }
+    &.headroom--top {
+      transform: translateY(200%);
+    }
+    &.headroom--pinned.headroom--not-top {
+      transform: translateY(0%);
+    }
+    &.headroom--unpinned.headroom--not-bottom {
+      transform: translateY(200%);
+    }
+  }
+
+
   @include smaller-than-tablet-screen {
     padding: 3rem 0;
     .footer-credits {
       display: block;
     }
   }
-
 }
 
 #wpstats {

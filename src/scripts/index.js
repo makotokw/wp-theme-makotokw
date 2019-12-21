@@ -1,68 +1,11 @@
+import $ from 'jquery';
 import 'google-code-prettify/src/prettify';
+import SmoothScroll from 'smooth-scroll';
 import 'headroom.js/dist/headroom';
 import 'headroom.js/dist/jQuery.headroom';
-
-const $ = jQuery;
+import lazyLoadShareCount from './lazy-load-share-count';
 
 let isAdmin = false;
-let enabledShareCounter = false;
-
-function updateShareCount() {
-  const $shareThis = $('#shareThis');
-  const permalink = $shareThis.data('url');
-  const encodedPermalink = encodeURIComponent(permalink);
-
-  function toInt(num) {
-    const i = parseInt(num, 10);
-    return (Number.isNaN(i)) ? 0 : i;
-  }
-
-  function createCountElement(shareCount) {
-    const count = toInt(shareCount);
-    const $c = $('<span/>').addClass('share-count').text(count);
-    if (count > 0) {
-      $c.addClass('share-count-has');
-    }
-    return $c;
-  }
-
-  if (enabledShareCounter) {
-    // http://developer.hatena.ne.jp/ja/documents/bookmark/apis/getcount
-    $.ajax({ url: `https://b.hatena.ne.jp/entry.count?url=${encodedPermalink}`, dataType: 'jsonp' })
-      .done((data) => {
-        $shareThis.find('.share-hatena .btn').append(createCountElement(data));
-      });
-    $.ajax({ url: `https://graph.facebook.com/?id=${encodedPermalink}`, dataType: 'jsonp' })
-      .done((data) => {
-        if (data) {
-          $shareThis.find('.share-facebook .btn').append(createCountElement(data.shares));
-        }
-      });
-
-    if (makotokw && makotokw.counter_api && makotokw.counter_api.length > 0) {
-      $.ajax({ url: `${makotokw.counter_api}?url=${encodedPermalink}`, dataType: 'jsonp' })
-        .done((data) => {
-          if (!data) {
-            return;
-          }
-          $shareThis.find('.share-pocket .btn').append(createCountElement(data.pocket));
-          $shareThis.find('.share-googleplus .btn').append(createCountElement(data.google));
-        });
-    }
-  }
-}
-
-function lazyLoadShareCount() {
-  const $shareThis = $('#shareThis');
-  if ($shareThis.length > 0) {
-    $(window).bind('scroll.shareThis load.shareThis', function () {
-      if ($(this).scrollTop() + $(this).height() > $shareThis.offset().top) {
-        updateShareCount();
-        $(this).unbind('scroll.shareThis load.shareThis');
-      }
-    });
-  }
-}
 
 $(document).ready(() => {
   if (typeof prettyPrint === 'function') {
@@ -73,6 +16,11 @@ $(document).ready(() => {
   let lastWindowHeight = 0;
   let lastDocumentHeight = 0;
   let updating = false;
+
+  // eslint-disable-next-line no-new
+  new SmoothScroll('a[href*="#"]', {
+    speedAsDuration: true,
+  });
 
   function initHeader() {
     const $searchForm = $('#siteHeaderSearchForm');
@@ -130,14 +78,14 @@ $(document).ready(() => {
   $header.headroom({
     offset: $header.height(),
   });
+  $('#toTheTop').headroom();
 
-  enabledShareCounter = isAdmin;
-  if (enabledShareCounter) {
-    lazyLoadShareCount();
+  if (isAdmin) {
+    lazyLoadShareCount(true);
   }
 
-  const $jetPackRelatedPosts = $('#jp-relatedposts'); const
-    $shareThis = $('#shareThis');
+  const $jetPackRelatedPosts = $('#jp-relatedposts');
+  const $shareThis = $('#shareThis');
   if ($shareThis.length > 0) {
     $jetPackRelatedPosts.insertBefore($shareThis);
   }

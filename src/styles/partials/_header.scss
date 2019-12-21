@@ -3,24 +3,19 @@ $site-logo-image-height: 40px;
 $site-logo-height: 28px;
 $site-logo-height-small: 20px;
 
-.headroom--pinned {
-  transform: translateY(0%);
-}
-
-.headroom--unpinned {
-  transform: translateY(-96%);
-}
-
-.headroom--not-top {
-  &.site-header {
+.site-header {
+  &.headroom--pinned {
+    transform: translateY(0%);
+  }
+  &.headroom--unpinned {
+    transform: translateY(-96%);
+  }
+  &.headroom--not-top {
     background: rgba($header-default-bg, 0.95);
+    .site-header-banner {
+      display: none;
+    }
   }
-  .site-header-banner {
-    display: none;
-  }
-}
-
-.headroom--not-bottom {
 }
 
 .site-header-banner {
