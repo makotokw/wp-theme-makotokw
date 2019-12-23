@@ -5,11 +5,16 @@
   line-height: $size;
   text-align: center;
   border-radius: 999em;
+
+  font-size: $size * 0.5;
+  svg {
+    width: $size * 0.5;
+    height: $size * 0.5;
+  }
 }
 
 @mixin sentence-block() {
   display: block;
-  background: $site-component-content-bg;
   padding: $site-grid-margin;
   line-height: 1.5;
   word-break:break-all;
@@ -27,9 +32,9 @@
   }
 }
 
-@mixin block-white ($borderRadious) {
-  border: $site-border-width solid $block-default-border;
-  border-radius: $borderRadious;
+@mixin block-white ($borderRadius) {
+  border: $site-border-width solid $site-default-border;
+  border-radius: $borderRadius;
   padding: $block-padding;
   background-color: $site-surface-color;
   box-shadow: none;

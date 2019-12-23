@@ -1,7 +1,10 @@
+// eslint-disable-next-line
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const WebpackNotifierPlugin = require('webpack-notifier');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+// noinspection JSUnusedGlobalSymbols
 module.exports = {
   entry: {
     style: ['./src/styles/style.scss', './src/scripts/index.js'],
@@ -80,6 +83,10 @@ module.exports = {
     new MiniCssExtractPlugin({
       moduleFilename: (chunk) => (chunk.name === 'amazonjs' ? '../[name].css' : '[name].css'),
       ignoreOrder: false,
+    }),
+    // https://github.com/Turbo87/webpack-notifier
+    new WebpackNotifierPlugin({
+      skipFirstNotification: true,
     }),
     // https://github.com/johnagan/clean-webpack-plugin
     new CleanWebpackPlugin({

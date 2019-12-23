@@ -6,6 +6,7 @@ $site-logo-height-small: 20px;
 .site-header {
   &.headroom--pinned {
     transform: translateY(0%);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.10);
   }
   &.headroom--unpinned {
     transform: translateY(-96%);
@@ -18,31 +19,11 @@ $site-logo-height-small: 20px;
   }
 }
 
-.site-header-banner {
-  height: $site-header-banner-height;
-  max-height: $site-header-banner-height;
-  line-height: $site-header-banner-height;
-  @include smaller-than-tablet-screen {
-    height: $site-header-banner-height-small;
-    max-height: $site-header-banner-height-small;
-    line-height: $site-header-banner-height-small;
-  }
-}
-.site-header-nav {
-  height: $site-header-nav-height;
-  max-height: $site-header-nav-height;
-  padding: 0 $site-grid-margin*2;
-  @include smaller-than-tablet-screen {
-    height: $site-header-nav-height-small;
-    max-height: $site-header-nav-height-small;
-    padding: 0 $site-grid-margin-small;
-  }
-  //@include smaller-than-tablet-screen {
-  //  padding: 0 $site-grid-margin-small/2;
-  //}
-}
-
 .site-header {
+  border-width: $site-header-border-top 0 0;
+  border-top-style: solid;
+  border-image: linear-gradient(139deg, $site-primary-color, darken($site-primary-color, 20%), $md-pink-700, $md-pink-400) 3;
+
   background: $header-default-bg;
   color: $header-default-text;
   position: fixed;
@@ -59,93 +40,75 @@ $site-logo-height-small: 20px;
       color: $header-default-link-over;
     }
   }
+
+  .site-header-inner {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    max-width: 168rem;
+    width: calc(100% - 6rem);
+    padding: $site-header-margin 0;
+    height: $site-header-banner-height;
+    max-height: $site-header-banner-height;
+    @include smaller-than-tablet-screen {
+      width: calc(100% - 4rem);
+      padding: $site-header-margin-small 0;
+      height: $site-header-banner-height-small;
+      max-height: $site-header-banner-height-small;
+    }
+  }
 }
 
-.site-header-banner {
-  text-align: center;
+
+
+.site-header-titles {
+  line-height: 1;
+}
+.site-header-nav {
 }
 
-.site-header-logo {
+.site-header-titles {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  overflow: hidden;
+
   .site-header-logo-svg {
     fill: $header-banner-link;
-    margin-top: ($site-header-banner-height - $site-logo-height) / 2;
     width: $site-logo-image-width * ($site-logo-height / $site-logo-image-height);
     height: $site-logo-height;
-    @include smaller-than-tablet-screen {
-      margin-top: ($site-header-banner-height-small - $site-logo-height-small) / 2;
-      width: $site-logo-image-width * ($site-logo-height-small / $site-logo-image-height);
-      height: $site-logo-height-small;
-    }
   }
   &:hover {
     .site-header-logo-svg {
       fill: $header-banner-link-over;
     }
   }
-}
 
-// text-logo
-.has-no-svg {
-  .site-header-logo-text {
-    font-weight: bold;
-    display: block !important;
+  .site-header-description {
+    color: $site-neutral-text;
+    margin: 0 0 0 2.5rem;
+    font-size: 1.6rem;
   }
-  .site-header-logo-svg {
-    display: none !important;
+
+  @include smaller-than-tablet-screen {
+    display: block;
+    .site-header-logo-svg {
+      //margin-top: ($site-header-banner-height-small - $site-logo-height-small) / 2;
+      width: $site-logo-image-width * ($site-logo-height-small / $site-logo-image-height);
+      height: $site-logo-height-small;
+    }
+    .site-header-description {
+      margin: .5rem 0 0 0;
+      font-size: 1.4rem;
+    }
   }
 }
 
 .site-header-nav {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  .site-header-nav-item1 {
-    flex: 0 1 auto;
-    text-align: left;
-  }
-  .site-header-nav-item2 {
-    flex: 1 0 auto;
-    text-align: center;
-    font-weight: 700;
-    a {
-      margin: 0 $site-grid-margin;
-    }
-    @include smaller-than-tablet-screen {
-      a {
-        margin: 0 $site-grid-margin-small/2;
-      }
-    }
-  }
-  .site-header-nav-item3 {
-    flex: 0 1 auto;
-    @include smaller-than-tablet-screen {
-      display: none;
-    }
-  }
-
-  .search-form {
-    .search-form-text {
-      border: none;
-      display: none;
-      @include smaller-than-tablet-screen {
-        width: 160px;
-      }
-    }
-    &.is-active {
-      .search-form-text {
-        display: inline-block;
-        padding: 3px 6px;
-        margin-right: 10px;
-      }
-      .search-form-trigger {
-        .fa-search {
-          display: none;
-        }
-        .fa-times {
-          display: inline-block !important;
-        }
-      }
-    }
+  .toggle {
+    align-items: center;
+    display: flex;
   }
 }
 

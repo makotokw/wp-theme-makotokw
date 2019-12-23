@@ -1,19 +1,19 @@
 // Placeholder text color -- selectors need to be in separate to work.
 ::-webkit-input-placeholder {
-  color: $form-default-placeholder;
+  color: $site-placeholder-text;
   font-style: normal;
 }
 
 :-moz-placeholder {
-  color: $form-default-placeholder;
+  color: $site-placeholder-text;
 }
 
 ::-moz-placeholder {
-  color: $form-default-placeholder;
+  color: $site-placeholder-text;
 }
 
 :-ms-input-placeholder {
-  color: $form-default-placeholder;
+  color: $site-placeholder-text;
 }
 
 
@@ -34,13 +34,13 @@ input[type="tel"],
 input[type="color"],
 .uneditable-input {
   padding: 7px 0 7px 6px;
-  border: $site-border-width solid $form-default-border;
+  border: $site-border-width solid $site-default-border;
   text-indent: 1px;
   border-radius: $site-border-radius;
   box-shadow: none;
 
   &:focus {
-    border-color: $form-default-border-over;
+    border-color: $site-default-border-over;
     outline: 0;
     outline: thin dotted \9; /* IE6-9 */
     box-shadow: none;

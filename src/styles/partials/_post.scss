@@ -3,7 +3,6 @@
 // -----------------------------------------------
 
 .post-summary {
-  border-radius: $site-component-header-bg-radius;
   .entry-header {
     padding: $site-grid-margin*2 $site-grid-margin*2 0;
   }
@@ -23,30 +22,31 @@
   }
 }
 
-// margin top
-.post-summary {
-  margin-top: $site-grid-margin * 2;
-  box-shadow: 2px 5px 10px -6px rgba(0,0,0,.1);
+.post-summaries {
+  .post-summary {
+    padding-bottom: $site-grid-margin;
+    margin-bottom: $site-grid-margin;
+    border-bottom: $site-border-width solid $site-default-border;
 
-  @include smaller-than-tablet-screen {
-    margin-top: $site-grid-margin-small * 2;
-  }
+    @include smaller-than-tablet-screen {
+      margin-top: $site-grid-margin-small * 2;
+    }
 
-  .post-summaries >&:first-child {
-    margin-top: 0;
-  }
-  .post-summaries &:last-child {
+    .post-summaries > &:first-child {
+      margin-top: 0;
+    }
+
+    .post-summaries &:last-child {
+    }
   }
 }
 
 // on Single
 // -----------------------------------------------
 
-.post-single {
-  border-radius: $site-component-header-bg-radius $site-component-header-bg-radius 0 0;
-
+.post-detailed {
   .entry-header {
-    padding: $site-grid-margin*1.5 $site-grid-margin*3 0;
+    padding: 8rem 4rem 0;
   }
   .entry-content {
     padding: $site-grid-margin $site-grid-margin*3 0;
@@ -115,12 +115,12 @@
 
   .entry-meta-primary {
     font-size: 1.6rem;
-    color: $site-neutral-color;
+    color: $site-neutral-text;
     margin-bottom: 1.5rem;
     .tag-links {
       text-transform: uppercase;
       a {
-        color: $site-neutral-color;
+        color: $site-neutral-text;
         &:hover {
           color: $site-default-link-over;
         }
@@ -130,11 +130,15 @@
 
   .entry-meta-secondary {
     font-size: 1.4rem;
-    color: $site-neutral-color;
-    a {
-      color: $site-neutral-color;
-      &:hover {
-        color: $site-default-link-over;
+    color: $site-neutral-text;
+    .tag-links {
+      text-transform: capitalize;
+      a {
+        color: $site-neutral-text;
+
+        &:hover {
+          color: $site-default-link-over;
+        }
       }
     }
   }
@@ -147,14 +151,14 @@
       text-align: center;
     }
     .entry-meta-primary {
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
     }
     .entry-title {
       font-size: 5rem;
     }
     .entry-meta-secondary {
       .tag-links > * {
-        margin-top: 2rem;
+        margin-top: 3rem;
       }
     }
   }
@@ -174,6 +178,7 @@
 
       img {
         width: 100%;
+        height: auto;
       }
     }
   }
@@ -206,6 +211,11 @@
     }
   }
 
+  h2 {
+    padding-bottom: .75rem;
+    border-bottom: $site-border-width solid $site-default-border;
+  }
+
   cite,
   figcaption,
   .wp-caption-text {
@@ -213,11 +223,10 @@
   }
   img {
     display: block;
-    margin: $block-margin auto;
-    box-shadow: $block-shadow;
+    margin: 4rem auto;
   }
   figure {
-    margin: $block-margin auto;
+    margin: 4rem auto;
     img {
       margin: 0 auto;
     }
@@ -228,37 +237,15 @@
     }
   }
 
-  h2 {
-    margin-left: -$site-grid-margin;
-    padding: .7em 1em;
-    border-left: .5em solid $entry-header-border-color;
-    @include smaller-than-desktop-screen {
-      margin-left: -$site-grid-margin-small;
-    }
-  }
-  h3 {
-    border-bottom: .2em solid $entry-header-border-color;
-    padding: .4em .2em;
-  }
-  h4 {
-    border-bottom: .1em solid $entry-header-border-color;
-    padding: .4em .2em;
-  }
   @include smaller-than-tablet-screen {
-    h2 {
-      font-size: $heading-size2-small-font-size;
-      padding: .7em .7em;
+    img {
+      margin: 3rem auto;
     }
-    h3 {
-      font-size: $heading-size3-small-font-size;
-      padding: .4em 0;
-    }
-    h4 {
-      font-size: $heading-size4-small-font-size;
-      padding: .4em 0;
-    }
-    h5 {
-      font-size: $heading-size5-small-font-size;
+    figure {
+      margin: 3rem auto;
+      img {
+        margin: 0 auto;
+      }
     }
   }
 
@@ -287,14 +274,15 @@
 }
 
 .btn-more-link {
+  @extend .btn-text;
   float: right;
+  margin-top: 1rem;
 }
 
 // Sticky (Featured) Content
 // -----------------------------------------------
 
 .sticky {
-  border: $site-default-border solid $site-border-width;
 }
 
 // Media
@@ -332,6 +320,7 @@
 .comment-content,
 .widget {
   img {
+    height: auto;
     max-width: 100%;
   }
 }
@@ -349,111 +338,94 @@ object {
   max-width: 100%;
 }
 
-.section {
-  .section-title {
-    font-size: 2rem;
-    text-transform: uppercase;
-  }
-}
+// Footer Section
+// -----------------------------------------------
 
-.section-default {
-  .section-title {
-    color: $site-neutral-color;
-    border-bottom: $site-border-width solid $block-default-divider;
-    padding-bottom: 3px;
-    &:before {
-      //noinspection CssNoGenericFontName
-      font-family: FontAwesome;
-      color: $site-neutral-color;
-      margin-right: 5px;
-    }
-  }
-}
-
-%content-section-mini-title {
-  color: $md-grey-500;
+%post-section-title {
+  display: block;
+  color: $site-default-text;
+  font-size: $heading-size2-font-size;
   font-weight: 700;
   text-transform: uppercase;
-  margin: 8px 0 4px 0;
-}
-
-.section-mini {
-  border-top: 1px solid $block-default-divider;
-  @include clearfix;
-
-  .section-title,
-  .comment-reply-title {
-    @extend %content-section-mini-title;
+  margin: 0 0 2rem 0;
+  @include smaller-than-tablet-screen {
+    font-size: $heading-size2-small-font-size;
   }
 }
 
-.section-2col {
+.entry-footer, .comments {
+  .section-inner {
+    margin: 0 auto 4rem auto;
+    hr {
+      margin: 0 0 4rem 0;
+    }
+
+    @include smaller-than-tablet-screen {
+      margin: 0 auto 2.8rem auto;
+      hr {
+        margin: 0 0 2.8rem 0;
+      }
+    }
+  }
   .section-title {
-    float: left;
-    width: 15.625%;
-  }
-  .section-content {
-    float: right;
-    width: 82.125%;
-    margin: 5px 0;
-  }
-  @include smaller-than-desktop-screen {
-    .section-title {
-      float: none;
-      width: auto;
-    }
-    .section-content {
-      float: none;
-      width: auto;
-      margin-left: $site-grid-margin-small;
-    }
-  }
-}
-
-// Share This
-// -----------------------------------------------
-.section-share-this {
-  // space for counter
-  padding-top: 1.5 * $site-grid-margin;
-  padding-bottom: $site-grid-margin;
-}
-
-// Mylist
-// -----------------------------------------------
-.section-mylist {
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0 0 0 $site-grid-margin;
-    li {
-      list-style: none;
-    }
-
-    .fa {
-      color: $site-neutral-color;
-      margin-right: $site-grid-margin;
-    }
+    @extend %post-section-title;
   }
 }
 
 // Related Posts
 // -----------------------------------------------
-.section-related-posts {
-  &.section-2col {
-    @include smaller-than-desktop-screen {
-      .section-content {
-        margin-left: 5px;
-      }
-    }
-  }
+.related-posts {
   ul {
     list-style: none;
     margin: 0;
     padding: 0;
     li {
       list-style: none;
-      .fa-angle-right {
-        color: $site-neutral-color;
+      margin: 1rem 0 0 0;
+      a {
+        display: flex;
+        align-items: flex-start;
+        color: $site-default-text;
+        &:focus,
+        &:hover {
+          color: $site-default-text;
+          text-decoration: none;
+          .title {
+            text-decoration: underline;
+          }
+        }
+        i {
+          color: $site-default-text;
+        }
+        .title {
+          font-weight: 700;
+          font-size: 1.8rem;
+        }
+        .arrow {
+          margin-right: 1rem;
+        }
+
+
+        .post-image {
+          background: #fff no-repeat center;
+          background-size: cover;
+          flex-shrink: 0;
+          width: 7rem;
+          height: 7rem;
+        }
+        .inner {
+          margin-left: 1.5rem;
+          .title {
+
+            display: block;
+          }
+          .meta {
+            display: block;
+            font-size: 1.5rem;
+            color: $site-neutral-text;
+            margin: .5rem 0 0;
+          }
+        }
       }
     }
   }
@@ -473,15 +445,13 @@ object {
     margin: 8px 0 0 0;
     padding: 0;
     .jp-relatedposts-headline {
-      border-bottom: 4px solid $block-default-divider;
+      border-bottom: 4px solid $site-default-border;
       display: block;
       float: none;
 
       em {
-        @extend %content-section-mini-title;
-        color: $md-grey-700;
-        margin: 8px 0;
-        display: block;
+        @extend %post-section-title;
+
         &:before {
           border: none !important;
           margin: 0 !important;
@@ -490,12 +460,3 @@ object {
     }
   }
 }
-
-// Last Updated
-// -----------------------------------------------
-.post-single {
-  .section-last-updated {
-    display: none; // display only page not post
-  }
-}
-

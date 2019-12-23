@@ -295,6 +295,21 @@ function makotokw_get_the_updated_date( $format = DATE_ISO8601 ) {
 	return false;
 }
 
+function makotokw_get_the_feature_image_url() {
+	$featured_image_url     = null;
+	$featured_image_service = null;
+	if ( class_exists( 'Makotokw\PostUtility' ) ) {
+		$featured_image_url = Makotokw\PostUtility::find_featured_image_url( null, $featured_image_service );
+	}
+
+	if ( ! $featured_image_url ) {
+		$featured_image_url     = get_template_directory_uri() . '/assets/images/default-fallback-image.png';
+		$featured_image_service = 'fallback';
+	}
+
+	return array( $featured_image_url, $featured_image_service );
+}
+
 /**
  * Custom QTags
  */

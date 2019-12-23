@@ -4,16 +4,11 @@
 .breadcrumb {
   display: block;
   text-align: center;
-  color: $site-neutral-color;
+  color: $site-neutral-text;
   font-weight: 700;
 
-  .archive &,
-  .search & {
-    margin-bottom: $site-grid-margin;
-  }
-
   a {
-    color: $site-neutral-color;
+    color: $site-neutral-text;
     &:hover {
       color: $site-default-link-over;
     }

@@ -2,23 +2,25 @@
 %pagenation-page {
   @extend .btn;
   @extend .btn-outlined;
-  @extend .btn-circle;
-  background-color: #fff;
+  @include circle(40px);
+  @include smaller-than-tablet-screen {
+    @include circle(30px);
+  }
 }
 
 .pagination {
   display: block;
   @include clearfix;
-  border-top: $site-border-width solid $block-default-divider;
-  padding: 20px 0;
+  padding: $site-grid-margin 0;
 
   ul {
+    display: flex;
     list-style: none;
     margin: 10px 0 10px 0;
     padding: 0;
 
     li {
-      float: left;
+      margin: 0 .5rem;
     }
 
     .current {

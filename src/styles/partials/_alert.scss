@@ -16,11 +16,11 @@
 
 .alert {
   display: block;
-  margin: $block-margin 0;
-  padding: $block-padding;
+  margin: 3rem 0;
+  padding: 1.5rem;
   background-color: $block-default-bg;
   color: $block-default-text;
-  border-left: $site-border-left-width solid $block-default-border;
+  border-left: $site-border-left-width solid $site-default-border;
 }
 
 .alert {

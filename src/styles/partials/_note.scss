@@ -14,23 +14,33 @@
 
 %base-note {
   display: block;
-  margin: $block-margin 0;
-  padding: $block-padding;
-  background-color: $block-default-bg;
-  color: $block-default-text;
-  border: 2px solid $site-primary-color;
-  border-left: $site-border-left-width solid $site-primary-color;
+  margin: 0 0 4rem 0;
+  padding: 2rem;
+  border: 1px solid $site-default-border;
+
+  a {
+    font-weight: 600;
+  }
+}
+
+%note-with-svg {
+  position: relative;
+  padding: 2rem 2rem 2rem 6rem;
 
   svg {
-    float: left;
-    width: $font-size-base * 2 !important;
-    height: $font-size-base * 2 !important;
-    margin-right: 10px;
-    color: $site-primary-color;
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    width: 2em !important;
+    height: 2em !important;
+    color: $site-default-border;
   }
-
-  &:after {
-    clear: both;
+  @include smaller-than-tablet-screen {
+    padding: 1.5rem 1.5rem 1.5rem 5rem;
+    svg {
+      top: 1.5rem;
+      left: 1rem;
+    }
   }
 }
 
@@ -42,16 +52,19 @@
   @extend .note;
   color: $state-warning-text;
   border: none;
+  text-decoration: none;
   background-color: $state-warning-bg;
 }
 
 .note-link,
 .note-comment {
   @extend .note;
+  @extend %note-with-svg;
 }
 
 .enclosure {
   @extend %base-note;
+  @extend %note-with-svg;
 }
 .enclosure-github,
 .enclosure-qiita,

@@ -1,17 +1,17 @@
 .amazonjs_item {
-  border-color: rgba(0, 0, 0, 0.1);
+  border-color: rgba(228, 121, 17, 0.3);
   border-width: 1px;
-  box-shadow: 4px 6px 10px -6px rgba(0, 0, 0, 0.1);
-  margin: .5em 0 1em 0;
-  padding: 20px 10px; }
+  margin: 0 0 4rem 0;
+  padding: 4rem 2rem; }
   .amazonjs_item a {
-    color: #0086af; }
+    color: #e47911; }
     .amazonjs_item a:hover {
-      color: #005f7c; }
+      color: #e47911;
+      text-decoration: underline; }
   @media screen and (max-width: 767px) {
     .amazonjs_item {
-      margin: 0.5em -20px 1em -20px;
-      padding: 10px 5px; } }
+      margin: 0 0 3rem 0;
+      padding: 15px 7.5px; } }
   .amazonjs_item .amazonjs_image img {
     box-shadow: none;
     border: none; }
@@ -23,3 +23,6 @@
     font-size: 1em; }
   .amazonjs_item .amazonjs_review {
     font-size: .9em; }
+
+
+/*# sourceMappingURL=amazonjs.css.map*/

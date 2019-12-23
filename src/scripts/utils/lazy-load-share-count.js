@@ -39,7 +39,6 @@ function updateShareCount(isAdmin) {
             return;
           }
           $shareThis.find('.share-pocket .btn').append(createCountElement(data.pocket));
-          $shareThis.find('.share-googleplus .btn').append(createCountElement(data.google));
         });
     }
   }

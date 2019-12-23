@@ -3,11 +3,11 @@
 ----------------------------------------------- */
 
 .hr {
-  border-bottom: $site-border-width solid $block-default-divider;
+  border-bottom: $site-border-width solid $site-default-border;
 }
 
 .block-content {
-  @include block-white($block-border-radius);
+  @include block-white($site-border-radius);
 }
 
 .quote-caption {
@@ -51,7 +51,7 @@
 }
 
 .table-bordered {
-  border: $site-border-width solid $block-default-divider;
+  border: $site-border-width solid $site-default-border;
   border-collapse: separate;
   *border-collapse: collapsed;
   border-left: 0;
@@ -65,8 +65,8 @@
     padding: 6px 8px;
     text-align: left;
     vertical-align: top;
-    border-top: $site-border-width solid $block-default-divider;
-    border-left: $site-border-width solid $block-default-divider;
+    border-top: $site-border-width solid $site-default-border;
+    border-left: $site-border-width solid $site-default-border;
   }
   caption + thead tr:first-child th,
   caption + tbody tr:first-child th,
@@ -82,7 +82,7 @@
 }
 
 .rakuten-afl {
-  @include block-white($block-border-radius);
+  @include block-white($site-border-radius);
   table {
     margin: 0;
     border-bottom: none;

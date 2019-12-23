@@ -5,7 +5,7 @@
 $post_type = get_post_type();
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'post-single' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'post-detailed' ); ?>>
 	<header class="entry-header">
 		<?php makotokw_the_post_primary_meta(); ?>
 		<h1 class="entry-title">
@@ -14,19 +14,13 @@ $post_type = get_post_type();
 		<?php makotokw_the_post_secondary_meta(); ?>
 	</header>
 	<div class="entry-content">
-		<?php the_content(); ?>
-		<?php if ( JETPACK_DEV_DEBUG === true ) : ?>
+		<div class="section-inner">
+			<?php the_content(); ?>
+		</div>
+		<?php if ( defined( 'JETPACK_DEV_DEBUG' ) && JETPACK_DEV_DEBUG === true ) : ?>
 			<div id="jp-relatedposts" class="jp-relatedposts" style="display: block;">
 			</div>
 		<?php endif ?>
-		<?php
-			wp_link_pages(
-				array(
-					'before' => '<div class="page-links">' . __( 'Pages:', 'makotokw' ),
-					'after'  => '</div>',
-				)
-			);
-			?>
 	</div>
 	<footer class="entry-footer">
 		<div class="entry-meta">
@@ -34,16 +28,11 @@ $post_type = get_post_type();
 		</div>
 		<?php makotokw_share_this(); ?>
 		<?php if ( 'post' === $post_type ) : ?>
-			<?php makotokw_list_nav(); ?>
 			<?php makotokw_related_portfolio( __( 'Related Software', 'makotokw' ) ); ?>
 			<?php makotokw_related_posts( __( 'Related Posts', 'makotokw' ) ); ?>
-			<?php makotokw_content_nav( 'nav-below' ); ?>
+			<?php makotokw_content_nav(); ?>
 		<?php else : ?>
-			<div class="section section-mini section-2col section-last-updated">
-				<h2 class="section-title"><?php _e( 'Last Updated', 'makotokw' ); ?></h2>
-				<div class="section-content"><?php makotokw_updated_on(); ?></div>
-			</div>
-			<?php makotokw_related_posts(); ?>
+			<?php makotokw_related_posts( __( 'Related Posts', 'makotokw' ) ); ?>
 		<?php endif ?>
 	</footer>
 </article><!-- #post-<?php the_ID(); ?> -->

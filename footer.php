@@ -12,9 +12,7 @@
 </div><!-- .site-main -->
 <footer class="site-footer" role="contentinfo">
 	<div class="section-inner">
-
 		<div class="footer-navs">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fas fa-home"></i> <?php _e( 'Home', 'makotokw' ); ?></a>
 			<?php
 			wp_nav_menu(
 				array(
@@ -38,7 +36,7 @@
 				);
 				?>
 			<span class="powered-by">
-				<?php echo $powered_by; ?><i class="fas fa-heart"></i><a href="https://github.com/makotokw/wp-theme-makotokw/tree/<?php echo $theme_name; ?>">makotokw theme.<i class="fab fa-github-alt"></i></a>
+				<?php echo $powered_by; ?><i class="fas fa-heart"></i><a href="https://github.com/makotokw/wp-theme-makotokw/tree/<?php echo $theme_name; ?>">Theme <i class="fab fa-github"></i></a> by <a href="https://makotokw.com">makoto_kw</a>
 			</span>
 		</div>
 		<a id="toTheTop" class="to-the-top" href="#siteHeader">

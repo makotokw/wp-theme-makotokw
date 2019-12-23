@@ -22,32 +22,33 @@ if ( post_password_required() ) {
 }
 ?>
 
-<aside id="comments" class="section section-mini section-comment">
+<aside id="comments" class="comments">
+	<div class="section-inner">
+		<?php if ( have_comments() ) : ?>
+			<hr/>
+			<h2 class="section-title">
+				<?php
+				printf(
+					_nx( '%1$s Comment', '%1$s Comments', get_comments_number(), 'comments title', 'makotokw' ),
+					number_format_i18n( get_comments_number() )
+				);
+				?>
+			</h2>
 
-	<?php if ( have_comments() ) : ?>
+			<ol class="comment-list">
+				<?php wp_list_comments( array( 'callback' => 'makotokw_comment' ) ); ?>
+			</ol><!-- .comment-list -->
 
-		<h2 class="section-title section-comments-title">
-			<?php
-			printf(
-				_nx( '%1$s Comment', '%1$s Comments', get_comments_number(), 'comments title', 'makotokw' ),
-				number_format_i18n( get_comments_number() )
-			);
-			?>
-		</h2>
+			<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
+				<nav id="comment-nav-above" class="navigation-comment" role="navigation">
+					<div class="nav-previous alignleft"><?php previous_comments_link( __( '&larr; Older Comments', 'makotokw' ) ); ?></div>
+					<div class="nav-next alignright"><?php next_comments_link( __( 'Newer Comments &rarr;', 'makotokw' ) ); ?></div>
+				</nav><!-- #comment-nav-before -->
+			<?php endif; // check for comment navigation ?>
 
-		<ol class="comment-list">
-			<?php wp_list_comments( array( 'callback' => 'makotokw_comment' ) ); ?>
-		</ol><!-- .comment-list -->
+		<?php endif; // have_comments() ?>
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-			<nav id="comment-nav-above" class="navigation-comment" role="navigation">
-				<div class="nav-previous alignleft"><?php previous_comments_link( __( '&larr; Older Comments', 'makotokw' ) ); ?></div>
-				<div class="nav-next alignright"><?php next_comments_link( __( 'Newer Comments &rarr;', 'makotokw' ) ); ?></div>
-			</nav><!-- #comment-nav-before -->
-		<?php endif; // check for comment navigation ?>
-
-	<?php endif; // have_comments() ?>
-
-	<?php comment_form( array( 'format' => 'html5' ) ); ?>
-
+		<hr/>
+		<?php comment_form( array( 'format' => 'html5' ) ); ?>
+	</div>
 </aside><!-- #comments -->

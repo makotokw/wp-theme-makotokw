@@ -12,13 +12,13 @@
     border: none;
   }
   &::-moz-progress-bar {
-    background-color: $site-progress-border
+    background-color: $site-progress-border;
   }
   &::-webkit-progress-value {
-    background-color: $site-progress-border
+    background-color: $site-progress-border;
   }
   &::-webkit-progress-bar {
-    background-color: $site-default-border
+    background-color: $site-default-border;
   }
   .progress-container {
     position: absolute;

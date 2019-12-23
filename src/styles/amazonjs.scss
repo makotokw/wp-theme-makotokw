@@ -2,22 +2,21 @@
 @import "variables";
 
 .amazonjs_item {
-//  @include block-white($blockBorderRadius);
-  border-color: $block-default-border;
+  border-color: rgba($amazon-orange, .3);
   border-width: 1px;
-  box-shadow: $block-shadow;
-  margin: .5em 0 1em 0;
-  padding: $site-grid-margin $site-grid-margin/2;
+  margin: 0 0 4rem 0;
+  padding: 4rem 2rem;
 
   a {
-    color: $site-default-link;
+    color: $amazon-orange;
     &:hover {
-      color: $site-default-link-over;
+      color: $amazon-orange;
+      text-decoration: underline;
     }
   }
 
   @include smaller-than-tablet-screen {
-    margin: .5em -1*$site-grid-margin 1em -1*$site-grid-margin;
+    margin: 0 0 3rem 0;
     padding: $site-grid-margin-small $site-grid-margin-small/2;
   }
 

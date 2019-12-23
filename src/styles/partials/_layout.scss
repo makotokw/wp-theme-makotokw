@@ -17,7 +17,6 @@
 .site-main {
   max-width: $site-max-container;
   margin: $site-header-height auto 0 auto; // for sticky header
-  padding: $site-grid-margin;  // margin for children
 }
 
 .site-content {
@@ -52,7 +51,7 @@
 }
 
 @include smaller-than-mobile-screen {
-  .site-main {
-    padding: $site-grid-margin-small;
+  .section-inner {
+    width: calc(100% - 1rem);
   }
 }

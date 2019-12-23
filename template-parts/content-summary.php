@@ -2,12 +2,8 @@
 /**
  * @package makotokw
  */
-$post_type              = get_post_type();
-$featured_image_url     = null;
-$featured_image_service = null;
-if ( class_exists( 'Makotokw\PostUtility' ) ) {
-	$featured_image_url = Makotokw\PostUtility::find_featured_image_url( null, $featured_image_service );
-}
+$post_type = get_post_type();
+list ( $featured_image_url, $featured_image_service ) = makotokw_get_the_feature_image_url();
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'post-summary' ); ?>>
@@ -31,7 +27,7 @@ if ( class_exists( 'Makotokw\PostUtility' ) ) {
 		<p><?php echo makotokw_post_summary( $post->post_content, 180 ); ?></p>
 	</div>
 	<footer class="entry-footer">
-		<a class="btn btn-text btn-more-link" href="<?php the_permalink(); ?>"><?php _e( 'Continue reading', 'makotokw' ); ?></a>
+		<a class="btn btn-more-link" href="<?php the_permalink(); ?>"><?php _e( 'Continue reading', 'makotokw' ); ?></a>
 		<div class="entry-meta">
 			<?php makotokw_author(); ?>
 		</div>

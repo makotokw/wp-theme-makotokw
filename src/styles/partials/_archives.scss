@@ -4,8 +4,11 @@
     .archives-title {
       margin: $site-grid-margin 0;
     }
+
+    padding-bottom: $site-grid-margin;
+    margin-bottom: $site-grid-margin;
+    border-bottom: $site-border-width solid $site-default-border;
   }
   .pagination {
-    padding-left: $site-grid-margin;
   }
 }

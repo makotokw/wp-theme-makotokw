@@ -6,7 +6,7 @@
  */
 ?>
 <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-	<aside class="site-sidebar" role="complementary" aria-label="<?php esc_attr_e( 'Blog Sidebar', 'makotokw' ); ?>">
+	<aside id="sideBar" class="site-sidebar" role="complementary" aria-label="<?php esc_attr_e( 'Blog Sidebar', 'makotokw' ); ?>">
 		<?php dynamic_sidebar( 'sidebar-1' ); ?>
 	</aside>
 <?php endif ?>

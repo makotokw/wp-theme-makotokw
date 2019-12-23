@@ -19,6 +19,7 @@
   &:hover {
     background-color: $button-contained-bg-over;
     color: $button-contained-text;
+    text-decoration: none;
   }
   &.btn-disabled {
     background-color: $button-contained-disable-bg;
@@ -38,6 +39,7 @@
   &:hover {
     background-color: $button-outlined-bg-over;
     color: $button-outlined-text;
+    text-decoration: none;
   }
   &.btn-disabled {
     border-color: $button-outlined-disable-border;
@@ -55,29 +57,3 @@
 .btn-outlined {
   border: $button-outlined-border-width solid $button-outlined-border;
 }
-
-.btn-circle {
-  @include circle(38px);
-
-  @include smaller-than-tablet-screen {
-    @include circle(30px);
-  }
-
-  .icon {
-    line-height: 100%;
-  }
-  .icon-default {
-    &:before {
-      margin-right: 8px;
-      font-size: 16px;
-      line-height: 0;
-      position: relative;
-      top: 1px;
-      @include smaller-than-tablet-screen {
-        margin-right: 6px;
-        font-size: 14px;
-      }
-    }
-  }
-}
-

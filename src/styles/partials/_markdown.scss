@@ -6,7 +6,7 @@
 
   .wp-gfm-toc-content {
     border-radius: 0;
-    border: $site-border-width solid $block-default-divider;
+    border: $site-border-width solid $site-default-border;
     &.right {
       @include smaller-than-desktop-screen {
         margin: $site-grid-margin-small;

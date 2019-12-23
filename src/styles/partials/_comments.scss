@@ -1,15 +1,7 @@
 $author-border-width: 2px;
 
-.section-comment {
-  border-radius: 0 0 $site-component-header-bg-radius $site-component-header-bg-radius;
-  @include sentence-block();
-}
-
 // Comments
 // --------------------------------------------------------------
-
-.section-comment {
-}
 
 .comment-list {
   list-style-type: none;
@@ -95,12 +87,12 @@ $author-border-width: 2px;
       color: $site-primary-color;
     }
     .comment-time {
-      color: $site-neutral-color;
+      color: $site-neutral-text;
     }
   }
 
   .comment-content {
-    border: $site-border-width solid $block-default-border;
+    border: $site-border-width solid $site-default-border;
     padding: $block-padding;
     overflow-x: auto;
     color: $site-default-text;
@@ -150,29 +142,13 @@ $author-border-width: 2px;
       }
     }
     .comment-content {
-      border: $author-border-width solid $site-primary-color;
-    }
-  }
-}
-
-.section-comment {
-  .section-comments-title {
-    float: none;
-    width: auto;
-  }
-  .comment-respond {
-    @include clearfix;
-    margin: 0;
-    padding: 0;
-    .comment-reply-title {
-      @extend .section-title;
+      border: $author-border-width solid $site-default-border;
     }
   }
 }
 
 .navigation-comment {
-  border-bottom: 1px solid $block-default-divider;
-  padding: 15px 0;
+  margin: 2rem 0;
   @include clearfix();
 }
 

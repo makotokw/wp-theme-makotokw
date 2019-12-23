@@ -6,13 +6,14 @@ $site-max-container: 1200 - 2*$site-grid-margin;
 $site-max-content: 840px;
 $site-max-sidebar: 330px;
 
+$site-header-border-top: 10px;
+$site-header-margin: 15px;
+$site-header-margin-small: 15px;
 $site-header-banner-height: 63px;
 $site-header-banner-height-small: 48px;
-$site-header-nav-height: 48px;
-$site-header-nav-height-small: 48px;
 $site-header-progress-height: 4px;
-$site-header-height: $site-header-banner-height + $site-header-nav-height + $site-header-progress-height;
-$site-header-height-small: $site-header-banner-height-small + $site-header-nav-height-small + $site-header-progress-height;
+$site-header-height: $site-header-border-top + $site-header-banner-height + 1 + $site-header-margin * 2;
+$site-header-height-small: $site-header-border-top + $site-header-banner-height-small + 1 + $site-header-margin-small * 2;
 
 $site-border-radius: 4px;
 $site-border-width: 1px;
@@ -38,22 +39,20 @@ $font-family-gothic: 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic ProN', 'Hiragi
 $font-family-sans-serif: 'Nunito Sans', $font-family-gothic, sans-serif;
 $font-family-monospace: Monaco, Menlo, Consolas, 'Courier New', monospace;
 
-$font-size-base: 1.8rem;
+$font-size-base: 1.7rem;
 
-$heading-size1-font-size: 3rem;
-$heading-size2-font-size: 2.6rem;
-$heading-size3-font-size: 2.3rem;
-$heading-size4-font-size: 2.1rem;
-$heading-size5-font-size: 1.9rem;
+$heading-size1-font-size: 5rem;
+$heading-size2-font-size: 3.6rem;
+$heading-size3-font-size: 3rem;
+$heading-size4-font-size: 2.5rem;
+$heading-size5-font-size: 2.1rem;
 $heading-size6-font-size: 1.8rem;
-$heading-size1-small-font-size: 2.2rem;
-$heading-size2-small-font-size: 2rem;
-$heading-size3-small-font-size: 2rem;
-$heading-size4-small-font-size: 1.9rem;
-$heading-size5-small-font-size: 1.9rem;
-$heading-size6-small-font-size: 1.8rem;
-
-$block-shadow: 4px 6px 10px -6px rgba(0, 0, 0, .1);
+$heading-size1-small-font-size: 3rem;
+$heading-size2-small-font-size: 2.6rem;
+$heading-size3-small-font-size: 2.2rem;
+$heading-size4-small-font-size: 2.0rem;
+$heading-size5-small-font-size: 1.8rem;
+$heading-size6-small-font-size: 1.6rem;
 
 // Layout color ----------------------------
 $site-primary-color: #2ba6cb;
@@ -63,53 +62,47 @@ $site-on-primary-text-color: #fff;
 $site-surface-color: #fff;
 $site-background-color: #fff;
 
+$site-default-border: $md-grey-300;
+$site-default-border-over: $md-grey-400;
+$site-progress-border: $site-primary-color;
 $site-badge-color: $md-pink-400;
 $site-on-badge-text-color: #fff;
 
-$site-default-border: #ddd;
-$site-progress-border: $site-primary-color;
-
 $site-default-text: $md-blue-grey-900;
 $site-content-text: $md-blue-grey-700;
-$site-neutral-color: $md-blue-grey-400;
+$site-neutral-text: $md-blue-grey-400;
+$site-placeholder-text: $md-grey-300;
 $site-default-link: darken($site-primary-color, 10%);
 $site-default-link-over: darken($site-default-link, 10%);
 
-$site-component-header-bg: linear-gradient(to right, $site-primary-light-color 0%, $site-primary-color 100%);
-$site-component-header-bg-radius: 10px;
-$site-component-header-text: $site-on-primary-text-color;
-$site-component-content-bg: $site-surface-color;
-$site-component-content-text: $site-default-text;
+// Block  ----------------------------
+$block-default-bg: $site-surface-color;
+$block-default-text: $md-blue-grey-700;
+$block-default-icon: $md-blue-grey-400;
+$block-padding: 1.5rem;
 
+// Header  ----------------------------
 $header-default-bg: white;
 $header-default-text: $site-default-text;
 $header-default-link: $site-default-text;
 $header-default-link-over: $site-default-link-over;
-$header-banner-link: $site-primary-color;
+$header-banner-link: #000;
 $header-banner-link-over: darken($site-primary-color, 10%);
 
+// Footer  ----------------------------
 $footer-default-bg: $md-grey-50;
 $footer-default-text: $site-default-text;
-$footer-default-link: $footer-default-text;
-$footer-default-link-over: $site-default-link-over;
 
-// Typography color ----------------------------
+// Typography ----------------------------
 $entry-title-text: $site-default-text;
 $entry-title-text-over: $site-primary-color;
 $entry-title-text-decoration-over: underline;
 $entry-header-border-color: $site-primary-color;
 $caption-text: #767676;
-$code-default-bg: $md-grey-50;
+$code-default-bg: rgba(27, 31, 35, .05); // from GitHub
 $blockquote-text: $md-grey-700;
 
-// Parts color ----------------------------
-
-// form
-$form-default-border: $md-grey-300;
-$form-default-border-over: $md-grey-400;
-$form-default-placeholder: $md-grey-300;
-
-// button
+// Button ----------------------------
 $button-contained-bg: $site-primary-color;
 $button-contained-bg-over: lighten($button-contained-bg, 10%);
 $button-contained-text: $site-on-primary-text-color;
@@ -117,13 +110,13 @@ $button-contained-disable-bg: $md-grey-200;
 $button-contained-disable-text: $md-grey-400;
 $button-outlined-bg: transparent;
 $button-outlined-bg-over: lighten($site-primary-color, 40%);
-$button-outlined-border: $md-grey-400;
+$button-outlined-border: $site-default-border;
 $button-outlined-border-width: 1px;
 $button-outlined-text: $site-primary-color;
 $button-outlined-disable-border: $md-grey-300;
 $button-outlined-disable-text: $md-grey-300;
 
-// state colors
+// State ----------------------------
 $state-warning-text: #c09853;
 $state-warning-bg: #fefaef;
 $state-warning-border: darken(adjust-hue($state-warning-bg, -10), 3%);
@@ -137,7 +130,7 @@ $state-info-text: #3a87ad;
 $state-info-bg: lighten(#d9edf7, 7%);
 $state-info-border: darken(adjust-hue($state-info-bg, -10), 7%);
 
-// alerts
+// Alert ----------------------------
 $alert-padding: $site-grid-margin;
 $alert-border-radius: $site-border-radius;
 $alert-link-font-weight: bold;
@@ -154,12 +147,3 @@ $alert-danger-bg: $state-danger-bg;
 $alert-danger-text: $state-danger-text;
 $alert-danger-border: $state-danger-border;
 
-$block-default-bg: $site-surface-color;
-$block-default-text: $md-blue-grey-700;
-$block-default-icon: $md-blue-grey-400;
-$block-default-divider: rgba(0, 0, 0, 0.05);
-$block-default-border: rgba(0, 0, 0, 0.1);
-$block-border-width: $site-border-width;
-$block-border-radius: 6px;
-$block-margin: 1.6em;
-$block-padding: 1.6em;

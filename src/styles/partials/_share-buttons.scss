@@ -1,0 +1,56 @@
+$share-icon-size: 30px;
+
+.share-buttons {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  li {
+    margin: 0 1rem 0 0;
+    padding: 0;
+  }
+}
+.btn-share {
+  @extend .btn-contained;
+  @include circle(40px);
+  @include smaller-than-tablet-screen {
+    @include circle(30px);
+  }
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .share-title {
+    display: none;
+  }
+
+  .share-brand-icon {
+    display: inline-block;
+    fill: $site-on-primary-text-color;
+  }
+
+  .share-count {
+    position: absolute;
+    left: 27px;
+    top: -8px;
+    @include smaller-than-tablet-screen {
+      left: 17px;
+      top: -8px;
+    }
+    background-color: $site-badge-color;
+    color: $site-on-badge-text-color;
+    border-radius: 50%;
+    text-align: center;
+    font-size: .65em;
+    font-weight: bold;
+    min-height: 20px;
+    min-width: 20px;
+    line-height: 20px;
+    &.share-count-has {
+      opacity: 1;
+    }
+  }
+}

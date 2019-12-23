@@ -1,5 +1,5 @@
 <?php
-function makotokw_related_posts( $title = 'Related Software', $arg = array() ) {
+function makotokw_related_posts( $title = 'Related Posts', $arg = array() ) {
 	global $post;
 
 	/** @var WP_Query $rfq */
@@ -58,22 +58,29 @@ function makotokw_related_posts( $title = 'Related Software', $arg = array() ) {
 	}
 
 	if ( $rq && $rfq && ( $rfq->have_posts() || $rq->have_posts() ) ) : ?>
-		<?php $count = 0; ?>
-		<aside class="section section-mini section-2col section-related-posts">
+		<section class="related-posts section-inner">
+			<hr/>
 			<h2 class="section-title"><?php echo esc_html( $title ); ?></h2>
-			<div class="section-content">
-				<ul>
-					<?php while ( $rfq->have_posts() ) : ?>
-						<?php $rfq->the_post(); ?>
-						<li><i class="fas fa-angle-right"></i> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-					<?php endwhile ?>
-					<?php while ( $rq->have_posts() ) : ?>
-						<?php $rq->the_post(); ?>
-						<li><i class="fas fa-angle-right"></i> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-					<?php endwhile ?>
-				</ul>
-			</div>
-		</aside>
+			<ul>
+				<?php foreach ( array( $rq, $rfq ) as $q ) : ?>
+					<?php while ( $q->have_posts() ) : ?>
+						<?php $q->the_post(); ?>
+						<?php list ( $featured_image_url, $featured_image_service ) = makotokw_get_the_feature_image_url(); ?>
+						<li>
+							<a href="<?php the_permalink(); ?>">
+								<?php if ( $featured_image_url ) : ?>
+									<div class="post-image" style="background-image: url( <?php echo esc_url( $featured_image_url ); ?> );"></div>
+								<?php endif ?>
+								<div class="inner">
+									<span class="title"><?php the_title(); ?></span>
+									<span class="meta"><?php the_time( 'Y-m-d' ); ?></span>
+								</div>
+							</a>
+						</li>
+					<?php endwhile; ?>
+				<?php endforeach; ?>
+			</ul>
+		</section>
 	<?php endif; ?>
 	<?php
 	wp_reset_postdata();
@@ -103,9 +110,17 @@ function makotokw_related_portfolio( $title = 'Related Software' ) {
 		if ( $rq->have_posts() ) {
 			$rq->the_post();
 			?>
-			<section class="section section-mini section-2col section-portfolio">
+			<section class="related-posts section-inner">
+				<hr/>
 				<h2 class="section-title"><?php echo esc_html( $title ); ?></h2>
-				<div class="section-content"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
+				<ul>
+					<li>
+						<a href="<?php the_permalink(); ?>">
+							<span class="arrow"><i class="fas fa-angle-right"></i></span>
+							<span class="title"><?php the_title(); ?></span>
+						</a>
+					</li>
+				</ul>
 			</section>
 			<?php
 		}
