@@ -4,4 +4,12 @@
  * Template Name: Help
  * Template Post Type: page
  */
-require __DIR__ . '/inc/simple-post-page.php';
+get_header(); ?>
+<?php while ( have_posts() ) : ?>
+	<?php
+	the_post();
+	get_template_part( 'template-parts/content', 'help' );
+	?>
+<?php endwhile; // end of the loop. ?>
+<?php
+get_footer();

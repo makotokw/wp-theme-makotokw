@@ -11,14 +11,18 @@
  * @package makotokw
  */
 
+// This template is required for
+//  - Archives Page
+//  - Site Front Page
+//  - Error 404 Page
+//  - Search Result Page
+
 get_header(); ?>
 
-<?php if ( ! is_home() ) : ?>
+<?php if ( is_archive() || is_search() ) : ?>
 <header class="site-content-header">
 	<h2 class="archives-title"><?php makotokw_archives_title(); ?></h2>
-	<?php if ( is_archive() || is_search() ) : ?>
-		<?php makotokw_breadcrumbs(); ?>
-	<?php endif ?>
+	<?php makotokw_breadcrumbs(); ?>
 </header>
 <?php endif ?>
 <?php if ( have_posts() ) : ?>
