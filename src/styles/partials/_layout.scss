@@ -7,6 +7,15 @@
  //  └── .site-sidebar
  //.site-footer
 
+body {
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.site-sidebar {
+  display: none;
+}
+
 .section-inner {
   margin-left: auto;
   margin-right: auto;
@@ -15,8 +24,8 @@
 }
 
 .site-main {
-  max-width: $site-max-container;
   margin: $site-header-height auto 0 auto; // for sticky header
+  max-width: 168rem;
 }
 
 .site-content {
@@ -47,6 +56,9 @@
 @include smaller-than-tablet-screen {
   .section-inner {
     width: calc(100% - 4rem);
+  }
+  .site-main {
+    margin: $site-header-height-small auto 0 auto; // for sticky header
   }
 }
 

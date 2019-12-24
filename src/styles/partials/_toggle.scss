@@ -1,60 +1,47 @@
 .toggle {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  color: inherit;
-  cursor: pointer;
-  font-family: inherit;
   position: relative;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  text-align: inherit;
-  user-select: none;
-  outline: none;
 
-  &button {
-    background: none;
-    border: none;
-    box-shadow: none;
-    border-radius: 0;
-    font-size: inherit;
-    letter-spacing: inherit;
-    padding: 0;
-    text-transform: none;
-  }
-  .hide {
-    display: none;
-  }
-  &.toggle__show {
-    .show {
-      display: none;
+  .toggle-inner {
+    display: flex;
+    justify-content: center;
+    min-width: 3rem;
+    height: 2.3rem;
+    position: fixed;
+    transition: opacity 0.2s linear;
+
+    .toggle-icon {
+      i {
+        font-size: 2rem;
+      }
     }
-    .hide {
-      display: flex;
+
+    .toggle-text {
+      font-size: 1rem;
+      position: absolute;
+      top: calc(100% + 0.25rem);
+      width: auto;
+      white-space: nowrap;
+      word-break: break-all;
+    }
+
+    &.show {
+      opacity: 1;
+    }
+    &.hide {
+      opacity: 0;
+    }
+  }
+
+
+  &.is-pressed {
+    .toggle-inner {
+      &.show {
+        opacity: 0;
+      }
+      &.hide {
+        opacity: 1;
+      }
     }
   }
 }
 
-.toggle-inner {
-  display: flex;
-  justify-content: center;
-  height: 2.3rem;
-  position: relative;
-
-  .toggle-icon {
-    i {
-      font-size: 2rem;
-    }
-  }
-
-  .toggle-text {
-    font-size: 1rem;
-    position: absolute;
-    top: calc(100% + 0.25rem);
-    width: auto;
-    white-space: nowrap;
-    word-break: break-all;
-  }
-}

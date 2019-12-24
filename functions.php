@@ -70,7 +70,7 @@ function makotokw_setup() {
 	 */
 	register_nav_menus(
 		array(
-			'footer' => __( 'Footer Menu', 'makotokw' ),
+			'footer-menu' => __( 'Footer Menu', 'makotokw' ),
 		)
 	);
 
@@ -179,7 +179,7 @@ function makotokw_scripts() {
 
 	$assets_version = THEME_ASSET_REV;
 	if ( true === WP_THEME_DEBUG ) {
-		$assets_version = gmdate( 'Ymdhi' );
+		$assets_version = gmdate( 'YmdHis' );
 	}
 	wp_enqueue_style( 'makotokw-style', get_template_directory_uri() . '/assets/style.css', array(), $assets_version );
 

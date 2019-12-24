@@ -6,17 +6,18 @@ import SmoothScroll from 'smooth-scroll';
 import Header from './header';
 import Content from './content';
 import Footer from './footer';
-import Sidebar from './sidebar';
 import ProgressBar from './progress-bar';
 
+/**
+ * Stage
+ */
 class Stage {
   constructor() {
     $(document).ready(() => {
       this.isAdmin = ($('#wpadminbar').length > 0);
-      this.header = new Header();
+      this.header = new Header({ stage: this });
       this.content = new Content({ isAdmin: this.isAdmin });
       this.footer = new Footer();
-      this.sidebar = new Sidebar();
       this.progressBar = new ProgressBar();
       // noinspection JSUnusedGlobalSymbols
       this.smoothScrool = new SmoothScroll('a[href*="#"]', {
@@ -59,6 +60,23 @@ class Stage {
           FontAwesome.icon(FontAwesome.findIconDefinition({ prefix: 'fas', iconName: 'comment' })).html,
         );
       });
+    }
+  }
+
+  toggleFixed() {
+    const { body } = document;
+
+    if (body.classList.contains('is-fixed')) {
+      body.classList.toggle('is-fixed');
+      const { top } = document.body.style;
+      body.style.position = '';
+      body.style.top = '';
+      window.scrollTo(0, parseInt(top || '0', 10) * -1);
+    } else {
+      const y = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${y}px`;
+      body.classList.toggle('is-fixed');
     }
   }
 

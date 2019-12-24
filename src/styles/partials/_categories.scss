@@ -1,12 +1,10 @@
-
-
 .list-categories {
   list-style: none;
   margin: 0;
-  padding: $site-grid-margin;
+  padding: 0;
 
   .cat-item {
-    margin-bottom: 2px;
+    margin: 0.5rem 0 0 0;
     svg {
       min-width: 1.5em;
     }

@@ -1,7 +1,7 @@
 $site-logo-image-width: 190px;
 $site-logo-image-height: 40px;
 $site-logo-height: 28px;
-$site-logo-height-small: 20px;
+$site-logo-height-small: 18px;
 
 .site-header {
   &.headroom--pinned {
@@ -20,20 +20,16 @@ $site-logo-height-small: 20px;
 }
 
 .site-header {
-  border-width: $site-header-border-top 0 0;
-  border-top-style: solid;
-  border-image: linear-gradient(139deg, $site-primary-color, darken($site-primary-color, 20%), $md-pink-700, $md-pink-400) 3;
-
   background: $header-default-bg;
   color: $header-default-text;
   position: fixed;
-  z-index: 10;
+  z-index: 30;
   top: 0;
   left: 0;
   right: 0;
   transition-duration: .5s;
   will-change: transform;
-  transition: transform 200ms linear;
+  transition: transform .2s linear;
   a {
     color: $header-default-link;
     &:hover {
@@ -50,7 +46,9 @@ $site-logo-height-small: 20px;
     padding: $site-header-margin 0;
     height: $site-header-banner-height;
     max-height: $site-header-banner-height;
-    @include smaller-than-tablet-screen {
+  }
+  @include smaller-than-tablet-screen {
+    .site-header-inner {
       width: calc(100% - 4rem);
       padding: $site-header-margin-small 0;
       height: $site-header-banner-height-small;
@@ -59,20 +57,13 @@ $site-logo-height-small: 20px;
   }
 }
 
-
-
-.site-header-titles {
-  line-height: 1;
-}
-.site-header-nav {
-}
-
 .site-header-titles {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   overflow: hidden;
+  line-height: 1;
 
   .site-header-logo-svg {
     fill: $header-banner-link;
@@ -88,27 +79,28 @@ $site-logo-height-small: 20px;
   .site-header-description {
     color: $site-neutral-text;
     margin: 0 0 0 2.5rem;
-    font-size: 1.6rem;
+    font-size: 16px;
   }
 
   @include smaller-than-tablet-screen {
     display: block;
     .site-header-logo-svg {
-      //margin-top: ($site-header-banner-height-small - $site-logo-height-small) / 2;
       width: $site-logo-image-width * ($site-logo-height-small / $site-logo-image-height);
       height: $site-logo-height-small;
     }
     .site-header-description {
-      margin: .5rem 0 0 0;
-      font-size: 1.4rem;
+      margin: .1rem 0 0 0;
+      font-size: 12px;
     }
   }
 }
 
 .site-header-nav {
   .toggle {
-    align-items: center;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 3rem;
   }
 }
 
@@ -118,4 +110,49 @@ $site-logo-height-small: 20px;
   right: 0;
   bottom: -1px;
   left: 0;
+}
+
+.menu-overlay {
+  position: fixed;
+  left: 0;
+  top: $site-header-height;
+  right: 0;
+  bottom: 0;
+  background-color: $site-surface-color;
+  overflow-y: auto;
+  z-index: 20;
+
+  transition: all 0.3s ease-out;
+  opacity: 1;
+  visibility: visible;
+
+  &.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .menu-overlay-inner {
+  }
+
+  .list-categories {
+    margin: 0;
+    .cat-item {
+      margin: 0;
+      line-height: 1;
+      padding: .75rem 1rem;
+      border-bottom: $site-border-width solid $site-default-border;
+      .cat-item {
+        border-bottom: none;
+      }
+    }
+
+    a {
+      color: $site-default-text;
+    }
+  }
+
+  @include smaller-than-tablet-screen {
+    top: $site-header-height-small;
+  }
+
 }

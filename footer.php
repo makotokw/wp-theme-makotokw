@@ -16,7 +16,7 @@
 			<?php
 			wp_nav_menu(
 				array(
-					'theme_location'  => 'footer',
+					'theme_location'  => 'footer-menu',
 					'container_class' => 'site-footer-help-nav',
 					'link_before'     => '',
 					'link_after'      => '',

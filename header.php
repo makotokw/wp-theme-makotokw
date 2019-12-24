@@ -67,11 +67,9 @@
 		<nav class="site-header-nav">
 			<button class="toggle nav-toggle" aria-expanded="false">
 				<span class="toggle-inner show">
-					<span class="toggle-text"><?php _e( 'Menu', 'makotokw' ); ?></span>
-					<span class="toggle-icon"><i class="fas fa-ellipsis-h"></i></span>
+					<span class="toggle-icon"><i class="fas fa-bars"></i></span>
 				</span>
 				<span class="toggle-inner hide">
-					<span class="toggle-text"><?php _e( 'Close', 'makotokw' ); ?></span>
 					<span class="toggle-icon"><i class="fas fa-times"></i></span>
 				</span>
 			</button>
@@ -83,6 +81,7 @@
 		</div>
 	</progress>
 </header>
+<?php get_template_part( 'template-parts/overlay-menu' ); ?>
 <div class="site-main">
 	<main id="siteContent" class="site-content" role="main">
 
