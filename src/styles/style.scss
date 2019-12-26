@@ -18,7 +18,6 @@
 @import "partials/post";
 @import "partials/comments";
 @import "partials/categories";
-@import "partials/author";
 @import "partials/footer";
 @import "partials/alert";
 @import "partials/note";
@@ -27,8 +26,10 @@
 @import "partials/markdown";
 @import "partials/pukiwiki";
 @import "partials/archives";
-@import "partials/widgets";
 @import "partials/no-results";
+@import "partials/sidebar";
+@import "widgets/static_post";
+@import "widgets/profile";
 @import "pages/help";
 @import "pages/about";
 @import "pages/archives";

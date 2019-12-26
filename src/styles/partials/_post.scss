@@ -1,98 +1,3 @@
-
-// on Archives
-// -----------------------------------------------
-
-.post-summary {
-  .entry-header {
-    padding: $site-grid-margin*2 $site-grid-margin*2 0;
-  }
-  .entry-content {
-    padding: $site-grid-margin $site-grid-margin 0;
-  }
-
-  // 1 column
-  @include smaller-than-desktop-screen {
-    padding: $site-grid-margin-small;
-    .entry-header {
-      padding: $site-grid-margin-small*2 $site-grid-margin-small 0;
-    }
-    .entry-content {
-      padding: $site-grid-margin-small $site-grid-margin-small 0;
-    }
-  }
-}
-
-.post-summaries {
-  .post-summary {
-    padding-bottom: $site-grid-margin;
-    margin-bottom: $site-grid-margin;
-    border-bottom: $site-border-width solid $site-default-border;
-
-    @include smaller-than-tablet-screen {
-      margin-top: $site-grid-margin-small * 2;
-    }
-
-    .post-summaries > &:first-child {
-      margin-top: 0;
-    }
-
-    .post-summaries &:last-child {
-    }
-  }
-}
-
-// on Single
-// -----------------------------------------------
-
-.post-detailed {
-  .entry-header {
-    padding: 8rem 4rem 0;
-  }
-  .entry-content {
-    padding: $site-grid-margin $site-grid-margin*3 0;
-  }
-
-  @include larger-than-large-desktop-screen {
-    .entry-header {
-      padding: $site-grid-margin*2 $site-grid-margin*4 0;
-    }
-    .entry-content {
-      padding: $site-grid-margin $site-grid-margin*4 0;
-    }
-  }
-
-  // 1 column
-  @include smaller-than-desktop-screen {
-    .entry-header {
-      padding: $site-grid-margin-small*2 $site-grid-margin-small/2;
-    }
-    .entry-content {
-      padding: $site-grid-margin-small $site-grid-margin-small*3 0;
-    }
-  }
-  @include smaller-than-tablet-screen {
-    .entry-header {
-      padding: $site-grid-margin-small $site-grid-margin-small/2;
-    }
-    .entry-content {
-      padding: $site-grid-margin-small 0;
-    }
-  }
-}
-
-.section {
-  margin: 0;
-  padding: $site-grid-margin;
-  @include smaller-than-desktop-screen {
-    padding: 0;
-  }
-}
-
-// hide
-.entry-author {
-  display: none;
-}
-
 // Header
 // -----------------------------------------------
 
@@ -179,6 +84,13 @@
       img {
         width: 100%;
         height: auto;
+      }
+    }
+
+    &:focus, &:hover {
+      .entry-feature-image {
+        transform: scale(1.05);
+        transition: 0.3s ease-in-out;
       }
     }
   }
@@ -279,6 +191,11 @@
   margin-top: 1rem;
 }
 
+// hide
+.entry-author {
+  display: none;
+}
+
 // Sticky (Featured) Content
 // -----------------------------------------------
 
@@ -346,9 +263,9 @@ object {
   color: $site-default-text;
   font-size: $heading-size2-font-size;
   font-weight: 700;
-  text-transform: uppercase;
-  margin: 0 0 2rem 0;
+  margin: 0 0 3rem 0;
   @include smaller-than-tablet-screen {
+    margin: 0 0 2.4rem 0;
     font-size: $heading-size2-small-font-size;
   }
 }
@@ -372,68 +289,61 @@ object {
   }
 }
 
-// Related Posts
-// -----------------------------------------------
-.related-posts {
-  ul {
+// Post Inline
+.post-inlines {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
     list-style: none;
-    margin: 0;
-    padding: 0;
-    li {
-      list-style: none;
-      margin: 1rem 0 0 0;
-      a {
-        display: flex;
-        align-items: flex-start;
-        color: $site-default-text;
-        &:focus,
-        &:hover {
-          color: $site-default-text;
-          text-decoration: none;
-          .title {
-            text-decoration: underline;
-          }
-        }
-        i {
-          color: $site-default-text;
-        }
-        .title {
-          font-weight: 700;
-          font-size: 1.8rem;
-        }
-        .arrow {
-          margin-right: 1rem;
-        }
-
-
-        .post-image {
-          background: #fff no-repeat center;
-          background-size: cover;
-          flex-shrink: 0;
-          width: 7rem;
-          height: 7rem;
-        }
-        .inner {
-          margin-left: 1.5rem;
-          .title {
-
-            display: block;
-          }
-          .meta {
-            display: block;
-            font-size: 1.5rem;
-            color: $site-neutral-text;
-            margin: .5rem 0 0;
-          }
-        }
-      }
-    }
+    margin: 0 0 2rem;
   }
 }
-.related-posts {
-  @include smaller-than-desktop-screen {
-    .related-post {
-      padding: $site-grid-margin-small;
+.post-inline {
+  display: flex;
+  align-items: flex-start;
+  color: $site-default-text;
+  &:focus,
+  &:hover {
+    color: $site-default-text;
+    text-decoration: none;
+    .title {
+      text-decoration: underline;
+    }
+    .post-image {
+      transform: scale(1.05);
+      transition: 0.3s ease-in-out;
+    }
+  }
+  i {
+    color: $site-default-text;
+  }
+  .title {
+    font-weight: 700;
+    font-size: 1.8rem;
+  }
+  .arrow {
+    margin-right: 1rem;
+  }
+
+  .post-image {
+    background: #fff no-repeat center;
+    background-size: cover;
+    flex-shrink: 0;
+    width: 7rem;
+    height: 7rem;
+  }
+  .inner {
+    margin-left: 1.5rem;
+    .title {
+
+      display: block;
+    }
+    .meta {
+      display: block;
+      font-size: 1.5rem;
+      color: $site-neutral-text;
+      margin: .5rem 0 0;
     }
   }
 }
@@ -460,3 +370,84 @@ object {
     }
   }
 }
+
+
+// on Archives
+// -----------------------------------------------
+
+.post-summary {
+  .entry-header,
+  .entry-content {
+    padding: 3rem 1.5rem 0 3rem;
+  }
+  .entry-footer {
+    padding-bottom: 3rem;
+  }
+
+  @include smaller-than-tablet-screen {
+    .entry-header,
+    .entry-content {
+      padding: 2rem 1rem 0 2rem;
+    }
+    .entry-footer {
+      padding-bottom: 2rem;
+    }
+  }
+
+  @include smaller-than-mobile-screen {
+    .entry-header,
+    .entry-content {
+      padding: 1rem 0.5rem 0 1rem;
+    }
+    .entry-footer {
+      padding-bottom: 1rem;
+    }
+  }
+}
+
+.post-summaries {
+  .post-summary {
+    margin: $site-grid-margin;
+    border-bottom: $site-border-width solid $site-default-border;
+
+    @include smaller-than-tablet-screen {
+      margin: $site-grid-margin-small;
+    }
+
+    .post-summaries > &:first-child {
+    }
+
+    .post-summaries &:last-child {
+    }
+  }
+}
+
+// on Single
+// -----------------------------------------------
+
+.post-detailed {
+  .entry-header {
+    margin: 0 auto;
+    max-width: 120rem;
+    padding: 10rem 5rem 5rem;
+  }
+  @include smaller-than-tablet-screen {
+    .entry-header {
+      padding: 5rem 2.5rem 2.5rem;
+    }
+    .entry-content {
+      padding: 2rem;
+    }
+  }
+  @include smaller-than-mobile-screen {
+    .entry-header {
+      padding: 2.5rem 1rem 1rem;
+    }
+    .entry-content {
+      padding: 1rem;
+    }
+  }
+}
+
+
+

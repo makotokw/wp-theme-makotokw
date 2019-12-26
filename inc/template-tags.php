@@ -63,7 +63,7 @@ function makotokw_pagination( $pages = '', $range = 3 ) {
 	}
 	if ( 1 !== $pages ) {
 		?>
-		<div class="pagination"><ul>
+		<div class="pagination section-inner"><ul>
 		<?php if ( $paged > 2 && $paged > $range + 1 && $showitems < $pages ) : ?>
 			<li><a href="<?php echo get_pagenum_link( 1 ); ?>">&laquo; <?php __( 'First', 'makotokw' ); ?></a></li>
 		<?php endif ?>

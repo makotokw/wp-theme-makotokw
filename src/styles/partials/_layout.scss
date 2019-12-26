@@ -12,10 +12,6 @@ body {
   height: 100vh;
 }
 
-.site-sidebar {
-  display: none;
-}
-
 .section-inner {
   margin-left: auto;
   margin-right: auto;
@@ -31,7 +27,7 @@ body {
 .site-content {
   position: relative;
   margin: 0 auto;
-  padding: 0 $site-grid-margin 0 0; // margin for sidebar
+  padding: 0;
   overflow: hidden;
 }
 
@@ -47,7 +43,6 @@ body {
   .site-main {
   }
   .site-content {
-    padding: 0;
   }
   .site-sidebar {
   }

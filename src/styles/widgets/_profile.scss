@@ -1,0 +1,30 @@
+$site-author-image-base: 75px;
+
+.site-author-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  .author-image {
+    width: $site-author-image-base;
+    height: $site-author-image-base;
+    border-radius: $site-author-image-base;
+  }
+  .author-content {
+    flex: 1 1 auto;
+    padding-left: 16px;
+    .author-name {
+      font-size: 1.8rem;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: .5rem;
+    }
+    .author-job-title {
+      font-size: 1.6rem;
+      color: $site-neutral-text;
+      margin-bottom: 2rem;
+    }
+    .author-description {
+      font-size: 1.6rem;
+    }
+  }
+}

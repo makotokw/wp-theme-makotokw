@@ -61,21 +61,12 @@ function makotokw_related_posts( $title = 'Related Posts', $arg = array() ) {
 		<section class="related-posts section-inner">
 			<hr/>
 			<h2 class="section-title"><?php echo esc_html( $title ); ?></h2>
-			<ul>
+			<ul class="post-inlines">
 				<?php foreach ( array( $rq, $rfq ) as $q ) : ?>
 					<?php while ( $q->have_posts() ) : ?>
-						<?php $q->the_post(); ?>
-						<?php list ( $featured_image_url, $featured_image_service ) = makotokw_get_the_feature_image_url(); ?>
 						<li>
-							<a href="<?php the_permalink(); ?>">
-								<?php if ( $featured_image_url ) : ?>
-									<div class="post-image" style="background-image: url( <?php echo esc_url( $featured_image_url ); ?> );"></div>
-								<?php endif ?>
-								<div class="inner">
-									<span class="title"><?php the_title(); ?></span>
-									<span class="meta"><?php the_time( 'Y-m-d' ); ?></span>
-								</div>
-							</a>
+							<?php $q->the_post(); ?>
+							<?php get_template_part( 'template-parts/content', 'inline' ); ?>
 						</li>
 					<?php endwhile; ?>
 				<?php endforeach; ?>

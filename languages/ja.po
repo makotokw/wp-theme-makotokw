@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: makoto.kw@gmail.com\n"
-"POT-Creation-Date: 2019-02-02 14:50+0900\n"
+"POT-Creation-Date: 2019-12-26 13:24+0900\n"
 "PO-Revision-Date: 2013-04-28 18:46+0900\n"
 "Last-Translator: Makoto Kawasaki <makoto.kw@gmail.com>\n"
 "Language-Team: Japanese\n"
@@ -25,102 +25,30 @@ msgstr ""
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: content.php:16
-#, php-format
-msgid "Permalink to %s"
-msgstr ""
-
-#: content.php:30
-msgid "(<span class=\"entry-date-warning-y\">1</span> year ago)"
-msgstr "(<span class=\"entry-date-warning-y\">1</span>年前)"
-
-#: content.php:32
-#, php-format
-msgid "(<span class=\"entry-date-warning-y\">%d</span> years ago)"
-msgstr "(<span class=\"entry-date-warning-y\">%d</span>年前)"
-
-#: content.php:44 inc/template-tags.php:413
-msgid "Continue reading"
-msgstr "続きを読む"
-
-#: content.php:59
-msgid "Pages:"
-msgstr ""
-
-#: content.php:80
-msgid "Tag"
-msgstr "タグ"
-
-#: content.php:81
-msgid "Related Software"
-msgstr "関連ソフト"
-
-#: content.php:82
-msgid "Related Posts"
-msgstr "関連記事"
-
-#: content.php:86
-msgid "Last Updated"
-msgstr "最終更新"
-
-#: footer.php:19
-msgid "Home"
-msgstr "ホーム"
-
-#: footer.php:38
+#: footer.php:34
 #, php-format
 msgid "Powered by %s"
 msgstr ""
 
-#: footer.php:39
+#: footer.php:35
 msgid "Semantic Personal Publishing Platform"
 msgstr ""
 
-#: functions.php:74
+#: functions.php:73
 msgid "Footer Menu"
 msgstr "フッターメニュー"
 
-#: functions.php:114
+#: functions.php:113
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:116
+#: functions.php:115
 msgid "Add widgets here to appear in your sidebar."
 msgstr ""
 
-#: header.php:79 searchform.php:10
+#: searchform.php:10
 msgid "Search the site"
 msgstr "サイト内を検索する"
-
-#: meta-ogp.php:68
-msgid "Uncategorized"
-msgstr ""
-
-#: no-results.php:15
-msgid "Nothing Found"
-msgstr ""
-
-#: no-results.php:17
-msgid "Oops! That page can&rsquo;t be found."
-msgstr "ページが見つかりませんでした"
-
-#: no-results.php:24
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
-msgstr ""
-"ご指定の検索条件に合う投稿がありませんでした。他のキーワードでもう一度検索し"
-"てみてください。"
-
-#: no-results.php:27
-msgid "Return Home"
-msgstr "ホームへ戻る"
-
-#: no-results.php:29
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
-msgstr "お探しのコンテンツを見つけられませんでした。検索をお試しください。"
 
 #: inc/comments.php:31
 #, php-format
@@ -148,152 +76,183 @@ msgstr "ポートフォリオ"
 msgid "Blogs"
 msgstr "ブログシステム"
 
-#: inc/template-tags.php:38
-msgid "Newer post"
-msgstr "次の記事"
-
-#: inc/template-tags.php:44
-msgid "Older post"
-msgstr "前の記事"
-
-#: inc/template-tags.php:51
-msgid "Older posts"
-msgstr "前の記事"
-
-#: inc/template-tags.php:55
-msgid "Newer posts"
-msgstr "次の記事"
-
-#: inc/template-tags.php:125
+#: inc/template-tags.php:68
 msgid "First"
 msgstr ""
 
-#: inc/template-tags.php:128
+#: inc/template-tags.php:71
 msgid "Previous"
 msgstr ""
 
-#: inc/template-tags.php:140
+#: inc/template-tags.php:83
 msgid "Next"
 msgstr ""
 
-#: inc/template-tags.php:143
+#: inc/template-tags.php:86
 msgid "Last"
 msgstr ""
 
-#: inc/template-tags.php:216 inc/template-tags.php:252
+#: inc/template-tags.php:159 inc/template-tags.php:195
 msgid "Categories"
 msgstr "カテゴリ"
 
-#: inc/template-tags.php:222
+#: inc/template-tags.php:165
 msgid "Tags"
 msgstr "タグ"
 
-#: inc/template-tags.php:225
+#: inc/template-tags.php:168
 msgid "Mylist"
 msgstr "マイリスト"
 
-#: inc/template-tags.php:228
+#: inc/template-tags.php:171
 msgid "Blog"
 msgstr "ブログ"
 
-#: inc/template-tags.php:231
+#: inc/template-tags.php:174
 msgid "Portfolio"
 msgstr "ポートフォリオ"
 
-#: inc/template-tags.php:235 inc/template-tags.php:238
-#: inc/template-tags.php:241 inc/template-tags.php:244
+#: inc/template-tags.php:178 inc/template-tags.php:181
+#: inc/template-tags.php:184 inc/template-tags.php:187
 msgid "Archives"
 msgstr "アーカイブス"
 
-#: inc/template-tags.php:239 inc/template-tags.php:519
+#: inc/template-tags.php:182 inc/template-tags.php:491
 msgid "Y/M"
 msgstr "Y年M"
 
-#: inc/template-tags.php:242 inc/template-tags.php:521
+#: inc/template-tags.php:185 inc/template-tags.php:493
 msgid "Y"
 msgstr "Y年"
 
-#: inc/template-tags.php:247
+#: inc/template-tags.php:190
 msgid "Search Results"
 msgstr "検索結果"
 
-#: inc/template-tags.php:304 inc/template-tags.php:587
-#: inc/template-tags.php:610 inc/template-tags.php:631
+#: inc/template-tags.php:247 inc/template-tags.php:559
+#: inc/template-tags.php:582 inc/template-tags.php:603
 #, php-format
 msgid "View all posts in %s"
 msgstr ""
 
-#: inc/template-tags.php:397
+#: inc/template-tags.php:340
 #, php-format
 msgid "<time class=\"published updated time\" datetime=\"%1$s\">%2$s</time>"
 msgstr ""
 
-#: inc/template-tags.php:405
+#: inc/template-tags.php:348
 #, php-format
 msgid "<time class=\"updated time\" datetime=\"%1$s\">%2$s</time>"
 msgstr ""
 
-#: inc/template-tags.php:453
+#: inc/template-tags.php:442
 msgid "Twitter"
 msgstr ""
 
-#: inc/template-tags.php:459
+#: inc/template-tags.php:448
 msgid "Facebook"
 msgstr ""
 
-#: inc/template-tags.php:471
+#: inc/template-tags.php:460
 msgid "Hatena Bookmark"
 msgstr "はてなブックマーク"
 
-#: inc/template-tags.php:477
+#: inc/template-tags.php:466
 msgid "Pocket"
 msgstr ""
 
-#: inc/template-tags.php:513
+#: inc/template-tags.php:485
 #, php-format
 msgid "Category Archives: %s"
 msgstr "%sの記事一覧"
 
-#: inc/template-tags.php:515
+#: inc/template-tags.php:487
 #, php-format
 msgid "Tag Archives: %s"
 msgstr "%sの記事一覧"
 
-#: inc/template-tags.php:517
+#: inc/template-tags.php:489
 #, php-format
 msgid "Daily Archives: %s"
 msgstr "%sの記事一覧"
 
-#: inc/template-tags.php:519
+#: inc/template-tags.php:491
 #, php-format
 msgid "Monthly Archives: %s"
 msgstr "%sの記事一覧"
 
-#: inc/template-tags.php:521
+#: inc/template-tags.php:493
 #, php-format
 msgid "Yearly Archives: %s"
 msgstr "%sの記事一覧"
 
-#: inc/template-tags.php:523
+#: inc/template-tags.php:495
 #, php-format
 msgid "Blog Archives: %s"
 msgstr "アーカイブ"
 
-#: inc/template-tags.php:525
+#: inc/template-tags.php:497
 #, php-format
 msgid "Portfolio Archives: %s"
 msgstr "%sの記事一覧"
 
-#: inc/template-tags.php:527
+#: inc/template-tags.php:499
 msgid "Search"
 msgstr "検索"
 
-#: inc/template-tags.php:529
+#: inc/template-tags.php:501
 msgid "All posts"
 msgstr "すべての記事"
 
-#: inc/template-tags.php:531
+#: inc/template-tags.php:503
 #, php-format
 msgid "Archives of %s"
 msgstr "%sの記事一覧"
+
+#: template-parts/content-none.php:10
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:12
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "ページが見つかりませんでした"
+
+#: template-parts/content-none.php:18
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"ご指定の検索条件に合う投稿がありませんでした。他のキーワードでもう一度検索し"
+"てみてください。"
+
+#: template-parts/content-none.php:21
+msgid "Return Home"
+msgstr "ホームへ戻る"
+
+#: template-parts/content-none.php:23
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr "お探しのコンテンツを見つけられませんでした。検索をお試しください。"
+
+#: template-parts/content-summary.php:21
+#, php-format
+msgid "Permalink to %s"
+msgstr ""
+
+#: template-parts/content-summary.php:30
+msgid "Continue reading"
+msgstr "続きを読む"
+
+#: template-parts/content.php:31
+msgid "Related Software"
+msgstr ""
+
+#: template-parts/content.php:32 template-parts/content.php:35
+msgid "Related Posts"
+msgstr ""
+
+#: template-parts/meta-ogp.php:68
+msgid "Uncategorized"
+msgstr "未分類"
 
