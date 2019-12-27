@@ -48,7 +48,7 @@ cp -p config.php.sample config.php
 ### Build
 
 ```
-cd /path/to/wordpress/wp-content/themes/dokugaku2020
+cd /path/to/wordpress/wp-content/themes/makotokw2020
 yarn install
 yarn run build
 ```
