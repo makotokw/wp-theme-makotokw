@@ -5,7 +5,8 @@ $site-author-image-base: 75px;
   flex-direction: row;
   align-items: flex-start;
   .author-image {
-    width: $site-author-image-base;
+    // comment out for IE11
+    //width: $site-author-image-base;
     height: $site-author-image-base;
     border-radius: $site-author-image-base;
   }

@@ -6,20 +6,17 @@
   overflow: visible;
   outline: none;
   margin: -.5rem 0 0 .5rem;
+  background: transparent;
 
   @include smaller-than-tablet-screen {
     font-size: 1.5rem;
   }
 
-  &.toggle {
-    .menu-button-inner {
-      position: fixed;
-    }
-  }
-
   .menu-button-inner {
+    position: relative;
     display: flex;
     justify-content: center;
+    min-width: 4rem;
     height: 2.3rem;
     transition: opacity 0.2s linear;
 
@@ -31,27 +28,31 @@
     .menu-text {
       position: absolute;
       font-size: 1rem;
+      left: 0;
       top: 2.5rem;
+      right: 0;
+      text-align: center;
       white-space: nowrap;
       word-break: break-all;
     }
 
     &.show {
-      opacity: 1;
+      display: flex;
     }
+
     &.hide {
-      opacity: 0;
+      display: none;
     }
   }
-
 
   &.is-pressed {
     .menu-button-inner {
       &.show {
-        opacity: 0;
+        display: none;
       }
+
       &.hide {
-        opacity: 1;
+        display: flex;
       }
     }
   }

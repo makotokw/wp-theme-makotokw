@@ -18,7 +18,11 @@
   }
 
   &.headroom--unpinned {
+    // for IE11
+    //noinspection CssOverwrittenProperties
+    transform: translateY(-100%);
     // 4px = $site-header-progress-height
+    //noinspection CssOverwrittenProperties
     transform: translateY(calc(-100% + 4px));
   }
 
@@ -76,7 +80,8 @@
   justify-content: flex-start;
   overflow: hidden;
   line-height: 1;
-
+  // for IE11
+  padding: 1rem 0;
   .site-header-logo {
     font-size: 28px;
     font-weight: 700;
