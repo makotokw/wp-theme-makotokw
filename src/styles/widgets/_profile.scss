@@ -26,5 +26,13 @@ $site-author-image-base: 75px;
     .author-description {
       font-size: 1.6rem;
     }
+    .author-contacts {
+      display: flex;
+      a {
+        @extend .btn-outlined;
+        @include circle(4rem);
+        margin-right: 1rem;
+      }
+    }
   }
 }

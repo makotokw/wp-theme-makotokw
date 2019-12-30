@@ -10,7 +10,6 @@
           min-width: inherit;
         }
         a {
-          @extend .btn;
           @extend .btn-outlined;
           margin: 5px 0 5px 5px;
           float: none;

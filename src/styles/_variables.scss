@@ -2,8 +2,8 @@
 $site-grid-margin: 30px;
 $site-grid-margin-small: 15px;
 
-$site-header-margin: 10px;
-$site-header-margin-small: 5px;
+$site-header-margin: 15px;
+$site-header-margin-small: 10px;
 $site-header-banner-height: 63px;
 $site-header-banner-height-small: 48px;
 $site-header-progress-height: 4px;
@@ -32,9 +32,9 @@ $font-family-mincho: 'Hiragino Mincho ProN', 'Hiragino Mincho ProN W3', YuMincho
 $font-family-gothic: 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic ProN', 'Hiragino Kaku Gothic ProN W3', 'Hiragino Kaku Gothic Pro', Meiryo, 'M+ 1p';
 
 $font-family-sans-serif: 'Nunito Sans', $font-family-gothic, sans-serif;
-$font-family-monospace: Monaco, Menlo, Consolas, 'Courier New', monospace;
+$font-family-monospace: Monaco, Menlo, Consolas, 'Courier New', monospace, $font-family-gothic, sans-serif;;
 
-$font-size-base: 1.75rem;
+$font-size-base: 1.6rem;
 
 $heading-size1-font-size: 5rem;
 $heading-size2-font-size: 3.6rem;
@@ -50,9 +50,11 @@ $heading-size5-small-font-size: 1.8rem;
 $heading-size6-small-font-size: 1.6rem;
 
 // Layout color ----------------------------
-$site-primary-color: #2ba6cb;
-$site-primary-dark-color: darken($site-primary-color, 50%);
-$site-primary-light-color: lighten($site-primary-color, 50%);
+$aztecSky: rgb(77, 181, 215);
+
+$site-primary-color: $aztecSky;
+$site-primary-dark-color: darken($aztecSky, 60%);
+$site-primary-light-color: lighten($aztecSky, 50%);
 $site-on-primary-text-color: #fff;
 $site-surface-color: #fff;
 $site-background-color: #fff;
@@ -63,12 +65,12 @@ $site-progress-border: $site-primary-color;
 $site-badge-color: $md-pink-400;
 $site-on-badge-text-color: #fff;
 
-$site-default-text: $md-blue-grey-900;
-$site-content-text: $md-blue-grey-700;
-$site-neutral-text: $md-blue-grey-400;
+$site-default-text: $md-blue-grey-600;
+$site-heading-text: $md-blue-grey-700;
+$site-neutral-text: $md-blue-grey-300;
 $site-placeholder-text: $md-grey-300;
 $site-default-link: darken($site-primary-color, 10%);
-$site-default-link-over: darken($site-default-link, 10%);
+$site-default-link-over: darken($site-primary-color, 20%);
 
 // Block  ----------------------------
 $block-default-bg: $site-surface-color;
@@ -81,7 +83,7 @@ $header-default-bg: white;
 $header-default-text: $site-default-text;
 $header-default-link: $site-default-text;
 $header-default-link-over: $site-default-link-over;
-$header-banner-link: #000;
+$header-banner-link: $site-heading-text;
 $header-banner-link-over: darken($site-primary-color, 10%);
 
 // Footer  ----------------------------
@@ -89,10 +91,7 @@ $footer-default-bg: $md-grey-50;
 $footer-default-text: $site-default-text;
 
 // Typography ----------------------------
-$entry-title-text: $site-default-text;
-$entry-title-text-over: $site-primary-color;
-$entry-title-text-decoration-over: underline;
-$entry-header-border-color: $site-primary-color;
+$entry-title-text: $site-heading-text;
 $caption-text: #767676;
 $code-default-bg: rgba(27, 31, 35, .05); // from GitHub
 $blockquote-text: $md-grey-700;

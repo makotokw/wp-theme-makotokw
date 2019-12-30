@@ -23,17 +23,16 @@ class Stage {
       this.smoothScrool = new SmoothScroll('a[href*="#"]', {
         speedAsDuration: true,
       });
-      this.obtainPageHeight();
       this.initFontAwesome();
 
       $(window)
         .scroll(() => {
-          this.requestUpdate();
+          this.requestRefresh({ byScroll: true });
         })
         .resize(() => {
-          this.obtainPageHeight();
-          this.requestUpdate();
+          this.requestRefresh({ byResize: true });
         });
+      this.requestRefresh({ byResize: true });
     });
   }
 
@@ -80,30 +79,20 @@ class Stage {
     }
   }
 
-  update() {
-    this.updateProgressBar();
-    this.updating = false;
+  refresh({ byScroll, byResize }) {
+    this.progressBar.refresh({ byScroll, byResize });
+    this.refreshing = false;
   }
 
-  updateProgressBar() {
-    this.progressBar.max = this.lastDocumentHeight - this.lastWindowHeight;
-    this.progressBar.val = window.scrollY;
-  }
-
-  requestUpdate() {
-    if (!this.updating) {
-      this.updating = true;
+  requestRefresh({ byScroll, byResize }) {
+    if (!this.refreshing) {
+      this.refreshing = true;
       if (window.requestAnimationFrame) {
         window.requestAnimationFrame(() => {
-          this.update();
+          this.refresh({ byScroll, byResize });
         });
       }
     }
-  }
-
-  obtainPageHeight() {
-    this.lastWindowHeight = $(window).height();
-    this.lastDocumentHeight = $(document.body).height();
   }
 }
 

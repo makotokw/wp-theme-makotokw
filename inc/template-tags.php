@@ -363,7 +363,7 @@ function makotokw_the_post_primary_meta() {
 		<?php if ( 'post' === get_post_type() ) : ?>
 			<?php makotokw_the_post_date(); ?>
 			/
-			<span class="tag-links">
+			<span class="term-links">
 				<?php makotokw_the_category_slug( '', '/' ); ?>
 			</span>
 		<?php endif; ?>
@@ -375,9 +375,13 @@ function makotokw_the_post_secondary_meta() {
 	?>
 	<section class="entry-meta-secondary">
 		<?php if ( 'post' === get_post_type() ) : ?>
-			<span class="tag-links">
-				<?php makotokw_the_tags_slug( '<i class="far fa-tag"></i>', ', ' ); ?>
-				<?php makotokw_the_terms_slug( 'portfolios', '<i class="far fa-browser"></i>', ', ' ); ?>
+			<span class="term-links">
+				<span class="term-tags-links">
+					<?php makotokw_the_tags_slug( '<i class="far fa-tag"></i>', ', ' ); ?>
+				</span>
+				<span class="term-portfolio-links">
+					<?php makotokw_the_terms_slug( 'portfolios', '<i class="far fa-browser"></i>', ', ' ); ?>
+				</span>
 			</span>
 		<?php endif; ?>
 	</section>
@@ -437,19 +441,19 @@ function makotokw_share_buttons() {
 	?>
 	<ul class="share-buttons">
 		<li class="share-twitter">
-			<a rel="nofollow noopener" data-url="<?php echo $permalink; ?>" class="btn btn-share btn-share-twitter" href="https://twitter.com/intent/tweet?original_referer=<?php echo rawurlencode( $permalink ); ?>&text=<?php echo rawurlencode( $title ); ?>&tw_p=tweetbutton&url=<?php echo urlencode( $permalink ); ?>&via=<?php echo urlencode( WP_THEME_AUTHOR_TWITTER ); ?>" target="_blank" title="Share by Twitter">
+			<a rel="nofollow noopener" data-url="<?php echo $permalink; ?>" class="btn-share btn-share-twitter" href="https://twitter.com/intent/tweet?original_referer=<?php echo rawurlencode( $permalink ); ?>&text=<?php echo rawurlencode( $title ); ?>&tw_p=tweetbutton&url=<?php echo urlencode( $permalink ); ?>&via=<?php echo urlencode( WP_THEME_AUTHOR_TWITTER ); ?>" target="_blank" title="Share by Twitter">
 				<i class="fab fa-twitter"></i>
 				<span class="share-title"><?php _e( 'Twitter', 'makotokw' ); ?></span>
 			</a>
 		</li>
 		<li class="share-facebook">
-			<a rel="nofollow noopener" class="btn btn-share btn-share-facebook" href="//www.facebook.com/sharer.php?u=<?php echo rawurlencode( $permalink ); ?>&t=<?php echo rawurlencode( $title ); ?>" target="_blank" title="Share by Facebook">
+			<a rel="nofollow noopener" class="btn-share btn-share-facebook" href="//www.facebook.com/sharer.php?u=<?php echo rawurlencode( $permalink ); ?>&t=<?php echo rawurlencode( $title ); ?>" target="_blank" title="Share by Facebook">
 				<i class="fab fa-facebook-f"></i>
 				<span class="share-title"><?php _e( 'Facebook', 'makotokw' ); ?></span>
 			</a>
 		</li>
 		<li class="share-hatena">
-			<a rel="nofollow noopener" class="btn btn-share btn-share-hatena" href="https://b.hatena.ne.jp/entry/<?php echo $permalink_schemeless; ?>" target="_blank" title="Share by Hatena">
+			<a rel="nofollow noopener" class="btn-share btn-share-hatena" href="https://b.hatena.ne.jp/entry/<?php echo $permalink_schemeless; ?>" target="_blank" title="Share by Hatena">
 				<svg class="share-brand-icon" xmlns="http://www.w3.org/2000/svg" viewBox="100 100 300 300">
 					<g>
 						<path d="M278.2,258.1q-13.6-15.2-37.8-17c14.4-3.9,24.8-9.6,31.4-17.3s9.8-17.8,9.8-30.7A55,55,0,0,0,275,166a48.8,48.8,0,0,0-19.2-18.6c-7.3-4-16-6.9-26.2-8.6s-28.1-2.4-53.7-2.4H113.6V363.6h64.2q38.7,0,55.8-2.6c11.4-1.8,20.9-4.8,28.6-8.9a52.5,52.5,0,0,0,21.9-21.4c5.1-9.2,7.7-19.9,7.7-32.1C291.8,281.7,287.3,268.2,278.2,258.1Zm-107-71.4h13.3q23.1,0,31,5.2c5.3,3.5,7.9,9.5,7.9,18s-2.9,14-8.5,17.4-16.1,5-31.4,5H171.2V186.7Zm52.8,130.3c-6.1,3.7-16.5,5.5-31.1,5.5H171.2V273h22.6c15,0,25.4,1.9,30.9,5.7s8.4,10.4,8.4,20S230.1,313.4,223.9,317.1Z"></path>
@@ -461,7 +465,7 @@ function makotokw_share_buttons() {
 			</a>
 		</li>
 		<li class="share-pocket">
-			<a rel="nofollow noopener" class="btn btn-share btn-share-pocket" href="https://getpocket.com/save/?url=<?php echo rawurlencode( $permalink ); ?>&title=<?php echo rawurlencode( $title ); ?>" target="_blank" title="Share by Pocket">
+			<a rel="nofollow noopener" class="btn-share btn-share-pocket" href="https://getpocket.com/save/?url=<?php echo rawurlencode( $permalink ); ?>&title=<?php echo rawurlencode( $title ); ?>" target="_blank" title="Share by Pocket">
 				<i class="fab fa-get-pocket"></i>
 				<span class="share-title"><?php _e( 'Pocket', 'makotokw' ); ?></span>
 			</a>

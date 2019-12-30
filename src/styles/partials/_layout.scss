@@ -9,13 +9,12 @@
 
 body {
   overflow-y: scroll;
-  height: 100vh;
 }
 
 .section-inner {
   margin-left: auto;
   margin-right: auto;
-  max-width: 120rem;
+  max-width: 100rem;
   width: calc(100% - 8rem);
 }
 
@@ -59,6 +58,6 @@ body {
 
 @include smaller-than-mobile-screen {
   .section-inner {
-    width: calc(100% - 1rem);
+    width: calc(100% - 2rem);
   }
 }

@@ -16,6 +16,7 @@
     .widget-title {
       font-size: $heading-size3-font-size;
       margin: 4.5rem 0 2.5rem;
+      font-weight: 800;
 
       // disable svg-icon
       i, .svg-inline--fa {
@@ -36,7 +37,7 @@
     .site-sidebar-inner {
     }
     .widget {
-      margin: 0 0 4rem 1rem;
+      margin: 0 .5rem 4rem .5rem;
       width: calc(100% - 1rem);
       border-top: $site-border-width solid $site-default-border;
       .widget-title {

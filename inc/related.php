@@ -99,18 +99,17 @@ function makotokw_related_portfolio( $title = 'Related Software' ) {
 
 		$rq = new WP_Query( $query_arg );
 		if ( $rq->have_posts() ) {
-			$rq->the_post();
 			?>
-			<section class="related-posts section-inner">
+			<section class="related-software section-inner">
 				<hr/>
 				<h2 class="section-title"><?php echo esc_html( $title ); ?></h2>
 				<ul>
+					<?php if ( $rq->have_posts() ) : ?>
+						<?php $rq->the_post(); ?>
 					<li>
-						<a href="<?php the_permalink(); ?>">
-							<span class="arrow"><i class="fas fa-angle-right"></i></span>
-							<span class="title"><?php the_title(); ?></span>
-						</a>
+						<a class="title" href="<?php the_permalink(); ?>"><?php the_title(); ?></span></a>
 					</li>
+					<?php endif; ?>
 				</ul>
 			</section>
 			<?php

@@ -12,7 +12,6 @@
       @include clearfix();
       margin: 20px auto;
       > a {
-        @extend .btn;
         @extend .btn-outlined;
         &:hover {
           border-color: $md-light-blue-600;
@@ -30,7 +29,6 @@
 
     .list-archives-item-month {
       a {
-        @extend .btn;
         @extend .btn-outlined;
         @include circle(42px);
         margin-left: 10px;
@@ -44,7 +42,6 @@
 
     .list-archives-item-month-no-items {
       span {
-        @extend .btn;
         @extend .btn-outlined;
         @extend .btn-disabled;
         @include circle(42px);

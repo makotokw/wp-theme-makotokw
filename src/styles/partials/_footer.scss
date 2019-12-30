@@ -17,7 +17,7 @@
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     .site-footer-help-nav {
       width: 100%;
       ul {
@@ -39,45 +39,26 @@
     align-items: baseline;
     justify-content: space-between;
     .copyright {
-      font-weight: 400;
+      font-weight: 500;
     }
     .powered-by {
     }
-    .fa-heart {
-      margin: 0 2px;
-      font-size: .5em;
-      color: $md-pink-100;
+    .emoji {
+      margin: 0 .2rem;
     }
     .fa-github-alt {
-      margin: 0 2px;
-    }
-  }
-
-  .to-the-top {
-    @extend .btn-contained;
-    @include circle(40px);
-
-    box-shadow: 1px 1px 5px #bbb;
-    position: fixed;
-    right: $site-grid-margin/2;
-    bottom: $site-grid-margin/2;
-    z-index: 10;
-
-    &.headroom--top {
-      transform: translateY(200%);
-    }
-    &.headroom--pinned.headroom--not-top {
-      transform: translateY(0%);
-    }
-    &.headroom--unpinned.headroom--not-bottom {
-      transform: translateY(200%);
+      margin: 0 .2rem;
     }
   }
 
   @include smaller-than-tablet-screen {
-    padding: 3rem 0;
+    padding: 3rem 1rem;
     .footer-credits {
-      display: block;
+      flex-direction: column;
+      font-size: 1.5rem;
+      .powered-by {
+        margin-top: .75rem;
+      }
     }
   }
 }

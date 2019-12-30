@@ -24,9 +24,15 @@
 				)
 			);
 			?>
+			<a class="menu-button menu-button-top" href="#siteHeader">
+				<span class="menu-button-inner">
+					<span class="menu-icon"><i class="far fa-arrow-up"></i></span>
+					<span class="menu-text">Top</span>
+				</span>
+			</a>
 		</div>
 		<div class="footer-credits">
-			<span class="copyright"><?php do_action( 'makotokw_credits' ); ?></span>
+			<span class="copyright">&copy; <?php echo gmdate( 'Y' ); ?>&nbsp;<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></span>
 			<?php
 				$wp_theme   = wp_get_theme();
 				$theme_name = $wp_theme->display( 'Name' );
@@ -36,12 +42,9 @@
 				);
 				?>
 			<span class="powered-by">
-				<?php echo $powered_by; ?><i class="fas fa-heart"></i><a href="https://github.com/makotokw/wp-theme-makotokw/tree/<?php echo $theme_name; ?>">Theme <i class="fab fa-github"></i></a> by <a href="https://makotokw.com">makoto_kw</a>
+				<?php echo $powered_by; ?><img class="emoji" alt="❤" src="https://s.w.org/images/core/emoji/72x72/2764.png" width="10" height="10"><a href="https://github.com/makotokw/wp-theme-makotokw/tree/<?php echo $theme_name; ?>">Theme <i class="fab fa-github"></i></a> by <a href="https://makotokw.com">makoto_kw</a>
 			</span>
 		</div>
-		<a id="toTheTop" class="to-the-top" href="#siteHeader">
-			<i class="fas fa-chevron-up"></i>
-		</a>
 	</div>
 </footer>
 <?php wp_footer(); ?>

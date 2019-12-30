@@ -1,0 +1,59 @@
+.menu-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  outline: none;
+  margin: -.5rem 0 0 .5rem;
+
+  @include smaller-than-tablet-screen {
+    font-size: 1.5rem;
+  }
+
+  &.toggle {
+    .menu-button-inner {
+      position: fixed;
+    }
+  }
+
+  .menu-button-inner {
+    display: flex;
+    justify-content: center;
+    height: 2.3rem;
+    transition: opacity 0.2s linear;
+
+    .menu-icon {
+      display: block;
+      font-size: 2rem;
+    }
+
+    .menu-text {
+      position: absolute;
+      font-size: 1rem;
+      top: 2.5rem;
+      white-space: nowrap;
+      word-break: break-all;
+    }
+
+    &.show {
+      opacity: 1;
+    }
+    &.hide {
+      opacity: 0;
+    }
+  }
+
+
+  &.is-pressed {
+    .menu-button-inner {
+      &.show {
+        opacity: 0;
+      }
+      &.hide {
+        opacity: 1;
+      }
+    }
+  }
+}
+

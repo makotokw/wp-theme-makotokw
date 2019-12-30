@@ -2,8 +2,9 @@
 @import "variables";
 
 .amazonjs_item {
-  border-color: rgba($amazon-orange, .3);
-  border-width: 1px;
+  border-color: rgba($amazon-orange, 3);
+  border-width: $site-border-width;
+  //border-radius: $site-border-radius;
   margin: 0 0 4rem 0;
   padding: 4rem 2rem;
 

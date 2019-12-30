@@ -6,10 +6,8 @@ define( 'WP_THEME_DEBUG', ARCADIA_WP_DEBUG === true );
 define( 'WP_THEME_PRODUCTION_URL', 'https://example.com' );
 define( 'WP_THEME_GOOGLE_ANALYTICS_ACCOUNT', 'UA-xxxxxx-1' );
 define( 'WP_THEME_GOOGLE_ANALYTICS_DOMAIN', 'example.com' );
-define( 'WP_THEME_ITUNES_AFFILIATE_ID', false );
 define( 'WP_THEME_AUTHOR_TWITTER', 'username' );
 define( 'WP_THEME_AUTHOR_GITHUB', 'username' );
-define( 'WP_THEME_AUTHOR_GRAVATOR_IMAGE', 'https://ja.gravatar.com/userimage/xxx/xxx.jpg' );
 define( 'WP_THEME_EXCLUDE_CATEGORY', '' );
 define( 'WP_THEME_MEMO_POST_ID', -1 );
 define( 'WP_THEME_FEATURED_TAG', 'slug1,slug2' );
@@ -18,18 +16,3 @@ define( 'WP_THEME_OGP_LOCALE', 'ja_JP' );
 define( 'WP_THEME_OGP_FB_APPID', 'xxxxxxxx' );
 define( 'WP_THEME_OGP_FB_ADMINS', 'username' );
 define( 'WP_THEME_COUNT_API', '' );
-
-function makotokw_credits() {
-	?>
-<a href="<?php echo home_url(); ?>/" title="<?php bloginfo( 'description' ); ?>"><?php bloginfo( 'name' ); ?></a> Copyright &copy; <?php echo date( 'Y' ) ?>.
-	<?php
-}
-add_action( 'makotokw_credits', 'makotokw_credits' );
-
-function makotokw_author() {
-	?>
-	<?php printf( '<span class="author vcard"><span class="fn">%1$s</span></span>', get_the_author() ); ?>
-	<?php
-}
-
-add_action( 'makotokw_author', 'makotokw_author' );

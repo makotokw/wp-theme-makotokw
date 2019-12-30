@@ -10,8 +10,8 @@ list ( $featured_image_url, $featured_image_service ) = makotokw_get_the_feature
 	<header class="entry-header">
 		<?php if ( $featured_image_url ) : ?>
 			<div class="entry-feature-image entry-feature-image-<?php echo $featured_image_service; ?>">
-				<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-					<img src="<?php echo $featured_image_url; ?>" alt="<?php echo the_title_attribute(); ?>"/>
+				<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1" title="<?php echo the_title_attribute(); ?>">
+					<div class="post-image" style="background-image: url( <?php echo esc_url( $featured_image_url ); ?> );"></div>
 				</a>
 			</div>
 		<?php endif ?>
@@ -27,9 +27,6 @@ list ( $featured_image_url, $featured_image_service ) = makotokw_get_the_feature
 		<p><?php echo makotokw_post_summary( $post->post_content, 180 ); ?></p>
 	</div>
 	<footer class="entry-footer">
-		<a class="btn btn-more-link" href="<?php the_permalink(); ?>"><?php _e( 'Continue reading', 'makotokw' ); ?></a>
-		<div class="entry-meta">
-			<?php makotokw_author(); ?>
-		</div>
+		<a class="btn-more-link" href="<?php the_permalink(); ?>"><?php _e( 'Continue reading', 'makotokw' ); ?></a>
 	</footer>
 </article><!-- #post-<?php the_ID(); ?> -->

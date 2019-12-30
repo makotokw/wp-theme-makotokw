@@ -1,7 +1,4 @@
-// noinspection NpmUsedModulesInstalled
-import $ from 'jquery';
-import 'headroom.js/dist/headroom';
-import 'headroom.js/dist/jQuery.headroom';
+import Headroom from 'headroom.js/dist/headroom';
 
 class Header {
   /**
@@ -14,10 +11,11 @@ class Header {
   }
 
   initSticky() {
-    const $header = $('#siteHeader');
-    $header.headroom({
-      offset: $header.height(),
+    const siteHeader = document.getElementById('siteHeader');
+    this.headroom = new Headroom(siteHeader, {
+      offset: siteHeader.clientHeight,
     });
+    this.headroom.init();
   }
 
   initNavigationMenu() {
@@ -25,7 +23,7 @@ class Header {
     if (!menu) {
       return;
     }
-    const toggle = document.querySelector('.nav-toggle');
+    const toggle = document.querySelector('.toggle');
     if (toggle) {
       toggle.addEventListener('click', () => {
         this.stage.toggleFixed();

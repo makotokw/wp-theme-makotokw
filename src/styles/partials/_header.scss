@@ -1,18 +1,30 @@
-$site-logo-image-width: 190px;
-$site-logo-image-height: 40px;
-$site-logo-height: 28px;
-$site-logo-height-small: 18px;
-
 .site-header {
+  transition-duration: .5s;
+  will-change: transform;
+  transition: transform .2s linear;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.10);
+
+  &.headroom {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 30;
+  }
+
   &.headroom--pinned {
     transform: translateY(0%);
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.10);
   }
+
   &.headroom--unpinned {
-    transform: translateY(-96%);
+    // 4px = $site-header-progress-height
+    transform: translateY(calc(-100% + 4px));
   }
+
   &.headroom--not-top {
-    background: rgba($header-default-bg, 0.95);
+    background: rgba($header-default-bg, 0.8);
+
     .site-header-banner {
       display: none;
     }
@@ -22,16 +34,10 @@ $site-logo-height-small: 18px;
 .site-header {
   background: $header-default-bg;
   color: $header-default-text;
-  position: fixed;
-  z-index: 30;
-  top: 0;
-  left: 0;
-  right: 0;
-  transition-duration: .5s;
-  will-change: transform;
-  transition: transform .2s linear;
+
   a {
     color: $header-default-link;
+
     &:hover {
       color: $header-default-link-over;
     }
@@ -47,12 +53,18 @@ $site-logo-height-small: 18px;
     height: $site-header-banner-height;
     max-height: $site-header-banner-height;
   }
+
   @include smaller-than-tablet-screen {
     .site-header-inner {
       width: calc(100% - 4rem);
       padding: $site-header-margin-small 0;
       height: $site-header-banner-height-small;
       max-height: $site-header-banner-height-small;
+    }
+  }
+  @include smaller-than-mobile-screen {
+    .site-header-inner {
+      width: calc(100% - 2rem);
     }
   }
 }
@@ -65,14 +77,16 @@ $site-logo-height-small: 18px;
   overflow: hidden;
   line-height: 1;
 
-  .site-header-logo-svg {
-    fill: $header-banner-link;
-    width: $site-logo-image-width * ($site-logo-height / $site-logo-image-height);
-    height: $site-logo-height;
-  }
-  &:hover {
-    .site-header-logo-svg {
-      fill: $header-banner-link-over;
+  .site-header-logo {
+    font-size: 28px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: -3px;
+    padding-right: 3px;
+    color: $header-banner-link;
+
+    &:hover {
+      color: $header-banner-link-over;
     }
   }
 
@@ -84,23 +98,45 @@ $site-logo-height-small: 18px;
 
   @include smaller-than-tablet-screen {
     display: block;
-    .site-header-logo-svg {
-      width: $site-logo-image-width * ($site-logo-height-small / $site-logo-image-height);
-      height: $site-logo-height-small;
+    .site-header-logo {
+      font-size: 18px;
     }
     .site-header-description {
-      margin: .1rem 0 0 0;
+      margin: .75rem 0 0 .5rem;
+      font-size: 14px;
+    }
+  }
+
+  @include smaller-than-mobile-screen {
+    .site-header-logo {
+      font-size: 16px;
+    }
+    .site-header-description {
       font-size: 12px;
     }
   }
 }
 
 .site-header-nav {
-  .toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 3rem;
+  display: flex;
+
+  .menu-button {
+    margin-left: .5rem;
+    min-width: 4rem;
+  }
+
+  @include smaller-than-tablet-screen {
+    .menu-text {
+      display: none;
+    }
+  }
+
+  .menu-button-top {
+    opacity: 0;
+
+    .headroom--not-top & {
+      opacity: 1;
+    }
   }
 }
 
@@ -108,7 +144,7 @@ $site-logo-height-small: 18px;
   position: absolute;
   height: $site-header-progress-height;
   right: 0;
-  bottom: -1px;
+  bottom: 0;
   left: 0;
 }
 
@@ -131,28 +167,45 @@ $site-logo-height-small: 18px;
     visibility: hidden;
   }
 
-  .menu-overlay-inner {
-  }
-
   .list-categories {
     margin: 0;
+
     .cat-item {
       margin: 0;
       line-height: 1;
-      padding: .75rem 1rem;
+      padding: 1.5rem 0 1.5rem 1rem;
       border-bottom: $site-border-width solid $site-default-border;
+
+      &:first-child {
+        border-top: $site-border-width solid $site-default-border;
+      }
+
+      .children {
+        margin: 1rem 0 0;
+        padding: .5rem 0 0 4rem;
+      }
+
       .cat-item {
+        //border-bottom: none;
+      }
+
+      .cat-item:last-child {
         border-bottom: none;
+        padding-bottom: 0;
       }
     }
 
     a {
       color: $site-default-text;
+
+      i, svg {
+        color: $site-neutral-text;
+      }
     }
+
   }
 
   @include smaller-than-tablet-screen {
     top: $site-header-height-small;
   }
-
 }

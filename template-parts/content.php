@@ -11,7 +11,6 @@ $post_type = get_post_type();
 		<h1 class="entry-title">
 			<?php the_title(); ?>
 		</h1>
-		<?php makotokw_the_post_secondary_meta(); ?>
 	</header>
 	<div class="entry-content">
 		<div class="section-inner">
@@ -23,9 +22,7 @@ $post_type = get_post_type();
 		<?php endif ?>
 	</div>
 	<footer class="entry-footer">
-		<div class="entry-meta">
-			<?php makotokw_author(); ?>
-		</div>
+		<?php makotokw_the_post_secondary_meta(); ?>
 		<?php makotokw_share_this(); ?>
 		<?php if ( 'post' === $post_type ) : ?>
 			<?php makotokw_related_portfolio( __( 'Related Software', 'makotokw' ) ); ?>

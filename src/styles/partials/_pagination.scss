@@ -1,6 +1,5 @@
 
 %pagenation-page {
-  @extend .btn;
   @extend .btn-outlined;
   @include circle(40px);
   @include smaller-than-tablet-screen {
@@ -11,12 +10,13 @@
 .pagination {
   display: block;
   @include clearfix;
-  padding: $site-grid-margin 0;
+  padding: $site-grid-margin auto;
 
   ul {
     display: flex;
+    justify-content: center;
     list-style: none;
-    margin: 10px 0 10px 0;
+    margin: 1rem 0;
     padding: 0;
 
     li {

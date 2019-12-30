@@ -18,10 +18,6 @@ body {
   @include smaller-than-tablet-screen {
     font-size: $font-size-base * .9;
   }
-
-  // for Slideout: https://github.com/Mango/slideout
-  width: 100%;
-  height: 100%;
 }
 
 main {
@@ -57,6 +53,7 @@ h3,
 h4,
 h5,
 h6 {
+  color: $site-heading-text;
   font-feature-settings: "lnum";
   font-variant-numeric: lining-nums;
   font-weight: 700;
@@ -67,7 +64,6 @@ h6 {
 h1 {
   font-size: $heading-size1-font-size;
   font-weight: 800;
-  line-height: 1.138888889;
 }
 
 h2 {
@@ -244,27 +240,15 @@ dd + dt {
 
 blockquote {
   color: $blockquote-text;
-  border-left: $site-border-left-width solid $site-default-border;
+  border-left: .4rem solid $site-default-border;
   font-style: italic;
   font-weight: 300;
-  margin: 3rem 0 3rem 0;
-
-  /*rtl:ignore*/
-  padding: 0.5rem 0 0.5rem 2rem;
+  margin: 4rem 0;
+  padding: .5rem 0 .5rem 2rem;
 
   cite,
   small {
     @extend .quote-caption;
-  }
-
-  blockquote {
-    margin-right: 0;
-  }
-
-  @include smaller-than-desktop-screen {
-    margin: 10px 0;
-    padding: 0 0 0 0.6em;
-    border-left: 0.4em solid $site-default-border;
   }
 }
 

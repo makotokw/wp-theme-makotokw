@@ -269,7 +269,7 @@ function makotokw_fonts_urls() {
 	$urls  = array();
 	$fonts = array(
 		// https://fonts.google.com/specimen/Nunito+Sans
-		'Nunito+Sans:300,300i,400,400i,700,700i',
+		'Nunito+Sans:300,300i,400,400i,700,800',
 	);
 	if ( ! empty( $fonts ) ) {
 		$fonts_url = add_query_arg(

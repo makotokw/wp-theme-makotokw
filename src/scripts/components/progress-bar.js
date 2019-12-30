@@ -13,6 +13,13 @@ class ProgressBar {
   set val(value) {
     this.$siteProgress.val(value);
   }
+
+  refresh({ byResize }) {
+    if (byResize) {
+      this.max = document.body.clientHeight - window.innerHeight;
+    }
+    this.val = window.scrollY;
+  }
 }
 
 export default ProgressBar;

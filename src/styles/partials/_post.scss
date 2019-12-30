@@ -1,3 +1,18 @@
+// Header and Footer
+// -----------------------------------------------
+
+.term-links {
+  a {
+    color: $site-neutral-text;
+  }
+}
+
+.entry-meta-primary,
+.entry-meta-secondary {
+  font-size: 1.6rem;
+  color: $site-neutral-text;
+}
+
 // Header
 // -----------------------------------------------
 
@@ -5,64 +20,36 @@
   position: relative;
 
   .entry-title {
-    font-weight: 800;
     color: $entry-title-text;
     margin: 0;
 
     a {
       color: $entry-title-text;
-      &:hover {
-        color: $entry-title-text-over;
-        text-decoration: $entry-title-text-decoration-over;
-      }
     }
   }
 
   .entry-meta-primary {
-    font-size: 1.6rem;
-    color: $site-neutral-text;
     margin-bottom: 1.5rem;
-    .tag-links {
+    .term-links {
       text-transform: uppercase;
-      a {
-        color: $site-neutral-text;
-        &:hover {
-          color: $site-default-link-over;
-        }
-      }
-    }
-  }
-
-  .entry-meta-secondary {
-    font-size: 1.4rem;
-    color: $site-neutral-text;
-    .tag-links {
-      text-transform: capitalize;
-      a {
-        color: $site-neutral-text;
-
-        &:hover {
-          color: $site-default-link-over;
-        }
-      }
     }
   }
 
   // centering title on single
   .single &, .page & {
-    .entry-meta-primary,
     .entry-title,
+    .entry-meta-primary,
     .entry-meta-secondary {
       text-align: center;
-    }
-    .entry-meta-primary {
-      margin-bottom: 3rem;
     }
     .entry-title {
       font-size: 5rem;
     }
+    .entry-meta-primary {
+      margin-bottom: 3rem;
+    }
     .entry-meta-secondary {
-      .tag-links > * {
+      .term-links > * {
         margin-top: 3rem;
       }
     }
@@ -76,18 +63,17 @@
     }
 
     .entry-feature-image {
-      max-width: 150px;
-      max-height: 100px;
-      overflow-y: hidden;
       margin-right: $site-grid-margin/2;
-
-      img {
-        width: 100%;
-        height: auto;
+      .post-image {
+        background: #fff no-repeat center;
+        background-size: cover;
+        flex-shrink: 0;
+        width: 15rem;
+        height: 15rem;
       }
     }
 
-    &:focus, &:hover {
+    &:hover {
       .entry-feature-image {
         transform: scale(1.05);
         transition: 0.3s ease-in-out;
@@ -99,6 +85,24 @@
     .single &, .page & {
       .entry-title {
         font-size: 3rem;
+      }
+    }
+    .post-summary & {
+      .entry-feature-image {
+        .post-image {
+          width: 10rem;
+          height: 10rem;
+        }
+      }
+    }
+  }
+  @include smaller-than-mobile-screen {
+    .post-summary & {
+      .entry-feature-image {
+        .post-image {
+          width: 8rem;
+          height: 8rem;
+        }
       }
     }
   }
@@ -191,17 +195,6 @@
   margin-top: 1rem;
 }
 
-// hide
-.entry-author {
-  display: none;
-}
-
-// Sticky (Featured) Content
-// -----------------------------------------------
-
-.sticky {
-}
-
 // Media
 // -----------------------------------------------
 
@@ -262,7 +255,7 @@ object {
   display: block;
   color: $site-default-text;
   font-size: $heading-size2-font-size;
-  font-weight: 700;
+  font-weight: 800;
   margin: 0 0 3rem 0;
   @include smaller-than-tablet-screen {
     margin: 0 0 2.4rem 0;
@@ -289,6 +282,31 @@ object {
   }
 }
 
+.entry-footer {
+  .entry-meta-secondary {
+    margin: 2rem 8rem 2rem 8rem;
+    .term-links {
+      .term-tags-links {
+        margin-right: 1rem;
+      }
+    }
+    @include smaller-than-tablet-screen {
+      margin: 1rem 2rem 1rem 2rem;
+    }
+    @include smaller-than-mobile-screen {
+      margin: 1rem;
+    }
+  }
+}
+
+.related-software {
+  .title {
+    color: $site-default-text;
+    font-weight: 700;
+    font-size: 1.8rem;
+  }
+}
+
 // Post Inline
 .post-inlines {
   list-style: none;
@@ -303,7 +321,7 @@ object {
   display: flex;
   align-items: flex-start;
   color: $site-default-text;
-  &:focus,
+
   &:hover {
     color: $site-default-text;
     text-decoration: none;
@@ -371,14 +389,12 @@ object {
   }
 }
 
-
 // on Archives
 // -----------------------------------------------
-
 .post-summary {
   .entry-header,
   .entry-content {
-    padding: 3rem 1.5rem 0 3rem;
+    padding: 3rem 2.5rem 0 3rem;
   }
   .entry-footer {
     padding-bottom: 3rem;
@@ -387,7 +403,7 @@ object {
   @include smaller-than-tablet-screen {
     .entry-header,
     .entry-content {
-      padding: 2rem 1rem 0 2rem;
+      padding: 2rem 1.5rem 0 2rem;
     }
     .entry-footer {
       padding-bottom: 2rem;
@@ -397,7 +413,7 @@ object {
   @include smaller-than-mobile-screen {
     .entry-header,
     .entry-content {
-      padding: 1rem 0.5rem 0 1rem;
+      padding: 2rem 0.5rem 0 1rem;
     }
     .entry-footer {
       padding-bottom: 1rem;
@@ -406,12 +422,18 @@ object {
 }
 
 .post-summaries {
+  margin: 0 auto;
+  max-width: 75rem;
   .post-summary {
     margin: $site-grid-margin;
     border-bottom: $site-border-width solid $site-default-border;
 
     @include smaller-than-tablet-screen {
-      margin: $site-grid-margin-small;
+      margin: $site-grid-margin $site-grid-margin-small;
+    }
+    @include smaller-than-mobile-screen {
+      margin: $site-grid-margin 0;
+
     }
 
     .post-summaries > &:first-child {
@@ -424,30 +446,29 @@ object {
 
 // on Single
 // -----------------------------------------------
-
 .post-detailed {
   .entry-header {
     margin: 0 auto;
-    max-width: 120rem;
-    padding: 10rem 5rem 5rem;
+    max-width: 65rem;
+    padding: 10rem 5rem;
+  }
+  .entry-content {
+    margin: 0 auto;
+    max-width: 75rem;
+    padding: 0;
   }
   @include smaller-than-tablet-screen {
     .entry-header {
-      padding: 5rem 2.5rem 2.5rem;
+      padding: 5rem 2.5rem;
     }
     .entry-content {
-      padding: 2rem;
     }
   }
   @include smaller-than-mobile-screen {
     .entry-header {
-      padding: 2.5rem 1rem 1rem;
+      padding: 2.5rem 1rem;
     }
     .entry-content {
-      padding: 1rem;
     }
   }
 }
-
-
-

@@ -136,13 +136,9 @@ $author-border-width: 2px;
   > .comment-body {
     .comment-author {
       .avatar {
-        border: $author-border-width solid $site-primary-color;
-        background: $site-primary-color;
-        padding: 2px;
       }
     }
     .comment-content {
-      border: $author-border-width solid $site-default-border;
     }
   }
 }
