@@ -22,7 +22,9 @@ module.exports = {
         test: require.resolve('headroom.js'),
         use: [{
           loader: 'expose-loader',
-          options: 'Headroom',
+          options: {
+            exposes: 'Headroom',
+          },
         }],
       },
       {
@@ -81,7 +83,7 @@ module.exports = {
   plugins: [
     // https://webpack.js.org/plugins/mini-css-extract-plugin/
     new MiniCssExtractPlugin({
-      moduleFilename: (chunk) => (chunk.name === 'amazonjs' ? '../[name].css' : '[name].css'),
+      filename: (chunk) => (chunk.name === 'amazonjs' ? '../[name].css' : '[name].css'),
       ignoreOrder: false,
     }),
     // https://github.com/Turbo87/webpack-notifier

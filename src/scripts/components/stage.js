@@ -1,6 +1,6 @@
 // noinspection NpmUsedModulesInstalled
 import $ from 'jquery';
-import '@fortawesome/fontawesome-pro/js/all';
+import '@fortawesome/fontawesome-free/js/all';
 import 'google-code-prettify/src/prettify';
 import SmoothScroll from 'smooth-scroll';
 import Header from './header';
