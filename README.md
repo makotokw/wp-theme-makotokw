@@ -3,7 +3,7 @@ makotokw theme for WordPress
 
 WordPress theme for [blog.makotokw.com](https://blog.makotokw.com).
 
-![Screenshot](https://raw.githubusercontent.com/makotokw/wp-theme-makotokw/makotokw2018/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/makotokw/wp-theme-makotokw/makotokw2021/screenshot.png)
 
  * Created by [_s](http://underscores.me)
  * Inspired [Twenty Fifteen](https://twentyfifteendemo.wordpress.com/), [ghost](https://blog.ghost.org/) and [medium](https://medium.com/)
@@ -33,8 +33,8 @@ So, please use a reference of one implementation for WordPress theme.
 
 ```
 cd /path/to/wordpress/wp-content/themes
-git clone https://github.com/makotokw/wp-theme-makotokw.git makotokw2018
-cd makotokw2018
+git clone https://github.com/makotokw/wp-theme-makotokw.git makotokw2021
+cd makotokw2021
 cp -p config.php.sample config.php
 ```
 
@@ -48,7 +48,7 @@ cp -p config.php.sample config.php
 ### Build
 
 ```
-cd /path/to/wordpress/wp-content/themes/makotokw2020
+cd /path/to/wordpress/wp-content/themes/makotokw2021
 yarn install
 yarn run build
 ```
