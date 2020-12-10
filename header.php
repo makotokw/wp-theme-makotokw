@@ -57,17 +57,17 @@
 		<nav class="site-header-nav">
 			<a class="menu-button menu-button-top" href="#siteHeader">
 				<span class="menu-button-inner">
-					<span class="menu-icon"><i class="far fa-arrow-up"></i></span>
+					<span class="menu-icon"><i class="fas fa-arrow-up"></i></span>
 					<span class="menu-text">Top</span>
 				</span>
 			</a>
 			<button class="toggle menu-button" aria-expanded="false">
 				<span class="menu-button-inner show">
-					<span class="menu-icon"><i class="far fa-ellipsis-h"></i></span>
+					<span class="menu-icon"><i class="fas fa-ellipsis-h"></i></span>
 					<span class="menu-text">Menu</span>
 				</span>
 				<span class="menu-button-inner hide">
-					<span class="menu-icon"><i class="far fa-times"></i></span>
+					<span class="menu-icon"><i class="fas fa-times"></i></span>
 					<span class="menu-text">Close</span>
 				</span>
 			</button>

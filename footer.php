@@ -26,7 +26,7 @@
 			?>
 			<a class="menu-button menu-button-top" href="#siteHeader">
 				<span class="menu-button-inner">
-					<span class="menu-icon"><i class="far fa-arrow-up"></i></span>
+					<span class="menu-icon"><i class="fas fa-arrow-up"></i></span>
 					<span class="menu-text">Top</span>
 				</span>
 			</a>

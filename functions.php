@@ -274,7 +274,7 @@ function makotokw_fonts_urls() {
 	if ( ! empty( $fonts ) ) {
 		$fonts_url = add_query_arg(
 			array(
-				'family' => implode( '|', $fonts ),
+				'family'  => implode( '|', $fonts ),
 				'display' => 'swap',
 			),
 			'https://fonts.googleapis.com/css'

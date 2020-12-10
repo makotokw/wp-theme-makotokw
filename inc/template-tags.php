@@ -32,13 +32,13 @@ function makotokw_content_nav() {
 		<div class="pagination-single-inner">
 			<?php if ( $prev_post ) : ?>
 				<a class="previous-post" href="<?php echo esc_url( get_permalink( $prev_post->ID ) ); ?>">
-					<span class="arrow" aria-hidden="true"><i class="far fa-arrow-left"></i></span>
+					<span class="arrow" aria-hidden="true"><i class="fas fa-arrow-left"></i></span>
 					<span class="title"><span class="title-inner"><?php echo wp_kses_post( get_the_title( $prev_post->ID ) ); ?></span></span>
 				</a>
 			<?php endif; ?>
 			<?php if ( $next_post ) : ?>
 				<a class="next-post" href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>">
-					<span class="arrow" aria-hidden="true"><i class="far fa-arrow-right"></i></span>
+					<span class="arrow" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
 					<span class="title"><span class="title-inner"><?php echo wp_kses_post( get_the_title( $next_post->ID ) ); ?></span></span>
 				</a>
 			<?php endif; ?>
@@ -377,10 +377,10 @@ function makotokw_the_post_secondary_meta() {
 		<?php if ( 'post' === get_post_type() ) : ?>
 			<span class="term-links">
 				<span class="term-tags-links">
-					<?php makotokw_the_tags_slug( '<i class="far fa-tag"></i>', ', ' ); ?>
+					<?php makotokw_the_tags_slug( '<i class="fas fa-tag"></i>', ', ' ); ?>
 				</span>
 				<span class="term-portfolio-links">
-					<?php makotokw_the_terms_slug( 'portfolios', '<i class="far fa-browser"></i>', ', ' ); ?>
+					<?php makotokw_the_terms_slug( 'portfolios', '<i class="fas fa-browser"></i>', ', ' ); ?>
 				</span>
 			</span>
 		<?php endif; ?>
