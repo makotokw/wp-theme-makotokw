@@ -447,14 +447,14 @@ object {
 // on Single
 // -----------------------------------------------
 .post-detailed {
+  margin: 0 auto;
+  max-width: 75rem;
   .entry-header {
     margin: 0 auto;
-    max-width: 65rem;
     padding: 10rem 5rem;
   }
   .entry-content {
     margin: 0 auto;
-    max-width: 75rem;
     padding: 0;
   }
   @include smaller-than-tablet-screen {

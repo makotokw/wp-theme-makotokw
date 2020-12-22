@@ -2,9 +2,9 @@
 $site-grid-margin: 30px;
 $site-grid-margin-small: 15px;
 
-$site-header-margin: 15px;
-$site-header-margin-small: 10px;
-$site-header-banner-height: 63px;
+$site-header-margin: 10px;
+$site-header-margin-small: 5px;
+$site-header-banner-height: 64px;
 $site-header-banner-height-small: 48px;
 $site-header-progress-height: 4px;
 $site-header-height: $site-header-banner-height + 1 + $site-header-margin * 2;
@@ -34,7 +34,7 @@ $font-family-gothic: 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic ProN', 'Hiragi
 $font-family-sans-serif: 'Nunito Sans', $font-family-gothic, sans-serif;
 $font-family-monospace: Monaco, Menlo, Consolas, 'Courier New', monospace, $font-family-gothic, sans-serif;;
 
-$font-size-base: 1.6rem;
+$font-size-base: 1.8rem;
 
 $heading-size1-font-size: 5rem;
 $heading-size2-font-size: 3.6rem;
@@ -87,8 +87,11 @@ $header-banner-link: $site-heading-text;
 $header-banner-link-over: darken($site-primary-color, 10%);
 
 // Footer  ----------------------------
-$footer-default-bg: $md-grey-50;
+$footer-default-bg: white;
 $footer-default-text: $site-default-text;
+
+// Sidebar  ----------------------------
+$sidebar-default-bg: $md-grey-50;
 
 // Typography ----------------------------
 $entry-title-text: $site-heading-text;

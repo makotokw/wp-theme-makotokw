@@ -1,7 +1,8 @@
 .site-sidebar {
   margin-top: 5rem;
-  margin-bottom: 5rem;
+  padding-bottom: 5rem;
   border-top: $site-border-width solid $site-default-border;
+  background-color: $sidebar-default-bg;
 
   .site-sidebar-inner {
     display: flex;
@@ -30,7 +31,6 @@
   }
 
   @include smaller-than-tablet-screen {
-    border: none;
     margin-top: 0;
     margin-bottom: 0;
 
@@ -42,6 +42,9 @@
       border-top: $site-border-width solid $site-default-border;
       .widget-title {
         font-size: $heading-size3-small-font-size;
+      }
+      &:first-child {
+        border-top: none;
       }
     }
   }

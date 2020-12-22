@@ -50,7 +50,7 @@
 	<div class="site-header-inner section-inner">
 		<div class="site-header-titles">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="site-header-logo">
-				<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>
+				<img src="<?php echo get_theme_file_uri(); ?>/assets/images/logo.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" class="site-header-logo-image">
 			</a>
 			<div class="site-header-description"><?php bloginfo( 'description' ); ?></div>
 		</div>
@@ -58,17 +58,14 @@
 			<a class="menu-button menu-button-top" href="#siteHeader">
 				<span class="menu-button-inner">
 					<span class="menu-icon"><i class="fas fa-arrow-up"></i></span>
-					<span class="menu-text">Top</span>
 				</span>
 			</a>
 			<button class="toggle menu-button" aria-expanded="false">
 				<span class="menu-button-inner show">
 					<span class="menu-icon"><i class="fas fa-ellipsis-h"></i></span>
-					<span class="menu-text">Menu</span>
 				</span>
 				<span class="menu-button-inner hide">
 					<span class="menu-icon"><i class="fas fa-times"></i></span>
-					<span class="menu-text">Close</span>
 				</span>
 			</button>
 		</nav>

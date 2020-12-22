@@ -25,17 +25,6 @@
       font-size: 2rem;
     }
 
-    .menu-text {
-      position: absolute;
-      font-size: 1rem;
-      left: 0;
-      top: 2.5rem;
-      right: 0;
-      text-align: center;
-      white-space: nowrap;
-      word-break: break-all;
-    }
-
     &.show {
       display: flex;
     }

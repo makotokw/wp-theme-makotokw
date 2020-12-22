@@ -24,12 +24,6 @@
 				)
 			);
 			?>
-			<a class="menu-button menu-button-top" href="#siteHeader">
-				<span class="menu-button-inner">
-					<span class="menu-icon"><i class="fas fa-arrow-up"></i></span>
-					<span class="menu-text">Top</span>
-				</span>
-			</a>
 		</div>
 		<div class="footer-credits">
 			<span class="copyright">&copy; <?php echo gmdate( 'Y' ); ?>&nbsp;<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></span>
