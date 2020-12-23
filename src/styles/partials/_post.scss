@@ -65,6 +65,7 @@
     .entry-feature-image {
       margin-right: $site-grid-margin/2;
       .post-image {
+        border-radius: $entry-feature-image-radius;
         background: #fff no-repeat center;
         background-size: cover;
         flex-shrink: 0;
@@ -75,8 +76,10 @@
 
     &:hover {
       .entry-feature-image {
-        transform: scale(1.05);
-        transition: 0.3s ease-in-out;
+        .post-image {
+          transform: scale(1.05);
+          transition: .3s ease-in-out;
+        }
       }
     }
   }
@@ -322,17 +325,6 @@ object {
   align-items: flex-start;
   color: $site-default-text;
 
-  &:hover {
-    color: $site-default-text;
-    text-decoration: none;
-    .title {
-      text-decoration: underline;
-    }
-    .post-image {
-      transform: scale(1.05);
-      transition: 0.3s ease-in-out;
-    }
-  }
   i {
     color: $site-default-text;
   }
@@ -345,6 +337,7 @@ object {
   }
 
   .post-image {
+    border-radius: $entry-feature-image-radius;
     background: #fff no-repeat center;
     background-size: cover;
     flex-shrink: 0;
@@ -362,6 +355,17 @@ object {
       font-size: 1.5rem;
       color: $site-neutral-text;
       margin: .5rem 0 0;
+    }
+  }
+  &:hover {
+    color: $site-default-text;
+    text-decoration: none;
+    .title {
+      text-decoration: underline;
+    }
+    .post-image {
+      transform: scale(1.05);
+      transition: .3s ease-in-out;
     }
   }
 }
