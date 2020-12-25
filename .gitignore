@@ -4,9 +4,8 @@
 /config.php
 
 ### app Build ###
-/assets/*.js
-/assets/*.css
-/amazonjs.css
+/dist
+amazonjs.css
 *.js.map
 *.css.map
 
