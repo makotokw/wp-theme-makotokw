@@ -20,11 +20,11 @@
   position: relative;
 
   .entry-title {
-    color: $entry-title-text;
+    color: $entry-text;
     margin: 0;
 
     a {
-      color: $entry-title-text;
+      color: $entry-text;
     }
   }
 
@@ -116,6 +116,14 @@
 
 .entry-content {
   @include sentence-block();
+  color: $entry-text;
+
+  .post-summary & {
+    color: $entry-summary-text;
+    p {
+      line-height: 1.8;
+    }
+  }
 
   & > * {
     margin-left: auto;
@@ -329,6 +337,7 @@ object {
     color: $site-default-text;
   }
   .title {
+    color: $entry-text;
     font-weight: 700;
     font-size: 1.8rem;
   }
