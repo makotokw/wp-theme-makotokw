@@ -1,0 +1,10 @@
+body {
+  hyphens: auto;
+  margin: 0;
+  background-color: $site-background-color;
+  color: $site-default-text;
+  font-family: $font-family-sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}

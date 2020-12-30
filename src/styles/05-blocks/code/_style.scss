@@ -17,6 +17,16 @@
     color: #000;
   }
 
+  // block: code
+  .wp-block-code {
+    @extend .block-content;
+    code {
+      margin: 0;
+      padding: 0;
+      background: none;
+    }
+  }
+
   .syntaxhighlighter {
     @extend .block-content;
   }
@@ -35,8 +45,8 @@
       }
 
       .line.highlighted {
-          background-color: $site-primary-color !important;
-          color: $site-on-primary-text-color !important;
+        background-color: $site-primary-color !important;
+        color: $site-on-primary-text-color !important;
       }
     }
   }
@@ -45,3 +55,4 @@
     padding: 24px !important;
   }
 }
+

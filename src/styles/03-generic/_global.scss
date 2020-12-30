@@ -114,16 +114,6 @@
   margin: 0 auto;
 }
 
-/* Clearing */
-.clear,
-.site-main,
-.entry-content,
-.page-content,
-.nav-links,
-.comment-body {
-  @include clearfix;
-}
-
 .desktop-hide {
   @include larger-than-desktop-screen {
     display: none !important;

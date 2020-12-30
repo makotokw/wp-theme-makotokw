@@ -1,0 +1,9 @@
+/* Clearing */
+.clear,
+.site-main,
+.entry-content,
+.page-content,
+.nav-links,
+.comment-body {
+  @include clearfix;
+}

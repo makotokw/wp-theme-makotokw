@@ -7,6 +7,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   entry: {
     style: ['./src/styles/style.scss', './src/scripts/index.js'],
+    'style-editor': ['./src/styles/style-editor.scss'],
     amazonjs: ['./src/styles/amazonjs.scss'],
   },
   output: {

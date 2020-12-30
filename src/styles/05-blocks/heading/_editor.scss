@@ -1,0 +1,18 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $site-heading-text;
+  font-feature-settings: "lnum";
+  font-variant-numeric: lining-nums;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 2rem 0 1.4rem;
+}
+
+h2 {
+  padding-bottom: .75rem;
+  border-bottom: $site-border-width solid $site-default-border;
+}

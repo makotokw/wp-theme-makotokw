@@ -89,6 +89,11 @@ function makotokw_setup() {
 	// Tospy may use shortlink
 	//remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
 
+	// Add support for Block Styles.
+	add_theme_support( 'wp-block-styles' );
+	add_theme_support( 'editor-styles' );
+	add_editor_style( './dist/style-editor.css' );
+
 	/*
 	 * Disable Jetpack OGP
 	 */

@@ -1,0 +1,57 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $site-heading-text;
+  font-feature-settings: "lnum";
+  font-variant-numeric: lining-nums;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 3.5rem 0 2rem;
+}
+
+h1 {
+  font-size: $heading-size1-font-size;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: $heading-size2-font-size;
+}
+
+h3 {
+  font-size: $heading-size3-font-size;
+}
+
+h4 {
+  font-size: $heading-size4-font-size;
+}
+
+h5 {
+  font-size: $heading-size5-font-size;
+}
+
+h6 {
+  font-size: $heading-size6-font-size;
+}
+
+h1,
+h2,
+h3 {
+  margin: 5rem auto 3rem;
+}
+
+h4,
+h5,
+h6 {
+  margin: 4rem auto 2rem;
+}
+
+.entry-content {
+  h2 {
+    padding-bottom: .75rem;
+    border-bottom: $site-border-width solid $site-default-border;
+  }
+}
