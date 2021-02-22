@@ -210,7 +210,6 @@ if ( ! is_admin_bar_showing() ) {
 }
 
 function makotokw_is_noindex() {
-	/** @var WP_Query $wp_query */
 	global $wp_query;
 	if ( $wp_query ) {
 		if ( $wp_query->is_archive() ) {
@@ -232,12 +231,6 @@ function makotokw_is_noindex() {
 		}
 	}
 	return false;
-}
-
-function makotokw_is_old_post( $post = null ) {
-	$post = get_post( $post );
-	// only within 1 year
-	return get_post_time( 'U', false, $post ) < strtotime( '-1 year' );
 }
 
 /**
@@ -304,6 +297,32 @@ function makotokw_get_the_feature_image_url() {
 	$featured_image_service = null;
 	if ( class_exists( 'Makotokw\PostUtility' ) ) {
 		$featured_image_url = Makotokw\PostUtility::find_featured_image_url( null, $featured_image_service );
+	}
+
+	if ( $featured_image_url ) {
+		return array( $featured_image_url, $featured_image_service );
+	}
+
+	$fallback_categories = array( 'wordpress', 'server', 'hardware' );
+
+	$post_title      = get_the_title();
+	$post_categories = get_the_category();
+	foreach ( $fallback_categories as $fallback_category ) {
+		if ( $post_title && preg_match( '/' . $fallback_category . '/i', $post_title ) ) {
+			$featured_image_url     = get_template_directory_uri() . "/assets/images/featured/{$fallback_category}.png";
+			$featured_image_service = 'fallback';
+			break;
+		}
+		$filterd = array_filter(
+			$post_categories,
+			function ( $term ) use ( $fallback_category ) {
+				return $term->slug === $fallback_category;
+			}
+		);
+		if ( ! empty( $filterd ) ) {
+			$featured_image_url     = get_template_directory_uri() . "/assets/images/featured/{$fallback_category}.png";
+			$featured_image_service = 'fallback';
+		}
 	}
 
 	if ( ! $featured_image_url ) {
