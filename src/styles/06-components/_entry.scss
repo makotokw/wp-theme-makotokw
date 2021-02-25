@@ -9,7 +9,7 @@
 
 .entry-meta-primary,
 .entry-meta-secondary {
-  font-size: 1.6rem;
+  font-size: 16px;
   color: $site-neutral-text;
 }
 
@@ -29,7 +29,7 @@
   }
 
   .entry-meta-primary {
-    margin-bottom: 1.5rem;
+    margin-bottom: 15px;
     .term-links {
       text-transform: uppercase;
     }
@@ -43,14 +43,14 @@
       text-align: center;
     }
     .entry-title {
-      font-size: 5rem;
+      font-size: 50px;
     }
     .entry-meta-primary {
-      margin-bottom: 3rem;
+      margin-bottom: 30px;
     }
     .entry-meta-secondary {
       .term-links > * {
-        margin-top: 3rem;
+        margin-top: 30px;
       }
     }
   }
@@ -59,18 +59,18 @@
     display: flex;
 
     .entry-title {
-      font-size: 2rem;
+      font-size: 20px;
     }
 
     .entry-feature-image {
-      margin-right: $site-grid-margin/2;
+      margin-right: calc(var(--global--spacing-horizontal) / 2);
       .post-image {
         border-radius: $entry-feature-image-radius;
         background: #fff no-repeat center;
         background-size: cover;
         flex-shrink: 0;
-        width: 15rem;
-        height: 15rem;
+        width: 150px;
+        height: 150px;
       }
     }
 
@@ -87,14 +87,14 @@
   @include smaller-than-tablet-screen {
     .single &, .page & {
       .entry-title {
-        font-size: 3rem;
+        font-size: 30px;
       }
     }
     .post-summary & {
       .entry-feature-image {
         .post-image {
-          width: 10rem;
-          height: 10rem;
+          width: 100px;
+          height: 100px;
         }
       }
     }
@@ -103,8 +103,8 @@
     .post-summary & {
       .entry-feature-image {
         .post-image {
-          width: 8rem;
-          height: 8rem;
+          width: 80px;
+          height: 80px;
         }
       }
     }
@@ -128,7 +128,7 @@
   & > * {
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 1.25em;
+    margin-bottom: 10px;
 
     &:first-child {
       margin-top: 0;
@@ -145,15 +145,15 @@
   }
   img {
     display: block;
-    margin: 4rem auto;
+    margin: 40px auto;
   }
   figure {
-    margin: 4rem auto;
+    margin: 40px auto;
     img {
       margin: 0 auto;
     }
     figcaption {
-      margin-top: .5em;
+      margin-top: 5px;
       color: $md-grey-700;
       text-align: center;
     }
@@ -161,10 +161,10 @@
 
   @include smaller-than-tablet-screen {
     img {
-      margin: 3rem auto;
+      margin: 30px auto;
     }
     figure {
-      margin: 3rem auto;
+      margin: 30px auto;
       img {
         margin: 0 auto;
       }
@@ -198,7 +198,7 @@
 .btn-more-link {
   @extend .btn-text;
   float: right;
-  margin-top: 1rem;
+  margin-top: 10px;
 }
 
 // Media
@@ -260,26 +260,25 @@ object {
 %post-section-title {
   display: block;
   color: $site-default-text;
-  font-size: $heading-size2-font-size;
+  font-size: var(--global--font-size-xl);
   font-weight: 800;
-  margin: 0 0 3rem 0;
+  margin: 0 0 30px 0;
   @include smaller-than-tablet-screen {
-    margin: 0 0 2.4rem 0;
-    font-size: $heading-size2-small-font-size;
+    margin: 0 0 24px 0;
   }
 }
 
 .entry-footer, .comments {
   .section-inner {
-    margin: 0 auto 4rem auto;
+    margin: 0 auto 40px auto;
     hr {
-      margin: 0 0 4rem 0;
+      margin: 0 0 40px 0;
     }
 
     @include smaller-than-tablet-screen {
-      margin: 0 auto 2.8rem auto;
+      margin: 0 auto 28px auto;
       hr {
-        margin: 0 0 2.8rem 0;
+        margin: 0 0 28px 0;
       }
     }
   }
@@ -290,17 +289,17 @@ object {
 
 .entry-footer {
   .entry-meta-secondary {
-    margin: 2rem 8rem 2rem 8rem;
+    margin: 20px 80px 20px 80px;
     .term-links {
       .term-tags-links {
-        margin-right: 1rem;
+        margin-right: 10px;
       }
     }
     @include smaller-than-tablet-screen {
-      margin: 1rem 2rem 1rem 2rem;
+      margin: 10px 20px 10px 20px;
     }
     @include smaller-than-mobile-screen {
-      margin: 1rem;
+      margin: 10px;
     }
   }
 }
@@ -309,7 +308,7 @@ object {
   .title {
     color: $site-default-text;
     font-weight: 700;
-    font-size: 1.8rem;
+    font-size: 18px;
   }
 }
 
@@ -320,7 +319,7 @@ object {
   padding: 0;
   li {
     list-style: none;
-    margin: 0 0 2rem;
+    margin: 0 0 20px;
   }
 }
 .post-inline {
@@ -334,10 +333,10 @@ object {
   .title {
     color: $entry-text;
     font-weight: 700;
-    font-size: 1.8rem;
+    font-size: 18px;
   }
   .arrow {
-    margin-right: 1rem;
+    margin-right: 10px;
   }
 
   .post-image {
@@ -345,20 +344,20 @@ object {
     background: #fff no-repeat center;
     background-size: cover;
     flex-shrink: 0;
-    width: 7rem;
-    height: 7rem;
+    width: 70px;
+    height: 70px;
   }
   .inner {
-    margin-left: 1.5rem;
+    margin-left: 15px;
     .title {
 
       display: block;
     }
     .meta {
       display: block;
-      font-size: 1.5rem;
+      font-size: 15px;
       color: $site-neutral-text;
-      margin: .5rem 0 0;
+      margin: 5px 0 0;
     }
   }
   &:hover {
@@ -402,45 +401,42 @@ object {
 .post-summary {
   .entry-header,
   .entry-content {
-    padding: 3rem 2.5rem 0 3rem;
+    padding: 30px 25px 0 30px;
   }
   .entry-footer {
-    padding-bottom: 3rem;
+    padding-bottom: 30px;
   }
 
   @include smaller-than-tablet-screen {
     .entry-header,
     .entry-content {
-      padding: 2rem 1.5rem 0 2rem;
+      padding: 20px 15px 0 20px;
     }
     .entry-footer {
-      padding-bottom: 2rem;
+      padding-bottom: 20px;
     }
   }
 
   @include smaller-than-mobile-screen {
     .entry-header,
     .entry-content {
-      padding: 2rem 0.5rem 0 1rem;
+      padding: 20px 5px 0 10px;
     }
     .entry-footer {
-      padding-bottom: 1rem;
+      padding-bottom: 10px;
     }
   }
 }
 
 .post-summaries {
   margin: 0 auto;
-  max-width: 75rem;
+  max-width: 750px;
   .post-summary {
-    margin: $site-grid-margin;
+    margin: var(--global--spacing-vertical) var(--global--spacing-horizontal);
     border-bottom: $site-border-width solid $site-default-border;
 
-    @include smaller-than-tablet-screen {
-      margin: $site-grid-margin $site-grid-margin-small;
-    }
     @include smaller-than-mobile-screen {
-      margin: $site-grid-margin 0;
+      margin: var(--global--spacing-vertical) 0;
 
     }
 
@@ -456,10 +452,10 @@ object {
 // -----------------------------------------------
 .post-detailed {
   margin: 0 auto;
-  max-width: 75rem;
+  max-width: 750px;
   .entry-header {
     margin: 0 auto;
-    padding: 10rem 5rem;
+    padding: 100px 50px;
   }
   .entry-content {
     margin: 0 auto;
@@ -467,14 +463,14 @@ object {
   }
   @include smaller-than-tablet-screen {
     .entry-header {
-      padding: 5rem 2.5rem;
+      padding: 50px 25px;
     }
     .entry-content {
     }
   }
   @include smaller-than-mobile-screen {
     .entry-header {
-      padding: 2.5rem 1rem;
+      padding: 25px 10px;
     }
     .entry-content {
     }

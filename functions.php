@@ -127,29 +127,6 @@ function makotokw_widgets_init() {
 
 add_action( 'widgets_init', 'makotokw_widgets_init' );
 
-function makotokw_move_admin_bar() {
-	if ( ! is_admin_bar_showing() ) {
-		return;
-	}
-	?>
-	<!--suppress CssUnusedSymbol -->
-	<style type="text/css" media="screen">
-	html { margin-top: 0 !important; margin-bottom: 32px !important; }
-	* html body { margin-top: 0 !important; margin-bottom: 32px !important; }
-	@media screen and ( max-width: 782px ) {
-		html { margin-top: 0 !important; margin-bottom: 46px !important; }
-		* html body { margin-top: 0 !important; margin-bottom: 46px !important; }
-	}
-	#wpadminbar { top: auto !important; bottom: 0; }
-	@media screen and (max-width: 600px) {
-		#wpadminbar { position: fixed; }
-	}
-</style>
-	<?php
-}
-
-add_action( 'wp_head', 'makotokw_move_admin_bar', 99 );
-
 function makotokw_get_meta_description() {
 	$description = '';
 	if ( is_home() ) {

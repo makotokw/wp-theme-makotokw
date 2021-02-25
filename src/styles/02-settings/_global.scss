@@ -1,0 +1,88 @@
+$baseline-unit: 10px;
+
+:root {
+
+  /* Font Size */
+  --global--font-size-base: 1.125rem; // 18px / 16px
+  --global--font-size-xs: 1rem; // 16px / 16px
+  --global--font-size-sm: 1.125rem; // 18px / 16px
+  --global--font-size-md: 1.25rem; // 20px / 16px
+  --global--font-size-lg: 1.5rem; // 24px / 16px
+  --global--font-size-xl: 2.25rem; // 36px / 16px
+  --global--font-size-xxl: 4rem; // 64px / 16px
+  --global--font-size-xxxl: 5rem; // 80px / 16px
+  --global--font-size-page-title: var(--global--font-size-xxl);
+  --global--letter-spacing: normal;
+
+  /* Line Height */
+  --global--line-height-body: 1.7;
+  --global--line-height-heading: 1.3;
+  --global--line-height-page-title: 1.1;
+
+  /* Spacing */
+  --global--spacing-unit: #{2 * $baseline-unit}; // 20px
+  --global--spacing-measure: unset; // Use ch units here. ie: 60ch = 60 character max-width
+  --global--spacing-horizontal: #{2.5 * $baseline-unit}; // 25px
+  --global--spacing-vertical: #{3 * $baseline-unit}; // 30px
+
+  /* Header */
+  --site-header--height: #{$site-header-height};
+
+  /* Headings */
+  --heading--font-size-h6: var(--global--font-size-xs);
+  --heading--font-size-h5: var(--global--font-size-sm);
+  --heading--font-size-h4: var(--global--font-size-lg);
+  --heading--font-size-h3: calc(1.25 * var(--global--font-size-lg));
+  --heading--font-size-h2: var(--global--font-size-xl);
+  --heading--font-size-h1: var(--global--font-size-page-title);
+
+  --heading--letter-spacing-h6: 0.05em;
+  --heading--letter-spacing-h5: 0.05em;
+  --heading--letter-spacing-h4: var(--global--letter-spacing);
+  --heading--letter-spacing-h3: var(--global--letter-spacing);
+  --heading--letter-spacing-h2: var(--global--letter-spacing);
+  --heading--letter-spacing-h1: var(--global--letter-spacing);
+
+  --heading--line-height-h6: var(--global--line-height-heading);
+  --heading--line-height-h5: var(--global--line-height-heading);
+  --heading--line-height-h4: var(--global--line-height-heading);
+  --heading--line-height-h3: var(--global--line-height-heading);
+  --heading--line-height-h2: var(--global--line-height-heading);
+  --heading--line-height-h1: var(--global--line-height-page-title);
+
+  --heading--font-weight: 700;
+  --heading--font-weight-page-title: 700;
+  --heading--font-weight-strong: 700;
+
+  /* Widgets */
+  --widget--line-height-list: 1.9;
+  --widget--line-height-title: 1.4;
+  --widget--font-weight-title: 800;
+  --widget--spacing-menu: calc(0.66 * var(--global--spacing-unit));
+
+  /* AdminBar */
+  --global--admin-bar--height: 0px;
+}
+
+@include smaller-than-tablet-screen {
+  :root {
+    /* Header */
+    --site-header--height: #{$site-header-height-small};
+
+    /* Headings */
+    --heading--font-size-h6: var(--global--font-size-xs);
+    --heading--font-size-h5: var(--global--font-size-sm);
+    --heading--font-size-h4: var(--global--font-size-md);
+    --heading--font-size-h3: calc(1.25 * var(--global--font-size-md));
+    --heading--font-size-h2: var(--global--font-size-lg);
+    --heading--font-size-h1: var(--global--font-size-xl);
+  }
+}
+
+.admin-bar {
+  --global--admin-bar--height: 32px;
+
+  @media only screen and (max-width: 782px) {
+    --global--admin-bar--height: 46px;
+  }
+}

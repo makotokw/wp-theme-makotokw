@@ -1,57 +1,79 @@
 h1,
+.h1,
 h2,
+.h2,
 h3,
+.h3,
 h4,
+.h4,
 h5,
-h6 {
+.h5,
+h6,
+.h6 {
+  clear: both;
   color: $site-heading-text;
   font-feature-settings: "lnum";
   font-variant-numeric: lining-nums;
-  font-weight: 700;
-  line-height: 1.25;
-  margin: 3.5rem 0 2rem;
+  font-weight: var(--heading--font-weight);
 }
 
-h1 {
-  font-size: $heading-size1-font-size;
-  font-weight: 800;
+h1,
+.h1 {
+  font-size: var(--heading--font-size-h1);
+  letter-spacing: var(--heading--letter-spacing-h1);
+  line-height: var(--heading--line-height-h1);
 }
 
-h2 {
-  font-size: $heading-size2-font-size;
+h2,
+.h2 {
+  font-size: var(--heading--font-size-h2);
+  letter-spacing: var(--heading--letter-spacing-h2);
+  line-height: var(--heading--line-height-h2);
 }
 
-h3 {
-  font-size: $heading-size3-font-size;
+h3,
+.h3 {
+  font-size: var(--heading--font-size-h3);
+  letter-spacing: var(--heading--letter-spacing-h3);
+  line-height: var(--heading--line-height-h3);
 }
 
-h4 {
-  font-size: $heading-size4-font-size;
+h4,
+.h4 {
+  font-size: var(--heading--font-size-h4);
+  letter-spacing: var(--heading--letter-spacing-h4);
+  line-height: var(--heading--line-height-h4);
 }
 
-h5 {
-  font-size: $heading-size5-font-size;
+h5,
+.h5 {
+  font-size: var(--heading--font-size-h5);
+  letter-spacing: var(--heading--letter-spacing-h5);
+  line-height: var(--heading--line-height-h5);
 }
 
-h6 {
-  font-size: $heading-size6-font-size;
+h6,
+.h6 {
+  font-size: var(--heading--font-size-h6);
+  letter-spacing: var(--heading--letter-spacing-h6);
+  line-height: var(--heading--line-height-h6);
 }
 
 h1,
 h2,
 h3 {
-  margin: 5rem auto 3rem;
+  margin: 50px auto 30px;
 }
 
 h4,
 h5,
 h6 {
-  margin: 4rem auto 2rem;
+  margin: 40px auto 20px;
 }
 
 .entry-content {
   h2 {
-    padding-bottom: .75rem;
+    padding-bottom: 7.5px;
     border-bottom: $site-border-width solid $site-default-border;
   }
 }

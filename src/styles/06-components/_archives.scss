@@ -3,11 +3,11 @@ body.archive, body.search {
   .site-content-header {
     text-align: center;
     .archives-title {
-      margin: $site-grid-margin 0;
+      margin: var(--global--spacing-vertical) 0;
     }
 
-    padding-bottom: $site-grid-margin;
-    margin-bottom: $site-grid-margin;
+    padding-bottom: var(--global--spacing-vertical);
+    margin-bottom: var(--global--spacing-vertical);
     border-bottom: $site-border-width solid $site-default-border;
   }
   .pagination {

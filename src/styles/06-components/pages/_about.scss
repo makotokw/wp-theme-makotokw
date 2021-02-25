@@ -2,7 +2,7 @@
   display: flex;
 
   .about-description-text {
-    margin-right: $site-grid-margin;
+    margin-right: var(--global--spacing-horizontal);
   }
   .about-description-banner {
     flex-basis: content;

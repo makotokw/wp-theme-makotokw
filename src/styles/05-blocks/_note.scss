@@ -14,8 +14,8 @@
 
 %base-note {
   display: block;
-  margin: 0 0 4rem 0;
-  padding: 2rem;
+  margin: 0 0 40px 0;
+  padding: 20px;
   border: 1px solid $site-default-border;
 
   a {
@@ -25,21 +25,21 @@
 
 %note-with-svg {
   position: relative;
-  padding: 2rem 2rem 2rem 6rem;
+  padding: 20px 20px 20px 60px;
 
   svg {
     position: absolute;
-    top: 1.5rem;
-    left: 1.5rem;
-    width: 2em !important;
-    height: 2em !important;
+    top: 15px;
+    left: 15px;
+    width: 20px !important;
+    height: 20px !important;
     color: $site-default-border;
   }
   @include smaller-than-tablet-screen {
-    padding: 1.5rem 1.5rem 1.5rem 5rem;
+    padding: 15px 15px 15px 45px;
     svg {
-      top: 1.5rem;
-      left: 1rem;
+      top: 10px;
+      left: 10px;
     }
   }
 }

@@ -1,6 +1,6 @@
 .site-sidebar {
-  margin-top: 5rem;
-  padding-bottom: 5rem;
+  margin-top: 50px;
+  padding-bottom: 50px;
   border-top: $site-border-width solid $site-default-border;
   background-color: $sidebar-default-bg;
 
@@ -11,13 +11,14 @@
   }
 
   .widget {
-    margin: 0 0 4rem 2rem;
-    width: calc(50% - 2rem);
+    margin: 0 0 40px 20px;
+    width: calc(50% - 20px);
 
     .widget-title {
-      font-size: $heading-size3-font-size;
-      margin: 4.5rem 0 2.5rem;
-      font-weight: 800;
+      font-size: var(--global--font-size-lg);
+      font-weight: var(--widget--font-weight-title);
+      line-height: var(--widget--line-height-title);
+      margin: 45px 0 25px;
 
       // disable svg-icon
       i, .svg-inline--fa {
@@ -37,12 +38,9 @@
     .site-sidebar-inner {
     }
     .widget {
-      margin: 0 .5rem 4rem .5rem;
-      width: calc(100% - 1rem);
+      margin: 0 5px 4px 5px;
+      width: calc(100% - 10px);
       border-top: $site-border-width solid $site-default-border;
-      .widget-title {
-        font-size: $heading-size3-small-font-size;
-      }
       &:first-child {
         border-top: none;
       }

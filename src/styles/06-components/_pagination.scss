@@ -7,18 +7,18 @@
 .pagination {
   display: block;
   @include clearfix;
-  padding: $site-grid-margin 0;
+  padding: var(--global--spacing-vertical) 0;
 
   ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     list-style: none;
-    margin: 1rem 0;
+    margin: 10px 0;
     padding: 0;
 
     li {
-      margin: .5rem;
+      margin: .50px;
     }
 
     .current {

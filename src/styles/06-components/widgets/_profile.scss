@@ -15,25 +15,25 @@ $site-author-image-base: 75px;
     flex: 1 1 auto;
     padding-left: 16px;
     .author-name {
-      font-size: 1.8rem;
+      font-size: 18px;
       font-weight: 700;
       line-height: 1;
-      margin-bottom: .5rem;
+      margin-bottom: 5px;
     }
     .author-job-title {
-      font-size: 1.6rem;
+      font-size: 16px;
       color: $site-neutral-text;
-      margin-bottom: 2rem;
+      margin-bottom: 20px;
     }
     .author-description {
-      font-size: 1.6rem;
+      font-size: 16px;
     }
     .author-contacts {
       display: flex;
       a {
         @extend .btn-outlined;
-        @include circle(4rem);
-        margin-right: 1rem;
+        @include circle(40px);
+        margin-right: 10px;
       }
     }
   }

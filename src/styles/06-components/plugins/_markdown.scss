@@ -9,7 +9,6 @@
     border: $site-border-width solid $site-default-border;
     &.right {
       @include smaller-than-desktop-screen {
-        margin: $site-grid-margin-small;
         float: none;
         display: block;
       }

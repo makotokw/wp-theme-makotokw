@@ -78,7 +78,7 @@ $author-border-width: 2px;
     .fn,
     .comment-time {
       @extend .comment-small;
-      margin-right: .3em;
+      margin-right: 5px;
       display: inline-block;
 
     }
@@ -144,7 +144,7 @@ $author-border-width: 2px;
 }
 
 .navigation-comment {
-  margin: 2rem 0;
+  margin: 20px 0;
   @include clearfix();
 }
 

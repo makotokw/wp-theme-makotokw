@@ -1,7 +1,4 @@
 // Layout Size ----------------------------
-$site-grid-margin: 30px;
-$site-grid-margin-small: 15px;
-
 $site-header-margin: 10px;
 $site-header-margin-small: 5px;
 $site-header-banner-height: 64px;
@@ -34,21 +31,6 @@ $font-family-gothic: 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic ProN', 'Hiragi
 $font-family-sans-serif: 'Nunito Sans', $font-family-gothic, sans-serif;
 $font-family-monospace: Monaco, Menlo, Consolas, 'Courier New', monospace, $font-family-gothic, sans-serif;;
 
-$font-size-base: 1.8rem;
-
-$heading-size1-font-size: 5rem;
-$heading-size2-font-size: 3.6rem;
-$heading-size3-font-size: 3rem;
-$heading-size4-font-size: 2.5rem;
-$heading-size5-font-size: 2.1rem;
-$heading-size6-font-size: 1.8rem;
-$heading-size1-small-font-size: 3rem;
-$heading-size2-small-font-size: 2.6rem;
-$heading-size3-small-font-size: 2.2rem;
-$heading-size4-small-font-size: 2.0rem;
-$heading-size5-small-font-size: 1.8rem;
-$heading-size6-small-font-size: 1.6rem;
-
 // Layout color ----------------------------
 $aztecSky: rgb(77, 181, 215);
 
@@ -76,7 +58,7 @@ $site-default-link-over: darken($site-primary-color, 20%);
 $block-default-bg: $site-surface-color;
 $block-default-text: $md-blue-grey-700;
 $block-default-icon: $md-blue-grey-400;
-$block-padding: 1.5rem;
+$block-padding: 15px;
 
 // Header  ----------------------------
 $header-default-bg: white;
@@ -130,7 +112,7 @@ $state-info-bg: lighten(#d9edf7, 7%);
 $state-info-border: darken(adjust-hue($state-info-bg, -10), 7%);
 
 // Alert ----------------------------
-$alert-padding: $site-grid-margin;
+$alert-padding: 30px;
 $alert-border-radius: $site-border-radius;
 $alert-link-font-weight: bold;
 $alert-success-bg: $state-success-bg;

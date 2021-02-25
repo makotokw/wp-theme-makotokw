@@ -2,11 +2,11 @@
 @import "02-settings/variables";
 
 .amazonjs_item {
-  border-color: rgba($amazon-orange, 3);
+  border-color: rgba($amazon-orange, .7);
   border-width: $site-border-width;
   //border-radius: $site-border-radius;
-  margin: 0 0 4rem 0;
-  padding: 4rem 2rem;
+  margin: var(--global--spacing-vertical) 0 var(--global--spacing-vertical) 0;
+  padding: var(--global--spacing-vertical) var(--global--spacing-horizontal);
 
   a {
     color: $amazon-orange;
@@ -14,35 +14,5 @@
       color: $amazon-orange;
       text-decoration: underline;
     }
-  }
-
-  @include smaller-than-tablet-screen {
-    margin: 0 0 3rem 0;
-    padding: $site-grid-margin-small $site-grid-margin-small/2;
-  }
-
-  .amazonjs_image {
-    img {
-      box-shadow: none;
-      border: none;
-    }
-  }
-
-  .amazonjs_info {
-    h4 {
-      font-size: 1.2em;
-      font-weight: bold;
-      text-shadow: none;
-    }
-
-    ul {
-      li {
-        font-size: 1em;
-      }
-    }
-  }
-
-  .amazonjs_review {
-    font-size: .9em;
   }
 }

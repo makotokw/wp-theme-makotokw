@@ -14,12 +14,12 @@ body {
 .section-inner {
   margin-left: auto;
   margin-right: auto;
-  max-width: 94rem;
-  width: calc(100% - 8rem);
+  max-width: 940px;
+  width: calc(100% - 80px);
 }
 
 .site-main {
-  margin: $site-header-height auto 0 auto; // for sticky header
+  margin: calc(var(--site-header--height) + var(--global--admin-bar--height)) auto 0 auto; // for sticky header
 }
 
 .site-content {
@@ -48,15 +48,12 @@ body {
 
 @include smaller-than-tablet-screen {
   .section-inner {
-    width: calc(100% - 4rem);
-  }
-  .site-main {
-    margin: $site-header-height-small auto 0 auto; // for sticky header
+    width: calc(100% - 40px);
   }
 }
 
 @include smaller-than-mobile-screen {
   .section-inner {
-    width: calc(100% - 2rem);
+    width: calc(100% - 20px);
   }
 }
