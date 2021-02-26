@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 const path = require('path');
+const { exec } = require('child_process');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -91,6 +93,17 @@ module.exports = {
     }),
     // https://github.com/johnagan/clean-webpack-plugin
     new CleanWebpackPlugin({}),
+    // https://webpack.js.org/api/compiler-hooks/
+    {
+      apply: (compiler) => {
+        compiler.hooks.afterEmit.tap('MyEventHandlerPlugin', (compilation) => {
+          exec('node build/scripts/themeinfo.js', (err, stdout, stderr) => {
+            if (stdout) process.stdout.write(stdout);
+            if (stderr) process.stderr.write(stderr);
+          });
+        });
+      },
+    },
   ],
   externals: {
     jquery: 'jQuery',
