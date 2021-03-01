@@ -280,13 +280,14 @@ function makotokw_get_the_feature_image_url() {
 		return array( $featured_image_url, $featured_image_service );
 	}
 
-	$fallback_categories = array( 'wordpress', 'server', 'hardware' );
+	$fallback_categories      = array( 'wordpress', 'programing', 'server', 'hardware', 'computer' );
+	$fallback_image_timestamp = '20210301';
 
 	$post_title      = get_the_title();
 	$post_categories = get_the_category();
 	foreach ( $fallback_categories as $fallback_category ) {
 		if ( $post_title && preg_match( '/' . $fallback_category . '/i', $post_title ) ) {
-			$featured_image_url     = get_template_directory_uri() . "/assets/images/featured/{$fallback_category}.png";
+			$featured_image_url     = get_template_directory_uri() . "/assets/images/featured/{$fallback_category}.png?{$fallback_image_timestamp}";
 			$featured_image_service = 'fallback';
 			break;
 		}
@@ -297,8 +298,9 @@ function makotokw_get_the_feature_image_url() {
 			}
 		);
 		if ( ! empty( $filterd ) ) {
-			$featured_image_url     = get_template_directory_uri() . "/assets/images/featured/{$fallback_category}.png";
+			$featured_image_url     = get_template_directory_uri() . "/assets/images/featured/{$fallback_category}.png?{$fallback_image_timestamp}";
 			$featured_image_service = 'fallback';
+			break;
 		}
 	}
 
