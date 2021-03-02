@@ -32,6 +32,19 @@ $share-icon-size: 30px;
     fill: $site-on-primary-text-color;
   }
 
+  &.btn-share-twitter {
+    background-color: $twitter-blue;
+  }
+  &.btn-share-facebook {
+    background-color: $facebook-blue;
+  }
+  &.btn-share-hatena {
+    background-color: $hatena-bookmark-blue;
+  }
+  &.btn-share-pocket {
+    background-color: $pocket-pink;
+  }
+
   .share-count {
     position: absolute;
     left: 27px;
