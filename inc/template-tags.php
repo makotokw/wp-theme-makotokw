@@ -417,8 +417,12 @@ function makotokw_post_summary( $content, $length = 128, $trimmarker = '...' ) {
 		$content  = $pukiwiki->the_content( $content );
 	}
 	if ( class_exists( 'WP_GFM' ) ) {
-		$gfm     = WP_GFM::get_instance();
-		$content = $gfm->the_content( $content );
+		$gfm = WP_GFM::get_instance();
+		if ( is_callable( array( $gfm, 'do_markdown_shortcode' ) ) ) {
+			$content = $gfm->do_markdown_shortcode( $content );
+		} elseif ( is_callable( array( $gfm, 'the_content' ) ) ) {
+			$content = $gfm->the_content( $content );
+		}
 	}
 	return mb_strimwidth( strip_tags( strip_shortcodes( $content ) ), 0, $length ) . $trimmarker;
 }
