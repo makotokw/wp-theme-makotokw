@@ -1,10 +1,11 @@
 <?php
 /**
- * @subpackage makotokw
+ * @package makotokw
  * Template Name: Portfolios
  * Template Post Type: page
- * /portfolio/
+ * @link /portfolio/
  */
+__( 'Portfolios', 'makotokw' );
 $t_title = get_the_title();
 ob_start();
 ?>

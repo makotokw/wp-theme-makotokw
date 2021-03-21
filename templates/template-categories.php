@@ -1,11 +1,11 @@
 <?php
 /**
- * @subpackage makotokw
+ * @package makotokw
  * Template Name: Categories
  * Template Post Type: page
- * /categories/
+ * @link /categories/
  */
-
+__( 'Categories', 'makotokw' );
 $t_title = get_the_title();
 ob_start();
 ?>

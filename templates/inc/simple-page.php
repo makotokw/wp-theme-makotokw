@@ -1,4 +1,8 @@
 <?php
+/**
+ * @var string $t_title
+ * @var string $t_contents
+ */
 get_header();
 the_post();
 ?>

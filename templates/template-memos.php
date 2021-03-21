@@ -1,11 +1,11 @@
 <?php
 /**
- * @subpackage makotokw
+ * @package makotokw
  * Template Name: Memos
  * Template Post Type: page
- * /memo/
+ * @link /memo/
  */
-
+__( 'Memos', 'makotokw' );
 $t_title = get_the_title();
 ob_start();
 ?>

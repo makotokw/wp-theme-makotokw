@@ -1,11 +1,10 @@
 <?php
 /**
- * @subpackage makotokw
+ * @package makotokw
  * Template Name: Tags
  * Template Post Type: page
- * /tags/
+ * @link /tags/
  */
-
 $t_title = get_the_title();
 ob_start();
 ?>

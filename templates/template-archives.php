@@ -1,10 +1,11 @@
 <?php
 /**
- * @subpackage makotokw
- * Template Name: Archives
+ * @package makotokw
+ * Template Name: Archive List by Month
  * Template Post Type: page
- * /archives/
+ * @link /archives/
  */
+__( 'Archive List by Month', 'makotokw' );
 $t_title = get_the_title();
 ob_start();
 ?>

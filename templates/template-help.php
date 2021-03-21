@@ -1,9 +1,10 @@
 <?php
 /**
- * @subpackage makotokw
+ * @package makotokw
  * Template Name: Help
  * Template Post Type: page
  */
+__( 'Help', 'makotokw' );
 get_header(); ?>
 <?php while ( have_posts() ) : ?>
 	<?php

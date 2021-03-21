@@ -70,6 +70,7 @@ function makotokw_setup() {
 	register_nav_menus(
 		array(
 			'footer-menu' => __( 'Footer Menu', 'makotokw' ),
+			'portfolio' => __( 'Portfolio Menu', 'makotokw' ),
 		)
 	);
 
