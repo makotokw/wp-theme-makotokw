@@ -38,6 +38,16 @@ $share-icon-size: 30px;
   &.btn-share-facebook {
     background-color: $facebook-blue;
   }
+
+  &.btn-share-line {
+    background-color: $line-green;
+    .fill_1 {
+      fill: #fff;
+    }
+    .fill_2 {
+      fill: $line-green
+    }
+  }
   &.btn-share-hatena {
     background-color: $hatena-bookmark-blue;
   }
