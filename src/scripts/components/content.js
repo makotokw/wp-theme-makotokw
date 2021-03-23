@@ -1,5 +1,6 @@
 // noinspection NpmUsedModulesInstalled
 import $ from 'jquery';
+import tippy from 'tippy.js';
 import 'google-code-prettify/src/prettify';
 import lazyLoadShareCount from '../utils/lazy-load-share-count';
 
@@ -17,6 +18,10 @@ class Content {
     if ($shareThis.length > 0) {
       $jetPackRelatedPosts.insertBefore($shareThis);
     }
+
+    tippy('[data-tippy-content]', {
+      theme: 'makotokw',
+    });
   }
 }
 
