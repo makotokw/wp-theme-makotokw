@@ -1,21 +1,65 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the makotokw package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# Copyright (C) 2021 makoto_kw
+# This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: makotokw 1.0\n"
-"Report-Msgid-Bugs-To: makoto.kw@gmail.com\n"
-"POT-Creation-Date: 2020-12-27 10:02+0900\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Project-Id-Version: makotokw2021 0.9.1617085611675\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/makotokw2021\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2021-03-30T15:26:59+09:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+"X-Domain: makotokw\n"
+
+#. Theme Name of the theme
+msgid "makotokw2021"
+msgstr ""
+
+#. Theme URI of the theme
+msgid "https://github.com/makotokw/wp-theme-makotokw/tree/makotokw2021"
+msgstr ""
+
+#. Description of the theme
+msgid "2021 theme for blog.makotokw.com."
+msgstr ""
+
+#. Author of the theme
+msgid "makoto_kw"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://makotokw.com/"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Cover Template"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Full Width Cover Template"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Full Width and Only Content Template"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Full Width Template"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Only Content Template"
+msgstr ""
+
+#: comments.php:32
+msgctxt "comments title"
+msgid "%1$s Comment"
+msgid_plural "%1$s Comments"
+msgstr[0] ""
+msgstr[1] ""
 
 #: comments.php:44
 msgid "&larr; Older Comments"
@@ -26,7 +70,6 @@ msgid "Newer Comments &rarr;"
 msgstr ""
 
 #: footer.php:34
-#, php-format
 msgid "Powered by %s"
 msgstr ""
 
@@ -38,20 +81,20 @@ msgstr ""
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:112
+#: functions.php:73
+msgid "Portfolio Menu"
+msgstr ""
+
+#: functions.php:118
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:114
+#: functions.php:120
 msgid "Add widgets here to appear in your sidebar."
 msgstr ""
 
-#: searchform.php:10
-msgid "Search the site"
-msgstr ""
-
+#. translators: 1: date, 2: time
 #: inc/comments.php:31
-#, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
@@ -60,20 +103,11 @@ msgid "Your comment is awaiting moderation."
 msgstr ""
 
 #: inc/extras.php:72
-#, php-format
 msgid "Page %s"
 msgstr ""
 
-#: inc/taxonomy.php:35
-msgid "Mylists"
-msgstr ""
-
-#: inc/taxonomy.php:62
-msgid "Portfolios"
-msgstr ""
-
-#: inc/taxonomy.php:88
-msgid "Blogs"
+#: inc/template-tags.php:30
+msgid "Post"
 msgstr ""
 
 #: inc/template-tags.php:68
@@ -92,10 +126,14 @@ msgstr ""
 msgid "Last"
 msgstr ""
 
-#: inc/template-tags.php:159 inc/template-tags.php:195
+#. Template Name of the theme
+#: inc/template-tags.php:159
+#: inc/template-tags.php:195
+#: templates/template-categories.php:8
 msgid "Categories"
 msgstr ""
 
+#. Template Name of the theme
 #: inc/template-tags.php:165
 msgid "Tags"
 msgstr ""
@@ -112,16 +150,20 @@ msgstr ""
 msgid "Portfolio"
 msgstr ""
 
-#: inc/template-tags.php:178 inc/template-tags.php:181
-#: inc/template-tags.php:184 inc/template-tags.php:187
+#: inc/template-tags.php:178
+#: inc/template-tags.php:181
+#: inc/template-tags.php:184
+#: inc/template-tags.php:187
 msgid "Archives"
 msgstr ""
 
-#: inc/template-tags.php:182 inc/template-tags.php:495
+#: inc/template-tags.php:182
+#: inc/template-tags.php:517
 msgid "Y/M"
 msgstr ""
 
-#: inc/template-tags.php:185 inc/template-tags.php:497
+#: inc/template-tags.php:185
+#: inc/template-tags.php:519
 msgid "Y"
 msgstr ""
 
@@ -129,84 +171,116 @@ msgstr ""
 msgid "Search Results"
 msgstr ""
 
-#: inc/template-tags.php:247 inc/template-tags.php:563
-#: inc/template-tags.php:586 inc/template-tags.php:607
-#, php-format
+#: inc/template-tags.php:247
+#: inc/template-tags.php:585
+#: inc/template-tags.php:608
+#: inc/template-tags.php:629
 msgid "View all posts in %s"
 msgstr ""
 
 #: inc/template-tags.php:340
-#, php-format
 msgid "<time class=\"published updated time\" datetime=\"%1$s\">%2$s</time>"
 msgstr ""
 
 #: inc/template-tags.php:348
-#, php-format
 msgid "<time class=\"updated time\" datetime=\"%1$s\">%2$s</time>"
 msgstr ""
 
-#: inc/template-tags.php:446
+#: inc/template-tags.php:448
+msgid "Tweete by Twitter"
+msgstr ""
+
+#: inc/template-tags.php:450
 msgid "Twitter"
 msgstr ""
 
-#: inc/template-tags.php:452
+#: inc/template-tags.php:454
+msgid "Share by Facebook"
+msgstr ""
+
+#: inc/template-tags.php:456
 msgid "Facebook"
 msgstr ""
 
-#: inc/template-tags.php:464
+#: inc/template-tags.php:460
+msgid "Share by Hatena"
+msgstr ""
+
+#: inc/template-tags.php:468
 msgid "Hatena Bookmark"
 msgstr ""
 
-#: inc/template-tags.php:470
+#: inc/template-tags.php:472
+msgid "Share by Line"
+msgstr ""
+
+#: inc/template-tags.php:480
+msgid "Line"
+msgstr ""
+
+#: inc/template-tags.php:484
+msgid "Share by Pocket"
+msgstr ""
+
+#: inc/template-tags.php:486
 msgid "Pocket"
 msgstr ""
 
-#: inc/template-tags.php:489
-#, php-format
+#: inc/template-tags.php:490
+msgid "URL Copied!"
+msgstr ""
+
+#: inc/template-tags.php:490
+#: inc/template-tags.php:492
+msgid "Copy URL"
+msgstr ""
+
+#: inc/template-tags.php:511
 msgid "Category Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:491
-#, php-format
+#: inc/template-tags.php:513
 msgid "Tag Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:493
-#, php-format
+#: inc/template-tags.php:515
 msgid "Daily Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:495
-#, php-format
+#: inc/template-tags.php:517
 msgid "Monthly Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:497
-#, php-format
+#: inc/template-tags.php:519
 msgid "Yearly Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:499
-#, php-format
+#: inc/template-tags.php:521
 msgid "Blog Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:501
-#, php-format
+#: inc/template-tags.php:523
 msgid "Portfolio Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:503
+#: inc/template-tags.php:525
 msgid "Search"
 msgstr ""
 
-#: inc/template-tags.php:505
+#: inc/template-tags.php:527
 msgid "All posts"
 msgstr ""
 
-#: inc/template-tags.php:507
-#, php-format
+#: inc/template-tags.php:529
 msgid "Archives of %s"
+msgstr ""
+
+#: searchform.php:10
+msgid "Search the site"
+msgstr ""
+
+#: sidebar.php:9
+msgid "Blog Sidebar"
 msgstr ""
 
 #: template-parts/content-none.php:10
@@ -218,9 +292,7 @@ msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
 #: template-parts/content-none.php:18
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
 #: template-parts/content-none.php:21
@@ -228,13 +300,10 @@ msgid "Return Home"
 msgstr ""
 
 #: template-parts/content-none.php:23
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
 #: template-parts/content-summary.php:21
-#, php-format
 msgid "Permalink to %s"
 msgstr ""
 
@@ -246,10 +315,27 @@ msgstr ""
 msgid "Related Software"
 msgstr ""
 
-#: template-parts/content.php:29 template-parts/content.php:32
+#: template-parts/content.php:29
+#: template-parts/content.php:32
 msgid "Related Posts"
 msgstr ""
 
-#: template-parts/meta-ogp.php:68
-msgid "Uncategorized"
+#. Template Name of the theme
+#: templates/template-archives.php:8
+msgid "Archive List by Month"
+msgstr ""
+
+#. Template Name of the theme
+#: templates/template-help.php:7
+msgid "Help"
+msgstr ""
+
+#. Template Name of the theme
+#: templates/template-memos.php:8
+msgid "Memos"
+msgstr ""
+
+#. Template Name of the theme
+#: templates/template-portfolios.php:8
+msgid "Portfolios"
 msgstr ""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: makoto.kw@gmail.com\n"
-"POT-Creation-Date: 2020-12-27 10:02+0900\n"
+"POT-Creation-Date: 2021-03-23 08:13+0900\n"
 "PO-Revision-Date: 2013-04-28 18:46+0900\n"
 "Last-Translator: Makoto Kawasaki <makoto.kw@gmail.com>\n"
 "Language-Team: Japanese\n"
@@ -15,7 +15,54 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Domain: makotokw\n"
+
+#. Theme Name of the theme
+msgid "makotokw2021"
+msgstr ""
+
+#. Theme URI of the theme
+msgid "https://github.com/makotokw/wp-theme-makotokw/tree/makotokw2021"
+msgstr ""
+
+#. Description of the theme
+msgid "2021 theme for blog.makotokw.com."
+msgstr ""
+
+#. Author of the theme
+msgid "makoto_kw"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://makotokw.com/"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Cover Template"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Full Width Cover Template"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Full Width and Only Content Template"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Full Width Template"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Only Content Template"
+msgstr ""
+
+#: comments.php:32
+msgctxt "comments title"
+msgid "%1$s Comment"
+msgid_plural "%1$s Comments"
+msgstr[0] ""
+msgstr[1] ""
 
 #: comments.php:44
 msgid "&larr; Older Comments"
@@ -26,7 +73,6 @@ msgid "Newer Comments &rarr;"
 msgstr ""
 
 #: footer.php:34
-#, php-format
 msgid "Powered by %s"
 msgstr ""
 
@@ -38,20 +84,20 @@ msgstr ""
 msgid "Footer Menu"
 msgstr "フッターメニュー"
 
-#: functions.php:112
+#: functions.php:73
+msgid "Portfolio Menu"
+msgstr "ポートフォリオメニュー"
+
+#: functions.php:118
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:114
+#: functions.php:120
 msgid "Add widgets here to appear in your sidebar."
 msgstr ""
 
-#: searchform.php:10
-msgid "Search the site"
-msgstr "サイト内を検索する"
-
+#. translators: 1: date, 2: time
 #: inc/comments.php:31
-#, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s %2$"
 
@@ -60,21 +106,12 @@ msgid "Your comment is awaiting moderation."
 msgstr "コメントは承認待ちです。"
 
 #: inc/extras.php:72
-#, php-format
 msgid "Page %s"
 msgstr ""
 
-#: inc/taxonomy.php:35
-msgid "Mylists"
-msgstr "マイリスト"
-
-#: inc/taxonomy.php:62
-msgid "Portfolios"
-msgstr "ポートフォリオ"
-
-#: inc/taxonomy.php:88
-msgid "Blogs"
-msgstr "ブログシステム"
+#: inc/template-tags.php:30
+msgid "Post"
+msgstr ""
 
 #: inc/template-tags.php:68
 msgid "First"
@@ -92,7 +129,10 @@ msgstr ""
 msgid "Last"
 msgstr ""
 
-#: inc/template-tags.php:159 inc/template-tags.php:195
+#. Template Name of the theme
+#: inc/template-tags.php:159
+#: inc/template-tags.php:195
+#: templates/template-categories.php:8
 msgid "Categories"
 msgstr "カテゴリ"
 
@@ -112,16 +152,20 @@ msgstr "ブログ"
 msgid "Portfolio"
 msgstr "ポートフォリオ"
 
-#: inc/template-tags.php:178 inc/template-tags.php:181
-#: inc/template-tags.php:184 inc/template-tags.php:187
+#: inc/template-tags.php:178
+#: inc/template-tags.php:181
+#: inc/template-tags.php:184
+#: inc/template-tags.php:187
 msgid "Archives"
 msgstr "アーカイブス"
 
-#: inc/template-tags.php:182 inc/template-tags.php:495
+#: inc/template-tags.php:182
+#: inc/template-tags.php:517
 msgid "Y/M"
 msgstr "Y年M"
 
-#: inc/template-tags.php:185 inc/template-tags.php:497
+#: inc/template-tags.php:185
+#: inc/template-tags.php:519
 msgid "Y"
 msgstr "Y年"
 
@@ -129,85 +173,117 @@ msgstr "Y年"
 msgid "Search Results"
 msgstr "検索結果"
 
-#: inc/template-tags.php:247 inc/template-tags.php:563
-#: inc/template-tags.php:586 inc/template-tags.php:607
-#, php-format
+#: inc/template-tags.php:247
+#: inc/template-tags.php:585
+#: inc/template-tags.php:608
+#: inc/template-tags.php:629
 msgid "View all posts in %s"
-msgstr ""
+msgstr "%sの全ての投稿を見る"
 
 #: inc/template-tags.php:340
-#, php-format
 msgid "<time class=\"published updated time\" datetime=\"%1$s\">%2$s</time>"
 msgstr ""
 
 #: inc/template-tags.php:348
-#, php-format
 msgid "<time class=\"updated time\" datetime=\"%1$s\">%2$s</time>"
 msgstr ""
 
-#: inc/template-tags.php:446
+#: inc/template-tags.php:448
+msgid "Tweete by Twitter"
+msgstr "Twitterでツイート"
+
+#: inc/template-tags.php:450
 msgid "Twitter"
 msgstr ""
 
-#: inc/template-tags.php:452
+#: inc/template-tags.php:454
+msgid "Share by Facebook"
+msgstr "Facebookで共有する"
+
+#: inc/template-tags.php:456
 msgid "Facebook"
 msgstr ""
 
-#: inc/template-tags.php:464
+#: inc/template-tags.php:460
+msgid "Share by Hatena"
+msgstr "はてなブックマークにブックマーク"
+
+#: inc/template-tags.php:468
 msgid "Hatena Bookmark"
 msgstr "はてなブックマーク"
 
-#: inc/template-tags.php:470
+#: inc/template-tags.php:472
+msgid "Share by Line"
+msgstr "Lineで共有"
+
+#: inc/template-tags.php:480
+msgid "Line"
+msgstr ""
+
+#: inc/template-tags.php:484
+msgid "Share by Pocket"
+msgstr "Pocketに保存"
+
+#: inc/template-tags.php:486
 msgid "Pocket"
 msgstr ""
 
-#: inc/template-tags.php:489
-#, php-format
+#: inc/template-tags.php:490
+msgid "URL Copied!"
+msgstr "リンクをコピーしました"
+
+#: inc/template-tags.php:490
+#: inc/template-tags.php:492
+msgid "Copy URL"
+msgstr "リンクをコピー"
+
+#: inc/template-tags.php:511
 msgid "Category Archives: %s"
 msgstr "%sの記事一覧"
 
-#: inc/template-tags.php:491
-#, php-format
+#: inc/template-tags.php:513
 msgid "Tag Archives: %s"
 msgstr "%sの記事一覧"
 
-#: inc/template-tags.php:493
-#, php-format
+#: inc/template-tags.php:515
 msgid "Daily Archives: %s"
 msgstr "%sの記事一覧"
 
-#: inc/template-tags.php:495
-#, php-format
+#: inc/template-tags.php:517
 msgid "Monthly Archives: %s"
 msgstr "%sの記事一覧"
 
-#: inc/template-tags.php:497
-#, php-format
+#: inc/template-tags.php:519
 msgid "Yearly Archives: %s"
 msgstr "%sの記事一覧"
 
-#: inc/template-tags.php:499
-#, php-format
+#: inc/template-tags.php:521
 msgid "Blog Archives: %s"
 msgstr "アーカイブ"
 
-#: inc/template-tags.php:501
-#, php-format
+#: inc/template-tags.php:523
 msgid "Portfolio Archives: %s"
 msgstr "%sの記事一覧"
 
-#: inc/template-tags.php:503
+#: inc/template-tags.php:525
 msgid "Search"
 msgstr "検索"
 
-#: inc/template-tags.php:505
+#: inc/template-tags.php:527
 msgid "All posts"
 msgstr "すべての記事"
 
-#: inc/template-tags.php:507
-#, php-format
+#: inc/template-tags.php:529
 msgid "Archives of %s"
 msgstr "%sの記事一覧"
+
+#: searchform.php:10
+msgid "Search the site"
+msgstr "サイト内を検索する"
+
+#: sidebar.php:9
+msgid "Blog Sidebar"
+msgstr ""
 
 #: template-parts/content-none.php:10
 msgid "Nothing Found"
@@ -218,25 +294,18 @@ msgid "Oops! That page can&rsquo;t be found."
 msgstr "ページが見つかりませんでした"
 
 #: template-parts/content-none.php:18
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
-msgstr ""
-"ご指定の検索条件に合う投稿がありませんでした。他のキーワードでもう一度検索し"
-"てみてください。"
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "ご指定の検索条件に合う投稿がありませんでした。他のキーワードでもう一度検索してみてください。"
 
 #: template-parts/content-none.php:21
 msgid "Return Home"
 msgstr "ホームへ戻る"
 
 #: template-parts/content-none.php:23
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr "お探しのコンテンツを見つけられませんでした。検索をお試しください。"
 
 #: template-parts/content-summary.php:21
-#, php-format
 msgid "Permalink to %s"
 msgstr ""
 
@@ -248,10 +317,27 @@ msgstr "続きを読む"
 msgid "Related Software"
 msgstr ""
 
-#: template-parts/content.php:29 template-parts/content.php:32
+#: template-parts/content.php:29
+#: template-parts/content.php:32
 msgid "Related Posts"
 msgstr ""
 
-#: template-parts/meta-ogp.php:68
-msgid "Uncategorized"
-msgstr "未分類"
+#. Template Name of the theme
+#: templates/template-archives.php:8
+msgid "Archive List by Month"
+msgstr "月毎アーカイブリスト"
+
+#. Template Name of the theme
+#: templates/template-help.php:7
+msgid "Help"
+msgstr "ヘルプ"
+
+#. Template Name of the theme
+#: templates/template-memos.php:8
+msgid "Memos"
+msgstr "メモ"
+
+#. Template Name of the theme
+#: templates/template-portfolios.php:8
+msgid "Portfolios"
+msgstr "ポートフォリオ"

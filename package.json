@@ -58,7 +58,7 @@
     "webpack:prod": "npx webpack --env=prod",
     "webpack:dev": "npx webpack",
     "webpack:devWatch": "npx webpack --watch",
-    "lang:1st-pot": "xgettext --from-code=UTF-8 -k__ -k_e -L PHP -o ./languages/messages.pot ./*.php ./*/*.php --package-name=makotokw --package-version=1.0 --msgid-bugs-address=makoto.kw@gmail.com && msgmerge --update ./languages/ja.po ./languages/messages.pot --backup=off",
+    "lang:1st-pot": "wp i18n make-pot ./ languages/messages.pot",
     "lang:2nd-mo": "msgfmt -o ./languages/ja.mo ./languages/ja.po"
   }
 }
