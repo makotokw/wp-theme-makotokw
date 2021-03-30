@@ -7,8 +7,12 @@ WordPress theme for [blog.makotokw.com](https://blog.makotokw.com).
 
  * Created by [_s](http://underscores.me)
  * Inspired [Twenty Fifteen](https://twentyfifteendemo.wordpress.com/), [ghost](https://blog.ghost.org/) and [medium](https://medium.com/)
- * Include [Font Awesome](http://fortawesome.github.io/Font-Awesome/) Icons
- * Include [google-code-prettify](https://github.com/google/code-prettify)
+ * [Font Awesome](http://fortawesome.github.io/Font-Awesome/) Icons
+ * [google-code-prettify](https://github.com/google/code-prettify)
+ * [Headroom.js](https://wicky.nillia.ms/headroom.js/)
+ * [Notyf](https://github.com/caroso1222/notyf)
+ * [Tippy.js](https://atomiks.github.io/tippyjs/)
+ * [clipboard.js](https://clipboardjs.com/)
 
 ## Work With
 
@@ -19,7 +23,7 @@ WordPress theme for [blog.makotokw.com](https://blog.makotokw.com).
 
 ## Limitation
 
-* Tested on PHP 7.3 **ONLY** by makotokw for kwLog
+* Tested on PHP 7.4 **ONLY** by makotokw for kwLog
  * Some styles are **depend on** posts on kwLog
  * **Used** ``register_taxonomy()`` for kwLog
  * **No** sidebar, **No** widgets

@@ -486,6 +486,12 @@ C253.185,138.381 230.249,138.381 230.249,138.381 C230.249,138.381 230.249,153.14
 				<span class="share-title"><?php _e( 'Pocket', 'makotokw' ); ?></span>
 			</a>
 		</li>
+		<li class="share-url">
+			<button class="btn-share btn-share-url" data-clipboard-text="<?php echo $permalink; ?>" data-toast-success="<?php esc_attr_e( 'URL Copied!', 'makotokw' ); ?>" data-tippy-content="<?php esc_attr_e( 'Copy URL', 'makotokw' ); ?>">
+				<i class="fas fa-copy"></i>
+				<span class="share-title"><?php _e( 'Copy URL', 'makotokw' ); ?></span>
+			</button>
+		</li>
 	</ul>
 	<?php
 }
