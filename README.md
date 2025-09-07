@@ -37,8 +37,8 @@ So, please use a reference of one implementation for WordPress theme.
 
 ```
 cd /path/to/wordpress/wp-content/themes
-git clone https://github.com/makotokw/wp-theme-makotokw.git makotokw2021
-cd makotokw2021
+git clone https://github.com/makotokw/wp-theme-makotokw.git makotokw2025
+cd makotokw2025
 cp -p config.php.sample config.php
 ```
 
@@ -52,9 +52,12 @@ cp -p config.php.sample config.php
 ### Build
 
 ```
-cd /path/to/wordpress/wp-content/themes/makotokw2021
+cd /path/to/wordpress/wp-content/themes/makotokw2025
 yarn install
-yarn run build
+# Development server (optional; for assets only)
+yarn dev
+# Production build
+yarn build
 ```
 
 ## License

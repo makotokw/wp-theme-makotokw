@@ -19,7 +19,12 @@
     "FontAwesome": true
   },
   "settings": {
-    "import/resolver": "webpack"
+    "import/resolver": {
+      "alias": {
+        "map": [["jquery", "./src/shims/jquery-global.js"]],
+        "extensions": [".js"]
+      }
+    }
   },
   "rules": {
     "func-names": ["error", "never"],
