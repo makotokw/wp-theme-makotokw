@@ -1,5 +1,5 @@
-const ejs = require('ejs');
-const fs = require('fs');
+import ejs from 'ejs';
+import fs from 'fs';
 
 const buildNumber = (new Date()).getTime();
 ejs.renderFile('./src/style.css.ejs', { buildNumber }, (err, str) => {

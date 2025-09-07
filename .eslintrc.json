@@ -21,8 +21,7 @@
   "settings": {
     "import/resolver": {
       "alias": {
-        "map": [["jquery", "./src/shims/jquery-global.js"]],
-        "extensions": [".js"]
+        "map": [["jquery", "./src/scripts/shims/jquery-global.js"]]
       }
     }
   },

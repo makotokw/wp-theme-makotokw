@@ -1,5 +1,5 @@
 // noinspection NpmUsedModulesInstalled
-import $ from 'jquery';
+import jquery from 'jquery';
 import '@fortawesome/fontawesome-free/js/all';
 import 'google-code-prettify/src/prettify';
 import SmoothScroll from 'smooth-scroll';
@@ -7,6 +7,8 @@ import Header from './header';
 import Content from './content';
 import Footer from './footer';
 import ProgressBar from './progress-bar';
+
+const $ = jquery;
 
 /**
  * Stage

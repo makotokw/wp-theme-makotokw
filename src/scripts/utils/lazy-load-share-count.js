@@ -1,4 +1,6 @@
-import $ from 'jquery';
+import jquery from 'jquery';
+
+const $ = jquery;
 
 function toInt(num) {
   const i = parseInt(num, 10);

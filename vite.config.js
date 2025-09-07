@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { defineConfig } from 'vite';
 import path from 'path';
 import fs from 'fs';
@@ -10,7 +11,7 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
       // Map jquery import to global jQuery provided by WordPress
-      jquery: path.resolve(__dirname, 'src/shims/jquery-global.js'),
+      jquery: path.resolve(__dirname, 'src/scripts/shims/jquery-global.js'),
     },
   },
   css: {

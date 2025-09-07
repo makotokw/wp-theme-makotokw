@@ -3,15 +3,14 @@
   "description": "makotokw theme for WordPress",
   "license": "GPL-2.0",
   "private": true,
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/makotokw/wp-theme-makotokw"
   },
   "dependencies": {
-    "@babel/runtime-corejs3": "7.12.5",
     "@fortawesome/fontawesome-free": "5.15.1",
     "clipboard": "^2.0.8",
-    "core-js": "3.8.1",
     "google-code-prettify": "1.0.5",
     "headroom.js": "0.12.0",
     "notyf": "^3.9.0",
@@ -19,29 +18,24 @@
     "tippy.js": "^6.3.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.10",
-    "@babel/plugin-transform-runtime": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
     "autoprefixer": "^10.1.0",
     "ejs": "^3.1.5",
     "eslint": "^7.16.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.22.1",
     "eslint-import-resolver-alias": "^1.1.2",
-    "npm-run-all": "^4.1.5",
+    "eslint-plugin-import": "^2.22.1",
     "path": "^0.12.7",
     "postcss": "^8.2.1",
-    "vite": "^5.4.0",
-    "sass": "^1.77.0"
+    "sass": "^1.77.0",
+    "vite": "^7.0.0"
   },
   "scripts": {
     "lint:eslint": "eslint src",
     "lint:phpcs": "phpcs --colors -s --report-width=1024 --standard=phpcs.xml *.php ./**/*.php",
     "phpcbf": "phpcbf --standard=phpcs.xml *.php ./**/*.php",
     "build": "vite build",
-    "dev": "vite",
-    "preview": "vite preview --strictPort",
-    "clean": "node ./build/scripts/clean.js",
+    "build:dev": "vite build --minify false",
+    "dev": "vite --port 5173 --strictPort",
     "lang:1st-pot": "wp i18n make-pot ./ languages/messages.pot",
     "lang:2nd-mo": "msgfmt -o ./languages/ja.mo ./languages/ja.po"
   }

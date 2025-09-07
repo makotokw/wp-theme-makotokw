@@ -1,10 +1,12 @@
 // noinspection NpmUsedModulesInstalled
-import $ from 'jquery';
+import jquery from 'jquery';
 import { Notyf } from 'notyf';
 import tippy from 'tippy.js';
 import Clipboard from 'clipboard';
 import 'google-code-prettify/src/prettify';
 import lazyLoadShareCount from '../utils/lazy-load-share-count';
+
+const $ = jquery;
 
 class Content {
   constructor({ isAdmin }) {

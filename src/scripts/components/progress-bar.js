@@ -1,5 +1,7 @@
 // noinspection NpmUsedModulesInstalled
-import $ from 'jquery';
+import jquery from 'jquery';
+
+const $ = jquery;
 
 class ProgressBar {
   constructor() {
