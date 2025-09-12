@@ -1,8 +1,22 @@
 <?xml version="1.0"?>
 <ruleset name="wp-makotokw-theme">
   <description>wp-makotokw-theme Coding Standard.</description>
+
+  <file>.</file>
+
+  <exclude-pattern>vendor/*</exclude-pattern>
+  <exclude-pattern>node_modules/*</exclude-pattern>
+  <exclude-pattern>dist/*</exclude-pattern>
+
+  <arg name="extensions" value="php" />
+  <arg name="colors"/>
+  <arg value="sp"/>
+
   <rule ref="WordPress-Core">
     <!-- Only Japanese, nobody translates without author. -->
     <exclude name="WordPress.WP.I18n.MissingTranslatorsComment"/>
   </rule>
+
+  <rule ref="PHPCompatibility"/>
+  <config name="testVersion" value="7.4-"/>
 </ruleset>

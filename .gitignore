@@ -1,4 +1,5 @@
 .reference
+/vendor
 
 ### app Config ###
 /config.php

@@ -31,7 +31,7 @@
   },
   "scripts": {
     "lint:eslint": "eslint src",
-    "lint:phpcs": "phpcs --colors -s --report-width=1024 --standard=phpcs.xml *.php ./**/*.php",
+    "lint:phpcs": "phpcs",
     "phpcbf": "phpcbf --standard=phpcs.xml *.php ./**/*.php",
     "build": "vite build",
     "build:dev": "vite build --minify false",
