@@ -8,6 +8,17 @@ export default defineConfig(({ mode }) => ({
   root: '.',
   publicDir: false,
   base: '',
+  // https://vite.dev/config/server-options.html
+  server: {
+    // connection from Docker
+    host: true,
+    allowedHosts: [
+      '.internal'
+    ],
+    port: 5173,
+    strictPort: true,
+    cors: true,
+  },
   resolve: {
     alias: {
       // Map jquery import to global jQuery provided by WordPress
@@ -34,7 +45,7 @@ export default defineConfig(({ mode }) => ({
         // Keep deterministic names without hashes for WP enqueue
         entryFileNames: '[name].js',
         assetFileNames: (info) => {
-          const ext = path.extname(info.name || '').slice(1);
+          const ext = path.extname(info.names[0]).slice(1);
           if (ext === 'css') return '[name].css';
           if (['ttf', 'eot', 'woff', 'woff2', 'svg'].includes(ext)) {
             return 'fonts/[name][extname]';

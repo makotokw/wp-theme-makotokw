@@ -70,7 +70,7 @@ function makotokw_setup() {
 	register_nav_menus(
 		array(
 			'footer-menu' => __( 'Footer Menu', 'makotokw' ),
-			'portfolio' => __( 'Portfolio Menu', 'makotokw' ),
+			'portfolio'   => __( 'Portfolio Menu', 'makotokw' ),
 		)
 	);
 
@@ -159,20 +159,48 @@ function makotokw_scripts() {
 		wp_enqueue_style( 'makotokw-fonts' . $fi, esc_url_raw( $fonts_urls[ $fi ] ), array(), null );
 	}
 
-	$assets_version = wp_get_theme()->get( 'Version' );
-	if ( true === WP_THEME_DEBUG ) {
-		$assets_version .= '.' . gmdate( 'YmdHis' );
+	if ( true === WP_THEME_DEBUG && function_exists( 'wp_enqueue_script_module') && makotokw_is_vite_running() ) {
+		$vite_server_url = rtrim( makotokw_vite_dev_server_url(), '/' );
+		// Vite dev server supports ES modules only.
+		wp_enqueue_script_module( 'makotokw-vite-client', $vite_server_url . '/@vite/client', array(), null, true );
+		wp_enqueue_script_module( 'makotokw-script', $vite_server_url . '/src/scripts/index.js', array(), null, true );
+	} else {
+		$assets_version = wp_get_theme()->get( 'Version' );
+		if ( true === WP_THEME_DEBUG ) {
+			$assets_version .= '.' . gmdate( 'YmdHis' );
+		}
+		wp_enqueue_style( 'makotokw-style', get_template_directory_uri() . '/dist/style.css', array(), $assets_version );
+		wp_register_script( 'makotokw-script', get_template_directory_uri() . '/dist/style.js', array( 'jquery' ), $assets_version, true );
 	}
-	wp_enqueue_style( 'makotokw-style', get_template_directory_uri() . '/dist/style.css', array(), $assets_version );
 
-	wp_register_script( 'makotokw-script', get_template_directory_uri() . '/dist/style.js', array( 'jquery' ), $assets_version, true );
 	wp_localize_script( 'makotokw-script', 'makotokw', array( 'counter_api' => WP_THEME_COUNT_API ) );
 	wp_enqueue_script( 'makotokw-script' );
-
-	if ( is_singular() && wp_attachment_is_image() ) {
-		wp_enqueue_script( 'makotokw-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202', true );
-	}
 }
+
+function makotokw_vite_dev_server_url( $host = 'localhost' ) {
+	return "http://$host:5173";
+}
+
+function makotokw_is_vite_running() {
+	$vite_server_url = rtrim( makotokw_vite_dev_server_url( 'host.docker.internal' ), '/' );
+
+	$response = wp_remote_head(
+		$vite_server_url . '/@vite/client',
+		array(
+			'timeout'     => 0.5,
+			'redirection' => 0,
+			'sslverify'   => false,
+		)
+	);
+
+	if ( is_wp_error( $response ) ) {
+		return false;
+	}
+
+	$code = wp_remote_retrieve_response_code( $response );
+	return is_int( $code ) && $code < 400;
+}
+
 
 add_action( 'wp_enqueue_scripts', 'makotokw_scripts' );
 

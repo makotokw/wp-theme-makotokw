@@ -35,7 +35,7 @@
     "phpcbf": "phpcbf --standard=phpcs.xml *.php ./**/*.php",
     "build": "vite build",
     "build:dev": "vite build --minify false",
-    "dev": "vite --port 5173 --strictPort",
+    "dev": "vite",
     "lang:1st-pot": "wp i18n make-pot ./ languages/messages.pot",
     "lang:2nd-mo": "msgfmt -o ./languages/ja.mo ./languages/ja.po"
   }
