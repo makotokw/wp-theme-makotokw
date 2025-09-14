@@ -27,6 +27,12 @@ export default defineConfig(({ mode }) => ({
   },
   css: {
     devSourcemap: true,
+    preprocessorOptions: {
+      scss: {
+        // TODO: https://sass-lang.com/documentation/breaking-changes/import/
+        silenceDeprecations: ['import'],
+      },
+    },
   },
   build: {
     outDir: 'dist',

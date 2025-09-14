@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 /* = Alert styling
 -------------------------------------------------------------- */
 
@@ -7,10 +9,10 @@
   color: $text-color;
 
   hr {
-    border-top-color: darken($border, 5%);
+    border-top-color: color.adjust($border, $lightness: -5%);
   }
   .alert-link {
-    color: darken($text-color, 10%);
+    color: color.adjust($text-color, $lightness: -10%);
   }
 }
 

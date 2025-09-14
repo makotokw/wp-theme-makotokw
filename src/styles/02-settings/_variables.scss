@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 // Layout Size ----------------------------
 $site-header-margin: 10px;
 $site-header-margin-small: 5px;
@@ -35,8 +37,8 @@ $font-family-monospace: Monaco, Menlo, Consolas, 'Courier New', monospace, $font
 $aztecSky: rgb(77, 181, 215);
 
 $site-primary-color: $aztecSky;
-$site-primary-dark-color: darken($aztecSky, 60%);
-$site-primary-light-color: lighten($aztecSky, 50%);
+$site-primary-dark-color: color.adjust($aztecSky, $lightness: -60%);
+$site-primary-light-color: color.adjust($aztecSky, $lightness: 50%);
 $site-on-primary-text-color: #fff;
 $site-surface-color: #fff;
 $site-background-color: #fff;
@@ -51,8 +53,8 @@ $site-default-text: $md-blue-grey-600;
 $site-heading-text: $md-blue-grey-700;
 $site-neutral-text: $md-blue-grey-300;
 $site-placeholder-text: $md-grey-300;
-$site-default-link: darken($site-primary-color, 10%);
-$site-default-link-over: darken($site-primary-color, 20%);
+$site-default-link: color.adjust($site-primary-color, $lightness: -10%);
+$site-default-link-over: color.adjust($site-primary-color, $lightness: -20%);
 
 // Block  ----------------------------
 $block-default-bg: $site-surface-color;
@@ -66,7 +68,7 @@ $header-default-text: $site-default-text;
 $header-default-link: $site-default-text;
 $header-default-link-over: $site-default-link-over;
 $header-banner-link: $site-heading-text;
-$header-banner-link-over: darken($site-primary-color, 10%);
+$header-banner-link-over: color.adjust($site-primary-color, $lightness: -10%);
 
 // Footer  ----------------------------
 $footer-default-bg: white;
@@ -85,12 +87,12 @@ $blockquote-text: $md-grey-700;
 
 // Button ----------------------------
 $button-contained-bg: $site-primary-color;
-$button-contained-bg-over: lighten($button-contained-bg, 10%);
+$button-contained-bg-over: color.adjust($button-contained-bg, $lightness: 10%);
 $button-contained-text: $site-on-primary-text-color;
 $button-contained-disable-bg: $md-grey-200;
 $button-contained-disable-text: $md-grey-400;
 $button-outlined-bg: transparent;
-$button-outlined-bg-over: lighten($site-primary-color, 40%);
+$button-outlined-bg-over: color.adjust($site-primary-color, $lightness: 40%);
 $button-outlined-border: $site-default-border;
 $button-outlined-border-width: 1px;
 $button-outlined-text: $site-primary-color;
@@ -100,16 +102,16 @@ $button-outlined-disable-text: $md-grey-300;
 // State ----------------------------
 $state-warning-text: #c09853;
 $state-warning-bg: #fefaef;
-$state-warning-border: darken(adjust-hue($state-warning-bg, -10), 3%);
+$state-warning-border: color.adjust(color.adjust($state-warning-bg, $hue: -10deg), $lightness: -3%);
 $state-danger-text: #b94a48;
 $state-danger-bg: #f2dede;
-$state-danger-border: darken(adjust-hue($state-danger-bg, -10), 3%);
+$state-danger-border: color.adjust(color.adjust($state-danger-bg, $hue: -10deg), $lightness: -3%);
 $state-success-text: #468847;
 $state-success-bg: #dff0d8;
-$state-success-border: darken(adjust-hue($state-success-bg, -10), 5%);
+$state-success-border: color.adjust(color.adjust($state-success-bg, $hue: -10deg), $lightness: -5%);
 $state-info-text: #3a87ad;
-$state-info-bg: lighten(#d9edf7, 7%);
-$state-info-border: darken(adjust-hue($state-info-bg, -10), 7%);
+$state-info-bg: color.adjust(#d9edf7, $lightness: 7%);
+$state-info-border: color.adjust(color.adjust($state-info-bg, $hue: -10deg), $lightness: -7%);
 
 // Alert ----------------------------
 $alert-padding: 30px;
