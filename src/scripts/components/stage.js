@@ -38,7 +38,6 @@ class Stage {
     });
   }
 
-  // eslint-disable-next-line
   initFontAwesome() {
     if (window.FontAwesome) {
       $('.enclosure-github').each(function () {

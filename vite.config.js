@@ -1,6 +1,5 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { defineConfig } from 'vite';
-import path from 'path';
+import path from 'node:path';
 import fs from 'fs';
 import { exec } from 'child_process';
 
@@ -13,7 +12,7 @@ export default defineConfig(({ mode }) => ({
     // connection from Docker
     host: true,
     allowedHosts: [
-      '.internal'
+      '.internal',
     ],
     port: 5173,
     strictPort: true,
@@ -72,7 +71,6 @@ export default defineConfig(({ mode }) => ({
             fs.unlinkSync(distCss);
           }
         } catch (e) {
-          // eslint-disable-next-line no-console
           console.warn('[vite] Failed to relocate amazonjs.css:', e);
         }
         try {
@@ -84,7 +82,6 @@ export default defineConfig(({ mode }) => ({
             });
           });
         } catch (e) {
-          // eslint-disable-next-line no-console
           console.warn('[vite] themeinfo.js failed:', e);
         }
       },

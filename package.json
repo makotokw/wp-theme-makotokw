@@ -18,21 +18,21 @@
     "tippy.js": "^6.3.1"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
     "autoprefixer": "^10.1.0",
     "ejs": "^3.1.5",
-    "eslint": "^7.16.0",
-    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint": "^9.35.0",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-import-resolver-alias": "^1.1.2",
-    "eslint-plugin-import": "^2.22.1",
-    "path": "^0.12.7",
+    "eslint-plugin-import": "^2.32.0",
+    "globals": "^16.4.0",
     "postcss": "^8.2.1",
     "sass": "^1.77.0",
     "vite": "^7.0.0"
   },
   "scripts": {
-    "lint:eslint": "eslint src",
+    "lint:eslint": "eslint src build *.config.js",
     "lint:phpcs": "phpcs",
-    "phpcbf": "phpcbf --standard=phpcs.xml *.php ./**/*.php",
     "build": "vite build",
     "build:dev": "vite build --minify false",
     "dev": "vite",
