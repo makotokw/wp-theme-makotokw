@@ -1,7 +1,8 @@
 import { defineConfig } from 'vite';
 import path from 'node:path';
 import fs from 'fs';
-import { exec } from 'child_process';
+import ejs from 'ejs';
+import pkg from './package.json' with { type: 'json' };
 
 export default defineConfig(({ mode }) => ({
   root: '.',
@@ -60,7 +61,7 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     {
-      name: 'move-amazonjs-and-run-themeinfo',
+      name: 'move-amazonjs-and-generate-style-css',
       writeBundle: async () => {
         // Move dist/amazonjs.css to project root as amazonjs.css
         const distCss = path.resolve(__dirname, 'dist/amazonjs.css');
@@ -73,16 +74,21 @@ export default defineConfig(({ mode }) => ({
         } catch (e) {
           console.warn('[vite] Failed to relocate amazonjs.css:', e);
         }
+        // Generate WordPress theme style.css from an EJS template
         try {
-          await new Promise((resolve) => {
-            exec('node build/scripts/themeinfo.js', (err, stdout, stderr) => {
-              if (stdout) process.stdout.write(stdout);
-              if (stderr) process.stderr.write(stderr);
-              resolve();
-            });
-          });
+          const templatePath = path.resolve(__dirname, 'src/style.css.ejs');
+          const buildNumber = (new Date()).getTime();
+          const rendered = await ejs.renderFile(
+            templatePath,
+            {
+              version: pkg.version,
+              buildNumber,
+            },
+          );
+          const outPath = path.resolve(__dirname, 'style.css');
+          fs.writeFileSync(outPath, rendered);
         } catch (e) {
-          console.warn('[vite] themeinfo.js failed:', e);
+          console.warn('[vite] Failed to generate style.css:', e);
         }
       },
     },

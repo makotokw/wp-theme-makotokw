@@ -48,7 +48,7 @@ export default [
   },
   // Node-based tool
   {
-    files: ['build/**/*.js', '*.config.js'],
+    files: ['*.config.js'],
     languageOptions: {
       globals: {
         ...globals.node,
