@@ -12,11 +12,81 @@
   <arg name="colors"/>
   <arg value="sp"/>
 
+  <!--
+  #############################################################################
+  USE THE WordPress AND THE Theme Review RULESET
+  #############################################################################
+  -->
+
+<!--  <rule ref="WordPress">-->
+<!--    &lt;!&ndash; This rule does not apply here since the makotokw prefix should be changed by the theme author. &ndash;&gt;-->
+<!--    <exclude name="WordPress.NamingConventions.PrefixAllGlobals.ShortPrefixPassed"/>-->
+<!--  </rule>-->
+<!--  <rule ref="WPThemeReview"/>-->
+
   <rule ref="WordPress-Core">
     <!-- Only Japanese, nobody translates without author. -->
     <exclude name="WordPress.WP.I18n.MissingTranslatorsComment"/>
   </rule>
 
-  <rule ref="PHPCompatibility"/>
+  <!--
+  #############################################################################
+  SNIFF SPECIFIC CONFIGURATION
+  #############################################################################
+  -->
+
+  <!-- Verify that the text_domain is set to the desired text-domain.
+     Multiple valid text domains can be provided as a comma-delimited list. -->
+  <rule ref="WordPress.WP.I18n">
+    <properties>
+      <property name="text_domain" type="array" value="makotokw"/>
+    </properties>
+  </rule>
+
+  <!-- Allow for theme-specific exceptions to the file name rules based
+     on the theme hierarchy. -->
+  <rule ref="WordPress.Files.FileName">
+    <properties>
+      <property name="is_theme" value="true"/>
+    </properties>
+  </rule>
+
+  <!-- Set the minimum supported WP version. This is used by several sniffs.
+     The minimum version set here should be in line with the minimum WP version
+     as set in the "Requires at least" tag in the readme.txt file. -->
+  <config name="minimum_supported_wp_version" value="6.0"/>
+
+  <rule ref="WordPress.Arrays.MultipleStatementAlignment">
+    <properties>
+      <!-- No need to adjust the alignment of large arrays when the item with the largest key is removed. -->
+      <property name="exact" value="false"/>
+      <!-- Don't align multi-line items if ALL items in the array are multi-line. -->
+      <property name="alignMultilineItems" value="!=100"/>
+      <!-- Array assignment operator should always be on the same line as the array key. -->
+      <property name="ignoreNewlines" value="false"/>
+    </properties>
+  </rule>
+
+  <!-- Verify that everything in the global namespace is prefixed with a theme specific prefix.
+     Multiple valid prefixes can be provided as a comma-delimited list. -->
+  <rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+    <properties>
+      <property name="prefixes" type="array">
+          <element value="makotokw_"/>
+          <element value="wp_theme_"/>
+          <element value="wp_ogp_"/>
+          <element value="ogp_"/>
+          <element value="og_"/>
+      </property>
+    </properties>
+  </rule>
+
+  <!--
+  #############################################################################
+  USE THE PHPCompatibility RULESET
+  #############################################################################
+  -->
+
   <config name="testVersion" value="7.4-"/>
+  <rule ref="PHPCompatibilityWP"/>
 </ruleset>

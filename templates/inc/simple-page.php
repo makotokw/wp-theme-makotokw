@@ -1,17 +1,17 @@
 <?php
 /**
- * @var string $t_title
- * @var string $t_contents
+ * @var string $makotokw_title
+ * @var string $makotokw_contents
  */
 get_header();
 the_post();
 ?>
 	<article class="post-detailed">
 		<header class="entry-header">
-			<h1 class="entry-title"><?php echo $t_title; ?></h1>
+			<h1 class="entry-title"><?php echo $makotokw_title; ?></h1>
 		</header>
 		<div class="entry-content section-inner">
-			<?php echo $t_contents; ?>
+			<?php echo $makotokw_contents; ?>
 		</div>
 	</article>
 <?php

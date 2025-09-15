@@ -16,3 +16,4 @@ define( 'WP_THEME_OGP_LOCALE', 'ja_JP' );
 define( 'WP_THEME_OGP_FB_APPID', 'xxxxxxxx' );
 define( 'WP_THEME_OGP_FB_ADMINS', 'username' );
 define( 'WP_THEME_COUNT_API', '' );
+define( 'WP_THEME_DATE_FORMAT', 'Y-m-d' );

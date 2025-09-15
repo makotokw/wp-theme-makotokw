@@ -1,7 +1,8 @@
 <?php
 /**
  * Jetpack Compatibility File
- * See: https://jetpack.com/
+ *
+ * @link https://jetpack.com/
  *
  * @package makotokw
  */
@@ -19,7 +20,6 @@ function makotokw_infinite_scroll_setup() {
 		)
 	);
 }
-
 add_action( 'after_setup_theme', 'makotokw_infinite_scroll_setup' );
 
 // Disable OGP in jetpack

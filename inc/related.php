@@ -1,4 +1,10 @@
 <?php
+/**
+ * Template for related contents
+ *
+ * @package makotokw
+ */
+
 function makotokw_related_posts( $title = 'Related Posts', $arg = array() ) {
 	global $post;
 

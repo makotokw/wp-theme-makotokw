@@ -2,75 +2,61 @@
 /**
  * makotokw functions and definitions
  *
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
  * @package makotokw
  */
 
-define( 'THEME_DATE_FORMAT', 'Y-m-d' );
-
-if ( ! isset( $content_width ) ) {
-	$content_width = 750;
-}
-
-/*
- * Load Jetpack compatibility file.
- */
-/** @noinspection PhpIncludeInspection */
-require get_template_directory() . '/inc/jetpack.php';
-
-/*
- * Custom Taxonomy
- */
-/** @noinspection PhpIncludeInspection */
-require get_template_directory() . '/inc/taxonomy.php';
+require get_template_directory() . '/config.php';
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
- * Note that this function is hooked into the after_setup_theme hook, which runs
- * before the init hook. The init hook is too late for some features, such as indicating
- * support post thumbnails.
+ * Note that this function is hooked into the after_setup_theme hook, which
+ * runs before the init hook. The init hook is too late for some features, such
+ * as indicating support for post thumbnails.
  */
 function makotokw_setup() {
-	/** @noinspection PhpIncludeInspection */
-	require get_template_directory() . '/config.php';
-
-	/**
-	 * Custom template tags for this theme.
-	 */
-	/** @noinspection PhpIncludeInspection */
-	require get_template_directory() . '/inc/template-tags.php';
-	/** @noinspection PhpIncludeInspection */
-	require get_template_directory() . '/inc/related.php';
-	/** @noinspection PhpIncludeInspection */
-	require get_template_directory() . '/inc/comments.php';
-	/** @noinspection PhpIncludeInspection */
-	require get_template_directory() . '/inc/extras.php';
-
-	/**
-	 * Make theme available for translation
-	 * Translations can be filed in the /languages/ directory
+	/*
+	 * Make theme available for translation.
+	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on makotokw, use a find and replace
-	 * to change 'makotokw' to the name of your theme in all the template files
+	 * to change 'makotokw' to the name of your theme in all the template files.
 	 */
 	load_theme_textdomain( 'makotokw', get_template_directory() . '/languages' );
 
-	/**
-	 * Add default posts and comments RSS feed links to head
-	 */
+	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
-	/**
-	 * Enable support for Post Thumbnails
+	/*
+	 * Enable support for Post Thumbnails on posts and pages.
+	 *
+	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	/**
-	 * This theme uses wp_nav_menu() in one location.
-	 */
+	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
 			'footer-menu' => __( 'Footer Menu', 'makotokw' ),
 			'portfolio'   => __( 'Portfolio Menu', 'makotokw' ),
+		)
+	);
+
+	/*
+	* Switch default core markup for search form, comment form, and comments
+	* to output valid HTML5.
+	*/
+	add_theme_support(
+		'html5',
+		array(
+			'comment-list',
+			'comment-form',
+			'search-form',
+			'gallery',
+			'caption',
+			'style',
+			'script',
 		)
 	);
 
@@ -101,23 +87,32 @@ function makotokw_setup() {
 	if ( true === WP_THEME_OGP ) {
 		add_filter( 'jetpack_enable_opengraph', '__return_false', 99 );
 	}
-
-	if ( is_admin() ) {
-		add_action( 'admin_print_footer_scripts', 'makotokw_quicktags' );
-	}
 }
-
 add_action( 'after_setup_theme', 'makotokw_setup' );
 
 /**
- * Register widgetized area and update sidebar with default widgets
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+function makotokw_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'makotokw_content_width', 750 );
+}
+add_action( 'after_setup_theme', 'makotokw_content_width', 0 );
+
+/**
+ * Register widget area.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function makotokw_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => __( 'Sidebar', 'makotokw' ),
+			'name'          => esc_html__( 'Sidebar', 'makotokw' ),
 			'id'            => 'sidebar-1',
-			'description'   => __( 'Add widgets here to appear in your sidebar.', 'makotokw' ),
+			'description'   => esc_html__( 'Add widgets here to appear in your sidebar.', 'makotokw' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -125,23 +120,10 @@ function makotokw_widgets_init() {
 		)
 	);
 }
-
 add_action( 'widgets_init', 'makotokw_widgets_init' );
 
-function makotokw_get_meta_description() {
-	$description = '';
-	if ( is_home() ) {
-		$description = get_bloginfo( 'description' );
-	} elseif ( is_archive() ) {
-		$description = get_the_archive_description();
-	}
-	return $description;
-}
-
-add_action( 'makotokw_get_meta_description', 'makotokw_get_meta_description' );
-
 /**
- * Enqueue scripts and styles
+ * Enqueue scripts and styles.
  */
 function makotokw_scripts() {
 	// move jQuery to footer
@@ -159,7 +141,7 @@ function makotokw_scripts() {
 		wp_enqueue_style( 'makotokw-fonts' . $fi, esc_url_raw( $fonts_urls[ $fi ] ), array(), null );
 	}
 
-	if ( true === WP_THEME_DEBUG && function_exists( 'wp_enqueue_script_module') && makotokw_is_vite_running() ) {
+	if ( true === WP_THEME_DEBUG && function_exists( 'wp_enqueue_script_module' ) && makotokw_is_vite_running() ) {
 		$vite_server_url = rtrim( makotokw_vite_dev_server_url(), '/' );
 		// Vite dev server supports ES modules only.
 		wp_enqueue_script_module( 'makotokw-vite-client', $vite_server_url . '/@vite/client', array(), null, true );
@@ -175,6 +157,29 @@ function makotokw_scripts() {
 
 	wp_localize_script( 'makotokw-script', 'makotokw', array( 'counter_api' => WP_THEME_COUNT_API ) );
 	wp_enqueue_script( 'makotokw-script' );
+}
+add_action( 'wp_enqueue_scripts', 'makotokw_scripts' );
+
+/**
+ * @return array
+ */
+function makotokw_fonts_urls() {
+	$urls  = array();
+	$fonts = array(
+		// https://fonts.google.com/specimen/Nunito+Sans
+		'Nunito+Sans:300,300i,400,400i,700,800',
+	);
+	if ( ! empty( $fonts ) ) {
+		$fonts_url = add_query_arg(
+			array(
+				'family'  => implode( '|', $fonts ),
+				'display' => 'swap',
+			),
+			'https://fonts.googleapis.com/css'
+		);
+		$urls[]    = $fonts_url;
+	}
+	return $urls;
 }
 
 function makotokw_vite_dev_server_url( $host = 'localhost' ) {
@@ -201,9 +206,6 @@ function makotokw_is_vite_running() {
 	return is_int( $code ) && $code < 400;
 }
 
-
-add_action( 'wp_enqueue_scripts', 'makotokw_scripts' );
-
 /**
  * deregister styles
  */
@@ -213,42 +215,6 @@ function makotokw_deregister_styles() {
 
 if ( ! is_admin_bar_showing() ) {
 	add_action( 'wp_print_styles', 'makotokw_deregister_styles', 100 );
-}
-
-function makotokw_is_noindex() {
-	global $wp_query;
-	if ( $wp_query ) {
-		if ( $wp_query->is_archive() ) {
-			if ( $wp_query->is_category() ) {
-				$category_id = $wp_query->get_queried_object_id();
-				if ( in_array( $category_id, wp_parse_id_list( WP_THEME_EXCLUDE_CATEGORY ), true ) ) {
-					return true;
-				}
-				$paged = $wp_query->get( 'paged', 1 );
-				// old pages should be noindexes
-				return $paged > 3;
-			} elseif ( is_mylist() ) {
-				return false;
-			}
-			return true;
-		}
-		if ( $wp_query->is_search() || $wp_query->is_404() || is_page_template( 'templates/template-help.php' ) ) {
-			return true;
-		}
-	}
-	return false;
-}
-
-/**
- * @param null $post
- * @return bool
- */
-function makotokw_is_comment_form_showing( $post = null ) {
-	$post = get_post( $post );
-	if ( 'page' !== $post->post_type ) {
-		return get_post_time( 'U', false, $post ) > strtotime( '-2 months' );
-	}
-	return true;
 }
 
 /**
@@ -266,140 +232,133 @@ if ( ! is_admin() ) {
 }
 
 /**
- * @return array
+ * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
-function makotokw_fonts_urls() {
-	$urls  = array();
-	$fonts = array(
-		// https://fonts.google.com/specimen/Nunito+Sans
-		'Nunito+Sans:300,300i,400,400i,700,800',
-	);
-	if ( ! empty( $fonts ) ) {
-		$fonts_url = add_query_arg(
-			array(
-				'family'  => implode( '|', $fonts ),
-				'display' => 'swap',
-			),
-			'https://fonts.googleapis.com/css'
-		);
-		$urls[]    = $fonts_url;
+function makotokw_pingback_header() {
+	if ( is_singular() && pings_open() ) {
+		printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
 	}
-	return $urls;
 }
-
-function makotokw_get_the_updated_date( $format = DATE_ISO8601 ) {
-	$values = get_post_custom_values( 'makotokw_updatedat' );
-	if ( $values ) {
-		$time = strtotime( $values[0] );
-		if ( $time ) {
-			return date_i18n( $format, $time );
-		}
-	}
-	return false;
-}
-
-function makotokw_get_the_feature_image_url() {
-	$featured_image_url     = null;
-	$featured_image_service = null;
-	if ( class_exists( 'Makotokw\PostUtility' ) ) {
-		$featured_image_url = Makotokw\PostUtility::find_featured_image_url( null, $featured_image_service );
-	}
-
-	if ( $featured_image_url ) {
-		return array( $featured_image_url, $featured_image_service );
-	}
-
-	$fallback_categories      = array( 'wordpress', 'programing', 'server', 'hardware', 'computer' );
-	$fallback_image_timestamp = '20210301';
-
-	$post_title      = get_the_title();
-	$post_categories = get_the_category();
-	foreach ( $fallback_categories as $fallback_category ) {
-		if ( $post_title && preg_match( '/' . $fallback_category . '/i', $post_title ) ) {
-			$featured_image_url     = get_template_directory_uri() . "/assets/images/featured/{$fallback_category}.png?{$fallback_image_timestamp}";
-			$featured_image_service = 'fallback';
-			break;
-		}
-		$filterd = array_filter(
-			$post_categories,
-			function ( $term ) use ( $fallback_category ) {
-				return $term->slug === $fallback_category;
-			}
-		);
-		if ( ! empty( $filterd ) ) {
-			$featured_image_url     = get_template_directory_uri() . "/assets/images/featured/{$fallback_category}.png?{$fallback_image_timestamp}";
-			$featured_image_service = 'fallback';
-			break;
-		}
-	}
-
-	if ( ! $featured_image_url ) {
-		$featured_image_url     = get_template_directory_uri() . '/assets/images/default-fallback-image.png';
-		$featured_image_service = 'fallback';
-	}
-
-	return array( $featured_image_url, $featured_image_service );
-}
+add_action( 'wp_head', 'makotokw_pingback_header' );
 
 /**
- * Custom QTags
+ * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  */
-function makotokw_quicktags() {
-	// https://wordpress.stackexchange.com/questions/37849/add-custom-shortcode-button-to-editor
-	/* Add custom Quicktag buttons to the editor WordPress ver. 3.3 and above only
-	 *
-	 * Params for this are:
-	 * - Button HTML ID (required)
-	 * - Button display, value="" attribute (required)
-	 * - Opening Tag (required)
-	 * - Closing Tag (required)
-	 * - Access key, accesskey="" attribute for the button (optional)
-	 * - Title, title="" attribute (optional)
-	 * - Priority/position on bar, 1-9 = first, 11-19 = second, 21-29 = third, etc. (optional)
-	 */
-	?>
-	<script type="text/javascript">
-		(function ($) {
-			if (typeof(QTags) !== 'undefined') {
-				var datetime = (function () {
-					var now = new Date(), zeroise;
-					zeroise = function (number) {
-						var str = number.toString();
-						if (str.length < 2)
-							str = "0" + str;
-						return str;
-					};
-					return now.getUTCFullYear() + '-' +
-						zeroise(now.getUTCMonth() + 1) + '-' +
-						zeroise(now.getUTCDate()) + 'T' +
-						zeroise(now.getUTCHours()) + ':' +
-						zeroise(now.getUTCMinutes()) + ':' +
-						zeroise(now.getUTCSeconds()) +
-						'+00:00';
-				})();
+function makotokw_page_menu_args( $args ) {
+	$args['show_home'] = true;
+	return $args;
+}
+add_filter( 'wp_page_menu_args', 'makotokw_page_menu_args' );
 
-				$.each(['h2', 'h3', 'h4', 'h5', 'p'], function (i, e) {
-					QTags.addButton(e, e, '<' + e + '>', '</' + e + '>');
-				});
-				QTags.addButton('ins_block', 'ins_block', '<ins class="note-ins" datetime="' + datetime + '">', '</ins>');
-				QTags.addButton('AA', 'aa', '<span class="aa">', '</span>');
-				QTags.addButton('big', 'big', '<span class="big">', '</span>');
+/**
+ * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
+ */
+function makotokw_enhanced_image_navigation( $url, $id ) {
+	if ( ! is_attachment() && ! wp_attachment_is_image( $id ) ) {
+		return $url;
+	}
 
-				QTags.addButton('figure', 'figure', '<figure>', '<figcaption>Caption</figcaption></figure>');
+	$image = get_post( $id );
+	if ( ! empty( $image->post_parent ) && $image->post_parent !== $id ) {
+		$url .= '#main';
+	}
 
-				$.each(['', 'github', 'qiita', 'evernote'], function (i, t) {
-					var cls = (t === '') ? 'enclosure' : 'enclosure-' + t;
-					QTags.addButton(cls, cls, '<div class="' + cls + '">', '</div>');
-				});
-				$.each(['comment', 'ins', 'link'], function (i, t) {
-					var cls = 'note-' + t;
-					QTags.addButton(cls, cls, '<div class="' + cls + '">', '</div>');
-				});
+	return $url;
+}
+add_filter( 'attachment_link', 'makotokw_enhanced_image_navigation', 10, 2 );
 
-				QTags.addButton('prettyprint', 'prettyprint', '<pre class="prettyprint">', '</pre>');
-				QTags.addButton('sh_code', '[code]', '[code autolinks="false" collapse="false" firstline="1" gutter="true" highlight="" htmlscript="false" light="false" padlinenumbers="false" toolbar="true" title="example-filename.php"]', '[/code]');
+/**
+ * Filters wp_title to print a neat <title> tag based on what is being viewed.
+ */
+function makotokw_wp_title( $title, $sep ) {
+	global $page, $paged;
+
+	if ( is_feed() ) {
+		return $title;
+	}
+
+	// Add the blog name
+	$title .= get_bloginfo( 'name' );
+
+	// Add the blog description for the home/front page.
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) ) {
+		$title .= " $sep $site_description";
+	}
+
+	// Add a page number if necessary:
+	if ( $paged >= 2 || $page >= 2 ) {
+		$title .= " $sep " . sprintf( __( 'Page %s', 'makotokw' ), max( $paged, $page ) );
+	}
+
+	return $title;
+}
+add_filter( 'wp_title', 'makotokw_wp_title', 10, 2 );
+
+function makotokw_get_meta_description() {
+	$description = '';
+	if ( is_home() ) {
+		$description = get_bloginfo( 'description' );
+	} elseif ( is_archive() ) {
+		$description = get_the_archive_description();
+	}
+	return $description;
+}
+
+add_action( 'makotokw_get_meta_description', 'makotokw_get_meta_description' );
+
+function makotokw_template_redirect() {
+	if ( is_page() && ! is_preview() ) {
+		$values = get_post_custom_values( 'makotokw_part_of_home' );
+		if ( $values ) {
+			if ( 1 === intval( $values[0] ) ) {
+				wp_redirect( home_url( '/' ) );
+				exit;
 			}
-		})(jQuery);
-	</script>
-	<?php
+		}
+	}
+}
+add_action( 'template_redirect', 'makotokw_template_redirect' );
+
+/**
+ * Flush out the transients used in makotokw_categorized_blog
+ */
+function makotokw_category_transient_flusher() {
+	// Like, beat it. Dig?
+	delete_transient( 'all_the_cool_cats' );
+}
+
+add_action( 'edit_category', 'makotokw_category_transient_flusher' );
+add_action( 'save_post', 'makotokw_category_transient_flusher' );
+
+if ( ! function_exists( 'wp_body_open' ) ) :
+	/**
+	 * Shim for sites older than 5.2.
+	 *
+	 * @link https://core.trac.wordpress.org/ticket/12563
+	 */
+	function wp_body_open() {
+		do_action( 'wp_body_open' );
+	}
+endif;
+
+require get_template_directory() . '/inc/admin.php';
+require get_template_directory() . '/inc/font-awesome.php';
+require get_template_directory() . '/inc/ga.php';
+require get_template_directory() . '/inc/ogp.php';
+require get_template_directory() . '/inc/seo.php';
+require get_template_directory() . '/inc/breadcrumbs.php';
+require get_template_directory() . '/inc/featured-image.php';
+require get_template_directory() . '/inc/taxonomy.php';
+require get_template_directory() . '/inc/template-tags.php';
+require get_template_directory() . '/inc/share.php';
+require get_template_directory() . '/inc/related.php';
+require get_template_directory() . '/inc/comments.php';
+require get_template_directory() . '/inc/debug.php';
+
+/**
+ * Load Jetpack compatibility file.
+ */
+if ( defined( 'JETPACK__VERSION' ) ) {
+	require get_template_directory() . '/inc/jetpack.php';
 }

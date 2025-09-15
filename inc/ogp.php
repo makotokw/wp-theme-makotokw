@@ -1,10 +1,10 @@
 <?php
 /**
  * Open Graph protocol for WordPress
- * @version 0.9
- * @author makoto_kw
+ * @package makotokw
  * @link https://gist.github.com/3399585
  */
+
 // key into custom fields for description. Default is for All in One SEO Pack
 //define( 'WP_OGP_POST_DESCRIPTION_KEY', '_aioseop_description' );
 define( 'WP_OGP_POST_DESCRIPTION_KEY', 'description' );
@@ -65,7 +65,7 @@ function ogp_post_image() {
 function ogp_post_section() {
 	$categories = get_the_category();
 	if ( count( $categories ) > 0 ) {
-		if ( __( 'Uncategorized', 'default' ) !== $categories[0]->name ) {
+		if ( __( 'Uncategorized', 'default' ) !== $categories[0]->name ) { // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
 			return $categories[0]->name;
 		}
 	}
@@ -84,6 +84,7 @@ function ogp_post_tag() {
 	return false;
 }
 
+function makotokw_ogp_meta() {
 ?>
 	<?php if ( is_single() || is_page() ) : ?>
 		<?php if ( have_posts() ) : ?>
@@ -156,3 +157,9 @@ function ogp_post_tag() {
 	<?php if ( defined( 'WP_OGP_FB_ADMINS' ) ) : ?>
 <meta property="fb:admins" content="<?php echo WP_OGP_FB_ADMINS; ?>"/>
 	<?php endif ?>
+<?php
+}
+
+if ( true === WP_THEME_OGP ) :
+	add_action( 'wp_head', 'makotokw_ogp_meta' );
+endif;

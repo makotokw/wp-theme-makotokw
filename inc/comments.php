@@ -2,6 +2,8 @@
 /**
  * Template for comments and pingbacks.
  * Used as a callback by wp_list_comments() for displaying the comments.
+ *
+ * @package makotokw
  */
 
 /*
@@ -28,7 +30,7 @@ function makotokw_comment( $comment, $args, $depth ) {
 							esc_url( get_comment_link( $comment->comment_ID ) ),
 							get_comment_time(),
 							/* translators: 1: date, 2: time */
-							sprintf( __( '%1$s at %2$s', 'makotokw' ), get_comment_date( THEME_DATE_FORMAT ), get_comment_time() )
+							sprintf( __( '%1$s at %2$s', 'makotokw' ), get_comment_date( WP_THEME_DATE_FORMAT ), get_comment_time() )
 						);
 					?>
 					<?php edit_comment_link( '<i class="fas fa-edit"></i>', '<span class="edit-link">', '</span>' ); ?>
@@ -50,7 +52,7 @@ function makotokw_comment( $comment, $args, $depth ) {
 			<!-- .comment-meta -->
 			<div class="comment-content">
 				<?php if ( 0 === intval( $comment->comment_approved ) ) : ?>
-					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'makotokw' ); ?></em>
+					<em class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'makotokw' ); ?></em>
 				<?php endif; ?>
 				<?php comment_text(); ?>
 			</div>
@@ -58,6 +60,18 @@ function makotokw_comment( $comment, $args, $depth ) {
 		<!-- #comment-## -->
 	<?php
 } // ends check for makotokw_comment()
+
+/**
+ * @param null $post
+ * @return bool
+ */
+function makotokw_is_comment_form_showing( $post = null ) {
+	$post = get_post( $post );
+	if ( 'page' !== $post->post_type ) {
+		return get_post_time( 'U', false, $post ) > strtotime( '-2 months' );
+	}
+	return true;
+}
 
 /**
  * @param $open
@@ -68,5 +82,4 @@ function makotokw_comments_open( $open, $post_id ) {
 	$post = get_post( $post_id );
 	return makotokw_is_comment_form_showing( $post );
 }
-
 add_filter( 'comments_open', 'makotokw_comments_open', 10, 2 );

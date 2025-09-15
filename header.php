@@ -1,27 +1,28 @@
 <?php
 /**
- * The Header for our theme.
+ * The header for our theme
  *
- * Displays all of the <head> section and everything up till <div id="main">
+ * This is the template that displays all of the <head> section and everything up until <div id="main">
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package makotokw
  */
-?><!DOCTYPE html>
+?><!doctype html>
 <html <?php language_attributes(); ?>>
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="format-detection" content="telephone=no" />
-<?php if ( makotokw_is_noindex() ) : ?>
+<?php if ( makotokw_is_seo_noindex() ) : ?>
 <meta name="robots" content="noindex,follow" />
 <?php else : ?>
 <meta name="robots" content="index" />
 <?php endif ?>
 <title><?php wp_title( ' - ', true, 'right' ); ?></title>
-<?php $meta_description = makotokw_get_meta_description(); ?>
-<?php if ( $meta_description ) : ?>
-<meta name="description" content="<?php echo esc_attr( $meta_description ); ?>" />
+<?php $makotokw_meta_description = makotokw_get_meta_description(); ?>
+<?php if ( $makotokw_meta_description ) : ?>
+<meta name="description" content="<?php echo esc_attr( $makotokw_meta_description ); ?>" />
 <?php endif ?>
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" href="<?php echo get_theme_file_uri(); ?>/assets/images/touch-icon-iphone.png">
@@ -35,9 +36,6 @@
 <link rel="canonical" href="<?php the_permalink(); ?>" />
 <?php endif ?>
 <link rel="alternate" type="<?php echo feed_content_type(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" href="<?php echo get_feed_link(); ?>" />
-<?php if ( true === WP_THEME_OGP ) : ?>
-	<?php get_template_part( 'template-parts/meta', 'ogp' ); ?>
-<?php endif ?>
 <?php wp_head(); ?>
 <?php if ( defined( 'JETPACK_DEV_DEBUG' ) && JETPACK_DEV_DEBUG === true ) : ?>
 <link rel='stylesheet' id='jetpack_css-css' href='/wp-content/plugins/jetpack/css/jetpack.css' type='text/css' media='all'/>
@@ -45,7 +43,7 @@
 <?php makotokw_google_analytics(); ?>
 </head>
 <body <?php body_class(); ?>>
-<?php do_action( 'makotekw_after_body' ); ?>
+<?php wp_body_open(); ?>
 <header id="siteHeader" class="site-header" role="banner">
 	<div class="site-header-inner section-inner">
 		<div class="site-header-titles">
@@ -76,7 +74,7 @@
 		</div>
 	</progress>
 </header>
-<?php get_template_part( 'template-parts/overlay-menu' ); ?>
+<?php makotokw_menu_overlay(); ?>
 <div class="site-main">
 	<main id="siteContent" class="site-content" role="main">
 

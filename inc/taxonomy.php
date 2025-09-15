@@ -1,4 +1,9 @@
 <?php
+/**
+ * taxonomy functions
+ *
+ * @package makotokw
+ */
 
 /**
  * feature taxonomy by post
@@ -40,11 +45,11 @@ function makotokw_get_featured_taxonomy( $post ) {
 	return $taxonomies;
 }
 
-function is_mylist() {
+function makotokw_is_mylist() {
 	return is_tax( 'mylist' );
 }
 
-function get_mylist( $post ) {
+function makotokw_get_mylist( $post ) {
 	$mylists = get_the_terms( $post->ID, 'mylist' );
 	if ( ! empty( $mylists ) ) {
 		return array_shift( $mylists );
@@ -53,18 +58,18 @@ function get_mylist( $post ) {
 }
 
 /*
-function mylist_pre_get_posts($query)
+function makotokw_mylist_pre_get_posts($query)
 {
-	if (is_mylist()) {
+	if (makotokw_is_mylist()) {
 		$query->set('order', 'ASC');
 	}
 }
 
-add_action('pre_get_posts', 'mylist_pre_get_posts');
+add_action('pre_get_posts', 'makotokw_mylist_pre_get_posts');
 */
 
-function get_first_post_on_mylist( $post ) {
-	$mylist = get_mylist( $post );
+function makotokw_get_first_post_on_mylist( $post ) {
+	$mylist = makotokw_get_mylist( $post );
 	if ( $mylist ) {
 		$mylist_slug = $mylist->slug;
 		if ( ! empty( $mylist_slug ) ) {
@@ -83,8 +88,8 @@ function get_first_post_on_mylist( $post ) {
 	return false;
 }
 
-function get_adjacent_post_on_mylist( $post, $previous = true ) {
-	$mylist = get_mylist( $post );
+function makotokw_get_adjacent_post_on_mylist( $post, $previous = true ) {
+	$mylist = makotokw_get_mylist( $post );
 	if ( $mylist ) {
 		$mylist_slug = $mylist->slug;
 		if ( ! empty( $mylist_slug ) ) {
