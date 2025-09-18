@@ -1,4 +1,5 @@
 @media print {
+
   body {
     background: none !important;
     color: #000;
@@ -8,6 +9,7 @@
   .blog-title {
     font-size: 21pt;
   }
+
   .blog-description {
     font-size: 10pt;
   }
@@ -42,10 +44,12 @@
   }
 
   .entry-content {
+
     img.alignleft,
     .wp-caption.alignleft {
       margin-left: 0;
     }
+
     img.alignright,
     .wp-caption.alignright {
       margin-right: 0;

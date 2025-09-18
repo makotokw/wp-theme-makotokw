@@ -38,21 +38,26 @@ body {
 }
 
 @include smaller-than-desktop-screen {
+
   .site-main {
   }
+
   .site-content {
   }
+
   .site-sidebar {
   }
 }
 
 @include smaller-than-tablet-screen {
+
   .section-inner {
     width: calc(100% - 40px);
   }
 }
 
 @include smaller-than-mobile-screen {
+
   .section-inner {
     width: calc(100% - 20px);
   }

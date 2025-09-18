@@ -7,12 +7,13 @@
 }
 
 .block-content {
+
   @include block-white($site-border-radius);
 }
 
 .quote-caption {
   font-size: 14px;
-  font-weight: normal;
+  font-weight: 400;
   text-transform: uppercase;
 }
 
@@ -26,7 +27,7 @@
 
 .time {
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
   text-transform: uppercase;
 }
 
@@ -68,6 +69,7 @@
     border-top: $site-border-width solid $site-default-border;
     border-left: $site-border-width solid $site-default-border;
   }
+
   caption + thead tr:first-child th,
   caption + tbody tr:first-child th,
   caption + tbody tr:first-child td,
@@ -82,13 +84,17 @@
 }
 
 .rakuten-afl {
+
   @include block-white($site-border-radius);
+
   table {
     margin: 0;
     border-bottom: none;
+
     td, tr {
       border: none;
     }
+
     img {
       border: none;
       border-radius: 0;
@@ -103,11 +109,13 @@
   float: left;
   margin-right: 15px;
 }
+
 .align-right {
   display: inline;
   float: right;
   margin-left: 15px;
 }
+
 .align-center {
   clear: both;
   display: block;
@@ -115,11 +123,14 @@
 }
 
 .desktop-hide {
+
   @include larger-than-desktop-screen {
     display: none !important;
   }
 }
+
 .desktop-show {
+
   @include smaller-than-desktop-screen {
     display: none !important;
   }

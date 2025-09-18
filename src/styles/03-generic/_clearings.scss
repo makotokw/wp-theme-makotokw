@@ -5,5 +5,6 @@
 .page-content,
 .nav-links,
 .comment-body {
+
   @include clearfix;
 }

@@ -61,11 +61,13 @@ $baseline-unit: 10px;
   --widget--spacing-menu: calc(0.66 * var(--global--spacing-unit));
 
   /* AdminBar */
-  --global--admin-bar--height: 0px;
+  --global--admin-bar--height: 0;
 }
 
 @include smaller-than-tablet-screen {
+
   :root {
+
     /* Header */
     --site-header--height: #{$site-header-height-small};
 

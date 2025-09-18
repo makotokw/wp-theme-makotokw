@@ -1,7 +1,9 @@
 // Archive Page and Search Result Page
 body.archive, body.search {
+
   .site-content-header {
     text-align: center;
+
     .archives-title {
       margin: var(--global--spacing-vertical) 0;
     }
@@ -10,6 +12,7 @@ body.archive, body.search {
     margin-bottom: var(--global--spacing-vertical);
     border-bottom: $site-border-width solid $site-default-border;
   }
+
   .pagination {
   }
 }

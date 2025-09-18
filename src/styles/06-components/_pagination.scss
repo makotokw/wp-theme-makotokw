@@ -1,11 +1,13 @@
 
 %pagenation-page {
+
   @extend .btn-outlined;
   @include circle(40px);
 }
 
 .pagination {
   display: block;
+
   @include clearfix;
   padding: var(--global--spacing-vertical) 0;
 
@@ -22,11 +24,14 @@
     }
 
     .current {
+
       .page {
+
         @extend %pagenation-page;
         border-color: $site-primary-color;
         background: $site-primary-color;
         color: $site-on-primary-text-color;
+
         &:hover {
           border-color: $site-primary-color;
           background: $site-primary-color;
@@ -37,6 +42,7 @@
   }
 
   a {
+
     @extend %pagenation-page;
   }
 }

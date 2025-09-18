@@ -18,9 +18,10 @@ $author-border-width: 2px;
     }
   }
 
-  & > .comment:after,
-  & > .pingback:after,
-  .children > .comment:before {
+  > .comment::after,
+  > .pingback::after,
+  .children > .comment::before {
+
     @extend .hr;
     content: "";
     display: block;
@@ -28,7 +29,7 @@ $author-border-width: 2px;
     width: 100%;
   }
 
-  & > li:last-child:after {
+  > li:last-child::after {
     display: none;
   }
 }
@@ -38,13 +39,17 @@ $author-border-width: 2px;
 }
 
 .comment {
+
   .comment-body {
+
     .comment-author {
+
       .avatar {
         float: left;
         max-width: 74px;
       }
     }
+
     .comment-metadata,
     .comment-awaiting-moderation,
     .comment-content {
@@ -54,7 +59,9 @@ $author-border-width: 2px;
       //noinspection CssOverwrittenProperties
       width: calc(100% - 64px);
     }
+
     .comment-content {
+
       @include smaller-than-mobile-screen {
         width: calc(100% - 32px);
       }
@@ -65,27 +72,34 @@ $author-border-width: 2px;
 .comment-body {
   padding: 15px 0;
   position: relative;
+
   @include clearfix;
 
   .comment-author {
+
     .avatar {
       border-radius: 50%;
       display: block;
       margin-bottom: 10px;
     }
   }
+
   .comment-metadata {
+
     .fn,
     .comment-time {
+
       @extend .comment-small;
       margin-right: 5px;
       display: inline-block;
 
     }
+
     .edit-link,
     .fn {
       color: $site-primary-color;
     }
+
     .comment-time {
       color: $site-neutral-text;
     }
@@ -96,12 +110,15 @@ $author-border-width: 2px;
     padding: $block-padding;
     overflow-x: auto;
     color: $site-default-text;
+
     a {
       word-wrap: break-word;
     }
+
     > p:first-of-type {
       margin-top: 0;
     }
+
     > p:last-of-type {
       margin-bottom: 0;
     }
@@ -110,13 +127,16 @@ $author-border-width: 2px;
   .comment-awaiting-moderation {
     display: block;
     width: 100%;
+
     @extend .comment-small;
   }
 
   @include smaller-than-desktop-screen {
+
     .comment-metadata {
       margin-top: 10px;
     }
+
     .comment-awaiting-moderation,
     .comment-content {
       float: none;
@@ -129,15 +149,20 @@ $author-border-width: 2px;
 
 .comment-reply-link,
 .comment-reply-login {
+
   @extend .comment-small;
 }
 
 .bypostauthor {
+
   > .comment-body {
+
     .comment-author {
+
       .avatar {
       }
     }
+
     .comment-content {
     }
   }
@@ -145,10 +170,12 @@ $author-border-width: 2px;
 
 .navigation-comment {
   margin: 20px 0;
+
   @include clearfix();
 }
 
 .comment-form-comment {
+
   textarea {
     width: 100%;
   }
@@ -157,7 +184,9 @@ $author-border-width: 2px;
 // comment-form without JetPack
 .comment-form {
   margin-top: 8px;
+
   @include smaller-than-tablet-screen {
+
     input,
     textarea {
       width: 95%;

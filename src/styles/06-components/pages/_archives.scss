@@ -1,4 +1,5 @@
 .archive-page {
+
   .list-archives {
     padding: 0;
     list-style: none;
@@ -9,14 +10,19 @@
     }
 
     .list-archives-item-year {
+
       @include clearfix();
       margin: 20px auto;
+
       > a {
+
         @extend .btn-outlined;
+
         &:hover {
           border-color: $md-light-blue-600;
           color: $md-light-blue-600;
         }
+
         @include smaller-than-tablet-screen {
           padding: 10px 6px;
         }
@@ -28,11 +34,14 @@
     }
 
     .list-archives-item-month {
+
       a {
+
         @extend .btn-outlined;
         @include circle(42px);
         margin-left: 10px;
         margin-bottom: 5px;
+
         &:hover {
           border-color: $md-light-blue-600;
           color: $md-light-blue-600;
@@ -41,7 +50,9 @@
     }
 
     .list-archives-item-month-no-items {
+
       span {
+
         @extend .btn-outlined;
         @extend .btn-disabled;
         @include circle(42px);
@@ -52,13 +63,18 @@
 
     //@include smaller-than-tablet-screen {
       .list-archives-item-month {
+
         a {
+
           @include circle(35px);
           margin-left: 0;
         }
       }
+
       .list-archives-item-month-no-items {
+
         span {
+
           @include circle(35px);
           margin-left: 0;
         }
@@ -67,6 +83,7 @@
 
 
     .list-archives-item-month-no-items.list-archives-item-month-no-items-future {
+
       span {
       }
     }

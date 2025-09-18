@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
+    "@wordpress/stylelint-config": "^23.23.0",
     "autoprefixer": "^10.1.0",
     "ejs": "^3.1.5",
     "eslint": "^9.35.0",
@@ -29,11 +30,12 @@
     "globals": "^16.4.0",
     "postcss": "^8.2.1",
     "sass": "^1.77.0",
+    "stylelint": "^16.24.0",
     "vite": "^7.0.0"
   },
   "scripts": {
-    "lint:eslint": "eslint src *.config.js",
-    "lint:phpcs": "phpcs",
+    "lint:js": "eslint src *.config.js",
+    "lint:css": "stylelint src/styles",
     "build": "vite build",
     "build:dev": "vite build --minify false",
     "dev": "vite",

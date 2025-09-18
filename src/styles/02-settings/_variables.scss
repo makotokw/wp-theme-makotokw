@@ -27,11 +27,11 @@ $screen-md-max: ($screen-lg-min - 1);
 
 // ----------------------------
 
-$font-family-mincho: 'Hiragino Mincho ProN', 'Hiragino Mincho ProN W3', YuMincho;
-$font-family-gothic: 'Yu Gothic', YuGothic, 'Hiragino Kaku Gothic ProN', 'Hiragino Kaku Gothic ProN W3', 'Hiragino Kaku Gothic Pro', Meiryo, 'M+ 1p';
+$font-family-mincho: 'Hiragino Mincho ProN', 'Hiragino Mincho ProN W3', yumincho;
+$font-family-gothic: 'Yu Gothic', yugothic, 'Hiragino Kaku Gothic ProN', 'Hiragino Kaku Gothic ProN W3', 'Hiragino Kaku Gothic Pro', meiryo, 'M+ 1p';
 
 $font-family-sans-serif: 'Nunito Sans', $font-family-gothic, sans-serif;
-$font-family-monospace: Monaco, Menlo, Consolas, 'Courier New', monospace, $font-family-gothic, sans-serif;;
+$font-family-monospace: monaco, menlo, consolas, 'Courier New', monospace, $font-family-gothic, sans-serif;;
 
 // Layout color ----------------------------
 $aztecSky: rgb(77, 181, 215);
@@ -63,7 +63,7 @@ $block-default-icon: $md-blue-grey-400;
 $block-padding: 15px;
 
 // Header  ----------------------------
-$header-default-bg: white;
+$header-default-bg: #fff;
 $header-default-text: $site-default-text;
 $header-default-link: $site-default-text;
 $header-default-link-over: $site-default-link-over;
@@ -71,7 +71,7 @@ $header-banner-link: $site-heading-text;
 $header-banner-link-over: color.adjust($site-primary-color, $lightness: -10%);
 
 // Footer  ----------------------------
-$footer-default-bg: white;
+$footer-default-bg: #fff;
 $footer-default-text: $site-default-text;
 
 // Sidebar  ----------------------------

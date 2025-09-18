@@ -1,15 +1,18 @@
 // for no-results.php and 404.php
 .no-results {
+
   .page-title {
     margin: 0;
     position: relative;
     padding: 50px 0;
     text-align: center;
     box-sizing : border-box;
+
     @include smaller-than-tablet-screen {
       padding: 15px 0;
     }
   }
+
   p {
     text-align: center;
   }

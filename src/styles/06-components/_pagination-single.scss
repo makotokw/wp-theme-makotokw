@@ -11,10 +11,12 @@
   margin-top: 20px;
 
   &.only-next {
+
     .pagination-single-inner {
       justify-content: flex-end;
     }
   }
+
   .pagination-single-inner {
     display: flex;
     flex-direction: row;
@@ -28,13 +30,16 @@
       color: $site-default-text;
 
       &.previous-post {
+
         .arrow {
           margin-right: 10px;
         }
       }
+
       &.next-post {
         flex-direction: row-reverse;
         text-align: right;
+
         .arrow {
           margin-left: 10px;
         }
@@ -43,6 +48,7 @@
       &:hover {
         color: $site-default-text;
         text-decoration: none;
+
         .title {
           text-decoration: underline;
         }
@@ -52,10 +58,12 @@
 
   @include smaller-than-mobile-screen {
     font-size: 16px;
+
     .pagination-single-inner {
       flex-direction: column;
 
       a {
+
         &.next-post {
           flex-direction: row;
           text-align: left;

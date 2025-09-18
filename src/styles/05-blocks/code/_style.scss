@@ -19,7 +19,9 @@
 
   // block: code
   .wp-block-code {
+
     @extend .block-content;
+
     code {
       margin: 0;
       padding: 0;
@@ -28,6 +30,7 @@
   }
 
   .syntaxhighlighter {
+
     @extend .block-content;
   }
 
@@ -36,12 +39,13 @@
     width: auto !important;
 
     .gutter {
+
       .line {
         border-right: 3px solid $site-primary-color !important;
         padding-left: 12px;
         color: #BEBEC5;
         line-height: 18px;
-        text-shadow: 0 1px 0 white;
+        text-shadow: 0 1px 0 #fff;
       }
 
       .line.highlighted {

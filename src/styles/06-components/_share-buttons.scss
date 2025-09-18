@@ -6,16 +6,21 @@ $share-icon-size: 30px;
   list-style: none;
   display: flex;
   justify-content: center;
+
   li {
     margin: 0 10px 0 0;
     padding: 0;
   }
 }
+
 .btn-share {
+
   @extend .btn-contained;
   @include circle(40px);
   outline: none;
+
   @include smaller-than-tablet-screen {
+
     @include circle(30px);
   }
 
@@ -36,25 +41,31 @@ $share-icon-size: 30px;
   &.btn-share-twitter {
     background-color: $twitter-blue;
   }
+
   &.btn-share-facebook {
     background-color: $facebook-blue;
   }
 
   &.btn-share-line {
     background-color: $line-green;
+
     .fill_1 {
       fill: #fff;
     }
+
     .fill_2 {
       fill: $line-green
     }
   }
+
   &.btn-share-hatena {
     background-color: $hatena-bookmark-blue;
   }
+
   &.btn-share-pocket {
     background-color: $pocket-pink;
   }
+
   &.btn-share-url {
   }
 
@@ -62,6 +73,7 @@ $share-icon-size: 30px;
     position: absolute;
     left: 27px;
     top: -8px;
+
     @include smaller-than-tablet-screen {
       left: 17px;
       top: -8px;
@@ -71,10 +83,11 @@ $share-icon-size: 30px;
     border-radius: 50%;
     text-align: center;
     font-size: 6.5px;
-    font-weight: bold;
+    font-weight: 700;
     min-height: 20px;
     min-width: 20px;
     line-height: 20px;
+
     &.share-count-has {
       opacity: 1;
     }

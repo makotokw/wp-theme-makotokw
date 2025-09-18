@@ -4,12 +4,15 @@
   .about-description-text {
     margin-right: var(--global--spacing-horizontal);
   }
+
   .about-description-banner {
     flex-basis: content;
     flex-shrink: 0;
   }
+
   @include smaller-than-mobile-screen {
     flex-direction: column;
+
     .about-description-text {
       margin-right: 0;
     }
@@ -33,6 +36,7 @@
     width: 120px;
     display: inline-block;
     text-align: center;
+
     @include smaller-than-tablet-screen {
       padding: 0 5px;
       width: auto;

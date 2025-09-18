@@ -1,13 +1,17 @@
 
 .markdown-content {
+
   table {
+
     @extend .table-bordered;
   }
 
   .wp-gfm-toc-content {
     border-radius: 0;
     border: $site-border-width solid $site-default-border;
+
     &.right {
+
       @include smaller-than-desktop-screen {
         float: none;
         display: block;

@@ -2,6 +2,7 @@
 
 // for small phone
 @mixin smaller-than-mobile-screen() {
+
   @media screen and (max-width: $screen-xs - 1) {
     @content;
   }
@@ -9,6 +10,7 @@
 
 // for big phone
 @mixin smaller-than-tablet-screen() {
+
   @media screen and (max-width: $screen-sm - 1) {
     @content;
   }
@@ -16,6 +18,7 @@
 
 // for tablet and small desktop
 @mixin smaller-than-desktop-screen() {
+
   @media screen and (max-width: $screen-md - 1) {
     @content;
   }
@@ -23,18 +26,21 @@
 
 // for medium desktop ( pc-first default )
 @mixin smaller-than-large-desktop-screen() {
+
   @media screen and (max-width: $screen-lg - 1) {
     @content;
   }
 }
 
 @mixin larger-than-desktop-screen() {
+
   @media screen and (min-width: $screen-md) {
     @content;
   }
 }
 
 @mixin larger-than-large-desktop-screen() {
+
   @media screen and (min-width: $screen-lg) {
     @content;
   }

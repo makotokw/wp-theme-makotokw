@@ -35,7 +35,9 @@
   }
 
   &.is-pressed {
+
     .menu-button-inner {
+
       &.show {
         display: none;
       }

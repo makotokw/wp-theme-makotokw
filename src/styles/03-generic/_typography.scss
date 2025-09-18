@@ -10,7 +10,7 @@ body {
   font-size: var(--global--font-size-base);
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizelegibility;
 }
 
 main {
@@ -58,6 +58,7 @@ dfn {
 }
 
 em, i, cite {
+
   em, i {
     font-weight: bolder;
   }
@@ -122,8 +123,10 @@ ol {
 
 ul {
   list-style: disc;
+
   ul {
     list-style: circle;
+
     ul {
       list-style: square;
     }
@@ -133,8 +136,10 @@ ul {
 
 ol {
   list-style: decimal;
+
   ol {
     list-style: lower-alpha;
+
     ol {
       list-style: lower-roman;
     }
@@ -145,10 +150,8 @@ li {
   line-height: 1.5;
   margin: 5px 0 0 20px;
 
-  & > ul {
-    margin: 10px 0 0 20px;
-  }
-  & > ol {
+  > ul,
+  > ol {
     margin: 10px 0 0 20px;
   }
 }
@@ -192,6 +195,7 @@ blockquote {
 
   cite,
   small {
+
     @extend .quote-caption;
   }
 }
@@ -211,6 +215,7 @@ hr {
 // -----------------------------------------------
 
 pre {
+
   @include block-white($site-border-radius);
   margin: 20px 0;
   overflow: auto;
@@ -232,13 +237,14 @@ samp {
 // Responsive: Mobile and Tablet
 // -----------------------------------------------
 @include smaller-than-desktop-screen {
+
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    color: red;
+    color: #f00;
     margin: 35px auto 20px;
   }
 

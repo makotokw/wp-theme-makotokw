@@ -35,8 +35,10 @@
     height: 20px !important;
     color: $site-default-border;
   }
+
   @include smaller-than-tablet-screen {
     padding: 15px 15px 15px 45px;
+
     svg {
       top: 10px;
       left: 10px;
@@ -45,10 +47,12 @@
 }
 
 .note {
+
   @extend %base-note;
 }
 
 .note-ins {
+
   @extend .note;
   color: $state-warning-text;
   border: none;
@@ -58,16 +62,20 @@
 
 .note-link,
 .note-comment {
+
   @extend .note;
   @extend %note-with-svg;
 }
 
 .enclosure {
+
   @extend %base-note;
   @extend %note-with-svg;
 }
+
 .enclosure-github,
 .enclosure-qiita,
 .enclosure-evernote {
+
   @extend .enclosure;
 }
