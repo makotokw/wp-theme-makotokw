@@ -69,7 +69,7 @@ export default defineConfig(({ mode }) => ({
     {
       name: 'move-amazonjs-and-generate-style-css',
       writeBundle: async () => {
-        // Move dist/amazonjs.css to project root as amazonjs.css
+        // Move dist/amazonjs.css to the project root as amazonjs.css
         const distCss = path.resolve(__dirname, 'dist/amazonjs.css');
         const rootCss = path.resolve(__dirname, 'amazonjs.css');
         try {

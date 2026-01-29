@@ -39,7 +39,9 @@
      Multiple valid text domains can be provided as a comma-delimited list. -->
   <rule ref="WordPress.WP.I18n">
     <properties>
-      <property name="text_domain" type="array" value="makotokw"/>
+      <property name="text_domain">
+        <element value="makotokw"/>
+      </property>
     </properties>
   </rule>
 

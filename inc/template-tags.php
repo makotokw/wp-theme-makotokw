@@ -8,7 +8,7 @@
  */
 
 function makotokw_menu_overlay() {
-?>
+	?>
 	<div id="menuOverlay" class="menu-overlay is-hidden">
 		<div class="menu-overlay-inner">
 			<?php get_search_form(); ?>

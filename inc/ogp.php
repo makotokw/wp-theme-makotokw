@@ -85,7 +85,7 @@ function ogp_post_tag() {
 }
 
 function makotokw_ogp_meta() {
-?>
+	?>
 	<?php if ( is_single() || is_page() ) : ?>
 		<?php if ( have_posts() ) : ?>
 			<?php the_post(); ?>
@@ -157,7 +157,7 @@ function makotokw_ogp_meta() {
 	<?php if ( defined( 'WP_OGP_FB_ADMINS' ) ) : ?>
 <meta property="fb:admins" content="<?php echo WP_OGP_FB_ADMINS; ?>"/>
 	<?php endif ?>
-<?php
+	<?php
 }
 
 if ( true === WP_THEME_OGP ) :

@@ -331,17 +331,6 @@ function makotokw_category_transient_flusher() {
 add_action( 'edit_category', 'makotokw_category_transient_flusher' );
 add_action( 'save_post', 'makotokw_category_transient_flusher' );
 
-if ( ! function_exists( 'wp_body_open' ) ) :
-	/**
-	 * Shim for sites older than 5.2.
-	 *
-	 * @link https://core.trac.wordpress.org/ticket/12563
-	 */
-	function wp_body_open() {
-		do_action( 'wp_body_open' );
-	}
-endif;
-
 require get_template_directory() . '/inc/admin.php';
 require get_template_directory() . '/inc/font-awesome.php';
 require get_template_directory() . '/inc/ga.php';
