@@ -31,7 +31,7 @@
     "postcss": "^8.2.1",
     "sass": "^1.77.0",
     "stylelint": "^16.24.0",
-    "vite": "^7.0.0"
+    "vite": "^7.3.1"
   },
   "scripts": {
     "lint:js": "eslint src *.config.js",
