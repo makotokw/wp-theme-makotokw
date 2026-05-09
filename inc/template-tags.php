@@ -232,10 +232,9 @@ function makotokw_post_summary( $content, $length = 128, $trimmarker = '...' ) {
 	}
 	if ( class_exists( 'WP_GFM' ) ) {
 		$gfm = WP_GFM::get_instance();
-		if ( is_callable( array( $gfm, 'do_markdown_shortcode' ) ) ) {
-			$content = $gfm->do_markdown_shortcode( $content );
-		} elseif ( is_callable( array( $gfm, 'the_content' ) ) ) {
-			$content = $gfm->the_content( $content );
+		// WP_GFM v1.0+
+		if ( is_callable( array( $gfm, 'convert_by_shortcode' ) ) ) {
+			$content = $gfm->convert_by_shortcode( $content );
 		}
 	}
 	return mb_strimwidth( strip_tags( strip_shortcodes( $content ) ), 0, $length ) . $trimmarker;
