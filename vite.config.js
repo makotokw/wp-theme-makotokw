@@ -38,7 +38,7 @@ export default defineConfig(({ mode }) => ({
     outDir: 'dist',
     emptyOutDir: true,
     assetsDir: '', // keep assets at dist root
-    rollupOptions: {
+    rolldownOptions: {
       input: {
         // JS entry (will emit dist/style.js) and its imported SCSS will emit dist/style.css
         style: path.resolve(__dirname, 'src/scripts/index.js'),
