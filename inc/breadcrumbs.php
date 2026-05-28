@@ -13,7 +13,7 @@ function makotokw_breadcrumbs() {
 		$divider = '&nbsp;<i class="fas fa-angle-right"></i>&nbsp;';
 		?>
 		<div itemscope itemtype="http://schema.org/Breadcrumb" class="breadcrumb">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fas fa-home"></i></a><?php echo $divider; ?>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fas fa-house"></i></a><?php echo $divider; ?>
 			<?php if ( is_category() ) : ?>
 				<?php $term = $wp_query->get_queried_object(); ?>
 				<a href="/categories/" itemprop="url"><span itemprop="title"><?php _e( 'Categories', 'makotokw' ); ?></span></a><?php echo $divider; ?>

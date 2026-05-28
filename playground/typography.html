@@ -6,28 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Typography</title>
   <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.6.3/css/all.css"
-        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <link rel='stylesheet' href='../dist/style.css' type='text/css' media='all'/>
   <link rel='stylesheet' href='/wp-content/plugins/wp-gfm/css/markdown.css' type='text/css' media='all'/>
-  <style>
-    .entry-header {
-
-    }
-    h2.demo {
-      color: #000;
-      font-size: 5rem;
-      margin: 2rem 0;
-      padding: 1rem;
-      border-bottom: 5px solid #000;
-    }
-    h3.demo {
-      color: #000;
-      font-size: 4rem;
-      margin: 2rem 1rem;
-      padding: 1rem;
-    }
-  </style>
+  <link rel='stylesheet' href='./playground.css' type='text/css' media='all' />
 </head>
 <body>
 
@@ -100,8 +81,8 @@ Multi line blockquote with a cite reference:
 link container
 
 <div class="entry-content">
-  <p><a href="http://wpthemetestdata.files.wordpress.com/2013/03/image-alignment-580x300.jpg" title="Logicool Silent Mouse" target="_blank">
-    <img title="Image Alignment 580x300" alt="Image Alignment 580x300" src="http://wpthemetestdata.files.wordpress.com/2013/03/image-alignment-580x300.jpg" width="580" height="300"/>
+  <p><a href="//wpthemetestdata.files.wordpress.com/2013/03/image-alignment-580x300.jpg" title="Logicool Silent Mouse" target="_blank">
+    <img title="Image Alignment 580x300" alt="Image Alignment 580x300" src="//wpthemetestdata.files.wordpress.com/2013/03/image-alignment-580x300.jpg" width="580" height="300"/>
   </a></p>
 </div>
 
@@ -109,7 +90,7 @@ figure container
 
 <div class="entry-content">
   <figure class="figure">
-    <img title="Image Alignment 580x300" alt="Image Alignment 580x300" src="http://wpthemetestdata.files.wordpress.com/2013/03/image-alignment-580x300.jpg" width="580" height="300"/>
+    <img title="Image Alignment 580x300" alt="Image Alignment 580x300" src="//wpthemetestdata.files.wordpress.com/2013/03/image-alignment-580x300.jpg" width="580" height="300"/>
     <figcaption class="figure-caption">A caption for the above image.</figcaption>
   </figure>
 </div>
@@ -126,8 +107,7 @@ figure container
     scalable business model.
   </dd>
   <dt>#dowork</dt>
-  <dd>Coined by Rob Dyrdek and his personal body guard Christopher "Big Black" Boykins, "Do Work" works as a self
-    motivator, to motivating your friends.
+  <dd>Coined by Rob Dyrdek and his personal bodyguard Christopher "Big Black" Boykins, "Do Work" works as a self-motivator, to motivating your friends.
   </dd>
   <dt>Do It Live</dt>
   <dd>I'll let Bill O'Reilly will <a title="We'll Do It Live"
@@ -314,7 +294,7 @@ figure container
 
 <h3 class="demo">Anchor Tag (aka. Link)</h3>
 
-This is an example of a <a title="Apple" href="http://apple.com">link</a>.
+This is an example of a <a title="Apple" href="//apple.com">link</a>.
 
 <h3 class="demo">Abbreviation Tag</h3>
 
@@ -375,7 +355,15 @@ This allows you to denote <var>variables</var>
 
 </section>
 
-<a href="components.html">components</a>
-
+<footer class="site-footer">
+  <div class="section-inner">
+    <a href="components.html">components</a>
+  </div>
+</footer>
+<script
+  src="https://code.jquery.com/jquery-1.12.4.js"
+  integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+  crossorigin="anonymous"></script>
+<script type='text/javascript' src='../dist/style.js'></script>
 </body>
 </html>

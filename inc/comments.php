@@ -23,7 +23,7 @@ function makotokw_comment( $comment, $args, $depth ) {
 					<?php echo get_avatar( $comment, 50 ); ?>
 				<?php endif; ?>
 				<div class="comment-metadata">
-					<?php printf( '<cite class="fn">%1$s %2$s</cite>', ( $is_trackback ? '<i class="fas fa-external-link-alt"></i>' : '' ), get_comment_author_link() ); ?>
+					<?php printf( '<cite class="fn">%1$s %2$s</cite>', ( $is_trackback ? '<i class="fas fa-arrow-up-right-from-square"></i>' : '' ), get_comment_author_link() ); ?>
 					<?php
 						printf(
 							'<a class="comment-time" href="%1$s"><time class="time" datetime="%2$s">%3$s</time></a>',
@@ -33,7 +33,7 @@ function makotokw_comment( $comment, $args, $depth ) {
 							sprintf( __( '%1$s at %2$s', 'makotokw' ), get_comment_date( WP_THEME_DATE_FORMAT ), get_comment_time() )
 						);
 					?>
-					<?php edit_comment_link( '<i class="fas fa-edit"></i>', '<span class="edit-link">', '</span>' ); ?>
+					<?php edit_comment_link( '<i class="fas fa-pen-to-square"></i>', '<span class="edit-link">', '</span>' ); ?>
 					<?php if ( ! $is_trackback ) : ?>
 						<?php
 						comment_reply_link(

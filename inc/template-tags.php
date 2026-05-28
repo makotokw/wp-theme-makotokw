@@ -195,7 +195,7 @@ function makotokw_the_post_secondary_meta() {
 					<?php makotokw_the_tags_slug( '<i class="fas fa-tag"></i>', ', ' ); ?>
 				</span>
 				<span class="term-portfolio-links">
-					<?php makotokw_the_terms_slug( 'portfolios', '<i class="fas fa-browser"></i>', ', ' ); ?>
+					<?php makotokw_the_terms_slug( 'portfolios', '<i class="fas fa-window-maximize"></i>', ', ' ); ?>
 				</span>
 			</span>
 		<?php endif; ?>

@@ -10,7 +10,7 @@
     "url": "https://github.com/makotokw/wp-theme-makotokw"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "5.15.1",
+    "@fortawesome/fontawesome-free": "7.2.0",
     "clipboard": "^2.0.8",
     "google-code-prettify": "1.0.5",
     "headroom.js": "0.12.0",

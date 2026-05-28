@@ -19,7 +19,7 @@
 			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'makotokw' ); ?></p>
 			<?php get_search_form(); ?>
 		<?php elseif ( is_404() ) : ?>
-			<p><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fas fa-home"></i> <?php esc_html_e( 'Return Home', 'makotokw' ); ?></a></p>
+			<p><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fas fa-house"></i> <?php esc_html_e( 'Return Home', 'makotokw' ); ?></a></p>
 		<?php else : ?>
 			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'makotokw' ); ?></p>
 			<?php get_search_form(); ?>

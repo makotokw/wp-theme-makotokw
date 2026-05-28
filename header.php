@@ -60,10 +60,10 @@
 			</a>
 			<button class="toggle menu-button" aria-expanded="false">
 				<span class="menu-button-inner show">
-					<span class="menu-icon"><i class="fas fa-ellipsis-h"></i></span>
+					<span class="menu-icon"><i class="fas fa-ellipsis"></i></span>
 				</span>
 				<span class="menu-button-inner hide">
-					<span class="menu-icon"><i class="fas fa-times"></i></span>
+					<span class="menu-icon"><i class="fas fa-xmark"></i></span>
 				</span>
 			</button>
 		</nav>

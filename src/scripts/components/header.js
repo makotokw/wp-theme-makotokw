@@ -12,6 +12,9 @@ class Header {
 
   initSticky() {
     const siteHeader = document.getElementById('siteHeader');
+    if (!siteHeader) {
+      return;
+    }
     this.headroom = new Headroom(siteHeader, {
       offset: siteHeader.clientHeight,
     });

@@ -26,7 +26,7 @@ function makotokw_awesome_icon_by_slug( $slug ) {
 function makotokw_find_awesome_icon_class( $slug, $default_value = 'folder' ) {
 	$map = array(
 		'interior'            => 'fas fa-couch',
-		'comedy'              => 'fas fa-laugh-beam',
+		'comedy'              => 'fas fa-face-laugh-beam',
 		'gourmet'             => 'fas fa-utensils',
 		'computer'            => 'fas fa-laptop',
 		'computer/software'   => 'fas fa-laptop-code',
@@ -44,7 +44,7 @@ function makotokw_find_awesome_icon_class( $slug, $default_value = 'folder' ) {
 		'readingbook'         => 'fas fa-book',
 		'electronics'         => 'fas fa-robot',
 		'music'               => 'fas fa-music',
-		'gadget'              => 'fas fa-mobile-alt',
+		'gadget'              => 'fas fa-mobile-screen-button',
 		'game'                => 'fas fa-gamepad',
 	);
 

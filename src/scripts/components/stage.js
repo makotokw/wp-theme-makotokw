@@ -52,7 +52,7 @@ class Stage {
       });
       $('.enclosure-evernote').each(function () {
         $(this).prepend(
-          FontAwesome.icon(FontAwesome.findIconDefinition({ prefix: 'fas', iconName: 'elephant' })).html,
+          FontAwesome.icon(FontAwesome.findIconDefinition({ prefix: 'fab', iconName: 'evernote' })).html,
         );
       });
       $('.note-comment').each(function () {

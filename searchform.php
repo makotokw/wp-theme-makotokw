@@ -10,6 +10,6 @@
 <form method="get" id="searchform" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
 	<input type="text" class="search-form-text" name="s" value="<?php echo esc_attr( get_search_query() ); ?>" placeholder="<?php esc_attr_e( 'Search the site', 'makotokw' ); ?>"/>
 	<button type="submit" class="btn-search">
-		<i class="fas fa-search"></i>
+		<i class="fas fa-magnifying-glass"></i>
 	</button>
 </form>
