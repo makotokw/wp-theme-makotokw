@@ -23,9 +23,9 @@ function makotokw_share_buttons() {
 	?>
 	<ul class="share-buttons">
 		<li class="share-twitter">
-			<a rel="nofollow noopener" data-url="<?php echo $permalink; ?>" class="btn-share btn-share-twitter" href="https://twitter.com/intent/tweet?original_referer=<?php echo rawurlencode( $permalink ); ?>&text=<?php echo rawurlencode( $title ); ?>&tw_p=tweetbutton&url=<?php echo urlencode( $permalink ); ?>&via=<?php echo urlencode( WP_THEME_AUTHOR_TWITTER ); ?>" target="_blank" data-tippy-content="<?php esc_attr_e( 'Tweete by Twitter', 'makotokw' ); ?>">
-				<i class="fab fa-twitter"></i>
-				<span class="share-title"><?php _e( 'Twitter', 'makotokw' ); ?></span>
+			<a rel="nofollow noopener" data-url="<?php echo $permalink; ?>" class="btn-share btn-share-twitter" href="https://x.com/intent/post?text=<?php echo rawurlencode( $title ); ?>&url=<?php echo rawurlencode( $permalink ); ?>&via=<?php echo rawurlencode( WP_THEME_AUTHOR_TWITTER ); ?>" target="_blank" data-tippy-content="<?php esc_attr_e( 'Share by X', 'makotokw' ); ?>">
+				<i class="fab fa-x-twitter"></i>
+				<span class="share-title"><?php _e( 'X', 'makotokw' ); ?></span>
 			</a>
 		</li>
 		<li class="share-facebook">
@@ -47,7 +47,7 @@ function makotokw_share_buttons() {
 			</a>
 		</li>
 		<li class="share-line">
-			<a rel="nofollow noopener" class="btn-share btn-share-line" href="https://social-plugins.line.me/lineit/share?url=?php echo rawurlencode( $permalink ); ?>" target="_blank" data-tippy-content="<?php esc_attr_e( 'Share by Line', 'makotokw' ); ?>">
+			<a rel="nofollow noopener" class="btn-share btn-share-line" href="https://social-plugins.line.me/lineit/share?url=<?php echo rawurlencode( $permalink ); ?>" target="_blank" data-tippy-content="<?php esc_attr_e( 'Share by Line', 'makotokw' ); ?>">
 				<svg class="share-brand-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 315 300">
 					<g>
 						<path class="fill_1" d="M280.344,206.351 C280.344,206.351 280.354,206.351 280.354,206.351 C247.419,244.375 173.764,290.686 157.006,297.764 C140.251,304.844 142.724,293.258 143.409,289.286 C143.809,286.909 145.648,275.795 145.648,275.795 C146.179,271.773 146.725,265.543 145.139,261.573 C143.374,257.197 136.418,254.902 131.307,253.804 C55.860,243.805 0.004,190.897 0.004,127.748 C0.004,57.307 70.443,-0.006 157.006,-0.006 C243.579,-0.006 314.004,57.307 314.004,127.748 C314.004,155.946 303.108,181.342 280.344,206.351 Z"/>
