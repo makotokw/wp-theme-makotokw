@@ -152,6 +152,7 @@ function makotokw_posted_on() {
 		$time = get_post_time( DATE_ISO8601, false, null, true );
 	}
 	printf(
+		/* translators: 1: ISO8601 date, 2: formatted date string */
 		__( '<time class="published updated time" datetime="%1$s">%2$s</time>', 'makotokw' ),
 		esc_attr( $time ),
 		esc_html( get_post_time( WP_THEME_DATE_FORMAT, false, null, true ) )
@@ -160,6 +161,7 @@ function makotokw_posted_on() {
 
 function makotokw_updated_on() {
 	printf(
+		/* translators: 1: ISO8601 date, 2: formatted date string */
 		__( '<time class="updated time" datetime="%1$s">%2$s</time>', 'makotokw' ),
 		esc_attr( get_post_modified_time( DATE_ISO8601, false, null, true ) ),
 		esc_html( get_post_modified_time( WP_THEME_DATE_FORMAT, false, null, true ) )
@@ -241,28 +243,37 @@ function makotokw_post_summary( $content, $length = 128, $trimmarker = '...' ) {
 }
 
 function makotokw_archives_title() {
+	if ( is_category() ) {
+		/* translators: %s: category name */
+		$archives_title = sprintf( __( 'Category Archives: %s', 'makotokw' ), single_cat_title( '', false ) );
+	} elseif ( is_tag() ) {
+		/* translators: %s: tag name */
+		$archives_title = sprintf( __( 'Tag Archives: %s', 'makotokw' ), single_tag_title( '', false ) );
+	} elseif ( is_day() ) {
+		/* translators: %s: date */
+		$archives_title = sprintf( __( 'Daily Archives: %s', 'makotokw' ), get_the_date() );
+	} elseif ( is_month() ) {
+		/* translators: %s: month and year */
+		$archives_title = sprintf( __( 'Monthly Archives: %s', 'makotokw' ), get_the_date( __( 'Y/M', 'makotokw' ) ) );
+	} elseif ( is_year() ) {
+		/* translators: %s: year */
+		$archives_title = sprintf( __( 'Yearly Archives: %s', 'makotokw' ), get_the_date( __( 'Y', 'makotokw' ) ) );
+	} elseif ( is_tax( 'blogs' ) ) {
+		/* translators: %s: blog taxonomy term name */
+		$archives_title = sprintf( __( 'Blog Archives: %s', 'makotokw' ), single_term_title( '', false ) );
+	} elseif ( is_tax( 'portfolios' ) ) {
+		/* translators: %s: portfolio taxonomy term name */
+		$archives_title = sprintf( __( 'Portfolio Archives: %s', 'makotokw' ), single_term_title( '', false ) );
+	} elseif ( is_search() ) {
+		$archives_title = __( 'Search', 'makotokw' );
+	} elseif ( is_home() ) {
+		$archives_title = __( 'All posts', 'makotokw' );
+	} else {
+		/* translators: %s: site name */
+		$archives_title = sprintf( __( 'Archives of %s', 'makotokw' ), get_bloginfo( 'name' ) );
+	}
 	?>
-	<?php if ( is_category() ) : ?>
-		<?php echo sprintf( __( 'Category Archives: %s', 'makotokw' ), '<span>' . single_cat_title( '', false ) . '</span>' ); ?>
-	<?php elseif ( is_tag() ) : ?>
-		<?php echo sprintf( __( 'Tag Archives: %s', 'makotokw' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?>
-	<?php elseif ( is_day() ) : ?>
-		<?php echo sprintf( __( 'Daily Archives: %s', 'makotokw' ), '<span>' . get_the_date() . '</span>' ); ?>
-	<?php elseif ( is_month() ) : ?>
-		<?php echo sprintf( __( 'Monthly Archives: %s', 'makotokw' ), '<span>' . get_the_date( __( 'Y/M', 'makotokw' ) ) . '</span>' ); ?>
-	<?php elseif ( is_year() ) : ?>
-		<?php echo sprintf( __( 'Yearly Archives: %s', 'makotokw' ), '<span>' . get_the_date( __( 'Y', 'makotokw' ) ) . '</span>' ); ?>
-	<?php elseif ( is_tax( 'blogs' ) ) : ?>
-		<?php echo sprintf( __( 'Blog Archives: %s', 'makotokw' ), '<span>' . single_term_title( '', false ) . '</span>' ); ?>
-	<?php elseif ( is_tax( 'portfolios' ) ) : ?>
-		<?php echo sprintf( __( 'Portfolio Archives: %s', 'makotokw' ), '<span>' . single_term_title( '', false ) . '</span>' ); ?>
-	<?php elseif ( is_search() ) : ?>
-		<?php echo __( 'Search', 'makotokw' ); ?>
-	<?php elseif ( is_home() ) : ?>
-		<?php echo __( 'All posts', 'makotokw' ); ?>
-	<?php else : ?>
-		<?php echo sprintf( __( 'Archives of %s', 'makotokw' ), '<span>' . get_bloginfo( 'name' ) . '</span>' ); ?>
-	<?php endif; ?>
+	<span><?= esc_html( $archives_title ) ?></span>
 	<?php
 }
 

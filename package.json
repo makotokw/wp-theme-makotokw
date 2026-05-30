@@ -1,6 +1,6 @@
 {
   "name": "wp-theme-makotokw",
-  "version": "0.9",
+  "version": "0.10",
   "description": "makotokw theme for WordPress",
   "license": "GPL-2.0",
   "private": true,
@@ -39,8 +39,6 @@
     "lint:css:fix": "stylelint --fix src/styles",
     "build": "vite build",
     "build:dev": "vite build --minify false",
-    "dev": "vite",
-    "lang:1st-pot": "wp i18n make-pot ./ languages/messages.pot",
-    "lang:2nd-mo": "msgfmt -o ./languages/ja.mo ./languages/ja.po"
+    "dev": "vite"
   }
 }

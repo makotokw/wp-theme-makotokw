@@ -18,7 +18,11 @@ list ( $makotokw_featured_image_url, $makotokw_featured_image_service ) = makoto
 		<div>
 			<?php makotokw_the_post_primary_meta(); ?>
 			<h1 class="entry-title">
-				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'makotokw' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
+				<?php
+				/* translators: %s: post title */
+				$permalink_title = esc_attr( sprintf( __( 'Permalink to %s', 'makotokw' ), the_title_attribute( 'echo=0' ) ) );
+				?>
+				<a href="<?php the_permalink(); ?>" title="<?php echo $permalink_title; ?>" rel="bookmark"><?php the_title(); ?></a>
 			</h1>
 		</div>
 	</header>

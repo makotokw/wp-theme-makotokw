@@ -34,6 +34,7 @@
 				$makotokw_wp_theme   = wp_get_theme();
 				$makotokw_theme_name = $makotokw_wp_theme->display( 'Name' );
 				$makotokw_powered_by = sprintf(
+					/* translators: %s: WordPress link */
 					__( 'Powered by %s', 'makotokw' ),
 					'<a href="https://wordpress.org/" title="' . esc_attr( __( 'Semantic Personal Publishing Platform', 'makotokw' ) ) . '">WordPress</a>'
 				);

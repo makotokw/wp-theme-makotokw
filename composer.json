@@ -34,8 +34,10 @@
         "sort-packages": true
     },
     "scripts": {
-      "lint:phpcs": "@php ./vendor/bin/phpcs",
       "lint:php": "@php ./vendor/bin/parallel-lint --exclude .git --exclude vendor .",
-      "make-pot": "wp i18n make-pot . languages/_s.pot"
+      "lint:phpcs": "@php ./vendor/bin/phpcs",
+      "make-pot": "./vendor/bin/wp i18n make-pot . languages/messages.pot --exclude=vendor,node_modules,dist --allow-root",
+      "merge-po": "msgmerge --update languages/ja.po languages/messages.pot",
+      "make-mo": "./vendor/bin/wp i18n make-mo languages/ja.po --allow-root"
     }
 }

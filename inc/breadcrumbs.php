@@ -104,6 +104,7 @@ function makotokw_breadcrumbs_category_parents( $id, $separator = '/', $visited 
 		$chain    .= makotokw_breadcrumbs_category_parents( $parent->parent, $separator, $visited );
 	}
 
+	/* translators: %s: category name */
 	$chain .= '<a href="' . esc_url( get_category_link( $parent->term_id ) ) . '" title="' . esc_attr( sprintf( __( 'View all posts in %s', 'makotokw' ), $parent->name ) ) . '" itemprop="url"><span itemprop="title">' . $parent->name . '</span></a>' . $separator;
 
 	return $chain;
