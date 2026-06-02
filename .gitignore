@@ -22,3 +22,9 @@ node_modules
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
 *.iml
 .idea/
+
+### AI ###
+.junie/memory
+.claude/*.local.json
+*.local.md
+specs/
