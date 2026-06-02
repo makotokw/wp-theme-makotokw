@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved -- vite has no main field, only exports
 import { defineConfig } from 'vite';
 import path from 'node:path';
 import fs from 'fs';
