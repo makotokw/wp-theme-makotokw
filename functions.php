@@ -138,14 +138,14 @@ function makotokw_scripts() {
 
 	$fonts_urls = makotokw_fonts_urls();
 	for ( $fi = 0, $flen = count( $fonts_urls ); $fi < $flen; $fi++ ) {
-		wp_enqueue_style( 'makotokw-fonts' . $fi, esc_url_raw( $fonts_urls[ $fi ] ), array(), null );
+		wp_enqueue_style( 'makotokw-fonts' . $fi, esc_url_raw( $fonts_urls[ $fi ] ) );
 	}
 
 	if ( true === WP_THEME_DEBUG && function_exists( 'wp_enqueue_script_module' ) && makotokw_is_vite_running() ) {
 		$vite_server_url = rtrim( makotokw_vite_dev_server_url(), '/' );
 		// Vite dev server supports ES modules only.
-		wp_enqueue_script_module( 'makotokw-vite-client', $vite_server_url . '/@vite/client', array(), null, true );
-		wp_enqueue_script_module( 'makotokw-script', $vite_server_url . '/src/scripts/index.js', array(), null, true );
+		wp_enqueue_script_module( 'makotokw-vite-client', $vite_server_url . '/@vite/client' );
+		wp_enqueue_script_module( 'makotokw-script', $vite_server_url . '/src/scripts/index.js' );
 	} else {
 		$assets_version = wp_get_theme()->get( 'Version' );
 		if ( true === WP_THEME_DEBUG ) {
