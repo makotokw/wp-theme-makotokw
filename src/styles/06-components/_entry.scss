@@ -37,17 +37,17 @@
     }
   }
 
-  // centering title on single
+  // Align title with content on single views.
   .single &, .page & {
 
     .entry-title,
     .entry-meta-primary,
     .entry-meta-secondary {
-      text-align: center;
+      text-align: left;
     }
 
     .entry-title {
-      font-size: 50px;
+      font-size: 44px;
     }
 
     .entry-meta-primary {
@@ -99,7 +99,7 @@
     .single &, .page & {
 
       .entry-title {
-        font-size: 30px;
+        font-size: 28px;
       }
     }
 

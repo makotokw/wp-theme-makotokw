@@ -31,10 +31,10 @@ $baseline-unit: 10px;
   /* Headings */
   --heading--font-size-h6: var(--global--font-size-xs);
   --heading--font-size-h5: var(--global--font-size-sm);
-  --heading--font-size-h4: var(--global--font-size-lg);
-  --heading--font-size-h3: calc(1.25 * var(--global--font-size-lg));
-  --heading--font-size-h2: var(--global--font-size-xl);
-  --heading--font-size-h1: var(--global--font-size-page-title);
+  --heading--font-size-h4: var(--global--font-size-md); // 20px
+  --heading--font-size-h3: var(--global--font-size-lg); // 24px
+  --heading--font-size-h2: 1.75rem; // 28px
+  --heading--font-size-h1: var(--global--font-size-xl); // 36px
 
   --heading--letter-spacing-h6: 0.05em;
   --heading--letter-spacing-h5: 0.05em;
@@ -74,9 +74,9 @@ $baseline-unit: 10px;
     /* Headings */
     --heading--font-size-h6: var(--global--font-size-xs);
     --heading--font-size-h5: var(--global--font-size-sm);
-    --heading--font-size-h4: var(--global--font-size-md);
-    --heading--font-size-h3: calc(1.25 * var(--global--font-size-md));
-    --heading--font-size-h2: var(--global--font-size-lg);
+    --heading--font-size-h4: var(--global--font-size-md); // 20px
+    --heading--font-size-h3: 1.375rem; // 22px
+    --heading--font-size-h2: var(--global--font-size-lg); // 24px
     --heading--font-size-h1: var(--global--font-size-xl);
   }
 }
