@@ -27,4 +27,5 @@ node_modules
 .junie/memory
 .claude/*.local.json
 *.local.md
+*.override.md
 specs/
