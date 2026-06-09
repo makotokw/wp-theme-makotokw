@@ -1,3 +1,5 @@
+@use 'abstracts' as *;
+@use '03-generic/global' as generic-global;
 $author-border-width: 2px;
 
 // Comments

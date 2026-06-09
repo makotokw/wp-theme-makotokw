@@ -30,8 +30,7 @@ export default defineConfig(({ mode }) => ({
     devSourcemap: true,
     preprocessorOptions: {
       scss: {
-        // TODO: https://sass-lang.com/documentation/breaking-changes/import/
-        silenceDeprecations: ['import'],
+        loadPaths: [path.resolve(__dirname, 'src/styles')],
       },
     },
   },

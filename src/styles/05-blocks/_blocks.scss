@@ -1,5 +1,5 @@
-@import "code/style";
-@import "heading/style";
-@import "alert";
-@import "note";
-@import "prettify";
+@use 'code/style';
+@use 'heading/style' as heading-style;
+@use 'alert';
+@use 'note';
+@use 'prettify';

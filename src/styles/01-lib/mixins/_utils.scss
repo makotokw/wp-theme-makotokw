@@ -1,3 +1,5 @@
+@use '../../02-settings/variables' as *;
+
 @mixin circle($size) {
   padding: 0;
   width: $size;
@@ -54,5 +56,4 @@
     clear: both;
   }
 }
-
 

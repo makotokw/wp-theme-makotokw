@@ -1,3 +1,4 @@
+@use 'abstracts' as *;
 // Placeholder text color -- selectors need to be in separate to work.
 ::-webkit-input-placeholder {
   color: $site-placeholder-text;

@@ -1,8 +1,6 @@
-@import "01-lib/lib";
-@import "02-settings/variables";
-@import "02-settings/fonts";
-//@import "03-generic/reset";
-//@import "03-generic/global";
-//@import "03-generic/typography";
-@import "05-blocks/blocks-editor";
-@import "06-components/editor";
+@use '02-settings/fonts';
+//@use '03-generic/reset';
+//@use '03-generic/global';
+//@use '03-generic/typography';
+@use '05-blocks/blocks-editor';
+@use '06-components/editor';

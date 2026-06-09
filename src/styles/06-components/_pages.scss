@@ -1,5 +1,5 @@
-@import "pages/help";
-@import "pages/about";
-@import "pages/archives";
-@import "pages/categories";
-@import "pages/tags";
+@use 'pages/help';
+@use 'pages/about';
+@use 'pages/archives';
+@use 'pages/categories';
+@use 'pages/tags';

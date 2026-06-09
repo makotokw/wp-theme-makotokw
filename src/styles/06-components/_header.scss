@@ -1,3 +1,5 @@
+@use 'abstracts' as *;
+
 .site-header {
   will-change: transform;
   transition: transform .2s linear;

@@ -1,3 +1,6 @@
+@use 'abstracts' as *;
+@use '03-generic/global' as generic-global;
+
 .entry-content,
 .page-content,
 .comment-content {
@@ -59,4 +62,3 @@
     padding: 24px !important;
   }
 }
-

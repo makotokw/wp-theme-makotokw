@@ -1,3 +1,5 @@
+@use 'abstracts' as *;
+@use '04-elements/button';
 $site-author-image-base: 75px;
 
 .site-author-inner {

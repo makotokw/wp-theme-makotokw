@@ -1,4 +1,5 @@
 @use 'sass:color';
+@use '../01-lib/colors' as *;
 
 // Layout Size ----------------------------
 $site-header-margin: 10px;
@@ -129,4 +130,3 @@ $alert-warning-border: $state-warning-border;
 $alert-danger-bg: $state-danger-bg;
 $alert-danger-text: $state-danger-text;
 $alert-danger-border: $state-danger-border;
-

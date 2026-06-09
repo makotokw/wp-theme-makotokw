@@ -1,3 +1,5 @@
+@use 'abstracts' as *;
+@use '04-elements/button';
 $share-icon-size: 30px;
 
 .share-buttons {

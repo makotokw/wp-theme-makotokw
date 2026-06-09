@@ -1,5 +1,4 @@
-@import "01-lib/lib";
-@import "02-settings/variables";
+@use 'abstracts' as *;
 
 .amazonjs_item {
   border-color: rgba($amazon-orange, .7);
