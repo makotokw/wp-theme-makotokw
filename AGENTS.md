@@ -2,6 +2,8 @@
 
 This directory contains `makotokw2026`, a custom WordPress theme running on `blog.makotokw.com`. It is based on `_s` (Underscores) and customized for personal blog use. This is not a general-purpose distributable theme — the code is written specifically for kwLog (blog.makotokw.com).
 
+**This is a classic theme by design. Block theme (FSE) support is intentionally out of scope.** The theme uses the PHP template hierarchy (`header.php`, `index.php`, `singular.php`, `footer.php`, etc.) and there is no `theme.json`. Do not propose or perform a migration to a block theme / Full Site Editing, and do not treat the absence of `theme.json` or FSE features as a defect. Appearance is controlled through `src/styles/` (SCSS) and PHP templates, not through the Site Editor.
+
 ## Requirements
 
 - PHP 7.4 or later (see `require` in `composer.json`).
