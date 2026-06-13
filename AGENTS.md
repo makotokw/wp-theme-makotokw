@@ -4,6 +4,8 @@ This directory contains `makotokw2026`, a custom WordPress theme running on `blo
 
 **This is a classic theme by design. Block theme (FSE) support is intentionally out of scope.** The theme uses the PHP template hierarchy (`header.php`, `index.php`, `singular.php`, `footer.php`, etc.) and there is no `theme.json`. Do not propose or perform a migration to a block theme / Full Site Editing, and do not treat the absence of `theme.json` or FSE features as a defect. Appearance is controlled through `src/styles/` (SCSS) and PHP templates, not through the Site Editor.
 
+**blog.makotokw.com uses the Classic Editor; the block editor (Gutenberg) is not used and is treated as unsupported.** Posts contain no block markup, so the theme ships no block-editor styles: there is no `editor-styles` / `add_editor_style` support, no `style-editor.scss` entry, and no `.wp-block-*` rules or `wp-block-styles` support. Do not add editor stylesheets or block-editor support back unless the site's editing workflow changes.
+
 ## Requirements
 
 - PHP 7.4 or later (see `require` in `composer.json`).
@@ -21,9 +23,9 @@ This directory contains `makotokw2026`, a custom WordPress theme running on `blo
 - `comments.php`, `footer.php`, `header.php`, `index.php`, `searchform.php`, `sidebar.php`, `singular.php`: Root-level templates following the WordPress template hierarchy.
 - `src/`: Pre-build frontend assets.
   - `src/scripts/index.js`: JS entry point, includes `components/`, `utils/`, and `shims/`.
-  - `src/styles/`: SCSS with an ITCSS-style layer structure from `01-lib` to `07-utilities`. Three entry points: `style.scss`, `style-editor.scss`, `amazonjs.scss`.
+  - `src/styles/`: SCSS with an ITCSS layer structure (`settings`, `tools`, `generic`, `elements`, `objects`, `vendor`, `components`, `utilities`). Two entry points: `style.scss`, `amazonjs.scss`.
   - `src/style.css.ejs`: EJS template that generates `style.css` (WordPress theme header).
-- `dist/`: Vite build output (`style.css`, `style.js`, `style-editor.css`, etc.). Generated — do not edit manually.
+- `dist/`: Vite build output (`style.css`, `style.js`, etc.). Generated — do not edit manually.
 - `amazonjs.css`: The result of Vite copying `dist/amazonjs.css` to the theme root (referenced by the AmazonJS plugin). Do not edit manually.
 - `style.css`: WordPress theme header. Auto-generated from `src/style.css.ejs` at build time.
 - `languages/`: `.po` / `.mo` / `.pot` files. Text domain is `makotokw`.
@@ -67,7 +69,7 @@ composer install                                               # First time only
 - Follow existing file naming and module boundaries. If a new responsibility arises, create a new file under `inc/` and add it to the `require` list in `functions.php`.
 - Template-tag-style functions belong in `inc/template-tags.php`. OGP, SEO, and share logic each have their own dedicated files.
 - Configuration values should flow through `WP_THEME_*` constants defined in `config.php`. Do not scatter literals across templates.
-- New frontend JS components go in `src/scripts/components/` and must be imported from `src/scripts/index.js`. Styles should be placed in the appropriate ITCSS layer (`01-lib` through `07-utilities`).
+- New frontend JS components go in `src/scripts/components/` and must be imported from `src/scripts/index.js`. Styles should be placed in the appropriate ITCSS layer (`settings` through `utilities`).
 - Post listing, categories, and taxonomies depend on kwLog's operational setup (see `inc/taxonomy.php`). When modifying taxonomy registration or hardcoded IDs, confirm the impact on templates, post meta, and existing posts.
 
 ## Cautions When Editing

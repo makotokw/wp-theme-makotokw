@@ -42,8 +42,6 @@ export default defineConfig(({ mode }) => ({
       input: {
         // JS entry (will emit dist/style.js) and its imported SCSS will emit dist/style.css
         style: path.resolve(__dirname, 'src/scripts/index.js'),
-        // Separate editor stylesheet
-        'style-editor': path.resolve(__dirname, 'src/styles/style-editor.scss'),
         // AmazonJS stylesheet (special output path handled in writeBundle hook)
         amazonjs: path.resolve(__dirname, 'src/styles/amazonjs.scss'),
       },
