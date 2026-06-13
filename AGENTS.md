@@ -64,6 +64,8 @@ composer install                                               # First time only
 
 ## Coding Guidelines (Theme-Specific)
 
+- **This theme is published as open source. Write all source code in English** — comments, identifiers, commit-relevant strings, etc. Do not leave Japanese comments in `.php` / `.scss` / `.js` / `.css`. (User-facing strings still go through i18n with the `makotokw` text domain; project/working docs under `specs/` are exempt — see `AGENTS.override.md`.)
+- **Comments should explain *why*, abstractly and concisely.** Don't restate the code or hard-code concrete details (specific color values, token names, selectors) that go stale when the code changes — those belong in the code, not the comment. Prefer one short line.
 - PHP must follow WordPress Coding Standards: tab indentation, Yoda conditions, and consistent use of `esc_*` / `wp_kses_*` for output escaping. Running `phpcs` will catch most issues.
 - Never output unescaped variables. All `echo`'d values must pass through `esc_html`, `esc_attr`, `esc_url`, or `wp_kses_post`.
 - Follow existing file naming and module boundaries. If a new responsibility arises, create a new file under `inc/` and add it to the `require` list in `functions.php`.

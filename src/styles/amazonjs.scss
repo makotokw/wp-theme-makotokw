@@ -1,17 +1,17 @@
 @use 'abstracts' as *;
 
 .amazonjs_item {
-  border-color: rgba($amazon-orange, .7);
+  border-color: color-mix(in srgb, var(--color-amazon) 70%, transparent);
   border-width: $site-border-width;
   //border-radius: $site-border-radius;
   margin: var(--global--spacing-vertical) 0 var(--global--spacing-vertical) 0;
   padding: var(--global--spacing-vertical) var(--global--spacing-horizontal);
 
   a {
-    color: $amazon-orange;
+    color: var(--color-amazon);
 
     &:hover {
-      color: $amazon-orange;
+      color: var(--color-amazon);
       text-decoration: underline;
     }
   }

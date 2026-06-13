@@ -22,8 +22,8 @@
         @extend .btn-outlined;
 
         &:hover {
-          border-color: $md-light-blue-600;
-          color: $md-light-blue-600;
+          border-color: var(--color-brand);
+          color: var(--color-brand);
         }
 
         @include smaller-than-tablet-screen {
@@ -46,8 +46,8 @@
         margin-bottom: 5px;
 
         &:hover {
-          border-color: $md-light-blue-600;
-          color: $md-light-blue-600;
+          border-color: var(--color-brand);
+          color: var(--color-brand);
         }
       }
     }

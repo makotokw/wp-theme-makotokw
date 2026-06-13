@@ -11,6 +11,13 @@
   .wp-gfm-toc-content {
     border-radius: 0;
     border: $site-border-width solid $site-default-border;
+    background-color: var(--color-surface);
+    color: var(--color-text);
+
+    // markdown.css hard-codes the TOC link color (breaks dark mode); re-tokenize it.
+    a {
+      color: var(--color-text);
+    }
 
     &.right {
 

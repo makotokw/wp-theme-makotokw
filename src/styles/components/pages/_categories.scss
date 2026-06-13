@@ -24,8 +24,8 @@
           float: none;
 
           &:hover {
-            border-color: $md-light-blue-600;
-            color: $md-light-blue-600;
+            border-color: var(--color-brand);
+            color: var(--color-brand);
           }
         }
 

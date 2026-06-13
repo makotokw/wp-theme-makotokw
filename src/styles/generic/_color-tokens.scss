@@ -68,6 +68,10 @@
   --color-danger-text: #991b1b;
   --color-danger-bg: #fee2e2;
   --color-danger-border: #fca5a5;
+
+  // Monochrome mark: a single fixed color would vanish in one theme, so invert per theme.
+  --color-share-x-bg: #000;
+  --color-share-x-icon: #fff;
 }
 
 @mixin color-tokens-dark {
@@ -140,11 +144,33 @@
   --color-danger-text: #fecaca;
   --color-danger-bg: #7f1d1d;
   --color-danger-border: #ef4444;
+
+  --color-share-x-bg: #f8fafc;
+  --color-share-x-icon: #0f172a;
+}
+
+// Fixed share-button colors, kept out of the light/dark mixins so each keeps one
+// identity color in both themes (X is the exception — see above).
+@mixin brand-colors {
+  // Fixed, so icons stay legible on the colored circles in both themes.
+  --color-share-fg: #fff;
+  // Copy-link button: fixed, to match the other (fixed-color) share buttons.
+  --color-share-url-bg: #0e7490;
+  --color-amazon: #e47911;
+  --color-facebook: #3b5998;
+  --color-line: #20c962;
+  --color-hatena: #5279e7;
+  --color-pocket: #d3505a;
+  --color-qiita: #59bb0c;
+  --color-evernote: #5fb336;
+  --color-github: #d26911;
+  --color-monstersinc: #007cc4;
 }
 
 :root {
   color-scheme: light dark;
 
+  @include brand-colors;
   @include color-tokens-light;
 }
 

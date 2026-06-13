@@ -21,6 +21,13 @@ $share-icon-size: 30px;
   @include circle(40px);
   outline: none;
 
+  // Per-button fill/icon via custom properties, so base/hover rules stay generic and
+  // don't inherit the theme-shifting button color.
+  --share-bg: var(--color-brand);
+  --share-fg: var(--color-share-fg);
+  background-color: var(--share-bg);
+  color: var(--share-fg);
+
   @include smaller-than-tablet-screen {
 
     @include circle(30px);
@@ -31,44 +38,54 @@ $share-icon-size: 30px;
   align-items: center;
   position: relative;
 
+  &:hover {
+    // Darken each button's own color instead of inheriting the generic button hover.
+    background-color: color-mix(in srgb, var(--share-bg), #000 12%);
+    color: var(--share-fg);
+  }
+
   .share-title {
     display: none;
   }
 
   .share-brand-icon {
     display: inline-block;
-    fill: $site-on-primary-text-color;
+    fill: var(--share-fg);
   }
 
   &.btn-share-twitter {
-    background-color: $x-twitter-black;
+    // Monochrome: inverts per theme.
+    --share-bg: var(--color-share-x-bg);
+    --share-fg: var(--color-share-x-icon);
   }
 
   &.btn-share-facebook {
-    background-color: $facebook-blue;
+    --share-bg: var(--color-facebook);
   }
 
   &.btn-share-line {
-    background-color: $line-green;
+    --share-bg: var(--color-line);
 
     .fill_1 {
-      fill: $site-on-primary-text-color;
+      fill: var(--share-fg);
     }
 
     .fill_2 {
-      fill: $line-green
+      fill: var(--color-line);
     }
   }
 
   &.btn-share-hatena {
-    background-color: $hatena-bookmark-blue;
+    --share-bg: var(--color-hatena);
   }
 
   &.btn-share-pocket {
-    background-color: $pocket-pink;
+    --share-bg: var(--color-pocket);
   }
 
   &.btn-share-url {
+    // Filled like the others, with a fixed color so it doesn't shift with the theme.
+    --share-bg: var(--color-share-url-bg);
   }
 
   .share-count {
