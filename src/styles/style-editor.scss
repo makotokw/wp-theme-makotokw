@@ -1,6 +1,6 @@
-@use '02-settings/fonts';
-//@use '03-generic/reset';
-//@use '03-generic/global';
-//@use '03-generic/typography';
-@use '05-blocks/blocks-editor';
-@use '06-components/editor';
+@use 'generic/fonts';
+//@use 'generic/reset';
+//@use 'objects/global';
+//@use 'elements/typography';
+@use 'components/blocks/blocks-editor';
+@use 'components/editor';
