@@ -5,12 +5,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Typography</title>
+  <script>
+    (() => {
+      const theme = new URLSearchParams(location.search).get('theme');
+      if (theme === 'light' || theme === 'dark') {
+        document.documentElement.dataset.theme = theme;
+      }
+    })();
+  </script>
   <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
   <link rel='stylesheet' href='../dist/style.css' type='text/css' media='all'/>
   <link rel='stylesheet' href='/wp-content/plugins/wp-gfm/css/markdown.css' type='text/css' media='all'/>
   <link rel='stylesheet' href='./playground.css' type='text/css' media='all' />
 </head>
 <body>
+
+<div class="playground-toolbar">
+  <nav class="playground-toolbar-group" aria-label="Playground pages">
+    <a class="playground-theme-button" href="components.html" data-page-link>Components</a>
+    <span class="playground-theme-button is-current" aria-current="page">Typography</span>
+  </nav>
+  <div class="playground-toolbar-group" aria-label="Theme controls">
+    <a class="playground-theme-button" href="?theme=light" data-theme-control="light">Light</a>
+    <a class="playground-theme-button" href="?theme=dark" data-theme-control="dark">Dark</a>
+  </div>
+</div>
 
 <section class="section-inner">
 
@@ -355,15 +374,35 @@ This allows you to denote <var>variables</var>
 
 </section>
 
-<footer class="site-footer">
-  <div class="section-inner">
-    <a href="components.html">components</a>
-  </div>
-</footer>
 <script
   src="https://code.jquery.com/jquery-1.12.4.js"
   integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
   crossorigin="anonymous"></script>
 <script type='text/javascript' src='../dist/style.js'></script>
+<script>
+  (() => {
+    document.querySelectorAll('[data-theme-control]').forEach((control) => {
+      control.addEventListener('click', (event) => {
+        event.preventDefault();
+        const nextTheme = control.dataset.themeControl;
+        document.documentElement.dataset.theme = nextTheme;
+        history.replaceState(null, '', `?theme=${nextTheme}`);
+        document.querySelectorAll('[data-page-link]').forEach((link) => {
+          const url = new URL(link.getAttribute('href'), location.href);
+          url.searchParams.set('theme', nextTheme);
+          link.href = url.pathname + url.search;
+        });
+      });
+    });
+    const activeTheme = document.documentElement.dataset.theme;
+    if (activeTheme) {
+      document.querySelectorAll('[data-page-link]').forEach((link) => {
+        const url = new URL(link.getAttribute('href'), location.href);
+        url.searchParams.set('theme', activeTheme);
+        link.href = url.pathname + url.search;
+      });
+    }
+  })();
+</script>
 </body>
 </html>

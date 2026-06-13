@@ -80,7 +80,7 @@ strong {
 }
 
 del {
-  color: #333;
+  color: var(--color-deleted-text);
 }
 
 ins {
@@ -246,7 +246,7 @@ samp {
   h4,
   h5,
   h6 {
-    color: #f00;
+    color: $site-heading-text;
     margin: 35px auto 20px;
   }
 

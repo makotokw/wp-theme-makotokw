@@ -28,7 +28,7 @@
   }
 
   &.headroom--not-top {
-    background: rgba($header-default-bg, 0.8);
+    background: var(--color-surface-overlay);
 
     .site-header-banner {
       display: none;

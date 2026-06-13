@@ -76,7 +76,7 @@
 
       .post-image {
         border-radius: $entry-feature-image-radius;
-        background: #fff no-repeat center;
+        background: $site-surface-color no-repeat center;
         background-size: cover;
         flex-shrink: 0;
         width: 150px;
@@ -397,7 +397,7 @@ object {
 
   .post-image {
     border-radius: $entry-feature-image-radius;
-    background: #fff no-repeat center;
+    background: $site-surface-color no-repeat center;
     background-size: cover;
     flex-shrink: 0;
     width: 70px;

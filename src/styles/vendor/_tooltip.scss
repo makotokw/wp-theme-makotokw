@@ -2,16 +2,16 @@
 @import 'tippy.js/dist/tippy.css';
 
 .tippy-box[data-theme~="makotokw"] {
-  background-color: #f3f3f3;
+  background-color: var(--color-tooltip-bg);
   background-clip: padding-box;
-  border: 1px solid rgba(0, 8, 16, .15);
+  border: 1px solid var(--color-tooltip-border);
   color: $site-default-text;
   padding: 2px 4px;
   margin-bottom: 5px;
 }
 
 .tippy-box[data-theme~="makotokw"] > .tippy-backdrop {
-  background-color: #f3f3f3;
+  background-color: var(--color-tooltip-bg);
 }
 
 .tippy-box[data-theme~="makotokw"] > .tippy-arrow::after, .tippy-box[data-theme~="makotokw"] > .tippy-svg-arrow::after {
@@ -26,11 +26,11 @@
 }
 
 .tippy-box[data-theme~="makotokw"][data-placement^="top"] > .tippy-arrow::before {
-  border-top-color: #f3f3f3;
+  border-top-color: var(--color-tooltip-bg);
 }
 
 .tippy-box[data-theme~="makotokw"][data-placement^="top"] > .tippy-arrow::after {
-  border-top-color: rgba(0, 8, 16, .2);
+  border-top-color: var(--color-tooltip-border-strong);
   border-width: 7px 7px 0;
   top: 17px;
   left: 1px;
@@ -45,12 +45,12 @@
 }
 
 .tippy-box[data-theme~="makotokw"][data-placement^="bottom"] > .tippy-arrow::before {
-  border-bottom-color: #f3f3f3;
+  border-bottom-color: var(--color-tooltip-bg);
   bottom: 16px;
 }
 
 .tippy-box[data-theme~="makotokw"][data-placement^="bottom"] > .tippy-arrow::after {
-  border-bottom-color: rgba(0, 8, 16, .2);
+  border-bottom-color: var(--color-tooltip-border-strong);
   border-width: 0 7px 7px;
   bottom: 17px;
   left: 1px;
@@ -65,11 +65,11 @@
 }
 
 .tippy-box[data-theme~="makotokw"][data-placement^="left"] > .tippy-arrow::before {
-  border-left-color: #f3f3f3;
+  border-left-color: var(--color-tooltip-bg);
 }
 
 .tippy-box[data-theme~="makotokw"][data-placement^="left"] > .tippy-arrow::after {
-  border-left-color: rgba(0, 8, 16, .2);
+  border-left-color: var(--color-tooltip-border-strong);
   border-width: 7px 0 7px 7px;
   left: 17px;
   top: 1px
@@ -84,7 +84,7 @@
 }
 
 .tippy-box[data-theme~="makotokw"][data-placement^="right"] > .tippy-arrow::before {
-  border-right-color: #f3f3f3;
+  border-right-color: var(--color-tooltip-bg);
   right: 16px
 }
 
@@ -92,7 +92,7 @@
   border-width: 7px 7px 7px 0;
   right: 17px;
   top: 1px;
-  border-right-color: rgba(0, 8, 16, .2)
+  border-right-color: var(--color-tooltip-border-strong)
 }
 
 .tippy-box[data-theme~="makotokw"][data-placement^="right"] > .tippy-svg-arrow > svg {
@@ -104,7 +104,7 @@
 }
 
 .tippy-box[data-theme~="makotokw"] > .tippy-svg-arrow {
-  fill: #f3f3f3;
+  fill: var(--color-tooltip-bg);
 }
 
 .tippy-box[data-theme~="makotokw"] > .tippy-svg-arrow::after {

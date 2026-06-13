@@ -1,5 +1,6 @@
 // This @use order defines the cascade order. Keep changes intentional.
 @use 'generic/root';
+@use 'generic/color-tokens';
 @use 'generic/fonts';
 @use 'generic/reset';
 @use 'elements/typography';

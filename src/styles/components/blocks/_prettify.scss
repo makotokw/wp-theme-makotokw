@@ -23,35 +23,35 @@
 
   .prettyprint {
 
-    .str { color: #d14; }
+    .str { color: var(--color-syntax-string); }
 
-    .kwd { color: #333; }
+    .kwd { color: var(--color-syntax-keyword); }
 
-    .com { color: #998; }
+    .com { color: var(--color-syntax-comment); }
 
-    .typ { color: #458; }
+    .typ { color: var(--color-syntax-type); }
 
-    .lit { color: #458; }
+    .lit { color: var(--color-syntax-literal); }
 
-    .pun { color: #333; }
+    .pun { color: var(--color-syntax-punctuation); }
 
-    .pln { color: #333; }
+    .pln { color: var(--color-syntax-plaintext); }
 
-    .opn { color: #333; }
+    .opn { color: var(--color-syntax-punctuation); }
 
-    .clo { color: #333; }
+    .clo { color: var(--color-syntax-punctuation); }
 
-    .tag { color: #000080; }
+    .tag { color: var(--color-syntax-tag); }
 
-    .atn { color: #008080; }
+    .atn { color: var(--color-syntax-attribute); }
 
-    .atv { color: #d14; }
+    .atv { color: var(--color-syntax-string); }
 
-    .dec { color: #333; }
+    .dec { color: var(--color-syntax-punctuation); }
 
-    .var { color: #008080; }
+    .var { color: var(--color-syntax-attribute); }
 
-    .fun { color: #900; }
+    .fun { color: var(--color-syntax-function); }
   }
 }
 
@@ -60,47 +60,47 @@
   .prettyprint {
 
     .str {
-      color: #060
+      color: var(--color-syntax-string)
     }
 
     .kwd {
-      color: #006;
+      color: var(--color-syntax-keyword);
       font-weight: 700
     }
 
     .com {
-      color: #600;
+      color: var(--color-syntax-comment);
       font-style: italic
     }
 
     .typ {
-      color: #404;
+      color: var(--color-syntax-type);
       font-weight: 700
     }
 
     .lit {
-      color: #044
+      color: var(--color-syntax-literal)
     }
 
     .pun, .opn, .clo {
-      color: #440
+      color: var(--color-syntax-punctuation)
     }
 
     .pln {
-      color: #000
+      color: var(--color-syntax-plaintext)
     }
 
     .tag {
-      color: #006;
+      color: var(--color-syntax-tag);
       font-weight: 700
     }
 
     .atn {
-      color: #404
+      color: var(--color-syntax-attribute)
     }
 
     .atv {
-      color: #060
+      color: var(--color-syntax-string)
     }
   }
 }
@@ -162,4 +162,3 @@
   li.L9 {
   }
 }
-

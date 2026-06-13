@@ -1,5 +1,4 @@
 @use 'abstracts' as *;
-@use 'sass:color';
 
 /* = Alert styling
 -------------------------------------------------------------- */
@@ -10,11 +9,11 @@
   color: $text-color;
 
   hr {
-    border-top-color: color.adjust($border, $lightness: -5%);
+    border-top-color: color-mix(in srgb, #{$border} 95%, var(--color-shade));
   }
 
   .alert-link {
-    color: color.adjust($text-color, $lightness: -10%);
+    color: color-mix(in srgb, #{$text-color} 90%, var(--color-shade));
   }
 }
 

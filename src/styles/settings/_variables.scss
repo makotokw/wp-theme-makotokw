@@ -1,4 +1,3 @@
-@use 'sass:color';
 @use 'colors' as *;
 
 // Layout Size ----------------------------
@@ -35,84 +34,82 @@ $font-family-sans-serif: 'Nunito Sans', $font-family-gothic, sans-serif;
 $font-family-monospace: monaco, menlo, consolas, 'Courier New', monospace, $font-family-gothic, sans-serif;;
 
 // Layout color ----------------------------
-$aztecSky: rgb(77, 181, 215);
+$site-primary-color: var(--color-brand);
+$site-primary-dark-color: var(--color-brand-strong);
+$site-primary-light-color: var(--color-brand-soft);
+$site-on-primary-text-color: var(--color-brand-text);
+$site-surface-color: var(--color-surface);
+$site-background-color: var(--color-bg);
 
-$site-primary-color: $aztecSky;
-$site-primary-dark-color: color.adjust($aztecSky, $lightness: -60%);
-$site-primary-light-color: color.adjust($aztecSky, $lightness: 50%);
-$site-on-primary-text-color: #fff;
-$site-surface-color: #fff;
-$site-background-color: #fff;
-
-$site-default-border: $md-grey-300;
-$site-default-border-over: $md-grey-400;
+$site-default-border: var(--color-border);
+$site-default-border-over: var(--color-border-strong);
 $site-progress-border: $site-primary-color;
-$site-badge-color: $md-pink-400;
-$site-on-badge-text-color: #fff;
+$site-badge-color: var(--color-badge-bg);
+$site-on-badge-text-color: var(--color-badge-text);
 
-$site-default-text: $md-blue-grey-600;
-$site-heading-text: $md-blue-grey-700;
-$site-neutral-text: $md-blue-grey-300;
-$site-placeholder-text: $md-grey-300;
-$site-default-link: color.adjust($site-primary-color, $lightness: -10%);
-$site-default-link-over: color.adjust($site-primary-color, $lightness: -20%);
+$site-default-text: var(--color-text);
+$site-heading-text: var(--color-heading);
+$site-neutral-text: var(--color-text-muted);
+$site-placeholder-text: var(--color-text-placeholder);
+$site-default-link: var(--color-link);
+$site-default-link-over: var(--color-link-hover);
 
 // Block  ----------------------------
 $block-default-bg: $site-surface-color;
-$block-default-text: $md-blue-grey-700;
-$block-default-icon: $md-blue-grey-400;
+$block-default-text: var(--color-heading);
+$block-default-icon: var(--color-text-muted);
 $block-padding: 15px;
 
 // Header  ----------------------------
-$header-default-bg: #fff;
+$header-default-bg: var(--color-surface);
 $header-default-text: $site-default-text;
 $header-default-link: $site-default-text;
 $header-default-link-over: $site-default-link-over;
 $header-banner-link: $site-heading-text;
-$header-banner-link-over: color.adjust($site-primary-color, $lightness: -10%);
+$header-banner-link-over: $site-default-link;
 
 // Footer  ----------------------------
-$footer-default-bg: #fff;
+$footer-default-bg: var(--color-surface);
 $footer-default-text: $site-default-text;
 
 // Sidebar  ----------------------------
-$sidebar-default-bg: $md-grey-50;
+$sidebar-default-bg: var(--color-surface-variant);
 
 // Typography ----------------------------
-$entry-text: $md-blue-grey-900;
-$entry-summary-text: $md-blue-grey-600;
+$entry-text: var(--color-text-strong);
+$entry-summary-text: var(--color-text);
 $entry-feature-image-radius: 4px;
-$caption-text: #767676;
-$code-default-bg: rgba(27, 31, 35, .05); // from GitHub
-$blockquote-text: $md-grey-700;
+$caption-text: var(--color-text-caption);
+$code-default-bg: var(--color-code-bg);
+$blockquote-text: var(--color-blockquote-text);
 
 // Button ----------------------------
 $button-contained-bg: $site-primary-color;
-$button-contained-bg-over: color.adjust($button-contained-bg, $lightness: 10%);
+$button-contained-bg-over: var(--color-brand-hover);
 $button-contained-text: $site-on-primary-text-color;
-$button-contained-disable-bg: $md-grey-200;
-$button-contained-disable-text: $md-grey-400;
+$button-contained-disable-bg: var(--color-disabled-bg);
+$button-contained-disable-text: var(--color-disabled-text);
 $button-outlined-bg: transparent;
-$button-outlined-bg-over: color.adjust($site-primary-color, $lightness: 40%);
+$button-outlined-bg-over: $site-primary-light-color;
 $button-outlined-border: $site-default-border;
 $button-outlined-border-width: 1px;
 $button-outlined-text: $site-primary-color;
-$button-outlined-disable-border: $md-grey-300;
-$button-outlined-disable-text: $md-grey-300;
+$button-outlined-disable-border: var(--color-disabled-bg);
+$button-outlined-disable-text: var(--color-disabled-text);
 
 // State ----------------------------
-$state-warning-text: #c09853;
-$state-warning-bg: #fefaef;
-$state-warning-border: color.adjust(color.adjust($state-warning-bg, $hue: -10deg), $lightness: -3%);
-$state-danger-text: #b94a48;
-$state-danger-bg: #f2dede;
-$state-danger-border: color.adjust(color.adjust($state-danger-bg, $hue: -10deg), $lightness: -3%);
-$state-success-text: #468847;
-$state-success-bg: #dff0d8;
-$state-success-border: color.adjust(color.adjust($state-success-bg, $hue: -10deg), $lightness: -5%);
-$state-info-text: #3a87ad;
-$state-info-bg: color.adjust(#d9edf7, $lightness: 7%);
-$state-info-border: color.adjust(color.adjust($state-info-bg, $hue: -10deg), $lightness: -7%);
+$state-warning-text: var(--color-warning-text);
+$state-warning-bg: var(--color-warning-bg);
+$state-warning-border: var(--color-warning-border);
+$state-danger-text: var(--color-danger-text);
+$state-danger-bg: var(--color-danger-bg);
+$state-danger-border: var(--color-danger-border);
+$state-success-text: var(--color-success-text);
+$state-success-bg: var(--color-success-bg);
+$state-success-border: var(--color-success-border);
+$state-info-text: var(--color-info-text);
+$state-info-bg: var(--color-info-bg);
+$state-info-border: var(--color-info-border);
 
 // Alert ----------------------------
 $alert-padding: 30px;
