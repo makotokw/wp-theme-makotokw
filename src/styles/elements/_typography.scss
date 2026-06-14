@@ -23,12 +23,12 @@ main {
 // -----------------------------------------------
 
 path {
-  transition: all 0.15s linear;
+  transition: fill var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
 }
 
 a {
   color: $site-default-link;
-  transition: all 0.25s linear;
+  transition: color var(--duration-base) var(--ease-out);
   text-decoration: none;
   outline: 0;
 }

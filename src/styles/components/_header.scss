@@ -2,8 +2,8 @@
 
 .site-header {
   will-change: transform;
-  transition: transform .2s linear;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.10);
+  transition: transform var(--duration-base) var(--ease-out);
+  box-shadow: var(--shadow-1);
 
   &.headroom {
     position: fixed;
@@ -15,7 +15,7 @@
 
   &.headroom--pinned {
     transform: translateY(0%);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.10);
+    box-shadow: var(--shadow-1);
   }
 
   &.headroom--unpinned {
@@ -169,7 +169,7 @@
   overflow-y: auto;
   z-index: 20;
 
-  transition: all 0.3s ease-out;
+  transition: opacity var(--duration-base) var(--ease-out), visibility var(--duration-base) var(--ease-out);
   opacity: 1;
   visibility: visible;
 

@@ -7,7 +7,7 @@ $site-header-progress-height: 4px;
 $site-header-height: $site-header-banner-height + 1 + $site-header-margin * 2;
 $site-header-height-small: $site-header-banner-height-small + 1 + $site-header-margin-small * 2;
 
-$site-border-radius: 4px;
+$site-border-radius: var(--radius-md);
 $site-border-width: 1px;
 $site-border-left-width: .6em;
 
@@ -76,7 +76,7 @@ $sidebar-default-bg: var(--color-surface-variant);
 // Typography ----------------------------
 $entry-text: var(--color-text-strong);
 $entry-summary-text: var(--color-text);
-$entry-feature-image-radius: 4px;
+$entry-feature-image-radius: var(--radius-md);
 $caption-text: var(--color-text-caption);
 $code-default-bg: var(--color-code-bg);
 $blockquote-text: var(--color-blockquote-text);

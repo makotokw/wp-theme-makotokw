@@ -80,6 +80,7 @@
         background: $site-surface-color no-repeat center;
         background-size: cover;
         flex-shrink: 0;
+        transition: transform var(--duration-base) var(--ease-out);
         width: 150px;
         height: 150px;
       }
@@ -91,7 +92,6 @@
 
         .post-image {
           transform: scale(1.05);
-          transition: .3s ease-in-out;
         }
       }
     }
@@ -331,6 +331,7 @@ object {
     .term-links {
       // Term meta is presented as short tag labels; uppercase normalizes latin slugs.
       text-transform: uppercase;
+
       .term-tags-links {
         margin-right: 10px;
       }
@@ -391,6 +392,7 @@ object {
     background: $site-surface-color no-repeat center;
     background-size: cover;
     flex-shrink: 0;
+    transition: transform var(--duration-base) var(--ease-out);
     width: 70px;
     height: 70px;
   }
@@ -421,7 +423,6 @@ object {
 
     .post-image {
       transform: scale(1.05);
-      transition: .3s ease-in-out;
     }
   }
 }
