@@ -19,20 +19,20 @@
 @mixin sentence-block() {
   display: block;
   padding: var(--global--spacing-vertical) var(--global--spacing-horizontal);
-  line-height: 1.5;
+  line-height: var(--global--line-height-tight);
   word-break:break-all;
   word-wrap: break-word;
   overflow-wrap : break-word;
   hyphens: auto;
 
   p {
-    line-height: 1.95;
+    line-height: var(--global--line-height-body);
   }
 
   blockquote {
 
     p {
-      line-height: 1.5;
+      line-height: var(--global--line-height-tight);
     }
   }
 }

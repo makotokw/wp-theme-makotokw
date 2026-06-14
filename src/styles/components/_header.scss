@@ -91,7 +91,8 @@
     font-size: 28px;
     font-weight: 700;
     text-decoration: none;
-    letter-spacing: -3px;
+    // Ease the previous tight logo tracking while keeping a compact wordmark.
+    letter-spacing: -0.02em;
     padding-right: 3px;
     color: $header-banner-link;
 

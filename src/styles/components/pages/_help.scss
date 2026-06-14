@@ -10,19 +10,13 @@
 
     h1, h2, h3 {
       font-weight: 700;
-      text-transform: uppercase;
     }
 
     .entry-title {
-      font-size: 40px;
-      line-height: 40px;
+      // Fluid title; drops the fixed 40px / 30px breakpoint steps.
+      font-size: clamp(1.875rem, 1.4rem + 2vw, 2.5rem);
+      line-height: 1.15;
       margin-bottom: 20px;
-
-      @include smaller-than-tablet-screen {
-        font-size: 30px;
-        line-height: 30px;
-        margin-bottom: 1.50px;
-      }
     }
   }
 }

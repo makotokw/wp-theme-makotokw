@@ -35,6 +35,7 @@
     margin-bottom: 15px;
 
     .term-links {
+      // Term meta is presented as short tag labels; uppercase normalizes latin slugs.
       text-transform: uppercase;
     }
   }
@@ -49,7 +50,7 @@
     }
 
     .entry-title {
-      font-size: 44px;
+      font-size: var(--global--font-size-page-title);
     }
 
     .entry-meta-primary {
@@ -98,13 +99,6 @@
 
   @include smaller-than-tablet-screen {
 
-    .single &, .page & {
-
-      .entry-title {
-        font-size: 28px;
-      }
-    }
-
     .post-summary & {
 
       .entry-feature-image {
@@ -142,10 +136,6 @@
 
   .post-summary & {
     color: $entry-summary-text;
-
-    p {
-      line-height: 1.8;
-    }
   }
 
   > * {
@@ -339,7 +329,8 @@ object {
     margin: 20px 80px 20px 80px;
 
     .term-links {
-
+      // Term meta is presented as short tag labels; uppercase normalizes latin slugs.
+      text-transform: uppercase;
       .term-tags-links {
         margin-right: 10px;
       }

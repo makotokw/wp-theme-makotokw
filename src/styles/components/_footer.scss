@@ -4,7 +4,7 @@
   background: $footer-default-bg;
   padding: 43px;
   font-size: 16px;
-  font-weight: 300;
+  font-weight: var(--global--font-weight);
   line-height: 1.25;
   letter-spacing: -0.3px;
   color: $footer-default-text;
