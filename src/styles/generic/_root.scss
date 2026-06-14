@@ -1,5 +1,4 @@
 @use 'abstracts' as *;
-$baseline-unit: 10px;
 
 :root {
 
@@ -27,10 +26,22 @@ $baseline-unit: 10px;
   --global--line-height-tight: 1.5;
 
   /* Spacing */
-  --global--spacing-unit: #{2 * $baseline-unit}; // 20px
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-25: 100px;
+
+  --global--spacing-unit: var(--space-5);
   --global--spacing-measure: unset; // Use ch units here. ie: 60ch = 60 character max-width
-  --global--spacing-horizontal: #{2.5 * $baseline-unit}; // 25px
-  --global--spacing-vertical: #{3 * $baseline-unit}; // 30px
+  --global--spacing-horizontal: var(--space-6);
+  --global--spacing-vertical: var(--space-8);
 
   /* Radius */
   --radius-sm: 6px;

@@ -192,7 +192,7 @@ blockquote {
   border-left: 4px solid $site-default-border;
   font-style: italic;
   font-weight: var(--global--font-weight);
-  margin: 40px 0;
+  margin: var(--space-10) 0;
   padding: 5px 0 5px 20px;
 
   cite,
@@ -209,7 +209,7 @@ hr {
   border-style: solid;
   border-width: 1px 0 0 0;
   border-color: $site-default-border;
-  margin: 40px 0;
+  margin: var(--space-10) 0;
 }
 
 
@@ -247,7 +247,7 @@ samp {
   h5,
   h6 {
     color: $site-heading-text;
-    margin: 35px auto 20px;
+    margin: var(--space-8) auto var(--space-5);
   }
 
   menu,

@@ -160,11 +160,11 @@
 
   img {
     display: block;
-    margin: 40px auto;
+    margin: var(--space-10) auto;
   }
 
   figure {
-    margin: 40px auto;
+    margin: var(--space-10) auto;
 
     img {
       margin: 0 auto;
@@ -292,10 +292,10 @@ object {
   color: $site-default-text;
   font-size: var(--global--font-size-xl);
   font-weight: 800;
-  margin: 0 0 30px 0;
+  margin: 0 0 var(--space-8) 0;
 
   @include smaller-than-tablet-screen {
-    margin: 0 0 24px 0;
+    margin: 0 0 var(--space-6) 0;
   }
 }
 
@@ -520,7 +520,7 @@ object {
 
   .entry-header {
     margin: 0 auto;
-    padding: 100px 50px;
+    padding: var(--space-25) var(--space-12);
   }
 
   .entry-content {
@@ -531,7 +531,7 @@ object {
   @include smaller-than-tablet-screen {
 
     .entry-header {
-      padding: 50px 25px;
+      padding: var(--space-12) var(--space-6);
     }
 
     .entry-content {
@@ -541,7 +541,7 @@ object {
   @include smaller-than-mobile-screen {
 
     .entry-header {
-      padding: 25px 10px;
+      padding: var(--space-6) var(--space-3);
     }
 
     .entry-content {

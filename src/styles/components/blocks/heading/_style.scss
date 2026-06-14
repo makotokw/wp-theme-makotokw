@@ -64,19 +64,19 @@ h6,
 h1,
 h2,
 h3 {
-  margin: 50px auto 30px;
+  margin: var(--space-12) auto var(--space-8);
 }
 
 h4,
 h5,
 h6 {
-  margin: 40px auto 20px;
+  margin: var(--space-10) auto var(--space-5);
 }
 
 .entry-content {
 
   h2 {
-    padding-bottom: 7.5px;
+    padding-bottom: var(--space-2);
     border-bottom: $site-border-width solid $site-default-border;
   }
 }

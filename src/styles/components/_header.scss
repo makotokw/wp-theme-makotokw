@@ -93,7 +93,7 @@
     text-decoration: none;
     // Ease the previous tight logo tracking while keeping a compact wordmark.
     letter-spacing: -0.02em;
-    padding-right: 3px;
+    padding-right: var(--space-1);
     color: $header-banner-link;
 
 
@@ -117,7 +117,7 @@
     }
 
     .site-header-description {
-      margin: 7.5px 0 0 5px;
+      margin: var(--space-2) 0 0 var(--space-1);
       font-size: 14px;
     }
   }
