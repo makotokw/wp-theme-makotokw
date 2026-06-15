@@ -90,7 +90,8 @@
   --widget--spacing-menu: calc(0.66 * var(--global--spacing-unit));
 
   /* AdminBar */
-  --global--admin-bar--height: 0;
+  /* stylelint-disable-next-line length-zero-no-unit -- Unit is required when this custom property is used in calc(). */
+  --global--admin-bar--height: 0px;
 }
 
 @include smaller-than-tablet-screen {
