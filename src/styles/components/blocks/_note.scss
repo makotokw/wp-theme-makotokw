@@ -18,7 +18,7 @@
   display: block;
   margin: 0 0 40px 0;
   padding: 20px;
-  border: 1px solid $site-default-border;
+  border: $site-border-width solid $site-default-border;
 
   a {
     font-weight: 600;

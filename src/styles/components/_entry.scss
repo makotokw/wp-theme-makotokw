@@ -12,7 +12,7 @@
 
 .entry-meta-primary,
 .entry-meta-secondary {
-  font-size: 16px;
+  font-size: var(--global--font-size-xs);
   color: $site-neutral-text;
 }
 
@@ -50,7 +50,9 @@
     }
 
     .entry-title {
+      // Tighter leading only at display size; smaller h1s keep the heading default.
       font-size: var(--global--font-size-page-title);
+      line-height: var(--global--line-height-page-title);
     }
 
     .entry-meta-primary {
@@ -69,7 +71,7 @@
     display: flex;
 
     .entry-title {
-      font-size: 20px;
+      font-size: var(--global--font-size-md);
     }
 
     .entry-feature-image {
@@ -351,8 +353,9 @@ object {
 
   .title {
     color: $site-default-text;
-    font-weight: 700;
-    font-size: 18px;
+    font-weight: var(--global--font-weight-strong);
+    font-size: var(--global--font-size-sm);
+    line-height: var(--global--line-height-heading);
   }
 }
 
@@ -379,8 +382,10 @@ object {
 
   .title {
     color: $entry-text;
-    font-weight: 700;
-    font-size: 18px;
+    font-weight: var(--global--font-weight-strong);
+    font-size: var(--global--font-size-sm);
+    // Span titles align with heading leading so list items match entry titles.
+    line-height: var(--global--line-height-heading);
   }
 
   .arrow {

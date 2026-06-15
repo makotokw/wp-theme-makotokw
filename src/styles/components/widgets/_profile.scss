@@ -20,20 +20,20 @@ $site-author-image-base: 75px;
     padding-left: 16px;
 
     .author-name {
-      font-size: 18px;
+      font-size: var(--global--font-size-sm);
       font-weight: 700;
       line-height: 1;
       margin-bottom: 5px;
     }
 
     .author-job-title {
-      font-size: 16px;
+      font-size: var(--global--font-size-xs);
       color: $site-neutral-text;
       margin-bottom: 20px;
     }
 
     .author-description {
-      font-size: 16px;
+      font-size: var(--global--font-size-xs);
     }
 
     .author-contacts {

@@ -59,7 +59,7 @@
   }
 
   @include smaller-than-mobile-screen {
-    font-size: 16px;
+    font-size: var(--global--font-size-xs);
 
     .pagination-single-inner {
       flex-direction: column;

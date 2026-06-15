@@ -3,7 +3,7 @@
 .site-footer {
   background: $footer-default-bg;
   padding: var(--space-10);
-  font-size: 16px;
+  font-size: var(--global--font-size-xs);
   font-weight: var(--global--font-weight);
   line-height: 1.25;
   color: $footer-default-text;

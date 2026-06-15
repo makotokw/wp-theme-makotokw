@@ -32,7 +32,7 @@
   }
 
   time {
-    border: 1px solid $site-default-border;
+    border: $site-border-width solid $site-default-border;
     margin-right: 5px;
     padding: 0;
     width: 120px;
