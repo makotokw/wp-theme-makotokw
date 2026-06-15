@@ -21,7 +21,7 @@ $site-author-image-base: 75px;
 
     .author-name {
       font-size: var(--global--font-size-sm);
-      font-weight: 700;
+      font-weight: var(--global--font-weight-strong);
       line-height: 1;
       margin-bottom: 5px;
     }

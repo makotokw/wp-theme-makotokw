@@ -14,7 +14,7 @@
 
 .quote-caption {
   font-size: 14px;
-  font-weight: 400;
+  font-weight: var(--global--font-weight);
 }
 
 .strike {
@@ -27,7 +27,7 @@
 
 .time {
   font-style: normal;
-  font-weight: 400;
+  font-weight: var(--global--font-weight);
 }
 
 .icon {

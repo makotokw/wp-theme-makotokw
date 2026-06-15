@@ -157,7 +157,7 @@
   cite,
   figcaption,
   .wp-caption-text {
-    font-weight: 400;
+    font-weight: var(--global--font-weight);
   }
 
   img {
@@ -293,7 +293,7 @@ object {
   display: block;
   color: $site-default-text;
   font-size: var(--global--font-size-xl);
-  font-weight: 800;
+  font-weight: var(--global--font-weight-strong);
   margin: 0 0 var(--space-8) 0;
 
   @include smaller-than-tablet-screen {

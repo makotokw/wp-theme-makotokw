@@ -89,7 +89,7 @@
 
   .site-header-logo {
     font-size: 28px;
-    font-weight: 700;
+    font-weight: var(--global--font-weight-strong);
     text-decoration: none;
     // Ease the previous tight logo tracking while keeping a compact wordmark.
     letter-spacing: -0.02em;

@@ -63,7 +63,7 @@ dfn {
 em, i, cite {
 
   em, i {
-    font-weight: bolder;
+    font-weight: var(--global--font-weight-strong);
   }
 }
 
@@ -77,7 +77,7 @@ small {
 
 b,
 strong {
-  font-weight: 700;
+  font-weight: var(--global--font-weight-strong);
 }
 
 del {
@@ -165,7 +165,7 @@ dd {
 }
 
 dt {
-  font-weight: 700;
+  font-weight: var(--global--font-weight-strong);
 }
 
 dt + dd {

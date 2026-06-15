@@ -21,7 +21,7 @@
   border: $site-border-width solid $site-default-border;
 
   a {
-    font-weight: 600;
+    font-weight: var(--global--font-weight-strong);
   }
 }
 

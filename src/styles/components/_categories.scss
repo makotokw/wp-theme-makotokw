@@ -21,7 +21,7 @@
       color: $site-on-badge-text-color;
       border-radius: 50%;
       text-align: center;
-      font-weight: 700;
+      font-weight: var(--global--font-weight-strong);
       min-height: 30px;
       min-width: 30px;
       line-height: 30px;

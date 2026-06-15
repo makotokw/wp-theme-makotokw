@@ -46,7 +46,7 @@
     justify-content: space-between;
 
     .copyright {
-      font-weight: 500;
+      font-weight: var(--global--font-weight);
     }
 
     .powered-by {
