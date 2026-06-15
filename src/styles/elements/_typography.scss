@@ -179,9 +179,20 @@ dd + dt {
 // -----------------------------------------------
 
 ::selection {
-  background: $site-primary-color;
-  color: $site-on-primary-text-color;
+  background-color: var(--color-selection-bg);
+  color: var(--color-selection-text);
   text-shadow: none;
+}
+
+.entry-content {
+
+  ul,
+  ol {
+
+    li::marker {
+      color: var(--color-brand);
+    }
+  }
 }
 
 // Blockquote
@@ -189,11 +200,11 @@ dd + dt {
 
 blockquote {
   color: $blockquote-text;
-  border-left: 4px solid $site-default-border;
+  border-left: var(--space-1) solid var(--color-rule-accent);
   font-style: italic;
   font-weight: var(--global--font-weight);
   margin: var(--space-10) 0;
-  padding: 5px 0 5px 20px;
+  padding: 5px 0 5px var(--space-5);
 
   cite,
   small {

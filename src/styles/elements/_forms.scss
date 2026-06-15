@@ -40,10 +40,13 @@ input[type="color"],
   border-radius: $site-border-radius;
   box-shadow: none;
 
-  &:focus {
+  &:focus:not(:focus-visible) {
     border-color: $site-default-border-over;
     outline: 0;
-    outline: thin dotted \9; /* IE6-9 */
     box-shadow: none;
+  }
+
+  &:focus-visible {
+    border-color: $site-default-border-over;
   }
 }

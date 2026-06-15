@@ -70,6 +70,10 @@
   --color-danger-border: #fca5a5;
   --shadow-1: 0 1px 2px rgba(15, 23, 42, .06), 0 1px 3px rgba(15, 23, 42, .10);
   --shadow-2: 0 4px 6px rgba(15, 23, 42, .05), 0 10px 15px rgba(15, 23, 42, .10);
+  --color-selection-bg: var(--color-brand-soft);
+  --color-selection-text: var(--color-brand-strong);
+  --color-focus-ring: var(--color-brand);
+  --color-rule-accent: var(--color-brand-soft);
 
   // Monochrome mark: a single fixed color would vanish in one theme, so invert per theme.
   --color-share-x-bg: #000;
@@ -148,6 +152,10 @@
   --color-danger-border: #ef4444;
   --shadow-1: 0 1px 2px rgba(0, 0, 0, .40), 0 1px 3px rgba(0, 0, 0, .50);
   --shadow-2: 0 4px 6px rgba(0, 0, 0, .40), 0 10px 15px rgba(0, 0, 0, .55);
+  --color-selection-bg: #164e63;
+  --color-selection-text: #f8fafc;
+  --color-focus-ring: var(--color-brand);
+  --color-rule-accent: var(--color-brand-strong);
 
   --color-share-x-bg: #f8fafc;
   --color-share-x-icon: #0f172a;
