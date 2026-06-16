@@ -39,9 +39,11 @@
 					'<a href="https://wordpress.org/" title="' . esc_attr( __( 'Semantic Personal Publishing Platform', 'makotokw' ) ) . '">WordPress</a>'
 				);
 				?>
-			<span class="powered-by">
-				<?php echo $makotokw_powered_by; ?><img class="emoji" alt="❤" src="https://s.w.org/images/core/emoji/72x72/2764.png" width="10" height="10"><a href="https://github.com/makotokw/wp-theme-makotokw/tree/<?php echo $makotokw_theme_name; ?>">Theme <i class="fab fa-github"></i></a> by <a href="https://makotokw.com">makoto_kw</a>
-			</span>
+				<span class="powered-by">
+					<?php echo $makotokw_powered_by; ?>
+					<svg class="footer-heart" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+					<a href="https://github.com/makotokw/wp-theme-makotokw/tree/<?php echo $makotokw_theme_name; ?>">Theme <i class="fab fa-github"></i></a> by <a href="https://makotokw.com">makoto_kw</a>
+				</span>
 		</div>
 	</div>
 </footer>
