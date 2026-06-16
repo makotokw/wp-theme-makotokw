@@ -20,9 +20,9 @@ list ( $makotokw_featured_image_url, $makotokw_featured_image_service ) = makoto
 			<h1 class="entry-title">
 				<?php
 				/* translators: %s: post title */
-				$permalink_title = esc_attr( sprintf( __( 'Permalink to %s', 'makotokw' ), the_title_attribute( 'echo=0' ) ) );
+				$makotokw_permalink_title = esc_attr( sprintf( __( 'Permalink to %s', 'makotokw' ), the_title_attribute( 'echo=0' ) ) );
 				?>
-				<a href="<?php the_permalink(); ?>" title="<?php echo $permalink_title; ?>" rel="bookmark"><?php the_title(); ?></a>
+				<a href="<?php the_permalink(); ?>" title="<?php echo $makotokw_permalink_title; ?>" rel="bookmark"><?php the_title(); ?></a>
 			</h1>
 		</div>
 	</header>
@@ -31,6 +31,9 @@ list ( $makotokw_featured_image_url, $makotokw_featured_image_service ) = makoto
 		<p><?php echo makotokw_post_summary( $post->post_content, 180 ); ?></p>
 	</div>
 	<footer class="entry-footer">
-		<a class="btn-more-link" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Continue reading', 'makotokw' ); ?></a>
+		<a class="btn-more-link" href="<?php the_permalink(); ?>">
+			<?php esc_html_e( 'Continue reading', 'makotokw' ); ?>
+			<i class="fas fa-circle-right" aria-hidden="true"></i>
+		</a>
 	</footer>
 </article><!-- #post-<?php the_ID(); ?> -->

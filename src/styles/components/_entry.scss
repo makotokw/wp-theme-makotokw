@@ -227,6 +227,18 @@
   @extend .btn-text;
   float: right;
   margin-top: var(--space-3);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+
+  > :where(i, .svg-inline--fa) {
+    translate: 0 -0.05em;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: var(--color-brand);
+  }
 }
 
 // Media

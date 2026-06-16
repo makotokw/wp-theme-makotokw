@@ -273,7 +273,7 @@ function makotokw_archives_title() {
 		$archives_title = sprintf( __( 'Archives of %s', 'makotokw' ), get_bloginfo( 'name' ) );
 	}
 	?>
-	<span><?= esc_html( $archives_title ) ?></span>
+		<span><?php echo esc_html( $archives_title ); ?></span>
 	<?php
 }
 
