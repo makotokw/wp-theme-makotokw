@@ -13,10 +13,10 @@ $author-border-width: 2px;
   .children {
     list-style-type: none;
     padding: 0;
-    margin-left: 20px;
+    margin-left: var(--space-5);
 
     @include smaller-than-desktop-screen {
-      margin-left: 10px;
+      margin-left: var(--space-3);
     }
   }
 
@@ -72,7 +72,7 @@ $author-border-width: 2px;
 }
 
 .comment-body {
-  padding: 15px 0;
+  padding: var(--space-4) 0;
   position: relative;
 
   @include clearfix;
@@ -82,7 +82,7 @@ $author-border-width: 2px;
     .avatar {
       border-radius: 50%;
       display: block;
-      margin-bottom: 10px;
+      margin-bottom: var(--space-3);
     }
   }
 
@@ -92,7 +92,7 @@ $author-border-width: 2px;
     .comment-time {
 
       @extend .comment-small;
-      margin-right: 5px;
+      margin-right: var(--space-1);
       display: inline-block;
 
     }
@@ -136,7 +136,7 @@ $author-border-width: 2px;
   @include smaller-than-desktop-screen {
 
     .comment-metadata {
-      margin-top: 10px;
+      margin-top: var(--space-3);
     }
 
     .comment-awaiting-moderation,
@@ -144,7 +144,7 @@ $author-border-width: 2px;
       float: none;
       clear: both;
       width: auto;
-      padding: 12px;
+      padding: var(--space-3);
     }
   }
 }
@@ -171,7 +171,7 @@ $author-border-width: 2px;
 }
 
 .navigation-comment {
-  margin: 20px 0;
+  margin: var(--space-5) 0;
 
   @include clearfix();
 }
@@ -185,7 +185,7 @@ $author-border-width: 2px;
 
 // comment-form without JetPack
 .comment-form {
-  margin-top: 8px;
+  margin-top: var(--space-2);
 
   @include smaller-than-tablet-screen {
 

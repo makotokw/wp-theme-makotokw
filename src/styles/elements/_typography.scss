@@ -113,7 +113,7 @@ acronym {
 
 address {
   line-height: var(--global--line-height-tight);
-  margin: 0 0 20px 0;
+  margin: 0 0 var(--space-5) 0;
 }
 
 // Lists
@@ -121,7 +121,7 @@ address {
 
 ul,
 ol {
-  margin: 0 0 30px 30px;
+  margin: 0 0 var(--space-8) var(--space-8);
 }
 
 ul {
@@ -151,11 +151,11 @@ ol {
 
 li {
   line-height: var(--global--line-height-tight);
-  margin: 5px 0 0 20px;
+  margin: var(--space-1) 0 0 var(--space-5);
 
   > ul,
   > ol {
-    margin: 10px 0 0 20px;
+    margin: var(--space-3) 0 0 var(--space-5);
   }
 }
 
@@ -169,11 +169,11 @@ dt {
 }
 
 dt + dd {
-  margin-top: 5px;
+  margin-top: var(--space-1);
 }
 
 dd + dt {
-  margin-top: 15px;
+  margin-top: var(--space-4);
 }
 
 // Selection
@@ -231,9 +231,9 @@ hr {
 pre {
 
   @include block-white($site-border-radius);
-  margin: 20px 0;
+  margin: var(--space-5) 0;
   overflow: auto;
-  padding: 20px;
+  padding: var(--space-5);
   white-space: pre-wrap;
   word-wrap: break-word;
 }
@@ -265,7 +265,7 @@ samp {
   menu,
   ol,
   ul {
-    margin: 10px 0;
-    padding: 0 0 0 20px;
+    margin: var(--space-3) 0;
+    padding: 0 0 0 var(--space-5);
   }
 }

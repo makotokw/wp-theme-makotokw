@@ -10,7 +10,7 @@
 }
 
 .pagination-single {
-  margin-top: 20px;
+  margin-top: var(--space-5);
 
   &.only-next {
 
@@ -34,7 +34,7 @@
       &.previous-post {
 
         .arrow {
-          margin-right: 10px;
+          margin-right: var(--space-3);
         }
       }
 
@@ -43,7 +43,7 @@
         text-align: right;
 
         .arrow {
-          margin-left: 10px;
+          margin-left: var(--space-3);
         }
       }
 
@@ -72,13 +72,13 @@
 
           .arrow {
             margin-left: 0;
-            margin-right: 10px;
+            margin-right: var(--space-3);
           }
         }
       }
 
       a + a {
-        margin-top: 10px;
+        margin-top: var(--space-3);
       }
     }
   }

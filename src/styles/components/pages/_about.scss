@@ -26,21 +26,21 @@
   padding-left: 0;
 
   li {
-    padding: 5px 0;
+    padding: var(--space-1) 0;
     margin: 0;
     line-height: 2;
   }
 
   time {
     border: $site-border-width solid $site-default-border;
-    margin-right: 5px;
+    margin-right: var(--space-1);
     padding: 0;
     width: 120px;
     display: inline-block;
     text-align: center;
 
     @include smaller-than-tablet-screen {
-      padding: 0 5px;
+      padding: 0 var(--space-1);
       width: auto;
     }
   }

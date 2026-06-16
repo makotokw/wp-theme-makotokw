@@ -10,7 +10,7 @@ $share-icon-size: 30px;
   justify-content: center;
 
   li {
-    margin: 0 10px 0 0;
+    margin: 0 var(--space-3) 0 0;
     padding: 0;
   }
 }

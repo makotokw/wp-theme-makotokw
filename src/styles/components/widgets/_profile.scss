@@ -17,19 +17,19 @@ $site-author-image-base: 75px;
 
   .author-content {
     flex: 1 1 auto;
-    padding-left: 16px;
+    padding-left: var(--space-4);
 
     .author-name {
       font-size: var(--global--font-size-sm);
       font-weight: var(--global--font-weight-strong);
       line-height: 1;
-      margin-bottom: 5px;
+      margin-bottom: var(--space-1);
     }
 
     .author-job-title {
       font-size: var(--global--font-size-xs);
       color: $site-neutral-text;
-      margin-bottom: 20px;
+      margin-bottom: var(--space-5);
     }
 
     .author-description {
@@ -43,7 +43,7 @@ $site-author-image-base: 75px;
 
         @extend .btn-outlined;
         @include circle(40px);
-        margin-right: 10px;
+        margin-right: var(--space-3);
       }
     }
   }

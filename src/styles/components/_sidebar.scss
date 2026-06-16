@@ -1,8 +1,8 @@
 @use 'abstracts' as *;
 
 .site-sidebar {
-  margin-top: 50px;
-  padding-bottom: 50px;
+  margin-top: var(--space-12);
+  padding-bottom: var(--space-12);
   border-top: $site-border-width solid $site-default-border;
   background-color: $sidebar-default-bg;
 
@@ -13,14 +13,14 @@
   }
 
   .widget {
-    margin: 0 0 40px 20px;
+    margin: 0 0 var(--space-10) var(--space-5);
     width: calc(50% - 20px);
 
     .widget-title {
       font-size: var(--global--font-size-lg);
       font-weight: var(--widget--font-weight-title);
       line-height: var(--widget--line-height-title);
-      margin: 45px 0 25px;
+      margin: var(--space-12) 0 var(--space-6);
 
       // disable svg-icon
       i, .svg-inline--fa {
@@ -41,7 +41,7 @@
     }
 
     .widget {
-      margin: 0 5px 4px 5px;
+      margin: 0 var(--space-1) var(--space-1) var(--space-1);
       width: calc(100% - 10px);
       border-top: $site-border-width solid $site-default-border;
 

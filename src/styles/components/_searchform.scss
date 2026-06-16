@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: stretch;
   position: relative;
-  padding: 10px;
+  padding: var(--space-3);
 
   .search-form-text {
     appearance: none;

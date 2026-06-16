@@ -34,7 +34,7 @@ input[type="search"],
 input[type="tel"],
 input[type="color"],
 .uneditable-input {
-  padding: 7px 0 7px 6px;
+  padding: var(--space-2) 0 var(--space-2) var(--space-2);
   border: $site-border-width solid $site-default-border;
   text-indent: 1px;
   border-radius: $site-border-radius;

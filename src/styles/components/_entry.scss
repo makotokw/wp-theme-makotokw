@@ -32,7 +32,7 @@
   }
 
   .entry-meta-primary {
-    margin-bottom: 15px;
+    margin-bottom: var(--space-4);
 
     .term-links {
       // Term meta is presented as short tag labels; uppercase normalizes latin slugs.
@@ -56,13 +56,13 @@
     }
 
     .entry-meta-primary {
-      margin-bottom: 30px;
+      margin-bottom: var(--space-8);
     }
 
     .entry-meta-secondary {
 
       .term-links > * {
-        margin-top: 30px;
+        margin-top: var(--space-8);
       }
     }
   }
@@ -143,7 +143,7 @@
   > * {
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 10px;
+    margin-bottom: var(--space-3);
 
     &:first-child {
       margin-top: 0;
@@ -173,7 +173,7 @@
     }
 
     figcaption {
-      margin-top: 5px;
+      margin-top: var(--space-1);
       color: var(--color-text-caption);
       text-align: center;
     }
@@ -182,11 +182,11 @@
   @include smaller-than-tablet-screen {
 
     img {
-      margin: 30px auto;
+      margin: var(--space-8) auto;
     }
 
     figure {
-      margin: 30px auto;
+      margin: var(--space-8) auto;
 
       img {
         margin: 0 auto;
@@ -226,7 +226,7 @@
 
   @extend .btn-text;
   float: right;
-  margin-top: 10px;
+  margin-top: var(--space-3);
 }
 
 // Media
@@ -304,17 +304,17 @@ object {
 .entry-footer, .comments {
 
   .section-inner {
-    margin: 0 auto 40px auto;
+    margin: 0 auto var(--space-10) auto;
 
     hr {
-      margin: 0 0 40px 0;
+      margin: 0 0 var(--space-10) 0;
     }
 
     @include smaller-than-tablet-screen {
-      margin: 0 auto 28px auto;
+      margin: 0 auto var(--space-6) auto;
 
       hr {
-        margin: 0 0 28px 0;
+        margin: 0 0 var(--space-6) 0;
       }
     }
   }
@@ -328,23 +328,23 @@ object {
 .entry-footer {
 
   .entry-meta-secondary {
-    margin: 20px 80px 20px 80px;
+    margin: var(--space-5) var(--space-20) var(--space-5) var(--space-20);
 
     .term-links {
       // Term meta is presented as short tag labels; uppercase normalizes latin slugs.
       text-transform: uppercase;
 
       .term-tags-links {
-        margin-right: 10px;
+        margin-right: var(--space-3);
       }
     }
 
     @include smaller-than-tablet-screen {
-      margin: 10px 20px 10px 20px;
+      margin: var(--space-3) var(--space-5) var(--space-3) var(--space-5);
     }
 
     @include smaller-than-mobile-screen {
-      margin: 10px;
+      margin: var(--space-3);
     }
   }
 }
@@ -367,7 +367,7 @@ object {
 
   li {
     list-style: none;
-    margin: 0 0 20px;
+    margin: 0 0 var(--space-5);
   }
 }
 
@@ -389,7 +389,7 @@ object {
   }
 
   .arrow {
-    margin-right: 10px;
+    margin-right: var(--space-3);
   }
 
   .post-image {
@@ -403,7 +403,7 @@ object {
   }
 
   .inner {
-    margin-left: 15px;
+    margin-left: var(--space-4);
 
     .title {
 
@@ -414,7 +414,7 @@ object {
       display: block;
       font-size: 15px;
       color: $site-neutral-text;
-      margin: 5px 0 0;
+      margin: var(--space-1) 0 0;
     }
   }
 
@@ -437,7 +437,7 @@ object {
 .entry-footer {
 
   #jp-relatedposts {
-    margin: 8px 0 0 0;
+    margin: var(--space-2) 0 0 0;
     padding: 0;
 
     .jp-relatedposts-headline {
@@ -464,22 +464,22 @@ object {
 
   .entry-header,
   .entry-content {
-    padding: 30px 25px 0 30px;
+    padding: var(--space-8) var(--space-6) 0 var(--space-8);
   }
 
   .entry-footer {
-    padding-bottom: 30px;
+    padding-bottom: var(--space-8);
   }
 
   @include smaller-than-tablet-screen {
 
     .entry-header,
     .entry-content {
-      padding: 20px 15px 0 20px;
+      padding: var(--space-5) var(--space-4) 0 var(--space-5);
     }
 
     .entry-footer {
-      padding-bottom: 20px;
+      padding-bottom: var(--space-5);
     }
   }
 
@@ -487,11 +487,11 @@ object {
 
     .entry-header,
     .entry-content {
-      padding: 20px 5px 0 10px;
+      padding: var(--space-5) var(--space-1) 0 var(--space-3);
     }
 
     .entry-footer {
-      padding-bottom: 10px;
+      padding-bottom: var(--space-3);
     }
   }
 }

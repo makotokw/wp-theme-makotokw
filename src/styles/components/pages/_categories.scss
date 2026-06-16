@@ -20,7 +20,7 @@
         a {
 
           @extend .btn-outlined;
-          margin: 5px 0 5px 5px;
+          margin: var(--space-1) 0 var(--space-1) var(--space-1);
           float: none;
 
           &:hover {
@@ -30,7 +30,7 @@
         }
 
         > .cat-item-entry-count {
-          margin: 0 10px 0 -15px;
+          margin: 0 var(--space-3) 0 -15px;
         }
       }
 

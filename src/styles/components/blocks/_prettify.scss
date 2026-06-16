@@ -113,7 +113,7 @@
     padding: 0;
     padding-top: math.div($block-padding, 2);
     padding-left: math.div($block-padding, 2);
-    margin: 20px 10px;
+    margin: var(--space-5) var(--space-3);
 
     .code-filename {
       color: $site-primary-color;

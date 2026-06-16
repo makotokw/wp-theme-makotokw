@@ -41,8 +41,8 @@
 
   > li {
     display: inline-block;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: var(--space-1);
+    padding-right: var(--space-1);
 
     &:first-child {
       padding-left: 0;
@@ -61,7 +61,7 @@
 
   th,
   td {
-    padding: 6px 8px;
+    padding: var(--space-2) var(--space-2);
     text-align: left;
     vertical-align: top;
     border-top: $site-border-width solid $site-default-border;
@@ -98,20 +98,20 @@
       border-radius: 0;
     }
   }
-  margin-bottom: 20px;
+  margin-bottom: var(--space-5);
 }
 
 /* Alignment */
 .align-left {
   display: inline;
   float: left;
-  margin-right: 15px;
+  margin-right: var(--space-4);
 }
 
 .align-right {
   display: inline;
   float: right;
-  margin-left: 15px;
+  margin-left: var(--space-4);
 }
 
 .align-center {

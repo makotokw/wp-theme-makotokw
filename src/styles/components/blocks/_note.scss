@@ -16,8 +16,8 @@
 
 %base-note {
   display: block;
-  margin: 0 0 40px 0;
-  padding: 20px;
+  margin: 0 0 var(--space-10) 0;
+  padding: var(--space-5);
   border: $site-border-width solid $site-default-border;
 
   a {
@@ -27,7 +27,7 @@
 
 %note-with-svg {
   position: relative;
-  padding: 20px 20px 20px 60px;
+  padding: var(--space-5) var(--space-5) var(--space-5) var(--space-16);
 
   svg {
     position: absolute;
@@ -39,7 +39,7 @@
   }
 
   @include smaller-than-tablet-screen {
-    padding: 15px 15px 15px 45px;
+    padding: var(--space-4) var(--space-4) var(--space-4) var(--space-12);
 
     svg {
       top: 10px;

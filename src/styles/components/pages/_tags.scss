@@ -1,12 +1,12 @@
 @use 'abstracts' as *;
 
 .tags-cloud {
-  padding: 0 5px;
+  padding: 0 var(--space-1);
   line-height: 2;
 
   .tag {
     display: inline-block;
-    margin: 0 5px;
+    margin: 0 var(--space-1);
   }
 
   .rank-1 {

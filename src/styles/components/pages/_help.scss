@@ -16,7 +16,7 @@
       // Fluid title; drops the fixed 40px / 30px breakpoint steps.
       font-size: clamp(1.875rem, 1.4rem + 2vw, 2.5rem);
       line-height: 1.15;
-      margin-bottom: 20px;
+      margin-bottom: var(--space-5);
     }
   }
 }

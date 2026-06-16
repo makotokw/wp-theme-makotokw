@@ -7,7 +7,7 @@
   justify-content: center;
   overflow: visible;
   outline: none;
-  margin: -5px 0 0 5px;
+  margin: -5px 0 0 var(--space-1);
   background: transparent;
 
   &:focus-visible {
