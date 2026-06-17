@@ -23,7 +23,7 @@ function makotokw_awesome_icon_by_slug( $slug ) {
  * @param string $default_value
  * @return string
  */
-function makotokw_find_awesome_icon_class( $slug, $default_value = 'folder' ) {
+function makotokw_find_awesome_icon_class( $slug, $default_value = 'fas fa-folder' ) {
 	$map = array(
 		'interior'            => 'fas fa-couch',
 		'comedy'              => 'fas fa-face-laugh-beam',

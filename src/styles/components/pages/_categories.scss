@@ -1,43 +1,104 @@
 @use 'abstracts' as *;
-@use 'components/button';
 
-.page-template-categories {
+.page-template-template-categories {
+
+  &.page .entry-header {
+    text-align: center;
+
+    .entry-title {
+      text-align: center;
+      margin-bottom: var(--space-6);
+    }
+  }
 
   .entry-content {
 
     .list-categories {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: block;
+      max-width: 560px;
+      margin: 0 auto;
 
       .cat-item {
-        display: inline-block;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 0;
+        border-bottom: $site-border-width solid $site-default-border;
 
-        svg {
-          min-width: inherit;
-        }
+        > a {
+          flex: 1 1 auto;
+          display: flex;
+          align-items: center;
+          gap: var(--space-4);
+          padding: var(--space-4) var(--space-2);
+          color: $entry-text;
+          text-decoration: none;
 
-        a {
-
-          @extend .btn-outlined;
-          margin: var(--space-1) 0 var(--space-1) var(--space-1);
-          float: none;
-
-          &:hover {
-            border-color: var(--color-brand);
+          // Per-category icon is the decorative anchor of each directory row.
+          [class*="fa-"] {
+            flex-shrink: 0;
+            box-sizing: content-box;
+            width: 1.1em;
+            height: 1.1em;
+            // Cancel the global `.list-categories .cat-item svg { min-width: 1.5em }`,
+            // which would stretch this round badge horizontally once FA renders an SVG.
+            min-width: 0;
+            padding: 0.55em;
+            border-radius: var(--radius-pill);
+            background: $site-surface-color;
             color: var(--color-brand);
+            font-size: var(--global--font-size-md);
+            transition:
+              background var(--duration-fast) var(--ease-out),
+              color var(--duration-fast) var(--ease-out);
           }
         }
 
         > .cat-item-entry-count {
-          margin: 0 var(--space-3) 0 -15px;
+          flex-shrink: 0;
+          margin: 0 var(--space-2);
+          min-width: auto;
+          min-height: auto;
+          background: transparent;
+          border-radius: 0;
+          color: $site-neutral-text;
+          font-weight: var(--global--font-weight-strong);
+          line-height: inherit;
         }
-      }
 
-      .children {
-        display: inline;
-        list-style: none;
-        padding: 0;
+        // Brand accent on the active row only. Scope to the anchor's own
+        // hover/focus state (not .cat-item:hover) so hovering a child row does
+        // not also light up the parent, which is an ancestor and would
+        // otherwise match :hover. Focus-visible keeps it reachable by keyboard.
+        > a:hover,
+        > a:focus-visible {
+          color: var(--color-brand);
+
+          [class*="fa-"] {
+            background: var(--color-brand);
+            color: $site-on-primary-text-color;
+          }
+        }
+
+        // Sub-categories form an indented branch under the parent.
+        .children {
+          flex-basis: 100%;
+          margin: 0 0 0 var(--space-12);
+          padding: 0;
+
+          .cat-item {
+            border-bottom: 0;
+
+            > a {
+              padding-top: var(--space-3);
+              padding-bottom: var(--space-3);
+
+              [class*="fa-"] {
+                font-size: var(--global--font-size-sm);
+              }
+            }
+          }
+        }
       }
     }
   }

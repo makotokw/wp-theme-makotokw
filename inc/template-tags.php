@@ -123,7 +123,7 @@ function makotokw_list_categories( $opt = array(), $all = false ) {
 	// replace itemCount text to span element
 	$list = preg_replace( '/\(([\d]+)\)/', '<span class="cat-item-entry-count">$1</span>', $list );
 	$list = preg_replace_callback(
-		'/category\/([^"]+)"\s+\>/',
+		'/category\/([^"]+)"\s*\>/',
 		function ( $matches ) {
 			return $matches[0] . makotokw_awesome_icon_by_slug( trim( $matches[1], '/' ) );
 		},
