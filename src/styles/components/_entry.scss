@@ -40,13 +40,40 @@
     }
   }
 
-  // Align title with content on single views.
-  .single &, .page & {
+  // Align article titles with the reading column on single views.
+  .single & {
 
     .entry-title,
     .entry-meta-primary,
     .entry-meta-secondary {
       text-align: left;
+    }
+
+    .entry-title {
+      // Tighter leading only at display size; smaller h1s keep the heading default.
+      font-size: var(--global--font-size-page-title);
+      line-height: var(--global--line-height-page-title);
+    }
+
+    .entry-meta-primary {
+      margin-bottom: var(--space-8);
+    }
+
+    .entry-meta-secondary {
+
+      .term-links > * {
+        margin-top: var(--space-8);
+      }
+    }
+  }
+
+  // Pages default to a centered title unless a template opts into a content-led layout.
+  .page & {
+
+    .entry-title,
+    .entry-meta-primary,
+    .entry-meta-secondary {
+      text-align: center;
     }
 
     .entry-title {
