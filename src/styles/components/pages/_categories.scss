@@ -24,25 +24,6 @@
           padding: var(--space-4) var(--space-2);
           color: $entry-text;
           text-decoration: none;
-
-          // Per-category icon is the decorative anchor of each directory row.
-          [class*="fa-"] {
-            flex-shrink: 0;
-            box-sizing: content-box;
-            width: 1.1em;
-            height: 1.1em;
-            // Cancel the global `.list-categories .cat-item svg { min-width: 1.5em }`,
-            // which would stretch this round badge horizontally once FA renders an SVG.
-            min-width: 0;
-            padding: 0.55em;
-            border-radius: var(--radius-pill);
-            background: $site-surface-color;
-            color: var(--color-brand);
-            font-size: var(--global--font-size-md);
-            transition:
-              background var(--duration-fast) var(--ease-out),
-              color var(--duration-fast) var(--ease-out);
-          }
         }
 
         > .cat-item-entry-count {
@@ -57,18 +38,11 @@
           line-height: inherit;
         }
 
-        // Brand accent on the active row only. Scope to the anchor's own
-        // hover/focus state (not .cat-item:hover) so hovering a child row does
-        // not also light up the parent, which is an ancestor and would
-        // otherwise match :hover. Focus-visible keeps it reachable by keyboard.
+        // Link text picks up the accent together with the badge; the badge
+        // fill itself comes from the shared rule in components/_categories.
         > a:hover,
         > a:focus-visible {
           color: var(--color-brand);
-
-          [class*="fa-"] {
-            background: var(--color-brand);
-            color: $site-on-primary-text-color;
-          }
         }
 
         // Sub-categories form an indented branch under the parent.

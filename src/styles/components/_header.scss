@@ -183,10 +183,6 @@
 
     a {
       color: $site-default-text;
-
-      i, svg {
-        color: $site-neutral-text;
-      }
     }
 
     .cat-item {
@@ -198,12 +194,16 @@
         border-top: $site-border-width solid $site-default-border;
       }
 
-      a {
+      > a {
         margin: 0;
-        padding: var(--space-4) 0 var(--space-4) var(--space-3);
-        display: block;
+        padding: var(--space-3) var(--space-4);
+        display: flex;
+        align-items: center;
+        gap: var(--space-4);
 
-        &:hover {
+        // Keyboard focus mirrors hover so the row affordance is not pointer-only.
+        &:hover,
+        &:focus-visible {
           text-decoration: none;
           background-color: $button-outlined-bg-over;
         }
@@ -213,10 +213,6 @@
       .children {
         margin: 0;
         padding: 0 0 0 var(--space-10);
-      }
-
-      .cat-item {
-        //border-bottom: none;
       }
 
       .cat-item:last-child {

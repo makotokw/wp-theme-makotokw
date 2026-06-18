@@ -8,11 +8,36 @@
   .cat-item {
     margin: var(--space-1) 0 0 0;
 
-    svg {
-      min-width: 1.5em;
+    // Per-category icon as an outlined round badge, shared by the categories
+    // page and the header overlay so both read as the same component. Brand
+    // color is reserved for hover/focus, so the resting badge is only an
+    // outline and works on any background (page base or overlay surface).
+    [class*="fa-"] {
+      flex-shrink: 0;
+      box-sizing: content-box;
+      width: 1.1em;
+      height: 1.1em;
+      min-width: 0;
+      padding: 0.5em;
+      border: $site-border-width solid $site-default-border;
+      border-radius: var(--radius-pill);
+      background: transparent;
+      color: var(--color-brand);
+      font-size: var(--global--font-size-md);
+      transition:
+        background var(--duration-fast) var(--ease-out),
+        border-color var(--duration-fast) var(--ease-out),
+        color var(--duration-fast) var(--ease-out);
     }
 
-    a {
+    // Brand fill only while the row's own link is hovered/focused (one-point
+    // accent). Scoped to `> a` so hovering a child row does not light up the
+    // parent. Focus-visible keeps it reachable by keyboard.
+    > a:hover [class*="fa-"],
+    > a:focus-visible [class*="fa-"] {
+      background: var(--color-brand);
+      border-color: var(--color-brand);
+      color: $site-on-primary-text-color;
     }
 
     > .cat-item-entry-count {
@@ -30,8 +55,6 @@
   }
 
   .children {
-    //display: inline;
     list-style: none;
-    //padding: 0;
   }
 }
