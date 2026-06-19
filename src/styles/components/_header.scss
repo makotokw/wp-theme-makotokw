@@ -178,6 +178,32 @@
     visibility: hidden;
   }
 
+  .search-form {
+
+    &:has(:focus-visible)::after {
+      content: '';
+      position: absolute;
+      inset: var(--space-3);
+      border-radius: var(--radius-md);
+      outline: 2px solid var(--color-focus-ring);
+      outline-offset: 2px;
+      pointer-events: none;
+    }
+
+    .search-form-text {
+      border-radius: var(--radius-md) 0 0 var(--radius-md);
+    }
+
+    .btn-search {
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    }
+
+    .search-form-text:focus-visible,
+    .btn-search:focus-visible {
+      outline: 0;
+    }
+  }
+
   .list-categories {
     margin: 0;
 
