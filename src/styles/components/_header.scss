@@ -52,8 +52,6 @@
     align-items: center;
     display: flex;
     justify-content: space-between;
-    max-width: 1680px;
-    width: calc(100% - 60px);
     padding: $site-header-margin 0;
     height: $site-header-banner-height;
     max-height: $site-header-banner-height;
@@ -62,17 +60,9 @@
   @include smaller-than-tablet-screen {
 
     .site-header-inner {
-      width: calc(100% - 40px);
       padding: $site-header-margin-small 0;
       height: $site-header-banner-height-small;
       max-height: $site-header-banner-height-small;
-    }
-  }
-
-  @include smaller-than-mobile-screen {
-
-    .site-header-inner {
-      width: calc(100% - 20px);
     }
   }
 }
