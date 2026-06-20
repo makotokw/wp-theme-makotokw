@@ -55,7 +55,7 @@
 		<nav class="site-header-nav">
 			<button class="toggle menu-button" aria-expanded="false">
 				<span class="menu-button-inner show">
-					<span class="menu-icon"><i class="fas fa-ellipsis"></i></span>
+					<span class="menu-icon"><i class="fas fa-bars"></i></span>
 				</span>
 				<span class="menu-button-inner hide">
 					<span class="menu-icon"><i class="fas fa-xmark"></i></span>
