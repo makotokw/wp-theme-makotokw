@@ -53,11 +53,6 @@
 			<div class="site-header-description"><?php bloginfo( 'description' ); ?></div>
 		</div>
 		<nav class="site-header-nav">
-			<a class="menu-button menu-button-top" href="#siteHeader">
-				<span class="menu-button-inner">
-					<span class="menu-icon"><i class="fas fa-arrow-up"></i></span>
-				</span>
-			</a>
 			<button class="toggle menu-button" aria-expanded="false">
 				<span class="menu-button-inner show">
 					<span class="menu-icon"><i class="fas fa-ellipsis"></i></span>
@@ -77,4 +72,3 @@
 <?php makotokw_menu_overlay(); ?>
 <div class="site-main">
 	<main id="siteContent" class="site-content" role="main">
-

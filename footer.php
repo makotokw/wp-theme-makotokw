@@ -47,6 +47,9 @@
 		</div>
 	</div>
 </footer>
+<a id="scrollToTop" class="scroll-to-top" href="#siteHeader" aria-label="<?php esc_attr_e( 'Back to top', 'makotokw' ); ?>">
+	<i class="fas fa-arrow-up" aria-hidden="true"></i>
+</a>
 <?php wp_footer(); ?>
 </body>
 </html>

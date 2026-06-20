@@ -7,6 +7,7 @@ import Header from './header';
 import Content from './content';
 import Footer from './footer';
 import ProgressBar from './progress-bar';
+import ScrollToTop from './scroll-to-top';
 
 const $ = jquery;
 
@@ -21,6 +22,7 @@ class Stage {
       this.content = new Content({ isAdmin: this.isAdmin });
       this.footer = new Footer();
       this.progressBar = new ProgressBar();
+      this.scrollToTop = new ScrollToTop();
       // noinspection JSUnusedGlobalSymbols
       this.smoothScrool = new SmoothScroll('a[href*="#"]', {
         speedAsDuration: true,
@@ -82,6 +84,7 @@ class Stage {
 
   refresh({ byScroll, byResize }) {
     this.progressBar.refresh({ byScroll, byResize });
+    this.scrollToTop.refresh();
     this.refreshing = false;
   }
 

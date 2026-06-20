@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/makotokw2026\n"
-"POT-Creation-Date: 2026-05-30T02:42:35+00:00\n"
+"POT-Creation-Date: 2026-06-19T00:58:08+00:00\n"
 "PO-Revision-Date: 2013-04-28 18:46+0900\n"
 "Last-Translator: Makoto Kawasaki <makoto.kw@gmail.com>\n"
 "Language-Team: Japanese\n"
@@ -69,6 +69,10 @@ msgstr ""
 msgid "Semantic Personal Publishing Platform"
 msgstr ""
 
+#: footer.php:50
+msgid "Back to top"
+msgstr "ページの先頭へ"
+
 #: functions.php:41
 msgid "Footer Menu"
 msgstr "フッターメニュー"
@@ -77,16 +81,16 @@ msgstr "フッターメニュー"
 msgid "Portfolio Menu"
 msgstr "ポートフォリオメニュー"
 
-#: functions.php:113
+#: functions.php:108
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:115
+#: functions.php:110
 msgid "Add widgets here to appear in your sidebar."
 msgstr ""
 
 #. translators: %s: page number
-#: functions.php:292
+#: functions.php:287
 #, php-format
 msgid "Page %s"
 msgstr ""
@@ -120,12 +124,12 @@ msgid "Archives"
 msgstr "アーカイブス"
 
 #. translators: %s: month and year
-#: inc/breadcrumbs.php:42 inc/template-tags.php:259
+#: inc/breadcrumbs.php:42 inc/template-tags.php:257
 msgid "Y/M"
 msgstr "Y年M"
 
 #. translators: %s: year
-#: inc/breadcrumbs.php:45 inc/template-tags.php:262
+#: inc/breadcrumbs.php:45 inc/template-tags.php:260
 msgid "Y"
 msgstr "Y年"
 
@@ -134,8 +138,8 @@ msgid "Search Results"
 msgstr "検索結果"
 
 #. translators: %s: category name
-#: inc/breadcrumbs.php:108 inc/template-tags.php:333 inc/template-tags.php:356
-#: inc/template-tags.php:377
+#: inc/breadcrumbs.php:108 inc/template-tags.php:331 inc/template-tags.php:354
+#: inc/template-tags.php:375
 #, php-format
 msgid "View all posts in %s"
 msgstr "%sの全ての投稿を見る"
@@ -231,57 +235,57 @@ msgid "<time class=\"updated time\" datetime=\"%1$s\">%2$s</time>"
 msgstr ""
 
 #. translators: %s: category name
-#: inc/template-tags.php:250
+#: inc/template-tags.php:248
 #, php-format
 msgid "Category Archives: %s"
 msgstr "%sの記事一覧"
 
 #. translators: %s: tag name
-#: inc/template-tags.php:253
+#: inc/template-tags.php:251
 #, php-format
 msgid "Tag Archives: %s"
 msgstr "%sの記事一覧"
 
 #. translators: %s: date
-#: inc/template-tags.php:256
+#: inc/template-tags.php:254
 #, php-format
 msgid "Daily Archives: %s"
 msgstr "%sの記事一覧"
 
 #. translators: %s: month and year
-#: inc/template-tags.php:259
+#: inc/template-tags.php:257
 #, php-format
 msgid "Monthly Archives: %s"
 msgstr "%sの記事一覧"
 
 #. translators: %s: year
-#: inc/template-tags.php:262
+#: inc/template-tags.php:260
 #, php-format
 msgid "Yearly Archives: %s"
 msgstr "%sの記事一覧"
 
 #. translators: %s: blog taxonomy term name
-#: inc/template-tags.php:265
+#: inc/template-tags.php:263
 #, php-format
 msgid "Blog Archives: %s"
 msgstr "アーカイブ"
 
 #. translators: %s: portfolio taxonomy term name
-#: inc/template-tags.php:268
+#: inc/template-tags.php:266
 #, php-format
 msgid "Portfolio Archives: %s"
 msgstr "%sの記事一覧"
 
-#: inc/template-tags.php:270
+#: inc/template-tags.php:268
 msgid "Search"
 msgstr "検索"
 
-#: inc/template-tags.php:272
+#: inc/template-tags.php:270
 msgid "All posts"
 msgstr "すべての記事"
 
 #. translators: %s: site name
-#: inc/template-tags.php:275
+#: inc/template-tags.php:273
 #, php-format
 msgid "Archives of %s"
 msgstr "%sの記事一覧"
@@ -326,7 +330,7 @@ msgstr "お探しのコンテンツを見つけられませんでした。検索
 msgid "Permalink to %s"
 msgstr ""
 
-#: template-parts/content-summary.php:34
+#: template-parts/content-summary.php:35
 msgid "Continue reading"
 msgstr "続きを読む"
 

@@ -141,14 +141,6 @@
     margin-left: var(--space-1);
     min-width: 40px;
   }
-
-  .menu-button-top {
-    opacity: 0;
-
-    .headroom--not-top & {
-      opacity: 1;
-    }
-  }
 }
 
 .site-progress {
