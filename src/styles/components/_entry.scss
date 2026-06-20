@@ -540,18 +540,11 @@ object {
   max-width: 750px;
 
   .post-summary {
-    margin: var(--global--spacing-vertical) var(--global--spacing-horizontal);
+    padding: 0 var(--global--spacing-horizontal);
     border-bottom: $site-border-width solid $site-default-border;
 
     @include smaller-than-mobile-screen {
-      margin: var(--global--spacing-vertical) 0;
-
-    }
-
-    .post-summaries > &:first-child {
-    }
-
-    .post-summaries &:last-child {
+      padding: 0;
     }
   }
 }
