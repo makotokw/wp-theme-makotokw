@@ -12,7 +12,6 @@ WordPress theme for [blog.makotokw.com](https://blog.makotokw.com).
  * [Headroom.js](https://wicky.nillia.ms/headroom.js/)
  * [Notyf](https://github.com/caroso1222/notyf)
  * [Tippy.js](https://atomiks.github.io/tippyjs/)
- * [clipboard.js](https://clipboardjs.com/)
 
 ## Work With
 

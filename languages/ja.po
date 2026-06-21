@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/makotokw2026\n"
-"POT-Creation-Date: 2026-06-19T00:58:08+00:00\n"
+"POT-Creation-Date: 2026-06-21T02:53:19+00:00\n"
 "PO-Revision-Date: 2013-04-28 18:46+0900\n"
 "Last-Translator: Makoto Kawasaki <makoto.kw@gmail.com>\n"
 "Language-Team: Japanese\n"
@@ -43,7 +43,7 @@ msgid "https://makotokw.com/"
 msgstr ""
 
 #. translators: %1$s: number of comments
-#: comments.php:33
+#: comments.php:34
 #, php-format
 msgctxt "comments title"
 msgid "%1$s Comment"
@@ -51,11 +51,11 @@ msgid_plural "%1$s Comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:45
+#: comments.php:46
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: comments.php:46
+#: comments.php:47
 msgid "Newer Comments &rarr;"
 msgstr ""
 
@@ -124,12 +124,12 @@ msgid "Archives"
 msgstr "アーカイブス"
 
 #. translators: %s: month and year
-#: inc/breadcrumbs.php:42 inc/template-tags.php:257
+#: inc/breadcrumbs.php:42 inc/template-tags.php:256
 msgid "Y/M"
 msgstr "Y年M"
 
 #. translators: %s: year
-#: inc/breadcrumbs.php:45 inc/template-tags.php:260
+#: inc/breadcrumbs.php:45 inc/template-tags.php:259
 msgid "Y"
 msgstr "Y年"
 
@@ -138,8 +138,8 @@ msgid "Search Results"
 msgstr "検索結果"
 
 #. translators: %s: category name
-#: inc/breadcrumbs.php:108 inc/template-tags.php:331 inc/template-tags.php:354
-#: inc/template-tags.php:375
+#: inc/breadcrumbs.php:108 inc/template-tags.php:330 inc/template-tags.php:353
+#: inc/template-tags.php:374
 #, php-format
 msgid "View all posts in %s"
 msgstr "%sの全ての投稿を見る"
@@ -198,6 +198,10 @@ msgstr ""
 msgid "URL Copied!"
 msgstr "リンクをコピーしました"
 
+#: inc/share.php:68
+msgid "Failed to copy URL."
+msgstr "リンクをコピーできませんでした"
+
 #: inc/share.php:68 inc/share.php:70
 msgid "Copy URL"
 msgstr "リンクをコピー"
@@ -206,86 +210,86 @@ msgstr "リンクをコピー"
 msgid "Post"
 msgstr ""
 
-#: inc/template-tags.php:81
+#: inc/template-tags.php:80
 msgid "First"
 msgstr ""
 
-#: inc/template-tags.php:84
+#: inc/template-tags.php:83
 msgid "Previous"
 msgstr ""
 
-#: inc/template-tags.php:96
+#: inc/template-tags.php:95
 msgid "Next"
 msgstr ""
 
-#: inc/template-tags.php:99
+#: inc/template-tags.php:98
 msgid "Last"
 msgstr ""
 
 #. translators: 1: ISO8601 date, 2: formatted date string
-#: inc/template-tags.php:156
+#: inc/template-tags.php:155
 #, php-format
 msgid "<time class=\"published updated time\" datetime=\"%1$s\">%2$s</time>"
 msgstr ""
 
 #. translators: 1: ISO8601 date, 2: formatted date string
-#: inc/template-tags.php:165
+#: inc/template-tags.php:164
 #, php-format
 msgid "<time class=\"updated time\" datetime=\"%1$s\">%2$s</time>"
 msgstr ""
 
 #. translators: %s: category name
-#: inc/template-tags.php:248
+#: inc/template-tags.php:247
 #, php-format
 msgid "Category Archives: %s"
 msgstr "%sの記事一覧"
 
 #. translators: %s: tag name
-#: inc/template-tags.php:251
+#: inc/template-tags.php:250
 #, php-format
 msgid "Tag Archives: %s"
 msgstr "%sの記事一覧"
 
 #. translators: %s: date
-#: inc/template-tags.php:254
+#: inc/template-tags.php:253
 #, php-format
 msgid "Daily Archives: %s"
 msgstr "%sの記事一覧"
 
 #. translators: %s: month and year
-#: inc/template-tags.php:257
+#: inc/template-tags.php:256
 #, php-format
 msgid "Monthly Archives: %s"
 msgstr "%sの記事一覧"
 
 #. translators: %s: year
-#: inc/template-tags.php:260
+#: inc/template-tags.php:259
 #, php-format
 msgid "Yearly Archives: %s"
 msgstr "%sの記事一覧"
 
 #. translators: %s: blog taxonomy term name
-#: inc/template-tags.php:263
+#: inc/template-tags.php:262
 #, php-format
 msgid "Blog Archives: %s"
 msgstr "アーカイブ"
 
 #. translators: %s: portfolio taxonomy term name
-#: inc/template-tags.php:266
+#: inc/template-tags.php:265
 #, php-format
 msgid "Portfolio Archives: %s"
 msgstr "%sの記事一覧"
 
-#: inc/template-tags.php:268
+#: inc/template-tags.php:267
 msgid "Search"
 msgstr "検索"
 
-#: inc/template-tags.php:270
+#: inc/template-tags.php:269
 msgid "All posts"
 msgstr "すべての記事"
 
 #. translators: %s: site name
-#: inc/template-tags.php:273
+#: inc/template-tags.php:272
 #, php-format
 msgid "Archives of %s"
 msgstr "%sの記事一覧"
