@@ -2,7 +2,6 @@
 import jquery from 'jquery';
 import '@fortawesome/fontawesome-free/js/all';
 import 'google-code-prettify/src/prettify';
-import SmoothScroll from 'smooth-scroll';
 import Header from './header';
 import Content from './content';
 import Footer from './footer';
@@ -23,10 +22,6 @@ class Stage {
       this.footer = new Footer();
       this.progressBar = new ProgressBar();
       this.scrollToTop = new ScrollToTop();
-      // noinspection JSUnusedGlobalSymbols
-      this.smoothScrool = new SmoothScroll('a[href*="#"]', {
-        speedAsDuration: true,
-      });
       this.initFontAwesome();
 
       $(window)

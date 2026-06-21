@@ -1,0 +1,10 @@
+@media (prefers-reduced-motion: no-preference) {
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+:where([id]) {
+  scroll-margin-top: calc(var(--site-header--height) + var(--global--admin-bar--height));
+}
