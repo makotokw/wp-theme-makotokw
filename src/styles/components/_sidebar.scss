@@ -3,7 +3,7 @@
 .site-sidebar {
   margin-top: var(--space-12);
   padding-bottom: var(--space-4);
-  border-top: $site-border-width solid $site-default-border;
+  border-top: $site-border-width solid $site-default-border-strong;
   background-color: $sidebar-default-bg;
 
   .site-sidebar-inner {
@@ -41,9 +41,9 @@
     }
 
     .widget {
-      margin: 0 var(--space-1) var(--space-1) var(--space-1);
-      width: calc(100% - 10px);
-      border-top: $site-border-width solid $site-default-border;
+      margin: 0 0 var(--space-1) 0;
+      width: 100%;
+      border-top: $site-border-width solid $site-default-border-strong;
 
       &:first-child {
         border-top: none;

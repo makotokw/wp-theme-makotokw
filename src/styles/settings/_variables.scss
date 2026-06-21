@@ -41,6 +41,7 @@ $site-background-color: var(--color-bg);
 
 $site-default-border: var(--color-border);
 $site-default-border-over: var(--color-border-strong);
+$site-default-border-strong: var(--color-border-strong);
 $site-progress-border: $site-primary-color;
 $site-badge-color: var(--color-badge-bg);
 $site-on-badge-text-color: var(--color-badge-text);
@@ -67,7 +68,7 @@ $header-banner-link: $site-heading-text;
 $header-banner-link-over: $site-default-link;
 
 // Footer  ----------------------------
-$footer-default-bg: var(--color-surface);
+$footer-default-bg: var(--color-surface-sunken);
 $footer-default-text: $site-default-text;
 
 // Sidebar  ----------------------------

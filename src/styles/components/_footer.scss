@@ -3,6 +3,7 @@
 .site-footer {
   background: $footer-default-bg;
   padding: var(--space-10) 0;
+  border-top: $site-border-width solid $site-default-border-strong;
   font-size: var(--global--font-size-xs);
   font-weight: var(--global--font-weight);
   line-height: 1.25;

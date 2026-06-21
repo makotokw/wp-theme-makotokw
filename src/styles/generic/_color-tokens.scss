@@ -2,6 +2,7 @@
   --color-bg: #fff;
   --color-surface: #fff;
   --color-surface-variant: #f8fafc;
+  --color-surface-sunken: #f1f5f9;
   --color-surface-overlay: color-mix(in srgb, var(--color-surface) 80%, transparent);
   --color-text: #334155;
   --color-text-strong: #0f172a;
@@ -85,6 +86,7 @@
   --color-bg: #0f172a;
   --color-surface: #1e293b;
   --color-surface-variant: #334155;
+  --color-surface-sunken: #1e293b;
   --color-surface-overlay: color-mix(in srgb, var(--color-surface) 86%, transparent);
   --color-text: #cbd5e1;
   --color-text-strong: #f8fafc;
