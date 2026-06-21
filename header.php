@@ -48,7 +48,7 @@
 	<div class="site-header-inner section-inner">
 		<div class="site-header-titles">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="site-header-logo">
-				<img src="<?php echo get_theme_file_uri(); ?>/assets/images/logo.svg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" class="site-header-logo-image">
+				<span class="site-header-logo-image" role="img" aria-label="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" style="<?php echo esc_attr( "--logo-mask-image: url('" . get_theme_file_uri( '/assets/images/logo.svg' ) . "')" ); ?>"></span>
 			</a>
 			<div class="site-header-description"><?php bloginfo( 'description' ); ?></div>
 		</div>

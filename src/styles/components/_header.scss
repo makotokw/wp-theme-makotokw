@@ -84,11 +84,18 @@
     // Ease the previous tight logo tracking while keeping a compact wordmark.
     letter-spacing: -0.02em;
     padding-right: var(--space-1);
-    color: $header-banner-link;
 
+    .site-header-logo-image {
+      display: inline-block;
+      width: 117px;
+      height: 24px;
+      background-color: $site-primary-color;
+      mask: var(--logo-mask-image) center / contain no-repeat;
+      transition: background-color var(--duration-fast) var(--ease-out);
+    }
 
-    &:hover {
-      color: $header-banner-link-over;
+    &:hover .site-header-logo-image {
+      background-color: var(--color-brand-hover);
     }
   }
 

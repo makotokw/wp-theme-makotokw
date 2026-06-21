@@ -9,6 +9,12 @@
   outline: none;
   margin: -5px 0 0 var(--space-1);
   background: transparent;
+  color: $header-default-link;
+  transition: color var(--duration-fast) var(--ease-out);
+
+  &:hover {
+    color: $header-default-link-over;
+  }
 
   &:focus-visible {
     outline: 2px solid var(--color-focus-ring);
