@@ -1,5 +1,3 @@
-// noinspection NpmUsedModulesInstalled
-import jquery from 'jquery';
 import '@fortawesome/fontawesome-free/js/all';
 import 'google-code-prettify/src/prettify';
 import Header from './header';
@@ -8,56 +6,60 @@ import Footer from './footer';
 import ProgressBar from './progress-bar';
 import ScrollToTop from './scroll-to-top';
 
-const $ = jquery;
-
 /**
  * Stage
  */
 class Stage {
   constructor() {
-    $(document).ready(() => {
-      this.isAdmin = ($('#wpadminbar').length > 0);
-      this.header = new Header({ stage: this });
-      this.content = new Content({ isAdmin: this.isAdmin });
-      this.footer = new Footer();
-      this.progressBar = new ProgressBar();
-      this.scrollToTop = new ScrollToTop();
-      this.initFontAwesome();
+    if (document.readyState !== 'loading') {
+      this.init();
+    } else {
+      document.addEventListener('DOMContentLoaded', () => this.init());
+    }
+  }
 
-      $(window)
-        .scroll(() => {
-          this.requestRefresh({ byScroll: true });
-        })
-        .resize(() => {
-          this.requestRefresh({ byResize: true });
-        });
-      this.requestRefresh({ byResize: true });
-    });
+  init() {
+    this.header = new Header({ stage: this });
+    this.content = new Content();
+    this.footer = new Footer();
+    this.progressBar = new ProgressBar();
+    this.scrollToTop = new ScrollToTop();
+    this.initFontAwesome();
+    this.initViewportRefresh();
   }
 
   initFontAwesome() {
-    if (window.FontAwesome) {
-      $('.enclosure-github').each(function () {
-        $(this).prepend(
-          FontAwesome.icon(FontAwesome.findIconDefinition({ prefix: 'fab', iconName: 'github' })).html,
-        );
-      });
-      $('.enclosure,.enclosure-qiita,.note-link').each(function () {
-        $(this).prepend(
-          FontAwesome.icon(FontAwesome.findIconDefinition({ prefix: 'fas', iconName: 'bookmark' })).html,
-        );
-      });
-      $('.enclosure-evernote').each(function () {
-        $(this).prepend(
-          FontAwesome.icon(FontAwesome.findIconDefinition({ prefix: 'fab', iconName: 'evernote' })).html,
-        );
-      });
-      $('.note-comment').each(function () {
-        $(this).prepend(
-          FontAwesome.icon(FontAwesome.findIconDefinition({ prefix: 'fas', iconName: 'comment' })).html,
-        );
-      });
+    if (!window.FontAwesome) {
+      return;
     }
+    const icons = [
+      { selector: '.enclosure-github', prefix: 'fab', iconName: 'github' },
+      { selector: '.enclosure,.enclosure-qiita,.note-link', prefix: 'fas', iconName: 'bookmark' },
+      { selector: '.enclosure-evernote', prefix: 'fab', iconName: 'evernote' },
+      { selector: '.note-comment', prefix: 'fas', iconName: 'comment' },
+    ];
+    icons.forEach(({ selector, prefix, iconName }) => {
+      this.prependFontAwesomeIcon(selector, prefix, iconName);
+    });
+  }
+
+  prependFontAwesomeIcon(selector, prefix, iconName) {
+    const { html } = window.FontAwesome.icon(
+      window.FontAwesome.findIconDefinition({ prefix, iconName }),
+    );
+    document.querySelectorAll(selector).forEach((element) => {
+      element.insertAdjacentHTML('afterbegin', html.join(''));
+    });
+  }
+
+  initViewportRefresh() {
+    window.addEventListener('scroll', () => {
+      this.requestRefresh({ byScroll: true });
+    });
+    window.addEventListener('resize', () => {
+      this.requestRefresh({ byResize: true });
+    });
+    this.requestRefresh({ byResize: true });
   }
 
   toggleFixed() {

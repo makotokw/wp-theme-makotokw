@@ -24,21 +24,8 @@ export default [
     languageOptions: {
       globals: {
         ...globals.browser,
-        // jQuery globals (was env.jquery: true)
-        $: 'readonly',
-        jQuery: 'readonly',
-        // Project specific globals
-        makotokw: 'readonly',
         prettyPrint: 'readonly',
         FontAwesome: 'readonly',
-      },
-    },
-    settings: {
-      // Keep the resolver alias from the previous (Flat) config
-      'import/resolver': {
-        alias: {
-          map: [['jquery', './src/scripts/shims/jquery-global.js']],
-        },
       },
     },
     rules: {

@@ -93,27 +93,4 @@ $share-icon-size: 30px;
     --share-bg: var(--color-share-url-bg);
   }
 
-  .share-count {
-    position: absolute;
-    left: 27px;
-    top: -8px;
-
-    @include smaller-than-tablet-screen {
-      left: 17px;
-      top: -8px;
-    }
-    background-color: $site-badge-color;
-    color: $site-on-badge-text-color;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 6.5px;
-    font-weight: var(--global--font-weight-strong);
-    min-height: 20px;
-    min-width: 20px;
-    line-height: 20px;
-
-    &.share-count-has {
-      opacity: 1;
-    }
-  }
 }

@@ -20,12 +20,6 @@ export default defineConfig(({ mode }) => ({
     strictPort: true,
     cors: true,
   },
-  resolve: {
-    alias: {
-      // Map jquery import to global jQuery provided by WordPress
-      jquery: path.resolve(__dirname, 'src/scripts/shims/jquery-global.js'),
-    },
-  },
   css: {
     devSourcemap: true,
     preprocessorOptions: {

@@ -1,19 +1,18 @@
-// noinspection NpmUsedModulesInstalled
-import jquery from 'jquery';
-
-const $ = jquery;
-
 class ProgressBar {
   constructor() {
-    this.$siteProgress = $('#siteProgress');
+    this.element = document.getElementById('siteProgress');
   }
 
   set max(value) {
-    this.$siteProgress.attr('max', value);
+    if (this.element) {
+      this.element.max = value;
+    }
   }
 
   set val(value) {
-    this.$siteProgress.val(value);
+    if (this.element) {
+      this.element.value = value;
+    }
   }
 
   refresh({ byResize }) {

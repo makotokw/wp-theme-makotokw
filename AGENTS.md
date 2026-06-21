@@ -47,7 +47,6 @@ yarn build:dev   # Non-minified build
 
 - When `WP_THEME_DEBUG` is true and the Vite dev server is running, `functions.php` loads ES modules from the dev server instead of `dist/` (for HMR). Reachability from Docker is checked via `host.docker.internal:5173` (`makotokw_is_vite_running`).
 - `dist/`, `style.css`, and `amazonjs.css` are build artifacts. To change the appearance, edit files in `src/` and run `yarn build`. Do not edit the generated files directly.
-- jQuery is aliased to WordPress's bundled version via `src/scripts/shims/jquery-global.js`. Using `import 'jquery'` in theme JS resolves to the global `jQuery`.
 
 ## Lint and Quality Checks
 
