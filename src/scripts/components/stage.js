@@ -78,6 +78,7 @@ class Stage {
   }
 
   refresh({ byScroll, byResize }) {
+    this.header.refresh({ byScroll, byResize });
     this.progressBar.refresh({ byScroll, byResize });
     this.scrollToTop.refresh();
     this.refreshing = false;

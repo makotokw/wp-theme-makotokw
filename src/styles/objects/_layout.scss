@@ -20,7 +20,7 @@ body {
 }
 
 .site-main {
-  margin: calc(var(--site-header--height) + var(--global--admin-bar--height)) auto 0 auto; // for sticky header
+  margin: 0 auto;
 }
 
 .site-content {

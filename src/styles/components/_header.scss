@@ -1,38 +1,19 @@
 @use 'abstracts' as *;
 
 .site-header {
+  position: sticky;
+  top: var(--global--admin-bar--height);
+  z-index: 30;
   will-change: transform;
   transition: transform var(--duration-base) var(--ease-out);
   box-shadow: var(--shadow-1);
 
-  &.headroom {
-    position: fixed;
-    top: var(--global--admin-bar--height);
-    left: 0;
-    right: 0;
-    z-index: 30;
+  &.is-unpinned {
+    transform: translateY(calc(-100% + var(--site-header-progress-bar-height)));
   }
 
-  &.headroom--pinned {
-    transform: translateY(0%);
-    box-shadow: var(--shadow-1);
-  }
-
-  &.headroom--unpinned {
-    // for IE11
-    //noinspection CssOverwrittenProperties
-    transform: translateY(-100%);
-    // 4px = $site-header-progress-height
-    //noinspection CssOverwrittenProperties
-    transform: translateY(calc(-100% + 4px));
-  }
-
-  &.headroom--not-top {
+  &.is-scrolled {
     background: var(--color-surface-overlay);
-
-    .site-header-banner {
-      display: none;
-    }
   }
 }
 
@@ -74,14 +55,12 @@
   justify-content: flex-start;
   overflow: hidden;
   line-height: 1;
-  // for IE11
   padding: var(--space-3) 0;
 
   .site-header-logo {
     font-size: 28px;
     font-weight: var(--global--font-weight-strong);
     text-decoration: none;
-    // Ease the previous tight logo tracking while keeping a compact wordmark.
     letter-spacing: -0.02em;
     padding-right: var(--space-1);
 
@@ -142,7 +121,7 @@
 
 .site-progress {
   position: absolute;
-  height: $site-header-progress-height;
+  height: var(--site-header-progress-bar-height);
   right: 0;
   bottom: 0;
   left: 0;
@@ -216,7 +195,6 @@
         align-items: center;
         gap: var(--space-4);
 
-        // Keyboard focus mirrors hover so the row affordance is not pointer-only.
         &:hover,
         &:focus-visible {
           text-decoration: none;
@@ -224,7 +202,6 @@
         }
       }
 
-      // child
       .children {
         margin: 0;
         padding: 0 0 0 var(--space-10);

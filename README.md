@@ -9,7 +9,6 @@ WordPress theme for [blog.makotokw.com](https://blog.makotokw.com).
  * Inspired [Twenty Fifteen](https://twentyfifteendemo.wordpress.com/), [ghost](https://blog.ghost.org/) and [medium](https://medium.com/)
  * [Font Awesome](http://fortawesome.github.io/Font-Awesome/) Icons
  * [google-code-prettify](https://github.com/google/code-prettify)
- * [Headroom.js](https://wicky.nillia.ms/headroom.js/)
  * [Notyf](https://github.com/caroso1222/notyf)
  * [Tippy.js](https://atomiks.github.io/tippyjs/)
 
