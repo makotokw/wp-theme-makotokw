@@ -5,6 +5,21 @@ $author-border-width: 2px;
 // Comments
 // --------------------------------------------------------------
 
+.comments.has-comments {
+
+  .comment-form-section {
+    padding-top: var(--space-10);
+    border-top: $site-border-width solid $site-default-border;
+
+    @include smaller-than-tablet-screen {
+      // Bleed the separator through the section padding to the column edges.
+      margin-left: calc(-1 * var(--section-inner-gutter));
+      margin-right: calc(-1 * var(--section-inner-gutter));
+      padding: var(--space-6) var(--section-inner-gutter) 0;
+    }
+  }
+}
+
 .comment-list {
   list-style-type: none;
   margin: 0;

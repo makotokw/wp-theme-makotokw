@@ -41,7 +41,6 @@ function makotokw_content_nav() {
 	}
 	?>
 	<nav class="pagination-single section-inner<?php echo esc_attr( $pagination_classes ); ?>" aria-label="<?php esc_attr_e( 'Post', 'makotokw' ); ?>" role="navigation">
-		<hr aria-hidden="true" />
 		<div class="pagination-single-inner">
 			<?php if ( $prev_post ) : ?>
 				<a class="previous-post" href="<?php echo esc_url( get_permalink( $prev_post->ID ) ); ?>">

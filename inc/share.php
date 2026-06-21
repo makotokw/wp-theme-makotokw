@@ -77,7 +77,6 @@ C253.185,138.381 230.249,138.381 230.249,138.381 C230.249,138.381 230.249,153.14
 function makotokw_share_this() {
 	?>
 	<div id="shareThis" class="share-this section-inner" data-url="<?php echo makotokw_get_share_permalink(); ?>">
-		<hr aria-hidden="true" />
 		<?php makotokw_share_buttons(); ?>
 	</div>
 	<?php

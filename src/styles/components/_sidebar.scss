@@ -37,12 +37,12 @@
     margin-top: 0;
     margin-bottom: 0;
 
-    .site-sidebar-inner {
-    }
-
     .widget {
-      margin: 0 0 var(--space-1) 0;
-      width: 100%;
+      // Bleed the separator to the band edges while preserving the content inset.
+      margin: 0 calc(-1 * var(--section-inner-gutter)) var(--space-1);
+      width: auto;
+      padding-left: var(--section-inner-gutter);
+      padding-right: var(--section-inner-gutter);
       border-top: $site-border-width solid $site-default-border-strong;
 
       &:first-child {

@@ -44,6 +44,9 @@
   --global--spacing-horizontal: var(--space-6);
   --global--spacing-vertical: var(--space-8);
 
+  /* Layout */
+  --section-inner-gutter: 40px;
+
   /* Radius */
   --radius-sm: 6px;
   --radius-md: 10px;
@@ -102,6 +105,16 @@
     /* Header */
     --site-header--height: #{$site-header-height-small};
 
+    /* Layout */
+    --section-inner-gutter: 20px;
+
+  }
+}
+
+@include smaller-than-mobile-screen {
+
+  :root {
+    --section-inner-gutter: 10px;
   }
 }
 

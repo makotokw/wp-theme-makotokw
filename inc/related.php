@@ -65,7 +65,6 @@ function makotokw_related_posts( $title = 'Related Posts', $arg = array() ) {
 
 	if ( $rq && $rfq && ( $rfq->have_posts() || $rq->have_posts() ) ) : ?>
 		<section class="related-posts section-inner">
-			<hr/>
 			<h2 class="section-title"><?php echo esc_html( $title ); ?></h2>
 			<ul class="post-inlines">
 				<?php foreach ( array( $rq, $rfq ) as $q ) : ?>
@@ -107,7 +106,6 @@ function makotokw_related_portfolio( $title = 'Related Software' ) {
 		if ( $rq->have_posts() ) {
 			?>
 			<section class="related-software section-inner">
-				<hr/>
 				<h2 class="section-title"><?php echo esc_html( $title ); ?></h2>
 				<ul>
 					<?php if ( $rq->have_posts() ) : ?>

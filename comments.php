@@ -20,12 +20,13 @@
 if ( post_password_required() ) {
 	return;
 }
+
+$makotokw_has_comments = have_comments();
 ?>
 
-<aside id="comments" class="comments">
+<aside id="comments" class="comments<?php echo $makotokw_has_comments ? ' has-comments' : ''; ?>">
 	<div class="section-inner">
-		<?php if ( have_comments() ) : ?>
-			<hr/>
+		<?php if ( $makotokw_has_comments ) : ?>
 			<h2 class="section-title">
 				<?php
 				printf(
@@ -47,9 +48,10 @@ if ( post_password_required() ) {
 				</nav><!-- #comment-nav-before -->
 			<?php endif; // check for comment navigation ?>
 
-		<?php endif; // have_comments() ?>
+		<?php endif; // $makotokw_has_comments ?>
 
-		<hr/>
-		<?php comment_form( array( 'format' => 'html5' ) ); ?>
+		<div class="comment-form-section">
+			<?php comment_form( array( 'format' => 'html5' ) ); ?>
+		</div>
 	</div>
 </aside><!-- #comments -->
