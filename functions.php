@@ -226,15 +226,6 @@ function makotokw_pingback_header() {
 add_action( 'wp_head', 'makotokw_pingback_header' );
 
 /**
- * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
- */
-function makotokw_page_menu_args( $args ) {
-	$args['show_home'] = true;
-	return $args;
-}
-add_filter( 'wp_page_menu_args', 'makotokw_page_menu_args' );
-
-/**
  * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
  */
 function makotokw_enhanced_image_navigation( $url, $id ) {
@@ -304,17 +295,6 @@ function makotokw_template_redirect() {
 	}
 }
 add_action( 'template_redirect', 'makotokw_template_redirect' );
-
-/**
- * Flush out the transients used in makotokw_categorized_blog
- */
-function makotokw_category_transient_flusher() {
-	// Like, beat it. Dig?
-	delete_transient( 'all_the_cool_cats' );
-}
-
-add_action( 'edit_category', 'makotokw_category_transient_flusher' );
-add_action( 'save_post', 'makotokw_category_transient_flusher' );
 
 require get_template_directory() . '/inc/admin.php';
 require get_template_directory() . '/inc/font-awesome.php';
