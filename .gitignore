@@ -24,8 +24,11 @@ node_modules
 .idea/
 
 ### AI ###
-.junie/memory
+.worktrees/
 .claude/*.local.json
+.junie/memory
+.private-journal/
+.superpowers/
 *.local.md
 *.override.md
 specs/
