@@ -538,9 +538,21 @@ object {
   margin: 0 auto;
   max-width: 750px;
 
+  // Without a content header above, the listing supplies its own top gap
+  // (the header otherwise provides it via its margin).
+  &.no-content-header {
+    margin-top: var(--global--spacing-vertical);
+  }
+
   .post-summary {
     padding: 0 var(--global--spacing-horizontal);
     border-bottom: $site-border-width solid $site-default-border;
+
+    // The trailing separator is redundant; pagination, when present, follows
+    // in its own block.
+    &:last-child {
+      border-bottom: 0;
+    }
 
     @include smaller-than-mobile-screen {
       padding: 0;

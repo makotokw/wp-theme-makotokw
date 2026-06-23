@@ -11,6 +11,7 @@
   display: block;
 
   @include clearfix;
+  border-top: $site-border-width solid $site-default-border;
   padding: var(--global--spacing-vertical) 0;
 
   ul {

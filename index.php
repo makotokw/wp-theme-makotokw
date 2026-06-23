@@ -20,9 +20,11 @@
  */
 
 get_header();
+
+$makotokw_has_content_header = is_archive() || is_search();
 ?>
 
-<?php if ( is_archive() || is_search() ) : ?>
+<?php if ( $makotokw_has_content_header ) : ?>
 <header class="site-content-header">
 	<div class="section-inner">
 		<h2 class="archives-title"><?php makotokw_archives_title(); ?></h2>
@@ -31,7 +33,7 @@ get_header();
 </header>
 <?php endif ?>
 <?php if ( have_posts() ) : ?>
-	<div class="post-summaries">
+	<div class="post-summaries<?php echo $makotokw_has_content_header ? '' : ' no-content-header'; ?>">
 		<?php while ( have_posts() ) : ?>
 			<?php
 				the_post();
