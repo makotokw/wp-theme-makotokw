@@ -13,6 +13,8 @@ export default defineConfig(({ mode }) => ({
   server: {
     // connection from Docker
     host: true,
+    // Ensure CSS asset URLs injected by Vite point to the dev server, not the WordPress origin.
+    origin: 'http://localhost:5173',
     allowedHosts: [
       '.internal',
     ],
@@ -46,7 +48,7 @@ export default defineConfig(({ mode }) => ({
           const ext = path.extname(info.names[0]).slice(1);
           if (ext === 'css') return '[name].css';
           if (['ttf', 'eot', 'woff', 'woff2', 'svg'].includes(ext)) {
-            return 'fonts/[name][extname]';
+            return 'fonts/[name].[hash][extname]';
           }
           // images and others
           return 'assets/[name][extname]';

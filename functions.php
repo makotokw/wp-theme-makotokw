@@ -121,11 +121,6 @@ add_action( 'widgets_init', 'makotokw_widgets_init' );
  * Enqueue scripts and styles.
  */
 function makotokw_scripts() {
-	$fonts_urls = makotokw_fonts_urls();
-	for ( $fi = 0, $flen = count( $fonts_urls ); $fi < $flen; $fi++ ) {
-		wp_enqueue_style( 'makotokw-fonts' . $fi, esc_url_raw( $fonts_urls[ $fi ] ) );
-	}
-
 	if ( true === WP_THEME_DEBUG && function_exists( 'wp_enqueue_script_module' ) && makotokw_is_vite_running() ) {
 		$vite_server_url = rtrim( makotokw_vite_dev_server_url(), '/' );
 		// Vite dev server supports ES modules only.
@@ -143,28 +138,6 @@ function makotokw_scripts() {
 	wp_enqueue_script( 'makotokw-script' );
 }
 add_action( 'wp_enqueue_scripts', 'makotokw_scripts' );
-
-/**
- * @return array
- */
-function makotokw_fonts_urls() {
-	$urls  = array();
-	$fonts = array(
-		// https://fonts.google.com/specimen/Nunito+Sans
-		'Nunito+Sans:300,300i,400,400i,700,800',
-	);
-	if ( ! empty( $fonts ) ) {
-		$fonts_url = add_query_arg(
-			array(
-				'family'  => implode( '|', $fonts ),
-				'display' => 'swap',
-			),
-			'https://fonts.googleapis.com/css'
-		);
-		$urls[]    = $fonts_url;
-	}
-	return $urls;
-}
 
 function makotokw_vite_dev_server_url( $host = 'localhost' ) {
 	return "http://$host:5173";

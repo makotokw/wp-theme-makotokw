@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "7.2.0",
+    "@fontsource/nunito-sans": "^5.2.7",
     "google-code-prettify": "1.0.5",
     "notyf": "^3.9.0",
     "tippy.js": "^6.3.1"

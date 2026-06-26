@@ -8,6 +8,7 @@ WordPress theme for [blog.makotokw.com](https://blog.makotokw.com).
  * Created by [_s](http://underscores.me)
  * Inspired [Twenty Fifteen](https://twentyfifteendemo.wordpress.com/), [ghost](https://blog.ghost.org/) and [medium](https://medium.com/)
  * [Font Awesome](http://fortawesome.github.io/Font-Awesome/) Icons
+ * [Nunito Sans](https://github.com/googlefonts/nunito) self-hosted under the SIL Open Font License 1.1 (`assets/fonts/Nunito-Sans-OFL.txt`)
  * [google-code-prettify](https://github.com/google/code-prettify)
  * [Notyf](https://github.com/caroso1222/notyf)
  * [Tippy.js](https://atomiks.github.io/tippyjs/)
