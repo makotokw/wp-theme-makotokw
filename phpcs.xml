@@ -23,6 +23,9 @@
 <!--    <exclude name="WordPress.NamingConventions.PrefixAllGlobals.ShortPrefixPassed"/>-->
 <!--  </rule>-->
 <!--  <rule ref="WPThemeReview"/>-->
+  <!-- Do not include WPThemeReview wholesale: it pins PHPCompatibility to PHP 5.2. -->
+  <!-- Pick only the Theme Review sniffs that are useful for this theme. -->
+  <rule ref="WPThemeReview.CoreFunctionality.FileInclude"/>
 
   <rule ref="WordPress-Core"/>
 

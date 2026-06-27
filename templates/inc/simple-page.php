@@ -1,8 +1,10 @@
 <?php
 /**
- * @var string $makotokw_title
- * @var string $makotokw_contents
+ * @var array $args
  */
+$makotokw_title    = isset( $args['title'] ) ? $args['title'] : '';
+$makotokw_contents = isset( $args['contents'] ) ? $args['contents'] : '';
+
 get_header();
 the_post();
 ?>

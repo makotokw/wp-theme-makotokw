@@ -24,4 +24,11 @@ wp_nav_menu(
 <?php
 $makotokw_contents = ob_get_contents();
 ob_end_clean();
-require __DIR__ . '/inc/simple-page.php';
+get_template_part(
+	'templates/inc/simple-page',
+	null,
+	array(
+		'title'    => $makotokw_title,
+		'contents' => $makotokw_contents,
+	)
+);
