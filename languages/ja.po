@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/makotokw2026\n"
-"POT-Creation-Date: 2026-06-21T02:53:19+00:00\n"
+"POT-Creation-Date: 2026-06-27T15:57:04+00:00\n"
 "PO-Revision-Date: 2013-04-28 18:46+0900\n"
 "Last-Translator: Makoto Kawasaki <makoto.kw@gmail.com>\n"
 "Language-Team: Japanese\n"
@@ -73,26 +73,20 @@ msgstr ""
 msgid "Back to top"
 msgstr "ページの先頭へ"
 
-#: functions.php:41
+#: functions.php:44
 msgid "Footer Menu"
 msgstr "フッターメニュー"
 
-#: functions.php:42
+#: functions.php:45
 msgid "Portfolio Menu"
 msgstr "ポートフォリオメニュー"
 
-#: functions.php:108
+#: functions.php:111
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:110
+#: functions.php:113
 msgid "Add widgets here to appear in your sidebar."
-msgstr ""
-
-#. translators: %s: page number
-#: functions.php:287
-#, php-format
-msgid "Page %s"
 msgstr ""
 
 #. Template Name of the theme

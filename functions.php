@@ -28,6 +28,9 @@ function makotokw_setup() {
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
+	// Let WordPress manage the document title.
+	add_theme_support( 'title-tag' );
+
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
@@ -236,35 +239,6 @@ function makotokw_enhanced_image_navigation( $url, $id ) {
 	return $url;
 }
 add_filter( 'attachment_link', 'makotokw_enhanced_image_navigation', 10, 2 );
-
-/**
- * Filters wp_title to print a neat <title> tag based on what is being viewed.
- */
-function makotokw_wp_title( $title, $sep ) {
-	global $page, $paged;
-
-	if ( is_feed() ) {
-		return $title;
-	}
-
-	// Add the blog name
-	$title .= get_bloginfo( 'name' );
-
-	// Add the blog description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) ) {
-		$title .= " $sep $site_description";
-	}
-
-	// Add a page number if necessary:
-	if ( $paged >= 2 || $page >= 2 ) {
-		/* translators: %s: page number */
-		$title .= " $sep " . sprintf( __( 'Page %s', 'makotokw' ), max( $paged, $page ) );
-	}
-
-	return $title;
-}
-add_filter( 'wp_title', 'makotokw_wp_title', 10, 2 );
 
 function makotokw_get_meta_description() {
 	$description = '';

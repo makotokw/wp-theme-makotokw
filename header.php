@@ -19,7 +19,6 @@
 <?php else : ?>
 <meta name="robots" content="index" />
 <?php endif ?>
-<title><?php wp_title( ' - ', true, 'right' ); ?></title>
 <?php $makotokw_meta_description = makotokw_get_meta_description(); ?>
 <?php if ( $makotokw_meta_description ) : ?>
 <meta name="description" content="<?php echo esc_attr( $makotokw_meta_description ); ?>" />

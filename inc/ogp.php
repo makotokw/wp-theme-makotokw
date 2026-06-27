@@ -138,7 +138,7 @@ function makotokw_ogp_meta() {
 		<?php endif; ?>
 		<?php rewind_posts(); ?>
 	<?php else : ?>
-<meta property="og:title" content="<?php wp_title( '|', true, 'right' ); ?>"/>
+	<meta property="og:title" content="<?php echo esc_attr( wp_get_document_title() ); ?>"/>
 		<?php if ( is_front_page() || is_404() ) : ?>
 <meta property="og:type" content="blog"/>
 <meta property="og:url" content="<?php echo esc_url( home_url() ); ?>"/>
