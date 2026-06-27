@@ -189,14 +189,36 @@ if ( ! is_admin() ) {
 }
 
 /**
- * Add a pingback url auto-discovery header for single posts, pages, or attachments.
+ * Disable pingbacks and trackbacks while keeping regular comments available.
  */
-function makotokw_pingback_header() {
-	if ( is_singular() && pings_open() ) {
-		printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
-	}
+function makotokw_disable_pings() {
+	return false;
 }
-add_action( 'wp_head', 'makotokw_pingback_header' );
+add_filter( 'pings_open', 'makotokw_disable_pings' );
+
+/**
+ * Remove the XML-RPC pingback method.
+ *
+ * @param array $methods XML-RPC methods.
+ * @return array
+ */
+function makotokw_disable_xmlrpc_pingback( $methods ) {
+	unset( $methods['pingback.ping'] );
+	return $methods;
+}
+add_filter( 'xmlrpc_methods', 'makotokw_disable_xmlrpc_pingback' );
+
+/**
+ * Remove pingback discovery from HTTP headers.
+ *
+ * @param array $headers HTTP headers.
+ * @return array
+ */
+function makotokw_remove_pingback_header( $headers ) {
+	unset( $headers['X-Pingback'] );
+	return $headers;
+}
+add_filter( 'wp_headers', 'makotokw_remove_pingback_header' );
 
 /**
  * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
