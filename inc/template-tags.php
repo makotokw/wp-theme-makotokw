@@ -77,25 +77,25 @@ function makotokw_pagination( $pages = '', $range = 3 ) {
 		?>
 		<div class="pagination section-inner"><ul>
 		<?php if ( $paged > 2 && $paged > $range + 1 && $showitems < $pages ) : ?>
-			<li><a href="<?php echo get_pagenum_link( 1 ); ?>">&laquo; <?php __( 'First', 'makotokw' ); ?></a></li>
+			<li><a href="<?php echo esc_url( get_pagenum_link( 1 ) ); ?>">&laquo; <?php __( 'First', 'makotokw' ); ?></a></li>
 		<?php endif ?>
 		<?php if ( $paged > 1 ) : ?>
-			<li><a href="<?php echo get_pagenum_link( $paged - 1 ); ?>">&lsaquo; <?php __( 'Previous', 'makotokw' ); ?></a></li>
+			<li><a href="<?php echo esc_url( get_pagenum_link( $paged - 1 ) ); ?>">&lsaquo; <?php __( 'Previous', 'makotokw' ); ?></a></li>
 		<?php endif ?>
 		<?php for ( $i = 1; $i <= $pages; $i++ ) : ?>
 			<?php if ( 1 !== $pages && ( ! ( $i >= $paged + $range + 1 || $i <= $paged - $range - 1 ) || $pages <= $showitems ) ) : ?>
 				<?php if ( $paged === $i ) : ?>
-					<li class="current"><span class="page"><?php echo $i; ?></span></li>
+					<li class="current"><span class="page"><?php echo esc_html( $i ); ?></span></li>
 				<?php else : ?>
-					<li><a href="<?php echo get_pagenum_link( $i ); ?>"><?php echo $i; ?></a></li>
+					<li><a href="<?php echo esc_url( get_pagenum_link( $i ) ); ?>"><?php echo esc_html( $i ); ?></a></li>
 				<?php endif ?>
 			<?php endif ?>
 		<?php endfor ?>
 		<?php if ( $paged < $pages ) : ?>
-			<li><a href="<?php echo get_pagenum_link( $paged + 1 ); ?>"><?php __( 'Next', 'makotokw' ); ?> &rsaquo;</a></li>
+			<li><a href="<?php echo esc_url( get_pagenum_link( $paged + 1 ) ); ?>"><?php __( 'Next', 'makotokw' ); ?> &rsaquo;</a></li>
 		<?php endif ?>
 		<?php if ( $paged < $pages - 1 && $paged + $range - 1 < $pages && $showitems < $pages ) : ?>
-			<li><a href="<?php echo get_pagenum_link( $pages ); ?>"><?php __( 'Last', 'makotokw' ); ?> &raquo;</a></li>
+			<li><a href="<?php echo esc_url( get_pagenum_link( $pages ) ); ?>"><?php __( 'Last', 'makotokw' ); ?> &raquo;</a></li>
 		<?php endif ?>
 		</ul></div>
 		<?php
@@ -128,7 +128,7 @@ function makotokw_list_categories( $opt = array(), $all = false ) {
 		},
 		$list
 	);
-	echo $list;
+	echo wp_kses_post( $list );
 }
 
 function makotokw_get_the_updated_date( $format = DATE_ISO8601 ) {
@@ -152,7 +152,7 @@ function makotokw_posted_on() {
 	}
 	printf(
 		/* translators: 1: ISO8601 date, 2: formatted date string */
-		__( '<time class="published updated time" datetime="%1$s">%2$s</time>', 'makotokw' ),
+		wp_kses_post( __( '<time class="published updated time" datetime="%1$s">%2$s</time>', 'makotokw' ) ),
 		esc_attr( $time ),
 		esc_html( get_post_time( WP_THEME_DATE_FORMAT, false, null, true ) )
 	);
@@ -161,7 +161,7 @@ function makotokw_posted_on() {
 function makotokw_updated_on() {
 	printf(
 		/* translators: 1: ISO8601 date, 2: formatted date string */
-		__( '<time class="updated time" datetime="%1$s">%2$s</time>', 'makotokw' ),
+		wp_kses_post( __( '<time class="updated time" datetime="%1$s">%2$s</time>', 'makotokw' ) ),
 		esc_attr( get_post_modified_time( DATE_ISO8601, false, null, true ) ),
 		esc_html( get_post_modified_time( WP_THEME_DATE_FORMAT, false, null, true ) )
 	);
@@ -219,8 +219,8 @@ function makotokw_the_post_thumbnail( $post_content = null ) {
 	}
 	?>
 	<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-		<div class="entry-thumbnail-container entry-thumbnail-<?php echo $service; ?>">
-			<img class="entry-thumbnail-image" src="<?php echo $src; ?>" alt="<?php echo the_title_attribute(); ?>"/>
+		<div class="entry-thumbnail-container entry-thumbnail-<?php echo esc_attr( $service ); ?>">
+			<img class="entry-thumbnail-image" src="<?php echo esc_url( $src ); ?>" alt="<?php echo the_title_attribute(); ?>"/>
 		</div>
 	</a>
 	<?php
@@ -305,7 +305,7 @@ function makotokw_tag_cloud( $args = array() ) {
 				'<li class="tag rank-%1$d">%2$s%3$s</li>',
 				$rank,
 				$tag,
-				( $count > 0 ) ? '<span class="count">(' . $count . ')</span>' : ''
+				( $count > 0 ) ? '<span class="count">(' . esc_html( $count ) . ')</span>' : ''
 			);
 		}
 		echo '</ul>';
@@ -319,7 +319,7 @@ function makotokw_the_category_slug( $before = '', $separator = '', $post_id = f
 		return;
 	}
 
-	echo $before;
+	echo wp_kses_post( $before );
 
 	$i = 0;
 	foreach ( $categories as $category ) {
@@ -342,12 +342,12 @@ function makotokw_the_tags_slug( $before = '', $separator = '', $post_id = false
 		return;
 	}
 
-	echo $before;
+	echo wp_kses_post( $before );
 
 	$i = 0;
 	foreach ( $tags as $tag ) {
 		if ( 0 < $i ) {
-			echo $separator;
+			echo wp_kses_post( $separator );
 		}
 		?>
 		<a href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>" title="<?php echo esc_attr( sprintf( __( 'View all posts in %s', 'makotokw' ), $tag->name ) ); ?>" rel="tag"><?php echo esc_html( $tag->slug ); ?></a>
@@ -363,12 +363,12 @@ function makotokw_the_terms_slug( $taxonomy, $before = '', $separator = '', $pos
 		return;
 	}
 
-	echo $before;
+	echo wp_kses_post( $before );
 
 	$i = 0;
 	foreach ( $terms as $term ) {
 		if ( 0 < $i ) {
-			echo $separator;
+			echo wp_kses_post( $separator );
 		}
 		?>
 		<a href="<?php echo esc_url( get_term_link( $term ) ); ?>" title="<?php echo esc_attr( sprintf( __( 'View all posts in %s', 'makotokw' ), $term->name ) ); ?>" rel="tag"><?php echo esc_html( $term->slug ); ?></a>
@@ -420,7 +420,7 @@ function makotokw_inline_archives( $args = '' ) {
 		$url   = '/' . $year . '/'
 		?>
 		<li class="list-archives-item list-archives-item-year">
-			<a href="<?php echo $url; ?>"><?php echo $before_year . $label . $after_year; ?></a>
+			<a href="<?php echo esc_url( $url ); ?>"><?php echo wp_kses_post( $before_year . $label . $after_year ); ?></a>
 			<ul class="list-archives  list-archives-month">
 		<?php for ( $month = 1; $month <= 12; $month++ ) : ?>
 			<?php if ( ! isset( $months[ $month ] ) ) : ?>
@@ -431,9 +431,9 @@ function makotokw_inline_archives( $args = '' ) {
 					$no_month_cls .= ' list-archives-item-month-no-items-future';
 				}
 				?>
-				<li class="list-archives-item list-archives-item-month <?php echo $no_month_cls; ?>"><span><?php echo $month; ?></span></li>
+				<li class="list-archives-item list-archives-item-month <?php echo esc_attr( $no_month_cls ); ?>"><span><?php echo esc_html( $month ); ?></span></li>
 			<?php else : ?>
-				<li class="list-archives-item list-archives-item-month"><a href="<?php echo sprintf( '%s%04d/%02d/', $base_url, $year, $month ); ?>"><?php echo $month; ?></a></li>
+				<li class="list-archives-item list-archives-item-month"><a href="<?php echo esc_url( sprintf( '%s%04d/%02d/', $base_url, $year, $month ) ); ?>"><?php echo esc_html( $month ); ?></a></li>
 			<?php endif ?>
 		<?php endfor ?>
 			</ul>

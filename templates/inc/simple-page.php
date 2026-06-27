@@ -8,10 +8,13 @@ the_post();
 ?>
 	<article class="post-detailed">
 		<header class="entry-header">
-			<h1 class="entry-title"><?php echo $makotokw_title; ?></h1>
+			<h1 class="entry-title"><?php echo esc_html( $makotokw_title ); ?></h1>
 		</header>
 		<div class="entry-content section-inner">
-			<?php echo $makotokw_contents; ?>
+			<?php
+			// $makotokw_contents is trusted markup buffered from a page template (see template-archives.php etc.); wp_kses_post would strip required tags/attributes.
+			echo $makotokw_contents; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			?>
 		</div>
 	</article>
 <?php

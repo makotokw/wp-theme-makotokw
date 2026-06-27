@@ -28,9 +28,9 @@ function makotokw_comment( $comment, $args, $depth ) {
 						printf(
 							'<a class="comment-time" href="%1$s"><time class="time" datetime="%2$s">%3$s</time></a>',
 							esc_url( get_comment_link( $comment->comment_ID ) ),
-							get_comment_time(),
+							esc_attr( get_comment_time() ),
 							/* translators: 1: date, 2: time */
-							sprintf( __( '%1$s at %2$s', 'makotokw' ), get_comment_date( WP_THEME_DATE_FORMAT ), get_comment_time() )
+							esc_html( sprintf( __( '%1$s at %2$s', 'makotokw' ), get_comment_date( WP_THEME_DATE_FORMAT ), get_comment_time() ) )
 						);
 					?>
 					<?php edit_comment_link( '<i class="fas fa-pen-to-square"></i>', '<span class="edit-link">', '</span>' ); ?>

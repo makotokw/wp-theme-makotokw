@@ -31,8 +31,8 @@ $makotokw_has_comments = have_comments();
 				<?php
 				printf(
 					/* translators: %1$s: number of comments */
-					_nx( '%1$s Comment', '%1$s Comments', get_comments_number(), 'comments title', 'makotokw' ),
-					number_format_i18n( get_comments_number() )
+					esc_html( _nx( '%1$s Comment', '%1$s Comments', get_comments_number(), 'comments title', 'makotokw' ) ),
+					esc_html( number_format_i18n( get_comments_number() ) )
 				);
 				?>
 			</h2>

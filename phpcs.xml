@@ -29,6 +29,9 @@
     <exclude name="WordPress.WP.I18n.MissingTranslatorsComment"/>
   </rule>
 
+  <!-- Enforce output escaping (not part of WordPress-Core). -->
+  <rule ref="WordPress.Security.EscapeOutput"/>
+
   <!--
   #############################################################################
   SNIFF SPECIFIC CONFIGURATION

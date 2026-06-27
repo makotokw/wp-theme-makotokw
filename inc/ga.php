@@ -40,17 +40,17 @@ function makotokw_google_analytics() {
 	}
 	$content_group1 = makotokw_get_category_content_group();
 	?>
-	<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo WP_THEME_GOOGLE_ANALYTICS_ACCOUNT; ?>"></script>
+	<script async src="<?php echo esc_url( 'https://www.googletagmanager.com/gtag/js?id=' . WP_THEME_GOOGLE_ANALYTICS_ACCOUNT ); ?>"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
-		gtag('config', '<?php echo WP_THEME_GOOGLE_ANALYTICS_ACCOUNT; ?>', {
+		gtag('config', '<?php echo esc_js( WP_THEME_GOOGLE_ANALYTICS_ACCOUNT ); ?>', {
 			<?php if ( $content_group1 ) : ?>
-			'content_group1' : '<?php echo $content_group1; ?>',
+			'content_group1' : '<?php echo esc_js( $content_group1 ); ?>',
 			<?php endif ?>
 			'linker': {
-				'domains': ['<?php echo WP_THEME_GOOGLE_ANALYTICS_DOMAIN; ?>']
+				'domains': ['<?php echo esc_js( WP_THEME_GOOGLE_ANALYTICS_DOMAIN ); ?>']
 			}
 		});
 	</script>

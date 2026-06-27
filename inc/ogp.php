@@ -98,9 +98,9 @@ function makotokw_ogp_meta() {
 <meta property="og:title" content="<?php the_title_attribute(); ?>"/>
 <meta property="og:type" content="article"/>
 			<?php if ( $og_image ) : ?>
-<meta property="og:image" content="<?php echo $og_image; ?>"/>
+<meta property="og:image" content="<?php echo esc_url( $og_image ); ?>"/>
 			<?php else : ?>
-<meta property="og:image" content="<?php echo WP_OGP_DEFAULT_IMG; ?>"/>
+<meta property="og:image" content="<?php echo esc_url( WP_OGP_DEFAULT_IMG ); ?>"/>
 			<?php endif ?>
 <meta property="og:url" content="<?php echo esc_url( get_permalink() ); ?>"/>
 			<?php if ( $og_description ) : ?>
@@ -108,8 +108,8 @@ function makotokw_ogp_meta() {
 			<?php else : ?>
 <meta property="og:description" content="<?php bloginfo( 'description' ); ?>"/>
 			<?php endif ?>
-<meta property="article:published_time" content="<?php echo get_post_time( DATE_ISO8601, false, null, true ); ?>"/>
-<meta property="article:modified_time" content="<?php echo get_post_modified_time( DATE_ISO8601, false, null, true ); ?>"/>
+<meta property="article:published_time" content="<?php echo esc_attr( get_post_time( DATE_ISO8601, false, null, true ) ); ?>"/>
+<meta property="article:modified_time" content="<?php echo esc_attr( get_post_modified_time( DATE_ISO8601, false, null, true ) ); ?>"/>
 			<?php if ( $og_section ) : ?>
 <meta property="article:section" content="<?php echo esc_attr( $og_section ); ?>"/>
 			<?php endif ?>
@@ -117,23 +117,23 @@ function makotokw_ogp_meta() {
 <meta property="article:tag" content="<?php echo esc_attr( $og_tag ); ?>"/>
 			<?php endif ?>
 <meta property="twitter:card" content="summary"/>
-<meta property="twitter:title" content="<?php echo mb_strimwidth( the_title_attribute(), 0, 70, '...' ); ?>"/>
+<meta property="twitter:title" content="<?php echo esc_attr( mb_strimwidth( wp_strip_all_tags( get_the_title() ), 0, 70, '...' ) ); ?>"/>
 			<?php if ( $og_description ) : ?>
-<meta property="twitter:description" content="<?php echo mb_strimwidth( esc_attr( $og_description ), 0, 200 ); ?>"/>
+<meta property="twitter:description" content="<?php echo esc_attr( mb_strimwidth( $og_description, 0, 200 ) ); ?>"/>
 			<?php endif; ?>
 			<?php if ( $og_image ) : ?>
-<meta property="twitter:image:src" content="<?php echo $og_image; ?>"/>
+<meta property="twitter:image:src" content="<?php echo esc_url( $og_image ); ?>"/>
 			<?php else : ?>
-<meta property="twitter:image:src" content="<?php echo WP_OGP_DEFAULT_IMG; ?>"/>
+<meta property="twitter:image:src" content="<?php echo esc_url( WP_OGP_DEFAULT_IMG ); ?>"/>
 			<?php endif; ?>
 			<?php if ( defined( 'WP_OGP_TWITTER_SITE_USERNAME' ) ) : ?>
-<meta property="twitter:site" content="<?php echo WP_OGP_TWITTER_SITE_USERNAME; ?>"/>
+<meta property="twitter:site" content="<?php echo esc_attr( WP_OGP_TWITTER_SITE_USERNAME ); ?>"/>
 			<?php endif ?>
 			<?php if ( defined( 'WP_OGP_TWITTER_CREATOR_USERNAME' ) ) : ?>
-<meta property="twitter:creator" content="<?php echo WP_OGP_TWITTER_CREATOR_USERNAME; ?>"/>
+<meta property="twitter:creator" content="<?php echo esc_attr( WP_OGP_TWITTER_CREATOR_USERNAME ); ?>"/>
 			<?php endif ?>
 			<?php if ( defined( 'WP_OGP_TWITTER_DOMAIN' ) ) : ?>
-<meta property="twitter:domain" content="<?php echo WP_OGP_TWITTER_DOMAIN; ?>"/>
+<meta property="twitter:domain" content="<?php echo esc_attr( WP_OGP_TWITTER_DOMAIN ); ?>"/>
 			<?php endif ?>
 		<?php endif; ?>
 		<?php rewind_posts(); ?>
@@ -144,18 +144,18 @@ function makotokw_ogp_meta() {
 <meta property="og:url" content="<?php echo esc_url( home_url() ); ?>"/>
 		<?php else : ?>
 <meta property="og:type" content="article"/>
-<meta property="og:url" content="<?php echo get_pagenum_link(); ?>"/>
-		<?php endif ?>
-<meta property="og:image" content="<?php echo WP_OGP_DEFAULT_IMG; ?>"/>
+<meta property="og:url" content="<?php echo esc_url( get_pagenum_link() ); ?>"/>
+			<?php endif ?>
+<meta property="og:image" content="<?php echo esc_url( WP_OGP_DEFAULT_IMG ); ?>"/>
 <meta property="og:description" content="<?php bloginfo( 'description' ); ?>"/>
-	<?php endif ?>
-<meta property="og:locale" content="<?php echo WP_OGP_LOCALE; ?>"/>
+		<?php endif ?>
+<meta property="og:locale" content="<?php echo esc_attr( WP_OGP_LOCALE ); ?>"/>
 <meta property="og:site_name" content="<?php bloginfo( 'name' ); ?>"/>
-	<?php if ( defined( 'WP_OGP_FB_APPID' ) ) : ?>
-<meta property="fb:app_id" content="<?php echo WP_OGP_FB_APPID; ?>"/>
-	<?php endif ?>
-	<?php if ( defined( 'WP_OGP_FB_ADMINS' ) ) : ?>
-<meta property="fb:admins" content="<?php echo WP_OGP_FB_ADMINS; ?>"/>
+		<?php if ( defined( 'WP_OGP_FB_APPID' ) ) : ?>
+<meta property="fb:app_id" content="<?php echo esc_attr( WP_OGP_FB_APPID ); ?>"/>
+		<?php endif ?>
+		<?php if ( defined( 'WP_OGP_FB_ADMINS' ) ) : ?>
+<meta property="fb:admins" content="<?php echo esc_attr( WP_OGP_FB_ADMINS ); ?>"/>
 	<?php endif ?>
 	<?php
 }

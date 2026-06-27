@@ -29,7 +29,7 @@
 			?>
 		</div>
 		<div class="footer-credits">
-			<span class="copyright">&copy; <?php echo gmdate( 'Y' ); ?>&nbsp;<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></span>
+			<span class="copyright">&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?>&nbsp;<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></span>
 			<?php
 				$makotokw_wp_theme   = wp_get_theme();
 				$makotokw_theme_name = $makotokw_wp_theme->display( 'Name' );
@@ -40,9 +40,9 @@
 				);
 				?>
 				<span class="powered-by">
-					<?php echo $makotokw_powered_by; ?>
+					<?php echo wp_kses_post( $makotokw_powered_by ); ?>
 					<svg class="footer-heart" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-					<a href="https://github.com/makotokw/wp-theme-makotokw/tree/<?php echo $makotokw_theme_name; ?>">Theme <i class="fab fa-github"></i></a> by <a href="https://makotokw.com">makoto_kw</a>
+					<a href="<?php echo esc_url( 'https://github.com/makotokw/wp-theme-makotokw/tree/' . $makotokw_theme_name ); ?>">Theme <i class="fab fa-github"></i></a> by <a href="https://makotokw.com">makoto_kw</a>
 				</span>
 		</div>
 	</div>
