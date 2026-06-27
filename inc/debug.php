@@ -15,7 +15,9 @@ function makotokw_pre_get_posts_debug( $query ) {
 	}
 }
 
+// phpcs:disable Squiz.PHP.CommentedOutCode.Found
 /*
 if ( WP_THEME_DEBUG ) {
 	add_action( 'pre_get_posts', 'makotokw_pre_get_posts_debug' );
 }*/
+// phpcs:enable Squiz.PHP.CommentedOutCode.Found

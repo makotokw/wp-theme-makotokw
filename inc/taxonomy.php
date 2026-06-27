@@ -57,6 +57,7 @@ function makotokw_get_mylist( $post ) {
 	return null;
 }
 
+// phpcs:disable Squiz.PHP.CommentedOutCode.Found
 /*
 function makotokw_mylist_pre_get_posts($query)
 {
@@ -67,6 +68,7 @@ function makotokw_mylist_pre_get_posts($query)
 
 add_action('pre_get_posts', 'makotokw_mylist_pre_get_posts');
 */
+// phpcs:enable Squiz.PHP.CommentedOutCode.Found
 
 function makotokw_get_first_post_on_mylist( $post ) {
 	$mylist = makotokw_get_mylist( $post );

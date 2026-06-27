@@ -2,8 +2,6 @@
 /**
  * @package makotokw
  */
-
-$post_type = get_post_type();
 list ( $makotokw_featured_image_url, $makotokw_featured_image_service ) = makotokw_get_the_featured_image_url();
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'post-summary' ); ?>>

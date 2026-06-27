@@ -74,12 +74,12 @@ function makotokw_breadcrumbs() {
 					<?php foreach ( $ancestors as $ancestor ) : ?>
 						<?php if ( end( $ancestors ) !== $ancestor ) : ?>
 							<a href="<?php echo esc_url( get_permalink( $ancestor ) ); ?>" itemprop="url">
-								<span itemprop="title"><?php echo esc_html( strip_tags( get_the_title( $ancestor ) ) ); ?></span>
+									<span itemprop="title"><?php echo esc_html( wp_strip_all_tags( get_the_title( $ancestor ) ) ); ?></span>
 							</a>
 							<?php echo wp_kses_post( $divider ); ?>
 						<?php else : ?>
 							<a href="<?php echo esc_url( get_permalink( $ancestor ) ); ?>" itemprop="url">
-								<span itemprop="title"><?php echo esc_html( strip_tags( get_the_title( $ancestor ) ) ); ?></span>
+									<span itemprop="title"><?php echo esc_html( wp_strip_all_tags( get_the_title( $ancestor ) ) ); ?></span>
 							</a>
 						<?php endif ?>
 					<?php endforeach ?>

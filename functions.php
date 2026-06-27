@@ -75,8 +75,8 @@ function makotokw_setup() {
 	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 	remove_action( 'wp_print_styles', 'print_emoji_styles' );
 
-	// Tospy may use shortlink
-	//remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
+	// Tospy may use shortlink.
+	// remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 ); // phpcs:ignore Squiz.PHP.CommentedOutCode.Found
 
 	/*
 	 * Disable Jetpack OGP
@@ -244,7 +244,7 @@ function makotokw_template_redirect() {
 		$values = get_post_custom_values( 'makotokw_part_of_home' );
 		if ( $values ) {
 			if ( 1 === intval( $values[0] ) ) {
-				wp_redirect( home_url( '/' ) );
+				wp_safe_redirect( home_url( '/' ) );
 				exit;
 			}
 		}

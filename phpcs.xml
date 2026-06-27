@@ -28,6 +28,10 @@
   <rule ref="WPThemeReview.CoreFunctionality.FileInclude"/>
 
   <rule ref="WordPress-Core"/>
+  <rule ref="WordPress-Extra">
+    <exclude name="Generic.Functions.CallTimePassByReference"/>
+    <exclude name="Squiz.WhiteSpace.LanguageConstructSpacing"/>
+  </rule>
 
   <!-- Enforce output escaping (not part of WordPress-Core). -->
   <rule ref="WordPress.Security.EscapeOutput"/>

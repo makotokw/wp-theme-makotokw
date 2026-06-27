@@ -21,10 +21,6 @@
 <link rel="apple-touch-icon" sizes="152x152" href="<?php echo esc_url( get_theme_file_uri() . '/assets/images/touch-icon-ipad-retina.png' ); ?>">
 <link rel="alternate" type="<?php echo esc_attr( feed_content_type() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" href="<?php echo esc_url( get_feed_link() ); ?>" />
 <?php wp_head(); ?>
-<?php if ( defined( 'JETPACK_DEV_DEBUG' ) && JETPACK_DEV_DEBUG === true ) : ?>
-<link rel='stylesheet' id='jetpack_css-css' href='/wp-content/plugins/jetpack/css/jetpack.css' type='text/css' media='all'/>
-<?php endif ?>
-<?php makotokw_google_analytics(); ?>
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>

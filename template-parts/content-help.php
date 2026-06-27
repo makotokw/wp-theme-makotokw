@@ -2,8 +2,6 @@
 /**
  * @package makotokw
  */
-
-$post_type = get_post_type();
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'post-detailed' ); ?>>
 	<header class="entry-header">

@@ -3,7 +3,7 @@
  * @package makotokw
  */
 
-$post_type = get_post_type();
+$makotokw_post_type = get_post_type();
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'post-detailed' ); ?>>
 	<header class="entry-header">
@@ -24,7 +24,7 @@ $post_type = get_post_type();
 	<footer class="entry-footer">
 		<?php makotokw_the_post_secondary_meta(); ?>
 		<?php makotokw_share_this(); ?>
-		<?php if ( 'post' === $post_type ) : ?>
+		<?php if ( 'post' === $makotokw_post_type ) : ?>
 			<?php makotokw_related_portfolio( __( 'Related Software', 'makotokw' ) ); ?>
 			<?php makotokw_related_posts( __( 'Related Posts', 'makotokw' ) ); ?>
 			<?php makotokw_content_nav(); ?>

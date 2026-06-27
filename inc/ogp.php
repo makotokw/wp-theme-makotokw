@@ -5,7 +5,9 @@
  * @link https://gist.github.com/3399585
  */
 
-// key into custom fields for description. Default is for All in One SEO Pack
+// phpcs:disable Squiz.PHP.CommentedOutCode.Found -- This file keeps commented configuration examples.
+
+// Key into custom fields for description. Default is for All in One SEO Pack.
 //define( 'WP_OGP_POST_DESCRIPTION_KEY', '_aioseop_description' );
 define( 'WP_OGP_POST_DESCRIPTION_KEY', 'description' );
 

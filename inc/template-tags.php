@@ -63,9 +63,7 @@ function makotokw_pagination( $pages = '', $range = 3 ) {
 	global $paged;
 	$showitems = ( $range * 3 ) + 1;
 
-	if ( empty( $paged ) ) {
-		$paged = 1;
-	}
+	$current_page = empty( $paged ) ? 1 : $paged;
 	if ( '' === $pages ) {
 		global $wp_query;
 		$pages = $wp_query->max_num_pages;
@@ -76,25 +74,25 @@ function makotokw_pagination( $pages = '', $range = 3 ) {
 	if ( 1 !== $pages ) {
 		?>
 		<div class="pagination section-inner"><ul>
-		<?php if ( $paged > 2 && $paged > $range + 1 && $showitems < $pages ) : ?>
+		<?php if ( $current_page > 2 && $current_page > $range + 1 && $showitems < $pages ) : ?>
 			<li><a href="<?php echo esc_url( get_pagenum_link( 1 ) ); ?>">&laquo; <?php __( 'First', 'makotokw' ); ?></a></li>
 		<?php endif ?>
-		<?php if ( $paged > 1 ) : ?>
-			<li><a href="<?php echo esc_url( get_pagenum_link( $paged - 1 ) ); ?>">&lsaquo; <?php __( 'Previous', 'makotokw' ); ?></a></li>
+		<?php if ( $current_page > 1 ) : ?>
+			<li><a href="<?php echo esc_url( get_pagenum_link( $current_page - 1 ) ); ?>">&lsaquo; <?php __( 'Previous', 'makotokw' ); ?></a></li>
 		<?php endif ?>
 		<?php for ( $i = 1; $i <= $pages; $i++ ) : ?>
-			<?php if ( 1 !== $pages && ( ! ( $i >= $paged + $range + 1 || $i <= $paged - $range - 1 ) || $pages <= $showitems ) ) : ?>
-				<?php if ( $paged === $i ) : ?>
+			<?php if ( 1 !== $pages && ( ! ( $i >= $current_page + $range + 1 || $i <= $current_page - $range - 1 ) || $pages <= $showitems ) ) : ?>
+				<?php if ( $current_page === $i ) : ?>
 					<li class="current"><span class="page"><?php echo esc_html( $i ); ?></span></li>
 				<?php else : ?>
 					<li><a href="<?php echo esc_url( get_pagenum_link( $i ) ); ?>"><?php echo esc_html( $i ); ?></a></li>
 				<?php endif ?>
 			<?php endif ?>
 		<?php endfor ?>
-		<?php if ( $paged < $pages ) : ?>
-			<li><a href="<?php echo esc_url( get_pagenum_link( $paged + 1 ) ); ?>"><?php __( 'Next', 'makotokw' ); ?> &rsaquo;</a></li>
+		<?php if ( $current_page < $pages ) : ?>
+			<li><a href="<?php echo esc_url( get_pagenum_link( $current_page + 1 ) ); ?>"><?php __( 'Next', 'makotokw' ); ?> &rsaquo;</a></li>
 		<?php endif ?>
-		<?php if ( $paged < $pages - 1 && $paged + $range - 1 < $pages && $showitems < $pages ) : ?>
+		<?php if ( $current_page < $pages - 1 && $current_page + $range - 1 < $pages && $showitems < $pages ) : ?>
 			<li><a href="<?php echo esc_url( get_pagenum_link( $pages ) ); ?>"><?php __( 'Last', 'makotokw' ); ?> &raquo;</a></li>
 		<?php endif ?>
 		</ul></div>
@@ -238,7 +236,7 @@ function makotokw_post_summary( $content, $length = 128, $trimmarker = '...' ) {
 			$content = $gfm->convert_by_shortcode( $content );
 		}
 	}
-	return mb_strimwidth( strip_tags( strip_shortcodes( $content ) ), 0, $length ) . $trimmarker;
+	return mb_strimwidth( wp_strip_all_tags( strip_shortcodes( $content ) ), 0, $length ) . $trimmarker;
 }
 
 function makotokw_archives_title() {

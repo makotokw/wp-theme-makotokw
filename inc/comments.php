@@ -12,8 +12,7 @@
  * @param $depth
  */
 function makotokw_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
-	$is_trackback       = ( 'pingback' === $comment->comment_type || 'trackback' === $comment->comment_type );
+	$is_trackback = ( 'pingback' === $comment->comment_type || 'trackback' === $comment->comment_type );
 	?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 		<article id="comment-<?php comment_ID(); ?>" class="comment-body">
