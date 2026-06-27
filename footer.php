@@ -13,7 +13,7 @@
 	</main><!-- .site-content -->
 	<?php get_sidebar(); ?>
 </div><!-- .site-main -->
-<footer class="site-footer" role="contentinfo">
+<footer class="site-footer">
 	<div class="section-inner">
 		<div class="footer-navs">
 			<?php

@@ -44,7 +44,7 @@
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<header id="siteHeader" class="site-header" role="banner">
+<header id="siteHeader" class="site-header">
 	<div class="site-header-inner section-inner">
 		<div class="site-header-titles">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="site-header-logo">
@@ -71,4 +71,4 @@
 </header>
 <?php makotokw_menu_overlay(); ?>
 <div class="site-main">
-	<main id="siteContent" class="site-content" role="main">
+	<main id="siteContent" class="site-content">
