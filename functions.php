@@ -63,7 +63,6 @@ function makotokw_setup() {
 		)
 	);
 
-	remove_filter( 'wp_head', 'rel_canonical' );
 	remove_action( 'wp_head', 'feed_links', 2 );
 	remove_action( 'wp_head', 'feed_links_extra', 3 );
 	remove_action( 'wp_head', 'rsd_link' );
@@ -239,18 +238,6 @@ function makotokw_enhanced_image_navigation( $url, $id ) {
 	return $url;
 }
 add_filter( 'attachment_link', 'makotokw_enhanced_image_navigation', 10, 2 );
-
-function makotokw_get_meta_description() {
-	$description = '';
-	if ( is_home() ) {
-		$description = get_bloginfo( 'description' );
-	} elseif ( is_archive() ) {
-		$description = get_the_archive_description();
-	}
-	return $description;
-}
-
-add_action( 'makotokw_get_meta_description', 'makotokw_get_meta_description' );
 
 function makotokw_template_redirect() {
 	if ( is_page() && ! is_preview() ) {

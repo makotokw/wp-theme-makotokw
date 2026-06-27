@@ -14,26 +14,11 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="format-detection" content="telephone=no" />
-<?php if ( makotokw_is_seo_noindex() ) : ?>
-<meta name="robots" content="noindex,follow" />
-<?php else : ?>
-<meta name="robots" content="index" />
-<?php endif ?>
-<?php $makotokw_meta_description = makotokw_get_meta_description(); ?>
-<?php if ( $makotokw_meta_description ) : ?>
-<meta name="description" content="<?php echo esc_attr( $makotokw_meta_description ); ?>" />
-<?php endif ?>
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" href="<?php echo get_theme_file_uri(); ?>/assets/images/touch-icon-iphone.png">
 <link rel="apple-touch-icon" sizes="76x76" href="<?php echo get_theme_file_uri(); ?>/assets/images/touch-icon-ipad.png">
 <link rel="apple-touch-icon" sizes="120x120" href="<?php echo get_theme_file_uri(); ?>/assets/images/touch-icon-iphone-retina.png">
 <link rel="apple-touch-icon" sizes="152x152" href="<?php echo get_theme_file_uri(); ?>/assets/images/touch-icon-ipad-retina.png">
-<?php if ( is_home() ) : ?>
-<link rel="alternate" hreflang="<?php echo get_bloginfo( 'language' ); ?>" href="<?php echo home_url(); ?>">
-<?php elseif ( is_singular() ) : ?>
-<link rel="alternate" hreflang="<?php echo get_bloginfo( 'language' ); ?>" href="<?php the_permalink(); ?>">
-<link rel="canonical" href="<?php the_permalink(); ?>" />
-<?php endif ?>
 <link rel="alternate" type="<?php echo feed_content_type(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" href="<?php echo get_feed_link(); ?>" />
 <?php wp_head(); ?>
 <?php if ( defined( 'JETPACK_DEV_DEBUG' ) && JETPACK_DEV_DEBUG === true ) : ?>

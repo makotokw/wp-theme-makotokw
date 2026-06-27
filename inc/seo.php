@@ -28,3 +28,46 @@ function makotokw_is_seo_noindex() {
 	}
 	return false;
 }
+
+/**
+ * Apply noindex,follow to low-value pages via the core robots meta tag.
+ * Index pages keep WordPress's default robots directives.
+ *
+ * @param array $robots Robots directives.
+ * @return array
+ */
+function makotokw_seo_robots( $robots ) {
+	if ( makotokw_is_seo_noindex() ) {
+		$robots['noindex'] = true;
+		$robots['follow']  = true;
+	}
+	return $robots;
+}
+add_filter( 'wp_robots', 'makotokw_seo_robots' );
+
+/**
+ * Build the meta description for listing pages.
+ * Keep existing behavior: singular views do not output a standard meta description here.
+ *
+ * @return string
+ */
+function makotokw_get_meta_description() {
+	$description = '';
+	if ( is_home() ) {
+		$description = get_bloginfo( 'description' );
+	} elseif ( is_archive() ) {
+		$description = get_the_archive_description();
+	}
+	return $description;
+}
+
+/**
+ * Output the meta description tag; WordPress has no core equivalent.
+ */
+function makotokw_seo_meta_description() {
+	$description = makotokw_get_meta_description();
+	if ( $description ) {
+		printf( "<meta name=\"description\" content=\"%s\" />\n", esc_attr( $description ) );
+	}
+}
+add_action( 'wp_head', 'makotokw_seo_meta_description', 1 );
