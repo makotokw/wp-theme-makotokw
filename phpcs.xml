@@ -24,10 +24,7 @@
 <!--  </rule>-->
 <!--  <rule ref="WPThemeReview"/>-->
 
-  <rule ref="WordPress-Core">
-    <!-- Only Japanese, nobody translates without author. -->
-    <exclude name="WordPress.WP.I18n.MissingTranslatorsComment"/>
-  </rule>
+  <rule ref="WordPress-Core"/>
 
   <!-- Enforce output escaping (not part of WordPress-Core). -->
   <rule ref="WordPress.Security.EscapeOutput"/>

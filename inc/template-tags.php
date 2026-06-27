@@ -326,8 +326,13 @@ function makotokw_the_category_slug( $before = '', $separator = '', $post_id = f
 		if ( 0 < $i ) {
 			echo esc_html( $separator );
 		}
+		$category_title = sprintf(
+			/* translators: %s: taxonomy term name */
+			__( 'View all posts in %s', 'makotokw' ),
+			$category->name
+		);
 		?>
-	<a href="<?php echo esc_url( get_category_link( $category->term_id ) ); ?>" title="<?php echo esc_attr( sprintf( __( 'View all posts in %s', 'makotokw' ), $category->name ) ); ?>" rel="category tag">
+	<a href="<?php echo esc_url( get_category_link( $category->term_id ) ); ?>" title="<?php echo esc_attr( $category_title ); ?>" rel="category tag">
 		<?php echo esc_html( $category->slug ); ?>
 	</a>
 		<?php
@@ -349,8 +354,13 @@ function makotokw_the_tags_slug( $before = '', $separator = '', $post_id = false
 		if ( 0 < $i ) {
 			echo wp_kses_post( $separator );
 		}
+		$tag_title = sprintf(
+			/* translators: %s: taxonomy term name */
+			__( 'View all posts in %s', 'makotokw' ),
+			$tag->name
+		);
 		?>
-		<a href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>" title="<?php echo esc_attr( sprintf( __( 'View all posts in %s', 'makotokw' ), $tag->name ) ); ?>" rel="tag"><?php echo esc_html( $tag->slug ); ?></a>
+		<a href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>" title="<?php echo esc_attr( $tag_title ); ?>" rel="tag"><?php echo esc_html( $tag->slug ); ?></a>
 		<?php
 		++$i;
 	}
@@ -370,8 +380,13 @@ function makotokw_the_terms_slug( $taxonomy, $before = '', $separator = '', $pos
 		if ( 0 < $i ) {
 			echo wp_kses_post( $separator );
 		}
+		$term_title = sprintf(
+			/* translators: %s: taxonomy term name */
+			__( 'View all posts in %s', 'makotokw' ),
+			$term->name
+		);
 		?>
-		<a href="<?php echo esc_url( get_term_link( $term ) ); ?>" title="<?php echo esc_attr( sprintf( __( 'View all posts in %s', 'makotokw' ), $term->name ) ); ?>" rel="tag"><?php echo esc_html( $term->slug ); ?></a>
+		<a href="<?php echo esc_url( get_term_link( $term ) ); ?>" title="<?php echo esc_attr( $term_title ); ?>" rel="tag"><?php echo esc_html( $term->slug ); ?></a>
 		<?php
 		++$i;
 	}
