@@ -14,27 +14,12 @@
 
   <!--
   #############################################################################
-  USE THE WordPress AND THE Theme Review RULESET
+  USE THE WordPress RULESET
   #############################################################################
   -->
 
-<!--  <rule ref="WordPress">-->
-<!--    &lt;!&ndash; This rule does not apply here since the makotokw prefix should be changed by the theme author. &ndash;&gt;-->
-<!--    <exclude name="WordPress.NamingConventions.PrefixAllGlobals.ShortPrefixPassed"/>-->
-<!--  </rule>-->
-<!--  <rule ref="WPThemeReview"/>-->
-  <!-- Do not include WPThemeReview wholesale: it pins PHPCompatibility to PHP 5.2. -->
-  <!-- Pick only the Theme Review sniffs that are useful for this theme. -->
-  <rule ref="WPThemeReview.CoreFunctionality.FileInclude"/>
-
   <rule ref="WordPress-Core"/>
-  <rule ref="WordPress-Extra">
-    <exclude name="Generic.Functions.CallTimePassByReference"/>
-    <exclude name="Squiz.WhiteSpace.LanguageConstructSpacing"/>
-  </rule>
-
-  <!-- Enforce output escaping (not part of WordPress-Core). -->
-  <rule ref="WordPress.Security.EscapeOutput"/>
+  <rule ref="WordPress-Extra"/>
 
   <!--
   #############################################################################
@@ -85,7 +70,6 @@
           <element value="wp_theme_"/>
           <element value="wp_ogp_"/>
           <element value="ogp_"/>
-          <element value="og_"/>
       </property>
     </properties>
   </rule>

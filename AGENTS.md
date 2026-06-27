@@ -58,7 +58,7 @@ composer install                                               # First time only
 ./vendor/bin/parallel-lint --exclude vendor --exclude node_modules .
 ```
 
-- Allowed prefixes for global functions and constants (as defined in `phpcs.xml`): `makotokw_`, `wp_theme_`, `wp_ogp_`, `ogp_`, `og_`. All new globals must start with one of these.
+- Allowed prefixes for global functions and constants (as defined in `phpcs.xml`): `makotokw_`, `wp_theme_`, `wp_ogp_`, `ogp_`. All new globals must start with one of these.
 - The text domain is `makotokw`. If you add translatable strings, update the POT file with `yarn lang:1st-pot`.
 
 ## Coding Guidelines (Theme-Specific)

@@ -301,8 +301,8 @@ function makotokw_tag_cloud( $args = array() ) {
 			}
 			printf(
 				'<li class="tag rank-%1$d">%2$s%3$s</li>',
-				$rank,
-				$tag,
+				(int) $rank,
+				wp_kses_post( $tag ),
 				( $count > 0 ) ? '<span class="count">(' . esc_html( $count ) . ')</span>' : ''
 			);
 		}
