@@ -16,7 +16,30 @@ function makotokw_get_the_featured_image_url() {
 		return array( $featured_image_url, $featured_image_service );
 	}
 
-	$fallback_categories      = array( 'wordpress', 'programing', 'server', 'hardware', 'computer' );
+	$fallback_categories = array(
+		'art',
+		'cinema',
+		'comedy',
+		'computer',
+		'electronics',
+		'gadget',
+		'game',
+		'gourmet',
+		'hardware',
+		'interior',
+		'life',
+		'lifehack',
+		'music',
+		'politics',
+		'programming',
+		'readingbook',
+		'server',
+		'software',
+		'sports',
+		'stationery',
+		'wordpress',
+		'work',
+	);
 	$fallback_image_timestamp = '20210301';
 
 	$post_title      = get_the_title();
