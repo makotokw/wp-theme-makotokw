@@ -1,52 +1,43 @@
-import assert from 'node:assert/strict';
-import test from 'node:test';
+import {
+  describe, it, expect, beforeEach,
+} from 'vitest';
 import ScrollToTop from '../../src/scripts/components/scroll-to-top.js';
 
-function createElement() {
-  const classes = new Set();
+describe('ScrollToTop', () => {
+  beforeEach(() => {
+    // Reset the real DOM and scroll state between tests for isolation.
+    document.body.innerHTML = '';
+    window.scrollY = 0;
+    window.innerHeight = 800;
+  });
 
-  return {
-    classes,
-    classList: {
-      toggle(className, force) {
-        if (force) {
-          classes.add(className);
-        } else {
-          classes.delete(className);
-        }
-      },
-    },
-  };
-}
+  it('shows the control after scrolling beyond one viewport', () => {
+    document.body.innerHTML = '<div id="scrollToTop"></div>';
+    window.scrollY = 801;
 
-test('shows the control after scrolling beyond one viewport', () => {
-  const element = createElement();
-  globalThis.document = { getElementById: () => element };
-  globalThis.window = { innerHeight: 800, scrollY: 801 };
+    const scrollToTop = new ScrollToTop();
+    scrollToTop.refresh();
 
-  const scrollToTop = new ScrollToTop();
-  scrollToTop.refresh();
+    const element = document.getElementById('scrollToTop');
+    expect(element.classList.contains('is-visible')).toBe(true);
+  });
 
-  assert.equal(element.classes.has('is-visible'), true);
-});
+  it('hides the control at or above the first viewport', () => {
+    document.body.innerHTML = '<div id="scrollToTop" class="is-visible"></div>';
+    window.scrollY = 800;
 
-test('hides the control at or above the first viewport', () => {
-  const element = createElement();
-  element.classes.add('is-visible');
-  globalThis.document = { getElementById: () => element };
-  globalThis.window = { innerHeight: 800, scrollY: 800 };
+    const scrollToTop = new ScrollToTop();
+    scrollToTop.refresh();
 
-  const scrollToTop = new ScrollToTop();
-  scrollToTop.refresh();
+    const element = document.getElementById('scrollToTop');
+    expect(element.classList.contains('is-visible')).toBe(false);
+  });
 
-  assert.equal(element.classes.has('is-visible'), false);
-});
+  it('does nothing when the control is absent', () => {
+    window.scrollY = 801;
 
-test('does nothing when the control is absent', () => {
-  globalThis.document = { getElementById: () => null };
-  globalThis.window = { innerHeight: 800, scrollY: 801 };
+    const scrollToTop = new ScrollToTop();
 
-  const scrollToTop = new ScrollToTop();
-
-  assert.doesNotThrow(() => scrollToTop.refresh());
+    expect(() => scrollToTop.refresh()).not.toThrow();
+  });
 });

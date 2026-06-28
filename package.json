@@ -1,6 +1,6 @@
 {
   "name": "wp-theme-makotokw",
-  "version": "0.10",
+  "version": "1.0.0-beta.1",
   "description": "makotokw theme for WordPress",
   "license": "GPL-2.0",
   "private": true,
@@ -10,8 +10,8 @@
     "url": "https://github.com/makotokw/wp-theme-makotokw"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "7.2.0",
     "@fontsource/nunito-sans": "^5.2.7",
+    "@fortawesome/fontawesome-free": "7.2.0",
     "google-code-prettify": "1.0.5",
     "notyf": "^3.9.0",
     "tippy.js": "^6.3.1"
@@ -26,17 +26,22 @@
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-import": "^2.32.0",
     "globals": "^17.6.0",
+    "happy-dom": "^20.10.6",
     "postcss": "^8.2.1",
     "sass": "^1.77.0",
     "stylelint": "^16.24.0",
-    "vite": "^8.0.14"
+    "vite": "^8.1.0",
+    "vitest": "^4.1.9"
   },
   "scripts": {
-    "lint:js": "eslint src *.config.js",
+    "lint:js": "eslint src tests *.config.js",
     "lint:css": "stylelint src/styles",
     "lint:css:fix": "stylelint --fix src/styles",
     "build": "vite build",
     "build:dev": "vite build --minify false",
-    "dev": "vite"
-  }
+    "dev": "vite",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "packageManager": "yarn@4.17.0"
 }

@@ -12,6 +12,7 @@ amazonjs.css
 
 ### Node ###
 node_modules
+.yarn/
 
 ### OSX ###
 .DS_Store

@@ -46,4 +46,16 @@ export default [
       'no-console': ['error', { allow: ['warn', 'error'] }],
     },
   },
+  // Test files run in a DOM environment provided by happy-dom.
+  {
+    files: ['tests/**/*.js'],
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+      },
+    },
+    rules: {
+      'import/extensions': 'off',
+    },
+  },
 ];
