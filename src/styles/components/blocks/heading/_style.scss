@@ -68,6 +68,19 @@ h3 {
   margin: var(--space-12) auto var(--space-8);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+  code {
+    // Offset the visual weight added by inline-code padding and background.
+    font-size: 0.9em;
+  }
+}
+
 h4,
 h5,
 h6 {
