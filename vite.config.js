@@ -26,7 +26,11 @@ export default defineConfig(({ mode }) => ({
     devSourcemap: true,
     preprocessorOptions: {
       scss: {
-        loadPaths: [path.resolve(__dirname, 'src/styles')],
+        // Resolve FontAwesome's scss entrypoints from node_modules in addition to local layers.
+        loadPaths: [
+          path.resolve(__dirname, 'src/styles'),
+          path.resolve(__dirname, 'node_modules'),
+        ],
       },
     },
   },

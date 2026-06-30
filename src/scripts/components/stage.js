@@ -1,4 +1,3 @@
-import '@fortawesome/fontawesome-free/js/all';
 import 'google-code-prettify/src/prettify';
 import Header from './header';
 import Content from './content';
@@ -29,26 +28,22 @@ class Stage {
   }
 
   initFontAwesome() {
-    if (!window.FontAwesome) {
-      return;
-    }
+    // Prepend decorative icons to elements that PHP can't tag directly.
+    // Class names are static, so injecting an <i> is safe and renders via the icon webfont.
     const icons = [
-      { selector: '.enclosure-github', prefix: 'fab', iconName: 'github' },
-      { selector: '.enclosure,.enclosure-qiita,.note-link', prefix: 'fas', iconName: 'bookmark' },
-      { selector: '.enclosure-evernote', prefix: 'fab', iconName: 'evernote' },
-      { selector: '.note-comment', prefix: 'fas', iconName: 'comment' },
+      { selector: '.enclosure-github', className: 'fab fa-github' },
+      { selector: '.enclosure,.enclosure-qiita,.note-link', className: 'fas fa-bookmark' },
+      { selector: '.enclosure-evernote', className: 'fab fa-evernote' },
+      { selector: '.note-comment', className: 'fas fa-comment' },
     ];
-    icons.forEach(({ selector, prefix, iconName }) => {
-      this.prependFontAwesomeIcon(selector, prefix, iconName);
+    icons.forEach(({ selector, className }) => {
+      this.prependFontAwesomeIcon(selector, className);
     });
   }
 
-  prependFontAwesomeIcon(selector, prefix, iconName) {
-    const { html } = window.FontAwesome.icon(
-      window.FontAwesome.findIconDefinition({ prefix, iconName }),
-    );
+  prependFontAwesomeIcon(selector, className) {
     document.querySelectorAll(selector).forEach((element) => {
-      element.insertAdjacentHTML('afterbegin', html.join(''));
+      element.insertAdjacentHTML('afterbegin', `<i class="${className}" aria-hidden="true"></i> `);
     });
   }
 

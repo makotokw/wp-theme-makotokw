@@ -1,0 +1,9 @@
+// FontAwesome via CSS + self-hosted woff2 (replaces the 1.5MB SVG-with-JS bundle).
+// Point the font URLs at the package webfonts so Vite emits them to dist/fonts/,
+// mirroring the self-hosted Nunito Sans setup. Only solid + brands are used.
+@use '@fortawesome/fontawesome-free/scss/variables' with (
+  $font-path: '@fortawesome/fontawesome-free/webfonts'
+);
+@use '@fortawesome/fontawesome-free/scss/fontawesome';
+@use '@fortawesome/fontawesome-free/scss/solid';
+@use '@fortawesome/fontawesome-free/scss/brands';
