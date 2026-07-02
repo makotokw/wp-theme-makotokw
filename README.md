@@ -1,43 +1,42 @@
-makotokw theme for WordPress
-===
+# makotokw theme for WordPress
 
 WordPress theme for [blog.makotokw.com](https://blog.makotokw.com).
 
 ![Screenshot](https://raw.githubusercontent.com/makotokw/wp-theme-makotokw/makotokw2021/screenshot.png)
 
- * Created by [_s](http://underscores.me)
- * Inspired [Twenty Fifteen](https://twentyfifteendemo.wordpress.com/), [ghost](https://blog.ghost.org/) and [medium](https://medium.com/)
- * [Font Awesome](http://fortawesome.github.io/Font-Awesome/) Icons
- * [Nunito Sans](https://github.com/googlefonts/nunito) self-hosted under the SIL Open Font License 1.1 (`assets/fonts/Nunito-Sans-OFL.txt`)
- * [google-code-prettify](https://github.com/google/code-prettify)
- * [Notyf](https://github.com/caroso1222/notyf)
- * [Tippy.js](https://atomiks.github.io/tippyjs/)
+- Created by [_s](http://underscores.me)
+- Inspired by [Twenty Fifteen](https://twentyfifteendemo.wordpress.com/), [Ghost](https://blog.ghost.org/), and [Medium](https://medium.com/)
+- [Font Awesome](http://fortawesome.github.io/Font-Awesome/) icons
+- [Nunito Sans](https://github.com/googlefonts/nunito), self-hosted under the SIL Open Font License 1.1 (`assets/fonts/Nunito-Sans-OFL.txt`)
+- [google-code-prettify](https://github.com/google/code-prettify)
+- [Notyf](https://github.com/caroso1222/notyf)
+- [Tippy.js](https://atomiks.github.io/tippyjs/)
 
-## Work With
+## Works With
 
-* [AmazonJS](https://wordpress.org/plugins/amazonjs/) Plugin
-* [GitHub Flavored Markdown for WordPress](https://github.com/makotokw/wp-gfm) Plugin
-* [Twitter Card](https://dev.twitter.com/docs/cards)
-* [Facebook Open Graph](https://developers.facebook.com/docs/sharing/opengraph) Protocol
+- [AmazonJS](https://wordpress.org/plugins/amazonjs/) plugin
+- [GitHub Flavored Markdown for WordPress](https://github.com/makotokw/wp-gfm) plugin
+- [Twitter Card](https://dev.twitter.com/docs/cards)
+- [Facebook Open Graph](https://developers.facebook.com/docs/sharing/opengraph) protocol
 
-## Limitation
+## Limitations
 
-* Tested on PHP 7.4 **ONLY** by makotokw for kwLog
- * Some styles are **depend on** posts on kwLog
- * **Used** ``register_taxonomy()`` for kwLog
- * **No** sidebar, **No** widgets
- * **Unsupported** post formats
- * **Not** implement for Comment Form (I use Jetpack Comment)
+- Tested on PHP 7.4 **only** by makotokw for kwLog
+- Some styles **depend on** posts on kwLog
+- **Uses** `register_taxonomy()` for kwLog
+- **No** sidebar, **no** widgets
+- **Unsupported** post formats
+- **No** implementation for the comment form (I use Jetpack Comment)
 
-Unfortunately, I did **NOT** design for purpose that others use.
-So, please use a reference of one implementation for WordPress theme.
+Unfortunately, I did **not** design this for use by others.
+Please use it as a reference implementation for a WordPress theme.
 
 ## Installation
 
-```
+```sh
 cd /path/to/wordpress/wp-content/themes
-git clone https://github.com/makotokw/wp-theme-makotokw.git makotokw2025
-cd makotokw2025
+git clone https://github.com/makotokw/wp-theme-makotokw.git makotokw2026
+cd makotokw2026
 cp -p config.php.sample config.php
 ```
 
@@ -45,13 +44,13 @@ cp -p config.php.sample config.php
 
 ### Requirements
 
-* [Node.js](https://nodejs.org)
-* [Yarn](https://yarnpkg.com)
+- [Node.js](https://nodejs.org)
+- [Yarn](https://yarnpkg.com)
 
 ### Build
 
-```
-cd /path/to/wordpress/wp-content/themes/makotokw2025
+```sh
+cd /path/to/wordpress/wp-content/themes/makotokw2026
 yarn install
 # Development server (optional; for assets only)
 yarn dev
@@ -61,4 +60,4 @@ yarn build
 
 ## License
 
-* GPL v2
+- GPL v2
