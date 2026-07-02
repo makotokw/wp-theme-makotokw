@@ -5,110 +5,223 @@
  * @package makotokw
  * @see http://gilbert.pellegrom.me/how-to-breadcrumbs-in-wordpress/
  */
-function makotokw_breadcrumbs() {
+/**
+ * Build the breadcrumb trail as an ordered list of items.
+ *
+ * Returns a single source of truth shared by the visual renderer and the
+ * JSON-LD output. Each item is [ 'name' => string, 'url' => string|null ];
+ * a null url marks a non-linked crumb (e.g. the current page, or a generic
+ * label with no landing page).
+ *
+ * @return array<int, array{name: string, url: string|null}>
+ */
+function makotokw_get_breadcrumb_items() {
 	/** @var WP_Query $wp_query */
 	global $wp_query;
 
-	if ( ! is_home() && ! is_404() ) {
-		$divider = '&nbsp;<i class="fas fa-angle-right"></i>&nbsp;';
-		?>
-		<div itemscope itemtype="http://schema.org/Breadcrumb" class="breadcrumb">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fas fa-house"></i></a><?php echo wp_kses_post( $divider ); ?>
-			<?php if ( is_category() ) : ?>
-				<?php $term = $wp_query->get_queried_object(); ?>
-				<a href="/categories/" itemprop="url"><span itemprop="title"><?php esc_html_e( 'Categories', 'makotokw' ); ?></span></a><?php echo wp_kses_post( $divider ); ?>
-				<?php if ( $term->parent > 0 ) : ?>
-					<?php
-					// Trusted breadcrumb markup with schema.org itemprop; the category name is escaped in the builder. wp_kses_post would strip itemprop.
-					echo makotokw_breadcrumbs_category_parents( $term->parent, $divider ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					?>
-				<?php endif; ?>
-				<span class="breadcrumb-last" itemprop="title"><?php echo single_cat_title( '', false ); ?></span>
-			<?php elseif ( is_tag() ) : ?>
-				<a href="/tags/" itemprop="url"><span itemprop="title"><?php esc_html_e( 'Tags', 'makotokw' ); ?></span></a><?php echo wp_kses_post( $divider ); ?>
-				<span class="breadcrumb-last" itemprop="title"><?php echo single_tag_title( '', false ); ?></span>
-			<?php elseif ( makotokw_is_mylist() ) : ?>
-				<span itemprop="title"><?php esc_html_e( 'Mylist', 'makotokw' ); ?></span><?php echo wp_kses_post( $divider ); ?>
-				<span class="breadcrumb-last" itemprop="title"><?php echo single_cat_title( '', false ); ?></span>
-			<?php elseif ( is_tax( 'blogs' ) ) : ?>
-				<span itemprop="title"><?php esc_html_e( 'Blog', 'makotokw' ); ?></span><?php echo wp_kses_post( $divider ); ?>
-				<span class="breadcrumb-last" itemprop="title"><?php echo single_cat_title( '', false ); ?></span>
-			<?php elseif ( is_tax( 'portfolios' ) ) : ?>
-				<span itemprop="title"><?php esc_html_e( 'Portfolio', 'makotokw' ); ?></span><?php echo wp_kses_post( $divider ); ?>
-				<span class="breadcrumb-last" itemprop="title"><?php echo single_cat_title( '', false ); ?></span>
-			<?php elseif ( is_archive() ) : ?>
-				<?php if ( is_day() ) : ?>
-					<a href="/archives/" itemprop="url"><span itemprop="title"><?php esc_html_e( 'Archives', 'makotokw' ); ?></span></a><?php echo wp_kses_post( $divider ); ?>
-					<span class="breadcrumb-last" itemprop="title"><?php echo get_the_date(); ?></span>
-				<?php elseif ( is_month() ) : ?>
-					<a href="/archives/" itemprop="url"><span itemprop="title"><?php esc_html_e( 'Archives', 'makotokw' ); ?></span></a><?php echo wp_kses_post( $divider ); ?>
-					<span class="breadcrumb-last" itemprop="title"><?php echo get_the_date( __( 'Y/M', 'makotokw' ) ); ?></span>
-				<?php elseif ( is_year() ) : ?>
-					<a href="/archives/" itemprop="url"><span itemprop="title"><?php esc_html_e( 'Archives', 'makotokw' ); ?></span></a><?php echo wp_kses_post( $divider ); ?>
-					<span class="breadcrumb-last" itemprop="title"><?php echo get_the_date( __( 'Y', 'makotokw' ) ); ?></span>
-				<?php else : ?>
-					<span class="breadcrumb-last" itemprop="title"><?php esc_html_e( 'Archives', 'makotokw' ); ?></span>
-				<?php endif ?>
-			<?php elseif ( is_search() ) : ?>
-				<span class="breadcrumb-last" itemprop="title"><?php esc_html_e( 'Search Results', 'makotokw' ); ?>: <em><?php echo get_search_query(); ?></em></span>
-			<?php elseif ( is_single() ) : ?>
-				<?php $category = get_the_category(); ?>
-				<?php if ( is_array( $category ) && count( $category ) > 0 ) : ?>
-					<?php $category_id = get_cat_ID( $category[0]->cat_name ); ?>
-					<a href="/categories/" itemprop="url"><span itemprop="title"><?php esc_html_e( 'Categories', 'makotokw' ); ?></span></a><?php echo wp_kses_post( $divider ); ?>
-					<?php
-					$breadcrumbs_category = makotokw_breadcrumbs_category_parents( $category_id, $divider );
-					if ( strpos( $breadcrumbs_category, $divider ) !== false ) {
-						echo substr( $breadcrumbs_category, 0, -strlen( $divider ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Trusted breadcrumb markup with itemprop; name escaped in builder.
-					}
-					?>
-				<?php endif ?>
-			<?php elseif ( is_page() ) : ?>
-				<?php $post = $wp_query->get_queried_object(); ?>
-				<?php if ( empty( $post->post_parent ) ) : ?>
-					<span class="breadcrumb-last" itemprop="title"><?php echo esc_html( the_title( '', '', false ) ); ?></span>
-				<?php else : ?>
-					<?php
-					$ancestors = array_reverse( get_post_ancestors( $post->ID ) );
-					?>
-					<?php foreach ( $ancestors as $ancestor ) : ?>
-						<?php if ( end( $ancestors ) !== $ancestor ) : ?>
-							<a href="<?php echo esc_url( get_permalink( $ancestor ) ); ?>" itemprop="url">
-									<span itemprop="title"><?php echo esc_html( wp_strip_all_tags( get_the_title( $ancestor ) ) ); ?></span>
-							</a>
-							<?php echo wp_kses_post( $divider ); ?>
-						<?php else : ?>
-							<a href="<?php echo esc_url( get_permalink( $ancestor ) ); ?>" itemprop="url">
-									<span itemprop="title"><?php echo esc_html( wp_strip_all_tags( get_the_title( $ancestor ) ) ); ?></span>
-							</a>
-						<?php endif ?>
-					<?php endforeach ?>
-				<?php endif ?>
-			<?php endif ?>
-		</div>
-		<?php
+	$items = array();
+	if ( is_home() || is_404() ) {
+		return $items;
 	}
+
+	// Home is always the first crumb.
+	$items[] = array(
+		'name' => get_bloginfo( 'name' ),
+		'url'  => home_url( '/' ),
+	);
+
+	if ( is_category() ) {
+		$term    = $wp_query->get_queried_object();
+		$items[] = array(
+			'name' => __( 'Categories', 'makotokw' ),
+			'url'  => home_url( '/categories/' ),
+		);
+		if ( $term->parent > 0 ) {
+			$items = array_merge( $items, makotokw_get_breadcrumb_category_ancestors( $term->parent ) );
+		}
+		$items[] = array(
+			'name' => single_cat_title( '', false ),
+			'url'  => null,
+		);
+	} elseif ( is_tag() ) {
+		$items[] = array(
+			'name' => __( 'Tags', 'makotokw' ),
+			'url'  => home_url( '/tags/' ),
+		);
+		$items[] = array(
+			'name' => single_tag_title( '', false ),
+			'url'  => null,
+		);
+	} elseif ( makotokw_is_mylist() ) {
+		$items[] = array(
+			'name' => __( 'Mylist', 'makotokw' ),
+			'url'  => null,
+		);
+		$items[] = array(
+			'name' => single_cat_title( '', false ),
+			'url'  => null,
+		);
+	} elseif ( is_tax( 'blogs' ) ) {
+		$items[] = array(
+			'name' => __( 'Blog', 'makotokw' ),
+			'url'  => null,
+		);
+		$items[] = array(
+			'name' => single_cat_title( '', false ),
+			'url'  => null,
+		);
+	} elseif ( is_tax( 'portfolios' ) ) {
+		$items[] = array(
+			'name' => __( 'Portfolio', 'makotokw' ),
+			'url'  => null,
+		);
+		$items[] = array(
+			'name' => single_cat_title( '', false ),
+			'url'  => null,
+		);
+	} elseif ( is_archive() ) {
+		// The "Archives" crumb links to the archive index; on generic archives
+		// it stays as the last (non-linked) crumb via the renderer's last rule.
+		$items[] = array(
+			'name' => __( 'Archives', 'makotokw' ),
+			'url'  => home_url( '/archives/' ),
+		);
+		if ( is_day() ) {
+			$items[] = array(
+				'name' => get_the_date(),
+				'url'  => null,
+			);
+		} elseif ( is_month() ) {
+			$items[] = array(
+				'name' => get_the_date( __( 'Y/M', 'makotokw' ) ),
+				'url'  => null,
+			);
+		} elseif ( is_year() ) {
+			$items[] = array(
+				'name' => get_the_date( __( 'Y', 'makotokw' ) ),
+				'url'  => null,
+			);
+		}
+	} elseif ( is_search() ) {
+		$items[] = array(
+			// get_search_query( false ) returns the raw query; the renderer and
+			// wp_json_encode escape it, so avoid the default esc_attr (double escaping).
+			'name' => sprintf( '%s: %s', __( 'Search Results', 'makotokw' ), get_search_query( false ) ),
+			'url'  => null,
+		);
+	}
+
+	return $items;
 }
 
 /**
- * @param $id
- * @param string $separator
- * @param array $visited
- * @return string
+ * Build the category ancestor chain (root first) as breadcrumb items.
+ *
+ * @param int   $id      Category term ID.
+ * @param array $visited Guard against cyclic parents.
+ * @return array<int, array{name: string, url: string}>
  */
-function makotokw_breadcrumbs_category_parents( $id, $separator = '/', $visited = array() ) {
-	$chain  = '';
+function makotokw_get_breadcrumb_category_ancestors( $id, $visited = array() ) {
+	$items  = array();
 	$parent = get_category( $id );
-	if ( is_wp_error( $parent ) ) {
-		return $chain;
+	if ( is_wp_error( $parent ) || null === $parent ) {
+		return $items;
 	}
 	if ( $parent->parent && ( $parent->parent !== $parent->term_id ) && ! in_array( $parent->parent, $visited, true ) ) {
 		$visited[] = $parent->parent;
-		$chain    .= makotokw_breadcrumbs_category_parents( $parent->parent, $separator, $visited );
+		$items     = array_merge( $items, makotokw_get_breadcrumb_category_ancestors( $parent->parent, $visited ) );
+	}
+	$items[] = array(
+		'name' => $parent->name,
+		// get_category_link() returns '' (not WP_Error) when the link cannot be
+		// resolved; an empty url is handled gracefully downstream.
+		'url'  => get_category_link( $parent->term_id ),
+	);
+	return $items;
+}
+
+/**
+ * Render the breadcrumb trail as presentational HTML.
+ *
+ * Structured data is emitted separately as JSON-LD; this markup carries no
+ * microdata. The last crumb is always rendered as non-linked text.
+ */
+function makotokw_breadcrumbs() {
+	$items = makotokw_get_breadcrumb_items();
+	if ( empty( $items ) ) {
+		return;
 	}
 
-	/* translators: %s: taxonomy term name */
-	$chain .= '<a href="' . esc_url( get_category_link( $parent->term_id ) ) . '" title="' . esc_attr( sprintf( __( 'View all posts in %s', 'makotokw' ), $parent->name ) ) . '" itemprop="url"><span itemprop="title">' . esc_html( $parent->name ) . '</span></a>' . $separator;
-
-	return $chain;
+	$divider    = '&nbsp;<i class="fas fa-angle-right"></i>&nbsp;';
+	$last_index = count( $items ) - 1;
+	?>
+	<div class="breadcrumb">
+		<?php foreach ( $items as $index => $item ) : ?>
+			<?php
+			if ( 0 < $index ) {
+				echo wp_kses_post( $divider );
+			}
+			?>
+			<?php if ( 0 === $index ) : ?>
+				<a href="<?php echo esc_url( $item['url'] ); ?>"><i class="fas fa-house"></i></a>
+			<?php elseif ( $index === $last_index ) : ?>
+				<span class="breadcrumb-last"><?php echo esc_html( $item['name'] ); ?></span>
+			<?php elseif ( ! empty( $item['url'] ) ) : ?>
+				<a href="<?php echo esc_url( $item['url'] ); ?>"><?php echo esc_html( $item['name'] ); ?></a>
+			<?php else : ?>
+				<span><?php echo esc_html( $item['name'] ); ?></span>
+			<?php endif ?>
+		<?php endforeach ?>
+	</div>
+	<?php
 }
+
+/**
+ * Output the breadcrumb trail as schema.org BreadcrumbList JSON-LD.
+ *
+ * Emitted only where a visual breadcrumb is shown, so the structured data
+ * matches the visible trail. Non-last crumbs without a URL are skipped and
+ * positions are renumbered; the last crumb omits `item`.
+ */
+function makotokw_breadcrumbs_jsonld() {
+	if ( ! ( is_archive() || is_search() ) ) {
+		return;
+	}
+
+	$items = makotokw_get_breadcrumb_items();
+	if ( count( $items ) < 2 ) {
+		return;
+	}
+
+	$last_index    = count( $items ) - 1;
+	$position      = 1;
+	$list_elements = array();
+	foreach ( $items as $index => $item ) {
+		$is_last = ( $index === $last_index );
+		// Non-last crumbs without a URL are not crawlable pages; skip them.
+		if ( ! $is_last && empty( $item['url'] ) ) {
+			continue;
+		}
+		$element = array(
+			'@type'    => 'ListItem',
+			'position' => $position,
+			'name'     => $item['name'],
+		);
+		if ( ! $is_last && ! empty( $item['url'] ) ) {
+			$element['item'] = $item['url'];
+		}
+		$list_elements[] = $element;
+		++$position;
+	}
+
+	$data = array(
+		'@context'        => 'https://schema.org',
+		'@type'           => 'BreadcrumbList',
+		'itemListElement' => $list_elements,
+	);
+
+	// wp_json_encode escapes JSON (including `/`), so the output is safe to
+	// place inside a script element without additional escaping.
+	echo '<script type="application/ld+json">' . wp_json_encode( $data ) . '</script>' . "\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+}
+add_action( 'wp_head', 'makotokw_breadcrumbs_jsonld' );
