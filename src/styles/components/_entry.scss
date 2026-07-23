@@ -206,6 +206,24 @@
     }
   }
 
+  .image-row {
+    display: flex;
+    gap: var(--space-3);
+    align-items: flex-start;
+    margin: var(--space-10) auto;
+
+    img,
+    figure {
+      flex: 1 1 0;
+      min-width: 0;
+      margin: 0;
+    }
+
+    @include smaller-than-mobile-screen {
+      flex-direction: column;
+    }
+  }
+
   @include smaller-than-tablet-screen {
 
     img {
@@ -218,6 +236,10 @@
       img {
         margin: 0 auto;
       }
+    }
+
+    .image-row {
+      margin: var(--space-8) auto;
     }
   }
 
